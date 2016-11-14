@@ -1,0 +1,1 @@
+cmd_/kvaser/linuxcan_v4/virtualcan/kvvirtualcan.ko := ld -m elf_i386 -r -o /kvaser/linuxcan_v4/virtualcan/kvvirtualcan.ko /kvaser/linuxcan_v4/virtualcan/kvvirtualcan.o /kvaser/linuxcan_v4/virtualcan/kvvirtualcan.mod.o

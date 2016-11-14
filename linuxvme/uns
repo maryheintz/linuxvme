@@ -1,0 +1,35 @@
+#!/bin/sh
+###############################################################################
+#
+# Filename: 	uns
+# 
+# Description:	Shell script to unload the Linux VME device driver
+#
+# $Revision: 1.1.1.1 $
+#
+# $Date: 2005/05/24 14:34:02 $
+#
+# $Source: z:\\cvsroot/Linuxvme2/linuxvme/uns,v $
+#
+# Copyright 2000-2005 Concurrent Technologies.
+#
+###############################################################################
+
+module="vmedriver"
+device="vme"
+
+printf "Unloading %s module...\n" $module
+/sbin/rmmod $module || exit 1
+
+if [ -d /dev/$device ]
+then
+    printf "Removing device files...\n"
+    rm -f /dev/$device/ctl
+    rm -f /dev/$device/dma
+    rm -f /dev/$device/lsi*
+    rm -f /dev/$device/vsi*
+    rmdir /dev/$device
+fi
+
+printf "Removed %s module\n" $module
+

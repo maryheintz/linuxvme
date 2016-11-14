@@ -1,0 +1,15 @@
+#!/bin/sh
+
+DEPMOD=`which depmod`
+
+install -m 700 leaf/leaf.ko /lib/modules/`uname -r`/kernel/drivers/usb/misc/
+install -m 700 leaf/leaf.sh /usr/sbin/
+install -m 777 leaf/leaf /etc/hotplug/usb/
+install -m 644 leaf/leaf.usermap /etc/hotplug/leaf.usermap
+install -m 644 10-kvaser.rules /etc/udev/rules.d 
+udevcontrol reload_rules
+
+$DEPMOD -a
+if [ "$?" -ne 0 ] ; then
+    echo Failed to execute $DEPMOD -a
+fi

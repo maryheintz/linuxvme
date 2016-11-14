@@ -1,0 +1,1 @@
+cmd_/kvaser/linuxcan_v4/usbcanII/usbcanII.o := ld -m elf_i386  -r -o /kvaser/linuxcan_v4/usbcanII/usbcanII.o /kvaser/linuxcan_v4/usbcanII/usbcanHWIf.o /kvaser/linuxcan_v4/usbcanII/../common/VCanOsIf.o /kvaser/linuxcan_v4/usbcanII/../common/osif_functions_kernel.o /kvaser/linuxcan_v4/usbcanII/../common/queue.o

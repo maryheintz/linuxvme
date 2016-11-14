@@ -1,0 +1,1 @@
+cmd_/kvaser/linuxcan_v4/pcicanII/kvpcicanII.ko := ld -m elf_i386 -r -o /kvaser/linuxcan_v4/pcicanII/kvpcicanII.ko /kvaser/linuxcan_v4/pcicanII/kvpcicanII.o /kvaser/linuxcan_v4/pcicanII/kvpcicanII.mod.o

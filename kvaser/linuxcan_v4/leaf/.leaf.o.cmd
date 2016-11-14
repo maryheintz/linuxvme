@@ -1,0 +1,1 @@
+cmd_/kvaser/linuxcan_v4/leaf/leaf.o := ld -m elf_i386  -r -o /kvaser/linuxcan_v4/leaf/leaf.o /kvaser/linuxcan_v4/leaf/leafHWIf.o /kvaser/linuxcan_v4/leaf/../common/VCanOsIf.o /kvaser/linuxcan_v4/leaf/../common/osif_functions_kernel.o /kvaser/linuxcan_v4/leaf/../common/queue.o
