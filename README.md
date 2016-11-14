@@ -4,7 +4,10 @@ These are drivers that are used on a specific vme setup in linux.  They are here
 
 ## Making a new version of the system.
 
-*  Install SLC45 on a new disk.  Choose "Custom Install".  In the list of packages that comes up, you can uncheck "Text-based Internet, Office/Productivity, Sound & Video".  You should add "Development Tools" and in the Gnome Desktop Environment, also add the program "eog".
+*  Install SL45 on a new disk.  
+You can find scientific linux at http://ftp.scientificlinux.org/linux/scientific/obsolete/45/.
+
+Choose "Custom Install".  In the list of packages that comes up, you can uncheck "Text-based Internet, Office/Productivity, Sound & Video".  You should add "Development Tools" and in the Gnome Desktop Environment, also add the program "eog".
 
 *  Once the system is installed, check if it's running a multiprocessor kernel.  Change /etc/grub.conf to use the single processor kernel.  Reboot so that we start using that kernel.
 
