@@ -9,6 +9,15 @@ You can find scientific linux at http://ftp.scientificlinux.org/linux/scientific
 
 Choose "Custom Install".  In the list of packages that comes up, you can uncheck "Text-based Internet, Office/Productivity, Sound & Video".  You should add "Development Tools" and in the Gnome Desktop Environment, also add the program "eog".
 
+This is the partitioning scheme that I used.
+```
+Device Boot      Start         End      Blocks   Id  System
+/dev/hdc1   *           1          65      522081   83  Linux      (/boot)
+/dev/hdc2              66         587     4192965   82  Linux swap
+/dev/hdc3             588        9729    73433115   83  Linux	   (/)
+
+```
+
 *  Once the system is installed, check if it's running a multiprocessor kernel.  Change /etc/grub.conf to use the single processor kernel.  Reboot so that we start using that kernel.
 
 *  There are a few other packages to install.  I didn't feel like searching for them during the installation process, so I did them by hand later.
