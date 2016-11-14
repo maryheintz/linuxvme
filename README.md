@@ -28,6 +28,7 @@ libjpeg-devel
 freetype-devel
 libtiff-devel
 zlib-devel
+nedit
 
 *  For some reason, all the links needed were not created in /usr/lib.  I had to add some of these by hand.
 
@@ -88,6 +89,8 @@ drwxr-xr-x  2 root root    4096 Feb 17  2005 sbin
 drwxr-xr-x  4 root root    4096 Nov 14 07:19 share
 drwxr-xr-x  2 root root    4096 Feb 17  2005 src
 ```
+
+*  Copy the file /usr/local/linuxvme_util/libcctvme.a to /usr/local/lib
 
 *  Recompile the files in these directories.
 
