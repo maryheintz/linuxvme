@@ -1,0 +1,158 @@
+#
+# makerules for the Prototype-1 RIO2 software
+# T.W. 17/07/96
+# Changed to refer only to the PRO version. T.W. 25-11-96
+# DOC removed, other cosmetics for the LynxOS X-development environent
+# T.W. 24/10/97 Changed to be flexibile on multiple operating systems/versions
+
+# Specific things for this operating system. For each value of OSTYPE, the
+# individual makerules should specify the same set of macros.
+# include $(PRO)/rules/makerules_$(OS_TYPE)$(OS_VERSION)
+
+RIO2	= rio2/
+PRO_TGT = $(PRO)/$(SRT_TARGET)
+PRO_INC = $(PRO_TGT)/include
+PRO_LIB = $(PRO_TGT)/lib.sav
+PRO_BIN = $(PRO_TGT)/bin
+PRO_DB  = $(PRO)/database
+
+CC	= gcc -Wall -Wstrict-prototypes
+CXX	= g++ -Wall -Wstrict-prototypes
+RANLIB	= ranlib
+MAKELIB	= $(AR) $(ARFLAGS) $@ $?; $(RANLIB) $@
+CLEAN	= rm -f
+
+CFLAGS_NORM	= -I$(PRO_INC) -I$(PRO)/include $(CES_INC) $(ROOT_INC)
+CFLAGS_ATD	= -I. $(CFLAGS_NORM)
+CFLAGS_ALL	= -I. $(ATD_INC) $(CFLAGS_NORM) $(GXX_INC)
+LFLAGS_NORM	= -L$(PRO_LIB) $(CES_LIB) $(ROOT_LIB)
+LFLAGS_ATD	= -L. $(LFLAGS_NORM)
+LFLAGS_POSIX	= $(MPOSIX) $(POSIXLIBS)
+LFLAGS_ALL	= -L. $(ATD_LIB) $(LFLAGS_NORM) $(GXX_LIB)
+LFLAGS_ALL_THRD	= -L. $(ATD_LIB) $(LFLAGS_THRD) $(GXX_LIB)
+
+STANDARD_TARGETS = all all_$(OS_TYPE) all_$(OS_TYPE)$(OS_VERSION) \
+		strip distclean clean clean_bin clean_lib \
+		install     uninstall \
+		install_inc uninstall_inc \
+		install_inc_share uninstall_inc_share \
+		install_bin uninstall_bin \
+		install_lib uninstall_lib
+
+# ALL is the first target, and makes platform-specific stuff first
+all:: all_$(OS_TYPE)$(OS_VERSION) all_$(OS_TYPE)
+
+all_$(OS_TYPE)$(OS_VERSION) all_$(OS_TYPE)::
+	@echo " " # DUMMY to keep things quiet if the target isn't defined
+
+# Dummy targets for all currently used platforms...
+all_lynxos2.3.1::
+all_lynxos2.4.0::
+all_lynxos2.5.0::
+all_lynxos2.5.1::
+all_lynxos::
+
+all_hpuxB.10.20::
+all_hpux::
+
+all_sunos5.5.1::
+all_sunos::
+
+all_winnt4.0::
+all_winnt::
+
+all_::	# Get this if OS_TYPE and OS_VERSION are not defined!
+	@echo It seems you have not got OS_TYPE and OS_VERSION defined!
+
+dummy::
+	-touch $(INST_BIN)
+
+distclean:: clean
+	@echo "This target is for SRT compatibility. For now, it makes CLEAN"
+
+clean::
+	-$(CLEAN) $(INST_LIB) $(INST_BIN) *.o *.a *~ core
+clean_bin::
+	-$(CLEAN) $(INST_BIN) *~
+clean_lib::
+	-$(CLEAN) $(INST_LIB) *.a *~
+
+INSTALL = | xargs -n1 | xargs -i cp {}
+install:: install_inc install_inc_share install_lib install_bin install_db
+	 @echo " Installation done..."
+install_inc_share:: $(INST_INC_SHARE)
+	 @echo " Installing SHARED INCLUDES : $(INST_INC_SHARE)"
+	-@echo $(INST_INC_SHARE) $(INSTALL)  $(PRO)/include
+install_inc:: $(INST_INC)
+	 @echo " Installing INCLUDES : $(INST_INC)"
+	 @if [ ! -d $(PRO_INC) ]; then \
+		mkdir -p $(PRO_INC); \
+	 fi;
+	-@echo $(INST_INC) $(INSTALL)  $(PRO_INC)
+install_lib:: $(INST_LIB)
+	 @echo " Installing LIBRARIES: $(INST_LIB)"
+	 @if [ ! -d $(PRO_LIB) ]; then \
+		mkdir -p $(PRO_LIB); \
+	 fi;
+	-@echo $(INST_LIB) $(INSTALL)  $(PRO_LIB)
+install_bin:: $(INST_BIN)
+	 @echo " Installing BINARIES : $(INST_BIN)"
+	 @if [ ! -d $(PRO_BIN) ]; then\
+		mkdir -p $(PRO_BIN);\
+	 fi;
+	-@echo $(INST_BIN) $(INSTALL)  $(PRO_BIN)
+install_db:: $(INST_DB)
+	 @echo " Installing DATABASES: $(INST_DB)"
+	 @if [ ! -d $(PRO_DB) ]; then\
+		mkdir -p $(PRO_DB);\
+	 fi;
+	-@echo $(INST_DB)  $(INSTALL)  $(PRO_DB)
+
+UNINSTALL = | xargs -n1 | sed -e "s%.*/%%" | xargs -i rm
+uninstall:: uninstall_inc uninstall_lib uninstall_bin uninstall_db
+	@echo " Uninstallation done..."
+uninstall_inc_share::
+	 @echo " Uninstalling SHARED INCLUDES : $(INST_INC_SHARE)"
+	-@echo $(INST_INC_SHARE) $(UNINSTALL)  $(PRO)/include/\{}
+uninstall_inc::
+	 @echo " Uninstalling INCLUDES : $(INST_INC)"
+	-@echo $(INST_INC) $(UNINSTALL)  $(PRO_INC)/\{}
+uninstall_lib::
+	 @echo " Uninstalling LIBRARIES: $(INST_LIB)"
+	-@echo $(INST_LIB) $(UNINSTALL)  $(PRO_LIB)/\{}
+uninstall_bin::
+	 @echo " Uninstalling BINARIES : $(INST_BIN)"
+	-@echo $(INST_BIN) $(UNINSTALL)  $(PRO_BIN)/\{}
+uninstall_db::
+	 @echo " Uninstalling DATABASES: $(INST_DB)"
+	-@echo $(INST_DB)  $(UNINSTALL)  $(PRO_DB)/\{}
+
+STRIP = | xargs -n1 | xargs -i strip {}
+strip:: all
+	-@echo $(INST_BIN) $(STRIP)
+	@echo " Stripped $(INST_BIN)"
+
+.strip .clean \
+.install   .install_inc   .install_lib   .install_bin \
+.uninstall .uninstall_inc .uninstall_lib .uninstall_bin::
+	@echo This target is **OBSOLETE**
+	@exit 2
+
+# Now the suffix rules. Being explicit because LynxDEV has different rules
+# to RD13FE11 and RD13FE12!
+
+.SUFFIXES:
+.SUFFIXES: .o .c .C .cc .a
+
+.o:
+	$(CC) $< -o $@ $(LFLAGS)
+.c:
+	$(CC) $(CFLAGS) $< -o $@ $(LFLAGS)
+.c.o:
+	$(CC) $(CFLAGS) -c $<
+.C:
+	$(CXX) $(CXXFLAGS) $< -o $@ $(LXXFLAGS)
+.cc:
+	$(CXX) $(CXXFLAGS) $< -o $@ $(LXXFLAGS)
+.cc.o:
+	$(CXX) $(CXXFLAGS) -c $<

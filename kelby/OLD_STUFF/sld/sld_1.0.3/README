@@ -1,0 +1,137 @@
+Date: 2000-07-10
+Version: 1.0.2
+
+This is the README for the S-Link driver developed at and for Nikhef,
+The Netherlands (www.nikhef.nl). It is copyright 2000 by Nikhef. The
+driver has been released under the GPL and is generally available from
+the Nikhef website.
+It is a driver for the SSPCI interface which was developed by CERN
+(http://hsi.web.cern.ch/HSI/s-link/devices/slink-pci/).
+
+This package includes the sources to the driver, a test program (sldtest)
+to help you test the S-Link driver and/or your application, a stat program
+(sldstat) like iostat and vmstat and the necessary makefiles.
+
+
+
+The driver has been developed as a module which can be loaded at any moment
+whenever necessary. It has two configuration options that can be set in the
+usual ways for modular drivers (check the kernel documentation or modprobe's
+manual page for that):
+1. sld_bufferSize is the size of the databuffers used. For sanity this is
+   checked to be larger than 128 bytes and Linux memory management forces
+   that they should be smaller than PAGE_SIZE (4KB on Intel).
+   Also the buffer size should be a divisor of PAGE_SIZE to make sure that
+   buffers are always within one page.
+2. sld_nrOfBuffers is the number of buffers that should be allocated. The
+   sanity minimum is 10 and there is no other limit than the memory that you
+   can (or want) to sacrifice.
+
+The sldtest program is a user space program which behaves as a normal user
+to the sld driver. It can do these tricks:
+* toggle dump of data block contents
+* toggle one-liner at reception of datablock
+* toggle dump of control words
+* toggle error checking (walking-one implemented and used)
+* toggle dump of errors that were found
+* toggle display of statistics (both short and long versions)
+* set the generation of statistics in the driver
+  (from off to once every 4.5 seconds)
+* set return lines at each buffer received from the driver
+* request return line status
+* request LDOWN status
+These can all be used in whatever combination is needed.
+
+
+
+Driver design
+-------------
+
+Some of the requirements for this driver are:
+1. zero-copy architecture for fast transfers into userspace
+2. high-speed
+3. event size is variable, maximum 2048 bytes (event is controlword, several
+   datawords and another controlword)
+Because this driver will be used in a very specific environment, sometimes
+decisions are taken different from the generic case Linux was written for.
+
+Because of requirement 2 it was decided not to use the normal read() system-
+call for retrieving data from the S-Link. Instead a buffer mechanism is
+used where a number of buffers are available in a circular queue. Basically,
+the driver fills the buffers at the head of the queue, while the user
+empties the buffers at the tail of the queue. Only when there is no more
+data available the application needs to use a system call (select()) to
+wait for more data.
+A complicating element here is the use of the buffers in both kernel and
+user space. This requires two pointers to each buffer which point to the
+same buffer, but in different address spaces.
+Since the maximum event size is 2KB, it was not necessary to use the
+bigphysarea patch which is popular with other S-Link drivers. This limits
+the maximum buffersize to PAGE_SIZE, which is 4KB on Intel systems. But
+also has the advantage that the driver works with a regular, unpatched,
+kernel.
+
+
+
+Installation and use
+--------------------
+
+Well, since you are reading this, there's a good chance that you already
+unzipped, untarred and such. So I'll skip that step.
+
+The steps:
+1. change the three options in the Makefile to suit you
+2. run make (this will make the driver and sldtest and sldstat programs)
+3. run make install (copy the driver to a place where modprobe can find it)
+4. edit the modprobe configuration file (usually /etc/conf.modules)
+5. write your user application
+6. debug your application
+7. use your application
+
+In more detail:
+
+1. In the Makefile there are two things that can/need/may be customized.
+
+The first item is LINUXSOURCE, the path to the kernel sources of the
+kernel you use. Normally this is /usr/src/linux. The configuration of the
+kernel you plan to use must be present here as well as the kernel include
+files. The actual source (.c) of the kernel is not required.
+
+The second is SLD_DEBUG. Set this to yes or no. You need to use this when
+you'd like to use a kernel debugger. It will generate modules with symbol
+tables and disable the omit-frame-pointer compiler option.
+
+The third is SLD_BH, again yes or no. This influences the behaviour of
+the driver in the interrupt routine. Normally, in Linux, an interrupt
+routine queues a bottom half which will actually process the interrupt.
+This is to enable other interrupts as fast as possible to make Linux run
+more smooth and prevents the loss of interrupts if they are disabled too
+long. Only change this to no if you know what you're doing and don't be
+surprised if other things slow down or stop working at all.
+
+2, 3 These two steps can be combined into `make all install'. For the make
+install you will need root priviliges.
+
+4. The driver uses a dynamic major number. This means that each time the
+module is loaded, it gets a major number assigned. If you have only one
+driver using a dynamic major number, it will always be the same (at least
+it is on my Linux-2.2.14 version). If you have multiple drivers that use
+dynamic major numbers, loading them in the same order all the time will
+get you the same major number.
+
+5, 6, 7. This is (obviously) up to you to make something useful that does
+what you need it to do. Take a look at the sldtest program's main() for
+an example of how to use the driver.
+
+
+
+Features
+--------
+
+* A full kernelspace S-Link driver.
+* Fully interrupt driven.
+* Zero-copy architecture.
+* DMA is used for S-Link datawords, single PCI reads for controlwords.
+* Works with regular linux (2.2.x) kernels.
+* Interface between driver and user without system calls.
+* Supports multiple interfaces (compile time changeable).

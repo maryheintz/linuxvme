@@ -1,0 +1,51 @@
+From mank@physto.se Thu Jul 12 12:26:44 2001
+Date: Thu, 12 Jul 2001 18:48:02 +0200 (MET DST)
+From: Magnus Ramstedt <mank@physto.se>
+To: Kelby Anderson <kelby@hep.uchicago.edu>
+Cc: Magnus Ramstedt <mank@physto.se>
+Subject: Re: your mail
+
+Hi Kelby,
+
+I hope you will understand this.
+This is what we do:
+
+  unsigned ttcrxAddresses[8] = {0x1001,0x1002,0x1003,0x1004,
+				0x1005,0x1006,0x1007,0x1008};
+  unsigned pipelineLength[8] = {64,64,64,64,64,64,64,64};
+  unsigned testWord[4] = {0,0,0,0};
+  unsigned deskew1[8] = {14,166,94,6,6,94,166,14};
+  unsigned deskew2[8] = {0,0,0,0,0,0,0,0};
+  unsigned speedMode = 0x28;
+
+  sendLongCommand(3,0,0xfc,0);          /*enable clock*/
+  sendBroadcastCommand(0x10);  		/* TTCrx reset *    
+
+         for(i=0;i<8;i++) {
+           sendLongCommand(ttcrxAddresses[i],1,1,sampleLength-1);
+           sendLongCommand(ttcrxAddresses[i],1,2,pipelineLength[i]);
+           sendLongCommand(ttcrxAddresses[i],1,3,testWord[0]);
+           sendLongCommand(ttcrxAddresses[i],1,4,testWord[1]);
+           sendLongCommand(ttcrxAddresses[i],1,5,testWord[2]);
+           sendLongCommand(ttcrxAddresses[i],1,6,testWord[3]);
+           sendLongCommand(ttcrxAddresses[i],1,8,dac1);
+           sendLongCommand(ttcrxAddresses[i],1,9,dac2);
+           sendLongCommand(ttcrxAddresses[i],1,10,speedMode);
+           sendLongCommand(ttcrxAddresses[i],1,11,(highLimit&0xff));
+           sendLongCommand(ttcrxAddresses[i],1,12,highLimit>>8);
+           sendLongCommand(ttcrxAddresses[i],1,13,(lowLimit&0xff));
+           sendLongCommand(ttcrxAddresses[i],1,14,lowLimit>>8);
+           sendLongCommand(ttcrxAddresses[i],1,15,mode);
+           sendLongCommand(ttcrxAddresses[i],0,0,deskew1[i]);
+           sendLongCommand(ttcrxAddresses[i],0,1,deskew2[i]);
+        }
+
+  sendBroadcastCommand(0x40);    /* Digitizer reset */
+  sendBroadcastCommand(3);    /* BunchCrossing and 
+                                       event counter reset */
+
+Regards,
+Magnus Ramstedt
+Stockholm University
+
+

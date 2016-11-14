@@ -1,0 +1,522 @@
+input 0=600pC  1=10pC
+  charge=599.785728  dacval=749.267578  dac=2ed(hex)  cap=100.000000
+slink opened
+control word= 11111110
+ data word=    1    1  344  300    e
+ data word=    0    0   2f   3b   38
+ data word=    0    1   2e   39   36
+ data word=    0    0   32   3d   38
+ data word=    0    0  146  13a  131
+ data word=    0    1  380  37d  37f
+ data word=    0    1  1c4  1cb  1ce
+ data word=    0    0   40   44   3c
+ data word=    0    1   28   3a   36
+ data word=    0    0   22   30   2c
+ data word=    0    1   26   31   2e
+ data word=    0    0   28   33   2f
+ data word=    0    1   26   31   2e
+ data word=    0    1   26   32   2e
+ data word=    0    1   26   32   2e
+ data word=    0    1  3e3  175  21b
+ data word=    1    1  344  300    e
+ data word=    0    0   32   2f   2c
+ data word=    0    0   32   2c   2a
+ data word=    0    0   34   30   2d
+ data word=    0    0  139  13d  120
+ data word=    0    1  389  383  378
+ data word=    0    0  1d4  1c0  1d4
+ data word=    0    0   39   38   3a
+ data word=    0    0   32   30   2b
+ data word=    0    1   2c   22   23
+ data word=    0    1   28   24   24
+ data word=    0    0   2a   27   24
+ data word=    0    0   28   25   22
+ data word=    0    0   2a   25   23
+ data word=    0    1   2c   28   23
+ data word=    0    0   ea  1a4  15b
+ data word=    1    1  344  31f   50
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0  319  189   6a
+ data word=    1    1  344  31f   50
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    1    0  340  352  210
+ data word=    1    1  344  31e    4
+ data word=    0    1   60   60   60
+ data word=    0    1   60   60   60
+ data word=    0    1   60   60   60
+ data word=    0    1   60   60   60
+ data word=    0    1   60   60   60
+ data word=    0    1   60   60   60
+ data word=    0    1   60   60   60
+ data word=    0    1   60   60   60
+ data word=    0    1   60   60   60
+ data word=    0    1   60   60   60
+ data word=    0    1   60   60   60
+ data word=    0    1   60   60   60
+ data word=    0    1   60   60   60
+ data word=    0    1   60   60   60
+ data word=    1    0   3b  241  208
+ data word=    1    1  344  31e    4
+ data word=    0    0   e0   e0   e0
+ data word=    0    0   e0   e0   e0
+ data word=    0    0   e0   e0   e0
+ data word=    0    0   e0   e0   e0
+ data word=    0    0   e0   e0   e0
+ data word=    0    0   e0   e0   e0
+ data word=    0    0   e0   e0   e0
+ data word=    0    0   e0   e0   e0
+ data word=    0    0   e0   e0   e0
+ data word=    0    0   e0   e0   e0
+ data word=    0    0   e0   e0   e0
+ data word=    0    0   e0   e0   e0
+ data word=    0    0   e0   e0   e0
+ data word=    0    0   e0   e0   e0
+ data word=    0    1  12d  12e  2f7
+ data word=    1    0  344  30c  382
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0  259  351  284
+ data word=    1    1  344  31c  382
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    1    0  135   ca  325
+ data word=    1    0  344  31c  148
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    1  254  351  287
+ data word=    1    0  344  31c  148
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    1    1  33c  1f3   cc
+ data word=    1    1  344  31e   45
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    1  3e5  39e  2f8
+ data word=    1    1  344  31e   45
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    1    1  2f1  254  295
+ data word=    1    1  344  31c  251
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    1    0  1ad  3f3   4d
+ data word=    1    1  344  31c  251
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    1    1  26c  2a2  1d5
+ data word=    1    1  344  300    e
+ data word=    0    0   40   42   3f
+ data word=    0    1   40   42   3e
+ data word=    0    1   3e   42   40
+ data word=    0    1   51   54   59
+ data word=    0    1  214  215  256
+ data word=    0    0  36c  358  34b
+ data word=    0    1  125  11f   f6
+ data word=    0    0   43   49   3b
+ data word=    0    1   3f   41   3c
+ data word=    0    0   32   34   34
+ data word=    0    1   39   3d   3b
+ data word=    0    1   37   3b   36
+ data word=    0    0   36   3b   36
+ data word=    0    1   39   3a   36
+ data word=    0    0  3ff  36b  39c
+ data word=    1    1  344  300    e
+ data word=    0    1   33   4a   32
+ data word=    0    0   32   49   32
+ data word=    0    0   32   49   34
+ data word=    0    1   48   60   4e
+ data word=    0    1  21d  242  249
+ data word=    0    1  34a  355  338
+ data word=    0    0  112  10d   f5
+ data word=    0    1   31   4b   31
+ data word=    0    0   2b   4b   29
+ data word=    0    1   27   3e   2a
+ data word=    0    0   2c   42   2d
+ data word=    0    0   2a   40   2a
+ data word=    0    0   2a   40   29
+ data word=    0    1   2a   41   29
+ data word=    1    0  3c3   37  34a
+control word= fffffff0
+no data
+[?38h  ;1l"]    1l"]1l&L   1l"]    1l"]1r"]   1r"]1r#F   1r#F1r#F   1r#F1r#O   1r#O1r#O   1r#O1r#Y   1r#Y2p#Y   2p#Y2p$B   2p$B4v$B   4v$B4v$K   4v$K3b$K   3b$K3b$T   3b$T1s$T   1s$T1s$^   1s$^1r$^   1r$^1r%G   1r%G1q%G   1q%G1q%P   1q%P1q%P   1q%P1q%Z   1q%Z1q%Z   1q%Z1q&C   1q&C1q&C   1q&C1q&L   1q&L1l&L   1l#F    1l#F1e#F   1l&C    1l&C1e&C   1l"]    1l"]5e"]   1l"]    1l"]1l"S   3h"]    3h"]3h"S   5e"]    5e"]5e"S   5`!N    10245e#F    11l'H    1l'H1l*X   1l'H    1l'H1s'H   1s'H1s'R   1s'R1r'R   1r'R1r'[   1r'[1s'[   1s'[1s(D   1s(D2q(D   2q(D2q(M   2q(M4u(M   4u(M4u(W   4u(W3b(W   3b(W3b)@   3b)@1t)@   1t)@1t)I   1t)I1s)I   1s)I1s)S   1s)S1r)S   1r)S1r)\   1r)\1r)\   1r)\1r*E   1r*E1r*E   1r*E1r*O   1r*O1r*O   1r*O1r*X   1r*X1l*X   1l'R    1l'R1e'R   1l*O    1l*O1e*O   1l'H    1l'H5e'H   1l'H    1l'H1l&_   3h'H    3h'H3h&_   5e'H    5e'H5e&_   5`%Z    10245e'R    21l+T    1l+T1l/D   1l+T    1l+T1q+T   1q+T1q+]   1q+]1q+]   1q+]1q,F   1q,F1r,F   1r,F1r,P   1r,P2r,P   2r,P2r,Y   2r,Y4v,Y   4v,Y4v-B   4v-B3a-B   3a-B3a-L   3a-L1s-L   1s-L1s-U   1s-U1q-U   1q-U1q-^   1q-^1p-^   1p-^1p.H   1p.H1p.H   1p.H1p.Q   1p.Q1q.Q   1q.Q1q.Z   1q.Z1p.Z   1p.Z1p/D   1p/D1l/D   1l+]    1l+]1e+]   1l.Z    1l.Z1e.Z   1l+T    1l+T5e+T   1l+T    1l+T1l+K   3h+T    3h+T3h+K   5e+T    5e+T5e+K   5`*E    10245e+]    31l0@    1l0@1l3O   1l0@    1l0@1q0@   1q0@1q0I   1q0I1q0I   1q0I1q0R   1q0R1q0R   1q0R1q0[   1q0[2n0[   2n0[2n1E   2n1E4u1E   4u1E4u1N   4u1N3c1N   3c1N3c1W   3c1W1s1W   1s1W1s2A   1s2A1q2A   1q2A1q2J   1q2J1p2J   1p2J1p2S   1p2S1p2S   1p2S1p2]   1p2]1p2]   1p2]1p3F   1p3F1p3F   1p3F1p3O   1p3O1l3O   1l0I    1l0I1e0I   1l3F    1l3F1e3F   1l0@    1l0@5e0@   1l0@    1l0@1l/V   3h0@    3h0@3h/V   5e0@    5e0@5e/V   5`.Q    10245e0I    41l4K    1l4K1l7[   1l4K    1l4K1q4K   1q4K1q4T   1q4T1q4T   1q4T1q4^   1q4^1r4^   1r4^1r5G   1r5G2q5G   2q5G2q5P   2q5P4v5P   4v5P4v5Z   4v5Z3a5Z   3a5Z3a6C   3a6C1r6C   1r6C1r6L   1r6L1r6L   1r6L1r6V   1r6V1p6V   1p6V1p6_   1p6_1p6_   1p6_1p7H   1p7H1q7H   1q7H1q7R   1q7R1p7R   1p7R1p7[   1p7[1l7[   1l4T    1l4T1e4T   1l7R    1l7R1e7R   1l4K    1l4K5e4K   1l4K    1l4K1l4B   3h4K    3h4K3h4B   5e4K    5e4K5e4B   5`2]    10245e4T    51l8W    1l8W1l<F   1l8W    1l8W1r8W   1r8W1r9@   1r9@1r9@   1r9@1r9I   1r9I1r9I   1r9I1r9S   1r9S2q9S   2q9S2q9\   2q9\4w9\   4w9\4w:E   4w:E3c:E   3c:E3c:O   3c:O1r:O   1r:O1r:X   1r:X1r:X   1r:X1r;A   1r;A1q;A   1q;A1q;K   1q;K1q;K   1q;K1q;T   1q;T1q;T   1q;T1q;]   1q;]1q;]   1q;]1q<F   1q<F1l<F   1l9@    1l9@1e9@   1l;]    1l;]1e;]   1l8W    1l8W5e8W   1l8W    1l8W1l8M   3h8W    3h8W3h8M   5e8W    5e8W5e8M   5`7H    10245e9@    6,c"]    ,c"],c&L   ,c"]    ,c"]-k"]   -k"]-k#F   -k#F-k#F   -k#F-k#O   -k#O-k#O   -k#O-k#Y   -k#Y-k#Y   -k#Y-k$B   -k$B-k$B   -k$B-k$K   -k$K-k$K   -k$K-k$T   -k$T-k$T   -k$T-k$^   -k$^-k$^   -k$^-k%G   -k%G-k%G   -k%G-k%P   -k%P-k%P   -k%P-k%Z   -k%Z-k%Z   -k%Z-k&C   -k&C-k&C   -k&C-k&L   -k&L,c&L   ,c#F    ,c#F+{#F   ,c&C    ,c&C+{&C   ,c"]    ,c"]/|"]   ,c"]    ,c"],c"S   -"]    -"]-"S   /|"]    /|"]/|"S   /w!N    1024/|#F    7,c'H    ,c'H,c*X   ,c'H    ,c'H,'H   ,'H,'R   ,'R,'R   ,'R,'[   ,'[,'[   ,'[,(D   ,(D,(D   ,(D,(M   ,(M,(M   ,(M,(W   ,(W,(W   ,(W,)@   ,)@,)@   ,)@,)I   ,)I,)I   ,)I,)S   ,)S,)S   ,)S,)\   ,)\,)\   ,)\,*E   ,*E,*E   ,*E,*O   ,*O,*O   ,*O,*X   ,*X,c*X   ,c'R    ,c'R+{'R   ,c*O    ,c*O+{*O   ,c'H    ,c'H/|'H   ,c'H    ,c'H,c&_   -'H    -'H-&_   /|'H    /|'H/|&_   /w%Z    1024/|'R    8,c+T    ,c+T,c/D   ,c+T    ,c+T,+T   ,+T,+]   ,+],+]   ,+],,F   ,,F,,F   ,,F,,P   ,,P,,P   ,,P,,Y   ,,Y,,Y   ,,Y,-B   ,-B,-B   ,-B,-L   ,-L,-L   ,-L,-U   ,-U,-U   ,-U,-^   ,-^,-^   ,-^,.H   ,.H,.H   ,.H,.Q   ,.Q,.Q   ,.Q,.Z   ,.Z,.Z   ,.Z,/D   ,/D,c/D   ,c+]    ,c+]+{+]   ,c.Z    ,c.Z+{.Z   ,c+T    ,c+T/|+T   ,c+T    ,c+T,c+K   -+T    -+T-+K   /|+T    /|+T/|+K   /w*E    1024/|+]    9,c0@    ,c0@,c3O   ,c0@    ,c0@,0@   ,0@,0I   ,0I,0I   ,0I,0R   ,0R,0R   ,0R,0[   ,0[,0[   ,0[,1E   ,1E,1E   ,1E,1N   ,1N,1N   ,1N,1W   ,1W,1W   ,1W,2A   ,2A,2A   ,2A,2J   ,2J,2J   ,2J,2S   ,2S,2S   ,2S,2]   ,2],2]   ,2],3F   ,3F,3F   ,3F,3O   ,3O,c3O   ,c0I    ,c0I+{0I   ,c3F    ,c3F+{3F   ,c0@    ,c0@/|0@   ,c0@    ,c0@,c/V   -0@    -0@-/V   /|0@    /|0@/|/V   /w.Q    1024/|0I    10,c4K    ,c4K,c7[   ,c4K    ,c4K/z4K   /z4K/z4T   /z4T/z4T   /z4T/z4^   /z4^/z4^   /z4^/z5G   /z5G/z5G   /z5G/z5P   /z5P/z5P   /z5P/z5Z   /z5Z/z5Z   /z5Z/z6C   /z6C/z6C   /z6C/z6L   /z6L/z6L   /z6L/z6V   /z6V/z6V   /z6V/z6_   /z6_/z6_   /z6_/z7H   /z7H/z7H   /z7H/z7R   /z7R/z7R   /z7R/z7[   /z7[,c7[   ,c4T    ,c4T+{4T   ,c7R    ,c7R+{7R   ,c4K    ,c4K/|4K   ,c4K    ,c4K,c4B   -4K    -4K-4B   /|4K    /|4K/|4B   /w2]    1024/|4T    11,c8W    ,c8W,c<F   ,c8W    ,c8W-c8W   -c8W-c9@   -c9@-c9@   -c9@-c9I   -c9I-c9I   -c9I-c9S   -c9S-c9S   -c9S-c9\   -c9\-c9\   -c9\-c:E   -c:E-c:E   -c:E-c:O   -c:O-c:O   -c:O-c:X   -c:X-c:X   -c:X-c;A   -c;A-c;A   -c;A-c;K   -c;K-c;K   -c;K-c;T   -c;T-c;T   -c;T-c;]   -c;]-c;]   -c;]-c<F   -c<F,c<F   ,c9@    ,c9@+{9@   ,c;]    ,c;]+{;]   ,c8W    ,c8W/|8W   ,c8W    ,c8W,c8M   -8W    -8W-8M   /|8W    /|8W/|8M   /w7H    1024/|9@    12&y"]    &y"]&y&L   &y"]    &y"]'d"]   'd"]'d#F   'd#F'd#F   'd#F'd#O   'd#O'd#O   'd#O'd#Y   'd#Y'd#Y   'd#Y'd$B   'd$B'd$B   'd$B'd$K   'd$K'd$K   'd$K'd$T   'd$T'd$T   'd$T'd$^   'd$^'d$^   'd$^'d%G   'd%G'd%G   'd%G'd%P   'd%P'd%P   'd%P'd%Z   'd%Z'd%Z   'd%Z'd&C   'd&C'd&C   'd&C'd&L   'd&L&y&L   &y#F    &y#F&r#F   &y&C    &y&C&r&C   &y"]    &y"]*r"]   &y"]    &y"]&y"S   (v"]    (v"](v"S   *r"]    *r"]*r"S   *m!N    1024*r#F    13&y'H    &y'H&y*X   &y'H    &y'H'd'H   'd'H'd'R   'd'R'd'R   'd'R'd'[   'd'['d'[   'd'['d(D   'd(D'd(D   'd(D'd(M   'd(M'd(M   'd(M'd(W   'd(W'd(W   'd(W'd)@   'd)@'d)@   'd)@'d)I   'd)I'd)I   'd)I'd)S   'd)S'd)S   'd)S'd)\   'd)\'d)\   'd)\'d*E   'd*E'd*E   'd*E'd*O   'd*O'd*O   'd*O'd*X   'd*X&y*X   &y'R    &y'R&r'R   &y*O    &y*O&r*O   &y'H    &y'H*r'H   &y'H    &y'H&y&_   (v'H    (v'H(v&_   *r'H    *r'H*r&_   *m%Z    1024*r'R    14&y+T    &y+T&y/D   &y+T    &y+T'd+T   'd+T'd+]   'd+]'d+]   'd+]'d,F   'd,F'd,F   'd,F'd,P   'd,P'd,P   'd,P'd,Y   'd,Y'd,Y   'd,Y'd-B   'd-B'd-B   'd-B'd-L   'd-L'd-L   'd-L'd-U   'd-U'd-U   'd-U'd-^   'd-^'d-^   'd-^'d.H   'd.H'd.H   'd.H'd.Q   'd.Q'd.Q   'd.Q'd.Z   'd.Z'd.Z   'd.Z'd/D   'd/D&y/D   &y+]    &y+]&r+]   &y.Z    &y.Z&r.Z   &y+T    &y+T*r+T   &y+T    &y+T&y+K   (v+T    (v+T(v+K   *r+T    *r+T*r+K   *m*E    1024*r+]    15&y0@    &y0@&y3O   &y0@    &y0@'t0@   't0@'t0I   't0I't0I   't0I't0R   't0R't0R   't0R't0[   't0['t0[   't0['t1E   't1E't1E   't1E't1N   't1N't1N   't1N't1W   't1W't1W   't1W't2A   't2A't2A   't2A't2J   't2J't2J   't2J't2S   't2S't2S   't2S't2]   't2]'t2]   't2]'t3F   't3F't3F   't3F't3O   't3O&y3O   &y0I    &y0I&r0I   &y3F    &y3F&r3F   &y0@    &y0@*r0@   &y0@    &y0@&y/V   (v0@    (v0@(v/V   *r0@    *r0@*r/V   *m.Q    1024*r0I    16&y4K    &y4K&y7[   &y4K    &y4K't4K   't4K't4T   't4T't4T   't4T't4^   't4^'t4^   't4^'t5G   't5G't5G   't5G't5P   't5P't5P   't5P't5Z   't5Z't5Z   't5Z't6C   't6C't6C   't6C't6L   't6L't6L   't6L't6V   't6V't6V   't6V't6_   't6_'t6_   't6_'t7H   't7H't7H   't7H't7R   't7R't7R   't7R't7[   't7[&y7[   &y4T    &y4T&r4T   &y7R    &y7R&r7R   &y4K    &y4K*r4K   &y4K    &y4K&y4B   (v4K    (v4K(v4B   *r4K    *r4K*r4B   *m2]    1024*r4T    17&y8W    &y8W&y<F   &y8W    &y8W't8W   't8W't9@   't9@'t9@   't9@'t9I   't9I't9I   't9I't9S   't9S't9S   't9S't9\   't9\'t9\   't9\'t:E   't:E't:E   't:E't:O   't:O't:O   't:O't:X   't:X't:X   't:X't;A   't;A't;A   't;A't;K   't;K't;K   't;K't;T   't;T't;T   't;T't;]   't;]'t;]   't;]'t<F   't<F&y<F   &y9@    &y9@&r9@   &y;]    &y;]&r;]   &y8W    &y8W*r8W   &y8W    &y8W&y8M   (v8W    (v8W(v8M   *r8W    *r8W*r8M   *m7H    1024*r9@    18!p"]    !p"]!p&L   !p"]    !p"]!t"]   !t"]!t#F   !t#F!t#F   !t#F!t#O   !t#O!t#O   !t#O!t#Y   !t#Y!t#Y   !t#Y!t$B   !t$B!t$B   !t$B!t$K   !t$K!t$K   !t$K!t$T   !t$T!t$T   !t$T!t$^   !t$^!t$^   !t$^!t%G   !t%G!t%G   !t%G!t%P   !t%P!t%P   !t%P!t%Z   !t%Z!t%Z   !t%Z!t&C   !t&C!t&C   !t&C!t&L   !t&L!p&L   !p#F    !p#F!i#F   !p&C    !p&C!i&C   !p"]    !p"]%i"]   !p"]    !p"]!p"S   #l"]    #l"]#l"S   %i"]    %i"]%i"S   %d!N    1024%i#F    19!p'H    !p'H!p*X   !p'H    !p'H!t'H   !t'H!t'R   !t'R!t'R   !t'R!t'[   !t'[!t'[   !t'[!t(D   !t(D!t(D   !t(D!t(M   !t(M!t(M   !t(M!t(W   !t(W!t(W   !t(W!t)@   !t)@!t)@   !t)@!t)I   !t)I!t)I   !t)I!t)S   !t)S!t)S   !t)S!t)\   !t)\!t)\   !t)\!t*E   !t*E!t*E   !t*E!t*O   !t*O!t*O   !t*O!t*X   !t*X!p*X   !p'R    !p'R!i'R   !p*O    !p*O!i*O   !p'H    !p'H%i'H   !p'H    !p'H!p&_   #l'H    #l'H#l&_   %i'H    %i'H%i&_   %d%Z    1024%i'R    20!p+T    !p+T!p/D   !p+T    !p+T!t+T   !t+T!t+]   !t+]!t+]   !t+]!t,F   !t,F!t,F   !t,F!t,P   !t,P!t,P   !t,P!t,Y   !t,Y!t,Y   !t,Y!t-B   !t-B!t-B   !t-B!t-L   !t-L!t-L   !t-L!t-U   !t-U!t-U   !t-U!t-^   !t-^!t-^   !t-^!t.H   !t.H!t.H   !t.H!t.Q   !t.Q!t.Q   !t.Q!t.Z   !t.Z!t.Z   !t.Z!t/D   !t/D!p/D   !p+]    !p+]!i+]   !p.Z    !p.Z!i.Z   !p+T    !p+T%i+T   !p+T    !p+T!p+K   #l+T    #l+T#l+K   %i+T    %i+T%i+K   %d*E    1024%i+]    21!p0@    !p0@!p3O   !p0@    !p0@!t0@   !t0@!t0I   !t0I!t0I   !t0I!t0R   !t0R!t0R   !t0R!t0[   !t0[!t0[   !t0[!t1E   !t1E!t1E   !t1E!t1N   !t1N!t1N   !t1N!t1W   !t1W!t1W   !t1W!t2A   !t2A!t2A   !t2A!t2J   !t2J!t2J   !t2J!t2S   !t2S!t2S   !t2S!t2]   !t2]!t2]   !t2]!t3F   !t3F!t3F   !t3F!t3O   !t3O!p3O   !p0I    !p0I!i0I   !p3F    !p3F!i3F   !p0@    !p0@%i0@   !p0@    !p0@!p/V   #l0@    #l0@#l/V   %i0@    %i0@%i/V   %d.Q    1024%i0I    22!p4K    !p4K!p7[   !p4K    !p4K!t4K   !t4K!t4T   !t4T!t4T   !t4T!t4^   !t4^!t4^   !t4^!t5G   !t5G!t5G   !t5G!t5P   !t5P!t5P   !t5P!t5Z   !t5Z!t5Z   !t5Z!t6C   !t6C!t6C   !t6C!t6L   !t6L!t6L   !t6L!t6V   !t6V!t6V   !t6V!t6_   !t6_!t6_   !t6_!t7H   !t7H!t7H   !t7H!t7R   !t7R!t7R   !t7R!t7[   !t7[!p7[   !p4T    !p4T!i4T   !p7R    !p7R!i7R   !p4K    !p4K%i4K   !p4K    !p4K!p4B   #l4K    #l4K#l4B   %i4K    %i4K%i4B   %d2]    1024%i4T    23!p8W    !p8W!p<F   !p8W    !p8W!w8W   !w8W!w9@   !w9@!w9@   !w9@!w9I   !w9I!w9I   !w9I!w9S   !w9S!w9S   !w9S!w9\   !w9\!w9\   !w9\!w:E   !w:E!w:E   !w:E!w:O   !w:O!w:O   !w:O!w:X   !w:X!w:X   !w:X!w;A   !w;A!w;A   !w;A!w;K   !w;K!w;K   !w;K!w;T   !w;T!w;T   !w;T!w;]   !w;]!w;]   !w;]!w<F   !w<F!p<F   !p9@    !p9@!i9@   !p;]    !p;]!i;]   !p8W    !p8W%i8W   !p8W    !p8W!p8M   #l8W    #l8W#l8M   %i8W    %i8W%i8M   %d7H    1024%i9@    2486u"]    LOW GAIN TUBES 1-24 b D     <cr> for next plot2[?38h  ;1l"]    1l"]1l&L   1l"]    1l"]1r"]   1r"]1r#F   1r#F1r#F   1r#F1r#O   1r#O1r#O   1r#O1r#Y   1r#Y1r#Y   1r#Y1r$B   1r$B1r$B   1r$B1r$K   1r$K1r$K   1r$K1r$T   1r$T1r$T   1r$T1r$^   1r$^1r$^   1r$^1r%G   1r%G1r%G   1r%G1r%P   1r%P1r%P   1r%P1r%Z   1r%Z1r%Z   1r%Z1r&C   1r&C1r&C   1r&C1r&L   1r&L1l&L   1l#F    1l#F1e#F   1l&C    1l&C1e&C   1l"]    1l"]5e"]   1l"]    1l"]1l"S   3h"]    3h"]3h"S   5e"]    5e"]5e"S   5`!N    10245e#F    251l'H    1l'H1l*X   1l'H    1l'H1r'H   1r'H1r'R   1r'R1r'R   1r'R1r'[   1r'[1r'[   1r'[1r(D   1r(D1r(D   1r(D1r(M   1r(M1r(M   1r(M1r(W   1r(W1r(W   1r(W1r)@   1r)@1r)@   1r)@1r)I   1r)I1r)I   1r)I1r)S   1r)S1r)S   1r)S1r)\   1r)\1r)\   1r)\1r*E   1r*E1r*E   1r*E1r*O   1r*O1r*O   1r*O1r*X   1r*X1l*X   1l'R    1l'R1e'R   1l*O    1l*O1e*O   1l'H    1l'H5e'H   1l'H    1l'H1l&_   3h'H    3h'H3h&_   5e'H    5e'H5e&_   5`%Z    10245e'R    261l+T    1l+T1l/D   1l+T    1l+T1r+T   1r+T1r+]   1r+]1r+]   1r+]1r,F   1r,F1r,F   1r,F1r,P   1r,P1r,P   1r,P1r,Y   1r,Y1r,Y   1r,Y1r-B   1r-B1r-B   1r-B1r-L   1r-L1r-L   1r-L1r-U   1r-U1r-U   1r-U1r-^   1r-^1r-^   1r-^1r.H   1r.H1r.H   1r.H1r.Q   1r.Q1r.Q   1r.Q1r.Z   1r.Z1r.Z   1r.Z1r/D   1r/D1l/D   1l+]    1l+]1e+]   1l.Z    1l.Z1e.Z   1l+T    1l+T5e+T   1l+T    1l+T1l+K   3h+T    3h+T3h+K   5e+T    5e+T5e+K   5`*E    10245e+]    271l0@    1l0@1l3O   1l0@    1l0@1q0@   1q0@1q0I   1q0I1q0I   1q0I1q0R   1q0R1q0R   1q0R1q0[   1q0[1q0[   1q0[1q1E   1q1E1q1E   1q1E1q1N   1q1N1q1N   1q1N1q1W   1q1W1q1W   1q1W1q2A   1q2A1q2A   1q2A1q2J   1q2J1q2J   1q2J1q2S   1q2S1q2S   1q2S1q2]   1q2]1q2]   1q2]1q3F   1q3F1q3F   1q3F1q3O   1q3O1l3O   1l0I    1l0I1e0I   1l3F    1l3F1e3F   1l0@    1l0@5e0@   1l0@    1l0@1l/V   3h0@    3h0@3h/V   5e0@    5e0@5e/V   5`.Q    10245e0I    281l4K    1l4K1l7[   1l4K    1l4K1r4K   1r4K1r4T   1r4T1r4T   1r4T1r4^   1r4^1r4^   1r4^1r5G   1r5G1r5G   1r5G1r5P   1r5P1r5P   1r5P1r5Z   1r5Z1r5Z   1r5Z1r6C   1r6C1r6C   1r6C1r6L   1r6L1r6L   1r6L1r6V   1r6V1r6V   1r6V1r6_   1r6_1r6_   1r6_1r7H   1r7H1r7H   1r7H1r7R   1r7R1r7R   1r7R1r7[   1r7[1l7[   1l4T    1l4T1e4T   1l7R    1l7R1e7R   1l4K    1l4K5e4K   1l4K    1l4K1l4B   3h4K    3h4K3h4B   5e4K    5e4K5e4B   5`2]    10245e4T    291l8W    1l8W1l<F   1l8W    1l8W1q8W   1q8W1q9@   1q9@1q9@   1q9@1q9I   1q9I1q9I   1q9I1q9S   1q9S1q9S   1q9S1q9\   1q9\1q9\   1q9\1q:E   1q:E1q:E   1q:E1q:O   1q:O1q:O   1q:O1q:X   1q:X1q:X   1q:X1q;A   1q;A1q;A   1q;A1q;K   1q;K1q;K   1q;K1q;T   1q;T1q;T   1q;T1q;]   1q;]1q;]   1q;]1q<F   1q<F1l<F   1l9@    1l9@1e9@   1l;]    1l;]1e;]   1l8W    1l8W5e8W   1l8W    1l8W1l8M   3h8W    3h8W3h8M   5e8W    5e8W5e8M   5`7H    10245e9@    30,c"]    ,c"],c&L   ,c"]    ,c"],h"]   ,h"],h#F   ,h#F,h#F   ,h#F,h#O   ,h#O,h#O   ,h#O,h#Y   ,h#Y,h#Y   ,h#Y,h$B   ,h$B,h$B   ,h$B,h$K   ,h$K,h$K   ,h$K,h$T   ,h$T,h$T   ,h$T,h$^   ,h$^,h$^   ,h$^,h%G   ,h%G,h%G   ,h%G,h%P   ,h%P,h%P   ,h%P,h%Z   ,h%Z,h%Z   ,h%Z,h&C   ,h&C,h&C   ,h&C,h&L   ,h&L,c&L   ,c#F    ,c#F+{#F   ,c&C    ,c&C+{&C   ,c"]    ,c"]/|"]   ,c"]    ,c"],c"S   -"]    -"]-"S   /|"]    /|"]/|"S   /w!N    1024/|#F    31,c'H    ,c'H,c*X   ,c'H    ,c'H,j'H   ,j'H,j'R   ,j'R,j'R   ,j'R,j'[   ,j'[,j'[   ,j'[,j(D   ,j(D,j(D   ,j(D,j(M   ,j(M,j(M   ,j(M,j(W   ,j(W,j(W   ,j(W,j)@   ,j)@,j)@   ,j)@,j)I   ,j)I,j)I   ,j)I,j)S   ,j)S,j)S   ,j)S,j)\   ,j)\,j)\   ,j)\,j*E   ,j*E,j*E   ,j*E,j*O   ,j*O,j*O   ,j*O,j*X   ,j*X,c*X   ,c'R    ,c'R+{'R   ,c*O    ,c*O+{*O   ,c'H    ,c'H/|'H   ,c'H    ,c'H,c&_   -'H    -'H-&_   /|'H    /|'H/|&_   /w%Z    1024/|'R    32,c+T    ,c+T,c/D   ,c+T    ,c+T,k+T   ,k+T,k+]   ,k+],k+]   ,k+],k,F   ,k,F,k,F   ,k,F,k,P   ,k,P,k,P   ,k,P,k,Y   ,k,Y,k,Y   ,k,Y,k-B   ,k-B,k-B   ,k-B,k-L   ,k-L,k-L   ,k-L,k-U   ,k-U,k-U   ,k-U,k-^   ,k-^,k-^   ,k-^,k.H   ,k.H,k.H   ,k.H,k.Q   ,k.Q,k.Q   ,k.Q,k.Z   ,k.Z,k.Z   ,k.Z,k/D   ,k/D,c/D   ,c+]    ,c+]+{+]   ,c.Z    ,c.Z+{.Z   ,c+T    ,c+T/|+T   ,c+T    ,c+T,c+K   -+T    -+T-+K   /|+T    /|+T/|+K   /w*E    1024/|+]    33,c0@    ,c0@,c3O   ,c0@    ,c0@,h0@   ,h0@,h0I   ,h0I,h0I   ,h0I,h0R   ,h0R,h0R   ,h0R,h0[   ,h0[,h0[   ,h0[,h1E   ,h1E,h1E   ,h1E,h1N   ,h1N,h1N   ,h1N,h1W   ,h1W,h1W   ,h1W,h2A   ,h2A,h2A   ,h2A,h2J   ,h2J,h2J   ,h2J,h2S   ,h2S,h2S   ,h2S,h2]   ,h2],h2]   ,h2],h3F   ,h3F,h3F   ,h3F,h3O   ,h3O,c3O   ,c0I    ,c0I+{0I   ,c3F    ,c3F+{3F   ,c0@    ,c0@/|0@   ,c0@    ,c0@,c/V   -0@    -0@-/V   /|0@    /|0@/|/V   /w.Q    1024/|0I    34,c4K    ,c4K,c7[   ,c4K    ,c4K,g4K   ,g4K,g4T   ,g4T,g4T   ,g4T,g4^   ,g4^,g4^   ,g4^,g5G   ,g5G,g5G   ,g5G,g5P   ,g5P,g5P   ,g5P,g5Z   ,g5Z,g5Z   ,g5Z,g6C   ,g6C,g6C   ,g6C,g6L   ,g6L,g6L   ,g6L,g6V   ,g6V,g6V   ,g6V,g6_   ,g6_,g6_   ,g6_,g7H   ,g7H,g7H   ,g7H,g7R   ,g7R,g7R   ,g7R,g7[   ,g7[,c7[   ,c4T    ,c4T+{4T   ,c7R    ,c7R+{7R   ,c4K    ,c4K/|4K   ,c4K    ,c4K,c4B   -4K    -4K-4B   /|4K    /|4K/|4B   /w2]    1024/|4T    35,c8W    ,c8W,c<F   ,c8W    ,c8W,g8W   ,g8W,g9@   ,g9@,g9@   ,g9@,g9I   ,g9I,g9I   ,g9I,g9S   ,g9S,g9S   ,g9S,g9\   ,g9\,g9\   ,g9\,g:E   ,g:E,g:E   ,g:E,g:O   ,g:O,g:O   ,g:O,g:X   ,g:X,g:X   ,g:X,g;A   ,g;A,g;A   ,g;A,g;K   ,g;K,g;K   ,g;K,g;T   ,g;T,g;T   ,g;T,g;]   ,g;],g;]   ,g;],g<F   ,g<F,c<F   ,c9@    ,c9@+{9@   ,c;]    ,c;]+{;]   ,c8W    ,c8W/|8W   ,c8W    ,c8W,c8M   -8W    -8W-8M   /|8W    /|8W/|8M   /w7H    1024/|9@    36&y"]    &y"]&y&L   &y"]    &y"]&"]   &"]&#F   &#F&#F   &#F&#O   &#O&#O   &#O&#Y   &#Y&#Y   &#Y&$B   &$B&$B   &$B&$K   &$K&$K   &$K&$T   &$T&$T   &$T&$^   &$^&$^   &$^&%G   &%G&%G   &%G&%P   &%P&%P   &%P&%Z   &%Z&%Z   &%Z&&C   &&C&&C   &&C&&L   &&L&y&L   &y#F    &y#F&r#F   &y&C    &y&C&r&C   &y"]    &y"]*r"]   &y"]    &y"]&y"S   (v"]    (v"](v"S   *r"]    *r"]*r"S   *m!N    1024*r#F    37&y'H    &y'H&y*X   &y'H    &y'H&'H   &'H&'R   &'R&'R   &'R&'[   &'[&'[   &'[&(D   &(D&(D   &(D&(M   &(M&(M   &(M&(W   &(W&(W   &(W&)@   &)@&)@   &)@&)I   &)I&)I   &)I&)S   &)S&)S   &)S&)\   &)\&)\   &)\&*E   &*E&*E   &*E&*O   &*O&*O   &*O&*X   &*X&y*X   &y'R    &y'R&r'R   &y*O    &y*O&r*O   &y'H    &y'H*r'H   &y'H    &y'H&y&_   (v'H    (v'H(v&_   *r'H    *r'H*r&_   *m%Z    1024*r'R    38&y+T    &y+T&y/D   &y+T    &y+T'`+T   '`+T'`+]   '`+]'`+]   '`+]'`,F   '`,F'`,F   '`,F'`,P   '`,P'`,P   '`,P'`,Y   '`,Y'`,Y   '`,Y'`-B   '`-B'`-B   '`-B'`-L   '`-L'`-L   '`-L'`-U   '`-U'`-U   '`-U'`-^   '`-^'`-^   '`-^'`.H   '`.H'`.H   '`.H'`.Q   '`.Q'`.Q   '`.Q'`.Z   '`.Z'`.Z   '`.Z'`/D   '`/D&y/D   &y+]    &y+]&r+]   &y.Z    &y.Z&r.Z   &y+T    &y+T*r+T   &y+T    &y+T&y+K   (v+T    (v+T(v+K   *r+T    *r+T*r+K   *m*E    1024*r+]    39&y0@    &y0@&y3O   &y0@    &y0@'a0@   'a0@'a0I   'a0I'a0I   'a0I'a0R   'a0R'a0R   'a0R'a0[   'a0['a0[   'a0['a1E   'a1E'a1E   'a1E'a1N   'a1N'a1N   'a1N'a1W   'a1W'a1W   'a1W'a2A   'a2A'a2A   'a2A'a2J   'a2J'a2J   'a2J'a2S   'a2S'a2S   'a2S'a2]   'a2]'a2]   'a2]'a3F   'a3F'a3F   'a3F'a3O   'a3O&y3O   &y0I    &y0I&r0I   &y3F    &y3F&r3F   &y0@    &y0@*r0@   &y0@    &y0@&y/V   (v0@    (v0@(v/V   *r0@    *r0@*r/V   *m.Q    1024*r0I    40&y4K    &y4K&y7[   &y4K    &y4K'`4K   '`4K'`4T   '`4T'`4T   '`4T'`4^   '`4^'`4^   '`4^'`5G   '`5G'`5G   '`5G'`5P   '`5P'`5P   '`5P'`5Z   '`5Z'`5Z   '`5Z'`6C   '`6C'`6C   '`6C'`6L   '`6L'`6L   '`6L'`6V   '`6V'`6V   '`6V'`6_   '`6_'`6_   '`6_'`7H   '`7H'`7H   '`7H'`7R   '`7R'`7R   '`7R'`7[   '`7[&y7[   &y4T    &y4T&r4T   &y7R    &y7R&r7R   &y4K    &y4K*r4K   &y4K    &y4K&y4B   (v4K    (v4K(v4B   *r4K    *r4K*r4B   *m2]    1024*r4T    41&y8W    &y8W&y<F   &y8W    &y8W'`8W   '`8W'`9@   '`9@'`9@   '`9@'`9I   '`9I'`9I   '`9I'`9S   '`9S'`9S   '`9S'`9\   '`9\'`9\   '`9\'`:E   '`:E'`:E   '`:E'`:O   '`:O'`:O   '`:O'`:X   '`:X'`:X   '`:X'`;A   '`;A'`;A   '`;A'`;K   '`;K'`;K   '`;K'`;T   '`;T'`;T   '`;T'`;]   '`;]'`;]   '`;]'`<F   '`<F&y<F   &y9@    &y9@&r9@   &y;]    &y;]&r;]   &y8W    &y8W*r8W   &y8W    &y8W&y8M   (v8W    (v8W(v8M   *r8W    *r8W*r8M   *m7H    1024*r9@    42!p"]    !p"]!p&L   !p"]    !p"]!w"]   !w"]!w#F   !w#F!w#F   !w#F!w#O   !w#O!w#O   !w#O!w#Y   !w#Y!z#Y   !z#Y!z$B   !z$B#v$B   #v$B#v$K   #v$K$s$K   $s$K$s$T   $s$T"m$T   "m$T"m$^   "m$^!w$^   !w$^!w%G   !w%G!w%G   !w%G!w%P   !w%P!v%P   !v%P!v%Z   !v%Z!w%Z   !w%Z!w&C   !w&C!v&C   !v&C!v&L   !v&L!p&L   !p#F    !p#F!i#F   !p&C    !p&C!i&C   !p"]    !p"]%i"]   !p"]    !p"]!p"S   #l"]    #l"]#l"S   %i"]    %i"]%i"S   %d!N    1024%i#F    43!p'H    !p'H!p*X   !p'H    !p'H!x'H   !x'H!x'R   !x'R!x'R   !x'R!x'[   !x'[!x'[   !x'[!x(D   !x(D!z(D   !z(D!z(M   !z(M#o(M   #o(M#o(W   #o(W$u(W   $u(W$u)@   $u)@"r)@   "r)@"r)I   "r)I!x)I   !x)I!x)S   !x)S!w)S   !w)S!w)\   !w)\!v)\   !v)\!v*E   !v*E!w*E   !w*E!w*O   !w*O!w*O   !w*O!w*X   !w*X!p*X   !p'R    !p'R!i'R   !p*O    !p*O!i*O   !p'H    !p'H%i'H   !p'H    !p'H!p&_   #l'H    #l'H#l&_   %i'H    %i'H%i&_   %d%Z    1024%i'R    44!p+T    !p+T!p/D   !p+T    !p+T!w+T   !w+T!w+]   !w+]!w+]   !w+]!w,F   !w,F!w,F   !w,F!w,P   !w,P!y,P   !y,P!y,Y   !y,Y#o,Y   #o,Y#o-B   #o-B$w-B   $w-B$w-L   $w-L"r-L   "r-L"r-U   "r-U!x-U   !x-U!x-^   !x-^!w-^   !w-^!w.H   !w.H!v.H   !v.H!v.Q   !v.Q!v.Q   !v.Q!v.Z   !v.Z!v.Z   !v.Z!v/D   !v/D!p/D   !p+]    !p+]!i+]   !p.Z    !p.Z!i.Z   !p+T    !p+T%i+T   !p+T    !p+T!p+K   #l+T    #l+T#l+K   %i+T    %i+T%i+K   %d*E    1024%i+]    45!p0@    !p0@!p3O   !p0@    !p0@!v0@   !v0@!v0I   !v0I!v0I   !v0I!v0R   !v0R!v0R   !v0R!v0[   !v0[!y0[   !y0[!y1E   !y1E#u1E   #u1E#u1N   #u1N$q1N   $q1N$q1W   $q1W"m1W   "m1W"m2A   "m2A!u2A   !u2A!u2J   !u2J!u2J   !u2J!u2S   !u2S!u2S   !u2S!u2]   !u2]!u2]   !u2]!u3F   !u3F!u3F   !u3F!u3O   !u3O!p3O   !p0I    !p0I!i0I   !p3F    !p3F!i3F   !p0@    !p0@%i0@   !p0@    !p0@!p/V   #l0@    #l0@#l/V   %i0@    %i0@%i/V   %d.Q    1024%i0I    46!p4K    !p4K!p7[   !p4K    !p4K!y4K   !y4K!y4T   !y4T!x4T   !x4T!x4^   !x4^!x4^   !x4^!x5G   !x5G!{5G   !{5G!{5P   !{5P#t5P   #t5P#t5Z   #t5Z$u5Z   $u5Z$u6C   $u6C"p6C   "p6C"p6L   "p6L!y6L   !y6L!y6V   !y6V!y6V   !y6V!y6_   !y6_!w6_   !w6_!w7H   !w7H!x7H   !x7H!x7R   !x7R!w7R   !w7R!w7[   !w7[!p7[   !p4T    !p4T!i4T   !p7R    !p7R!i7R   !p4K    !p4K%i4K   !p4K    !p4K!p4B   #l4K    #l4K#l4B   %i4K    %i4K%i4B   %d2]    1024%i4T    47!p8W    !p8W!p<F   !p8W    !p8W!v8W   !v8W!v9@   !v9@!v9@   !v9@!v9I   !v9I!v9I   !v9I!v9S   !v9S!x9S   !x9S!x9\   !x9\#p9\   #p9\#p:E   #p:E$s:E   $s:E$s:O   $s:O"p:O   "p:O"p:X   "p:X!u:X   !u:X!u;A   !u;A!u;A   !u;A!u;K   !u;K!t;K   !t;K!t;T   !t;T!u;T   !u;T!u;]   !u;]!u;]   !u;]!u<F   !u<F!p<F   !p9@    !p9@!i9@   !p;]    !p;]!i;]   !p8W    !p8W%i8W   !p8W    !p8W!p8M   #l8W    #l8W#l8M   %i8W    %i8W%i8M   %d7H    1024%i9@    4886u"]    LOW GAIN TUBES 25-48 b D     <cr> for next plot2control word= 11111110
+ data word=    1    0  345  200    f
+ data word=    0    1   2f   39   37
+ data word=    0    0   2e   37   35
+ data word=    0    1   31   3c   38
+ data word=    0    1  146  139  130
+ data word=    0    0  380  37f  37f
+ data word=    0    1  1c5  1cc  1d0
+ data word=    0    0   3f   41   3b
+ data word=    0    1   27   3a   35
+ data word=    0    0   21   2f   2b
+ data word=    0    0   24   32   2d
+ data word=    0    1   27   34   2f
+ data word=    0    0   26   30   2d
+ data word=    0    0   26   30   2e
+ data word=    0    0   27   31   2e
+ data word=    0    0  3c4   9b  1ac
+ data word=    1    0  345  200    f
+ data word=    0    1   31   2f   2b
+ data word=    0    1   30   2c   29
+ data word=    0    1   33   30   2d
+ data word=    0    1  137  13d  120
+ data word=    0    0  389  383  379
+ data word=    0    1  1d4  1c0  1d5
+ data word=    0    0   39   37   39
+ data word=    0    1   32   30   2a
+ data word=    0    1   2b   21   22
+ data word=    0    0   26   23   23
+ data word=    0    1   28   26   25
+ data word=    0    0   28   25   22
+ data word=    0    0   2a   25   23
+ data word=    0    1   2a   25   22
+ data word=    1    1  3ac  107  1bd
+ data word=    1    1  345  21d  2b2
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0   f3   f3  153
+ data word=    0    0  2eb  1c8   e2
+ data word=    1    1  345  21d  2b2
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    0    1  113  3f3   f3
+ data word=    1    0  2b2  313  298
+ data word=    1    0  345  21c  266
+ data word=    0    1   39   38   29
+ data word=    0    1   39   38   29
+ data word=    0    1   39   38   29
+ data word=    0    1   39   38   29
+ data word=    0    1   39   38   29
+ data word=    0    1   39   38   29
+ data word=    0    1   39   38   29
+ data word=    0    1   39   38   29
+ data word=    0    1   39   38   29
+ data word=    0    1   39   38   29
+ data word=    0    1   39   38   29
+ data word=    0    1   39   38   29
+ data word=    0    1   39   38   29
+ data word=    0    1   39   38   29
+ data word=    0    1  311   a6  18a
+ data word=    1    0  345  21c  266
+ data word=    0    0   31   32   31
+ data word=    0    0   31   32   31
+ data word=    0    0   31   32   31
+ data word=    0    0   31   32   31
+ data word=    0    0   31   32   31
+ data word=    0    0   31   32   31
+ data word=    0    0   31   32   31
+ data word=    0    0   31   32   31
+ data word=    0    0   31   32   31
+ data word=    0    0   31   32   31
+ data word=    0    0   31   32   31
+ data word=    0    0   31   32   31
+ data word=    0    0   31   32   31
+ data word=    0    0   31   32   31
+ data word=    1    0  2db   8e  326
+ data word=    1    1  345  20f  1e4
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   20   20   20
+ data word=    0    0   1e  310  208
+ data word=    1    0  345  21f  1e4
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    0    0   40   20   20
+ data word=    1    0  372   8b  3a9
+ data word=    1    0  345  21e  3aa
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    0   32   30   36
+ data word=    0    1  3a6  310  20f
+ data word=    1    0  345  21e  3aa
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    0    1   2f   38   2e
+ data word=    1    1  2ce  1b2   44
+ data word=    1    1  345  21c  2a7
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    0   45   3c   33
+ data word=    0    1  217  3df  270
+ data word=    1    1  345  21c  2a7
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    0    0   2a   26   31
+ data word=    1    1  303  215  21d
+ data word=    1    0  345  21f   b3
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    0    1   3c   33   30
+ data word=    1    0   4a  3b2   d0
+ data word=    1    0  345  21f   b3
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    0    1   36   36   41
+ data word=    1    1  38b  2e3  148
+ data word=    1    0  345  200    f
+ data word=    0    1   40   42   3e
+ data word=    0    0   41   43   3f
+ data word=    0    1   3e   41   40
+ data word=    0    0   4f   51   57
+ data word=    0    0  208  20a  249
+ data word=    0    1  371  35e  351
+ data word=    0    1  12e  126   fe
+ data word=    0    0   43   48   3a
+ data word=    0    1   3f   42   3a
+ data word=    0    0   33   33   34
+ data word=    0    0   38   3d   3b
+ data word=    0    1   36   3b   38
+ data word=    0    0   37   39   35
+ data word=    0    1   39   39   36
+ data word=    0    1   3e  18a  1e7
+ data word=    1    0  345  200    f
+ data word=    0    1   31   49   33
+ data word=    0    0   32   4a   32
+ data word=    0    0   31   49   32
+ data word=    0    0   47   5e   4b
+ data word=    0    0  212  236  23f
+ data word=    0    1  350  35a  33f
+ data word=    0    0  11a  115   fd
+ data word=    0    1   31   4b   32
+ data word=    0    1   2c   4b   29
+ data word=    0    0   26   3e   2a
+ data word=    0    1   2c   40   2d
+ data word=    0    1   2b   40   2a
+ data word=    0    0   28   3f   29
+ data word=    0    0   29   41   28
+ data word=    0    1  21e  24c   8a
+control word= fffffff0
+no data
+[?38h  ;1l"]    1l"]1l&L   1l"]    1l"]1r"]   1r"]1r#F   1r#F1r#F   1r#F1r#O   1r#O1r#O   1r#O1r#Y   1r#Y2p#Y   2p#Y2p$B   2p$B4v$B   4v$B4v$K   4v$K3c$K   3c$K3c$T   3c$T1s$T   1s$T1s$^   1s$^1r$^   1r$^1r%G   1r%G1q%G   1q%G1q%P   1q%P1q%P   1q%P1q%Z   1q%Z1q%Z   1q%Z1q&C   1q&C1q&C   1q&C1q&L   1q&L1l&L   1l#F    1l#F1e#F   1l&C    1l&C1e&C   1l"]    1l"]5e"]   1l"]    1l"]1l"S   3h"]    3h"]3h"S   5e"]    5e"]5e"S   5`!N    10245e#F    11l'H    1l'H1l*X   1l'H    1l'H1r'H   1r'H1r'R   1r'R1r'R   1r'R1r'[   1r'[1s'[   1s'[1s(D   1s(D2q(D   2q(D2q(M   2q(M4v(M   4v(M4v(W   4v(W3b(W   3b(W3b)@   3b)@1s)@   1s)@1s)I   1s)I1s)I   1s)I1s)S   1s)S1q)S   1q)S1q)\   1q)\1r)\   1r)\1r*E   1r*E1r*E   1r*E1r*O   1r*O1r*O   1r*O1r*X   1r*X1l*X   1l'R    1l'R1e'R   1l*O    1l*O1e*O   1l'H    1l'H5e'H   1l'H    1l'H1l&_   3h'H    3h'H3h&_   5e'H    5e'H5e&_   5`%Z    10245e'R    21l+T    1l+T1l/D   1l+T    1l+T1q+T   1q+T1q+]   1q+]1q+]   1q+]1q,F   1q,F1r,F   1r,F1r,P   1r,P2r,P   2r,P2r,Y   2r,Y4v,Y   4v,Y4v-B   4v-B3a-B   3a-B3a-L   3a-L1s-L   1s-L1s-U   1s-U1q-U   1q-U1q-^   1q-^1p-^   1p-^1p.H   1p.H1p.H   1p.H1p.Q   1p.Q1q.Q   1q.Q1q.Z   1q.Z1p.Z   1p.Z1p/D   1p/D1l/D   1l+]    1l+]1e+]   1l.Z    1l.Z1e.Z   1l+T    1l+T5e+T   1l+T    1l+T1l+K   3h+T    3h+T3h+K   5e+T    5e+T5e+K   5`*E    10245e+]    31l0@    1l0@1l3O   1l0@    1l0@1q0@   1q0@1q0I   1q0I1q0I   1q0I1q0R   1q0R1q0R   1q0R1q0[   1q0[2n0[   2n0[2n1E   2n1E4u1E   4u1E4u1N   4u1N3c1N   3c1N3c1W   3c1W1r1W   1r1W1r2A   1r2A1q2A   1q2A1q2J   1q2J1p2J   1p2J1p2S   1p2S1p2S   1p2S1p2]   1p2]1p2]   1p2]1p3F   1p3F1p3F   1p3F1p3O   1p3O1l3O   1l0I    1l0I1e0I   1l3F    1l3F1e3F   1l0@    1l0@5e0@   1l0@    1l0@1l/V   3h0@    3h0@3h/V   5e0@    5e0@5e/V   5`.Q    10245e0I    41l4K    1l4K1l7[   1l4K    1l4K1q4K   1q4K1q4T   1q4T1q4T   1q4T1q4^   1q4^1r4^   1r4^1r5G   1r5G2q5G   2q5G2q5P   2q5P4v5P   4v5P4v5Z   4v5Z3a5Z   3a5Z3a6C   3a6C1r6C   1r6C1r6L   1r6L1r6L   1r6L1r6V   1r6V1p6V   1p6V1p6_   1p6_1p6_   1p6_1p7H   1p7H1p7H   1p7H1p7R   1p7R1p7R   1p7R1p7[   1p7[1l7[   1l4T    1l4T1e4T   1l7R    1l7R1e7R   1l4K    1l4K5e4K   1l4K    1l4K1l4B   3h4K    3h4K3h4B   5e4K    5e4K5e4B   5`2]    10245e4T    51l8W    1l8W1l<F   1l8W    1l8W1r8W   1r8W1r9@   1r9@1r9@   1r9@1r9I   1r9I1r9I   1r9I1r9S   1r9S2p9S   2p9S2p9\   2p9\4w9\   4w9\4w:E   4w:E3c:E   3c:E3c:O   3c:O1r:O   1r:O1r:X   1r:X1r:X   1r:X1r;A   1r;A1q;A   1q;A1q;K   1q;K1p;K   1p;K1p;T   1p;T1q;T   1q;T1q;]   1q;]1q;]   1q;]1q<F   1q<F1l<F   1l9@    1l9@1e9@   1l;]    1l;]1e;]   1l8W    1l8W5e8W   1l8W    1l8W1l8M   3h8W    3h8W3h8M   5e8W    5e8W5e8M   5`7H    10245e9@    6,c"]    ,c"],c&L   ,c"]    ,c"]-k"]   -k"]-k#F   -k#F-k#F   -k#F-k#O   -k#O-k#O   -k#O-k#Y   -k#Y-k#Y   -k#Y-k$B   -k$B-k$B   -k$B-k$K   -k$K-k$K   -k$K-k$T   -k$T-k$T   -k$T-k$^   -k$^-k$^   -k$^-k%G   -k%G-k%G   -k%G-k%P   -k%P-k%P   -k%P-k%Z   -k%Z-k%Z   -k%Z-k&C   -k&C-k&C   -k&C-k&L   -k&L,c&L   ,c#F    ,c#F+{#F   ,c&C    ,c&C+{&C   ,c"]    ,c"]/|"]   ,c"]    ,c"],c"S   -"]    -"]-"S   /|"]    /|"]/|"S   /w!N    1024/|#F    7,c'H    ,c'H,c*X   ,c'H    ,c'H,'H   ,'H,'R   ,'R,'R   ,'R,'[   ,'[,'[   ,'[,(D   ,(D,(D   ,(D,(M   ,(M,(M   ,(M,(W   ,(W,(W   ,(W,)@   ,)@,)@   ,)@,)I   ,)I,)I   ,)I,)S   ,)S,)S   ,)S,)\   ,)\,)\   ,)\,*E   ,*E,*E   ,*E,*O   ,*O,*O   ,*O,*X   ,*X,c*X   ,c'R    ,c'R+{'R   ,c*O    ,c*O+{*O   ,c'H    ,c'H/|'H   ,c'H    ,c'H,c&_   -'H    -'H-&_   /|'H    /|'H/|&_   /w%Z    1024/|'R    8,c+T    ,c+T,c/D   ,c+T    ,c+T,+T   ,+T,+]   ,+],+]   ,+],,F   ,,F,,F   ,,F,,P   ,,P,,P   ,,P,,Y   ,,Y,,Y   ,,Y,-B   ,-B,-B   ,-B,-L   ,-L,-L   ,-L,-U   ,-U,-U   ,-U,-^   ,-^,-^   ,-^,.H   ,.H,.H   ,.H,.Q   ,.Q,.Q   ,.Q,.Z   ,.Z,.Z   ,.Z,/D   ,/D,c/D   ,c+]    ,c+]+{+]   ,c.Z    ,c.Z+{.Z   ,c+T    ,c+T/|+T   ,c+T    ,c+T,c+K   -+T    -+T-+K   /|+T    /|+T/|+K   /w*E    1024/|+]    9,c0@    ,c0@,c3O   ,c0@    ,c0@,0@   ,0@,0I   ,0I,0I   ,0I,0R   ,0R,0R   ,0R,0[   ,0[,0[   ,0[,1E   ,1E,1E   ,1E,1N   ,1N,1N   ,1N,1W   ,1W,1W   ,1W,2A   ,2A,2A   ,2A,2J   ,2J,2J   ,2J,2S   ,2S,2S   ,2S,2]   ,2],2]   ,2],3F   ,3F,3F   ,3F,3O   ,3O,c3O   ,c0I    ,c0I+{0I   ,c3F    ,c3F+{3F   ,c0@    ,c0@/|0@   ,c0@    ,c0@,c/V   -0@    -0@-/V   /|0@    /|0@/|/V   /w.Q    1024/|0I    10,c4K    ,c4K,c7[   ,c4K    ,c4K/z4K   /z4K/z4T   /z4T/z4T   /z4T/z4^   /z4^/z4^   /z4^/z5G   /z5G/z5G   /z5G/z5P   /z5P/z5P   /z5P/z5Z   /z5Z/z5Z   /z5Z/z6C   /z6C/z6C   /z6C/z6L   /z6L/z6L   /z6L/z6V   /z6V/z6V   /z6V/z6_   /z6_/z6_   /z6_/z7H   /z7H/z7H   /z7H/z7R   /z7R/z7R   /z7R/z7[   /z7[,c7[   ,c4T    ,c4T+{4T   ,c7R    ,c7R+{7R   ,c4K    ,c4K/|4K   ,c4K    ,c4K,c4B   -4K    -4K-4B   /|4K    /|4K/|4B   /w2]    1024/|4T    11,c8W    ,c8W,c<F   ,c8W    ,c8W-c8W   -c8W-c9@   -c9@-c9@   -c9@-c9I   -c9I-c9I   -c9I-c9S   -c9S-c9S   -c9S-c9\   -c9\-c9\   -c9\-c:E   -c:E-c:E   -c:E-c:O   -c:O-c:O   -c:O-c:X   -c:X-c:X   -c:X-c;A   -c;A-c;A   -c;A-c;K   -c;K-c;K   -c;K-c;T   -c;T-c;T   -c;T-c;]   -c;]-c;]   -c;]-c<F   -c<F,c<F   ,c9@    ,c9@+{9@   ,c;]    ,c;]+{;]   ,c8W    ,c8W/|8W   ,c8W    ,c8W,c8M   -8W    -8W-8M   /|8W    /|8W/|8M   /w7H    1024/|9@    12&y"]    &y"]&y&L   &y"]    &y"]&~"]   &~"]&~#F   &~#F&~#F   &~#F&~#O   &~#O&~#O   &~#O&~#Y   &~#Y&~#Y   &~#Y&~$B   &~$B&~$B   &~$B&~$K   &~$K&~$K   &~$K&~$T   &~$T&~$T   &~$T&~$^   &~$^&~$^   &~$^&~%G   &~%G&~%G   &~%G&~%P   &~%P&~%P   &~%P&~%Z   &~%Z&~%Z   &~%Z&~&C   &~&C&~&C   &~&C&~&L   &~&L&y&L   &y#F    &y#F&r#F   &y&C    &y&C&r&C   &y"]    &y"]*r"]   &y"]    &y"]&y"S   (v"]    (v"](v"S   *r"]    *r"]*r"S   *m!N    1024*r#F    13&y'H    &y'H&y*X   &y'H    &y'H'`'H   '`'H'`'R   '`'R'`'R   '`'R'`'[   '`'['`'[   '`'['`(D   '`(D'`(D   '`(D'`(M   '`(M'`(M   '`(M'`(W   '`(W'`(W   '`(W'`)@   '`)@'`)@   '`)@'`)I   '`)I'`)I   '`)I'`)S   '`)S'`)S   '`)S'`)\   '`)\'`)\   '`)\'`*E   '`*E'`*E   '`*E'`*O   '`*O'`*O   '`*O'`*X   '`*X&y*X   &y'R    &y'R&r'R   &y*O    &y*O&r*O   &y'H    &y'H*r'H   &y'H    &y'H&y&_   (v'H    (v'H(v&_   *r'H    *r'H*r&_   *m%Z    1024*r'R    14&y+T    &y+T&y/D   &y+T    &y+T'`+T   '`+T'`+]   '`+]'`+]   '`+]'`,F   '`,F'`,F   '`,F'`,P   '`,P'`,P   '`,P'`,Y   '`,Y'`,Y   '`,Y'`-B   '`-B'`-B   '`-B'`-L   '`-L'`-L   '`-L'`-U   '`-U'`-U   '`-U'`-^   '`-^'`-^   '`-^'`.H   '`.H'`.H   '`.H'`.Q   '`.Q'`.Q   '`.Q'`.Z   '`.Z'`.Z   '`.Z'`/D   '`/D&y/D   &y+]    &y+]&r+]   &y.Z    &y.Z&r.Z   &y+T    &y+T*r+T   &y+T    &y+T&y+K   (v+T    (v+T(v+K   *r+T    *r+T*r+K   *m*E    1024*r+]    15&y0@    &y0@&y3O   &y0@    &y0@&0@   &0@&0I   &0I&0I   &0I&0R   &0R&0R   &0R&0[   &0[&0[   &0[&1E   &1E&1E   &1E&1N   &1N&1N   &1N&1W   &1W&1W   &1W&2A   &2A&2A   &2A&2J   &2J&2J   &2J&2S   &2S&2S   &2S&2]   &2]&2]   &2]&3F   &3F&3F   &3F&3O   &3O&y3O   &y0I    &y0I&r0I   &y3F    &y3F&r3F   &y0@    &y0@*r0@   &y0@    &y0@&y/V   (v0@    (v0@(v/V   *r0@    *r0@*r/V   *m.Q    1024*r0I    16&y4K    &y4K&y7[   &y4K    &y4K&4K   &4K&4T   &4T&4T   &4T&4^   &4^&4^   &4^&5G   &5G&5G   &5G&5P   &5P&5P   &5P&5Z   &5Z&5Z   &5Z&6C   &6C&6C   &6C&6L   &6L&6L   &6L&6V   &6V&6V   &6V&6_   &6_&6_   &6_&7H   &7H&7H   &7H&7R   &7R&7R   &7R&7[   &7[&y7[   &y4T    &y4T&r4T   &y7R    &y7R&r7R   &y4K    &y4K*r4K   &y4K    &y4K&y4B   (v4K    (v4K(v4B   *r4K    *r4K*r4B   *m2]    1024*r4T    17&y8W    &y8W&y<F   &y8W    &y8W&8W   &8W&9@   &9@&9@   &9@&9I   &9I&9I   &9I&9S   &9S&9S   &9S&9\   &9\&9\   &9\&:E   &:E&:E   &:E&:O   &:O&:O   &:O&:X   &:X&:X   &:X&;A   &;A&;A   &;A&;K   &;K&;K   &;K&;T   &;T&;T   &;T&;]   &;]&;]   &;]&<F   &<F&y<F   &y9@    &y9@&r9@   &y;]    &y;]&r;]   &y8W    &y8W*r8W   &y8W    &y8W&y8M   (v8W    (v8W(v8M   *r8W    *r8W*r8M   *m7H    1024*r9@    18!p"]    !p"]!p&L   !p"]    !p"]!t"]   !t"]!t#F   !t#F!t#F   !t#F!t#O   !t#O!t#O   !t#O!t#Y   !t#Y!t#Y   !t#Y!t$B   !t$B!t$B   !t$B!t$K   !t$K!t$K   !t$K!t$T   !t$T!t$T   !t$T!t$^   !t$^!t$^   !t$^!t%G   !t%G!t%G   !t%G!t%P   !t%P!t%P   !t%P!t%Z   !t%Z!t%Z   !t%Z!t&C   !t&C!t&C   !t&C!t&L   !t&L!p&L   !p#F    !p#F!i#F   !p&C    !p&C!i&C   !p"]    !p"]%i"]   !p"]    !p"]!p"S   #l"]    #l"]#l"S   %i"]    %i"]%i"S   %d!N    1024%i#F    19!p'H    !p'H!p*X   !p'H    !p'H!t'H   !t'H!t'R   !t'R!t'R   !t'R!t'[   !t'[!t'[   !t'[!t(D   !t(D!t(D   !t(D!t(M   !t(M!t(M   !t(M!t(W   !t(W!t(W   !t(W!t)@   !t)@!t)@   !t)@!t)I   !t)I!t)I   !t)I!t)S   !t)S!t)S   !t)S!t)\   !t)\!t)\   !t)\!t*E   !t*E!t*E   !t*E!t*O   !t*O!t*O   !t*O!t*X   !t*X!p*X   !p'R    !p'R!i'R   !p*O    !p*O!i*O   !p'H    !p'H%i'H   !p'H    !p'H!p&_   #l'H    #l'H#l&_   %i'H    %i'H%i&_   %d%Z    1024%i'R    20!p+T    !p+T!p/D   !p+T    !p+T!t+T   !t+T!t+]   !t+]!t+]   !t+]!t,F   !t,F!t,F   !t,F!t,P   !t,P!t,P   !t,P!t,Y   !t,Y!t,Y   !t,Y!t-B   !t-B!t-B   !t-B!t-L   !t-L!t-L   !t-L!t-U   !t-U!t-U   !t-U!t-^   !t-^!t-^   !t-^!t.H   !t.H!t.H   !t.H!t.Q   !t.Q!t.Q   !t.Q!t.Z   !t.Z!t.Z   !t.Z!t/D   !t/D!p/D   !p+]    !p+]!i+]   !p.Z    !p.Z!i.Z   !p+T    !p+T%i+T   !p+T    !p+T!p+K   #l+T    #l+T#l+K   %i+T    %i+T%i+K   %d*E    1024%i+]    21!p0@    !p0@!p3O   !p0@    !p0@!t0@   !t0@!t0I   !t0I!t0I   !t0I!t0R   !t0R!t0R   !t0R!t0[   !t0[!t0[   !t0[!t1E   !t1E!t1E   !t1E!t1N   !t1N!t1N   !t1N!t1W   !t1W!t1W   !t1W!t2A   !t2A!t2A   !t2A!t2J   !t2J!t2J   !t2J!t2S   !t2S!t2S   !t2S!t2]   !t2]!t2]   !t2]!t3F   !t3F!t3F   !t3F!t3O   !t3O!p3O   !p0I    !p0I!i0I   !p3F    !p3F!i3F   !p0@    !p0@%i0@   !p0@    !p0@!p/V   #l0@    #l0@#l/V   %i0@    %i0@%i/V   %d.Q    1024%i0I    22!p4K    !p4K!p7[   !p4K    !p4K!t4K   !t4K!t4T   !t4T!t4T   !t4T!t4^   !t4^!t4^   !t4^!t5G   !t5G!t5G   !t5G!t5P   !t5P!t5P   !t5P!t5Z   !t5Z!t5Z   !t5Z!t6C   !t6C!t6C   !t6C!t6L   !t6L!t6L   !t6L!t6V   !t6V!t6V   !t6V!t6_   !t6_!t6_   !t6_!t7H   !t7H!t7H   !t7H!t7R   !t7R!t7R   !t7R!t7[   !t7[!p7[   !p4T    !p4T!i4T   !p7R    !p7R!i7R   !p4K    !p4K%i4K   !p4K    !p4K!p4B   #l4K    #l4K#l4B   %i4K    %i4K%i4B   %d2]    1024%i4T    23!p8W    !p8W!p<F   !p8W    !p8W!w8W   !w8W!w9@   !w9@!w9@   !w9@!w9I   !w9I!w9I   !w9I!w9S   !w9S!w9S   !w9S!w9\   !w9\!w9\   !w9\!w:E   !w:E!w:E   !w:E!w:O   !w:O!w:O   !w:O!w:X   !w:X!w:X   !w:X!w;A   !w;A!w;A   !w;A!w;K   !w;K!w;K   !w;K!w;T   !w;T!w;T   !w;T!w;]   !w;]!w;]   !w;]!w<F   !w<F!p<F   !p9@    !p9@!i9@   !p;]    !p;]!i;]   !p8W    !p8W%i8W   !p8W    !p8W!p8M   #l8W    #l8W#l8M   %i8W    %i8W%i8M   %d7H    1024%i9@    2486u"]    LOW GAIN TUBES 1-24 b D     <cr> for next plot

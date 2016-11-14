@@ -1,0 +1,1 @@
+#include <stdio.h>#include <math.h>main(){ unsigned short *adr;loop:  (unsigned short *)adr = (unsigned short *)0xf0de0000;  *adr=0;  sleep(1);  (unsigned short *)adr = (unsigned short *)0xf0de0002;  *adr = 0;  sleep(1);  if(sw(8) == 0) goto loop;}

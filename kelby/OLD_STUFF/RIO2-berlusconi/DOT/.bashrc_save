@@ -1,0 +1,6 @@
+#echo "executing bashrc"
+
+typeset -x TERM=xterm
+typeset -x PS1="kja>"
+alias ls="ls -F"
+#stty intr "^C"

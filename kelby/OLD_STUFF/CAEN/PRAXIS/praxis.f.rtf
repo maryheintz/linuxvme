@@ -1,0 +1,792 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fcharset0 Courier New;}{\f1\fswiss\fcharset0 Arial;}}
+{\*\generator Msftedit 5.41.15.1507;}\viewkind4\uc1\pard\tx0\tx959\tx1918\tx2877\tx3836\tx4795\tx5754\tx6713\tx7672\tx8631\f0\fs20 c This Fortran version of PRAXIS \par
+c (supplied by Linda Kaufman, lck@research.att.com)\par
+c calls Port utilities to get scratch storage.\par
+c\par
+c R. Brent (rpb@phys4.anu.oz.au), 31 July 1990.\par
+c\par
+      subroutine fminn(t0,h0,n,x,f,fmin)\par
+      real t0,h0,x(n),f,fmin\par
+      external f\par
+c\par
+c     fminn returns the minimum of the function f(x,n) of n variables\par
+c     using the principal axis method.  The gradient of the function is\par
+c     not required.\par
+c\par
+c     For a description of the algorithm, see chapter 7 of\par
+c     "Algorithms for finding zeros and extrema of functions without\par
+c     calculating derivatives" by Richard P Brent (Prentice-Hall, 1973).\par
+c\par
+c     The original Algol W version of praxis was translated into Fortran\par
+c     by Linda Kaufman.\par
+c\par
+c     The input parameters are\par
+c\par
+c     t0       is a tolerance.  fminn attempts to return fmin=f(x)\par
+c              such that if x0 is the true local minimum near x, then\par
+c              norm(x-x0) ) t0 + squareroot(machep)*norm(x).\par
+c              where machep is the machine precision\par
+c     h0       is the maximum step size.  h0 should be set to about the\par
+c              maximum distance from the initial guess to the minimum.\par
+c              (if h0 is set too large or too small, the initial rate of\par
+c              convergence may be slow.)\par
+c     n        (at least two) is the number of variables upon which\par
+c              the function depends.\par
+c     x        is an array containing on entry a guess of the point of\par
+c              minimum, on return the estimated point of minimum.\par
+c     f(x,n)   is the function to be minimized.  f should be a real\par
+c              function declared external in the calling program.\par
+c\par
+c output parameters are\par
+c\par
+c     fmin     the value of the function at the minimum\par
+c     x        the solution of the problem\par
+c     the approximating quadratic form is\par
+c              q(x*) = f(x,n) + (1/2) * (x*-x)-transpose * a * (x*-x)\par
+c     where x is the best estimate of the minimum and a is\par
+c              inverse(v-transpose) * d * inverse(v)\par
+c     (v(*,*) is the matrix of search directions\\ d(*) is the array\par
+c     of second differences).  if f has continuous second derivatives\par
+c     near x0, a will tend to the hessian of f at x0 as x approaches x0.\par
+c\par
+c     It is assumed that on floating-point underflow the result is set\par
+c     to zero.\par
+c     The user should observe the comment on heuristic numbers \par
+c\par
+c     Error condition*\par
+c       n.lt.1   fatal\par
+c\par
+c Extra storage required: 7n+n*n real storage locations\par
+c\par
+       logical illc\par
+       integer ktm\par
+       real scbd\par
+       common /cstak/ d\par
+       double precision d(500)\par
+       real r(1000)\par
+       equivalence (d(1),r(1))\par
+       call enter(1)\par
+       if (n.lt.1) call seterr(12hfminn-n.lt.1,12,1,2)\par
+       id=istkgt(n,3)\par
+       iy=istkgt(n,3)\par
+       iz= istkgt(n,3)\par
+       iq1=istkgt(n,3)\par
+       iq0=istkgt(n,3)\par
+       ie=istkgt(n,3)\par
+       iv=istkgt(n*n,3)\par
+c      Heuristic numbers\par
+c      If the axes are badly scaled,set scbd to 10, otherwise\par
+c      set it to 1. If the problem is known to be ill conditioned,\par
+c      set illc to true, otherwise false.\par
+c      ktm is the number of iterations without improvement\par
+c      before the algorithm terminates. ktm is 4 is\par
+c      very cautious/usually ktm=1 is sufficient.\par
+       scbd=1.0\par
+       illc=.false.\par
+       ktm=1\par
+       eps= r1mach(4)\par
+       call praxis(t0,eps,h0,n,x,f,fmin,scbd,ktm,illc,\par
+     1 r(id),r(iy),r(iz),r(iq0),r(iq1),r(iv),r(ie))\par
+       call leave\par
+       return\par
+       end\par
+c\par
+       subroutine praxis(t0,machep,h0,n,x,f,fmin,scbd,ktm,\par
+     1 illc,d,y,z,q0,q1,v,e)\par
+      real t0,machep,h0,x(n),f,fmin\par
+      external f\par
+      logical illc\par
+      integer nl,nf,kl,kt,ktm\par
+      real s,sl,dn,dmin,fx,f1,lds,ldt,t,h,sf,df,qf1,qd0,qd1,qa,qb,qc\par
+      real m2,m4,small,vsmall,large,vlarge,scbd,ldfac,t2,dni,value\par
+c\par
+      real d(n),y(n),z(n),q0(n),q1(n),v(n,n)\par
+      real e(n)\par
+       logical kenplt\par
+       common /kenpt/ kenplt\par
+      common /global/ fx,ldt,dmin,nf,nl\par
+     .       /q/ qa,qb,qc,qd0,qd1,qf1\par
+      idim=n\par
+      kenplt=.false.\par
+c\par
+c.....initialization.....\par
+c     machine dependent numbers[\par
+c\par
+      small=machep*machep\par
+      vsmall=small*small\par
+      large=1.0/small\par
+      vlarge=1.0/vsmall\par
+      m2=sqrt(machep)\par
+      m4=sqrt(m2)\par
+c\par
+c\par
+      ldfac=0.01\par
+      if (illc) ldfac=0.1\par
+      kt=0\par
+      nl=0\par
+      nf=1\par
+      fx=f(x,n)\par
+      qf1=fx\par
+      t=small+abs(t0)\par
+      t2=t\par
+      dmin=small\par
+      h=h0\par
+      if (h.lt.100.0*t) h=100.0*t\par
+      ldt=h\par
+c.....the first set of search directions v is the identity matrix.....\par
+      do 20 i=1,n\par
+           do 10 j=1,n\par
+10              v(i,j)=0.0\par
+20         v(i,i)=1.0\par
+      d(1)=0.0\par
+      qd0=0.0\par
+      do 30 i=1,n\par
+           q0(i)=x(i)\par
+30         q1(i)=x(i)\par
+c\par
+c.....the main loop starts here.....\par
+40    sf=d(1)\par
+      d(1)=0.0\par
+      s=0.0\par
+c\par
+c.....minimize along the first direction v(*,1).\par
+c     fx must be passed to min by value.\par
+      value=fx\par
+      call min(n,1,2,d(1),s,value,.false.,f,x,t,machep,h,\par
+     1v,q0,q1)\par
+      if (s.gt.0.0) go to 50\par
+           do 45 i=1,n\par
+45              v(i,1)=-v(i,1)\par
+50    if (sf.gt.0.9*d(1).and.0.9*sf.lt.d(1)) go to 70\par
+           do 60 i=2,n\par
+60              d(i)=0.0\par
+c\par
+c.....the inner loop starts here.....\par
+70    do 170 k=2,n\par
+           do 75 i=1,n\par
+75              y(i)=x(i)\par
+           sf=fx\par
+           if (kt.gt.0) illc=.true.\par
+80         kl=k\par
+           df=0.0\par
+c\par
+c.....a random step follows (to avoid resolution valleys).\par
+c     praxis assumes that random returns a random number uniformly\par
+c     distributed in (0,1).\par
+c\par
+           if(.not.illc) go to 95\par
+                do 90 i=1,n\par
+                    s=(0.1*ldt+t2*(10.0**kt))*(uni(0)-0.5)\par
+                     z(i)=s\par
+                     do 85 j=1,n\par
+85                        x(j)=x(j)+s*v(j,i)\par
+90              continue\par
+                fx=f(x,n)\par
+                nf=nf+1\par
+c\par
+c.....minimize along the ?non-conjugate? directions v(*,k),...,v(*,n)\par
+c\par
+95         do 105 k2=k,n\par
+                sl=fx\par
+                s = 0.0\par
+                value=fx\par
+                call min(n,k2,2,d(k2),s,value,.false.,f,x,t,machep,h,\par
+     1           v,q0,q1)\par
+          write(6,900)(x(i),i=1,n)\par
+           write(6,901)fx,nf\par
+900       format(" current x",5e15.7)\par
+901      format(" functions value is",e15.7," after evaluation",i5)\par
+                if (illc) go to 97\par
+                     s=sl-fx\par
+                     go to 99\par
+97              s=d(k2)*((s+z(k2))**2)\par
+99              if (df.gt.s) go to 105\par
+                     df=s\par
+                     kl=k2\par
+105        continue\par
+           if (illc.or.(df.ge.abs((100.*machep)*fx))) go to 110\par
+c\par
+c.....if there was not much improvement on the first try, set\par
+c     illc=true and start the inner loop again.....\par
+c\par
+           illc=.true.\par
+           go to 80\par
+110        continue\par
+c\par
+c.....minimize along the ?conjugate? directions v(*,1),...,v(*,k-1)\par
+c\par
+           km1=k-1\par
+           do 120 k2=1,km1\par
+           s=0\par
+           value=fx\par
+           call min(n,k2,2,d(k2),s,value,.false.,f,x,t,machep,h,\par
+     1      v,q0,q1)\par
+         write(6,900)(x(i),i=1,n)\par
+         write(6,901)fx,nf\par
+120        continue\par
+           f1=fx\par
+           fx=sf\par
+           lds=0\par
+           do 130 i=1,n\par
+                sl=x(i)\par
+                x(i)=y(i)\par
+                sl=sl-y(i)\par
+                y(i)=sl\par
+130             lds=lds+sl*sl\par
+           lds=sqrt(lds)\par
+           if (lds.le.small) go to 160\par
+c\par
+c.....discard direction v(*,kl).\par
+c     if no random step was taken, v(*,kl) is the ?non-conjugate?\par
+c     direction along which the greatest improvement was made.....\par
+c\par
+           klmk=kl-k\par
+           if (klmk.lt.1) go to 141\par
+           do 140 ii=1,klmk\par
+                i=kl-ii\par
+                do 135 j=1,n\par
+135                  v(j,i+1)=v(j,i)\par
+140             d(i+1)=d(i)\par
+141        d(k)=0\par
+           do 145 i=1,n\par
+145             v(i,k)=y(i)/lds\par
+c\par
+c.....minimize along the new ?conjugate? direction v(*,k), which is\par
+c     the normalized vector[  (new x) - (0ld x).....\par
+c\par
+           value=f1\par
+           call min(n,k,4,d(k),lds,value,.true.,f,x,t,machep,h,\par
+     1     v,q0,q1)\par
+          write(6,902)(x(i),i=1,n)\par
+          write(6,901)fx,nf\par
+902      format(" x at end of inner loop",4e15.7)\par
+         kenplt=.true.\par
+        fff=f(x,n)\par
+         kenplt=.false.\par
+          if (lds.gt.0.0) go to 160\par
+                lds=-lds\par
+                do 150 i=1,n\par
+150                  v(i,k)=-v(i,k)\par
+160        ldt=ldfac*ldt\par
+           if (ldt.lt.lds) ldt=lds\par
+           t2 = 0.0\par
+           do 165 i=1,n\par
+165             t2=t2+x(i)**2\par
+           t2=m2*sqrt(t2)+t\par
+c\par
+c.....see whether the length of the step taken since starting the\par
+c     inner loop exceeds half the tolerance.....\par
+c\par
+           if (ldt.gt.(0.5*t2)) kt=-1\par
+           kt=kt+1\par
+           if (kt.gt.ktm) go to 400\par
+170   continue\par
+c.....the inner loop ends here.\par
+c\par
+c     try quadratic extrapolation in case we are in a curved valley.\par
+c\par
+171   call quad(n,f,x,t,machep,h,v,q0,q1)\par
+      dn=0.0\par
+      do 175 i=1,n\par
+           d(i)=1.0/sqrt(d(i))\par
+           if (dn.lt.d(i)) dn=d(i)\par
+175   continue\par
+      do 180 j=1,n\par
+           s=d(j)/dn\par
+           do 180 i=1,n\par
+180             v(i,j)=s*v(i,j)\par
+c\par
+c.....scale the axes to try to reduce the condition number.....\par
+c\par
+      if (scbd.le.1.0) go to 200\par
+           s=vlarge\par
+           do 185 i=1,n\par
+                sl=0.0\par
+                do 182 j=1,n\par
+182                  sl=sl+v(i,j)*v(i,j)\par
+                z(i)=sqrt(sl)\par
+                if (z(i).lt.m4) z(i)=m4\par
+                if (s.gt.z(i)) s=z(i)\par
+185        continue\par
+           do 195 i=1,n\par
+                sl=s/z(i)\par
+                z(i) = 1.0/sl\par
+                if (z(i).le.scbd) go to 189\par
+                     sl = 1.0/scbd\par
+                     z(i)=scbd\par
+189             do 190 j=1,n\par
+190                  v(i,j)=sl*v(i,j)\par
+195        continue\par
+c\par
+c.....calculate a new set of orthogonal directions before repeating\par
+c     the main loop.\par
+c     first transpose v for minfit[\par
+c\par
+200   do 220 i=2,n\par
+           im1=i-1\par
+           do 210 j=1,im1\par
+                s=v(i,j)\par
+                v(i,j)=v(j,i)\par
+210             v(j,i)=s\par
+220   continue\par
+c\par
+c.....call minfit to find the singular value decomposition of v.\par
+c     this gives the principal values and principal directions of the\par
+c     approximating quadratic form without squaring the condition\par
+c     number.....\par
+c\par
+      call minfit(idim,n,machep,vsmall,v,d,e)\par
+c\par
+c.....unscale the axes.....\par
+c\par
+      if (scbd.le.1.0) go to 250\par
+           do 230 i=1,n\par
+                s=z(i)\par
+                do 225 j=1,n\par
+225                  v(i,j)=s*v(i,j)\par
+230        continue\par
+           do 245 i=1,n\par
+                s=0.0\par
+                do 235 j=1,n\par
+235                  s=s+v(j,i)**2\par
+                s=sqrt(s)\par
+                d(i)=s*d(i)\par
+                s=1.0/s\par
+                do 240 j=1,n\par
+240                  v(j,i)=s*v(j,i)\par
+245        continue\par
+c\par
+c\par
+250   do 270 i=1,n\par
+           dni=dn*d(i)\par
+           if (dni.gt.large) go to 265\par
+                if (dni.lt.small) go to 260\par
+                     d(i)=1.0/(dni*dni)\par
+                     go to 270\par
+260             d(i)=vlarge\par
+                go to 270\par
+265        d(i)=vsmall\par
+270   continue\par
+c\par
+c.....sort the eigenvalues and eigenvectors.....\par
+c\par
+      call sort(idim,n,d,v)\par
+      dmin=d(n)\par
+      if (dmin.lt.small) dmin=small\par
+      illc=.false.\par
+      if (m2*d(1).gt.dmin) illc=.true.\par
+c.....the main loop ends here.....\par
+c\par
+      go to 40\par
+c\par
+c.....return.....\par
+c\par
+400       continue\par
+      fmin=fx\par
+      return\par
+      end\par
+      subroutine minfit(m,n,machep,tol,ab,q,e)\par
+      real machep\par
+      dimension ab(m,n),q(n)\par
+c...an improved version of minfit (see golub and reinsch, 1969)\par
+c   restricted to m=n,p=0.\par
+c   the singular values of the array ab are returned in q and ab is\par
+c   overwritten with the orthogonal matrix v such that u.diag(q) = ab.v,\par
+c   where u is another orthogonal matrix.\par
+         real e(n)\par
+c...householder*s reduction to bidiagonal form...\par
+      if (n.eq.1) go to 200\par
+      eps = machep\par
+      g = 0.0\par
+      x = 0.0\par
+      do 11 i=1,n\par
+         e(i) = g\par
+         s = 0.0\par
+         l = i + 1\par
+         do 1 j=i,n\par
+1           s = s + ab(j,i)**2\par
+         g = 0.0\par
+         if (s.lt.tol) go to 4\par
+            f = ab(i,i)\par
+           g = sqrt(s)\par
+            if (f.ge.0.0) g = -g\par
+            h = f*g - s\par
+            ab(i,i)=f-g\par
+            if (l.gt.n) go to 4\par
+            do 3 j=l,n\par
+               f = 0.0\par
+               do 2 k=i,n\par
+2                 f = f + ab(k,i)*ab(k,j)\par
+               f = f/h\par
+               do 3 k=i,n\par
+3                 ab(k,j) = ab(k,j) + f*ab(k,i)\par
+4        q(i) = g\par
+         s = 0.0\par
+         if (i.eq.n) go to 6\par
+         do 5 j=l,n\par
+5           s = s + ab(i,j)*ab(i,j)\par
+6        g = 0.0\par
+         if (s.lt.tol) go to 10\par
+            if (i.eq.n) go to 16\par
+            f = ab(i,i+1)\par
+16          g = sqrt(s)\par
+            if (f.ge.0.0) g = -g\par
+            h = f*g - s\par
+            if (i.eq.n) go to 10\par
+            ab(i,i+1) = f - g\par
+            do 7 j=l,n\par
+7              e(j) = ab(i,j)/h\par
+            do 9 j=l,n\par
+               s = 0.0\par
+               do 8 k=l,n\par
+8                 s = s + ab(j,k)*ab(i,k)\par
+               do 9 k=l,n\par
+9                 ab(j,k) = ab(j,k) + s*e(k)\par
+10       y = abs(q(i)) + abs(e(i))\par
+11       if (y.gt.x) x = y\par
+c...accumulation of right-hand transformations...\par
+      ab(n,n) = 1.0\par
+      g = e(n)\par
+      l = n\par
+      do 25 ii=2,n\par
+         i = n - ii + 1\par
+         if (g.eq.0.0) go to 23\par
+         h = ab(i,i+1)*g\par
+         do 20 j=l,n\par
+20          ab(j,i) = ab(i,j)/h\par
+         do 22 j=l,n\par
+            s = 0.0\par
+            do 21 k=l,n\par
+21             s = s + ab(i,k)*ab(k,j)\par
+            do 22 k=l,n\par
+22             ab(k,j) = ab(k,j) + s*ab(k,i)\par
+23       do 24 j=l,n\par
+            ab(i,j) = 0.0\par
+24          ab(j,i) = 0.0\par
+         ab(i,i) = 1.0\par
+         g = e(i)\par
+25       l = i\par
+c...diagonalization of the bidiagonal form...\par
+100   eps = eps*x\par
+      do 150 kk=1,n\par
+         k = n - kk + 1\par
+         kt = 0\par
+101      kt = kt + 1\par
+         if (kt.le.30) go to 102\par
+            e(k) = 0.0\par
+             call seterr(22hfminn-problem with svd,22,2,2)\par
+             return\par
+102      do 103 ll2=1,k\par
+            l2 = k - ll2 + 1\par
+            l = l2\par
+            if (abs(e(l)).le.eps) go to 120\par
+            if (l.eq.1) go to 103\par
+            if (abs(q(l-1)).le.eps) go to 110\par
+103         continue\par
+c...cancellation of e(l) if l'1...\par
+110      c = 0.0\par
+         s = 1.0\par
+         do 116 i=l,k\par
+            f = s*e(i)\par
+            e(i) = c*e(i)\par
+            if (abs(f).le.eps) go to 120\par
+            g = q(i)\par
+c...q(i) = h = dsqrt(g*g + f*f)...\par
+            if (abs(f).lt.abs(g)) go to 113\par
+            if (f) 112,111,112\par
+111         h = 0.0\par
+            go to 114\par
+112         h = abs(f)*sqrt(1.0 + (g/f)**2)\par
+            go to 114\par
+113         h = abs(g)*sqrt(1.0+ (f/g)**2)\par
+114         q(i) = h\par
+            if (h.ne.0.0) go to 115\par
+               g = 1.0\par
+               h = 1.0\par
+115         c = g/h\par
+116         s = -f/h\par
+c...test for convergence...\par
+120      z = q(k)\par
+         if (l.eq.k) go to 140\par
+c...shift from bottom 2*2 minor...\par
+         x = q(l)\par
+         y = q(k-1)\par
+         g = e(k-1)\par
+         h = e(k)\par
+         f = ((y - z)*(y + z) + (g - h)*(g + h))/(2.0*h*y)\par
+         g = sqrt(f*f + 1.0)\par
+         temp = f - g\par
+         if (f.ge.0.0) temp = f + g\par
+         f = ((x - z)*(x + z) + h*(y/temp - h))/x\par
+c...next qr transformation...\par
+         c = 1.0\par
+         s = 1.0\par
+         lp1 = l + 1\par
+         if (lp1.gt.k) go to 133\par
+         do 132 i=lp1,k\par
+            g = e(i)\par
+            y = q(i)\par
+            h = s*g\par
+            g = g*c\par
+            if (abs(f).lt.abs(h)) go to 123\par
+            if (f) 122,121,122\par
+121         z = 0.0\par
+            go to 124\par
+122         z = abs(f)*sqrt(1.0+ (h/f)**2)\par
+            go to 124\par
+123         z = abs(h)*sqrt(1.0+ (f/h)**2)\par
+124         e(i-1) = z\par
+            if (z.ne.0.0) go to 125\par
+               f = 1.0\par
+               z = 1.0\par
+125         c = f/z\par
+            s = h/z\par
+            f = x*c + g*s\par
+            g = -x*s + g*c\par
+            h = y*s\par
+            y = y*c\par
+            do 126 j=1,n\par
+               x = ab(j,i-1)\par
+               z = ab(j,i)\par
+               ab(j,i-1) = x*c + z*s\par
+126            ab(j,i) = -x*s + z*c\par
+            if (abs(f).lt.abs(h)) go to 129\par
+            if (f) 128,127,128\par
+127         z = 0.0\par
+            go to 130\par
+128         z = abs(f)*sqrt(1.0+ (h/f)**2)\par
+            go to 130\par
+129         z = abs(h)*sqrt(1.0+ (f/h)**2)\par
+130         q(i-1) = z\par
+            if (z.ne.0.0) go to 131\par
+               f = 1.0\par
+               z = 1.0\par
+131         c = f/z\par
+            s = h/z\par
+            f = c*g + s*y\par
+132         x = -s*g + c*y\par
+133      e(l) = 0.0\par
+         e(k) = f\par
+         q(k) = x\par
+         go to 101\par
+c...convergence[  q(k) is made non-negative...\par
+140      if (z.ge.0.0) go to 150\par
+         q(k) = -z\par
+         do 141 j=1,n\par
+141         ab(j,k) = -ab(j,k)\par
+150      continue\par
+      return\par
+200   q(1) = ab(1,1)\par
+      ab(1,1) = 1.0\par
+      return\par
+      end\par
+      subroutine min(n,j,nits,d2,x1,f1,fk,f,x,t,machep,h,\par
+     1v,q0,q1)\par
+      external f\par
+      logical fk\par
+      real machep,x(n),ldt\par
+      dimension v(n,n),q0(n),q1(n)\par
+      common /global/ fx,ldt,dmin,nf,nl\par
+     .       /q/ qa,qb,qc,qd0,qd1,qf1\par
+c...the subroutine min minimizes f from x in the direction v(*,j) unless\par
+c   j is less than 1, when a quadratic search is made in the plane\par
+c   defined by q0,q1,x.\par
+c   d2 is either zero or an approximation to half f?.\par
+c   on entry, x1 is an estimate of the distance from x to the minimum\par
+c   along v(*,j) (or, if j=0, a curve).  on return, x1 is the distance\par
+c   found.\par
+c   if fk=.true., then f1 is flin(x1).  otherwise x1 and f1 are ignored\par
+c   on entry unless final fx is greater than f1.\par
+c   nits controls the number of times an attempt will be made to halve\par
+c   the interval.\par
+      logical dz\par
+      real m2,m4\par
+      small = machep**2\par
+      m2=sqrt(machep)\par
+      m4 = sqrt(m2)\par
+      sf1 = f1\par
+      sx1 = x1\par
+      k = 0\par
+      xm = 0.0\par
+      fm = fx\par
+      f0 = fx\par
+      dz = d2.lt.machep\par
+c...find the step size...\par
+      s = 0.0\par
+      do 1 i=1,n\par
+1        s = s + x(i)**2\par
+      s = sqrt(s)\par
+      temp = d2\par
+      if (dz) temp = dmin\par
+      t2 = m4*sqrt(abs(fx)/temp + s*ldt) + m2*ldt\par
+      s = m4*s + t\par
+      if (dz.and.t2.gt.s) t2 = s\par
+      t2=amax1(t2,small)\par
+      t2=amin1(t2,.01*h)\par
+      if (.not.fk.or.f1.gt.fm) go to 2\par
+      xm = x1\par
+      fm = f1\par
+2     if (fk.and.abs(x1).ge.t2) go to 3\par
+      temp = 1.0\par
+      if (x1.lt.0.0) temp = -1.0\par
+      x1=temp*t2\par
+      f1 = flin(n,j,x1,f,x,nf,v,q0,q1)\par
+3     if (f1.gt.fm) go to 4\par
+      xm = x1\par
+      fm = f1\par
+4     if (.not.dz) go to 6\par
+c...evaluate flin at another point and estimate the second derivative...\par
+      x2 = -x1\par
+      if (f0.ge.f1) x2 = 2.0*x1\par
+      f2 = flin(n,j,x2,f,x,nf,v,q0,q1)\par
+      if (f2.gt.fm) go to 5\par
+         xm = x2\par
+         fm = f2\par
+5     d2 = (x2*(f1 - f0)-x1*(f2 - f0))/((x1*x2)*(x1 - x2))\par
+c...estimate the first derivative at 0...\par
+6     d1 = (f1 - f0)/x1 - x1*d2\par
+      dz = .true.\par
+c...predict the minimum...\par
+      if (d2.gt.small) go to 7\par
+         x2 = h\par
+         if (d1.ge.0.0) x2 = -x2\par
+         go to 8\par
+7        x2 = (-0.5*d1)/d2\par
+8     if (abs(x2).le.h) go to 11\par
+         if (x2) 9,9,10\par
+9        x2 = -h\par
+         go to 11\par
+10       x2 = h\par
+c...evaluate f at the predicted minimum...\par
+11    f2 = flin(n,j,x2,f,x,nf,v,q0,q1)\par
+      if (k.ge.nits.or.f2.le.f0) go to 12\par
+c...no success, so try again...\par
+         k = k + 1\par
+         if (f0.lt.f1.and.(x1*x2).gt.0.0) go to 4\par
+         x2 = 0.5*x2\par
+         go to 11\par
+c...increment the one-dimensional search counter...\par
+12    nl = nl + 1\par
+      if (f2.le.fm) go to 13\par
+      x2 = xm\par
+      go to 14\par
+13    fm = f2\par
+c...get a new estimate of the second derivative...\par
+14    if (abs(x2*(x2-x1)).le.small) go to 15\par
+         d2 = (x2*(f1-f0) - x1*(fm-f0))/((x1*x2)*(x1 - x2))\par
+         go to 16\par
+15       if (k.gt.0) d2 = 0.0\par
+16    if (d2.le.small) d2 = small\par
+      x1 = x2\par
+      fx = fm\par
+      if (sf1.ge.fx) go to 17\par
+         fx = sf1\par
+         x1 = sx1\par
+c...update x for linear but not parabolic search...\par
+17    if (j.eq.0) return\par
+      do 18 i=1,n\par
+18       x(i) = x(i) + x1*v(i,j)\par
+      return\par
+      end\par
+      real function flin(n,j,l,f,x,nf,v,q0,q1)\par
+      real l,x(n)\par
+      dimension v(n,n),q0(n),q1(n)\par
+c...flin is the function of one real variable l that is minimized\par
+c   by the subroutine min...\par
+      common /q/ qa,qb,qc,qd0,qd1,qf1\par
+      common /cstack/ d(500)\par
+      double precision d(500)\par
+      real  t(1000)\par
+      equivalence(d(1),t(1))\par
+       call enter(1)\par
+      it =istkgt(n,3)\par
+      if (j .eq. 0) go to 2\par
+c...the search is linear...\par
+      it1=it-1\par
+      do 1 i=1,n\par
+          itt=it1+i\par
+1        t(itt) = x(i) + l*v(i,j)\par
+      go to 4\par
+c...the search is along a parabolic space curve...\par
+2     qa = (l*(l - qd1))/(qd0*(qd0 + qd1))\par
+      qb = ((l + qd0)*(qd1 - l))/(qd0*qd1)\par
+      qc = (l*(l + qd0))/(qd1*(qd0 + qd1))\par
+      it1=it-1\par
+      do 3 i=1,n\par
+           itt=it1+i\par
+3        t(itt) = (qa*q0(i) + qb*x(i)) + qc*q1(i)\par
+c...the function evaluation counter nf is incremented...\par
+4     nf = nf + 1\par
+      flin = f(t(it),n)\par
+      call leave\par
+      return\par
+      end\par
+      subroutine sort(m,n,d,v)\par
+      real d(n),v(m,n)\par
+c...sorts the elements of d(n) into descending order and moves the\par
+c   corresponding columns of v(n,n).\par
+c   m is the row dimension of v as declared in the calling program.\par
+      real s\par
+      if (n.eq.1) return\par
+      nm1 = n - 1\par
+      do 3 i = 1,nm1\par
+         k=i\par
+         s = d(i)\par
+         ip1 = i + 1\par
+         do 1 j = ip1,n\par
+            if (d(j) .le. s) go to 1\par
+            k = j\par
+            s = d(j)\par
+1           continue\par
+         if (k .le. i) go to 3\par
+         d(k) = d(i)\par
+         d(i) = s\par
+         do 2 j = 1,n\par
+            s = v(j,i)\par
+            v(j,i) = v(j,k)\par
+2           v(j,k) = s\par
+3        continue\par
+      return\par
+      end\par
+      subroutine quad(n,f,x,t,machep,h,v,q0,q1)\par
+      external f\par
+c...quad looks for the minimum of f along a curve defined by q0,q1,x...\par
+      real x(n),machep,ldt,l\par
+      dimension v(n,n),q0(n),q1(n)\par
+      common /global/ fx,ldt,dmin,nf,nl\par
+     .       /q/ qa,qb,qc,qd0,qd1,qf1\par
+      s = fx\par
+      fx = qf1\par
+      qf1 = s\par
+      qd1 = 0.0\par
+      do 1 i=1,n\par
+         s = x(i)\par
+         l = q1(i)\par
+         x(i) = l\par
+         q1(i) = s\par
+1        qd1 = qd1+ (s-l)**2\par
+      qd1 = sqrt(qd1)\par
+      l = qd1\par
+      s = 0.0\par
+      if (qd0.le.0.0.or.qd1.le.0.0.or.nl.lt.3*n*n) go to 2\par
+      value=qf1\par
+      call min(n,0,2,s,l,value,.true.,f,x,t,machep,h,v,q0,q1)\par
+      qa = (l*(l-qd1))/(qd0*(qd0+qd1))\par
+      qb = ((l+qd0)*(qd1-l))/(qd0*qd1)\par
+      qc = (l*(l+qd0))/(qd1*(qd0+qd1))\par
+      go to 3\par
+2     fx = qf1\par
+      qa = 0.0\par
+      qb = qa\par
+      qc = 1.0\par
+3     qd0 = qd1\par
+      do 4 i=1,n\par
+         s = q0(i)\par
+         q0(i) = x(i)\par
+4        x(i) = (qa*s + qb*x(i)) + qc*q1(i)\par
+      return\par
+      end\par
+\par
+\pard\f1\par
+}
+ 

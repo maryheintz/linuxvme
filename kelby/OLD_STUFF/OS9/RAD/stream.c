@@ -1,0 +1,1 @@
+#include <stdio.h>char string[500];main()  { FILE *fp;    char k;    printf("input file name\n");    fscanf(stdin,"%s",string);    fp = fopen(string,"w");loop:    if(sw(8) == 1) goto done;    fscanf(stdin,"%s",string);    fprintf(fp,"%s",string);    goto loop;done:    close(fp);  }  /* end of main */

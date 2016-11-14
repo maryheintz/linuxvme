@@ -1,0 +1,2 @@
+gcc buttons.c -lkja -lXm -lXt -lX11 -lICE -lSM -lXpm -lXext -lbsd -o buttons
+

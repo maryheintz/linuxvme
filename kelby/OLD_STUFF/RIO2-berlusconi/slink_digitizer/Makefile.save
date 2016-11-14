@@ -1,0 +1,90 @@
+#------------------------------------------------------------------------
+# Variable PLATFORM has to be initialize to a PPC platform
+# Slink application for TileCal
+# Can be : RIOII RTPC MVME160X MVME1300
+PLATFORM = RIOII
+#------------------------------------------------------------------------
+
+OS_TYPE = lynxos
+OS_VERSION = 2.4.0
+
+include makerules
+
+# Options for the compiler
+CFLAGS = -c -g -ansi -D$(PLATFORM) -D_DIGITIZER_ -DLynx -I$(PRO_INC) $(CES_INC)
+
+# Additional options for the S-LINK library
+# Can be :
+# DEBUG, DEBUGB, REFRAINED_REQUEST, LINK_4BITS, LIBS5933
+# POINTER_CHECK, PARAMETER_CHECK, LDOWN_CHECK
+# FIFO_CHECK, FIFO_WAIT (by default)
+
+CFLAGS_SLINK = -DPOINTER_CHECK -DPARAMETER_CHECK -DLDOWN_CHECK -DLIBS5933 -DLINK_4BITS
+
+# Options for the linker
+LIBS    = -liomintf -liomutils -liomdaq -liomsched -lemulator -lrctl -lcomlib -lmsg \
+          -lerr -lsysind -lgpih -lfifo -lbma -lvme -lSLINK -lpci -ls5933 -liomuio -llynx
+
+LFLAGS  = $(LFLAGS_ATD) -lSLINK -lmenu -lvme -lpci -ls5933 -liomuio -llynx -liom_error
+LLFLAGS = -g $(LFLAGS_ATD) $(LIBS)
+
+# List of object files which are real targets
+OBJECTS = libSLINK.o libSLINK_O.o
+TTC_OBJ = /afs/cern.ch/user/r/rios/public/ttcvi/libttcvi.o /afs/cern.ch/user/r/rios/public/ttcvi/map_vme_cesrio.o
+
+# List of library files in order to define default targets
+LIBRARIES_lynxos = libSLINK.a libmenu.a
+
+# List of binary files in order to define default targets
+BINARIES_lynxos = Source Destination adctest tecdmutest Destination_SLIDAS \
+                  Destination_statis Destination_statis_SLIDAS Rod_Destination
+
+#------------------------------------------------------------------------
+INST_INC = SLINK.h menu.h term_control.h
+INST_BIN = $(BINARIES_$(OS_TYPE))
+INST_LIB = $(LIBRARIES_$(OS_TYPE))
+
+#------------------------------------------------------------------------
+#Precises default targets
+all:: $(INST_LIB) $(INST_BIN)
+
+term_control.o : term_control.c term_control.h
+libmenu.a : menu.o term_control.o
+	$(MAKELIB)
+
+#How to build libSLINK.a
+libSLINK.o : libSLINK.c SLINK.h
+	$(CC) $(CFLAGS) $(CFLAGS_SLINK)  $< -o $@
+libSLINK.a : libSLINK.o
+	$(MAKELIB)
+
+libSLINK_O.o : libSLINK.c SLINK.h
+	$(CC) -O3 $(CFLAGS) $(CFLAGS_SLINK) $< -o $@
+
+Source.o : Source.c SLINK.h
+Destination.o : Destination.c SLINK.h
+Destination_statis.o : Destination_statis.c  SLINK.h
+Destination_SLIDAS.o : Destination.c SLINK.h
+	$(CC) $(CFLAGS) -DSLIDAS $< -o $@
+Destination_statis_SLIDAS.o : Destination_statis.c SLINK.h
+	$(CC) $(CFLAGS) -DSLIDAS $< -o $@
+adctest.o : adctest.c SLINK.h adctest.h
+tecdmutest.o: tecdmutest.c SLINK.h tecdmutest.h
+
+Rod_Destination.o : Rod_Destination.c Rod_Destination.h
+RodSlinkLib.o : RodSlinkLib.c RodSlinkLib.h
+
+Destination : Destination.o libSLINK.a 
+	$(CC) $< -o $@ ./libSLINK.a $(TTC_OBJ) $(LFLAGS)
+Destination_statis : Destination_statis.o libSLINK.a $(TTC_OBJ) 
+	$(CC) $< -o $@ ./libSLINK.a $(TTC_OBJ) $(LFLAGS)
+Destination_SLIDAS : Destination_SLIDAS.o libSLINK.a $(TTC_OBJ) 
+	$(CC) $< -o $@ ./libSLINK.a $(TTC_OBJ) $(LFLAGS)
+Destination_statis_SLIDAS : Destination_statis_SLIDAS.o libSLINK.a $(TTC_OBJ)
+	$(CC) $< -o $@ ./libSLINK.a $(TTC_OBJ) $(LFLAGS)
+adctest : adctest.o libSLINK.a 
+	$(CC) $< -o $@ ./libSLINK.a $(TTC_OBJ) $(LFLAGS)
+tecdmutest : tecdmutest.o libSLINK.a 
+	$(CC) $< -o $@ ./libSLINK.a $(TTC_OBJ) $(LFLAGS)
+Rod_Destination : Rod_Destination.o libSLINK.a RodSlinkLib.o
+	$(CC) $< -o $@ ./libSLINK.a ./RodSlinkLib.o $(TTC_OBJ) $(LFLAGS)

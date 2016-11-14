@@ -1,0 +1,55 @@
+gcc -c gd.c
+gcc -c gd_gd.c
+gcc -c gd_gd2.c
+gcc -c gd_io.c
+gcc -c gd_io_dp.c
+gcc -c gd_io_file.c
+gcc -c gd_security.c
+gcc -c gd_ss.c
+gcc -c gd_io_ss.c
+gcc -c gd_png.c
+gcc -c gd_jpeg.c
+gcc -c gdxpm.c
+gcc -c gdfontt.c
+gcc -c gdfonts.c
+gcc -c gdfontmb.c
+gcc -c gdfontl.c
+gcc -c gdfontg.c
+gcc -c gdtables.c
+gcc -c gdft.c
+#gcc -c gdttf.c
+gcc -c gdcache.c
+gcc -c gdkanji.c
+gcc -c wbmp.c
+gcc -c gd_wbmp.c
+gcc -c gdhelpers.c
+
+ar -r libgd.a gd.o
+ar -r libgd.a gd_gd.o
+ar -r libgd.a gd_gd2.o
+ar -r libgd.a gd_io.o
+ar -r libgd.a gd_io_dp.o
+ar -r libgd.a gd_io_file.o
+ar -r libgd.a gd_security.o
+ar -r libgd.a gd_ss.o
+ar -r libgd.a gd_io_ss.o
+ar -r libgd.a gd_png.o
+ar -r libgd.a gd_jpeg.o
+ar -r libgd.a gdxpm.o
+ar -r libgd.a gdfontt.o
+ar -r libgd.a gdfonts.o
+ar -r libgd.a gdfontmb.o
+ar -r libgd.a gdfontl.o
+ar -r libgd.a gdfontg.o
+ar -r libgd.a gdtables.o
+ar -r libgd.a gdft.o
+#ar -r libgd.a gdttf.o
+ar -r libgd.a gdcache.o
+ar -r libgd.a gdkanji.o
+ar -r libgd.a wbmp.o
+ar -r libgd.a gd_wbmp.o
+ar -r libgd.a gdhelpers.o
+
+ar -s libgd.a
+cp -r libgd.a /home/uaer/kelby/lib
+

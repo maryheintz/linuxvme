@@ -1,0 +1,2 @@
+gcc link_reset.c -l3in1 -lkja -lvme -lSLINK -ls5933 -lpci -liomuio -llynx \
+-o /home/user/kelby/bin/link_reset

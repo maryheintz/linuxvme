@@ -1,0 +1,42 @@
+PCI image 0 enabled, accessing  data...
+PCI image 0 enabled, accessing  data...
+ 01 wd=49
+ 03 wd=50
+ 05 wd=41
+ 07 wd=43
+ 09 wd=b3
+ 0b wd=1
+ 0d wd=10
+ 0f wd=0
+ 11 wd=0
+ 13 wd=0
+ 15 wd=c
+ 17 wd=11
+enter ttc address
+0  S10120
+calling can_reset - this takes a few seconds
+can_tx id=0  dlc=8 rtr=0 data=107 83 49 48 49 50 48 1
+can_rx id=64  dlc=8 rtr=0 data=107 83 49 48 49 50 48 1
+calling can_adc_init GO_FB
+can_tx id=65  dlc=2 rtr=0 data=1 101 0 0 0 0 0 0
+can_rx id=65  dlc=8 rtr=0 data=73 82 73 50 48 48 48 3
+can_rx id=66  dlc=8 rtr=0 data=1 101 73 50 48 48 48 3
+IRI2000 - VERSION 3
+can_tx id=65  dlc=3 rtr=0 data=11 212 0 191 225 150 4 8
+can_rx id=64  dlc=1 rtr=0 data=51 212 0 191 225 150 4 8
+can_tx id=65  dlc=1 rtr=0 data=12 0 0 0 1 0 0 1
+can_rx id=78  dlc=8 rtr=0 data=12 30 170 50 48 48 48 3
+can_tx id=65  dlc=3 rtr=0 data=11 212 0 191 225 150 4 8
+can_rx id=64  dlc=1 rtr=0 data=51 212 0 191 225 150 4 8
+can_tx id=65  dlc=1 rtr=0 data=12 0 0 0 1 0 0 1
+can_rx id=78  dlc=8 rtr=0 data=12 29 85 50 48 48 48 3
+ card 1 found  1
+can_tx id=65  dlc=3 rtr=0 data=11 212 0 191 225 150 4 8
+can_rx id=64  dlc=1 rtr=0 data=51 212 0 191 225 150 4 8
+can_tx id=65  dlc=1 rtr=0 data=12 0 0 0 1 0 0 1
+can_rx id=78  dlc=8 rtr=0 data=12 30 170 50 48 48 48 3
+can_tx id=65  dlc=3 rtr=0 data=11 212 0 191 225 150 4 8
+can_rx id=64  dlc=1 rtr=0 data=51 212 0 191 225 150 4 8
+can_tx id=65  dlc=1 rtr=0 data=12 0 0 0 1 0 0 1
+can_rx id=78  dlc=8 rtr=0 data=12 29 85 50 48 48 48 3
+ card 2 found  2

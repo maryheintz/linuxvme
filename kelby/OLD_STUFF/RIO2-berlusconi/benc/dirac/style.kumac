@@ -1,0 +1,29 @@
+MACRO STYLE.KUMAC
+
+* Printing
+
+/kuip/set_show/host_printer 'lp -onobanner $*'
+
+* Set style options for plots
+
+* Set the text fonts
+graph/set LFON -130
+graph/set GFON -130
+graph/set VFON -130
+graph/set TFON -130
+graph/set CFON -130
+
+graph/set XMGR 1.00
+
+graph/set GSIZ 0.50
+graph/set YGTI 0.75
+graph/set YMGU 2.00
+
+graph/set VSIZ 0.25
+graph/set XVAL 0.25
+graph/set YVAL 0.20
+graph/set XLAB 1.00
+graph/set YLAB 0.70
+graph/set ASIZ 0.28
+graph/set YHTI 1.25
+graph/set TSIZ 0.28

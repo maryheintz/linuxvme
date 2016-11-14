@@ -1,0 +1,2 @@
+gcc -O drwtst.c -l3in1v3 -lkja -lvme -lSLINK -ls5933 -lpci -liomuio -llynx \
+-o /home/user/kelby/bin/drwtst

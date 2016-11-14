@@ -1,0 +1,1 @@
+g++ ben_test.c -Wall -l3in1_13 -lkja -lvme -o /home/user/kelby/bin/$1 

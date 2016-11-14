@@ -1,0 +1,1 @@
+#include <stdio.h>main(){    unsigned short *adr,k;lup:   adr = (unsigned short *)0xf0dd0016;   *adr = 0;   adr = (unsigned short *)0xf0dd0010;   k = *adr;   printf(" k=%x\n",k);   sleep(1);   goto lup;}

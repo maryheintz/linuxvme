@@ -1,0 +1,1 @@
+xterm -ls -T "ATLAS WINDOW" -j -sb -ls -sl 200 -g 80x32+360+5 -n "HP UNIX" -fn "-bitstream-terminal-medium-r-normal-*-18-140-100-100-c-110-iso8859-1" -e zsh &

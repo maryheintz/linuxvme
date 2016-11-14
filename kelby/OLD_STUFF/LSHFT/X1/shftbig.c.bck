@@ -1,0 +1,267 @@
+#include <stdio.h>
+#include <math.h>
+unsigned int sw_base,vme_base;
+int ht[1000];
+double aht1[1000],aht2[1000],bin[100];
+double prob=0.025,offset=50.0,amp;
+double a1,b1,a2,b2,a3,b3;
+int ntotal;
+main()
+{ int i,l,k,ibin;
+  double area,x,c1,c2,t1,t2,test,dx,pedmin;
+  unsigned long init[4]={0x123, 0x234, 0x345, 0x456}, length=4;
+  init_by_array(init, length); 
+  vme_base = vme_a24_base();
+  sw_base = vme_base + 0xaa0000;
+  set_dist();
+  x = 0.0;
+  c1=(x*x)/762.84;
+  t1 = 100.0*exp(-c1);
+  printf("g0=%f\n",t1);
+  x = 25.0;
+  c1=(x*x)/762.84;
+  t1 = 100.0*exp(-c1);
+  printf("g25=%f\n",t1);
+  x = -25.0;
+  c1=x/6000.0;
+  t1 = 100.0*exp(-c1);
+  printf("gm25=%f\n",t1);
+  hstset(0,2.5,0.0,200,-7);  
+  hstset(1,1.0,0.0,200,-7);  
+  hstset(2,100.0,0.0,200,0);  
+  hstset(3,100.0,0.0,200,-3);  
+  ntotal=0;
+again:
+        /*========== fill array ================== */
+        for(i=0;i<710;i++) hit(i);
+        /* ============= now get sums for bit 599 =====*/
+       pedmin=1000.0;
+       for(ibin=0;ibin<100;ibin++)
+        { area=offset;
+          i=600+ibin;
+          for(k=0;k<605;k++)
+            { l=i-599+k;
+              x = 25.0*(double)(k-599);
+              if(ht[l]>0)
+                { c1=(x*x)/762.84;
+                  c2=x/5000.0;
+                  t1 = aht1[l]*exp(-c1);
+	          t2 = aht2[l]*exp(c2);
+                  area = area + t1;
+		  if(x<0.0) area = area - t2;
+		  dx = x;
+		  if(dx<0) dx=-dx;
+                  if(dx<26.0 && sw(6)==1) 
+		    printf("i=%d  k=%d  l=%d  x=%f  c1=%f  c2=%f  t1=%f  t2=%f  area=%f\n",
+	             i,k,l,x,c1,c2,t1,t2,area);
+		  if(area<pedmin) pedmin=area;
+                }
+           }
+        bin[ibin]=area;
+	hstacc(2,pedmin,1.0);
+	hstacc(3,pedmin,1.0);
+       }
+  ntotal++;
+  if(sw(8) == 1)
+   { sidev(1);
+     evdisp();
+     sidev(2);
+     evdisp();
+   }
+  if(sw(7)==1 || ntotal==5000000) 
+   { printf(" hit enter for plots\n");
+     sidev(1);
+     hstwrt(0);
+     hstwrt(1);
+     hstwrt(2);
+     hstwrt(3);
+     sidev(2);
+     hstwrt(0);
+     hstwrt(1);    
+     hstwrt(2);
+     hstwrt(3);
+     if(ntotal==5000000) exit(0);
+     printf(" continue\n");
+   }
+   
+  goto again; 
+}
+  hit(int i)
+   { double r,E;
+     rmt(&r);
+     ht[i] = 0;
+     if(r<prob)
+      { E=20.0;
+        amp = 36.825*E;  /* higain - convert E(GeV) to counts */ 
+        ht[i]=1;
+        aht1[i]=amp;
+        aht2[i]=0.009791*amp;
+        return(0);
+      }
+     return(0);
+   }
+sw(i)
+int i;
+{ int k,l,shift;
+  unsigned short *adr;
+  (unsigned short *)adr = (unsigned short *)(sw_base + 0x0c);
+  k = *adr;
+  shift = i-1;
+  l = (k>>shift) & 1;
+  return(l);
+}
+set_dist()
+ { /* -------------- zone 1  0.02<E<0.12 -------------- */
+   b1 = -log(0.07)/0.12;
+   a1 = 100000.0;
+   printf("a1=%f  b1=%f\n",a1,b1);
+          /* y = a1*pow(2.71828183,-b1*E) */
+   /* -------------- zone 2  0.12<E<0.7 ------------- */ 
+   b2 = (log(70.0)-log(5.0))/0.58;
+   a2 = 500.0*pow(2.71828183,0.7*b2);
+   printf("a2=%f  b2=%f\n",a2,b2);
+          /* y = a2*pow(2.71828183,-b2*E) */
+   /* -------------- zone 3  E<0.7 ------------------ */ 
+   b3 = log(500.0)/2.8;
+   a3 = pow(2.71828183,3.5*b3);
+   printf("a3=%f  b3=%f\n",a3,b3);
+          /* y = a3*pow(2.71828183,-b3*E) */
+   /* -------------- zone 2  0.0<E<0.01------------- */ 
+     /* lowest bin y = pow(10,7.0)  */
+
+   return(0);
+ }
+pick(double *E)
+ { double r,test,y,e;
+   static double range=2500000.0;
+again:
+   rmt(&r);
+   e = 2.5*r;
+   if(e<0.02) 
+    { hstacc(1,e,1.0);
+      *E=e;
+      return(0);
+    }
+   if(e>=0.02 && e<0.12)
+     { rmt(&r);
+       test = r * range;
+       y = a1*pow(2.71828183,-b1*e);
+       if(test>y) goto again;
+       hstacc(1,e,1.0);
+       *E=e;
+       return(0);
+     }
+   if(e>=0.12 && e<0.7)
+     { rmt(&r);
+       test = r * range;
+       y = a2*pow(2.71828183,-b2*e);
+       if(test>y) goto again;
+       hstacc(1,e,1.0);
+       *E=e;
+       return(0);
+     }
+   if(e>=0.7)
+     { rmt(&r);
+       test = r * range;
+       y = a3*pow(2.71828183,-b3*e);
+       if(test>y) goto again;
+       hstacc(1,e,1.0);
+       *E=e;
+       return(0);
+     }
+ }  
+    double hstfit(i,l,x)
+    int i,l;
+    double x;
+    {double y;
+     y=90.0*exp(-0.1*x);
+     return(y); 
+    }  
+   evdisp()  
+ { int max,mmax,idx,idy,ny,linx,ixbas,iybas,ix,iy,iylst,kx,ky,i,k,ii,iii;
+   int idel,kja;
+   double dely,y,dy;
+   char str[5];
+   erasm();
+/* ======================= first channel plot kk1 ================== */    
+   max = 0;
+   for(iii=1; iii<100; iii++) {
+   if (max < bin[iii]) max = bin[iii];
+   };
+   mmax=5000;
+   if(max<4000) mmax=4000;
+   if(max<3000) mmax=3000;
+   if(max<2000) mmax=2000;
+   if(max<1000) mmax=1000;
+   if(max<800) mmax=800;
+   if(max<600) mmax=600;
+   if(max<500) mmax=500;
+   if(max<400) mmax=400;
+   if(max<200) mmax=200;
+   if(max<100) mmax=100;
+   if(max<50) mmax=50;
+   idx = 1600/100;
+   linx = idx*100;
+   ixbas = 100+(2200-linx)/2;
+   dy = 1200.0/(double)mmax;
+   iybas = 750;
+   mova(ixbas,iybas);
+   drwr(linx,0);
+   mova(ixbas,iybas);
+   iylst = 0;
+   for(i=1;i<=100;i++)
+    { ii = bin[i];
+      y = (double)ii;
+      y = y*dy;
+      iy = (int)y;
+      idy = iy-iylst;
+      drwr(0,idy);
+      drwr(idx,0);
+      iylst=iy;
+    }
+      drwr(0,-iylst);
+
+/*  label horizontal axis */
+    idel=25;
+    for(i=0;i<100+2;i=i+idel)
+     { ix=ixbas+idx*i;
+       mova(ix,iybas);
+       drwr(0,-30);
+       k=i/2;
+       if(k*2 == i)
+         { sprintf(str,"%3d",i);
+           kx = ix-45;
+           if(i<100) kx = ix-55;
+           if(i<10) kx=ix-75;
+           symb(kx,iybas-110,0.0,str);
+         }
+     }
+/*  label vertical axis  */
+    ny=mmax/100;
+    if(ny>10) ny=10;
+    if(mmax == 1000) ny=5;
+    if(mmax == 800) ny=4;
+    if(mmax == 600) ny=3;
+    if(mmax == 200) ny=4;
+    if(mmax == 100) ny=4;
+    if(mmax == 50) ny=5;
+    y=(double)mmax*dy;
+    iy = (int)y;
+    mova(ixbas,iybas);
+    drwr(0,iy);
+    for(i=0;i<=ny;i++)
+     { ky = i*mmax/ny;
+       y = (double)ky * dy;
+       iy = (int)y + iybas;
+       mova(ixbas,iy);
+       drwr(-20,0);
+       sprintf(str,"%4d",ky);
+       kx = ixbas-150;
+       symb(kx,iy-20,0.0,str);
+     }
+    /*  print label */
+    plotmx(ntotal);
+ }
+
+     
+      

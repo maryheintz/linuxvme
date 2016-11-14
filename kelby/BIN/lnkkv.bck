@@ -1,0 +1,5 @@
+#rm /home/kelby/BIN/$1
+gcc $1.c -L /home/kelby/LIB -lkja -l3in1_kv \
+-L /usr/local/lib\ -lcctvme \
+-L/kvaser/linuxcan_v4/canlib -lcanlib \
+-lgd -lpng -ljpeg -lfreetype -lz -lm -o /home/kelby/BIN/$1

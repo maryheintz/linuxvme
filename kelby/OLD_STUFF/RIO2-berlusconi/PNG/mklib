@@ -1,0 +1,38 @@
+gcc -c png.c
+gcc -c pngerror.c
+gcc -c pnggccrd.c
+gcc -c pngget.c
+gcc -c pngmem.c
+gcc -c pngpread.c
+gcc -c pngread.c
+gcc -c pngrio.c
+gcc -c pngrtran.c
+gcc -c pngrutil.c
+gcc -c pngset.c
+gcc -c pngtrans.c
+gcc -c pngvcrd.c
+gcc -c pngwio.c
+gcc -c pngwrite.c
+gcc -c pngwtran.c
+gcc -c pngwutil.c
+
+ar -r libpng.a png.o
+ar -r libpng.a pngerror.o
+ar -r libpng.a pnggccrd.o
+ar -r libpng.a pngget.o
+ar -r libpng.a pngmem.o
+ar -r libpng.a pngpread.o
+ar -r libpng.a pngread.o
+ar -r libpng.a pngrio.o
+ar -r libpng.a pngrtran.o
+ar -r libpng.a pngrutil.o
+ar -r libpng.a pngset.o
+ar -r libpng.a pngtrans.o
+ar -r libpng.a pngvcrd.o
+ar -r libpng.a pngwio.o
+ar -r libpng.a pngwrite.o
+ar -r libpng.a pngwtran.o
+ar -r libpng.a pngwutil.o
+
+ar -s libpng.a
+cp -r libpng.a /home/user/kelby/lib

@@ -1,0 +1,1 @@
+cc -k=2f -f=btest2 btest2.c -l=basic.r

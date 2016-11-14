@@ -1,0 +1,4 @@
+gcc -c lib3in1_13.c
+ar -r lib3in1_13.a lib3in1_13.o
+ar -s lib3in1_13.a
+cp -r lib3in1_13.a /home/user/kelby/lib

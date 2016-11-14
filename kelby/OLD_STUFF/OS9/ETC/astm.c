@@ -1,0 +1,1 @@
+#include <stdio.h>main(){    unsigned long *adr;   unsigned long k;loop:   k=0xf0000000;   adr = (unsigned long *)k;   *adr = 0;   k=0xf0ffffff;   adr = (unsigned long *)k;   *adr = 0;   goto loop;   return(0); }

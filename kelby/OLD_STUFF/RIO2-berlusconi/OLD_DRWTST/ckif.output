@@ -1,0 +1,363 @@
+ttcadr=3009  ADC=S10117
+input icap = 0-logain  1-higain
+  csr1=cf6a  csr2=f055
+calling can_reset -- wait
+calling can_init
+serial=S10117  board=1
+can_tx completed
+can rx complete
+id adc = 1
+calling can_adc_init GO_FB
+IRI2000 - VERSION 3
+returned from can_init
+ card 1 found
+ card 2 found
+ card 3 found
+ card 4 found
+ card 5 found
+ card 6 found
+ card 7 found
+ card 8 found
+ card 9 found
+ card 10 found
+ card 11 found
+ card 12 found
+ card 13 found
+ card 14 found
+ card 15 found
+ card 16 found
+ card 17 found
+ card 18 found
+ card 19 found
+ card 20 found
+ card 21 found
+ card 22 found
+ card 23 found
+ card 24 found
+ card 25 found
+ card 26 found
+ card 27 found
+ card 28 found
+ card 29 found
+ card 30 found
+ card 31 found
+ card 32 found
+ card 33 found
+ card 34 found
+ card 35 found
+ card 36 found
+ card 37 found
+ card 38 found
+ card 39 found
+ card 40 found
+ card 41 found
+ card 42 found
+ card 43 found
+ card 44 found
+ card 45 found
+ card 46 found
+ card 47 found
+ card 48 found
+ good=48    bad=0     48
+ charge=599.785728  dacval=749.267578  dac=2ed(hex)  cap=100.000000
+ calling inject_setup
+ calling slink_setup
+slink opened
+ Setting up Digitizers
+ starting event loop
+control word= 51115110
+1 header word 985c07e5  bunch 2021  1  error=0  sestr=0  destr=0
+ data word=    0    1   3b   46   3c    43b1183c  793c bddb
+ data word=    0    1  101   ff   d8    5013fcd8  274e fdd5
+ data word=    0    1  373  36b  359    773daf59  59c5 2f8b
+ data word=    0    1  1fd  212  23a    5fd84a3a  1210  8fd
+ data word=    0    1   4e   53   60    44e14c60  111e eaae
+ data word=    0    0   36   43   35     3610c35  3d18 271b
+ data word=    0    1   33   40   32    43310032  4da6 12a0
+      tiledmu crc 4da6 12a0  ok
+2 header word 985c07e5  bunch 2021  10  error=0  sestr=0  destr=0
+ data word=    0    0   42   48   46     4212046  55d1 e987
+ data word=    0    1  110   e7   de    51039cde  4bd6  811
+ data word=    0    1  380  354  35a    780d535a  2072 81fe
+ data word=    0    0  20a  235  233    20a8d633  1326 732b
+ data word=    0    0   58   6e   6b     581b86b   5f6 7890
+ data word=    0    1   3d   40   3f    43d1003f  5fad d339
+ data word=    0    1   34   3d   3c    4340f43c  13b2 a0ac
+      tiledmu crc 13b2 a0ac  ok
+3 header word d81c07e5  bunch 2021  19  error=0  sestr=0  destr=0
+ data word=    0    0   32   3f   44     320fc44  45ad f7bd
+ data word=    0    1  135  13b  128    5354ed28  32fb e3b7
+ data word=    0    1  380  37b  386    780def86   295 8a23
+ data word=    0    0  1cf  1d5  1ec    1cf755ec  4f45 1f7e
+ data word=    0    1   37   48   4f    4371204f  4002 4ffb
+ data word=    0    0   28   3b   42     280ec42  7e0a 3245
+ data word=    0    1   28   35   3a    4280d43a  5635 6bc1
+      tiledmu crc 5635 6bc1  ok
+4 header word d81c07e5  bunch 2021  28  error=0  sestr=0  destr=0
+ data word=    0    0   49   3f   4d     490fc4d  454f f728
+ data word=    0    0  15f  10c  144    15f43144  42af be5f
+ data word=    0    0  388  36d  384    388db784  2964 de3c
+ data word=    0    0  1b9  1f3  1e3    1b97cde3  3b2e 79c6
+ data word=    0    1   46   52   56    44614856  3f95 8c5b
+ data word=    0    1   4c   39   46    44c0e446  7f06 23ba
+ data word=    0    1   41   39   41    4410e441  7cc5 c39c
+      tiledmu crc 7cc5 c39c  ok
+5 header word 985c07e5  bunch 2021  37  error=0  sestr=0  destr=0
+ data word=    0    0   4e   43   3f     4e10c3f  6db8 bde1
+ data word=    0    1  13f  159  125    53f56525  418a c0df
+ data word=    0    1  375  39c  37a    775e737a  1e31 fc7e
+ data word=    0    1  1e3  1c7  1f2    5e371df2  42fd 32e9
+ data word=    0    1   59   47   50    45911c50  39e5 b616
+ data word=    0    0   46   40   38     4610038  572c f4b8
+ data word=    0    1   45   38   36    4450e036  3455 f196
+      tiledmu crc 3455 f196  ok
+6 header word 985c07e5  bunch 2021  46  error=0  sestr=0  destr=0
+ data word=    0    1   46   3f   4a    4460fc4a  44b1 7781
+ data word=    0    0  16c  13e  158    16c4f958    54 a356
+ data word=    0    0  381  38a  384    381e2b84  30b1 8d6a
+ data word=    0    1  1ad  1d8  1c3    5ad761c3  7786 c037
+ data word=    0    0   44   47   4c     4411c4c  4665 98bb
+ data word=    0    0   3d   3d   46     3d0f446  67cd 59ca
+ data word=    0    0   38   33   41     380cc41  2e9b 4ae9
+      tiledmu crc 2e9b 4ae9  ok
+7 header word d81c07e5  bunch 2021  55  error=0  sestr=0  destr=0
+ data word=    0    1   5f   69   5a    45f1a45a   c15 6fe1
+ data word=    0    1  123  14f  119    52353d19  4e34 74b5
+ data word=    0    1  38a  39a  398    78ae6b98  533d fd8a
+ data word=    0    1  21c  20f  22b    61c83e2b  7edd e8d3
+ data word=    0    0   71   76   74     711d874  2f25 acd6
+ data word=    0    0   61   5f   56     6117c56  5309 7ec7
+ data word=    0    0   55   64   4e     551904e   5be 8098
+      tiledmu crc  5be 8098  ok
+8 header word d81c07e5  bunch 2021  64  error=0  sestr=0  destr=0
+ data word=    0    1   58   56   52    45815852  1eb6 fd27
+ data word=    0    1  143  108  123    54342123  76ec c214
+ data word=    0    0  3a8  38d  39f    3a8e379f  53ee 52bc
+ data word=    0    1  1fd  22b  20c    5fd8ae0c  70e6 cc43
+ data word=    0    1   63   6d   62    4631b462  558c 637c
+ data word=    0    1   59   51   54    45914454  40c5 cb6d
+ data word=    0    1   4e   4a   46    44e12846  61e3 afc8
+      tiledmu crc 61e3 afc8  ok
+9 header word 985c07e5  bunch 2021  73  error=0  sestr=0  destr=0
+ data word=    0    1   3c   39   50    43c0e450   899 6f1e
+ data word=    0    0  126  13b  13f    1264ed3f  5cbc 30be
+ data word=    0    0  381  386  38b    381e1b8b  76c8 691c
+ data word=    0    1  1ed  1be  1ef    5ed6f9ef  6d81 470a
+ data word=    0    1   4b   3b   57    44b0ec57  53d2   93
+ data word=    0    0   37   3e   49     370f849   270 119f
+ data word=    0    0   31   29   49     310a449  75d0 6f77
+      tiledmu crc 75d0 6f77  ok
+10 header word 985c07e5  bunch 2021  82  error=0  sestr=0  destr=0
+ data word=    0    0   49   48   30     4912030  7514 292d
+ data word=    0    0  167  129  127    1674a527  1746 bc17
+ data word=    0    1  37f  384  37c    77fe137c  6e99 7a61
+ data word=    0    0  1b1  1f4  1d5    1b17d1d5  7f2a 7868
+ data word=    0    0   47   54   3c     471503c  4b44 51b0
+ data word=    0    1   49   4b   2c    44912c2c  2046 31c3
+ data word=    0    1   3e   3a   26    43e0e826  47c4 f613
+      tiledmu crc 47c4 f613  ok
+11 header word 985c07e5  bunch 2021  91  error=0  sestr=0  destr=0
+ data word=    0    1   4e   36   35    44e0d835  7cbd 3bed
+ data word=    0    0   d6   d0   d0     d6340d0  2ec3 7bb5
+ data word=    0    0  34b  368  35f    34bda35f  74d1 a298
+ data word=    0    0  243  230  243    2438c243  5c32 f81c
+ data word=    0    0   6f   51   5c     6f1445c  7514 90d2
+ data word=    0    0   55   3d   2e     550f42e  2cfa 28ea
+ data word=    0    1   45   2d   26    4450b426  7eae b875
+      tiledmu crc 7eae b875  ok
+12 header word 985c07e5  bunch 2021  100  error=0  sestr=0  destr=0
+ data word=    0    1   35   44   4e    4351104e  595f e572
+ data word=    0    0   c5   c9  118     c532518  3c75 503d
+ data word=    0    0  34e  34e  37c    34ed3b7c  17c5 85a2
+ data word=    0    0  23d  261  200    23d98600  6b0d 2a1a
+ data word=    0    1   5b   71   5e    45b1c45e  47c9 7af0
+ data word=    0    0   31   3c   4e     310f04e  7a4f 941a
+ data word=    0    1   26   3b   44    4260ec44  63cd eaa5
+      tiledmu crc 63cd eaa5  ok
+13 header word 985c07e5  bunch 2021  109  error=0  sestr=0  destr=0
+ data word=    0    0   45   4a   40     4512840  5577 714e
+ data word=    0    0  12a  16e  11e    12a5b91e   1bd b53e
+ data word=    0    1  375  37c  387    775df387  3d83 e538
+ data word=    0    1  1e5  1b4  1f0    5e56d1f0  163b 7bb7
+ data word=    0    0   55   4b   4a     5512c4a   f18 8db8
+ data word=    0    0   3b   3d   40     3b0f440  50a0 a709
+ data word=    0    1   3a   3e   32    43a0f832  29f0 80a5
+      tiledmu crc 29f0 80a5  ok
+14 header word 985c07e5  bunch 2021  118  error=0  sestr=0  destr=0
+ data word=    0    0   33   3e   3c     330f83c  7c39 37b8
+ data word=    0    1  138  105  10a    5384150a  2d29 31cc
+ data word=    0    1  384  37d  365    784df765  2e19 5f3c
+ data word=    0    1  1c6  207  1ed    5c681ded  2021 7bd3
+ data word=    0    1   38   51   4d    4381444d  3df5 98ba
+ data word=    0    1   2e   39   39    42e0e439  5258 1900
+ data word=    0    0   25   32   31     250c831  2b7c  833
+      tiledmu crc 2b7c  833  ok
+15 header word 985c07e5  bunch 2021  127  error=0  sestr=0  destr=0
+ data word=    0    0   46   3a   42     460e842  50b4 f787
+ data word=    0    0  121  125  13b    1214953b   6f2 7722
+ data word=    0    0  36b  383  376    36be0f76  1f7d 58df
+ data word=    0    1  1e7  1e0  1cf    5e7781cf  113a 3720
+ data word=    0    1   58   43   42    45810c42  1dbb 2aa9
+ data word=    0    1   3f   33   3c    43f0cc3c  1300 2163
+ data word=    0    0   3e   30   35     3e0c035  2c5c 81d9
+      tiledmu crc 2c5c 81d9  ok
+16 header word 985c07e5  bunch 2021  136  error=0  sestr=0  destr=0
+ data word=    0    0   4e   43   3c     4e10c3c  6db1 3de8
+ data word=    0    1  179  117  121    57945d21  4ecb d423
+ data word=    0    0  382  36f  373    382dbf73  2030 1b98
+ data word=    0    0  1a6  1ee  1de    1a67b9de  5e49 a8b4
+ data word=    0    1   4a   56   49    44a15849  2ca4 6b14
+ data word=    0    0   44   43   35     4410c35  30a5 a27e
+ data word=    0    0   43   39   2e     430e42e  3d00 87c2
+      tiledmu crc 3d00 87c2  ok
+ dig crc ffffffff
+ final crc 3ac63ac6
+control word= fffffff0
+control word= 51115110
+1 header word 984807e5  bunch 2021  1  error=0  sestr=0  destr=0
+ data word=    0    1   3a   45   3d    43a1143d  6675 25d8
+ data word=    0    1  102  100   d9    502400d9  74b8 bc15
+ data word=    0    0  372  36b  359    372daf59  3132 2b0e
+ data word=    0    1  1fd  212  23a    5fd84a3a  6027 13e3
+ data word=    0    1   4d   53   60    44d14c60  3d60 3029
+ data word=    0    0   36   43   36     3610c36  5416 780c
+ data word=    0    1   34   3f   31    4340fc31  2a24 c21e
+      tiledmu crc 2a24 c21e  ok
+2 header word 984807e5  bunch 2021  10  error=0  sestr=0  destr=0
+ data word=    0    1   42   49   46    44212446  4a57 e987
+ data word=    0    0  110   e8   e0    1103a0e0  5ec2 5c1d
+ data word=    0    1  381  355  35a    781d575a  46c9 79d0
+ data word=    0    1  209  235  232    6098d632  447f e300
+ data word=    0    1   59   6e   6b    4591b86b  76e9 1860
+ data word=    0    0   3d   3f   3f     3d0fc3f  64ef 831f
+ data word=    0    1   34   3d   3c    4340f43c   83d 407e
+      tiledmu crc  83d 407e  ok
+3 header word d80807e5  bunch 2021  19  error=0  sestr=0  destr=0
+ data word=    0    1   33   3f   44    4330fc44  42eb f7bd
+ data word=    0    1  135  13b  128    5354ed28  216f e3b7
+ data word=    0    1  380  37b  386    780def86  6bed 8a23
+ data word=    0    0  1cf  1d5  1ec    1cf755ec  3850 1f7e
+ data word=    0    1   37   48   4f    4371204f  7273 4ffb
+ data word=    0    0   28   3b   42     280ec42  5326 3245
+ data word=    0    1   28   35   39    4280d439  38de ebc8
+      tiledmu crc 38de ebc8  ok
+4 header word d80807e5  bunch 2021  28  error=0  sestr=0  destr=0
+ data word=    0    0   4a   3f   4d     4a0fc4d  420c 77eb
+ data word=    0    0  15f  10b  143    15f42d43  4523 24d6
+ data word=    0    1  389  36f  383    789dbf83  388c 1909
+ data word=    0    1  1b9  1f2  1e3    5b97c9e3  4751 eb74
+ data word=    0    1   46   53   57    44614c57  2e91 63fe
+ data word=    0    0   4c   38   45     4c0e045   112 c261
+ data word=    0    0   41   38   41     410e041  60be  749
+      tiledmu crc 60be  749  ok
+5 header word 984807e5  bunch 2021  37  error=0  sestr=0  destr=0
+ data word=    0    1   4e   43   40    44e10c40  4a32 fded
+ data word=    0    1  130  148  116    53052116  4e1f 805b
+ data word=    0    1  372  39a  377    772e6b77  33ea e7a6
+ data word=    0    1  1f0  1d8  201    5f076201  2cde 6ef0
+ data word=    0    1   5c   4a   54    45c12854  4985 f245
+ data word=    0    0   46   40   38     4610038  7663 ed57
+ data word=    0    1   45   37   36    4450dc36  67fd b1f4
+      tiledmu crc 67fd b1f4  ok
+6 header word 984807e5  bunch 2021  46  error=0  sestr=0  destr=0
+ data word=    0    0   44   3f   4a     440fc4a  4334 f742
+ data word=    0    0  15d  12c  147    15d4b147  57bc 39ea
+ data word=    0    0  383  388  381    383e2381  40c8 4a2b
+ data word=    0    1  1bd  1e7  1d0    5bd79dd0   4a6 41b7
+ data word=    0    1   47   4b   4e    44712c4e  606c 917b
+ data word=    0    0   3c   3e   47     3c0f847  2b38 f549
+ data word=    0    0   39   34   41     390d041  1060 b9e9
+      tiledmu crc 1060 b9e9  ok
+7 header word d80807e5  bunch 2021  55  error=0  sestr=0  destr=0
+ data word=    0    1   5f   69   59    45f1a459   b9c efe8
+ data word=    0    1  123  14d  117    52353517  5f0d 6c86
+ data word=    0    1  389  399  397    789e6797  2d64 b5ef
+ data word=    0    1  21b  20f  22c    61b83e2c  7ba1 d942
+ data word=    0    1   72   76   75    4721d875  30e8 8973
+ data word=    0    1   60   60   55    46018055   162 3110
+ data word=    0    0   53   63   4f     5318c4f  7ca2 38ac
+      tiledmu crc 7ca2 38ac  ok
+8 header word d80807e5  bunch 2021  64  error=0  sestr=0  destr=0
+ data word=    0    0   58   57   51     5815c51   139 7d2e
+ data word=    0    1  142  107  122    54241d22  230d 562b
+ data word=    0    0  3a8  38d  39f    3a8e379f  2fa4 aa37
+ data word=    0    0  1fe  22b  20b    1fe8ae0b  799f dfbf
+ data word=    0    0   63   6d   63     631b463  6295 8b77
+ data word=    0    1   5a   51   54    45a14454  7259 3b98
+ data word=    0    1   4e   4a   45    44e12845  4ea8 8df0
+      tiledmu crc 4ea8 8df0  ok
+9 header word 984807e5  bunch 2021  73  error=0  sestr=0  destr=0
+ data word=    0    1   3c   38   4f    43c0e04f  5716 6f11
+ data word=    0    0  127  13d  140    1274f540  315e e893
+ data word=    0    1  381  386  38a    781e1b8a  1a87 39fd
+ data word=    0    0  1ec  1bd  1ef    1ec6f5ef  1ce9 bd4a
+ data word=    0    0   4c   3b   57     4c0ec57  7401 9ddc
+ data word=    0    0   37   3e   49     370f849  5290 5e37
+ data word=    0    0   32   2a   49     320a849   f5f 5642
+      tiledmu crc  f5f 5642  ok
+10 header word 984807e5  bunch 2021  82  error=0  sestr=0  destr=0
+ data word=    0    0   4a   47   30     4a11c30  6657 bdee
+ data word=    0    1  167  12a  126    5674a926  64ca de97
+ data word=    0    1  380  384  37c    780e137c  473c b5ec
+ data word=    0    0  1af  1f4  1d6    1af7d1d6   aa7 d9e0
+ data word=    0    1   46   54   3c    4461503c  76aa 1489
+ data word=    0    1   48   49   2c    4481242c  2ce2 3750
+ data word=    0    0   3e   3b   26     3e0ec26  7410 e179
+      tiledmu crc 7410 e179  ok
+11 header word 984807e5  bunch 2021  91  error=0  sestr=0  destr=0
+ data word=    0    0   4e   35   37     4e0d437  633b 23e7
+ data word=    0    0   d4   ce   cf     d4338cf  25db bf45
+ data word=    0    1  34b  367  35b    74bd9f5b  5a81 2cb4
+ data word=    0    0  245  234  244    2458d244  35b4 5c37
+ data word=    0    0   6f   52   5c     6f1485c  1805 5022
+ data word=    0    0   55   3c   2c     550f02c  5a90 aacc
+ data word=    0    1   45   2d   26    4450b426  4bd4 34a8
+      tiledmu crc 4bd4 34a8  ok
+12 header word 984807e5  bunch 2021  100  error=0  sestr=0  destr=0
+ data word=    0    0   35   45   50     3511450   6dc e57d
+ data word=    0    0   c3   c7  116     c331d16  7116 c4d3
+ data word=    0    1  34d  34c  37c    74dd337c  3845 670f
+ data word=    0    1  23e  263  200    63e98e00   ac2 7d38
+ data word=    0    0   5a   72   5e     5a1c85e  1ba8 1039
+ data word=    0    1   31   3c   4c    4310f04c  3303 eaa0
+ data word=    0    1   27   3c   44    4270f044  40aa 753c
+      tiledmu crc 40aa 753c  ok
+13 header word 984807e5  bunch 2021  109  error=0  sestr=0  destr=0
+ data word=    0    1   44   4a   40    44412840  5231 714e
+ data word=    0    1  12d  170  121    52d5c121  5880 61f1
+ data word=    0    1  376  37c  388    776df388  6bce 1f59
+ data word=    0    0  1e3  1b1  1ec    1e36c5ec  37fa 6638
+ data word=    0    0   54   4a   4a     541284a  535d 4099
+ data word=    0    1   3a   3d   40    43a0f440  19fe  9c3
+ data word=    0    0   39   3e   33     390f833  1ef7 66d3
+      tiledmu crc 1ef7 66d3  ok
+14 header word 984807e5  bunch 2021  118  error=0  sestr=0  destr=0
+ data word=    0    0   33   3c   3d     330f03d  7bb0 afbb
+ data word=    0    0  13a  107  10b    13a41d0b  3c1a f90f
+ data word=    0    1  385  37f  365    785dff65  4879 75b9
+ data word=    0    1  1c3  205  1ea    5c3815ea  75cb 9cc7
+ data word=    0    1   38   51   4b    4381444b  4180 cac4
+ data word=    0    0   2f   3a   39     2f0e839  43af 6c01
+ data word=    0    1   25   31   33    4250c433  5742 ae3a
+      tiledmu crc 5742 ae3a  ok
+15 header word 984807e5  bunch 2021  127  error=0  sestr=0  destr=0
+ data word=    0    1   47   39   42    4470e442  4ff1 6f84
+ data word=    0    1  122  126  13c    5224993c  5daf 3fe8
+ data word=    0    1  36c  383  376    76ce0f76  4413 eaa5
+ data word=    0    0  1e5  1de  1ce    1e5779ce  405e  8f5
+ data word=    0    0   57   42   42     5710842  6249 2af4
+ data word=    0    1   3e   33   3d    43e0cc3d  13ea a0ae
+ data word=    0    0   3e   30   36     3e0c036  2e2a 8577
+      tiledmu crc 2e2a 8577  ok
+16 header word 984807e5  bunch 2021  136  error=0  sestr=0  destr=0
+ data word=    0    1   50   43   3b    45010c3b  6a6b bd41
+ data word=    0    0  17a  118  123    17a46123  4ad8 4316
+ data word=    0    1  382  36f  374    782dbf74  3859 6926
+ data word=    0    1  1a4  1eb  1de    5a47adde  1b3a 87f6
+ data word=    0    0   4a   55   48     4a15448  2b8d 9098
+ data word=    0    1   45   43   35    44510c35  2295 3b59
+ data word=    0    1   42   3a   2d    4420e82d  496c c910
+      tiledmu crc 496c c910  ok
+ dig crc ffffffff
+ final crc 72677267
+control word= fffffff0

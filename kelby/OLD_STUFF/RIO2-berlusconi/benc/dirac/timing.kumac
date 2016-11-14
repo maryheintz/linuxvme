@@ -1,0 +1,10 @@
+ BOARD = [1]
+ CHAN = [2]
+ 
+ histo/create/profile 10 'High Gain Timing' 270 -10 260 -1.E30 1.E30
+ fort/call timing.f(10)
+ histo/create/title_global 'Board'//[BOARD]//', Channel'//[CHAN]
+ hist/plot 10
+ graphics/hplot/atitle 'Timer value' 'Peak ADC Counts'
+ 
+ pict/print 'htime'//[BOARD]//'-'//[CHAN]//'.ps'

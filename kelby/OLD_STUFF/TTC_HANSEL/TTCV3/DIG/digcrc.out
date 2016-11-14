@@ -1,0 +1,24 @@
+ word=840d0000  inwd0=2300  inwd1=8200
+crca=c4  crcb=41
+ word=840d0000   offline crca=c4  crcb=41
+ word=1  inwd0=1  inwd1=0
+crca=29b  crcb=186
+ word=00000001   offline crca=29b  crcb=186
+ word=2  inwd0=0  inwd1=1
+crca=f5a  crcb=8514
+ word=00000002   offline crca=f5a  crcb=8514
+ word=84097000  inwd0=21c0  inwd1=8240
+crca=2058  crcb=9c30
+ word=84097000   offline crca=2058  crcb=9c30
+ word=40000000  inwd0=8000  inwd1=0
+crca=c1d1  crcb=48aa
+ word=40000000   offline crca=c1d1  crcb=48aa
+ word=40000000  inwd0=8000  inwd1=0
+crca=84eb  crcb=33f9
+ word=40000000   offline crca=84eb  crcb=33f9
+ crc word=89c41728
+in0 = 0 0 0 0 1 1 1 0 0 1 0 1 1 0 0 0
+in1 = 0 1 1 0 1 0 0 0 0 0 0 1 0 1 0 1
+unscramble digitizer crc 1a70 a816
+ word=0  inwd0=0  inwd1=0
+crca=1a70  crcb=a816

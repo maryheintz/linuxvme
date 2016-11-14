@@ -1,0 +1,5 @@
+gcc buttons.c -L/usr/lib -lICE -lMrm -lPEX5 -lSM -lUil -lX11 -lXIE -lXau \
+-lXaw -lXdmcp -lXext -lXi -lXm -lXmu -lXpm -lXss -lXt -lXtst \
+-lXxf86dga  -lXxf86misc -lXxf86vm -lbfd -lexpect -lfl -lg++ -liberty \
+-lmmalloc -loldX -lopcodes -lreadline -lstdc++ -ltcl -ltcl7.6 -ltk4.2 \
+-lxkbfile -lz -lX11 -lc -o buttons

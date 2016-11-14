@@ -1,0 +1,34 @@
+#ifdef COLOR
+*customization: -color
+#endif
+
+emacs*Background: DarkSlateGray
+emacs*Foreground: Wheat
+emacs*pointerColor: Orchid
+emacs*cursorColor: Orchid
+emacs*bitmapIcon: on
+emacs*font: fixed
+emacs.geometry: 80x25
+
+Seyon.modems: /dev/modem
+
+XTerm*background:	gray30
+XTerm*cursorColor:	blue
+XTerm*foreground:	lightgoldenrod
+XTerm.vt100.geometry:	80x32
+XTerm*font:		-misc-fixed-medium-r-*-*-12-*-*-*-*-*-*-*
+XTerm*scrollBar:	true
+XTerm*loginShell:	true
+XTerm*saveLines:	500 
+
+!xterm*reverseVideo: false
+XTerm*reverseWrap: false
+XTerm*font: fixed
+XTerm*fullCursor: true
+XTerm*scrollTtyOutput: off
+XTerm*scrollKey: on
+XTerm*VT100.Translations: #override\n\
+	<KeyPress>Prior : scroll-back(1,page)\n\
+	<KeyPress>Next : scroll-forw(1,page)
+XTerm*titleBar: false
+

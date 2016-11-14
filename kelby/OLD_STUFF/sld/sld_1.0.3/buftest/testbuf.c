@@ -1,0 +1,478 @@
+
+/* kernel includes */
+#include <linux/config.h>
+#if defined(CONFIG_MODVERSIONS) && !defined(MODVERSIONS)
+#define MODVERSIONS
+#endif
+#if defined(MODVERSIONS)
+#include <linux/modversions.h>
+#endif
+
+#include <linux/mm.h>
+#include "bufintern.h"
+
+/*
+ * We're going to have both kernel and user includes.
+ * This doesn't work on RedHat, but it does on my own Slackware?!
+ */
+#warning Some warnings about redefinitions are normal, depends on you system.
+#include <stdio.h>
+#include <stdlib.h>
+
+
+/* two global variables normally provided by DDF */
+unsigned int lsd_nrOfBuffers;
+unsigned int lsd_bufferSize;
+
+/* variables used by kernel simulation */
+unsigned int allocatedBytes;
+int memFail = FALSE;
+int remapFail = FALSE;
+
+unsigned int failedTests = 0;
+void printResult( const char *text, int failed )
+{
+  printf( "    %-40s %s\n",
+	  text,
+	  failed ? "  Failed" : "Passed" );
+
+  if ( failed )
+    {
+      failedTests++;
+    }
+}
+
+static void testOneOpenClose( int number, int size )
+{
+  lsdpriv_t lsdData;
+  int ret;
+
+  printf( "\nTest with %d buffers of %d bytes.\n", number, size );
+
+  /* Setup */
+  lsd_nrOfBuffers = number;
+  lsd_bufferSize = size;
+  allocatedBytes = 0;
+  memFail = FALSE;
+  remapFail = FALSE;
+  memset( &lsdData, 0, sizeof( lsdData ) );
+  lsdData.sig1 = LSD_SIGNATURE;
+  lsdData.sig2 = LSD_SIGNATURE;
+
+  /* Test */
+  ret = buf_open( &lsdData );
+  if ( (number * size) < (50 * (1 << (PAGE_SHIFT + 5))) )
+    printResult( "Open", (ret < 0) );
+  else
+    printResult( "Open", (ret >= 0) );
+  
+  if ( ret >= 0 )
+    {
+      ret = buf_close( &lsdData );
+      printResult( "Close", (ret < 0) );
+    }
+
+  printResult( "Memory usage", (allocatedBytes != 0 ) );
+}
+
+static void testFailedOpenClose( int number, int size )
+{
+  lsdpriv_t lsdData;
+  int ret;
+
+  printf( "\nTest failing allocation with %d buffers of %d bytes.\n", number, size );
+
+  /* Setup */
+  lsd_nrOfBuffers = number;
+  lsd_bufferSize = size;
+  allocatedBytes = 0;
+  memset( &lsdData, 0, sizeof( lsdData ) );
+  lsdData.sig1 = LSD_SIGNATURE;
+  lsdData.sig2 = LSD_SIGNATURE;
+  memFail = TRUE;
+  remapFail = FALSE;
+
+  /* Test */
+  ret = buf_open( &lsdData );
+  printResult( "Open", (ret >= 0) );
+  printResult( "Memory usage", (allocatedBytes != 0 ) );
+}
+
+static void testOpenClose( void )
+{
+  printf( "Testing open() and close()\n" );
+  printf( "Set MALLOC_CHECK_ in your environment!\n" );
+
+  /* Implicitly we test successive open-close functionality */
+  /* Start with normal buffer size and test 0, 1, 2 and 20 buffers */
+  testOneOpenClose( 0, 32 );
+  testOneOpenClose( 1, 32 );
+  testOneOpenClose( 2, 32 );
+  testOneOpenClose( 20, 32 );
+
+  /* Test different buffer sizes */
+  testOneOpenClose( 10, 0 );
+  testOneOpenClose( 10, 1 );
+  testOneOpenClose( 10, 2 );
+  testOneOpenClose( 10, 1023 );
+  testOneOpenClose( 10, 1024 );
+  testOneOpenClose( 10, 1025 );
+
+  /* Test failing allocation */
+  testFailedOpenClose( 10,32 );
+
+  /* Test large numnbers of buffers and large sizes */
+  testOneOpenClose( 1000, 32 );
+  testOneOpenClose( 2000, 32 );
+  testOneOpenClose( 128, 2048 );
+  testOneOpenClose( 1000, 4096 );
+  testOneOpenClose( 1000, 16384 );
+}
+
+static void testInfoBlockQueue( void )
+{
+  lsdpriv_t lsdData;
+  int ret;
+  int key = 1234;
+  int oldKey = key;
+  infoblock_t infoBlock;
+  infoblock_t *infoBlockPtr;
+  int count;
+
+  printf( "\nTest infoblock queue.\n" );
+
+  /* Setup */
+  lsd_nrOfBuffers = 4;
+  lsd_bufferSize = 32;
+  allocatedBytes = 0;
+  memFail = FALSE;
+  remapFail = FALSE;
+  memset( &lsdData, 0, sizeof( lsdData ) );
+  lsdData.sig1 = LSD_SIGNATURE;
+  lsdData.sig2 = LSD_SIGNATURE;
+
+  ret = buf_open( &lsdData );
+  printResult( "Open", (ret < 0) );
+  if ( ret < 0 )
+    return;
+  /* simulate mmap */
+  lsdData.buf.infoQueue.userData = lsdData.buf.infoQueue.kernelData;
+  lsdData.buf.dataQueue.userData = lsdData.buf.dataQueue.kernelData;
+
+  infoBlock.type = information;
+  infoBlock.message = NoMessage;
+
+  /* Verify that the queue is empty */
+  printResult( "Check empty queue",
+	       (lsdData.buf.infoQueue.head != lsdData.buf.infoQueue.tail) );
+  infoBlockPtr = getFullInfoBlock( &lsdData );
+  printResult( "Get data from empty queue", infoBlockPtr != NULL );
+
+  /* Test 1: put one, then take one and verify */
+  printf( "\nTest one infoblock.\n" );
+
+  infoBlock.u.data = key++;
+  ret = putInfo( &lsdData, &infoBlock );
+  printResult( "Add one", ret != 1 );
+  printResult( "Check one entry in queue",
+	       (lsdData.buf.infoQueue.head != (lsdData.buf.infoQueue.tail + 1)) );
+
+  infoBlockPtr = getFullInfoBlock( &lsdData );
+  printResult( "Get block", infoBlockPtr == NULL );
+  printResult( "Check one entry in queue",
+	       (lsdData.buf.infoQueue.head != (lsdData.buf.infoQueue.tail + 1)) );
+  printResult( "Verify data", infoBlockPtr->u.data != oldKey++ );
+
+  freeInfoBlock( &lsdData, infoBlockPtr );
+  printResult( "Check empty queue",
+	       (lsdData.buf.infoQueue.head != lsdData.buf.infoQueue.tail) );
+  
+
+  /* Test 2: put two, then take two and verify */
+  printf( "\nTest two infoblocks.\n" );
+
+  infoBlock.u.data = key++;
+  ret = putInfo( &lsdData, &infoBlock );
+  printResult( "Add one", ret != 1 );
+  printResult( "Check one entry in queue",
+	       (lsdData.buf.infoQueue.head != (lsdData.buf.infoQueue.tail + 1)) );
+
+  infoBlock.u.data = key++;
+  ret = putInfo( &lsdData, &infoBlock );
+  printResult( "Add one", ret != 1 );
+  printResult( "Check two entries in queue",
+	       (lsdData.buf.infoQueue.head != (lsdData.buf.infoQueue.tail + 2)) );
+
+  /* take first entry */
+  infoBlockPtr = getFullInfoBlock( &lsdData );
+  printResult( "Get first block", infoBlockPtr == NULL );
+  printResult( "Check two entries in queue",
+	       (lsdData.buf.infoQueue.head != (lsdData.buf.infoQueue.tail + 2)) );
+  printResult( "Verify data", infoBlockPtr->u.data != oldKey++ );
+
+  freeInfoBlock( &lsdData, infoBlockPtr );
+  printResult( "Check one entry in queue",
+	       (lsdData.buf.infoQueue.head != (lsdData.buf.infoQueue.tail + 1)) );
+  
+  /* take second entry */
+  infoBlockPtr = getFullInfoBlock( &lsdData );
+  printResult( "Get second block", infoBlockPtr == NULL );
+  printResult( "Check one entry in queue",
+	       (lsdData.buf.infoQueue.head != (lsdData.buf.infoQueue.tail + 1)) );
+  printResult( "Verify data", infoBlockPtr->u.data != oldKey++ );
+
+  freeInfoBlock( &lsdData, infoBlockPtr );
+  printResult( "Check empty queue",
+	       (lsdData.buf.infoQueue.head != lsdData.buf.infoQueue.tail) );
+  
+  /* Test 3: fill up queue, then make it empty */
+  printf( "\nTest full queue.\n" );
+  count = 0;
+  do
+    {
+      infoBlock.u.data = key;
+      ret = putInfo( &lsdData, &infoBlock );
+      if ( ret > 0 )
+	{
+	  printf( "+" );
+	  count++;
+	  key++;
+	}
+    }
+  while( ret > 0 );
+  printf( "\n" );
+  printResult( "Check full queue", (lsdData.buf.infoQueue.head + 1) != lsdData.buf.infoQueue.tail );
+  printResult( "Full queue notification", (lsdData.buf.infoQueueFull != 1) );
+
+  do
+    {
+      infoBlockPtr = getFullInfoBlock( &lsdData );
+      if ( infoBlockPtr != NULL )
+	{
+	  printf( "-" );
+	  if ( infoBlockPtr->u.data != oldKey )
+	      printResult( "Verify data", FALSE );
+
+	  freeInfoBlock( &lsdData, infoBlockPtr );
+	  oldKey++;
+	  count--;
+	}
+    }
+  while( infoBlockPtr != NULL );
+  printf( "\n" );
+  printResult( "Check empty queue",
+	       (lsdData.buf.infoQueue.head != lsdData.buf.infoQueue.tail) );
+  printResult( "Same number put and get", count != 0 );
+
+  /* Test 4: add one block, this should also put an error notification in the queue */
+  printf( "\nTest info queue full notification.\n" );
+  infoBlock.u.data = key++;
+  ret = putInfo( &lsdData, &infoBlock );
+  printResult( "Add one", ret != 2 );
+  printResult( "Check two entries in queue",
+	       (lsdData.buf.infoQueue.head != (lsdData.buf.infoQueue.tail + 2)) );
+
+  /* take first entry: error information */
+  infoBlockPtr = getFullInfoBlock( &lsdData );
+  printResult( "Get first block (error)", infoBlockPtr == NULL );
+  printResult( "Check two entries in queue",
+	       (lsdData.buf.infoQueue.head != (lsdData.buf.infoQueue.tail + 2)) );
+  printResult( "Verify type", infoBlockPtr->type != information );
+  printResult( "Verify message", infoBlockPtr->message != NoFreeInfoBlock );
+  printResult( "Verify data", infoBlockPtr->u.data != 1 );
+
+  freeInfoBlock( &lsdData, infoBlockPtr );
+  
+  /* take second entry: data */
+  infoBlockPtr = getFullInfoBlock( &lsdData );
+  printResult( "Get second block (data)", infoBlockPtr == NULL );
+  printResult( "Verify data", infoBlockPtr->u.data != oldKey++ );
+  freeInfoBlock( &lsdData, infoBlockPtr );
+  printResult( "Check empty queue",
+	       (lsdData.buf.infoQueue.head != lsdData.buf.infoQueue.tail) );
+
+  /* Test 5: Large test with two queue-full errors */
+  printf( "\nTest full queue -2.\n" );
+  count = 0;
+  do
+    {
+      infoBlock.u.data = key;
+      ret = putInfo( &lsdData, &infoBlock );
+      if ( ret > 0 )
+	{
+	  printf( "+" );
+	  count++;
+	  key++;
+	}
+    }
+  while( ret > 0 );
+  printf( "\n" );
+  printResult( "Check full queue", (lsdData.buf.infoQueue.head + 1) != lsdData.buf.infoQueue.tail );
+
+  /* take one block and add two blocks; this should add only one error notification */
+  infoBlockPtr = getFullInfoBlock( &lsdData );
+  printf( "-\n" );
+  printResult( "Get block (data)", infoBlockPtr == NULL );
+  printResult( "Verify data", infoBlockPtr->u.data != oldKey++ );
+  freeInfoBlock( &lsdData, infoBlockPtr );
+  count--;
+
+  infoBlock.u.data = key++;
+  ret = putInfo( &lsdData, &infoBlock );
+  printResult( "Add one", ret >= 0 );
+  printResult( "Check full queue", (lsdData.buf.infoQueue.head + 1) != lsdData.buf.infoQueue.tail );
+
+  infoBlock.u.data = key++;
+  ret = putInfo( &lsdData, &infoBlock );
+  printResult( "Add one", ret >= 0 );
+
+  /* take one block and add one blocks; this should add only one error notification */
+  infoBlockPtr = getFullInfoBlock( &lsdData );
+  printf( "-\n" );
+  printResult( "Get block (data)", infoBlockPtr == NULL );
+  printResult( "Verify data", infoBlockPtr->u.data != oldKey++ );
+  freeInfoBlock( &lsdData, infoBlockPtr );
+  count--;
+
+  infoBlock.u.data = key++;
+  ret = putInfo( &lsdData, &infoBlock );
+  printResult( "Add one", ret >= 0 );
+  printResult( "Check full queue", (lsdData.buf.infoQueue.head + 1) != lsdData.buf.infoQueue.tail );
+
+  /* take most data from the queue */
+  while ( count > 0 )
+    {
+      infoBlockPtr = getFullInfoBlock( &lsdData );
+      if ( infoBlockPtr != NULL )
+	{
+	  printf( "-" );
+	  if ( infoBlockPtr->u.data != oldKey )
+	      printResult( "Verify data", FALSE );
+
+	  freeInfoBlock( &lsdData, infoBlockPtr );
+	  oldKey++;
+	  count--;
+	}
+    }
+  printf( "\n" );
+
+  /* There should be two blocks left with errors in it */
+  printResult( "Check two entries in queue",
+	       (lsdData.buf.infoQueue.head != (lsdData.buf.infoQueue.tail + 2)) );
+
+  infoBlockPtr = getFullInfoBlock( &lsdData );
+  printResult( "Get first block (error)", infoBlockPtr == NULL );
+  printResult( "Check two entries in queue",
+	       (lsdData.buf.infoQueue.head != (lsdData.buf.infoQueue.tail + 2)) );
+  printResult( "Verify type", infoBlockPtr->type != information );
+  printResult( "Verify message", infoBlockPtr->message != NoFreeInfoBlock );
+  printResult( "Verify data", infoBlockPtr->u.data != 1 );
+  freeInfoBlock( &lsdData, infoBlockPtr );
+
+  infoBlockPtr = getFullInfoBlock( &lsdData );
+  printResult( "Get second block (error)", infoBlockPtr == NULL );
+  printResult( "Check one entry in queue",
+	       (lsdData.buf.infoQueue.head != (lsdData.buf.infoQueue.tail + 1)) );
+  printResult( "Verify type", infoBlockPtr->type != information );
+  printResult( "Verify message", infoBlockPtr->message != NoFreeInfoBlock );
+  printResult( "Verify data", infoBlockPtr->u.data != 2 );
+  freeInfoBlock( &lsdData, infoBlockPtr );
+  printResult( "Check empty queue",
+	       (lsdData.buf.infoQueue.head != lsdData.buf.infoQueue.tail) );
+
+  ret = buf_close( &lsdData );
+  printResult( "Close", (ret < 0) );
+  printResult( "Memory usage", (allocatedBytes != 0 ) );
+}
+
+
+int main( void )
+{
+  printf( "Testing BUF.\n" );
+
+  testOpenClose( );
+  testInfoBlockQueue( );
+
+  printf( "\nFailed tests: %d\n", failedTests );
+  return( 0 );
+}
+
+
+
+
+
+
+
+/*
+ * From here on there are things to simulate some kernel functionality.
+ * These are simulated by the driver and also are manipulated by it.
+ *
+ * Some calls can be made to fail with a variable.
+ */
+
+int remap_page_range( unsigned long from, unsigned long to, unsigned long size, pgprot_t prot )
+{
+  /* remapping is not necessary when testing */
+  if ( remapFail )
+    {
+      return( -EINVAL );
+    }
+
+  return( 0 );
+}
+
+
+char mem_map_buf[ (MAP_NR( 1 << 31 )) * sizeof( mem_map_t ) ];
+mem_map_t *mem_map = (mem_map_t *)mem_map_buf;
+
+void panic( const char *string, ... )
+{
+  printf( "PANIC: %s", string );
+  exit( 1 );
+}
+
+int printk( const char *fmt, ... )
+{
+  /* This must be printf kind-a function */
+  va_list args;
+  int i;
+
+  va_start(args, fmt);
+  i = vfprintf(stdout, fmt, args);
+  va_end(args);
+
+  return( i );
+}
+
+unsigned long __get_free_pages( int gfp_mask, unsigned long gfp_order )
+{
+  unsigned int size;
+  void *newMemory;
+
+  if ( memFail )
+    {
+      /* test needs failed memory */
+      return( 0 );
+    }
+
+  size = (1 << gfp_order) * PAGE_SIZE;
+  newMemory = malloc( size );
+  if ( newMemory == NULL )
+    {
+      return( 0 );
+    }
+
+  allocatedBytes += size;
+  return( (unsigned long) newMemory );
+}
+
+void free_pages( unsigned long addr, unsigned long order )
+{
+  allocatedBytes -= (1 << order) * PAGE_SIZE;
+  free( (void *) addr );
+}
+
+void do_gettimeofday( struct timeval *tv)
+{
+  gettimeofday( tv );
+}

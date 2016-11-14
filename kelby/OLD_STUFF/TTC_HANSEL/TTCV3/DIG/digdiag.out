@@ -1,0 +1,2151 @@
+ Setting up Digitizers
+ Setting up Digitizers
+ start control word 51115110
+1  header=9c0d0000     crc=6300 a200
+2  data gain1 = 1     crc=ca04 4c09
+3  data gain1 = 2     crc=bc14 a831
+4  data gain1 = 4     crc=873 f0ac
+5  data gain1 = 8     crc=312a a3e5
+6  data gain1 = 10     crc=a6f8 4857
+7  data gain1 = 20     crc=5619 b1f0
+8  data gain1 = 40     crc=f458 a42a
+9  data gain1 = 80     crc=b9df d8fe
+10  header=9c097000     crc=f508 7048
+11  data gain2 = 40000000     crc=be3c 21b6
+12  data gain2 = 40000000     crc=482 45b7
+13  data gain2 = 40000000     crc=1b0f 9db4
+14  data gain2 = 40000000     crc=da22 cdb1
+15  data gain2 = 40000000     crc=5cc0 adaa
+16  data gain2 = 40000000     crc=ca85 6df5
+17  data gain2 = 40000000     crc=3f12 6c38
+18  data gain2 = 40000000     crc=26c 6896
+19  block 1  TILEDMU crc=1121d8e1
+20  header=9c0d0000     crc=6300 a200
+21  data gain1 = 1     crc=ca04 4c09
+22  data gain1 = 2     crc=bc14 a831
+23  data gain1 = 4     crc=873 f0ac
+24  data gain1 = 8     crc=312a a3e5
+25  data gain1 = 10     crc=a6f8 4857
+26  data gain1 = 20     crc=5619 b1f0
+27  data gain1 = 40     crc=f458 a42a
+28  data gain1 = 80     crc=b9df d8fe
+29  header=9c097000     crc=f508 7048
+30  data gain2 = 40000000     crc=be3c 21b6
+31  data gain2 = 40000000     crc=482 45b7
+32  data gain2 = 40000000     crc=1b0f 9db4
+33  data gain2 = 40000000     crc=da22 cdb1
+34  data gain2 = 40000000     crc=5cc0 adaa
+35  data gain2 = 40000000     crc=ca85 6df5
+36  data gain2 = 40000000     crc=3f12 6c38
+37  data gain2 = 40000000     crc=26c 6896
+38  block 2  TILEDMU crc=1121d8e1
+39  header=9c0d0000     crc=6300 a200
+40  data gain1 = 1     crc=ca04 4c09
+41  data gain1 = 2     crc=bc14 a831
+42  data gain1 = 4     crc=873 f0ac
+43  data gain1 = 8     crc=312a a3e5
+44  data gain1 = 10     crc=a6f8 4857
+45  data gain1 = 20     crc=5619 b1f0
+46  data gain1 = 40     crc=f458 a42a
+47  data gain1 = 80     crc=b9df d8fe
+48  header=9c097000     crc=f508 7048
+49  data gain2 = 40000000     crc=be3c 21b6
+50  data gain2 = 40000000     crc=482 45b7
+51  data gain2 = 40000000     crc=1b0f 9db4
+52  data gain2 = 40000000     crc=da22 cdb1
+53  data gain2 = 40000000     crc=5cc0 adaa
+54  data gain2 = 40000000     crc=ca85 6df5
+55  data gain2 = 40000000     crc=3f12 6c38
+56  data gain2 = 40000000     crc=26c 6896
+57  block 3  TILEDMU crc=1121d8e1
+58  header=9c0d0000     crc=6300 a200
+59  data gain1 = 1     crc=ca04 4c09
+60  data gain1 = 2     crc=bc14 a831
+61  data gain1 = 4     crc=873 f0ac
+62  data gain1 = 8     crc=312a a3e5
+63  data gain1 = 10     crc=a6f8 4857
+64  data gain1 = 20     crc=5619 b1f0
+65  data gain1 = 40     crc=f458 a42a
+66  data gain1 = 80     crc=b9df d8fe
+67  header=9c097000     crc=f508 7048
+68  data gain2 = 40000000     crc=be3c 21b6
+69  data gain2 = 40000000     crc=482 45b7
+70  data gain2 = 40000000     crc=1b0f 9db4
+71  data gain2 = 40000000     crc=da22 cdb1
+72  data gain2 = 40000000     crc=5cc0 adaa
+73  data gain2 = 40000000     crc=ca85 6df5
+74  data gain2 = 40000000     crc=3f12 6c38
+75  data gain2 = 40000000     crc=26c 6896
+76  block 4  TILEDMU crc=1121d8e1
+77  header=9c0d0000     crc=6300 a200
+78  data gain1 = 1     crc=ca04 4c09
+79  data gain1 = 2     crc=bc14 a831
+80  data gain1 = 4     crc=873 f0ac
+81  data gain1 = 8     crc=312a a3e5
+82  data gain1 = 10     crc=a6f8 4857
+83  data gain1 = 20     crc=5619 b1f0
+84  data gain1 = 40     crc=f458 a42a
+85  data gain1 = 80     crc=b9df d8fe
+86  header=9c097000     crc=f508 7048
+87  data gain2 = 40000000     crc=be3c 21b6
+88  data gain2 = 40000000     crc=482 45b7
+89  data gain2 = 40000000     crc=1b0f 9db4
+90  data gain2 = 40000000     crc=da22 cdb1
+91  data gain2 = 40000000     crc=5cc0 adaa
+92  data gain2 = 40000000     crc=ca85 6df5
+93  data gain2 = 40000000     crc=3f12 6c38
+94  data gain2 = 40000000     crc=26c 6896
+95  block 5  TILEDMU crc=1121d8e1
+96  header=9c0d0000     crc=6300 a200
+97  data gain1 = 1     crc=ca04 4c09
+98  data gain1 = 2     crc=bc14 a831
+99  data gain1 = 4     crc=873 f0ac
+100  data gain1 = 8     crc=312a a3e5
+101  data gain1 = 10     crc=a6f8 4857
+102  data gain1 = 20     crc=5619 b1f0
+103  data gain1 = 40     crc=f458 a42a
+104  data gain1 = 80     crc=b9df d8fe
+105  header=9c097000     crc=f508 7048
+106  data gain2 = 40000000     crc=be3c 21b6
+107  data gain2 = 40000000     crc=482 45b7
+108  data gain2 = 40000000     crc=1b0f 9db4
+109  data gain2 = 40000000     crc=da22 cdb1
+110  data gain2 = 40000000     crc=5cc0 adaa
+111  data gain2 = 40000000     crc=ca85 6df5
+112  data gain2 = 40000000     crc=3f12 6c38
+113  data gain2 = 40000000     crc=26c 6896
+114  block 6  TILEDMU crc=1121d8e1
+115  header=9c0d0000     crc=6300 a200
+116  data gain1 = 1     crc=ca04 4c09
+117  data gain1 = 2     crc=bc14 a831
+118  data gain1 = 4     crc=873 f0ac
+119  data gain1 = 8     crc=312a a3e5
+120  data gain1 = 10     crc=a6f8 4857
+121  data gain1 = 20     crc=5619 b1f0
+122  data gain1 = 40     crc=f458 a42a
+123  data gain1 = 80     crc=b9df d8fe
+124  header=9c097000     crc=f508 7048
+125  data gain2 = 40000000     crc=be3c 21b6
+126  data gain2 = 40000000     crc=482 45b7
+127  data gain2 = 40000000     crc=1b0f 9db4
+128  data gain2 = 40000000     crc=da22 cdb1
+129  data gain2 = 40000000     crc=5cc0 adaa
+130  data gain2 = 40000000     crc=ca85 6df5
+131  data gain2 = 40000000     crc=3f12 6c38
+132  data gain2 = 40000000     crc=26c 6896
+133  block 7  TILEDMU crc=1121d8e1
+134  header=9c0d0000     crc=6300 a200
+135  data gain1 = 1     crc=ca04 4c09
+136  data gain1 = 2     crc=bc14 a831
+137  data gain1 = 4     crc=873 f0ac
+138  data gain1 = 8     crc=312a a3e5
+139  data gain1 = 10     crc=a6f8 4857
+140  data gain1 = 20     crc=5619 b1f0
+141  data gain1 = 40     crc=f458 a42a
+142  data gain1 = 80     crc=b9df d8fe
+143  header=9c097000     crc=f508 7048
+144  data gain2 = 40000000     crc=be3c 21b6
+145  data gain2 = 40000000     crc=482 45b7
+146  data gain2 = 40000000     crc=1b0f 9db4
+147  data gain2 = 40000000     crc=da22 cdb1
+148  data gain2 = 40000000     crc=5cc0 adaa
+149  data gain2 = 40000000     crc=ca85 6df5
+150  data gain2 = 40000000     crc=3f12 6c38
+151  data gain2 = 40000000     crc=26c 6896
+152  block 8  TILEDMU crc=1121d8e1
+153  header=9c0d0000     crc=6300 a200
+154  data gain1 = 1     crc=ca04 4c09
+155  data gain1 = 2     crc=bc14 a831
+156  data gain1 = 4     crc=873 f0ac
+157  data gain1 = 8     crc=312a a3e5
+158  data gain1 = 10     crc=a6f8 4857
+159  data gain1 = 20     crc=5619 b1f0
+160  data gain1 = 40     crc=f458 a42a
+161  data gain1 = 80     crc=b9df d8fe
+162  header=9c097000     crc=f508 7048
+163  data gain2 = 40000000     crc=be3c 21b6
+164  data gain2 = 40000000     crc=482 45b7
+165  data gain2 = 40000000     crc=1b0f 9db4
+166  data gain2 = 40000000     crc=da22 cdb1
+167  data gain2 = 40000000     crc=5cc0 adaa
+168  data gain2 = 40000000     crc=ca85 6df5
+169  data gain2 = 40000000     crc=3f12 6c38
+170  data gain2 = 40000000     crc=26c 6896
+171  block 9  TILEDMU crc=1121d8e1
+172  header=9c0d0000     crc=6300 a200
+173  data gain1 = 1     crc=ca04 4c09
+174  data gain1 = 2     crc=bc14 a831
+175  data gain1 = 4     crc=873 f0ac
+176  data gain1 = 8     crc=312a a3e5
+177  data gain1 = 10     crc=a6f8 4857
+178  data gain1 = 20     crc=5619 b1f0
+179  data gain1 = 40     crc=f458 a42a
+180  data gain1 = 80     crc=b9df d8fe
+181  header=9c097000     crc=f508 7048
+182  data gain2 = 40000000     crc=be3c 21b6
+183  data gain2 = 40000000     crc=482 45b7
+184  data gain2 = 40000000     crc=1b0f 9db4
+185  data gain2 = 40000000     crc=da22 cdb1
+186  data gain2 = 40000000     crc=5cc0 adaa
+187  data gain2 = 40000000     crc=ca85 6df5
+188  data gain2 = 40000000     crc=3f12 6c38
+189  data gain2 = 40000000     crc=26c 6896
+190  block 10  TILEDMU crc=1121d8e1
+191  header=9c0d0000     crc=6300 a200
+192  data gain1 = 1     crc=ca04 4c09
+193  data gain1 = 2     crc=bc14 a831
+194  data gain1 = 4     crc=873 f0ac
+195  data gain1 = 8     crc=312a a3e5
+196  data gain1 = 10     crc=a6f8 4857
+197  data gain1 = 20     crc=5619 b1f0
+198  data gain1 = 40     crc=f458 a42a
+199  data gain1 = 80     crc=b9df d8fe
+200  header=9c097000     crc=f508 7048
+201  data gain2 = 40000000     crc=be3c 21b6
+202  data gain2 = 40000000     crc=482 45b7
+203  data gain2 = 40000000     crc=1b0f 9db4
+204  data gain2 = 40000000     crc=da22 cdb1
+205  data gain2 = 40000000     crc=5cc0 adaa
+206  data gain2 = 40000000     crc=ca85 6df5
+207  data gain2 = 40000000     crc=3f12 6c38
+208  data gain2 = 40000000     crc=26c 6896
+209  block 11  TILEDMU crc=1121d8e1
+210  header=9c0d0000     crc=6300 a200
+211  data gain1 = 1     crc=ca04 4c09
+212  data gain1 = 2     crc=bc14 a831
+213  data gain1 = 4     crc=873 f0ac
+214  data gain1 = 8     crc=312a a3e5
+215  data gain1 = 10     crc=a6f8 4857
+216  data gain1 = 20     crc=5619 b1f0
+217  data gain1 = 40     crc=f458 a42a
+218  data gain1 = 80     crc=b9df d8fe
+219  header=9c097000     crc=f508 7048
+220  data gain2 = 40000000     crc=be3c 21b6
+221  data gain2 = 40000000     crc=482 45b7
+222  data gain2 = 40000000     crc=1b0f 9db4
+223  data gain2 = 40000000     crc=da22 cdb1
+224  data gain2 = 40000000     crc=5cc0 adaa
+225  data gain2 = 40000000     crc=ca85 6df5
+226  data gain2 = 40000000     crc=3f12 6c38
+227  data gain2 = 40000000     crc=26c 6896
+228  block 12  TILEDMU crc=1121d8e1
+229  header=9c0d0000     crc=6300 a200
+230  data gain1 = 1     crc=ca04 4c09
+231  data gain1 = 2     crc=bc14 a831
+232  data gain1 = 4     crc=873 f0ac
+233  data gain1 = 8     crc=312a a3e5
+234  data gain1 = 10     crc=a6f8 4857
+235  data gain1 = 20     crc=5619 b1f0
+236  data gain1 = 40     crc=f458 a42a
+237  data gain1 = 80     crc=b9df d8fe
+238  header=9c097000     crc=f508 7048
+239  data gain2 = 40000000     crc=be3c 21b6
+240  data gain2 = 40000000     crc=482 45b7
+241  data gain2 = 40000000     crc=1b0f 9db4
+242  data gain2 = 40000000     crc=da22 cdb1
+243  data gain2 = 40000000     crc=5cc0 adaa
+244  data gain2 = 40000000     crc=ca85 6df5
+245  data gain2 = 40000000     crc=3f12 6c38
+246  data gain2 = 40000000     crc=26c 6896
+247  block 13  TILEDMU crc=1121d8e1
+248  header=9c0d0000     crc=6300 a200
+249  data gain1 = 1     crc=ca04 4c09
+250  data gain1 = 2     crc=bc14 a831
+251  data gain1 = 4     crc=873 f0ac
+252  data gain1 = 8     crc=312a a3e5
+253  data gain1 = 10     crc=a6f8 4857
+254  data gain1 = 20     crc=5619 b1f0
+255  data gain1 = 40     crc=f458 a42a
+256  data gain1 = 80     crc=b9df d8fe
+257  header=9c097000     crc=f508 7048
+258  data gain2 = 40000000     crc=be3c 21b6
+259  data gain2 = 40000000     crc=482 45b7
+260  data gain2 = 40000000     crc=1b0f 9db4
+261  data gain2 = 40000000     crc=da22 cdb1
+262  data gain2 = 40000000     crc=5cc0 adaa
+263  data gain2 = 40000000     crc=ca85 6df5
+264  data gain2 = 40000000     crc=3f12 6c38
+265  data gain2 = 40000000     crc=26c 6896
+266  block 14  TILEDMU crc=1121d8e1
+267  header=9c0d0000     crc=6300 a200
+268  data gain1 = 1     crc=ca04 4c09
+269  data gain1 = 2     crc=bc14 a831
+270  data gain1 = 4     crc=873 f0ac
+271  data gain1 = 8     crc=312a a3e5
+272  data gain1 = 10     crc=a6f8 4857
+273  data gain1 = 20     crc=5619 b1f0
+274  data gain1 = 40     crc=f458 a42a
+275  data gain1 = 80     crc=b9df d8fe
+276  header=9c097000     crc=f508 7048
+277  data gain2 = 40000000     crc=be3c 21b6
+278  data gain2 = 40000000     crc=482 45b7
+279  data gain2 = 40000000     crc=1b0f 9db4
+280  data gain2 = 40000000     crc=da22 cdb1
+281  data gain2 = 40000000     crc=5cc0 adaa
+282  data gain2 = 40000000     crc=ca85 6df5
+283  data gain2 = 40000000     crc=3f12 6c38
+284  data gain2 = 40000000     crc=26c 6896
+285  block 15  TILEDMU crc=1121d8e1
+286  header=9c0d0000     crc=6300 a200
+287  data gain1 = 1     crc=ca04 4c09
+288  data gain1 = 2     crc=bc14 a831
+289  data gain1 = 4     crc=873 f0ac
+290  data gain1 = 8     crc=312a a3e5
+291  data gain1 = 10     crc=a6f8 4857
+292  data gain1 = 20     crc=5619 b1f0
+293  data gain1 = 40     crc=f458 a42a
+294  data gain1 = 80     crc=b9df d8fe
+295  header=9c097000     crc=f508 7048
+296  data gain2 = 40000000     crc=be3c 21b6
+297  data gain2 = 40000000     crc=482 45b7
+298  data gain2 = 40000000     crc=1b0f 9db4
+299  data gain2 = 40000000     crc=da22 cdb1
+300  data gain2 = 40000000     crc=5cc0 adaa
+301  data gain2 = 40000000     crc=ca85 6df5
+302  data gain2 = 40000000     crc=3f12 6c38
+303  data gain2 = 40000000     crc=26c 6896
+304  block 16  TILEDMU crc=1121d8e1
+305  GLOBAL CRC=95779577
+306  end control word=fffffff0
+ start control word 51115110
+1  header=9c0d0000     crc=6300 a200
+2  data gain1 = 1     crc=ca04 4c09
+3  data gain1 = 2     crc=bc14 a831
+4  data gain1 = 4     crc=873 f0ac
+5  data gain1 = 8     crc=312a a3e5
+6  data gain1 = 10     crc=a6f8 4857
+7  data gain1 = 20     crc=5619 b1f0
+8  data gain1 = 40     crc=f458 a42a
+9  data gain1 = 80     crc=b9df d8fe
+10  header=9c097000     crc=f508 7048
+11  data gain2 = 40000000     crc=be3c 21b6
+12  data gain2 = 40000000     crc=482 45b7
+13  data gain2 = 40000000     crc=1b0f 9db4
+14  data gain2 = 40000000     crc=da22 cdb1
+15  data gain2 = 40000000     crc=5cc0 adaa
+16  data gain2 = 40000000     crc=ca85 6df5
+17  data gain2 = 40000000     crc=3f12 6c38
+18  data gain2 = 40000000     crc=26c 6896
+19  block 1  TILEDMU crc=1121d8e1
+20  header=9c0d0000     crc=6300 a200
+21  data gain1 = 1     crc=ca04 4c09
+22  data gain1 = 2     crc=bc14 a831
+23  data gain1 = 4     crc=873 f0ac
+24  data gain1 = 8     crc=312a a3e5
+25  data gain1 = 10     crc=a6f8 4857
+26  data gain1 = 20     crc=5619 b1f0
+27  data gain1 = 40     crc=f458 a42a
+28  data gain1 = 80     crc=b9df d8fe
+29  header=9c097000     crc=f508 7048
+30  data gain2 = 40000000     crc=be3c 21b6
+31  data gain2 = 40000000     crc=482 45b7
+32  data gain2 = 40000000     crc=1b0f 9db4
+33  data gain2 = 40000000     crc=da22 cdb1
+34  data gain2 = 40000000     crc=5cc0 adaa
+35  data gain2 = 40000000     crc=ca85 6df5
+36  data gain2 = 40000000     crc=3f12 6c38
+37  data gain2 = 40000000     crc=26c 6896
+38  block 2  TILEDMU crc=1121d8e1
+39  header=9c0d0000     crc=6300 a200
+40  data gain1 = 1     crc=ca04 4c09
+41  data gain1 = 2     crc=bc14 a831
+42  data gain1 = 4     crc=873 f0ac
+43  data gain1 = 8     crc=312a a3e5
+44  data gain1 = 10     crc=a6f8 4857
+45  data gain1 = 20     crc=5619 b1f0
+46  data gain1 = 40     crc=f458 a42a
+47  data gain1 = 80     crc=b9df d8fe
+48  header=9c097000     crc=f508 7048
+49  data gain2 = 40000000     crc=be3c 21b6
+50  data gain2 = 40000000     crc=482 45b7
+51  data gain2 = 40000000     crc=1b0f 9db4
+52  data gain2 = 40000000     crc=da22 cdb1
+53  data gain2 = 40000000     crc=5cc0 adaa
+54  data gain2 = 40000000     crc=ca85 6df5
+55  data gain2 = 40000000     crc=3f12 6c38
+56  data gain2 = 40000000     crc=26c 6896
+57  block 3  TILEDMU crc=1121d8e1
+58  header=9c0d0000     crc=6300 a200
+59  data gain1 = 1     crc=ca04 4c09
+60  data gain1 = 2     crc=bc14 a831
+61  data gain1 = 4     crc=873 f0ac
+62  data gain1 = 8     crc=312a a3e5
+63  data gain1 = 10     crc=a6f8 4857
+64  data gain1 = 20     crc=5619 b1f0
+65  data gain1 = 40     crc=f458 a42a
+66  data gain1 = 80     crc=b9df d8fe
+67  header=9c097000     crc=f508 7048
+68  data gain2 = 40000000     crc=be3c 21b6
+69  data gain2 = 40000000     crc=482 45b7
+70  data gain2 = 40000000     crc=1b0f 9db4
+71  data gain2 = 40000000     crc=da22 cdb1
+72  data gain2 = 40000000     crc=5cc0 adaa
+73  data gain2 = 40000000     crc=ca85 6df5
+74  data gain2 = 40000000     crc=3f12 6c38
+75  data gain2 = 40000000     crc=26c 6896
+76  block 4  TILEDMU crc=1121d8e1
+77  header=9c0d0000     crc=6300 a200
+78  data gain1 = 1     crc=ca04 4c09
+79  data gain1 = 2     crc=bc14 a831
+80  data gain1 = 4     crc=873 f0ac
+81  data gain1 = 8     crc=312a a3e5
+82  data gain1 = 10     crc=a6f8 4857
+83  data gain1 = 20     crc=5619 b1f0
+84  data gain1 = 40     crc=f458 a42a
+85  data gain1 = 80     crc=b9df d8fe
+86  header=9c097000     crc=f508 7048
+87  data gain2 = 40000000     crc=be3c 21b6
+88  data gain2 = 40000000     crc=482 45b7
+89  data gain2 = 40000000     crc=1b0f 9db4
+90  data gain2 = 40000000     crc=da22 cdb1
+91  data gain2 = 40000000     crc=5cc0 adaa
+92  data gain2 = 40000000     crc=ca85 6df5
+93  data gain2 = 40000000     crc=3f12 6c38
+94  data gain2 = 40000000     crc=26c 6896
+95  block 5  TILEDMU crc=1121d8e1
+96  header=9c0d0000     crc=6300 a200
+97  data gain1 = 1     crc=ca04 4c09
+98  data gain1 = 2     crc=bc14 a831
+99  data gain1 = 4     crc=873 f0ac
+100  data gain1 = 8     crc=312a a3e5
+101  data gain1 = 10     crc=a6f8 4857
+102  data gain1 = 20     crc=5619 b1f0
+103  data gain1 = 40     crc=f458 a42a
+104  data gain1 = 80     crc=b9df d8fe
+105  header=9c097000     crc=f508 7048
+106  data gain2 = 40000000     crc=be3c 21b6
+107  data gain2 = 40000000     crc=482 45b7
+108  data gain2 = 40000000     crc=1b0f 9db4
+109  data gain2 = 40000000     crc=da22 cdb1
+110  data gain2 = 40000000     crc=5cc0 adaa
+111  data gain2 = 40000000     crc=ca85 6df5
+112  data gain2 = 40000000     crc=3f12 6c38
+113  data gain2 = 40000000     crc=26c 6896
+114  block 6  TILEDMU crc=1121d8e1
+115  header=9c0d0000     crc=6300 a200
+116  data gain1 = 1     crc=ca04 4c09
+117  data gain1 = 2     crc=bc14 a831
+118  data gain1 = 4     crc=873 f0ac
+119  data gain1 = 8     crc=312a a3e5
+120  data gain1 = 10     crc=a6f8 4857
+121  data gain1 = 20     crc=5619 b1f0
+122  data gain1 = 40     crc=f458 a42a
+123  data gain1 = 80     crc=b9df d8fe
+124  header=9c097000     crc=f508 7048
+125  data gain2 = 40000000     crc=be3c 21b6
+126  data gain2 = 40000000     crc=482 45b7
+127  data gain2 = 40000000     crc=1b0f 9db4
+128  data gain2 = 40000000     crc=da22 cdb1
+129  data gain2 = 40000000     crc=5cc0 adaa
+130  data gain2 = 40000000     crc=ca85 6df5
+131  data gain2 = 40000000     crc=3f12 6c38
+132  data gain2 = 40000000     crc=26c 6896
+133  block 7  TILEDMU crc=1121d8e1
+134  header=9c0d0000     crc=6300 a200
+135  data gain1 = 1     crc=ca04 4c09
+136  data gain1 = 2     crc=bc14 a831
+137  data gain1 = 4     crc=873 f0ac
+138  data gain1 = 8     crc=312a a3e5
+139  data gain1 = 10     crc=a6f8 4857
+140  data gain1 = 20     crc=5619 b1f0
+141  data gain1 = 40     crc=f458 a42a
+142  data gain1 = 80     crc=b9df d8fe
+143  header=9c097000     crc=f508 7048
+144  data gain2 = 40000000     crc=be3c 21b6
+145  data gain2 = 40000000     crc=482 45b7
+146  data gain2 = 40000000     crc=1b0f 9db4
+147  data gain2 = 40000000     crc=da22 cdb1
+148  data gain2 = 40000000     crc=5cc0 adaa
+149  data gain2 = 40000000     crc=ca85 6df5
+150  data gain2 = 40000000     crc=3f12 6c38
+151  data gain2 = 40000000     crc=26c 6896
+152  block 8  TILEDMU crc=1121d8e1
+153  header=9c0d0000     crc=6300 a200
+154  data gain1 = 1     crc=ca04 4c09
+155  data gain1 = 2     crc=bc14 a831
+156  data gain1 = 4     crc=873 f0ac
+157  data gain1 = 8     crc=312a a3e5
+158  data gain1 = 10     crc=a6f8 4857
+159  data gain1 = 20     crc=5619 b1f0
+160  data gain1 = 40     crc=f458 a42a
+161  data gain1 = 80     crc=b9df d8fe
+162  header=9c097000     crc=f508 7048
+163  data gain2 = 40000000     crc=be3c 21b6
+164  data gain2 = 40000000     crc=482 45b7
+165  data gain2 = 40000000     crc=1b0f 9db4
+166  data gain2 = 40000000     crc=da22 cdb1
+167  data gain2 = 40000000     crc=5cc0 adaa
+168  data gain2 = 40000000     crc=ca85 6df5
+169  data gain2 = 40000000     crc=3f12 6c38
+170  data gain2 = 40000000     crc=26c 6896
+171  block 9  TILEDMU crc=1121d8e1
+172  header=9c0d0000     crc=6300 a200
+173  data gain1 = 1     crc=ca04 4c09
+174  data gain1 = 2     crc=bc14 a831
+175  data gain1 = 4     crc=873 f0ac
+176  data gain1 = 8     crc=312a a3e5
+177  data gain1 = 10     crc=a6f8 4857
+178  data gain1 = 20     crc=5619 b1f0
+179  data gain1 = 40     crc=f458 a42a
+180  data gain1 = 80     crc=b9df d8fe
+181  header=9c097000     crc=f508 7048
+182  data gain2 = 40000000     crc=be3c 21b6
+183  data gain2 = 40000000     crc=482 45b7
+184  data gain2 = 40000000     crc=1b0f 9db4
+185  data gain2 = 40000000     crc=da22 cdb1
+186  data gain2 = 40000000     crc=5cc0 adaa
+187  data gain2 = 40000000     crc=ca85 6df5
+188  data gain2 = 40000000     crc=3f12 6c38
+189  data gain2 = 40000000     crc=26c 6896
+190  block 10  TILEDMU crc=1121d8e1
+191  header=9c0d0000     crc=6300 a200
+192  data gain1 = 1     crc=ca04 4c09
+193  data gain1 = 2     crc=bc14 a831
+194  data gain1 = 4     crc=873 f0ac
+195  data gain1 = 8     crc=312a a3e5
+196  data gain1 = 10     crc=a6f8 4857
+197  data gain1 = 20     crc=5619 b1f0
+198  data gain1 = 40     crc=f458 a42a
+199  data gain1 = 80     crc=b9df d8fe
+200  header=9c097000     crc=f508 7048
+201  data gain2 = 40000000     crc=be3c 21b6
+202  data gain2 = 40000000     crc=482 45b7
+203  data gain2 = 40000000     crc=1b0f 9db4
+204  data gain2 = 40000000     crc=da22 cdb1
+205  data gain2 = 40000000     crc=5cc0 adaa
+206  data gain2 = 40000000     crc=ca85 6df5
+207  data gain2 = 40000000     crc=3f12 6c38
+208  data gain2 = 40000000     crc=26c 6896
+209  block 11  TILEDMU crc=1121d8e1
+210  header=9c0d0000     crc=6300 a200
+211  data gain1 = 1     crc=ca04 4c09
+212  data gain1 = 2     crc=bc14 a831
+213  data gain1 = 4     crc=873 f0ac
+214  data gain1 = 8     crc=312a a3e5
+215  data gain1 = 10     crc=a6f8 4857
+216  data gain1 = 20     crc=5619 b1f0
+217  data gain1 = 40     crc=f458 a42a
+218  data gain1 = 80     crc=b9df d8fe
+219  header=9c097000     crc=f508 7048
+220  data gain2 = 40000000     crc=be3c 21b6
+221  data gain2 = 40000000     crc=482 45b7
+222  data gain2 = 40000000     crc=1b0f 9db4
+223  data gain2 = 40000000     crc=da22 cdb1
+224  data gain2 = 40000000     crc=5cc0 adaa
+225  data gain2 = 40000000     crc=ca85 6df5
+226  data gain2 = 40000000     crc=3f12 6c38
+227  data gain2 = 40000000     crc=26c 6896
+228  block 12  TILEDMU crc=1121d8e1
+229  header=9c0d0000     crc=6300 a200
+230  data gain1 = 1     crc=ca04 4c09
+231  data gain1 = 2     crc=bc14 a831
+232  data gain1 = 4     crc=873 f0ac
+233  data gain1 = 8     crc=312a a3e5
+234  data gain1 = 10     crc=a6f8 4857
+235  data gain1 = 20     crc=5619 b1f0
+236  data gain1 = 40     crc=f458 a42a
+237  data gain1 = 80     crc=b9df d8fe
+238  header=9c097000     crc=f508 7048
+239  data gain2 = 40000000     crc=be3c 21b6
+240  data gain2 = 40000000     crc=482 45b7
+241  data gain2 = 40000000     crc=1b0f 9db4
+242  data gain2 = 40000000     crc=da22 cdb1
+243  data gain2 = 40000000     crc=5cc0 adaa
+244  data gain2 = 40000000     crc=ca85 6df5
+245  data gain2 = 40000000     crc=3f12 6c38
+246  data gain2 = 40000000     crc=26c 6896
+247  block 13  TILEDMU crc=1121d8e1
+248  header=9c0d0000     crc=6300 a200
+249  data gain1 = 1     crc=ca04 4c09
+250  data gain1 = 2     crc=bc14 a831
+251  data gain1 = 4     crc=873 f0ac
+252  data gain1 = 8     crc=312a a3e5
+253  data gain1 = 10     crc=a6f8 4857
+254  data gain1 = 20     crc=5619 b1f0
+255  data gain1 = 40     crc=f458 a42a
+256  data gain1 = 80     crc=b9df d8fe
+257  header=9c097000     crc=f508 7048
+258  data gain2 = 40000000     crc=be3c 21b6
+259  data gain2 = 40000000     crc=482 45b7
+260  data gain2 = 40000000     crc=1b0f 9db4
+261  data gain2 = 40000000     crc=da22 cdb1
+262  data gain2 = 40000000     crc=5cc0 adaa
+263  data gain2 = 40000000     crc=ca85 6df5
+264  data gain2 = 40000000     crc=3f12 6c38
+265  data gain2 = 40000000     crc=26c 6896
+266  block 14  TILEDMU crc=1121d8e1
+267  header=9c0d0000     crc=6300 a200
+268  data gain1 = 1     crc=ca04 4c09
+269  data gain1 = 2     crc=bc14 a831
+270  data gain1 = 4     crc=873 f0ac
+271  data gain1 = 8     crc=312a a3e5
+272  data gain1 = 10     crc=a6f8 4857
+273  data gain1 = 20     crc=5619 b1f0
+274  data gain1 = 40     crc=f458 a42a
+275  data gain1 = 80     crc=b9df d8fe
+276  header=9c097000     crc=f508 7048
+277  data gain2 = 40000000     crc=be3c 21b6
+278  data gain2 = 40000000     crc=482 45b7
+279  data gain2 = 40000000     crc=1b0f 9db4
+280  data gain2 = 40000000     crc=da22 cdb1
+281  data gain2 = 40000000     crc=5cc0 adaa
+282  data gain2 = 40000000     crc=ca85 6df5
+283  data gain2 = 40000000     crc=3f12 6c38
+284  data gain2 = 40000000     crc=26c 6896
+285  block 15  TILEDMU crc=1121d8e1
+286  header=9c0d0000     crc=6300 a200
+287  data gain1 = 1     crc=ca04 4c09
+288  data gain1 = 2     crc=bc14 a831
+289  data gain1 = 4     crc=873 f0ac
+290  data gain1 = 8     crc=312a a3e5
+291  data gain1 = 10     crc=a6f8 4857
+292  data gain1 = 20     crc=5619 b1f0
+293  data gain1 = 40     crc=f458 a42a
+294  data gain1 = 80     crc=b9df d8fe
+295  header=9c097000     crc=f508 7048
+296  data gain2 = 40000000     crc=be3c 21b6
+297  data gain2 = 40000000     crc=482 45b7
+298  data gain2 = 40000000     crc=1b0f 9db4
+299  data gain2 = 40000000     crc=da22 cdb1
+300  data gain2 = 40000000     crc=5cc0 adaa
+301  data gain2 = 40000000     crc=ca85 6df5
+302  data gain2 = 40000000     crc=3f12 6c38
+303  data gain2 = 40000000     crc=26c 6896
+304  block 16  TILEDMU crc=1121d8e1
+305  GLOBAL CRC=95779577
+306  end control word=fffffff0
+ start control word 51115110
+1  header=9c0d0000     crc=6300 a200
+2  data gain1 = 1     crc=ca04 4c09
+3  data gain1 = 2     crc=bc14 a831
+4  data gain1 = 4     crc=873 f0ac
+5  data gain1 = 8     crc=312a a3e5
+6  data gain1 = 10     crc=a6f8 4857
+7  data gain1 = 20     crc=5619 b1f0
+8  data gain1 = 40     crc=f458 a42a
+9  data gain1 = 80     crc=b9df d8fe
+10  header=9c097000     crc=f508 7048
+11  data gain2 = 40000000     crc=be3c 21b6
+12  data gain2 = 40000000     crc=482 45b7
+13  data gain2 = 40000000     crc=1b0f 9db4
+14  data gain2 = 40000000     crc=da22 cdb1
+15  data gain2 = 40000000     crc=5cc0 adaa
+16  data gain2 = 40000000     crc=ca85 6df5
+17  data gain2 = 40000000     crc=3f12 6c38
+18  data gain2 = 40000000     crc=26c 6896
+19  block 1  TILEDMU crc=1121d8e1
+20  header=9c0d0000     crc=6300 a200
+21  data gain1 = 1     crc=ca04 4c09
+22  data gain1 = 2     crc=bc14 a831
+23  data gain1 = 4     crc=873 f0ac
+24  data gain1 = 8     crc=312a a3e5
+25  data gain1 = 10     crc=a6f8 4857
+26  data gain1 = 20     crc=5619 b1f0
+27  data gain1 = 40     crc=f458 a42a
+28  data gain1 = 80     crc=b9df d8fe
+29  header=9c097000     crc=f508 7048
+30  data gain2 = 40000000     crc=be3c 21b6
+31  data gain2 = 40000000     crc=482 45b7
+32  data gain2 = 40000000     crc=1b0f 9db4
+33  data gain2 = 40000000     crc=da22 cdb1
+34  data gain2 = 40000000     crc=5cc0 adaa
+35  data gain2 = 40000000     crc=ca85 6df5
+36  data gain2 = 40000000     crc=3f12 6c38
+37  data gain2 = 40000000     crc=26c 6896
+38  block 2  TILEDMU crc=1121d8e1
+39  header=9c0d0000     crc=6300 a200
+40  data gain1 = 1     crc=ca04 4c09
+41  data gain1 = 2     crc=bc14 a831
+42  data gain1 = 4     crc=873 f0ac
+43  data gain1 = 8     crc=312a a3e5
+44  data gain1 = 10     crc=a6f8 4857
+45  data gain1 = 20     crc=5619 b1f0
+46  data gain1 = 40     crc=f458 a42a
+47  data gain1 = 80     crc=b9df d8fe
+48  header=9c097000     crc=f508 7048
+49  data gain2 = 40000000     crc=be3c 21b6
+50  data gain2 = 40000000     crc=482 45b7
+51  data gain2 = 40000000     crc=1b0f 9db4
+52  data gain2 = 40000000     crc=da22 cdb1
+53  data gain2 = 40000000     crc=5cc0 adaa
+54  data gain2 = 40000000     crc=ca85 6df5
+55  data gain2 = 40000000     crc=3f12 6c38
+56  data gain2 = 40000000     crc=26c 6896
+57  block 3  TILEDMU crc=1121d8e1
+58  header=9c0d0000     crc=6300 a200
+59  data gain1 = 1     crc=ca04 4c09
+60  data gain1 = 2     crc=bc14 a831
+61  data gain1 = 4     crc=873 f0ac
+62  data gain1 = 8     crc=312a a3e5
+63  data gain1 = 10     crc=a6f8 4857
+64  data gain1 = 20     crc=5619 b1f0
+65  data gain1 = 40     crc=f458 a42a
+66  data gain1 = 80     crc=b9df d8fe
+67  header=9c097000     crc=f508 7048
+68  data gain2 = 40000000     crc=be3c 21b6
+69  data gain2 = 40000000     crc=482 45b7
+70  data gain2 = 40000000     crc=1b0f 9db4
+71  data gain2 = 40000000     crc=da22 cdb1
+72  data gain2 = 40000000     crc=5cc0 adaa
+73  data gain2 = 40000000     crc=ca85 6df5
+74  data gain2 = 40000000     crc=3f12 6c38
+75  data gain2 = 40000000     crc=26c 6896
+76  block 4  TILEDMU crc=1121d8e1
+77  header=9c0d0000     crc=6300 a200
+78  data gain1 = 1     crc=ca04 4c09
+79  data gain1 = 2     crc=bc14 a831
+80  data gain1 = 4     crc=873 f0ac
+81  data gain1 = 8     crc=312a a3e5
+82  data gain1 = 10     crc=a6f8 4857
+83  data gain1 = 20     crc=5619 b1f0
+84  data gain1 = 40     crc=f458 a42a
+85  data gain1 = 80     crc=b9df d8fe
+86  header=9c097000     crc=f508 7048
+87  data gain2 = 40000000     crc=be3c 21b6
+88  data gain2 = 40000000     crc=482 45b7
+89  data gain2 = 40000000     crc=1b0f 9db4
+90  data gain2 = 40000000     crc=da22 cdb1
+91  data gain2 = 40000000     crc=5cc0 adaa
+92  data gain2 = 40000000     crc=ca85 6df5
+93  data gain2 = 40000000     crc=3f12 6c38
+94  data gain2 = 40000000     crc=26c 6896
+95  block 5  TILEDMU crc=1121d8e1
+96  header=9c0d0000     crc=6300 a200
+97  data gain1 = 1     crc=ca04 4c09
+98  data gain1 = 2     crc=bc14 a831
+99  data gain1 = 4     crc=873 f0ac
+100  data gain1 = 8     crc=312a a3e5
+101  data gain1 = 10     crc=a6f8 4857
+102  data gain1 = 20     crc=5619 b1f0
+103  data gain1 = 40     crc=f458 a42a
+104  data gain1 = 80     crc=b9df d8fe
+105  header=9c097000     crc=f508 7048
+106  data gain2 = 40000000     crc=be3c 21b6
+107  data gain2 = 40000000     crc=482 45b7
+108  data gain2 = 40000000     crc=1b0f 9db4
+109  data gain2 = 40000000     crc=da22 cdb1
+110  data gain2 = 40000000     crc=5cc0 adaa
+111  data gain2 = 40000000     crc=ca85 6df5
+112  data gain2 = 40000000     crc=3f12 6c38
+113  data gain2 = 40000000     crc=26c 6896
+114  block 6  TILEDMU crc=1121d8e1
+115  header=9c0d0000     crc=6300 a200
+116  data gain1 = 1     crc=ca04 4c09
+117  data gain1 = 2     crc=bc14 a831
+118  data gain1 = 4     crc=873 f0ac
+119  data gain1 = 8     crc=312a a3e5
+120  data gain1 = 10     crc=a6f8 4857
+121  data gain1 = 20     crc=5619 b1f0
+122  data gain1 = 40     crc=f458 a42a
+123  data gain1 = 80     crc=b9df d8fe
+124  header=9c097000     crc=f508 7048
+125  data gain2 = 40000000     crc=be3c 21b6
+126  data gain2 = 40000000     crc=482 45b7
+127  data gain2 = 40000000     crc=1b0f 9db4
+128  data gain2 = 40000000     crc=da22 cdb1
+129  data gain2 = 40000000     crc=5cc0 adaa
+130  data gain2 = 40000000     crc=ca85 6df5
+131  data gain2 = 40000000     crc=3f12 6c38
+132  data gain2 = 40000000     crc=26c 6896
+133  block 7  TILEDMU crc=1121d8e1
+134  header=9c0d0000     crc=6300 a200
+135  data gain1 = 1     crc=ca04 4c09
+136  data gain1 = 2     crc=bc14 a831
+137  data gain1 = 4     crc=873 f0ac
+138  data gain1 = 8     crc=312a a3e5
+139  data gain1 = 10     crc=a6f8 4857
+140  data gain1 = 20     crc=5619 b1f0
+141  data gain1 = 40     crc=f458 a42a
+142  data gain1 = 80     crc=b9df d8fe
+143  header=9c097000     crc=f508 7048
+144  data gain2 = 40000000     crc=be3c 21b6
+145  data gain2 = 40000000     crc=482 45b7
+146  data gain2 = 40000000     crc=1b0f 9db4
+147  data gain2 = 40000000     crc=da22 cdb1
+148  data gain2 = 40000000     crc=5cc0 adaa
+149  data gain2 = 40000000     crc=ca85 6df5
+150  data gain2 = 40000000     crc=3f12 6c38
+151  data gain2 = 40000000     crc=26c 6896
+152  block 8  TILEDMU crc=1121d8e1
+153  header=9c0d0000     crc=6300 a200
+154  data gain1 = 1     crc=ca04 4c09
+155  data gain1 = 2     crc=bc14 a831
+156  data gain1 = 4     crc=873 f0ac
+157  data gain1 = 8     crc=312a a3e5
+158  data gain1 = 10     crc=a6f8 4857
+159  data gain1 = 20     crc=5619 b1f0
+160  data gain1 = 40     crc=f458 a42a
+161  data gain1 = 80     crc=b9df d8fe
+162  header=9c097000     crc=f508 7048
+163  data gain2 = 40000000     crc=be3c 21b6
+164  data gain2 = 40000000     crc=482 45b7
+165  data gain2 = 40000000     crc=1b0f 9db4
+166  data gain2 = 40000000     crc=da22 cdb1
+167  data gain2 = 40000000     crc=5cc0 adaa
+168  data gain2 = 40000000     crc=ca85 6df5
+169  data gain2 = 40000000     crc=3f12 6c38
+170  data gain2 = 40000000     crc=26c 6896
+171  block 9  TILEDMU crc=1121d8e1
+172  header=9c0d0000     crc=6300 a200
+173  data gain1 = 1     crc=ca04 4c09
+174  data gain1 = 2     crc=bc14 a831
+175  data gain1 = 4     crc=873 f0ac
+176  data gain1 = 8     crc=312a a3e5
+177  data gain1 = 10     crc=a6f8 4857
+178  data gain1 = 20     crc=5619 b1f0
+179  data gain1 = 40     crc=f458 a42a
+180  data gain1 = 80     crc=b9df d8fe
+181  header=9c097000     crc=f508 7048
+182  data gain2 = 40000000     crc=be3c 21b6
+183  data gain2 = 40000000     crc=482 45b7
+184  data gain2 = 40000000     crc=1b0f 9db4
+185  data gain2 = 40000000     crc=da22 cdb1
+186  data gain2 = 40000000     crc=5cc0 adaa
+187  data gain2 = 40000000     crc=ca85 6df5
+188  data gain2 = 40000000     crc=3f12 6c38
+189  data gain2 = 40000000     crc=26c 6896
+190  block 10  TILEDMU crc=1121d8e1
+191  header=9c0d0000     crc=6300 a200
+192  data gain1 = 1     crc=ca04 4c09
+193  data gain1 = 2     crc=bc14 a831
+194  data gain1 = 4     crc=873 f0ac
+195  data gain1 = 8     crc=312a a3e5
+196  data gain1 = 10     crc=a6f8 4857
+197  data gain1 = 20     crc=5619 b1f0
+198  data gain1 = 40     crc=f458 a42a
+199  data gain1 = 80     crc=b9df d8fe
+200  header=9c097000     crc=f508 7048
+201  data gain2 = 40000000     crc=be3c 21b6
+202  data gain2 = 40000000     crc=482 45b7
+203  data gain2 = 40000000     crc=1b0f 9db4
+204  data gain2 = 40000000     crc=da22 cdb1
+205  data gain2 = 40000000     crc=5cc0 adaa
+206  data gain2 = 40000000     crc=ca85 6df5
+207  data gain2 = 40000000     crc=3f12 6c38
+208  data gain2 = 40000000     crc=26c 6896
+209  block 11  TILEDMU crc=1121d8e1
+210  header=9c0d0000     crc=6300 a200
+211  data gain1 = 1     crc=ca04 4c09
+212  data gain1 = 2     crc=bc14 a831
+213  data gain1 = 4     crc=873 f0ac
+214  data gain1 = 8     crc=312a a3e5
+215  data gain1 = 10     crc=a6f8 4857
+216  data gain1 = 20     crc=5619 b1f0
+217  data gain1 = 40     crc=f458 a42a
+218  data gain1 = 80     crc=b9df d8fe
+219  header=9c097000     crc=f508 7048
+220  data gain2 = 40000000     crc=be3c 21b6
+221  data gain2 = 40000000     crc=482 45b7
+222  data gain2 = 40000000     crc=1b0f 9db4
+223  data gain2 = 40000000     crc=da22 cdb1
+224  data gain2 = 40000000     crc=5cc0 adaa
+225  data gain2 = 40000000     crc=ca85 6df5
+226  data gain2 = 40000000     crc=3f12 6c38
+227  data gain2 = 40000000     crc=26c 6896
+228  block 12  TILEDMU crc=1121d8e1
+229  header=9c0d0000     crc=6300 a200
+230  data gain1 = 1     crc=ca04 4c09
+231  data gain1 = 2     crc=bc14 a831
+232  data gain1 = 4     crc=873 f0ac
+233  data gain1 = 8     crc=312a a3e5
+234  data gain1 = 10     crc=a6f8 4857
+235  data gain1 = 20     crc=5619 b1f0
+236  data gain1 = 40     crc=f458 a42a
+237  data gain1 = 80     crc=b9df d8fe
+238  header=9c097000     crc=f508 7048
+239  data gain2 = 40000000     crc=be3c 21b6
+240  data gain2 = 40000000     crc=482 45b7
+241  data gain2 = 40000000     crc=1b0f 9db4
+242  data gain2 = 40000000     crc=da22 cdb1
+243  data gain2 = 40000000     crc=5cc0 adaa
+244  data gain2 = 40000000     crc=ca85 6df5
+245  data gain2 = 40000000     crc=3f12 6c38
+246  data gain2 = 40000000     crc=26c 6896
+247  block 13  TILEDMU crc=1121d8e1
+248  header=9c0d0000     crc=6300 a200
+249  data gain1 = 1     crc=ca04 4c09
+250  data gain1 = 2     crc=bc14 a831
+251  data gain1 = 4     crc=873 f0ac
+252  data gain1 = 8     crc=312a a3e5
+253  data gain1 = 10     crc=a6f8 4857
+254  data gain1 = 20     crc=5619 b1f0
+255  data gain1 = 40     crc=f458 a42a
+256  data gain1 = 80     crc=b9df d8fe
+257  header=9c097000     crc=f508 7048
+258  data gain2 = 40000000     crc=be3c 21b6
+259  data gain2 = 40000000     crc=482 45b7
+260  data gain2 = 40000000     crc=1b0f 9db4
+261  data gain2 = 40000000     crc=da22 cdb1
+262  data gain2 = 40000000     crc=5cc0 adaa
+263  data gain2 = 40000000     crc=ca85 6df5
+264  data gain2 = 40000000     crc=3f12 6c38
+265  data gain2 = 40000000     crc=26c 6896
+266  block 14  TILEDMU crc=1121d8e1
+267  header=9c0d0000     crc=6300 a200
+268  data gain1 = 1     crc=ca04 4c09
+269  data gain1 = 2     crc=bc14 a831
+270  data gain1 = 4     crc=873 f0ac
+271  data gain1 = 8     crc=312a a3e5
+272  data gain1 = 10     crc=a6f8 4857
+273  data gain1 = 20     crc=5619 b1f0
+274  data gain1 = 40     crc=f458 a42a
+275  data gain1 = 80     crc=b9df d8fe
+276  header=9c097000     crc=f508 7048
+277  data gain2 = 40000000     crc=be3c 21b6
+278  data gain2 = 40000000     crc=482 45b7
+279  data gain2 = 40000000     crc=1b0f 9db4
+280  data gain2 = 40000000     crc=da22 cdb1
+281  data gain2 = 40000000     crc=5cc0 adaa
+282  data gain2 = 40000000     crc=ca85 6df5
+283  data gain2 = 40000000     crc=3f12 6c38
+284  data gain2 = 40000000     crc=26c 6896
+285  block 15  TILEDMU crc=1121d8e1
+286  header=9c0d0000     crc=6300 a200
+287  data gain1 = 1     crc=ca04 4c09
+288  data gain1 = 2     crc=bc14 a831
+289  data gain1 = 4     crc=873 f0ac
+290  data gain1 = 8     crc=312a a3e5
+291  data gain1 = 10     crc=a6f8 4857
+292  data gain1 = 20     crc=5619 b1f0
+293  data gain1 = 40     crc=f458 a42a
+294  data gain1 = 80     crc=b9df d8fe
+295  header=9c097000     crc=f508 7048
+296  data gain2 = 40000000     crc=be3c 21b6
+297  data gain2 = 40000000     crc=482 45b7
+298  data gain2 = 40000000     crc=1b0f 9db4
+299  data gain2 = 40000000     crc=da22 cdb1
+300  data gain2 = 40000000     crc=5cc0 adaa
+301  data gain2 = 40000000     crc=ca85 6df5
+302  data gain2 = 40000000     crc=3f12 6c38
+303  data gain2 = 40000000     crc=26c 6896
+304  block 16  TILEDMU crc=1121d8e1
+305  GLOBAL CRC=95779577
+306  end control word=fffffff0
+ start control word 51115110
+1  header=9c0d0000     crc=6300 a200
+2  data gain1 = 1     crc=ca04 4c09
+3  data gain1 = 2     crc=bc14 a831
+4  data gain1 = 4     crc=873 f0ac
+5  data gain1 = 8     crc=312a a3e5
+6  data gain1 = 10     crc=a6f8 4857
+7  data gain1 = 20     crc=5619 b1f0
+8  data gain1 = 40     crc=f458 a42a
+9  data gain1 = 80     crc=b9df d8fe
+10  header=9c097000     crc=f508 7048
+11  data gain2 = 40000000     crc=be3c 21b6
+12  data gain2 = 40000000     crc=482 45b7
+13  data gain2 = 40000000     crc=1b0f 9db4
+14  data gain2 = 40000000     crc=da22 cdb1
+15  data gain2 = 40000000     crc=5cc0 adaa
+16  data gain2 = 40000000     crc=ca85 6df5
+17  data gain2 = 40000000     crc=3f12 6c38
+18  data gain2 = 40000000     crc=26c 6896
+19  block 1  TILEDMU crc=1121d8e1
+20  header=9c0d0000     crc=6300 a200
+21  data gain1 = 1     crc=ca04 4c09
+22  data gain1 = 2     crc=bc14 a831
+23  data gain1 = 4     crc=873 f0ac
+24  data gain1 = 8     crc=312a a3e5
+25  data gain1 = 10     crc=a6f8 4857
+26  data gain1 = 20     crc=5619 b1f0
+27  data gain1 = 40     crc=f458 a42a
+28  data gain1 = 80     crc=b9df d8fe
+29  header=9c097000     crc=f508 7048
+30  data gain2 = 40000000     crc=be3c 21b6
+31  data gain2 = 40000000     crc=482 45b7
+32  data gain2 = 40000000     crc=1b0f 9db4
+33  data gain2 = 40000000     crc=da22 cdb1
+34  data gain2 = 40000000     crc=5cc0 adaa
+35  data gain2 = 40000000     crc=ca85 6df5
+36  data gain2 = 40000000     crc=3f12 6c38
+37  data gain2 = 40000000     crc=26c 6896
+38  block 2  TILEDMU crc=1121d8e1
+39  header=9c0d0000     crc=6300 a200
+40  data gain1 = 1     crc=ca04 4c09
+41  data gain1 = 2     crc=bc14 a831
+42  data gain1 = 4     crc=873 f0ac
+43  data gain1 = 8     crc=312a a3e5
+44  data gain1 = 10     crc=a6f8 4857
+45  data gain1 = 20     crc=5619 b1f0
+46  data gain1 = 40     crc=f458 a42a
+47  data gain1 = 80     crc=b9df d8fe
+48  header=9c097000     crc=f508 7048
+49  data gain2 = 40000000     crc=be3c 21b6
+50  data gain2 = 40000000     crc=482 45b7
+51  data gain2 = 40000000     crc=1b0f 9db4
+52  data gain2 = 40000000     crc=da22 cdb1
+53  data gain2 = 40000000     crc=5cc0 adaa
+54  data gain2 = 40000000     crc=ca85 6df5
+55  data gain2 = 40000000     crc=3f12 6c38
+56  data gain2 = 40000000     crc=26c 6896
+57  block 3  TILEDMU crc=1121d8e1
+58  header=9c0d0000     crc=6300 a200
+59  data gain1 = 1     crc=ca04 4c09
+60  data gain1 = 2     crc=bc14 a831
+61  data gain1 = 4     crc=873 f0ac
+62  data gain1 = 8     crc=312a a3e5
+63  data gain1 = 10     crc=a6f8 4857
+64  data gain1 = 20     crc=5619 b1f0
+65  data gain1 = 40     crc=f458 a42a
+66  data gain1 = 80     crc=b9df d8fe
+67  header=9c097000     crc=f508 7048
+68  data gain2 = 40000000     crc=be3c 21b6
+69  data gain2 = 40000000     crc=482 45b7
+70  data gain2 = 40000000     crc=1b0f 9db4
+71  data gain2 = 40000000     crc=da22 cdb1
+72  data gain2 = 40000000     crc=5cc0 adaa
+73  data gain2 = 40000000     crc=ca85 6df5
+74  data gain2 = 40000000     crc=3f12 6c38
+75  data gain2 = 40000000     crc=26c 6896
+76  block 4  TILEDMU crc=1121d8e1
+77  header=9c0d0000     crc=6300 a200
+78  data gain1 = 1     crc=ca04 4c09
+79  data gain1 = 2     crc=bc14 a831
+80  data gain1 = 4     crc=873 f0ac
+81  data gain1 = 8     crc=312a a3e5
+82  data gain1 = 10     crc=a6f8 4857
+83  data gain1 = 20     crc=5619 b1f0
+84  data gain1 = 40     crc=f458 a42a
+85  data gain1 = 80     crc=b9df d8fe
+86  header=9c097000     crc=f508 7048
+87  data gain2 = 40000000     crc=be3c 21b6
+88  data gain2 = 40000000     crc=482 45b7
+89  data gain2 = 40000000     crc=1b0f 9db4
+90  data gain2 = 40000000     crc=da22 cdb1
+91  data gain2 = 40000000     crc=5cc0 adaa
+92  data gain2 = 40000000     crc=ca85 6df5
+93  data gain2 = 40000000     crc=3f12 6c38
+94  data gain2 = 40000000     crc=26c 6896
+95  block 5  TILEDMU crc=1121d8e1
+96  header=9c0d0000     crc=6300 a200
+97  data gain1 = 1     crc=ca04 4c09
+98  data gain1 = 2     crc=bc14 a831
+99  data gain1 = 4     crc=873 f0ac
+100  data gain1 = 8     crc=312a a3e5
+101  data gain1 = 10     crc=a6f8 4857
+102  data gain1 = 20     crc=5619 b1f0
+103  data gain1 = 40     crc=f458 a42a
+104  data gain1 = 80     crc=b9df d8fe
+105  header=9c097000     crc=f508 7048
+106  data gain2 = 40000000     crc=be3c 21b6
+107  data gain2 = 40000000     crc=482 45b7
+108  data gain2 = 40000000     crc=1b0f 9db4
+109  data gain2 = 40000000     crc=da22 cdb1
+110  data gain2 = 40000000     crc=5cc0 adaa
+111  data gain2 = 40000000     crc=ca85 6df5
+112  data gain2 = 40000000     crc=3f12 6c38
+113  data gain2 = 40000000     crc=26c 6896
+114  block 6  TILEDMU crc=1121d8e1
+115  header=9c0d0000     crc=6300 a200
+116  data gain1 = 1     crc=ca04 4c09
+117  data gain1 = 2     crc=bc14 a831
+118  data gain1 = 4     crc=873 f0ac
+119  data gain1 = 8     crc=312a a3e5
+120  data gain1 = 10     crc=a6f8 4857
+121  data gain1 = 20     crc=5619 b1f0
+122  data gain1 = 40     crc=f458 a42a
+123  data gain1 = 80     crc=b9df d8fe
+124  header=9c097000     crc=f508 7048
+125  data gain2 = 40000000     crc=be3c 21b6
+126  data gain2 = 40000000     crc=482 45b7
+127  data gain2 = 40000000     crc=1b0f 9db4
+128  data gain2 = 40000000     crc=da22 cdb1
+129  data gain2 = 40000000     crc=5cc0 adaa
+130  data gain2 = 40000000     crc=ca85 6df5
+131  data gain2 = 40000000     crc=3f12 6c38
+132  data gain2 = 40000000     crc=26c 6896
+133  block 7  TILEDMU crc=1121d8e1
+134  header=9c0d0000     crc=6300 a200
+135  data gain1 = 1     crc=ca04 4c09
+136  data gain1 = 2     crc=bc14 a831
+137  data gain1 = 4     crc=873 f0ac
+138  data gain1 = 8     crc=312a a3e5
+139  data gain1 = 10     crc=a6f8 4857
+140  data gain1 = 20     crc=5619 b1f0
+141  data gain1 = 40     crc=f458 a42a
+142  data gain1 = 80     crc=b9df d8fe
+143  header=9c097000     crc=f508 7048
+144  data gain2 = 40000000     crc=be3c 21b6
+145  data gain2 = 40000000     crc=482 45b7
+146  data gain2 = 40000000     crc=1b0f 9db4
+147  data gain2 = 40000000     crc=da22 cdb1
+148  data gain2 = 40000000     crc=5cc0 adaa
+149  data gain2 = 40000000     crc=ca85 6df5
+150  data gain2 = 40000000     crc=3f12 6c38
+151  data gain2 = 40000000     crc=26c 6896
+152  block 8  TILEDMU crc=1121d8e1
+153  header=9c0d0000     crc=6300 a200
+154  data gain1 = 1     crc=ca04 4c09
+155  data gain1 = 2     crc=bc14 a831
+156  data gain1 = 4     crc=873 f0ac
+157  data gain1 = 8     crc=312a a3e5
+158  data gain1 = 10     crc=a6f8 4857
+159  data gain1 = 20     crc=5619 b1f0
+160  data gain1 = 40     crc=f458 a42a
+161  data gain1 = 80     crc=b9df d8fe
+162  header=9c097000     crc=f508 7048
+163  data gain2 = 40000000     crc=be3c 21b6
+164  data gain2 = 40000000     crc=482 45b7
+165  data gain2 = 40000000     crc=1b0f 9db4
+166  data gain2 = 40000000     crc=da22 cdb1
+167  data gain2 = 40000000     crc=5cc0 adaa
+168  data gain2 = 40000000     crc=ca85 6df5
+169  data gain2 = 40000000     crc=3f12 6c38
+170  data gain2 = 40000000     crc=26c 6896
+171  block 9  TILEDMU crc=1121d8e1
+172  header=9c0d0000     crc=6300 a200
+173  data gain1 = 1     crc=ca04 4c09
+174  data gain1 = 2     crc=bc14 a831
+175  data gain1 = 4     crc=873 f0ac
+176  data gain1 = 8     crc=312a a3e5
+177  data gain1 = 10     crc=a6f8 4857
+178  data gain1 = 20     crc=5619 b1f0
+179  data gain1 = 40     crc=f458 a42a
+180  data gain1 = 80     crc=b9df d8fe
+181  header=9c097000     crc=f508 7048
+182  data gain2 = 40000000     crc=be3c 21b6
+183  data gain2 = 40000000     crc=482 45b7
+184  data gain2 = 40000000     crc=1b0f 9db4
+185  data gain2 = 40000000     crc=da22 cdb1
+186  data gain2 = 40000000     crc=5cc0 adaa
+187  data gain2 = 40000000     crc=ca85 6df5
+188  data gain2 = 40000000     crc=3f12 6c38
+189  data gain2 = 40000000     crc=26c 6896
+190  block 10  TILEDMU crc=1121d8e1
+191  header=9c0d0000     crc=6300 a200
+192  data gain1 = 1     crc=ca04 4c09
+193  data gain1 = 2     crc=bc14 a831
+194  data gain1 = 4     crc=873 f0ac
+195  data gain1 = 8     crc=312a a3e5
+196  data gain1 = 10     crc=a6f8 4857
+197  data gain1 = 20     crc=5619 b1f0
+198  data gain1 = 40     crc=f458 a42a
+199  data gain1 = 80     crc=b9df d8fe
+200  header=9c097000     crc=f508 7048
+201  data gain2 = 40000000     crc=be3c 21b6
+202  data gain2 = 40000000     crc=482 45b7
+203  data gain2 = 40000000     crc=1b0f 9db4
+204  data gain2 = 40000000     crc=da22 cdb1
+205  data gain2 = 40000000     crc=5cc0 adaa
+206  data gain2 = 40000000     crc=ca85 6df5
+207  data gain2 = 40000000     crc=3f12 6c38
+208  data gain2 = 40000000     crc=26c 6896
+209  block 11  TILEDMU crc=1121d8e1
+210  header=9c0d0000     crc=6300 a200
+211  data gain1 = 1     crc=ca04 4c09
+212  data gain1 = 2     crc=bc14 a831
+213  data gain1 = 4     crc=873 f0ac
+214  data gain1 = 8     crc=312a a3e5
+215  data gain1 = 10     crc=a6f8 4857
+216  data gain1 = 20     crc=5619 b1f0
+217  data gain1 = 40     crc=f458 a42a
+218  data gain1 = 80     crc=b9df d8fe
+219  header=9c097000     crc=f508 7048
+220  data gain2 = 40000000     crc=be3c 21b6
+221  data gain2 = 40000000     crc=482 45b7
+222  data gain2 = 40000000     crc=1b0f 9db4
+223  data gain2 = 40000000     crc=da22 cdb1
+224  data gain2 = 40000000     crc=5cc0 adaa
+225  data gain2 = 40000000     crc=ca85 6df5
+226  data gain2 = 40000000     crc=3f12 6c38
+227  data gain2 = 40000000     crc=26c 6896
+228  block 12  TILEDMU crc=1121d8e1
+229  header=9c0d0000     crc=6300 a200
+230  data gain1 = 1     crc=ca04 4c09
+231  data gain1 = 2     crc=bc14 a831
+232  data gain1 = 4     crc=873 f0ac
+233  data gain1 = 8     crc=312a a3e5
+234  data gain1 = 10     crc=a6f8 4857
+235  data gain1 = 20     crc=5619 b1f0
+236  data gain1 = 40     crc=f458 a42a
+237  data gain1 = 80     crc=b9df d8fe
+238  header=9c097000     crc=f508 7048
+239  data gain2 = 40000000     crc=be3c 21b6
+240  data gain2 = 40000000     crc=482 45b7
+241  data gain2 = 40000000     crc=1b0f 9db4
+242  data gain2 = 40000000     crc=da22 cdb1
+243  data gain2 = 40000000     crc=5cc0 adaa
+244  data gain2 = 40000000     crc=ca85 6df5
+245  data gain2 = 40000000     crc=3f12 6c38
+246  data gain2 = 40000000     crc=26c 6896
+247  block 13  TILEDMU crc=1121d8e1
+248  header=9c0d0000     crc=6300 a200
+249  data gain1 = 1     crc=ca04 4c09
+250  data gain1 = 2     crc=bc14 a831
+251  data gain1 = 4     crc=873 f0ac
+252  data gain1 = 8     crc=312a a3e5
+253  data gain1 = 10     crc=a6f8 4857
+254  data gain1 = 20     crc=5619 b1f0
+255  data gain1 = 40     crc=f458 a42a
+256  data gain1 = 80     crc=b9df d8fe
+257  header=9c097000     crc=f508 7048
+258  data gain2 = 40000000     crc=be3c 21b6
+259  data gain2 = 40000000     crc=482 45b7
+260  data gain2 = 40000000     crc=1b0f 9db4
+261  data gain2 = 40000000     crc=da22 cdb1
+262  data gain2 = 40000000     crc=5cc0 adaa
+263  data gain2 = 40000000     crc=ca85 6df5
+264  data gain2 = 40000000     crc=3f12 6c38
+265  data gain2 = 40000000     crc=26c 6896
+266  block 14  TILEDMU crc=1121d8e1
+267  header=9c0d0000     crc=6300 a200
+268  data gain1 = 1     crc=ca04 4c09
+269  data gain1 = 2     crc=bc14 a831
+270  data gain1 = 4     crc=873 f0ac
+271  data gain1 = 8     crc=312a a3e5
+272  data gain1 = 10     crc=a6f8 4857
+273  data gain1 = 20     crc=5619 b1f0
+274  data gain1 = 40     crc=f458 a42a
+275  data gain1 = 80     crc=b9df d8fe
+276  header=9c097000     crc=f508 7048
+277  data gain2 = 40000000     crc=be3c 21b6
+278  data gain2 = 40000000     crc=482 45b7
+279  data gain2 = 40000000     crc=1b0f 9db4
+280  data gain2 = 40000000     crc=da22 cdb1
+281  data gain2 = 40000000     crc=5cc0 adaa
+282  data gain2 = 40000000     crc=ca85 6df5
+283  data gain2 = 40000000     crc=3f12 6c38
+284  data gain2 = 40000000     crc=26c 6896
+285  block 15  TILEDMU crc=1121d8e1
+286  header=9c0d0000     crc=6300 a200
+287  data gain1 = 1     crc=ca04 4c09
+288  data gain1 = 2     crc=bc14 a831
+289  data gain1 = 4     crc=873 f0ac
+290  data gain1 = 8     crc=312a a3e5
+291  data gain1 = 10     crc=a6f8 4857
+292  data gain1 = 20     crc=5619 b1f0
+293  data gain1 = 40     crc=f458 a42a
+294  data gain1 = 80     crc=b9df d8fe
+295  header=9c097000     crc=f508 7048
+296  data gain2 = 40000000     crc=be3c 21b6
+297  data gain2 = 40000000     crc=482 45b7
+298  data gain2 = 40000000     crc=1b0f 9db4
+299  data gain2 = 40000000     crc=da22 cdb1
+300  data gain2 = 40000000     crc=5cc0 adaa
+301  data gain2 = 40000000     crc=ca85 6df5
+302  data gain2 = 40000000     crc=3f12 6c38
+303  data gain2 = 40000000     crc=26c 6896
+304  block 16  TILEDMU crc=1121d8e1
+305  GLOBAL CRC=95779577
+306  end control word=fffffff0
+ start control word 51115110
+1  header=9c0d0000     crc=6300 a200
+2  data gain1 = 1     crc=ca04 4c09
+3  data gain1 = 2     crc=bc14 a831
+4  data gain1 = 4     crc=873 f0ac
+5  data gain1 = 8     crc=312a a3e5
+6  data gain1 = 10     crc=a6f8 4857
+7  data gain1 = 20     crc=5619 b1f0
+8  data gain1 = 40     crc=f458 a42a
+9  data gain1 = 80     crc=b9df d8fe
+10  header=9c097000     crc=f508 7048
+11  data gain2 = 40000000     crc=be3c 21b6
+12  data gain2 = 40000000     crc=482 45b7
+13  data gain2 = 40000000     crc=1b0f 9db4
+14  data gain2 = 40000000     crc=da22 cdb1
+15  data gain2 = 40000000     crc=5cc0 adaa
+16  data gain2 = 40000000     crc=ca85 6df5
+17  data gain2 = 40000000     crc=3f12 6c38
+18  data gain2 = 40000000     crc=26c 6896
+19  block 1  TILEDMU crc=1121d8e1
+20  header=9c0d0000     crc=6300 a200
+21  data gain1 = 1     crc=ca04 4c09
+22  data gain1 = 2     crc=bc14 a831
+23  data gain1 = 4     crc=873 f0ac
+24  data gain1 = 8     crc=312a a3e5
+25  data gain1 = 10     crc=a6f8 4857
+26  data gain1 = 20     crc=5619 b1f0
+27  data gain1 = 40     crc=f458 a42a
+28  data gain1 = 80     crc=b9df d8fe
+29  header=9c097000     crc=f508 7048
+30  data gain2 = 40000000     crc=be3c 21b6
+31  data gain2 = 40000000     crc=482 45b7
+32  data gain2 = 40000000     crc=1b0f 9db4
+33  data gain2 = 40000000     crc=da22 cdb1
+34  data gain2 = 40000000     crc=5cc0 adaa
+35  data gain2 = 40000000     crc=ca85 6df5
+36  data gain2 = 40000000     crc=3f12 6c38
+37  data gain2 = 40000000     crc=26c 6896
+38  block 2  TILEDMU crc=1121d8e1
+39  header=9c0d0000     crc=6300 a200
+40  data gain1 = 1     crc=ca04 4c09
+41  data gain1 = 2     crc=bc14 a831
+42  data gain1 = 4     crc=873 f0ac
+43  data gain1 = 8     crc=312a a3e5
+44  data gain1 = 10     crc=a6f8 4857
+45  data gain1 = 20     crc=5619 b1f0
+46  data gain1 = 40     crc=f458 a42a
+47  data gain1 = 80     crc=b9df d8fe
+48  header=9c097000     crc=f508 7048
+49  data gain2 = 40000000     crc=be3c 21b6
+50  data gain2 = 40000000     crc=482 45b7
+51  data gain2 = 40000000     crc=1b0f 9db4
+52  data gain2 = 40000000     crc=da22 cdb1
+53  data gain2 = 40000000     crc=5cc0 adaa
+54  data gain2 = 40000000     crc=ca85 6df5
+55  data gain2 = 40000000     crc=3f12 6c38
+56  data gain2 = 40000000     crc=26c 6896
+57  block 3  TILEDMU crc=1121d8e1
+58  header=9c0d0000     crc=6300 a200
+59  data gain1 = 1     crc=ca04 4c09
+60  data gain1 = 2     crc=bc14 a831
+61  data gain1 = 4     crc=873 f0ac
+62  data gain1 = 8     crc=312a a3e5
+63  data gain1 = 10     crc=a6f8 4857
+64  data gain1 = 20     crc=5619 b1f0
+65  data gain1 = 40     crc=f458 a42a
+66  data gain1 = 80     crc=b9df d8fe
+67  header=9c097000     crc=f508 7048
+68  data gain2 = 40000000     crc=be3c 21b6
+69  data gain2 = 40000000     crc=482 45b7
+70  data gain2 = 40000000     crc=1b0f 9db4
+71  data gain2 = 40000000     crc=da22 cdb1
+72  data gain2 = 40000000     crc=5cc0 adaa
+73  data gain2 = 40000000     crc=ca85 6df5
+74  data gain2 = 40000000     crc=3f12 6c38
+75  data gain2 = 40000000     crc=26c 6896
+76  block 4  TILEDMU crc=1121d8e1
+77  header=9c0d0000     crc=6300 a200
+78  data gain1 = 1     crc=ca04 4c09
+79  data gain1 = 2     crc=bc14 a831
+80  data gain1 = 4     crc=873 f0ac
+81  data gain1 = 8     crc=312a a3e5
+82  data gain1 = 10     crc=a6f8 4857
+83  data gain1 = 20     crc=5619 b1f0
+84  data gain1 = 40     crc=f458 a42a
+85  data gain1 = 80     crc=b9df d8fe
+86  header=9c097000     crc=f508 7048
+87  data gain2 = 40000000     crc=be3c 21b6
+88  data gain2 = 40000000     crc=482 45b7
+89  data gain2 = 40000000     crc=1b0f 9db4
+90  data gain2 = 40000000     crc=da22 cdb1
+91  data gain2 = 40000000     crc=5cc0 adaa
+92  data gain2 = 40000000     crc=ca85 6df5
+93  data gain2 = 40000000     crc=3f12 6c38
+94  data gain2 = 40000000     crc=26c 6896
+95  block 5  TILEDMU crc=1121d8e1
+96  header=9c0d0000     crc=6300 a200
+97  data gain1 = 1     crc=ca04 4c09
+98  data gain1 = 2     crc=bc14 a831
+99  data gain1 = 4     crc=873 f0ac
+100  data gain1 = 8     crc=312a a3e5
+101  data gain1 = 10     crc=a6f8 4857
+102  data gain1 = 20     crc=5619 b1f0
+103  data gain1 = 40     crc=f458 a42a
+104  data gain1 = 80     crc=b9df d8fe
+105  header=9c097000     crc=f508 7048
+106  data gain2 = 40000000     crc=be3c 21b6
+107  data gain2 = 40000000     crc=482 45b7
+108  data gain2 = 40000000     crc=1b0f 9db4
+109  data gain2 = 40000000     crc=da22 cdb1
+110  data gain2 = 40000000     crc=5cc0 adaa
+111  data gain2 = 40000000     crc=ca85 6df5
+112  data gain2 = 40000000     crc=3f12 6c38
+113  data gain2 = 40000000     crc=26c 6896
+114  block 6  TILEDMU crc=1121d8e1
+115  header=9c0d0000     crc=6300 a200
+116  data gain1 = 1     crc=ca04 4c09
+117  data gain1 = 2     crc=bc14 a831
+118  data gain1 = 4     crc=873 f0ac
+119  data gain1 = 8     crc=312a a3e5
+120  data gain1 = 10     crc=a6f8 4857
+121  data gain1 = 20     crc=5619 b1f0
+122  data gain1 = 40     crc=f458 a42a
+123  data gain1 = 80     crc=b9df d8fe
+124  header=9c097000     crc=f508 7048
+125  data gain2 = 40000000     crc=be3c 21b6
+126  data gain2 = 40000000     crc=482 45b7
+127  data gain2 = 40000000     crc=1b0f 9db4
+128  data gain2 = 40000000     crc=da22 cdb1
+129  data gain2 = 40000000     crc=5cc0 adaa
+130  data gain2 = 40000000     crc=ca85 6df5
+131  data gain2 = 40000000     crc=3f12 6c38
+132  data gain2 = 40000000     crc=26c 6896
+133  block 7  TILEDMU crc=1121d8e1
+134  header=9c0d0000     crc=6300 a200
+135  data gain1 = 1     crc=ca04 4c09
+136  data gain1 = 2     crc=bc14 a831
+137  data gain1 = 4     crc=873 f0ac
+138  data gain1 = 8     crc=312a a3e5
+139  data gain1 = 10     crc=a6f8 4857
+140  data gain1 = 20     crc=5619 b1f0
+141  data gain1 = 40     crc=f458 a42a
+142  data gain1 = 80     crc=b9df d8fe
+143  header=9c097000     crc=f508 7048
+144  data gain2 = 40000000     crc=be3c 21b6
+145  data gain2 = 40000000     crc=482 45b7
+146  data gain2 = 40000000     crc=1b0f 9db4
+147  data gain2 = 40000000     crc=da22 cdb1
+148  data gain2 = 40000000     crc=5cc0 adaa
+149  data gain2 = 40000000     crc=ca85 6df5
+150  data gain2 = 40000000     crc=3f12 6c38
+151  data gain2 = 40000000     crc=26c 6896
+152  block 8  TILEDMU crc=1121d8e1
+153  header=9c0d0000     crc=6300 a200
+154  data gain1 = 1     crc=ca04 4c09
+155  data gain1 = 2     crc=bc14 a831
+156  data gain1 = 4     crc=873 f0ac
+157  data gain1 = 8     crc=312a a3e5
+158  data gain1 = 10     crc=a6f8 4857
+159  data gain1 = 20     crc=5619 b1f0
+160  data gain1 = 40     crc=f458 a42a
+161  data gain1 = 80     crc=b9df d8fe
+162  header=9c097000     crc=f508 7048
+163  data gain2 = 40000000     crc=be3c 21b6
+164  data gain2 = 40000000     crc=482 45b7
+165  data gain2 = 40000000     crc=1b0f 9db4
+166  data gain2 = 40000000     crc=da22 cdb1
+167  data gain2 = 40000000     crc=5cc0 adaa
+168  data gain2 = 40000000     crc=ca85 6df5
+169  data gain2 = 40000000     crc=3f12 6c38
+170  data gain2 = 40000000     crc=26c 6896
+171  block 9  TILEDMU crc=1121d8e1
+172  header=9c0d0000     crc=6300 a200
+173  data gain1 = 1     crc=ca04 4c09
+174  data gain1 = 2     crc=bc14 a831
+175  data gain1 = 4     crc=873 f0ac
+176  data gain1 = 8     crc=312a a3e5
+177  data gain1 = 10     crc=a6f8 4857
+178  data gain1 = 20     crc=5619 b1f0
+179  data gain1 = 40     crc=f458 a42a
+180  data gain1 = 80     crc=b9df d8fe
+181  header=9c097000     crc=f508 7048
+182  data gain2 = 40000000     crc=be3c 21b6
+183  data gain2 = 40000000     crc=482 45b7
+184  data gain2 = 40000000     crc=1b0f 9db4
+185  data gain2 = 40000000     crc=da22 cdb1
+186  data gain2 = 40000000     crc=5cc0 adaa
+187  data gain2 = 40000000     crc=ca85 6df5
+188  data gain2 = 40000000     crc=3f12 6c38
+189  data gain2 = 40000000     crc=26c 6896
+190  block 10  TILEDMU crc=1121d8e1
+191  header=9c0d0000     crc=6300 a200
+192  data gain1 = 1     crc=ca04 4c09
+193  data gain1 = 2     crc=bc14 a831
+194  data gain1 = 4     crc=873 f0ac
+195  data gain1 = 8     crc=312a a3e5
+196  data gain1 = 10     crc=a6f8 4857
+197  data gain1 = 20     crc=5619 b1f0
+198  data gain1 = 40     crc=f458 a42a
+199  data gain1 = 80     crc=b9df d8fe
+200  header=9c097000     crc=f508 7048
+201  data gain2 = 40000000     crc=be3c 21b6
+202  data gain2 = 40000000     crc=482 45b7
+203  data gain2 = 40000000     crc=1b0f 9db4
+204  data gain2 = 40000000     crc=da22 cdb1
+205  data gain2 = 40000000     crc=5cc0 adaa
+206  data gain2 = 40000000     crc=ca85 6df5
+207  data gain2 = 40000000     crc=3f12 6c38
+208  data gain2 = 40000000     crc=26c 6896
+209  block 11  TILEDMU crc=1121d8e1
+210  header=9c0d0000     crc=6300 a200
+211  data gain1 = 1     crc=ca04 4c09
+212  data gain1 = 2     crc=bc14 a831
+213  data gain1 = 4     crc=873 f0ac
+214  data gain1 = 8     crc=312a a3e5
+215  data gain1 = 10     crc=a6f8 4857
+216  data gain1 = 20     crc=5619 b1f0
+217  data gain1 = 40     crc=f458 a42a
+218  data gain1 = 80     crc=b9df d8fe
+219  header=9c097000     crc=f508 7048
+220  data gain2 = 40000000     crc=be3c 21b6
+221  data gain2 = 40000000     crc=482 45b7
+222  data gain2 = 40000000     crc=1b0f 9db4
+223  data gain2 = 40000000     crc=da22 cdb1
+224  data gain2 = 40000000     crc=5cc0 adaa
+225  data gain2 = 40000000     crc=ca85 6df5
+226  data gain2 = 40000000     crc=3f12 6c38
+227  data gain2 = 40000000     crc=26c 6896
+228  block 12  TILEDMU crc=1121d8e1
+229  header=9c0d0000     crc=6300 a200
+230  data gain1 = 1     crc=ca04 4c09
+231  data gain1 = 2     crc=bc14 a831
+232  data gain1 = 4     crc=873 f0ac
+233  data gain1 = 8     crc=312a a3e5
+234  data gain1 = 10     crc=a6f8 4857
+235  data gain1 = 20     crc=5619 b1f0
+236  data gain1 = 40     crc=f458 a42a
+237  data gain1 = 80     crc=b9df d8fe
+238  header=9c097000     crc=f508 7048
+239  data gain2 = 40000000     crc=be3c 21b6
+240  data gain2 = 40000000     crc=482 45b7
+241  data gain2 = 40000000     crc=1b0f 9db4
+242  data gain2 = 40000000     crc=da22 cdb1
+243  data gain2 = 40000000     crc=5cc0 adaa
+244  data gain2 = 40000000     crc=ca85 6df5
+245  data gain2 = 40000000     crc=3f12 6c38
+246  data gain2 = 40000000     crc=26c 6896
+247  block 13  TILEDMU crc=1121d8e1
+248  header=9c0d0000     crc=6300 a200
+249  data gain1 = 1     crc=ca04 4c09
+250  data gain1 = 2     crc=bc14 a831
+251  data gain1 = 4     crc=873 f0ac
+252  data gain1 = 8     crc=312a a3e5
+253  data gain1 = 10     crc=a6f8 4857
+254  data gain1 = 20     crc=5619 b1f0
+255  data gain1 = 40     crc=f458 a42a
+256  data gain1 = 80     crc=b9df d8fe
+257  header=9c097000     crc=f508 7048
+258  data gain2 = 40000000     crc=be3c 21b6
+259  data gain2 = 40000000     crc=482 45b7
+260  data gain2 = 40000000     crc=1b0f 9db4
+261  data gain2 = 40000000     crc=da22 cdb1
+262  data gain2 = 40000000     crc=5cc0 adaa
+263  data gain2 = 40000000     crc=ca85 6df5
+264  data gain2 = 40000000     crc=3f12 6c38
+265  data gain2 = 40000000     crc=26c 6896
+266  block 14  TILEDMU crc=1121d8e1
+267  header=9c0d0000     crc=6300 a200
+268  data gain1 = 1     crc=ca04 4c09
+269  data gain1 = 2     crc=bc14 a831
+270  data gain1 = 4     crc=873 f0ac
+271  data gain1 = 8     crc=312a a3e5
+272  data gain1 = 10     crc=a6f8 4857
+273  data gain1 = 20     crc=5619 b1f0
+274  data gain1 = 40     crc=f458 a42a
+275  data gain1 = 80     crc=b9df d8fe
+276  header=9c097000     crc=f508 7048
+277  data gain2 = 40000000     crc=be3c 21b6
+278  data gain2 = 40000000     crc=482 45b7
+279  data gain2 = 40000000     crc=1b0f 9db4
+280  data gain2 = 40000000     crc=da22 cdb1
+281  data gain2 = 40000000     crc=5cc0 adaa
+282  data gain2 = 40000000     crc=ca85 6df5
+283  data gain2 = 40000000     crc=3f12 6c38
+284  data gain2 = 40000000     crc=26c 6896
+285  block 15  TILEDMU crc=1121d8e1
+286  header=9c0d0000     crc=6300 a200
+287  data gain1 = 1     crc=ca04 4c09
+288  data gain1 = 2     crc=bc14 a831
+289  data gain1 = 4     crc=873 f0ac
+290  data gain1 = 8     crc=312a a3e5
+291  data gain1 = 10     crc=a6f8 4857
+292  data gain1 = 20     crc=5619 b1f0
+293  data gain1 = 40     crc=f458 a42a
+294  data gain1 = 80     crc=b9df d8fe
+295  header=9c097000     crc=f508 7048
+296  data gain2 = 40000000     crc=be3c 21b6
+297  data gain2 = 40000000     crc=482 45b7
+298  data gain2 = 40000000     crc=1b0f 9db4
+299  data gain2 = 40000000     crc=da22 cdb1
+300  data gain2 = 40000000     crc=5cc0 adaa
+301  data gain2 = 40000000     crc=ca85 6df5
+302  data gain2 = 40000000     crc=3f12 6c38
+303  data gain2 = 40000000     crc=26c 6896
+304  block 16  TILEDMU crc=1121d8e1
+305  GLOBAL CRC=95779577
+306  end control word=fffffff0
+ start control word 51115110
+1  header=9c0d0000     crc=6300 a200
+2  data gain1 = 1     crc=ca04 4c09
+3  data gain1 = 2     crc=bc14 a831
+4  data gain1 = 4     crc=873 f0ac
+5  data gain1 = 8     crc=312a a3e5
+6  data gain1 = 10     crc=a6f8 4857
+7  data gain1 = 20     crc=5619 b1f0
+8  data gain1 = 40     crc=f458 a42a
+9  data gain1 = 80     crc=b9df d8fe
+10  header=9c097000     crc=f508 7048
+11  data gain2 = 40000000     crc=be3c 21b6
+12  data gain2 = 40000000     crc=482 45b7
+13  data gain2 = 40000000     crc=1b0f 9db4
+14  data gain2 = 40000000     crc=da22 cdb1
+15  data gain2 = 40000000     crc=5cc0 adaa
+16  data gain2 = 40000000     crc=ca85 6df5
+17  data gain2 = 40000000     crc=3f12 6c38
+18  data gain2 = 40000000     crc=26c 6896
+19  block 1  TILEDMU crc=1121d8e1
+20  header=9c0d0000     crc=6300 a200
+21  data gain1 = 1     crc=ca04 4c09
+22  data gain1 = 2     crc=bc14 a831
+23  data gain1 = 4     crc=873 f0ac
+24  data gain1 = 8     crc=312a a3e5
+25  data gain1 = 10     crc=a6f8 4857
+26  data gain1 = 20     crc=5619 b1f0
+27  data gain1 = 40     crc=f458 a42a
+28  data gain1 = 80     crc=b9df d8fe
+29  header=9c097000     crc=f508 7048
+30  data gain2 = 40000000     crc=be3c 21b6
+31  data gain2 = 40000000     crc=482 45b7
+32  data gain2 = 40000000     crc=1b0f 9db4
+33  data gain2 = 40000000     crc=da22 cdb1
+34  data gain2 = 40000000     crc=5cc0 adaa
+35  data gain2 = 40000000     crc=ca85 6df5
+36  data gain2 = 40000000     crc=3f12 6c38
+37  data gain2 = 40000000     crc=26c 6896
+38  block 2  TILEDMU crc=1121d8e1
+39  header=9c0d0000     crc=6300 a200
+40  data gain1 = 1     crc=ca04 4c09
+41  data gain1 = 2     crc=bc14 a831
+42  data gain1 = 4     crc=873 f0ac
+43  data gain1 = 8     crc=312a a3e5
+44  data gain1 = 10     crc=a6f8 4857
+45  data gain1 = 20     crc=5619 b1f0
+46  data gain1 = 40     crc=f458 a42a
+47  data gain1 = 80     crc=b9df d8fe
+48  header=9c097000     crc=f508 7048
+49  data gain2 = 40000000     crc=be3c 21b6
+50  data gain2 = 40000000     crc=482 45b7
+51  data gain2 = 40000000     crc=1b0f 9db4
+52  data gain2 = 40000000     crc=da22 cdb1
+53  data gain2 = 40000000     crc=5cc0 adaa
+54  data gain2 = 40000000     crc=ca85 6df5
+55  data gain2 = 40000000     crc=3f12 6c38
+56  data gain2 = 40000000     crc=26c 6896
+57  block 3  TILEDMU crc=1121d8e1
+58  header=9c0d0000     crc=6300 a200
+59  data gain1 = 1     crc=ca04 4c09
+60  data gain1 = 2     crc=bc14 a831
+61  data gain1 = 4     crc=873 f0ac
+62  data gain1 = 8     crc=312a a3e5
+63  data gain1 = 10     crc=a6f8 4857
+64  data gain1 = 20     crc=5619 b1f0
+65  data gain1 = 40     crc=f458 a42a
+66  data gain1 = 80     crc=b9df d8fe
+67  header=9c097000     crc=f508 7048
+68  data gain2 = 40000000     crc=be3c 21b6
+69  data gain2 = 40000000     crc=482 45b7
+70  data gain2 = 40000000     crc=1b0f 9db4
+71  data gain2 = 40000000     crc=da22 cdb1
+72  data gain2 = 40000000     crc=5cc0 adaa
+73  data gain2 = 40000000     crc=ca85 6df5
+74  data gain2 = 40000000     crc=3f12 6c38
+75  data gain2 = 40000000     crc=26c 6896
+76  block 4  TILEDMU crc=1121d8e1
+77  header=9c0d0000     crc=6300 a200
+78  data gain1 = 1     crc=ca04 4c09
+79  data gain1 = 2     crc=bc14 a831
+80  data gain1 = 4     crc=873 f0ac
+81  data gain1 = 8     crc=312a a3e5
+82  data gain1 = 10     crc=a6f8 4857
+83  data gain1 = 20     crc=5619 b1f0
+84  data gain1 = 40     crc=f458 a42a
+85  data gain1 = 80     crc=b9df d8fe
+86  header=9c097000     crc=f508 7048
+87  data gain2 = 40000000     crc=be3c 21b6
+88  data gain2 = 40000000     crc=482 45b7
+89  data gain2 = 40000000     crc=1b0f 9db4
+90  data gain2 = 40000000     crc=da22 cdb1
+91  data gain2 = 40000000     crc=5cc0 adaa
+92  data gain2 = 40000000     crc=ca85 6df5
+93  data gain2 = 40000000     crc=3f12 6c38
+94  data gain2 = 40000000     crc=26c 6896
+95  block 5  TILEDMU crc=1121d8e1
+96  header=9c0d0000     crc=6300 a200
+97  data gain1 = 1     crc=ca04 4c09
+98  data gain1 = 2     crc=bc14 a831
+99  data gain1 = 4     crc=873 f0ac
+100  data gain1 = 8     crc=312a a3e5
+101  data gain1 = 10     crc=a6f8 4857
+102  data gain1 = 20     crc=5619 b1f0
+103  data gain1 = 40     crc=f458 a42a
+104  data gain1 = 80     crc=b9df d8fe
+105  header=9c097000     crc=f508 7048
+106  data gain2 = 40000000     crc=be3c 21b6
+107  data gain2 = 40000000     crc=482 45b7
+108  data gain2 = 40000000     crc=1b0f 9db4
+109  data gain2 = 40000000     crc=da22 cdb1
+110  data gain2 = 40000000     crc=5cc0 adaa
+111  data gain2 = 40000000     crc=ca85 6df5
+112  data gain2 = 40000000     crc=3f12 6c38
+113  data gain2 = 40000000     crc=26c 6896
+114  block 6  TILEDMU crc=1121d8e1
+115  header=9c0d0000     crc=6300 a200
+116  data gain1 = 1     crc=ca04 4c09
+117  data gain1 = 2     crc=bc14 a831
+118  data gain1 = 4     crc=873 f0ac
+119  data gain1 = 8     crc=312a a3e5
+120  data gain1 = 10     crc=a6f8 4857
+121  data gain1 = 20     crc=5619 b1f0
+122  data gain1 = 40     crc=f458 a42a
+123  data gain1 = 80     crc=b9df d8fe
+124  header=9c097000     crc=f508 7048
+125  data gain2 = 40000000     crc=be3c 21b6
+126  data gain2 = 40000000     crc=482 45b7
+127  data gain2 = 40000000     crc=1b0f 9db4
+128  data gain2 = 40000000     crc=da22 cdb1
+129  data gain2 = 40000000     crc=5cc0 adaa
+130  data gain2 = 40000000     crc=ca85 6df5
+131  data gain2 = 40000000     crc=3f12 6c38
+132  data gain2 = 40000000     crc=26c 6896
+133  block 7  TILEDMU crc=1121d8e1
+134  header=9c0d0000     crc=6300 a200
+135  data gain1 = 1     crc=ca04 4c09
+136  data gain1 = 2     crc=bc14 a831
+137  data gain1 = 4     crc=873 f0ac
+138  data gain1 = 8     crc=312a a3e5
+139  data gain1 = 10     crc=a6f8 4857
+140  data gain1 = 20     crc=5619 b1f0
+141  data gain1 = 40     crc=f458 a42a
+142  data gain1 = 80     crc=b9df d8fe
+143  header=9c097000     crc=f508 7048
+144  data gain2 = 40000000     crc=be3c 21b6
+145  data gain2 = 40000000     crc=482 45b7
+146  data gain2 = 40000000     crc=1b0f 9db4
+147  data gain2 = 40000000     crc=da22 cdb1
+148  data gain2 = 40000000     crc=5cc0 adaa
+149  data gain2 = 40000000     crc=ca85 6df5
+150  data gain2 = 40000000     crc=3f12 6c38
+151  data gain2 = 40000000     crc=26c 6896
+152  block 8  TILEDMU crc=1121d8e1
+153  header=9c0d0000     crc=6300 a200
+154  data gain1 = 1     crc=ca04 4c09
+155  data gain1 = 2     crc=bc14 a831
+156  data gain1 = 4     crc=873 f0ac
+157  data gain1 = 8     crc=312a a3e5
+158  data gain1 = 10     crc=a6f8 4857
+159  data gain1 = 20     crc=5619 b1f0
+160  data gain1 = 40     crc=f458 a42a
+161  data gain1 = 80     crc=b9df d8fe
+162  header=9c097000     crc=f508 7048
+163  data gain2 = 40000000     crc=be3c 21b6
+164  data gain2 = 40000000     crc=482 45b7
+165  data gain2 = 40000000     crc=1b0f 9db4
+166  data gain2 = 40000000     crc=da22 cdb1
+167  data gain2 = 40000000     crc=5cc0 adaa
+168  data gain2 = 40000000     crc=ca85 6df5
+169  data gain2 = 40000000     crc=3f12 6c38
+170  data gain2 = 40000000     crc=26c 6896
+171  block 9  TILEDMU crc=1121d8e1
+172  header=9c0d0000     crc=6300 a200
+173  data gain1 = 1     crc=ca04 4c09
+174  data gain1 = 2     crc=bc14 a831
+175  data gain1 = 4     crc=873 f0ac
+176  data gain1 = 8     crc=312a a3e5
+177  data gain1 = 10     crc=a6f8 4857
+178  data gain1 = 20     crc=5619 b1f0
+179  data gain1 = 40     crc=f458 a42a
+180  data gain1 = 80     crc=b9df d8fe
+181  header=9c097000     crc=f508 7048
+182  data gain2 = 40000000     crc=be3c 21b6
+183  data gain2 = 40000000     crc=482 45b7
+184  data gain2 = 40000000     crc=1b0f 9db4
+185  data gain2 = 40000000     crc=da22 cdb1
+186  data gain2 = 40000000     crc=5cc0 adaa
+187  data gain2 = 40000000     crc=ca85 6df5
+188  data gain2 = 40000000     crc=3f12 6c38
+189  data gain2 = 40000000     crc=26c 6896
+190  block 10  TILEDMU crc=1121d8e1
+191  header=9c0d0000     crc=6300 a200
+192  data gain1 = 1     crc=ca04 4c09
+193  data gain1 = 2     crc=bc14 a831
+194  data gain1 = 4     crc=873 f0ac
+195  data gain1 = 8     crc=312a a3e5
+196  data gain1 = 10     crc=a6f8 4857
+197  data gain1 = 20     crc=5619 b1f0
+198  data gain1 = 40     crc=f458 a42a
+199  data gain1 = 80     crc=b9df d8fe
+200  header=9c097000     crc=f508 7048
+201  data gain2 = 40000000     crc=be3c 21b6
+202  data gain2 = 40000000     crc=482 45b7
+203  data gain2 = 40000000     crc=1b0f 9db4
+204  data gain2 = 40000000     crc=da22 cdb1
+205  data gain2 = 40000000     crc=5cc0 adaa
+206  data gain2 = 40000000     crc=ca85 6df5
+207  data gain2 = 40000000     crc=3f12 6c38
+208  data gain2 = 40000000     crc=26c 6896
+209  block 11  TILEDMU crc=1121d8e1
+210  header=9c0d0000     crc=6300 a200
+211  data gain1 = 1     crc=ca04 4c09
+212  data gain1 = 2     crc=bc14 a831
+213  data gain1 = 4     crc=873 f0ac
+214  data gain1 = 8     crc=312a a3e5
+215  data gain1 = 10     crc=a6f8 4857
+216  data gain1 = 20     crc=5619 b1f0
+217  data gain1 = 40     crc=f458 a42a
+218  data gain1 = 80     crc=b9df d8fe
+219  header=9c097000     crc=f508 7048
+220  data gain2 = 40000000     crc=be3c 21b6
+221  data gain2 = 40000000     crc=482 45b7
+222  data gain2 = 40000000     crc=1b0f 9db4
+223  data gain2 = 40000000     crc=da22 cdb1
+224  data gain2 = 40000000     crc=5cc0 adaa
+225  data gain2 = 40000000     crc=ca85 6df5
+226  data gain2 = 40000000     crc=3f12 6c38
+227  data gain2 = 40000000     crc=26c 6896
+228  block 12  TILEDMU crc=1121d8e1
+229  header=9c0d0000     crc=6300 a200
+230  data gain1 = 1     crc=ca04 4c09
+231  data gain1 = 2     crc=bc14 a831
+232  data gain1 = 4     crc=873 f0ac
+233  data gain1 = 8     crc=312a a3e5
+234  data gain1 = 10     crc=a6f8 4857
+235  data gain1 = 20     crc=5619 b1f0
+236  data gain1 = 40     crc=f458 a42a
+237  data gain1 = 80     crc=b9df d8fe
+238  header=9c097000     crc=f508 7048
+239  data gain2 = 40000000     crc=be3c 21b6
+240  data gain2 = 40000000     crc=482 45b7
+241  data gain2 = 40000000     crc=1b0f 9db4
+242  data gain2 = 40000000     crc=da22 cdb1
+243  data gain2 = 40000000     crc=5cc0 adaa
+244  data gain2 = 40000000     crc=ca85 6df5
+245  data gain2 = 40000000     crc=3f12 6c38
+246  data gain2 = 40000000     crc=26c 6896
+247  block 13  TILEDMU crc=1121d8e1
+248  header=9c0d0000     crc=6300 a200
+249  data gain1 = 1     crc=ca04 4c09
+250  data gain1 = 2     crc=bc14 a831
+251  data gain1 = 4     crc=873 f0ac
+252  data gain1 = 8     crc=312a a3e5
+253  data gain1 = 10     crc=a6f8 4857
+254  data gain1 = 20     crc=5619 b1f0
+255  data gain1 = 40     crc=f458 a42a
+256  data gain1 = 80     crc=b9df d8fe
+257  header=9c097000     crc=f508 7048
+258  data gain2 = 40000000     crc=be3c 21b6
+259  data gain2 = 40000000     crc=482 45b7
+260  data gain2 = 40000000     crc=1b0f 9db4
+261  data gain2 = 40000000     crc=da22 cdb1
+262  data gain2 = 40000000     crc=5cc0 adaa
+263  data gain2 = 40000000     crc=ca85 6df5
+264  data gain2 = 40000000     crc=3f12 6c38
+265  data gain2 = 40000000     crc=26c 6896
+266  block 14  TILEDMU crc=1121d8e1
+267  header=9c0d0000     crc=6300 a200
+268  data gain1 = 1     crc=ca04 4c09
+269  data gain1 = 2     crc=bc14 a831
+270  data gain1 = 4     crc=873 f0ac
+271  data gain1 = 8     crc=312a a3e5
+272  data gain1 = 10     crc=a6f8 4857
+273  data gain1 = 20     crc=5619 b1f0
+274  data gain1 = 40     crc=f458 a42a
+275  data gain1 = 80     crc=b9df d8fe
+276  header=9c097000     crc=f508 7048
+277  data gain2 = 40000000     crc=be3c 21b6
+278  data gain2 = 40000000     crc=482 45b7
+279  data gain2 = 40000000     crc=1b0f 9db4
+280  data gain2 = 40000000     crc=da22 cdb1
+281  data gain2 = 40000000     crc=5cc0 adaa
+282  data gain2 = 40000000     crc=ca85 6df5
+283  data gain2 = 40000000     crc=3f12 6c38
+284  data gain2 = 40000000     crc=26c 6896
+285  block 15  TILEDMU crc=1121d8e1
+286  header=9c0d0000     crc=6300 a200
+287  data gain1 = 1     crc=ca04 4c09
+288  data gain1 = 2     crc=bc14 a831
+289  data gain1 = 4     crc=873 f0ac
+290  data gain1 = 8     crc=312a a3e5
+291  data gain1 = 10     crc=a6f8 4857
+292  data gain1 = 20     crc=5619 b1f0
+293  data gain1 = 40     crc=f458 a42a
+294  data gain1 = 80     crc=b9df d8fe
+295  header=9c097000     crc=f508 7048
+296  data gain2 = 40000000     crc=be3c 21b6
+297  data gain2 = 40000000     crc=482 45b7
+298  data gain2 = 40000000     crc=1b0f 9db4
+299  data gain2 = 40000000     crc=da22 cdb1
+300  data gain2 = 40000000     crc=5cc0 adaa
+301  data gain2 = 40000000     crc=ca85 6df5
+302  data gain2 = 40000000     crc=3f12 6c38
+303  data gain2 = 40000000     crc=26c 6896
+304  block 16  TILEDMU crc=1121d8e1
+305  GLOBAL CRC=95779577
+306  end control word=fffffff0
+ start control word 51115110
+1  header=9c0d0000     crc=6300 a200
+2  data gain1 = 1     crc=ca04 4c09
+3  data gain1 = 2     crc=bc14 a831
+4  data gain1 = 4     crc=873 f0ac
+5  data gain1 = 8     crc=312a a3e5
+6  data gain1 = 10     crc=a6f8 4857
+7  data gain1 = 20     crc=5619 b1f0
+8  data gain1 = 40     crc=f458 a42a
+9  data gain1 = 80     crc=b9df d8fe
+10  header=9c097000     crc=f508 7048
+11  data gain2 = 40000000     crc=be3c 21b6
+12  data gain2 = 40000000     crc=482 45b7
+13  data gain2 = 40000000     crc=1b0f 9db4
+14  data gain2 = 40000000     crc=da22 cdb1
+15  data gain2 = 40000000     crc=5cc0 adaa
+16  data gain2 = 40000000     crc=ca85 6df5
+17  data gain2 = 40000000     crc=3f12 6c38
+18  data gain2 = 40000000     crc=26c 6896
+19  block 1  TILEDMU crc=1121d8e1
+20  header=9c0d0000     crc=6300 a200
+21  data gain1 = 1     crc=ca04 4c09
+22  data gain1 = 2     crc=bc14 a831
+23  data gain1 = 4     crc=873 f0ac
+24  data gain1 = 8     crc=312a a3e5
+25  data gain1 = 10     crc=a6f8 4857
+26  data gain1 = 20     crc=5619 b1f0
+27  data gain1 = 40     crc=f458 a42a
+28  data gain1 = 80     crc=b9df d8fe
+29  header=9c097000     crc=f508 7048
+30  data gain2 = 40000000     crc=be3c 21b6
+31  data gain2 = 40000000     crc=482 45b7
+32  data gain2 = 40000000     crc=1b0f 9db4
+33  data gain2 = 40000000     crc=da22 cdb1
+34  data gain2 = 40000000     crc=5cc0 adaa
+35  data gain2 = 40000000     crc=ca85 6df5
+36  data gain2 = 40000000     crc=3f12 6c38
+37  data gain2 = 40000000     crc=26c 6896
+38  block 2  TILEDMU crc=1121d8e1
+39  header=9c0d0000     crc=6300 a200
+40  data gain1 = 1     crc=ca04 4c09
+41  data gain1 = 2     crc=bc14 a831
+42  data gain1 = 4     crc=873 f0ac
+43  data gain1 = 8     crc=312a a3e5
+44  data gain1 = 10     crc=a6f8 4857
+45  data gain1 = 20     crc=5619 b1f0
+46  data gain1 = 40     crc=f458 a42a
+47  data gain1 = 80     crc=b9df d8fe
+48  header=9c097000     crc=f508 7048
+49  data gain2 = 40000000     crc=be3c 21b6
+50  data gain2 = 40000000     crc=482 45b7
+51  data gain2 = 40000000     crc=1b0f 9db4
+52  data gain2 = 40000000     crc=da22 cdb1
+53  data gain2 = 40000000     crc=5cc0 adaa
+54  data gain2 = 40000000     crc=ca85 6df5
+55  data gain2 = 40000000     crc=3f12 6c38
+56  data gain2 = 40000000     crc=26c 6896
+57  block 3  TILEDMU crc=1121d8e1
+58  header=9c0d0000     crc=6300 a200
+59  data gain1 = 1     crc=ca04 4c09
+60  data gain1 = 2     crc=bc14 a831
+61  data gain1 = 4     crc=873 f0ac
+62  data gain1 = 8     crc=312a a3e5
+63  data gain1 = 10     crc=a6f8 4857
+64  data gain1 = 20     crc=5619 b1f0
+65  data gain1 = 40     crc=f458 a42a
+66  data gain1 = 80     crc=b9df d8fe
+67  header=9c097000     crc=f508 7048
+68  data gain2 = 40000000     crc=be3c 21b6
+69  data gain2 = 40000000     crc=482 45b7
+70  data gain2 = 40000000     crc=1b0f 9db4
+71  data gain2 = 40000000     crc=da22 cdb1
+72  data gain2 = 40000000     crc=5cc0 adaa
+73  data gain2 = 40000000     crc=ca85 6df5
+74  data gain2 = 40000000     crc=3f12 6c38
+75  data gain2 = 40000000     crc=26c 6896
+76  block 4  TILEDMU crc=1121d8e1
+77  header=9c0d0000     crc=6300 a200
+78  data gain1 = 1     crc=ca04 4c09
+79  data gain1 = 2     crc=bc14 a831
+80  data gain1 = 4     crc=873 f0ac
+81  data gain1 = 8     crc=312a a3e5
+82  data gain1 = 10     crc=a6f8 4857
+83  data gain1 = 20     crc=5619 b1f0
+84  data gain1 = 40     crc=f458 a42a
+85  data gain1 = 80     crc=b9df d8fe
+86  header=9c097000     crc=f508 7048
+87  data gain2 = 40000000     crc=be3c 21b6
+88  data gain2 = 40000000     crc=482 45b7
+89  data gain2 = 40000000     crc=1b0f 9db4
+90  data gain2 = 40000000     crc=da22 cdb1
+91  data gain2 = 40000000     crc=5cc0 adaa
+92  data gain2 = 40000000     crc=ca85 6df5
+93  data gain2 = 40000000     crc=3f12 6c38
+94  data gain2 = 40000000     crc=26c 6896
+95  block 5  TILEDMU crc=1121d8e1
+96  header=9c0d0000     crc=6300 a200
+97  data gain1 = 1     crc=ca04 4c09
+98  data gain1 = 2     crc=bc14 a831
+99  data gain1 = 4     crc=873 f0ac
+100  data gain1 = 8     crc=312a a3e5
+101  data gain1 = 10     crc=a6f8 4857
+102  data gain1 = 20     crc=5619 b1f0
+103  data gain1 = 40     crc=f458 a42a
+104  data gain1 = 80     crc=b9df d8fe
+105  header=9c097000     crc=f508 7048
+106  data gain2 = 40000000     crc=be3c 21b6
+107  data gain2 = 40000000     crc=482 45b7
+108  data gain2 = 40000000     crc=1b0f 9db4
+109  data gain2 = 40000000     crc=da22 cdb1
+110  data gain2 = 40000000     crc=5cc0 adaa
+111  data gain2 = 40000000     crc=ca85 6df5
+112  data gain2 = 40000000     crc=3f12 6c38
+113  data gain2 = 40000000     crc=26c 6896
+114  block 6  TILEDMU crc=1121d8e1
+115  header=9c0d0000     crc=6300 a200
+116  data gain1 = 1     crc=ca04 4c09
+117  data gain1 = 2     crc=bc14 a831
+118  data gain1 = 4     crc=873 f0ac
+119  data gain1 = 8     crc=312a a3e5
+120  data gain1 = 10     crc=a6f8 4857
+121  data gain1 = 20     crc=5619 b1f0
+122  data gain1 = 40     crc=f458 a42a
+123  data gain1 = 80     crc=b9df d8fe
+124  header=9c097000     crc=f508 7048
+125  data gain2 = 40000000     crc=be3c 21b6
+126  data gain2 = 40000000     crc=482 45b7
+127  data gain2 = 40000000     crc=1b0f 9db4
+128  data gain2 = 40000000     crc=da22 cdb1
+129  data gain2 = 40000000     crc=5cc0 adaa
+130  data gain2 = 40000000     crc=ca85 6df5
+131  data gain2 = 40000000     crc=3f12 6c38
+132  data gain2 = 40000000     crc=26c 6896
+133  block 7  TILEDMU crc=1121d8e1
+134  header=9c0d0000     crc=6300 a200
+135  data gain1 = 1     crc=ca04 4c09
+136  data gain1 = 2     crc=bc14 a831
+137  data gain1 = 4     crc=873 f0ac
+138  data gain1 = 8     crc=312a a3e5
+139  data gain1 = 10     crc=a6f8 4857
+140  data gain1 = 20     crc=5619 b1f0
+141  data gain1 = 40     crc=f458 a42a
+142  data gain1 = 80     crc=b9df d8fe
+143  header=9c097000     crc=f508 7048
+144  data gain2 = 40000000     crc=be3c 21b6
+145  data gain2 = 40000000     crc=482 45b7
+146  data gain2 = 40000000     crc=1b0f 9db4
+147  data gain2 = 40000000     crc=da22 cdb1
+148  data gain2 = 40000000     crc=5cc0 adaa
+149  data gain2 = 40000000     crc=ca85 6df5
+150  data gain2 = 40000000     crc=3f12 6c38
+151  data gain2 = 40000000     crc=26c 6896
+152  block 8  TILEDMU crc=1121d8e1
+153  header=9c0d0000     crc=6300 a200
+154  data gain1 = 1     crc=ca04 4c09
+155  data gain1 = 2     crc=bc14 a831
+156  data gain1 = 4     crc=873 f0ac
+157  data gain1 = 8     crc=312a a3e5
+158  data gain1 = 10     crc=a6f8 4857
+159  data gain1 = 20     crc=5619 b1f0
+160  data gain1 = 40     crc=f458 a42a
+161  data gain1 = 80     crc=b9df d8fe
+162  header=9c097000     crc=f508 7048
+163  data gain2 = 40000000     crc=be3c 21b6
+164  data gain2 = 40000000     crc=482 45b7
+165  data gain2 = 40000000     crc=1b0f 9db4
+166  data gain2 = 40000000     crc=da22 cdb1
+167  data gain2 = 40000000     crc=5cc0 adaa
+168  data gain2 = 40000000     crc=ca85 6df5
+169  data gain2 = 40000000     crc=3f12 6c38
+170  data gain2 = 40000000     crc=26c 6896
+171  block 9  TILEDMU crc=1121d8e1
+172  header=9c0d0000     crc=6300 a200
+173  data gain1 = 1     crc=ca04 4c09
+174  data gain1 = 2     crc=bc14 a831
+175  data gain1 = 4     crc=873 f0ac
+176  data gain1 = 8     crc=312a a3e5
+177  data gain1 = 10     crc=a6f8 4857
+178  data gain1 = 20     crc=5619 b1f0
+179  data gain1 = 40     crc=f458 a42a
+180  data gain1 = 80     crc=b9df d8fe
+181  header=9c097000     crc=f508 7048
+182  data gain2 = 40000000     crc=be3c 21b6
+183  data gain2 = 40000000     crc=482 45b7
+184  data gain2 = 40000000     crc=1b0f 9db4
+185  data gain2 = 40000000     crc=da22 cdb1
+186  data gain2 = 40000000     crc=5cc0 adaa
+187  data gain2 = 40000000     crc=ca85 6df5
+188  data gain2 = 40000000     crc=3f12 6c38
+189  data gain2 = 40000000     crc=26c 6896
+190  block 10  TILEDMU crc=1121d8e1
+191  header=9c0d0000     crc=6300 a200
+192  data gain1 = 1     crc=ca04 4c09
+193  data gain1 = 2     crc=bc14 a831
+194  data gain1 = 4     crc=873 f0ac
+195  data gain1 = 8     crc=312a a3e5
+196  data gain1 = 10     crc=a6f8 4857
+197  data gain1 = 20     crc=5619 b1f0
+198  data gain1 = 40     crc=f458 a42a
+199  data gain1 = 80     crc=b9df d8fe
+200  header=9c097000     crc=f508 7048
+201  data gain2 = 40000000     crc=be3c 21b6
+202  data gain2 = 40000000     crc=482 45b7
+203  data gain2 = 40000000     crc=1b0f 9db4
+204  data gain2 = 40000000     crc=da22 cdb1
+205  data gain2 = 40000000     crc=5cc0 adaa
+206  data gain2 = 40000000     crc=ca85 6df5
+207  data gain2 = 40000000     crc=3f12 6c38
+208  data gain2 = 40000000     crc=26c 6896
+209  block 11  TILEDMU crc=1121d8e1
+210  header=9c0d0000     crc=6300 a200
+211  data gain1 = 1     crc=ca04 4c09
+212  data gain1 = 2     crc=bc14 a831
+213  data gain1 = 4     crc=873 f0ac
+214  data gain1 = 8     crc=312a a3e5
+215  data gain1 = 10     crc=a6f8 4857
+216  data gain1 = 20     crc=5619 b1f0
+217  data gain1 = 40     crc=f458 a42a
+218  data gain1 = 80     crc=b9df d8fe
+219  header=9c097000     crc=f508 7048
+220  data gain2 = 40000000     crc=be3c 21b6
+221  data gain2 = 40000000     crc=482 45b7
+222  data gain2 = 40000000     crc=1b0f 9db4
+223  data gain2 = 40000000     crc=da22 cdb1
+224  data gain2 = 40000000     crc=5cc0 adaa
+225  data gain2 = 40000000     crc=ca85 6df5
+226  data gain2 = 40000000     crc=3f12 6c38
+227  data gain2 = 40000000     crc=26c 6896
+228  block 12  TILEDMU crc=1121d8e1
+229  header=9c0d0000     crc=6300 a200
+230  data gain1 = 1     crc=ca04 4c09
+231  data gain1 = 2     crc=bc14 a831
+232  data gain1 = 4     crc=873 f0ac
+233  data gain1 = 8     crc=312a a3e5
+234  data gain1 = 10     crc=a6f8 4857
+235  data gain1 = 20     crc=5619 b1f0
+236  data gain1 = 40     crc=f458 a42a
+237  data gain1 = 80     crc=b9df d8fe
+238  header=9c097000     crc=f508 7048
+239  data gain2 = 40000000     crc=be3c 21b6
+240  data gain2 = 40000000     crc=482 45b7
+241  data gain2 = 40000000     crc=1b0f 9db4
+242  data gain2 = 40000000     crc=da22 cdb1
+243  data gain2 = 40000000     crc=5cc0 adaa
+244  data gain2 = 40000000     crc=ca85 6df5
+245  data gain2 = 40000000     crc=3f12 6c38
+246  data gain2 = 40000000     crc=26c 6896
+247  block 13  TILEDMU crc=1121d8e1
+248  header=9c0d0000     crc=6300 a200
+249  data gain1 = 1     crc=ca04 4c09
+250  data gain1 = 2     crc=bc14 a831
+251  data gain1 = 4     crc=873 f0ac
+252  data gain1 = 8     crc=312a a3e5
+253  data gain1 = 10     crc=a6f8 4857
+254  data gain1 = 20     crc=5619 b1f0
+255  data gain1 = 40     crc=f458 a42a
+256  data gain1 = 80     crc=b9df d8fe
+257  header=9c097000     crc=f508 7048
+258  data gain2 = 40000000     crc=be3c 21b6
+259  data gain2 = 40000000     crc=482 45b7
+260  data gain2 = 40000000     crc=1b0f 9db4
+261  data gain2 = 40000000     crc=da22 cdb1
+262  data gain2 = 40000000     crc=5cc0 adaa
+263  data gain2 = 40000000     crc=ca85 6df5
+264  data gain2 = 40000000     crc=3f12 6c38
+265  data gain2 = 40000000     crc=26c 6896
+266  block 14  TILEDMU crc=1121d8e1
+267  header=9c0d0000     crc=6300 a200
+268  data gain1 = 1     crc=ca04 4c09
+269  data gain1 = 2     crc=bc14 a831
+270  data gain1 = 4     crc=873 f0ac
+271  data gain1 = 8     crc=312a a3e5
+272  data gain1 = 10     crc=a6f8 4857
+273  data gain1 = 20     crc=5619 b1f0
+274  data gain1 = 40     crc=f458 a42a
+275  data gain1 = 80     crc=b9df d8fe
+276  header=9c097000     crc=f508 7048
+277  data gain2 = 40000000     crc=be3c 21b6
+278  data gain2 = 40000000     crc=482 45b7
+279  data gain2 = 40000000     crc=1b0f 9db4
+280  data gain2 = 40000000     crc=da22 cdb1
+281  data gain2 = 40000000     crc=5cc0 adaa
+282  data gain2 = 40000000     crc=ca85 6df5
+283  data gain2 = 40000000     crc=3f12 6c38
+284  data gain2 = 40000000     crc=26c 6896
+285  block 15  TILEDMU crc=1121d8e1
+286  header=9c0d0000     crc=6300 a200
+287  data gain1 = 1     crc=ca04 4c09
+288  data gain1 = 2     crc=bc14 a831
+289  data gain1 = 4     crc=873 f0ac
+290  data gain1 = 8     crc=312a a3e5
+291  data gain1 = 10     crc=a6f8 4857
+292  data gain1 = 20     crc=5619 b1f0
+293  data gain1 = 40     crc=f458 a42a
+294  data gain1 = 80     crc=b9df d8fe
+295  header=9c097000     crc=f508 7048
+296  data gain2 = 40000000     crc=be3c 21b6
+297  data gain2 = 40000000     crc=482 45b7
+298  data gain2 = 40000000     crc=1b0f 9db4
+299  data gain2 = 40000000     crc=da22 cdb1
+300  data gain2 = 40000000     crc=5cc0 adaa
+301  data gain2 = 40000000     crc=ca85 6df5
+302  data gain2 = 40000000     crc=3f12 6c38
+303  data gain2 = 40000000     crc=26c 6896
+304  block 16  TILEDMU crc=1121d8e1
+305  GLOBAL CRC=95779577
+3

@@ -1,0 +1,6 @@
+/usr/sbin/lpadmin -p 2ndfl -E -v socket://heprint2:9100 \
+-o Duplex=DuplexNoTumble -P /usr/share/cups/model/postscript.ppd.gz
+
+/usr/sbin/lpadmin -p color -E -v socket://10.135.102.15:9100 \
+-o Duplex=DuplexNoTumble -P /usr/share/cups/model/postscript.ppd.gz
+

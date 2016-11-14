@@ -1,0 +1,91 @@
+#include <stdio.h>
+#include <math.h>
+#include <time.h>
+char string[800];
+int ent=0;
+main(argc,argv,envs)
+int argc;
+char *argv[];
+char *envs[];
+{ 
+   double volts[8];
+   int i,gpib_adr,dval;
+
+   gpib_reset();
+   printf("gpib_reset return\n");
+   sleep(0);
+   
+   printf("enter D hex value\n");
+   fscanf(stdin,"%x",&dval);
+   printf("dval=%x  %d\n",dval,dval);
+   sprintf(string,"D%d X",dval);
+
+   gpib_adr=2;
+   sendmessage(gpib_adr,string);
+   sleep(10);
+   sendmessage(gpib_adr,"D? X");
+   getmessage(gpib_adr, &string[0] );
+   printf("D back=%s\n",string);
+
+loop:
+   gpib_adr=3;
+   for(i=0;i<8;i++)
+     { go_get(gpib_adr,i,volts);
+       printf("i=%d  gpib_adr=%d  volts=%f\n",i,gpib_adr,volts[i]);
+     }
+
+   gpib_adr=2;
+   for(i=0;i<8;i++)
+     { go_get(gpib_adr,i,volts);
+       printf("i=%d  gpib_adr=%d  volts=%f\n",i,gpib_adr,volts[i]);
+     }
+    printf("\n");
+    sleep(10);
+    goto loop;
+}
+
+    go_get(gpib_adr,channel,v)
+      int gpib_adr,channel;
+      double *v;
+      {double volts;
+       int i;
+       if(ent == 0)
+         {
+
+          sendmessage(gpib_adr,"A0 X");
+          usleep((time_t)100000);
+	  
+	  sprintf(string,"C%d X",channel);  
+          sendmessage(gpib_adr,string);
+          usleep((time_t)100000);
+  
+          sendmessage(gpib_adr,"R3,3,3,3,3,3,3,3 X");
+          usleep((time_t)100000);
+
+          sendmessage(gpib_adr,"N1 X");
+          usleep((time_t)100000);
+
+          sendmessage(gpib_adr,"G0 X");
+          usleep((time_t)100000);
+  
+          sendmessage(gpib_adr,"Q0 X");
+          usleep((time_t)100000);
+
+          sendmessage(gpib_adr,"I15 X");
+          usleep((time_t)100000);
+
+          ent=1;
+         }
+
+
+          sendmessage(gpib_adr,"T6 X");   /* trigger voltage reading */
+
+          usleep((time_t)5000);
+          getmessage(gpib_adr, &string[0] );
+          printf("readback %d = %s\n",i,string);    
+          sscanf(string,"%le",&volts);
+/*	  printf("i=%d  volts=%f\n",i,volts);   */
+          *v = volts;  
+	    
+          }
+}

@@ -1,0 +1,13 @@
+
+ When modprobe (auto install)
+ ============================
+ Once do a make install (depmod & modprobe)
+
+ Put in /etc/conf.modules:
+   alias char-major-254 sld
+   options sld sld_bufferSize=4096 sld_nrOfBuffers=100
+
+ When insmod (see: load)
+ =======================
+
+There are also: lsmod rmmod

@@ -1,0 +1,41 @@
+
+	80  csr1
+	82  csr2
+	84  software reset
+	86  L1A generate
+	88  L1A event number (bits 23 to 16)
+	8a  L1A event number (bits 15 to 0) 
+	8c
+	8e
+	90  BGO<0> mode
+	92  Inhibit 0 delay
+	94  Inhibit 0 duration
+	96  BGO<0> initiate (if enabled) 
+	98  BGO<1> mode
+	9a  Inhibit 1 delay
+	9c  Inhibit 1 duration
+	9e  BGO<1> initiate (if enabled)
+	a0  BGO<2> mode
+	a2  Inhibit 2 delay
+	a4  Inhibit 2 duration
+	a6  BGO<2> initiate (if enabled)
+	a8  BGO<3> mode
+	aa  Inhibit 3 delay
+	ac  Inhibit 3 duration
+	ae  BGO<3> initiate (if enabled)
+	b0  BGO<0> data word 1
+	b2  BGO<0> data word 2 if long command
+	b4  BGO<1> data word 1
+	b6  BGO<1> data word 2 if long command
+	b8  BGO<2> data word 1
+	ba  BGO<2> data word 2 if long command
+	bc  BGO<3> data word 1
+	be  BGO<3> data word 2 if long command
+	c0 long async command word 1
+	c2 long async command word 2
+	c4 short async command
+	c6
+	c8
+	ca
+	cc
+	ce

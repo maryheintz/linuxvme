@@ -1,0 +1,1 @@
+#include <stdio.h>#include <math.h> pio_sw(i) int i;  { unsigned long k;    int l,shift;    unsigned long *adr;    adr = (unsigned long *)( 0xf0ab0000);    k = *adr;    shift = i;    l = (k>>shift) & 1;    return(l);}

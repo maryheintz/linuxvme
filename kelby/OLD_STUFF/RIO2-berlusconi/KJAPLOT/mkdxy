@@ -1,0 +1,9 @@
+gcc -c dxy.c
+ar -r libkja.a dxy.o
+ar -s libkja.a
+cp -r libkja.a /home/user/kelby/lib
+cd ../lib
+fixlib
+ranlib libkja.a
+cd ../TTC
+

@@ -1,0 +1,300 @@
+#include <stdio.h>
+#include <math.h>
+#include <time.h>
+#include "vme.h"
+unsigned long vmebase,piobase=0x570000;
+short *caen_data,*caen_prelsb,*caen_premsb,*caen_postlsb,*caen_postmsb,*caen_trigrec,
+ *caen_softtrig,*caen_trigtype,*caen_trigsource,*caen_reset,*caen_start,*caen_interrupt,
+ *caen_chmask;
+int ksave,msave,maxsave;
+short cdata[4][3000],raw[4][3000],posttrig,endcell,trigrec; 
+short wd1[4],wd2[4],wd3[4],wd;
+char string[80];
+main(argc,argv,envs)
+int argc;
+char *argv[];
+char *envs[];
+  { int icap,n1;
+    int dac,alarm;
+    dotset(0,2500.0,0.0,250.0,0.0,0,0);
+    dotset(1,100.0,0.0,1000.0,0.0,0,0);
+    vmebase = vme_a24_base(); 
+    icap = 0;
+    printf(" calling caen_setup\n");
+        caen_setup();
+	usleep(2);  
+    printf(" returned from caen_setup\n");
+	sidev(1);  /* force plot to screen without asking*/
+/* ========== get the pedestals ================ */
+    *caen_trigtype = 0x2;
+    for_i=0;i<10;i++)
+      { 
+
+
+
+    printf(" starting event loop\n");
+	*caen_trigtype = 0x2;
+ loop:         
+       *caen_reset=0;
+       usleep(10);
+       *caen_start=1;
+       usleep(10000);
+       inject();
+       usleep(10000);
+       /* check if caen got a trigger */
+       wd = *caen_interrupt;
+       /* printf("interrupt=%d  vernier=%d    %d\n",wd&1,wd2[0],maxsave-wd2[0]);  */
+       if(wd & 1 == 0)
+         { printf(" error - no caen interrupt bit set \n");
+	   goto loop;
+	 }
+       caen_read();
+       dotacc(0,(double)ksave,(double)trigrec);
+       dotacc(1,(double)(ksave-1300),(double)(wd2[0]-1300));
+       /* printf(" m=%d  k=%d  max=%d  %d\n",msave,ksave,maxsave,cdata[msave][ksave]); */
+       /* read the orbit count */
+       if(fpsw(0)==1 && maxsave>2500)
+/*	{ for(msave=0;msave<1;msave++)
+	   for(n1=0;n1<2500;n1=n1+250)
+	     { if(icap == 0) sprintf(string,"LOW GAIN  input=%d 1st bin=%d",msave,n1);
+               if(icap == 1) sprintf(string,"HIGH GAIN  input=%d  1st bin=%d",msave,n1);
+               onedisp(250,string,n1,msave);
+	     }
+        }  */
+        { msave=0;
+          n1=ksave-125;
+       /*   if(n1<0) n1=0;
+	  if(n1>2250) n1=2250;  */
+          n1=n1-n1%250+250;
+          if(icap == 0) sprintf(string,"LOW GAIN  peak=%d  trigrec=%d  bins=%d-%d  vernier=%d",
+	     ksave,trigrec,n1,n1+250,wd2[0]);
+          if(icap == 1) sprintf(string,"HIGH GAIN  input=%d    bins=%d-%d",msave,n1,n1+250);
+          onedisp(250,string,n1,msave);
+        }  
+	usleep(1);
+	if(fpsw(5)==1) dotwrt(0);
+	if(fpsw(5)==1) dotwrt(1);
+          goto loop;
+   }  /* end of main */
+   
+    caen_setup()
+      { short k1,k2,j1,j2,pre;
+        /* test write-read to caen v1729 */
+	caen_prelsb = (short*)(vmebase+0x661800);  
+        *caen_prelsb = 0xaa;
+	usleep(1);
+	k1 = *caen_prelsb;
+	k2 = k1 & 0xff;
+	printf("sent=0xaa  read back=%x %x\n",k1,k2);
+	if(k2 != 0xaa) exit(0);
+ 
+         /* ========== issue reset ========== */
+        caen_reset = (short*)(vmebase+0x660800);
+        *caen_reset=0;
+ 
+ 	/* ========== setup pretrig ========== */
+	pre = 10;
+	caen_prelsb = (short*)(vmebase+0x661800);  
+	caen_premsb = (short*)(vmebase+0x661900); 
+	k1 = (pre & 0xff);
+	k2 = ((pre>>8) & 0xff);
+
+        *caen_prelsb = k1;
+        *caen_premsb = k2;
+	j1 = *caen_prelsb & 0xff;
+	j2 = *caen_premsb & 0xff;
+
+        /* ========== setup posttrig ========== */
+	posttrig = 0;
+	caen_postlsb = (short*)(vmebase+0x661a00);
+	caen_postmsb = (short*)(vmebase+0x661b00);
+        *caen_postlsb = posttrig & 0xff;
+        *caen_postmsb = (posttrig>>8) & 0xff;
+
+        /* ========== setup the trigger source ========== */
+	caen_trigsource = (short*)(vmebase+0x661e00);
+	*caen_trigsource = 0;
+
+        /* ========== channel mask - store data for all 4 channels ========== */
+	caen_chmask = (short*)(vmebase+0x662300);
+	*caen_chmask = 0xf;
+
+        /* ========== setup triger type ========== */
+	caen_trigtype = (short*)(vmebase+0x661d00);
+	*caen_trigtype = 0x2;
+
+        caen_start = (short*)(vmebase+0x661700);
+	caen_trigrec = (short*)(vmebase+0x662000);
+	caen_data = (short*)(vmebase+0x660d00);
+	caen_softtrig = (short*)(vmebase+0x661c00);
+	caen_interrupt = (short*)(vmebase+0x668000);
+
+      }
+      
+    caen_read()
+        { int i,kk,k,m,shift;
+          unsigned short wd;
+	  short tr;
+	  msave=0;
+	  ksave=0;
+	  maxsave=0;
+ 	  tr = *caen_trigrec;
+	  trigrec = tr & 0xff;
+          shift = 2560*(128-trigrec)/128;
+	  /* printf(" tr=%x  trigrec=%d  endcell=%d\n",tr,trigrec,endcell);   */
+	  endcell = (20*(posttrig+trigrec))%128;
+	     wd1[3]=*caen_data;
+	     wd1[2]=*caen_data;
+	     wd1[1]=*caen_data;
+	     wd1[0]=*caen_data;
+	     wd2[3]=*caen_data;
+	     wd2[2]=*caen_data;
+	     wd2[1]=*caen_data;
+	     wd2[0]=*caen_data;
+	     wd3[3]=*caen_data;
+	     wd3[2]=*caen_data;
+	     wd3[1]=*caen_data;
+	     wd3[0]=*caen_data;
+	     for(i=0;i<2560;i++) 
+	      { wd=*caen_data;
+	        raw[3][i] = wd & 0xfff;
+	        wd=*caen_data;
+	        raw[2][i] = wd & 0xfff;
+	        wd=*caen_data;
+	        raw[1][i] = wd & 0xfff;
+	        wd=*caen_data;
+	        raw[0][i] = wd & 0xfff;
+	      }
+          for(m=0;m<4;m++)
+	   { for(i=0;i<2560;i++)
+	       {  kk = 2560+i-endcell;
+	         k = kk%2560;
+                 k=i-shift;
+		 if(k<0) k=k+2560;
+		 if(k>2560) k=k-2560;
+	         cdata[m][k]=raw[m][i];  
+		 /* if(m==0) printf(" i=%d  raw=%d  k=%d  cdata=%d\n",i,raw[0][i],k,cdata[0][k]); */
+	         /* cdata[m][i]=raw[m][i]; */ /* just copy through for now */
+		 if(cdata[m][k]>maxsave)
+		  { msave=m;
+		    ksave=k;
+		    maxsave=cdata[m][k];
+		    /* printf("m=%d  k=%d  max=%d\n",msave,ksave,maxsave);  */
+		  }
+	       } 
+           }
+	 }	
+
+     inject()
+       { unsigned long *adr;
+ /* write to PIO vme module (programable io) */
+ /* let one trigger pulse through to the CAEN v1729 */
+        (unsigned long *)adr = (unsigned long *)(vmebase+0x570000+0x4);
+        *adr = 0;
+       }
+  
+onedisp(nn,string,n1,m)  /* nn=bins to display  starting with bin n1 */
+ int nn,n1,m;
+ char *string;
+ { int max,mmax,idx,idy,ny,linx,ixbas,iybas,ix,iy,iylst,kx,ky,i,k,ii,iii,n2;
+   int idel,ifix;
+   double dely,y,dy;
+   char str[5];
+   erasm();
+/* ======================= first channel plot kk1 ================== */    
+   max = 0;
+   n2 = n1 + nn;
+   for(iii=n1; iii<n2; iii++) 
+     {  if(iii<0) ifix=iii+2560;
+        if(iii>=0) ifix=iii%2560;
+        if (max < cdata[m][ifix]) max = cdata[m][ifix];
+     };
+   mmax=5000;
+   if(max<4000) mmax=4000;
+   if(max<3000) mmax=3000;
+   if(max<2000) mmax=2000;
+   if(max<1000) mmax=1000;
+   if(max<800) mmax=800;
+   if(max<600) mmax=600;
+   if(max<500) mmax=500;
+   if(max<400) mmax=400;
+   if(max<200) mmax=200;
+   if(max<100) mmax=100;
+   if(max<50) mmax=50;
+   idx = 1600/nn;
+   linx = idx*nn;
+   ixbas = 100+(2200-linx)/2;
+   dy = 2400.0/(double)mmax;
+   iybas = 250;
+   mova(ixbas,iybas);
+   drwr(linx,0);
+   mova(ixbas,iybas);
+   iylst = 0;
+   for(i=n1;i<=n2;i++)
+    { if(i<0) ifix=i+2560;
+      if(i>=0) ifix=i%2560;
+      ii = cdata[m][ifix];
+      y = (double)ii;
+      y = y*dy;
+      iy = (int)y;
+      idy = iy-iylst;
+      drwr(0,idy);
+      drwr(idx,0);
+      iylst=iy;
+    }
+      drwr(0,-iylst);
+
+/*  label horizontal axis */
+    idel=2;
+    if(nn>100) idel=25;
+    if(nn>200) idel=50;
+    for(i=0;i<nn+2;i=i+idel)
+     { ix=ixbas+idx*i;
+       mova(ix,iybas);
+       drwr(0,-30);
+       k=i/2;
+       if(k*2 == i)
+         { sprintf(str,"%3d",i);
+           kx = ix-45;
+           if(i<100) kx = ix-55;
+           if(i<10) kx=ix-75;
+           symb(kx,iybas-110,0.0,str);
+         }
+     }
+/*  label vertical axis  */
+    ny=mmax/100;
+    if(ny>10) ny=10;
+    if(mmax == 1000) ny=5;
+    if(mmax == 800) ny=4;
+    if(mmax == 600) ny=3;
+    if(mmax == 200) ny=4;
+    if(mmax == 100) ny=4;
+    if(mmax == 50) ny=5;
+    y=(double)mmax*dy;
+    iy = (int)y;
+    mova(ixbas,iybas);
+    drwr(0,iy);
+    for(i=0;i<=ny;i++)
+     { ky = i*mmax/ny;
+       y = (double)ky * dy;
+       iy = (int)y + iybas;
+       mova(ixbas,iy);
+       drwr(-20,0);
+       sprintf(str,"%4d",ky);
+       kx = ixbas-150;
+       symb(kx,iy-20,0.0,str);
+     }
+    /*  print label */
+    symb(200,3000,0.0,string);
+    plotmx();
+ }
+fpsw(int i)
+/* read front panel w=switches on PIO (programable IO) vme module */
+  { int l;
+    unsigned long swadr=0x570000,*adr,kk;
+    adr = (unsigned long *)(vmebase + swadr);
+    kk = *adr;
+    l = (kk>>i) & 1;
+    return(l);
+  }
+

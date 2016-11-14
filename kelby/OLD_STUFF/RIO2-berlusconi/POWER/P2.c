@@ -1,0 +1,619 @@
+/* POWER.c
+ * creates an interface enabling user to turn on and off power to five drawers
+ */
+ 
+/*
+ * so that we can use fprintf:
+ */
+#include <stdio.h>
+#include <sys/types.h>
+
+/*
+ * standard motif include file:
+ */
+#include <Xm/Xm.h>
+#include <X11/Xlib.h>
+#include <X11/Xutil.h>
+#include <X11/keysymdef.h>
+#include <X11/Xresource.h>
+#include <Xm/RepType.h>
+
+/*
+ * public include files for widgets used in this file
+ */
+#include <Xm/RowColumn.h>
+#include <Xm/PushB.h>
+#include <Xm/Form.h>
+
+#define OFFSET 10
+
+static int mask = 0,ient=0;
+static int gpib_adr;
+static int ipass=0;
+double window_h[15] = {5.9,-4.8,15.2,  5.9,-4.8,15.2,  5.9,-4.8,15.2,
+                       5.9,-4.8,15.2,  5.9,-4.8,15.2};
+double window_l[15] = {4.8,-5.9,14.8,  4.8,-5.9,14.8,  4.8,-5.9,14.8,  
+                       4.8,-5.9,14.8,  4.8,-5.9,14.8};  
+char string[800];
+
+static XtAppContext app_context;
+
+void timer_handler(XtPointer dummy1, XtIntervalId *dummy2)
+ { /* reinstall callback */
+   (void) XtAppAddTimeOut(app_context,30000,timer_handler,NULL);
+   voltcheck();
+ }
+	
+/*
+ * "Drawer 1" button callback function
+ */
+/*ARGSUSED*/
+void Drawer1(w, client_data, call_data)
+Widget w;
+XtPointer client_data, call_data;
+{
+	set_on(1);
+}
+
+/*
+ * "Drawer 2" button callback function
+ */
+/*ARGSUSED*/
+void Drawer2(w, client_data, call_data)
+Widget w;
+XtPointer client_data, call_data;
+{
+	set_on(2);
+}
+
+/*
+ * "Drawer 3" button callback function
+ */
+/*ARGSUSED*/
+void Drawer3(w, client_data, call_data)
+Widget w;
+XtPointer client_data, call_data;
+{
+	set_on(3);
+}
+
+/*
+ * "Drawer 4" button callback function
+ */
+/*ARGSUSED*/
+void Drawer4(w, client_data, call_data)
+Widget w;
+XtPointer client_data, call_data;
+{
+	set_on(4);
+}
+
+/*
+ * "Drawer 5" button callback function
+ */
+/*ARGSUSED*/
+void Drawer5(w, client_data, call_data)
+Widget w;
+XtPointer client_data, call_data;
+{
+	set_on(5);
+}
+
+/*
+ * "allon" button callback function
+ */
+/*ARGSUSED*/
+void ALLON(w, client_data, call_data)
+Widget w;
+XtPointer client_data, call_data;
+{
+	set_on(0);
+}
+
+/*
+ * "Off" button callback function
+ */
+/*ARGSUSED*/
+void Off1(w, client_data, call_data)
+Widget w;
+XtPointer client_data, call_data;
+{
+	set_off(1);
+}
+
+/*
+ * "Off" button callback function
+ */
+/*ARGSUSED*/
+void Off2(w, client_data, call_data)
+Widget w;
+XtPointer client_data, call_data;
+{
+	set_off(2);
+}
+
+/*
+ * "Off" button callback function
+ */
+/*ARGSUSED*/
+void Off3(w, client_data, call_data)
+Widget w;
+XtPointer client_data, call_data;
+{
+	set_off(3);
+}
+
+/*
+ * "Off" button callback function
+ */
+/*ARGSUSED*/
+void Off4(w, client_data, call_data)
+Widget w;
+XtPointer client_data, call_data;
+{
+	set_off(4);
+}
+
+/*
+ * "Off" button callback function
+ */
+/*ARGSUSED*/
+void Off5(w, client_data, call_data)
+Widget w;
+XtPointer client_data, call_data;
+{
+	set_off(5);
+}
+/*
+ * "offall" button callback function
+ */
+/*ARGSUSED*/
+void ALLOFF(w, client_data, call_data)
+Widget w;
+XtPointer client_data, call_data;
+{
+	set_off(0);
+}
+
+IceProtocolSetupStatus IceProtocolSetup (
+    IceConn     a       /* iceConn */,
+    int         b       /* myOpcode */,
+    IcePointer  c       /* clientData */,
+    Bool        d       /* mustAuthenticate */,
+    int        *e       /* majorVersionRet */,
+    int        *f       /* minorVersionRet */,
+    char      **g       /* vendorRet */,
+    char      **h       /* releaseRet */,
+    int         i       /* errorLength */,
+    char       *j       /* errorStringRet */
+)
+{
+  return 0;
+}
+int IceRegisterForProtocolSetup (
+    char                *l      /* protocolName */,
+    char                *m      /* vendor */,
+    char                *n      /* release */,
+    int                  o      /* versionCount */,
+    IcePoVersionRec    * p      /* versionRecs */,
+    int                  q      /* authCount */,
+    char              ** r      /* authNames */,
+    IcePoAuthProc      * t      /* authProcs */,
+    IceIOErrorProc       v      /* IOErrorProc */
+)
+{
+  return 0;
+}
+main(argc, argv)
+int argc;
+char **argv;
+
+{	Widget form, drawer1, drawer2, drawer3, drawer4, drawer5,allon,
+	off1, off2, off3, off4, off5,alloff, topLevel;
+	
+	 XtSetLanguageProc(NULL, (XtLanguageProc)NULL, NULL);
+	
+	topLevel = XtVaAppInitialize(
+		&app_context,	/*Application Context*/
+		"XForm1",	/*Application class*/
+		NULL, 0,	/*command line option list*/
+		&argc, argv,	/*command line args*/
+		NULL,		/*for missing app-defaults file*/
+		NULL);		/*terminate varargs list*/
+	
+	form = XtVaCreateManagedWidget(
+		"form",			/*widget name*/
+		xmFormWidgetClass,	/*widget class*/
+		topLevel,		/*parent widget*/
+		NULL);			/*terminate varargs list*/
+		
+	drawer1 = XtVaCreateManagedWidget(
+		"1 ON",		/*widget name*/
+		xmPushButtonWidgetClass,/*widget class*/
+		form,			/*parent widget*/
+		XmNtopAttachment, XmATTACH_FORM,
+		XmNtopOffset, OFFSET,
+		XmNrightAttachment, XmATTACH_FORM,
+		XmNrightOffset, OFFSET,
+		NULL);			/*terminate varargs list*/
+		
+	drawer2 = XtVaCreateManagedWidget(
+		"2 ON",		/*widget name*/
+		xmPushButtonWidgetClass,/*widget class*/
+		form,			/*parent widget*/
+		XmNrightAttachment, XmATTACH_FORM,
+		XmNrightOffset, OFFSET,
+		XmNtopAttachment, XmATTACH_WIDGET,
+		XmNtopWidget, drawer1,
+		XmNtopOffset, OFFSET,
+		NULL);			/*terminate varargs list*/
+
+	drawer3 = XtVaCreateManagedWidget(
+		"3 ON",		/*widget name*/
+		xmPushButtonWidgetClass,/*widget class*/
+		form,			/*parent widget*/
+		XmNrightAttachment, XmATTACH_FORM,
+		XmNrightOffset, OFFSET,
+		XmNtopAttachment, XmATTACH_WIDGET,
+		XmNtopWidget, drawer2,
+		XmNtopOffset, OFFSET,
+		NULL);			/*terminate varargs list*/
+
+	drawer4 = XtVaCreateManagedWidget(
+		"4 ON",		/*widget name*/
+		xmPushButtonWidgetClass,/*widget class*/
+		form,			/*parent widget*/
+		XmNrightAttachment, XmATTACH_FORM,
+		XmNrightOffset, OFFSET,
+		XmNtopAttachment, XmATTACH_WIDGET,
+		XmNtopWidget, drawer3,
+		XmNtopOffset, OFFSET,
+		NULL);			/*terminate varargs list*/
+
+	drawer5 = XtVaCreateManagedWidget(
+		"5 ON",		/*widget name*/
+		xmPushButtonWidgetClass,/*widget class*/
+		form,			/*parent widget*/
+		XmNrightAttachment, XmATTACH_FORM,
+		XmNrightOffset, OFFSET,
+		XmNtopAttachment, XmATTACH_WIDGET,
+		XmNtopWidget, drawer4,
+		XmNtopOffset, OFFSET,
+		NULL);			/*terminate varargs list*/ 
+	
+	allon = XtVaCreateManagedWidget(
+		"ALL ON",		/*widget name*/
+		xmPushButtonWidgetClass,/*widget class*/
+		form,			/*parent widget*/
+		XmNrightAttachment, XmATTACH_FORM,
+		XmNrightOffset, OFFSET,
+		XmNtopAttachment, XmATTACH_WIDGET,
+		XmNtopWidget, drawer5,
+		XmNtopOffset, OFFSET,
+		XmNbottomAttachment, XmATTACH_FORM,
+		XmNbottomOffset, OFFSET,
+		NULL);			/*terminate varargs list*/ 
+	
+	off1 = XtVaCreateManagedWidget(
+		"1 OFF",		/*widget name*/
+		xmPushButtonWidgetClass,/*widget class*/
+		form,			/*parent widget*/
+		XmNtopAttachment, XmATTACH_FORM,
+		XmNtopOffset, OFFSET,
+		XmNleftAttachment, XmATTACH_FORM,
+		XmNleftOffset, OFFSET,
+		XmNrightAttachment, XmATTACH_WIDGET,	 
+		XmNrightWidget, drawer1,	 
+		XmNrightOffset, OFFSET,
+		NULL);	/*terminate varargs list of resource settings*/
+	
+	off2 = XtVaCreateManagedWidget(
+		"2 OFF",		/*widget name*/
+		xmPushButtonWidgetClass,/*widget class*/
+		form,			/*parent widget*/
+		XmNtopAttachment, XmATTACH_WIDGET,
+		XmNtopWidget, off1,
+		XmNtopOffset, OFFSET,
+		XmNleftAttachment, XmATTACH_FORM,
+		XmNleftOffset, OFFSET,
+		XmNrightAttachment, XmATTACH_WIDGET,	 
+		XmNrightWidget, drawer2,	 
+		XmNrightOffset, OFFSET,
+		NULL);	/*terminate varargs list of resource settings*/
+	
+	off3 = XtVaCreateManagedWidget(
+		"3 OFF",		/*widget name*/
+		xmPushButtonWidgetClass,/*widget class*/
+		form,			/*parent widget*/
+		XmNtopAttachment, XmATTACH_WIDGET,
+		XmNtopWidget, off2,
+		XmNtopOffset, OFFSET,
+		XmNleftAttachment, XmATTACH_FORM,
+		XmNleftOffset, OFFSET,
+		XmNrightAttachment, XmATTACH_WIDGET,	
+		XmNrightWidget, drawer3,	
+		XmNrightOffset, OFFSET,
+		NULL);	/*terminate varargs list of resource settings*/
+	
+	off4 = XtVaCreateManagedWidget(
+		"4 OFF",		/*widget name*/
+		xmPushButtonWidgetClass,/*widget class*/
+		form,			/*parent widget*/
+		XmNtopAttachment, XmATTACH_WIDGET,
+		XmNtopWidget, off3,
+		XmNtopOffset, OFFSET,
+		XmNleftAttachment, XmATTACH_FORM,
+		XmNleftOffset, OFFSET,
+		XmNrightAttachment, XmATTACH_WIDGET,	
+		XmNrightWidget, drawer4,
+		XmNrightOffset, OFFSET,	
+		NULL);	/*terminate varargs list of resource settings*/
+		
+	off5 = XtVaCreateManagedWidget(
+		"5 OFF",		/*widget name*/
+		xmPushButtonWidgetClass,/*widget class*/
+		form,			/*parent widget*/
+		XmNtopAttachment, XmATTACH_WIDGET,
+		XmNtopWidget, off4,
+		XmNtopOffset, OFFSET,
+		XmNleftAttachment, XmATTACH_FORM,
+		XmNleftOffset, OFFSET,
+		XmNrightAttachment, XmATTACH_WIDGET,	
+		XmNrightWidget, drawer5,
+		XmNrightOffset, OFFSET,
+		NULL);	/*terminate varargs list of resource settings*/
+	alloff = XtVaCreateManagedWidget(
+		"ALL OFF ",		
+		xmPushButtonWidgetClass,
+		form,			
+		XmNtopAttachment, XmATTACH_WIDGET,
+		XmNtopWidget, off5,
+		XmNtopOffset, OFFSET,
+		XmNleftAttachment, XmATTACH_FORM,
+		XmNleftOffset, OFFSET,
+		XmNrightAttachment, XmATTACH_WIDGET,	
+		XmNrightWidget, allon,
+		XmNrightOffset, OFFSET,     
+		XmNbottomAttachment, XmATTACH_FORM,
+		XmNbottomOffset, OFFSET,	 
+		NULL);	
+		
+	XtAddCallback(drawer1, XmNactivateCallback, Drawer1, 0);
+	XtAddCallback(drawer2, XmNactivateCallback, Drawer2, 0);
+	XtAddCallback(drawer3, XmNactivateCallback, Drawer3, 0);
+	XtAddCallback(drawer4, XmNactivateCallback, Drawer4, 0);
+	XtAddCallback(drawer5, XmNactivateCallback, Drawer5, 0);
+	XtAddCallback(allon, XmNactivateCallback, ALLON, 0);
+	
+	XtAddCallback(off1, XmNactivateCallback, Off1, 0);
+	XtAddCallback(off2, XmNactivateCallback, Off2, 0);
+	XtAddCallback(off3, XmNactivateCallback, Off3, 0);
+	XtAddCallback(off4, XmNactivateCallback, Off4, 0);
+	XtAddCallback(off5, XmNactivateCallback, Off5, 0);
+	XtAddCallback(alloff, XmNactivateCallback, ALLOFF, 0);   
+	
+	(void) XtAppAddTimeOut(app_context,30000,timer_handler,NULL);
+	XtRealizeWidget(topLevel);
+	
+	XtAppMainLoop(app_context);
+}				
+set_on(int k)
+ { if(ient == 0) 
+    { gpib_reset();
+      ient = 1;
+    }
+   if(k == 0) mask = 0xf8;
+   if(k == 1) mask = mask | 0x8;
+   if(k == 2) mask = mask | 0x10;
+   if(k == 3) mask = mask | 0x20;
+   if(k == 4) mask = mask | 0x40;
+   if(k == 5) mask = mask | 0x80;
+   sprintf(string,"D%d X",mask);
+/*   printf(" mask=%x\n",mask);  */ 
+   gpib_adr=2;
+   sendmessage(gpib_adr,string);
+/*   sleep(2);
+   sendmessage(gpib_adr,"D? X");
+   getmessage(gpib_adr, &string[0] );
+   printf("D back=%s\n",string);  */
+ }
+set_off(int k)
+ { if(ient == 0) 
+    { gpib_reset();
+      ient = 1;
+    }
+   if(k == 0) mask = 0;
+   if(k == 1) mask = mask & 0xf7;
+   if(k == 2) mask = mask & 0xef;
+   if(k == 3) mask = mask & 0xdf;
+   if(k == 4) mask = mask & 0xbf;
+   if(k == 5) mask = mask & 0x7f;
+   sprintf(string,"D%d X",mask);
+/*   printf(" mask=%x\n",mask);  */
+   gpib_adr=2;
+   sendmessage(gpib_adr,string);
+/*   sleep(2);
+   sendmessage(gpib_adr,"D? X");
+   getmessage(gpib_adr, &string[0] );
+   printf("D back=%s\n",string);  */ 
+ }
+  
+voltcheck()
+ {
+ /* called every 30 seconds */
+   double volts[16];
+   int i,dval,bad[15],ibad1,ibad2,ibad3,ibad4,ibad5;
+   static int ipass = 0;
+   if(ient == 0) 
+    { gpib_reset();
+      ient = 1;
+    }
+   gpib_adr=2;
+   for(i=0;i<8;i++)
+     { go_get(i+1,&volts[i]);
+       /*printf("i=%d  gpib_adr=%d  volts=%f\n",i,gpib_adr,volts[i]);  */
+       if(i == 2) volts[i] = 3.0*volts[i];
+       if(i == 5) volts[i] = 3.0*volts[i];
+       if(i == 8) volts[i] = 3.0*volts[i];
+       
+     }
+
+   gpib_adr=3;
+   for(i=0;i<8;i++)
+     { go_get(i+1,&volts[i+8]);
+       /*printf("i=%d  gpib_adr=%d  volts=%f\n",i,gpib_adr,volts[i]);  */
+       if(i == 0) volts[i+8] = 3.0*volts[i+8];
+       if(i == 3) volts[i+8] = 3.0*volts[i+8];
+       if(i == 6) volts[i+8] = 3.0*volts[i+8];
+     }
+   for(i=0;i<15;i++)
+   { bad[i] = 0;
+     /*printf(" i=%d  low=%f  volts=%f  high=%f\n",
+        i,window_l[i],volts[i],window_h[i]);  */  
+    if(volts[i] < window_l[i] || volts[i] > window_h[i]) bad[i] = 1;
+    /*printf("i=%d  volt=%f  bad=%d\n",i,volts[i],bad[i]);  */ 
+    }
+   ibad1 = bad[0]+bad[1]+bad[2];
+   ibad2 = bad[3]+bad[4]+bad[5];
+   ibad3 = bad[6]+bad[7]+bad[8];
+   ibad4 = bad[9]+bad[10]+bad[11];
+   ibad5 = bad[12]+bad[13]+bad[14];
+   
+   if(ibad1>0 && ibad1 <3) alarm(1,ibad1);
+   if(ibad2>0 && ibad2 <3) alarm(2,ibad2);
+   if(ibad3>0 && ibad3 <3) alarm(3,ibad3);
+   if(ibad4>0 && ibad4 <3) alarm(4,ibad4);
+   if(ibad5>0 && ibad5 <3) alarm(5,ibad5);
+
+   ipass++;
+   printf("\r %d",ipass);
+   if(ibad1 == 0) on(1);
+   if(ibad1 != 0) off(1);
+   if(ibad2 == 0) on(2);
+   if(ibad2 != 0) off(2);
+   if(ibad3 == 0) on(3);
+   if(ibad3 != 0) off(3);
+   if(ibad4 == 0) on(4);
+   if(ibad4 != 0) off(4);
+   if(ibad5 == 0) on(5);
+   if(ibad5 != 0) off(5);
+   blank();
+   blank();
+   blank();
+   blank();
+   blank();
+   blank();
+   fflush(stdout);	
+}
+alarm(int i,int ibad)
+  { int k;
+    printf("\n\a\a\a\a\a drawer %d set off   ibad = %d\n",i,ibad);  
+    set_off(i);
+ }
+
+    go_get(channel,v)
+      int channel;
+      double *v;
+      {double volts;
+       int i;
+
+       sendmessage(gpib_adr,"A0 X");
+       usleep((time_t)100);
+	  
+       sprintf(string,"C%d X",channel);  
+       sendmessage(gpib_adr,string);
+       usleep((time_t)100);
+  
+       sendmessage(gpib_adr,"R3,3,3,3,3,3,3,3 X");
+       usleep((time_t)100);
+
+       sendmessage(gpib_adr,"N1 X");
+       usleep((time_t)100);
+
+       sendmessage(gpib_adr,"G0 X");
+       usleep((time_t)100);
+  
+       sendmessage(gpib_adr,"Q0 X");
+       usleep((time_t)100);
+
+       sendmessage(gpib_adr,"I15 X");
+       usleep((time_t)100);
+
+       sendmessage(gpib_adr,"T6 X");   /* trigger voltage reading */
+       usleep((time_t)100);
+       getmessage(gpib_adr, &string[0] );
+
+/*     printf("readback %d = %s\n",i,string);  */  
+       sscanf(string,"%le",&volts);
+/*       printf("i=%d  volts=%f\n",i,volts);   */
+       *v = volts;   
+}
+on(int k)
+ { blank();
+   bgyellow();
+   red();
+   printf("%d-ON",k);
+   bgdefault();  /* restore default background */
+   fgdefault();  /* restore default foreground */
+ }
+off(int k)
+ { blank();
+   blue(); 
+   bgdefault();
+   printf("%d-OFF",k);
+   bgdefault();  /* restore default background */
+   fgdefault();  /* restore default foreground */
+ }
+red()
+ { putchar(27);   /*    esc    */
+   putchar(91);   /*     [     */ 
+   putchar(51);   /*     3     */ 
+   putchar(49);   /*     1     */
+   putchar(109);  /*     m     */ 
+ }
+ black()
+ { putchar(27);   /*    esc    */
+   putchar(91);   /*     [     */ 
+   putchar(51);   /*     3     */ 
+   putchar(57);   /*     9     */
+   putchar(109);  /*     m     */ 
+ }
+ blue()
+ { putchar(27);   /*    esc    */
+   putchar(91);   /*     [     */ 
+   putchar(51);   /*     3     */ 
+   putchar(52);   /*     4     */
+   putchar(109);  /*     m     */ 
+ }
+ white()
+ { putchar(27);   /*    esc    */
+   putchar(91);   /*     [     */ 
+   putchar(57);   /*     5     */ 
+   putchar(52);   /*     4     */
+   putchar(109);  /*     m     */ 
+ }
+ bgyellow()
+ { putchar(27);   /*    esc    */
+   putchar(91);   /*     [     */ 
+   putchar(52);   /*     4     */ 
+   putchar(51);   /*     3     */
+   putchar(109);  /*     m     */ 
+ }
+ bgdefault()
+ { putchar(27);   /*    esc    */
+   putchar(91);   /*     [     */ 
+   putchar(52);   /*     4     */ 
+   putchar(57);   /*     9     */
+   putchar(109);  /*     m     */ 
+ }
+ fgdefault()
+ { putchar(27);   /*    esc    */
+   putchar(91);   /*     [     */ 
+   putchar(51);   /*     3     */ 
+   putchar(57);   /*     9     */
+   putchar(109);  /*     m     */ 
+ }
+blank()
+  { bgdefault();
+    putchar(32);
+  }

@@ -1,0 +1,22 @@
+
+
+
+This diskette contains the file PK361.EXE.  Type
+
+PK361
+
+followed by pressing the Enter key to create the program and
+documentation files for PKUNPAK, PKPAK, and PKSFX version 3.6.
+To print the documentation files after running PK36, type
+
+COPY *.DOC PRN
+
+followed by the return key.
+
+
+If you distribute PKUNPAK, PKPAK, and PKSFX to friends, associates, 
+or to a computer bulletin board system (BBS), please distribute the 
+file PK361.EXE rather than the individual files for PKUNPAK, PKPAK
+and PKSFX.
+
+

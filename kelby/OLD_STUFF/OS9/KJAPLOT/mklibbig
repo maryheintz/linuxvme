@@ -1,0 +1,1 @@
+del biglib.ldel /h0/kja/lib/biglib.lmerge hst.r dxy.r dot_big.r axis.r basic.r post.r fpermit.r camac.r gpib.r ranf.r random.r>biglib.lcopy biglib.l -w=/h0/kja/lib

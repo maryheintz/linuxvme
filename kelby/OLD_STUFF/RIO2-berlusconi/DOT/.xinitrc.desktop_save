@@ -1,0 +1,10 @@
+setprio 20 `ps -ax | grep /usr/bin/X11/X | cut -c1-5` &
+xsetbg -center /usr/lib/X11/Lynx/cat640.gif
+xset s off
+xterm -ls -T "LynxOS" -fg darkblue -bg navajowhite -iconic &
+xterm -ls -T "LynxOS" -bg mediumspringgreen &
+/usr/lib/X11/setbg &
+if [ -x /usr/bin/X11/mwm ]
+then exec mwm 
+else exec twm 
+fi

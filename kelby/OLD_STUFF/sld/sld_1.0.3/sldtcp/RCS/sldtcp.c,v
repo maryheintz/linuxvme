@@ -1,0 +1,867 @@
+head	1.2;
+access;
+symbols;
+locks
+	ruud:1.2; strict;
+comment	@ * @;
+
+
+1.2
+date	2000.09.12.15.57.27;	author ruud;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2000.09.04.11.10.40;	author ruud;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@#include <unistd.h>
+#include <limits.h>
+#include <stdarg.h>
+#include <string.h>
+#include <strings.h>
+#include <stdio.h>
+#include <fcntl.h>
+#include <signal.h>
+#include <sys/mman.h>
+#include <sys/ioctl.h>
+#include <sys/time.h>
+#include <errno.h>
+
+#include "ant.h"
+#include "sld.h"
+
+#define TCPDMP_PORT     0x3001
+
+#define SLD_log ANT_log
+
+static  void    cleanUp (int arg);
+static  void    sigAll  (void);
+static  void    usage   (char *str);
+
+int             sldFd;
+void           *sldMem;
+unsigned long   sldSize;
+int             sldSock;
+
+int             dataDump        = {0};
+int             fullDataDump    = {0};
+int             controlDump     = {0};
+int             infoDump        = {0};
+int             dataCheck       = {0};
+int             setReturnLines  = {0};
+
+  static int
+waitForData (int sldFd)
+{
+  fd_set readFd;
+  int    ret;
+
+  /* sometimes we get errors and need to restart the select () */
+  do
+  {
+    FD_ZERO ( &readFd );
+    FD_SET  ( 0, &readFd ); /* stdin */
+    FD_SET  ( sldFd, &readFd );
+    ret = select (sldFd + 1, &readFd, NULL, NULL, NULL);
+
+    if (ret < 0)
+      ret = -errno;
+
+    switch (ret)
+    {
+      case -EINTR:    /* signal; restart select */
+	ret = 0;
+	break;
+      case 0:         /* timeout?! */
+	break;
+      case 2:         /* both descriptors have input */
+	return (sldFd);
+      case 1:
+      {
+	/* check which one */
+	if      (FD_ISSET (sldFd, &readFd))
+	  return (sldFd);
+	else if (FD_ISSET (0,     &readFd))
+	  return (0);
+	else
+	  ret = 0;
+	break;
+      }
+      default: /* strange... */
+	ret = 0;
+	break;
+    }
+  }
+  while (1);
+}
+
+  static void
+dumpData (const infoblock_t *ibPtr)
+{
+  int  i;
+  int  size;
+  int *intPtr;
+
+  printf ("data: buffer=%p, size=%d, message=%s.\n",
+	   ibPtr->u.buffer.ptr,
+	   ibPtr->u.buffer.size,
+	   getMessageStr (ibPtr->message));
+
+  if (fullDataDump)
+  {
+    intPtr = (int *)ibPtr->u.buffer.ptr;
+    size = ibPtr->u.buffer.size / 4;
+    for (i = 0; i < size; i++, intPtr++)
+      printf ("data: %2.2d %8.8x\n", i, *intPtr);
+  }
+}
+
+  static void
+checkData (const infoblock_t *ibPtr)
+{
+  int  size;
+  int *intPtr;
+
+  intPtr = (int *)ibPtr->u.buffer.ptr;
+  size   = ibPtr->u.buffer.size / 4;
+}
+
+  static void
+handleBlock (const infoblock_t *ibPtr)
+{
+  switch (ibPtr->type)
+  {
+    case statistics:
+      SLD_log (ANT_LOG_FAT, "We don't expect any statistics");
+      break;
+
+    case information:
+      if (infoDump)
+	SLD_log (ANT_LOG_INF, "information: message=%s.", getMessageStr( ibPtr->message ) );
+      break;
+
+    case slink_data:
+      if (dataDump)
+	dumpData (ibPtr);
+      else if (ibPtr->message != NoMessage)
+	SLD_log (ANT_LOG_INF, "data: message=%s.", getMessageStr (ibPtr->message));
+
+      if (dataCheck)
+	checkData (ibPtr);
+
+      {
+	int size;
+	int first;
+
+	first = ibPtr->u.buffer.size + sizeof (int);
+	size  = TEC_write (sldSock, &first, sizeof (first));
+	if (size != sizeof (int))
+	  SLD_log (ANT_LOG_FAT, "Error return TEC_write %d (expected %d)", size, sizeof (first));
+
+	size = TEC_write (sldSock,  ibPtr->u.buffer.ptr,  ibPtr->u.buffer.size);
+	if (size != ibPtr->u.buffer.size)
+	  SLD_log (ANT_LOG_FAT, "Error return TEC_write %d (expected %d)", size, ibPtr->u.buffer.size);
+      }
+      break;
+
+    case slink_control:
+      if (controlDump)
+	SLD_log (ANT_LOG_INF, "control: data=%8.8x, message=%s", ibPtr->u.data,
+			       getMessageStr (ibPtr->message));
+      break;
+
+    default:
+      break;
+  }
+}
+
+
+  int
+main (int argc, char *argv[], char *envp[])
+{
+  infoblock_t *ibPtr;
+  int          ret;
+  int          dataFd;
+  int          count = 0;
+
+  switch (argc)
+  {
+    default:
+    {
+      usage ("Wrong number of arguments");
+      break;
+    }
+    case 1:
+    {
+      break;
+    }
+
+#ifdef  NOT_DEFINED
+    case 2:
+    {
+      if (sscanf(*++argv, "%d", size) != 1)
+	usage ("No valid first argument");
+
+      break;
+    }
+#endif
+  }
+
+  sigAll ();
+
+  sldFd = open ("/dev/sld0", O_RDWR);
+  if (sldFd < 0)
+    SLD_log (ANT_LOG_FAT, "Cannot open /dev/sld0");
+
+  ret = ioctl (sldFd, SLD_IOCGMAPSIZE, &sldSize);
+  if (ret < 0)
+    SLD_log (ANT_LOG_FAT, "Cannot do ioctl for: map size");
+
+  sldMem = mmap (0, sldSize, PROT_READ | PROT_WRITE, MAP_SHARED, sldFd, 0);
+  if (sldMem == MAP_FAILED)
+    SLD_log (ANT_LOG_FAT, "Cannot map");
+
+  SLD_log (ANT_LOG_INF, "Waiting for connection with 'dump' program");
+
+  sldSock = TEC_connection (TCPDMP_PORT, 0, 0);
+  SLD_log (ANT_LOG_INF, "Connected to dump");
+
+  while (1)
+  {
+    dataFd = waitForData (sldFd);
+
+    if (dataFd == sldFd)
+    {
+      /* get the first infoblock */
+      ibPtr = getFullInfoBlock (sldMem);
+      while (ibPtr != NULL)
+      {
+	/* control return lines */
+	if (setReturnLines && (ibPtr->type == slink_data))
+	{
+	  count++;
+	  ret = ioctl (sldFd, SLD_IOCSRETL, &count);
+	  if (ret < 0)
+	    perror ("ioctl");
+	}
+
+	handleBlock   (ibPtr);
+	freeInfoBlock (sldMem, ibPtr);
+	ibPtr = getFullInfoBlock (sldMem);
+      }
+    }
+  }
+  cleanUp (0);
+  return (0);
+}
+
+    static void
+cleanUp (int arg)
+{
+  int ret;
+
+  if (sldMem)
+  {
+    SLD_log (ANT_LOG_INF, "Unmap");
+    ret = munmap (sldMem, sldSize);
+    if (ret < 0)
+      SLD_log (ANT_LOG_FAT, "Cannot unmap");
+  }
+  if (sldFd)
+  {
+    SLD_log (ANT_LOG_INF, "Close");
+    ret = close (sldFd);
+    if (ret < 0)
+      SLD_log (ANT_LOG_FAT, "Cannot close driver");
+  }
+  exit (-1);
+}
+
+    void
+sigAll (void)
+{
+  struct sigaction  sa;
+
+  sa.sa_handler = cleanUp;
+  sa.sa_flags   = 0;
+  sigemptyset (&sa.sa_mask);
+  sigaction (SIGINT,  &sa, NULL);
+
+  sa.sa_handler = cleanUp;
+  sa.sa_flags   = 0;
+  sigemptyset (&sa.sa_mask);
+  sigaction   (SIGTERM, &sa, NULL);
+
+  sa.sa_handler = cleanUp;
+  sa.sa_flags   = 0;
+  sigemptyset (&sa.sa_mask);
+  sigaction   (SIGBUS, &sa, NULL);
+}
+
+    void
+usage (char *str)
+{
+    ANT_log (ANT_LOG_INF, "Usage: sldtcp message_size");
+    ANT_log (ANT_LOG_FAT, "%s", str);
+}
+
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 5
+d8 1
+a8 1
+#include <unistd.h>
+d14 1
+d17 1
+a17 34
+/* global variables for access to driver */
+int sldFd;
+void *sldMem;
+unsigned long sldSize;
+
+/* do we want all data printed? */
+int dataDump = 0;       /* Was 0        */
+int controlDump = 0;    /* Was 1        */
+int informationDump = 1;
+int statDump = 1;
+int fullDataDump = 0;
+int fullStatDump = 0;
+int dataCheck = 0;
+int expectedData = 1;
+int setReturnLines = 0;
+int errorDump = 0;
+unsigned long long dataErrors = 0;
+
+/* remember the previous statistics */
+sldstat_t prevStat;
+
+const char *binary( int x )
+{
+  unsigned int mask;
+  int i;
+  static char binBuf[ 33 ];
+
+  for ( i = 0, mask = (1 << 31 );
+	mask != 0;
+	i++, mask >>= 1 )
+    {
+      binBuf[ i ] = (x & mask) ? '1' : '0';
+    }
+  binBuf[ 32 ] = '\0';
+d19 1
+a19 2
+  return( binBuf );
+}
+d21 15
+d37 2
+a38 1
+static int waitForData( int sldFd )
+d41 1
+a41 1
+  int ret;
+d43 1
+a43 1
+  /* sometimes we get errors and need to restart the select() */
+d45 5
+a49 5
+    {
+      FD_ZERO( &readFd );
+      FD_SET( 0, &readFd ); /* stdin */
+      FD_SET( sldFd, &readFd );
+      ret = select( sldFd + 1, &readFd, NULL, NULL, NULL );
+d51 2
+a52 2
+      if ( ret < 0 )
+	ret = -errno;
+d54 17
+a70 3
+      switch( ret )
+	{
+	case -EINTR: /* signal; restart select */
+d72 5
+a76 20
+	  break;
+	case 0: /* timeout?! */
+	  break;
+	case 2: /* both descriptors have input */
+	  return( sldFd );
+	case 1:
+	  {
+	    /* check which one */
+	    if ( FD_ISSET( sldFd, &readFd ) )
+	      return( sldFd );
+	    else if ( FD_ISSET( 0, &readFd ) )
+	      return( 0 );
+	    else
+	      ret = 0;
+	    break;
+	  }
+	default: /* strange... */
+	  ret = 0;
+	  break;
+	}
+d78 2
+a79 1
+  while( 1 );
+d82 2
+a83 1
+static void displayStats( sldstat_t *statPtr )
+d85 2
+a86 104
+  struct timeval timeDiff;
+  unsigned long long countDiff;
+  unsigned long long bytesDiff;
+  unsigned long long irqDiff;
+  float timeFloat;
+  float countThru;
+  float bytesThru;
+  float irqThru;
+  float errThru;
+  float errMB;
+  static int bytesDiv;
+  static char *bytesStr;
+
+  if ( prevStat.stamp.tv_sec == 0 )
+    {
+      prevStat = *statPtr;
+      bytesDiv = 0;
+      bytesStr = "bytes";
+      return;
+    }
+
+  /* calculate things we always need */
+  timersub( &statPtr->stamp, &prevStat.stamp, &timeDiff );
+  countDiff = statPtr->dataInput - prevStat.dataInput;
+  bytesDiff = statPtr->dataBytes - prevStat.dataBytes;
+  irqDiff = statPtr->interrupt - prevStat.interrupt;
+
+  /* make floating point time */
+  timeFloat = timeDiff.tv_usec;
+  timeFloat = timeFloat / 1000000;
+  timeFloat += timeDiff.tv_sec;
+
+  /* calculate throughputs */
+  countThru = countDiff / timeFloat;
+  bytesThru = bytesDiff / timeFloat;
+  irqThru = irqDiff / timeFloat;
+  errThru = dataErrors / timeFloat;
+  errMB = (float)dataErrors * (1024 * 1024) / bytesDiff;
+
+  /* set dividers */
+  if ( (bytesDiff >> (bytesDiv + 17)) != 0 )
+    {
+      bytesDiv += 10;
+      switch( bytesDiv )
+	{
+	case 0: bytesStr = "bytes"; break;
+	case 10: bytesStr = "KB"; break;
+	case 20: bytesStr = "MB"; break;
+	case 30: bytesStr = "GB"; break;
+	case 40: bytesStr = "TB"; break;
+	case 50: bytesStr = "PB"; break;
+	default: bytesStr = "?B"; break;
+	}
+    }
+
+  if ( fullStatDump )
+    {
+      printf( "stats: timestamp=%ld.%6.6ldsec\n",
+	      statPtr->stamp.tv_sec,
+	      statPtr->stamp.tv_usec );
+      printf( "stats: interrupts=%llu master abort=%lu, target abort=%lu, overflow=%lu\n",
+	      statPtr->interrupt,
+	      statPtr->masterAbort,
+	      statPtr->targetAbort,
+	      statPtr->overflow );
+      printf( "stats: data queue get=%lu full=%lu info queue get=%lu\n",
+	      statPtr->dataQueueGet,
+	      statPtr->dataQueueFull,
+	      statPtr->infoQueueGet );
+      printf( "stats: count data=%lu, control=%lu, info=%lu\n",
+	      statPtr->dataInput, statPtr->controlInput, statPtr->infoInput );
+      printf( "stats: data bytes queued: %llu (%llukB)\n",
+	      statPtr->dataBytes, statPtr->dataBytes / 1024 );
+    }
+
+  if ( !dataDump && !controlDump && !fullStatDump )
+    printf( "\n" );
+
+  /* print the difference */
+  printf( "stats: timediff=%ld.%6.6ldsec, data queue full=%lu, data errors=%llu\n",
+	  timeDiff.tv_sec, timeDiff.tv_usec,
+	  statPtr->dataQueueFull,
+	  dataErrors );
+  printf( "stats: totals: int.=%llu, count=%llu, bytes=%llu%s\n",
+	  irqDiff,
+	  countDiff,
+	  bytesDiff >> bytesDiv, bytesStr );
+
+  /* throughput */
+  printf( "stats: thru: int.=%.0f/s, count=%.0f/s, bytes=%.0fkB/s\n",
+	  irqThru,
+	  countThru,
+	  bytesThru / 1024 );
+
+  /* errors */
+  printf( "stats: errors: %.3e/s, %.3e/MB\n",
+	  errThru, errMB );
+	  
+}
+
+static void displayData( const infoblock_t *ibPtr )
+{
+  int i;
+  int size;
+d89 12
+a100 13
+  printf( "data: buffer=%p, size=%d, message=%s.\n",
+	  ibPtr->u.buffer.ptr,
+	  ibPtr->u.buffer.size,
+	  getMessageStr( ibPtr->message ) );
+  if ( fullDataDump )
+    {
+      intPtr = ibPtr->u.buffer.ptr;
+      size = ibPtr->u.buffer.size / 4;
+      for ( i = 0; i < size; i++, intPtr++ )
+	{
+	  printf( "data: %2.2d %8.8x %s\n", i, *intPtr, binary( *intPtr ) );
+	}
+    }
+d103 2
+a104 1
+static void checkData( const infoblock_t *ibPtr )
+d106 1
+a106 2
+  int i;
+  int size;
+a107 32
+  int count;
+
+  /* we never have expectedData == 0 */
+  if ( expectedData == 0 )
+    expectedData = 1;
+
+  intPtr = ibPtr->u.buffer.ptr;
+  size = ibPtr->u.buffer.size / 4;
+  for ( i = 0; i < size; i++, intPtr++, expectedData<<=1 )
+    {
+      if ( expectedData == 0 )
+	expectedData = 1;
+
+      if ( *intPtr != expectedData )
+	{
+	  dataErrors++;
+	  if ( errorDump )
+	    printf( "received data not correct: index=%d, expected=%8.8x, received=%8.8x\n",
+		    i, expectedData, *intPtr );
+	  count = 0;
+	  do
+	    {
+	      expectedData <<= 1;
+	      if ( expectedData == 0 )
+		expectedData = 1;
+	      count++;
+	    }
+	  while ( (*intPtr != expectedData) && (count < 32) );
+	  if ( errorDump )
+	    printf( "skipped %d forward\n", count );
+	}
+    }
+d109 2
+d113 2
+a114 1
+static void handleBlock( const infoblock_t *ibPtr )
+d116 2
+a117 2
+  switch ( ibPtr->type )
+    {
+d119 1
+a119 3
+      /* print just received statistics */
+      if ( statDump )
+	displayStats( ibPtr->u.buffer.ptr );
+d123 2
+a124 3
+      if ( informationDump )
+	printf( "information: message=%s.\n",
+		getMessageStr( ibPtr->message ) );
+d128 21
+a148 11
+      if ( dataDump )
+	{
+	  displayData( ibPtr );
+	}
+      else if ( ibPtr->message != NoMessage )
+	{
+	  printf( "data: message=%s.\n",
+		  getMessageStr( ibPtr->message ) );
+	}
+      if ( dataCheck )
+	checkData( ibPtr );
+d152 3
+a154 7
+      expectedData = 0;
+      if ( controlDump )
+	{
+	  printf( "control: data=%8.8x, message=%s\n",
+		  ibPtr->u.data,
+		  getMessageStr( ibPtr->message ) );
+	}
+d159 1
+a159 1
+    }
+d162 3
+a164 1
+static int handleKey( void )
+d166 4
+a169 4
+  char c;
+  int i;
+  int ret;
+  int val;
+d171 3
+a173 6
+  /* read from stdin */
+  ret = read( 0, &c,1  );
+  if ( ret < 0 )
+    return( 0 );
+
+  switch( c )
+d175 1
+a175 2
+    case '\n':
+      /* ignore */
+d177 3
+a179 18
+
+    case 'm':
+      printf( "\nDump menu:\n"
+	      " d - display data toggle\n"
+	      " c - display control toggle\n"
+	      " i - display information toggle\n"
+	      " s - display statistics toggle\n"
+	      " r - set return line toggle\n"
+	      " D - toggle full data dump\n"
+	      " e - check data from S-Link for errors\n"
+	      " E - display errors toggle\n"
+	      " S - toggle full statistics dump\n"
+	      " R - request return line status from driver\n"
+	      " L - request LDOWN status from driver\n"
+	      " w - wait for the next keypress\n"
+	      " 0 - (zero) turn off statistics generation\n"
+	      " 1-9 - turn on statistics generation every X*500msec\n"
+	      " q - quit\n" );
+d181 1
+d183 5
+a187 3
+    case 's':
+      statDump = !statDump;
+      break;
+a188 2
+    case 'c':
+      controlDump = !controlDump;
+d190 3
+d194 1
+a194 3
+    case 'i':
+      informationDump = !informationDump;
+      break;
+d196 3
+a198 3
+    case 'E':
+      errorDump = !errorDump;
+      break;
+d200 3
+a202 3
+    case 'd':
+      dataDump = !dataDump;
+      break;
+d204 3
+a206 4
+    case 'e':
+      dataCheck = !dataCheck;
+      dataErrors = 0;
+      break;
+d208 1
+a208 3
+    case 'r':
+      setReturnLines = !setReturnLines;
+      break;
+d210 2
+a211 18
+    case '0':
+    case '1':
+    case '2':
+    case '3':
+    case '4':
+    case '5':
+    case '6':
+    case '7':
+    case '8':
+    case '9':
+      prevStat.stamp.tv_sec = 0;
+      dataErrors = 0;
+      val = c - '0';
+      val *= 5;
+      ret = ioctl( sldFd, SLD_IOCSSTAT, &val );
+      if ( ret < 0 )
+	perror( "ioctl" );
+      break;
+d213 3
+a215 3
+    case 'D':
+      fullDataDump = !fullDataDump;
+      break;
+d217 5
+a221 5
+    case 'S':
+      fullStatDump = !fullStatDump;
+      break;
+
+    case 'w':
+d223 8
+a230 2
+	/* read CR */
+	ret = read( 0, &c,1  );
+d232 3
+a234 5
+	/* now wait for next keypress */
+	ret = read( 0, &c,1  );
+	if ( ret < 0 )
+	  perror( "wait for data" );
+	break;
+a235 19
+
+    case 'R':
+      if ( ioctl( sldFd, SLD_IOCGRETL, &i ) < 0 )
+	perror( "ioctl" );      
+      printf( "return lines are: %1.1x\n", i );
+      break;
+
+    case 'L':
+      if ( ioctl( sldFd, SLD_IOCGDOWN, &i ) < 0 )
+	perror( "ioctl" );      
+      printf( "link is %s\n", i ? "down" : "up" );
+      break;
+
+    case 'q':
+      return( 1 );
+
+    default:
+      printf( "Unknown menu choice %c.\n", c );
+      break;
+d237 3
+a239 2
+
+  return( 0 );
+d242 2
+a243 4
+
+
+
+int main( void )
+a244 1
+  infoblock_t *ibPtr;
+a245 13
+  int quit;
+  int dataFd;
+  int count = 0;
+
+  printf( "SldTcp, \n");
+
+  /* open device */
+  sldFd = open( "/dev/sld0", O_RDWR );
+  if ( sldFd < 0 )
+    {
+      perror( "open" );
+      exit( 1 );
+    }
+d247 16
+a262 8
+  /* get mmap size */
+  ret = ioctl( sldFd, SLD_IOCGMAPSIZE, &sldSize );
+  if ( ret < 0 )
+    {
+      perror( "ioctl get size" );
+      exit( 1 );
+    }
+  printf( "test: SLD requires %lu bytes mmaped\n", sldSize );
+d264 4
+a267 9
+  /* do mmap */
+  sldMem = mmap( 0, sldSize, PROT_READ | PROT_WRITE, MAP_SHARED, sldFd, 0 );
+  if ( sldMem == MAP_FAILED )
+    {
+      perror( "mmap" );
+      close( sldFd );
+      exit( 1 );
+    }
+  printf( "test: SLD mapped at %p\n", sldMem );
+d269 15
+a283 4
+  quit = 0;
+  while ( !quit )
+    {
+      dataFd = waitForData( sldFd );
+d285 5
+a289 39
+      if ( dataFd == sldFd )
+	{
+	  /* get the first infoblock */
+	  ibPtr = getFullInfoBlock( sldMem );
+	  while( ibPtr != NULL )
+	    {
+	      /* control return lines */
+	      if ( setReturnLines && (ibPtr->type == slink_data) )
+		{
+		  count++;
+		  ret = ioctl( sldFd, SLD_IOCSRETL, &count );
+		  if ( ret < 0 )
+		    perror( "ioctl" );
+		}
+
+	      /* handle and free the infoblock */
+	      handleBlock( ibPtr );
+	      freeInfoBlock( sldMem, ibPtr );
+
+	      /* get the next infoblock */
+	      ibPtr = getFullInfoBlock( sldMem );
+	    }
+	}
+
+      if ( dataFd == 0 )
+	{
+	  quit = handleKey( );
+	}      
+    }
+
+  ret = munmap( sldMem, sldSize );
+  if ( ret < 0 )
+    perror( "munmap" );
+
+  ret = close( sldFd );
+  if ( ret < 0 )
+    perror( "close" );
+
+  return( 0 );
+a290 1
+
+@

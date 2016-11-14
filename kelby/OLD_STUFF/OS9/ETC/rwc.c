@@ -1,0 +1,1 @@
+#include <stdio.h>main(){    short *adr;   int j,k;   adr = (short *)0xf0661800;   for(k=0;k<0x100;k++)    { *adr = k;      j = *adr & 0xff;      printf(" k=%x  j=%x\n",k,j);   }}

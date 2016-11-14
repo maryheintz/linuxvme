@@ -1,0 +1,1283 @@
+event=2500000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5000000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=7500000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=10000000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=12500000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=15000000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=17500000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=20000000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=22500000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+bnch= e99 e99 e97 e97 e88 e88 e9a e9a e84 e84 d62 d62 e9b e9b e8b e8b
+bnch= 10 10 e e fff fff 11 11 ffb ffb ed9 ed9 12 12 2 2
+bnch= 13c 13c 13a 13a 12b 12b 13d 13d 127 127 5 5 13e 13e 12e 12e
+bnch= 1da 1da 1d8 1d8 1c9 1c9 1db 1db 1c5 1c5 a3 a3 1dc 1dc 1cc 1cc
+bnch= 35f 35f 35d 35d 34e 34e 360 360 34a 34a 228 228 361 361 351 351
+bnch= 55d 55d 55b 55b 54c 54c 55e 55e 548 548 426 426 55f 55f 54f 54f
+bnch= 560 560 55e 55e 54f 54f 561 561 54b 54b 429 429 562 562 552 552
+bnch= 6da 6da 6d8 6d8 6c9 6c9 6db 6db 6c5 6c5 5a3 5a3 6dc 6dc 6cc 6cc
+bnch= a13 a13 a11 a11 a02 a02 a14 a14 9fe 9fe 8dc 8dc a15 a15 a05 a05
+bnch= 2be 2be 2bc 2bc 2ad 2ad 2bf 2bf 2a9 2a9 187 187 2c0 2c0 2b0 2b0
+bnch= 774 774 772 772 763 763 775 775 75f 75f 63d 63d 776 776 766 766
+bnch= d0c d0c d0a d0a cfb cfb d0d d0d cf7 cf7 bd5 bd5 d0e d0e cfe cfe
+bnch= 639 639 637 637 628 628 63a 63a 624 624 502 502 63b 63b 62b 62b
+errsum=0  sessum=2  dessum=0
+ dig crc ERROR 3fff3fff
+control word= fffffff0  cc 1  error 13  event 24378849   51115111
+bnch= 2d3 2d3 ea9 cea 16d 16d 14d 14d 285 285 f15 f15 2b8 2b8 fc1 fc1
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=0  sessum=1  dessum=0
+ dig crc ERROR 3fff3fff
+bnch= 367 367 ea9 cea 201 201 1e1 1e1 319 319 fa9 fa9 34c 34c 55 55
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=0  sessum=1  dessum=0
+ dig crc ERROR 3fff3fff
+bnch= 41d 41d ea9 cea 2b7 2b7 297 297 3cf 3cf 5f 5f 402 402 10b 10b
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=0  sessum=1  dessum=0
+ dig crc ERROR 3fff3fff
+bnch= 4c8 4c8 ea9 cea 362 362 342 342 47a 47a 10a 10a 4ad 4ad 1b6 1b6
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=0  sessum=1  dessum=0
+ dig crc ERROR 3fff3fff
+bnch= 5a9 5a9 ea9 cea 443 443 423 423 55b 55b 1eb 1eb 58e 58e 297 297
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=0  sessum=1  dessum=0
+ dig crc ERROR 3fff3fff
+bnch= 81c 81c ea9 cea 6b6 6b6 696 696 7ce 7ce 45e 45e 801 801 50a 50a
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=0  sessum=1  dessum=0
+ dig crc ERROR ffe3ffe3
+bnch= 870 870 ea9 cea 70a 70a 6ea 6ea 822 822 4b2 4b2 855 855 55e 55e
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=0  sessum=1  dessum=0
+ dig crc ERROR ffe3ffe3
+bnch= 873 873 c3f c5a 70d 70d 6ed 6ed 825 825 4b5 4b5 858 858 561 561
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=0  sessum=1  dessum=0
+ dig crc ERROR 3fff3fff
+bnch= 945 945 83e 856 7df 7df 7bf 7bf 8f7 8f7 587 587 92a 92a 633 633
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=0  sessum=1  dessum=0
+ dig crc ERROR ffc3ffc3
+bnch= 948 948 164 f77 7e2 7e2 7c2 7c2 8fa 8fa 58a 58a 92d 92d 636 636
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=0  sessum=0  dessum=1
+ dig crc ERROR 3fff3fff
+bnch= ab5 ab5 841 45a 94f 94f 92f 92f a67 a67 6f7 6f7 a9a a9a 7a3 7a3
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=0  sessum=1  dessum=1
+bnch= bee bee 222 222 a88 a88 a68 a68 ba0 ba0 830 830 bd3 bd3 8dc 8dc
+bnch= cad cad 2e1 2e1 b47 b47 b27 b27 c5f c5f 8ef 8ef c92 c92 99b 99b
+bnch= d3e d3e 372 372 bd8 bd8 bb8 bb8 cf0 cf0 980 980 d23 d23 a2c a2c
+ dig crc ERROR 3ff03ff
+control word= fffffff0  cc 1  error 27  event 24409032   51115111
+bnch= c37 c37 3cf 65d 67e 67e 552 552 ba7 ba7 35c a4c bb4 9d2 28f 28f
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=4  dessum=4
+ dig crc ERROR 3ff03ff
+bnch= d24 d24 3cf 65d 76b 76b 63f 63f c94 c94 35c a4c bb4 9d2 37c 37c
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=4  dessum=4
+ dig crc ERROR fff0fff
+bnch= de1 de1 a1c a1c 828 828 6fc 6fc d51 d51 35c a4c bb4 9d2 439 439
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=0  sessum=4  dessum=2
+ dig crc ERROR 3fff3fff
+bnch= e87 e87 ac2 ac2 8ce 8ce 7a2 7a2 df7 df7 35c a4c ea8 ea8 4df 4df
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=0  sessum=2  dessum=1
+ dig crc ERROR 3fff3fff
+bnch= f1a f1a b55 b55 961 961 835 835 e8a e8a 35c a4c f3b f3b 572 572
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=0  sessum=2  dessum=1
+ dig crc ERROR 3fff3fff
+bnch= f1d f1d b58 b58 964 964 838 838 e8d e8d 35c a4c f3e f3e 575 575
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=0  sessum=2  dessum=1
+bnch= 2b7 2b7 ef2 ef2 cfe cfe bd2 bd2 227 227 8a 8a 2d8 2d8 90f 90f
+bnch= 334 334 f6f f6f d7b d7b c4f c4f 2a4 2a4 107 107 355 355 98c 98c
+bnch= 559 559 194 194 fa0 fa0 e74 e74 4c9 4c9 32c 32c 57a 57a bb1 bb1
+bnch= 7b3 7b3 3ee 3ee 1fa 1fa ce ce 723 723 586 586 7d4 7d4 e0b e0b
+bnch= 90b 90b 546 546 352 352 226 226 87b 87b 6de 6de 92c 92c f63 f63
+bnch= 945 945 580 580 38c 38c 260 260 8b5 8b5 718 718 966 966 f9d f9d
+bnch= cb6 cb6 8f1 8f1 6fd 6fd 5d1 5d1 c26 c26 a89 a89 cd7 cd7 30e 30e
+bnch= ce3 ce3 91e 91e 72a 72a 5fe 5fe c53 c53 ab6 ab6 d04 d04 33b 33b
+ dig crc ERROR 3fff3fff
+bnch= a52 a52 f2c 496 a19 a19 978 978 a6c a6c 56c 56c a67 a67 69e 69e
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=2  dessum=1
+bnch= 115 115 8aa 8aa dc dc 3b 3b 12f 12f c2f c2f 12a 12a d61 d61
+ dig crc ERROR 0
+bnch= 4d0 ba5 840 58 7ff f62 c53 c25 453 84c 89c 747 c4f c48 c07 545
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=4  sessum=6  dessum=8
+ dig crc ERROR 3ff03ff
+bnch= 4d0 ba5 28e 28e 7ff f62 278 278 29f 29f 89c 747 2a0 2a0 17c 17c
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=1  dessum=3
+ dig crc ERROR 3ff03ff
+bnch= 4d0 ba5 2a9 2a9 7ff f62 293 293 2ba 2ba 89c 747 2bb 2bb 197 197
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=1  dessum=3
+ dig crc ERROR 3ff03ff
+bnch= 4d0 ba5 310 310 7ff f62 2fa 2fa 321 321 89c 747 322 322 1fe 1fe
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=1  dessum=3
+ dig crc ERROR 3ff03ff
+bnch= 4d0 ba5 3b1 3b1 7ff f62 39b 39b 3c2 3c2 89c 747 3c3 3c3 29f 29f
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=1  dessum=3
+ dig crc ERROR 3ff03ff0
+bnch= 4d0 ba5 3b4 3b4 7ff f62 39e 39e 3c5 3c5 89c 747 3c6 3c6 2a2 2a2
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=1  dessum=3
+ dig crc ERROR 3ff03ff
+bnch= 4c 84c 47a 47a 7ff f62 464 464 48b 48b 89c 747 48c 48c 368 368
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=0  sessum=3  dessum=2
+ dig crc ERROR 3ff03ff
+bnch= 4c 84c 4a0 4a0 7ff f62 48a 48a 4b1 4b1 89c 747 4b2 4b2 38e 38e
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=0  sessum=3  dessum=2
+ dig crc ERROR 3ff03ff
+bnch= 4c 84c 530 530 7ff f62 51a 51a 541 541 89c 747 542 542 41e 41e
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=0  sessum=3  dessum=2
+ dig crc ERROR 3ff03ff
+bnch= 800 d80 6fb 6fb 7ff f62 6e5 6e5 70c 70c 89c 747 70d 70d 5e9 5e9
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=0  sessum=3  dessum=2
+ dig crc ERROR 3ff03ff
+bnch= 4bf dd0 6fe 6fe 7ff f62 6e8 6e8 70f 70f 89c 747 710 710 5ec 5ec
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=2  dessum=2
+ dig crc ERROR 3ff03ff
+bnch= 45a f18 75c 75c 7ff f62 746 746 76d 76d 89c 747 76e 76e 64a 64a
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=1  dessum=3
+ dig crc ERROR 3fff3fff
+bnch= be1 be1 bd0 bd0 7ff f62 bba bba be1 be1 7f1 7f1 be2 be2 abe abe
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=0  sessum=1  dessum=0
+bnch= a3f a3f a2e a2e 9f4 9f4 a18 a18 a3f a3f 64f 64f a40 a40 91c 91c
+bnch= a2c a2c a1b a1b 9e1 9e1 a05 a05 a2c a2c 63c 63c a2d a2d 909 909
+bnch= ae9 ae9 ae9 ae9 ae9 ae9 9eb 9eb ae9 ae9 ae9 ae9 ae9 ae9 ae9 ae9
+bnch= b42 b42 b42 b42 b42 b42 a44 a44 b42 b42 b42 b42 b42 b42 b42 b42
+bnch= b45 b45 b45 b45 b45 b45 a47 a47 b45 b45 b45 b45 b45 b45 b45 b45
+bnch= b70 b70 b70 b70 b70 b70 a72 a72 b70 b70 b70 b70 b70 b70 b70 b70
+bnch= b73 b73 b73 b73 b73 b73 a75 a75 b73 b73 b73 b73 b73 b73 b73 b73
+bnch= bac bac bac bac bac bac aae aae bac bac bac bac bac bac bac bac
+bnch= c4c c4c c4c c4c c4c c4c b4e b4e c4c c4c c4c c4c c4c c4c c4c c4c
+bnch= 98 98 98 98 98 98 d73 d73 98 98 98 98 98 98 98 98
+bnch= f5 f5 f5 f5 f5 f5 dd0 dd0 f5 f5 f5 f5 f5 f5 f5 f5
+bnch= 242 242 242 242 242 242 f1d f1d 242 242 242 242 242 242 242 242
+bnch= 245 245 245 245 245 245 f20 f20 245 245 245 245 245 245 245 245
+bnch= 248 248 248 248 248 248 f23 f23 248 248 248 248 248 248 248 248
+bnch= 569 569 569 569 569 569 e0e e0e 569 569 569 569 569 569 569 569
+bnch= 669 669 669 669 669 669 ae8 ae8 669 669 669 669 669 669 669 669
+ dig crc ERROR 30003
+control word= fffffff0  cc 1  error 72  event 24499253   51115111
+bnch= fe9 d01 96e c4a d8e 92a 0 0 77a 43f baf 18e 8d7 dc9 2b8 8f6
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=8  sessum=3  dessum=7
+ dig crc ERROR 30003
+bnch= fe9 d01 96e c4a d8e 92a 0 0 77a 43f baf 18e 8d7 dc9 2b8 8f6
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=8  sessum=3  dessum=7
+ dig crc ERROR 30003
+bnch= fe9 d01 96e c4a d8e 92a 0 0 77a 43f baf 18e 8d7 dc9 2b8 8f6
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=8  sessum=3  dessum=7
+ dig crc ERROR 30003
+bnch= fe9 d01 96e c4a d8e 92a 0 0 77a 43f baf 18e 8d7 dc9 2b8 8f6
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=8  sessum=3  dessum=7
+ dig crc ERROR 30003
+bnch= fe9 d01 96e c4a d8e 92a 0 0 77a 43f baf 18e 8d7 dc9 2b8 8f6
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=8  sessum=3  dessum=7
+ dig crc ERROR 30003
+bnch= fe9 d01 96e c4a d8e 92a 0 0 77a 43f baf 18e 8d7 dc9 2b8 8f6
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=8  sessum=3  dessum=7
+ dig crc ERROR 30003
+bnch= fe9 d01 96e c4a d8e 92a 0 0 77a 43f baf 18e 8d7 dc9 2b8 8f6
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=8  sessum=3  dessum=7
+ dig crc ERROR 30003
+bnch= fe9 d01 96e c4a d8e 92a 0 0 77a 43f baf 18e 8d7 dc9 2b8 8f6
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=8  sessum=3  dessum=7
+ dig crc ERROR 30003
+bnch= fe9 d01 96e c4a d8e 92a 0 0 77a 43f baf 18e 8d7 dc9 2b8 8f6
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=8  sessum=3  dessum=7
+ dig crc ERROR 30003
+bnch= fe9 d01 96e c4a d8e 92a 0 0 77a 43f baf 18e 8d7 dc9 2b8 8f6
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=8  sessum=3  dessum=7
+ dig crc ERROR 30003
+bnch= fe9 d01 96e c4a d8e 92a 0 0 77a 43f baf 18e 8d7 dc9 2b8 8f6
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=8  sessum=3  dessum=7
+ dig crc ERROR 30003
+bnch= fe9 d01 96e c4a d8e 92a 0 0 77a 43f baf 18e 8d7 dc9 2b8 8f6
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=8  sessum=3  dessum=7
+ dig crc ERROR 30003
+bnch= fe9 d01 96e c4a d8e 92a 0 0 77a 43f baf 18e 8d7 dc9 2b8 8f6
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=8  sessum=3  dessum=7
+ dig crc ERROR 30003
+bnch= fe9 d01 96e c4a d8e 92a 0 0 77a 43f baf 18e 8d7 dc9 2b8 8f6
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=8  sessum=3  dessum=7
+ dig crc ERROR 30003
+bnch= 13f 5d4 39f a9d b8f 1f0 0 0 93c 30f 290 c2d 5a e60 3db 544
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=8  sessum=6  dessum=7
+ dig crc ERROR 30003
+bnch= 13f 5d4 39f a9d b8f 1f0 0 0 93c 30f 290 c2d 5a e60 3db 544
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=8  sessum=6  dessum=7
+control word= fffffff0  cc 1  error 88  event 24499307   51115111
+bnch= b9 b9 b9 b9 b9 b9 0 0 b9 b9 b9 b9 b9 b9 b9 b9
+bnch= 173 173 173 173 173 173 0 0 173 173 173 173 173 173 173 173
+bnch= 176 176 176 176 176 176 0 0 176 176 176 176 176 176 176 176
+bnch= 529 529 529 529 529 529 0 0 529 529 529 529 529 529 529 529
+bnch= 72f 72f 72f 72f 72f 72f 0 0 72f 72f 72f 72f 72f 72f 72f 72f
+bnch= 991 991 991 991 991 991 0 0 991 991 991 991 991 991 991 991
+bnch= be9 be9 be9 be9 be9 be9 0 0 be9 be9 be9 be9 be9 be9 be9 be9
+bnch= bec bec bec bec bec bec 0 0 bec bec bec bec bec bec bec bec
+bnch= 96 96 96 96 96 96 0 0 96 96 96 96 96 96 96 96
+bnch= 1c2 1c2 1c2 1c2 1c2 1c2 0 0 1c2 1c2 1c2 1c2 1c2 1c2 1c2 1c2
+bnch= 23b 23b 23b 23b 23b 23b 0 0 23b 23b 23b 23b 23b 23b 23b 23b
+bnch= 4db 4db 4db 4db 4db 4db 0 0 4db 4db 4db 4db 4db 4db 4db 4db
+bnch= 50d 50d 50d 50d 50d 50d 0 0 50d 50d 50d 50d 50d 50d 50d 50d
+bnch= 614 614 614 614 614 614 0 0 614 614 614 614 614 614 614 614
+ dig crc ERROR 3fff3fff
+bnch= aaf aaf abb abb ab9 ab9 ab0 ab0 abe abe ab9 ab9 ab3 ab3 180 e0b
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=0  dessum=1
+ dig crc ERROR 3fff3fff
+bnch= b96 b96 ba2 ba2 ba0 ba0 b97 b97 ba5 ba5 ba0 ba0 b9a b9a 180 e0b
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=0  dessum=1
+ dig crc ERROR 3fff3fff
+bnch= 66 66 72 72 70 70 67 67 75 75 70 70 6a 6a 180 e0b
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=0  dessum=1
+ dig crc ERROR 3fff3fff
+bnch= db db e7 e7 e5 e5 dc dc ea ea e5 e5 df df 180 e0b
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=0  dessum=1
+ dig crc ERROR 3fff3fff
+bnch= 156 156 162 162 160 160 157 157 165 165 160 160 15a 15a 180 e0b
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=0  dessum=1
+ dig crc ERROR 3fff3fff
+bnch= 2a3 2a3 2af 2af 2ad 2ad 2a4 2a4 2b2 2b2 2ad 2ad 2a7 2a7 180 e0b
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=0  dessum=1
+ dig crc ERROR 3fff3fff
+bnch= 2a6 2a6 2b2 2b2 2b0 2b0 2a7 2a7 2b5 2b5 2b0 2b0 2aa 2aa 180 e0b
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=0  dessum=1
+ dig crc ERROR 3fff3fff
+bnch= 3a3 3a3 3af 3af 3ad 3ad 3a4 3a4 3b2 3b2 3ad 3ad 3a7 3a7 180 e0b
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=0  dessum=1
+ dig crc ERROR 3fff3fff
+bnch= 47e 47e 48a 48a 488 488 47f 47f 48d 48d 488 488 482 482 180 e0b
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=0  dessum=1
+ dig crc ERROR 3fff3fff
+bnch= 622 622 62e 62e 62c 62c 623 623 631 631 62c 62c 626 626 180 e0b
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=0  dessum=1
+ dig crc ERROR 3fff3fff
+bnch= d50 d50 d5c d5c d5a d5a d51 d51 d5f d5f d5a d5a d54 d54 180 e0b
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=1  sessum=0  dessum=1
+bnch= 5e8 5e8 60d 60d 5e8 5e8 5e8 5e8 5e8 5e8 5e8 5e8 5e8 5e8 589 589
+bnch= 19c 19c 19c 19c 19c 19c 19c 19c 19c 19c 19c 19c 19c 19c af2 af2
+ dig crc ERROR 300030
+control word= fffffff0  cc 1  error 115  event 24502342   51115111
+bnch= 688 b46 a1e 6f3 847 abc 0 0 1bc 489 e08 6b9 7e8 2bd 86a 1f4
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=7  sessum=3  dessum=7
+ dig crc ERROR 300030
+bnch= 84d 49 a1e 6f3 847 abc 0 0 1bc 489 85f 456 7e8 2bd 5b 55
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=5  sessum=5  dessum=6
+ dig crc ERROR 300030
+bnch= c4e 44b a1e 6f3 847 abc 0 0 1bc 489 c61 857 7e8 2bd c59 51
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=5  sessum=5  dessum=7
+ dig crc ERROR 3c003c
+bnch= 6fb 6fb a1e 6f3 847 abc 0 0 1bc 489 6fb 6fb 7e8 2bd 6fb 6fb
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=5  sessum=1  dessum=4
+ dig crc ERROR 3c003c
+bnch= 966 966 a1e 6f3 847 abc 0 0 1bc 489 966 966 7e8 2bd 966 966
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=5  sessum=1  dessum=4
+ dig crc ERROR 3c003c
+bnch= 62 62 a1e 6f3 847 abc 0 0 1bc 489 62 62 7e8 2bd 62 62
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=5  sessum=1  dessum=4
+ dig crc ERROR 3c003c
+bnch= e0 e0 a1e 6f3 847 abc 0 0 1bc 489 e0 e0 7e8 2bd e0 e0
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=5  sessum=1  dessum=4
+ dig crc ERROR 3c003c
+bnch= 586 586 a1e 6f3 847 abc 0 0 1bc 489 586 586 7e8 2bd 586 586
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=5  sessum=1  dessum=4
+ dig crc ERROR 3c003c
+bnch= b56 b56 a1e 6f3 847 abc 0 0 1bc 489 b56 b56 7e8 2bd b56 b56
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=5  sessum=1  dessum=4
+ dig crc ERROR 3c003c
+bnch= c79 c79 a1e 6f3 847 abc 0 0 1bc 489 c79 c79 7e8 2bd c79 c79
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=5  sessum=1  dessum=4
+ dig crc ERROR 3c003c
+bnch= c7c c7c a1e 6f3 847 abc 0 0 1bc 489 c7c c7c 7e8 2bd c7c c7c
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=5  sessum=1  dessum=4
+ dig crc ERROR 3c003c
+bnch= d42 d42 a1e 6f3 847 abc 0 0 1bc 489 d42 d42 7e8 2bd d42 d42
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=5  sessum=1  dessum=4
+ dig crc ERROR 3c003c
+bnch= 14e 14e a1e 6f3 847 abc 0 0 1bc 489 14e 14e 7e8 2bd 14e 14e
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=5  sessum=1  dessum=4
+ dig crc ERROR 3c003c
+bnch= 151 151 a1e 6f3 847 abc 0 0 1bc 489 151 151 7e8 2bd 151 151
+ dbad= 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+errsum=5  sessum=1  dessum=4
+event=25000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=27500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=30000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=32500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=35000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=37500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=40000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=42500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=45000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=47500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=50000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=52500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=55000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=57500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=60000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=62500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=65000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=67500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=70000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=72500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=75000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=77500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=80000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=82500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=85000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=87500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=90000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=92500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=95000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=97500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=100000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=102500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=105000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=107500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=110000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=112500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=115000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=117500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=120000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=122500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=125000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=127500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=130000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=132500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=135000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=137500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=140000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=142500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=145000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=147500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=150000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=152500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=155000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=157500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=160000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=162500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=165000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=167500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=170000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=172500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=175000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=177500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=180000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=182500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=185000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=187500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=190000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=192500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=195000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=197500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=200000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=202500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=205000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=207500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=210000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=212500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=215000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=217500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=220000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=222500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=225000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=227500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=230000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=232500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=235000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=237500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=240000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=242500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=245000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=247500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=250000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=252500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=255000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=257500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=260000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=262500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=265000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=267500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=270000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=272500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=275000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=277500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=280000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=282500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=285000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=287500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=290000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=292500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=295000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=297500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=300000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=302500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=305000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=307500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=310000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=312500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=315000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=317500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=320000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=322500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=325000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=327500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=330000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=332500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=335000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=337500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=340000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=342500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=345000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=347500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=350000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=352500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=355000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=357500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=360000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=362500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=365000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=367500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=370000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=372500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=375000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=377500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=380000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=382500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=385000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=387500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=390000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=392500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=395000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=397500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=400000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=402500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=405000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=407500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=410000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=412500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=415000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=417500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=420000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=422500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=425000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=427500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=430000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=432500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=435000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=437500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=440000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=442500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=445000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=447500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=450000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=452500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=455000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=457500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=460000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=462500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=465000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=467500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=470000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=472500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=475000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=477500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=480000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=482500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=485000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=487500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=490000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=492500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=495000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=497500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=500000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=502500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=505000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=507500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=510000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=512500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=515000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=517500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=520000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=522500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=525000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=527500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=530000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=532500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=535000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=537500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=540000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=542500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=545000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=547500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=550000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=552500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=555000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=557500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=560000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=562500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=565000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=567500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=570000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=572500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=575000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=577500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=580000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=582500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=585000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=587500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=590000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=592500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=595000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=597500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=600000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=602500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=605000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=607500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=610000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=612500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=615000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=617500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=620000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=622500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=625000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=627500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=630000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=632500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=635000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=637500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=640000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=642500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=645000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=647500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=650000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=652500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=655000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=657500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=660000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=662500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=665000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=667500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=670000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=672500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=675000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=677500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=680000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=682500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=685000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=687500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=690000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=692500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=695000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=697500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=700000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=702500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=705000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=707500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=710000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=712500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=715000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=717500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=720000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=722500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=725000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=727500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=730000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=732500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=735000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=737500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=740000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=742500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=745000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=747500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=750000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=752500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=755000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=757500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=760000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=762500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=765000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=767500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=770000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=772500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=775000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=777500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=780000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=782500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=785000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=787500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=790000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=792500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=795000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=797500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=800000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=802500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=805000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=807500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=810000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=812500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=815000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=817500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=820000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=822500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=825000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=827500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=830000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=832500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=835000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=837500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=840000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=842500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=845000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=847500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=850000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=852500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=855000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=857500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=860000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=862500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=865000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=867500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=870000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=872500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=875000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=877500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=880000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=882500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=885000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=887500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=890000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=892500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=895000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=897500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=900000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=902500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=905000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=907500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=910000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=912500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=915000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=917500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=920000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=922500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=925000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=927500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=930000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=932500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=935000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=937500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=940000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=942500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=945000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=947500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=950000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=952500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=955000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=957500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=960000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=962500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=965000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=967500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=970000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=972500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=975000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=977500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=980000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=982500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=985000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=987500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=990000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=992500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=995000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=997500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=0
+event=1000000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=1
+event=1002500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=1
+event=1005000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=1
+event=1007500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=1
+event=1010000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=1
+event=1012500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=1
+event=1015000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=1
+event=1017500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=1
+event=1020000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=1
+event=1022500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=1
+event=1025000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=1
+event=1027500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=1
+event=1030000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=1
+event=1032500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=1
+event=1035000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=1
+event=1037500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=1
+event=1040000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=1
+event=1042500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=1
+event=1045000000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=1
+event=1047500000  nerror=129  ndcrc=72  nbnch=129  nctrl=5  ngcrc=0  nsdmu=73  loop=1
+control word= fffffff0  cc 1  error 129  event 1048006488   51115111
+event=1050000000  nerror=130  ndcrc=72  nbnch=129  nctrl=6  ngcrc=0  nsdmu=73  loop=1
+event=1052500000  nerror=130  ndcrc=72  nbnch=129  nctrl=6  ngcrc=0  nsdmu=73  loop=1
+event=1055000000  nerror=130  ndcrc=72  nbnch=129  nctrl=6  ngcrc=0  nsdmu=73  loop=1
+event=1057500000  nerror=130  ndcrc=72  nbnch=129  nctrl=6  ngcrc=0  nsdmu=73  loop=1
+event=1060000000  nerror=130  ndcrc=72  nbnch=129  nctrl=6  ngcrc=0  nsdmu=73  loop=1
+event=1062500000  nerror=130  ndcrc=72  nbnch=129  nctrl=6  ngcrc=0  nsdmu=73  loop=1
+control word= fffffff0  cc 1  error 130  event 1063470256   51115111
+event=1065000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1067500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1070000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1072500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1075000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1077500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1080000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1082500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1085000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1087500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1090000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1092500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1095000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1097500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1100000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1102500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1105000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1107500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1110000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1112500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1115000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1117500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1120000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1122500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1125000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1127500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1130000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1132500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1135000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1137500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1140000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1142500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1145000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1147500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1150000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1152500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1155000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1157500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1160000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1162500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1165000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1167500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1170000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1172500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1175000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1177500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1180000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1182500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1185000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1187500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1190000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1192500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1195000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1197500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1200000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1202500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1205000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1207500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1210000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1212500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1215000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1217500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1220000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1222500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1225000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1227500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1230000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1232500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1235000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1237500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1240000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1242500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1245000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1247500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1250000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1252500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1255000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1257500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1260000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1262500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1265000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1267500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1270000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1272500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1275000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1277500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1280000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1282500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1285000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1287500000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+event=1290000000  nerror=131  ndcrc=72  nbnch=129  nctrl=7  ngcrc=0  nsdmu=73  loop=1
+control word= fffffff0  cc 1  error 131  event 1291536348   51115111
+event=1292500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1295000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1297500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1300000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1302500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1305000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1307500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1310000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1312500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1315000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1317500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1320000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1322500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1325000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1327500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1330000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1332500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1335000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1337500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1340000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1342500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1345000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1347500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1350000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1352500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1355000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1357500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1360000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1362500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1365000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1367500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1370000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1372500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1375000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1377500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1380000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1382500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1385000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1387500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1390000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1392500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1395000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1397500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1400000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1402500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1405000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1407500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1410000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1412500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1415000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1417500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1420000000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+event=1422500000  nerror=132  ndcrc=72  nbnch=129  nctrl=8  ngcrc=0  nsdmu=73  loop=1
+control word= 1115110  cc 1  error 132  event 1424708673   51115111
+event=1425000000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1427500000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1430000000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1432500000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1435000000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1437500000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1440000000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1442500000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1445000000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1447500000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1450000000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1452500000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1455000000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1457500000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1460000000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1462500000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1465000000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1467500000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1470000000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1472500000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1475000000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1477500000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1480000000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1482500000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1485000000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1487500000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1490000000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1492500000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1495000000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1497500000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+event=1500000000  nerror=133  ndcrc=72  nbnch=129  nctrl=9  ngcrc=0  nsdmu=73  loop=1
+control word= fffffff0  cc 1  error 133  event 1502006112   51115111
+event=1502500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1505000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1507500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1510000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1512500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1515000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1517500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1520000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1522500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1525000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1527500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1530000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1532500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1535000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1537500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1540000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1542500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1545000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1547500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1550000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1552500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1555000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1557500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1560000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1562500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1565000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1567500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1570000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1572500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1575000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1577500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1580000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1582500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1585000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1587500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1590000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1592500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1595000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1597500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1600000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1602500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1605000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1607500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1610000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1612500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1615000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1617500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1620000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1622500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1625000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1627500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1630000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1632500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1635000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1637500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1640000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1642500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1645000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1647500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1650000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1652500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1655000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1657500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1660000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1662500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1665000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1667500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1670000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1672500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1675000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1677500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1680000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1682500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1685000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1687500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1690000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1692500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1695000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1697500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1700000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1702500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1705000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1707500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1710000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1712500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1715000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1717500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1720000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1722500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1725000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1727500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1730000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1732500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1735000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1737500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1740000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1742500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1745000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1747500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1750000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1752500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1755000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1757500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1760000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1762500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1765000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1767500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1770000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1772500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1775000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1777500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1780000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1782500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1785000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1787500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1790000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1792500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1795000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1797500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1800000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1802500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1805000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1807500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1810000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1812500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1815000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1817500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1820000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1822500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1825000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1827500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1830000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1832500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1835000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1837500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1840000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1842500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1845000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1847500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1850000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1852500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1855000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1857500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1860000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1862500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1865000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1867500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1870000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1872500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1875000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1877500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1880000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1882500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1885000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1887500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1890000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1892500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1895000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1897500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1900000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1902500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1905000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1907500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1910000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1912500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1915000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1917500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1920000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1922500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1925000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1927500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1930000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1932500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1935000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1937500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1940000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1942500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1945000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1947500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1950000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1952500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1955000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1957500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1960000000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+event=1962500000  nerror=134  ndcrc=72  nbnch=129  nctrl=10  ngcrc=0  nsdmu=73  loop=1
+control word= 51115100  cc 1  error 134  event 1963875731   51115111
+event=1965000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=1967500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=1970000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=1972500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=1975000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=1977500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=1980000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=1982500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=1985000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=1987500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=1990000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=1992500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=1995000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=1997500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2000000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2002500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2005000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2007500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2010000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2012500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2015000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2017500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2020000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2022500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2025000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2027500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2030000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2032500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2035000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2037500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2040000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2042500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2045000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2047500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2050000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2052500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2055000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2057500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2060000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2062500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2065000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2067500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2070000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2072500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2075000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2077500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2080000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2082500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2085000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2087500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2090000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2092500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2095000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2097500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2100000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2102500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2105000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2107500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2110000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2112500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2115000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2117500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2120000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2122500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2125000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2127500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2130000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2132500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2135000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2137500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2140000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2142500000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=2145000000  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2147467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2144967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2142467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2139967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2137467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2134967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2132467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2129967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2127467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2124967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2122467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2119967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2117467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2114967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2112467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2109967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2107467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2104967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2102467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2099967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2097467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2094967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2092467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2089967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2087467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2084967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2082467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2079967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2077467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2074967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2072467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2069967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2067467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2064967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2062467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2059967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2057467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2054967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2052467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2049967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2047467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2044967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2042467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2039967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2037467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2034967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2032467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2029967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2027467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2024967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2022467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2019967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2017467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2014967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2012467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2009967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2007467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2004967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-2002467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-1999967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-1997467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-1994967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-1992467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-1989967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-1987467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-1984967296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-1982467296  nerror=135  ndcrc=72  nbnch=129  nctrl=11  ngcrc=0  nsdmu=73  loop=1
+event=-1979967296  nerror=135  ndcrc=72  

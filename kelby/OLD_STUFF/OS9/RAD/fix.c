@@ -1,0 +1,1 @@
+#include <stdio.h>main()  {  int gpib_adr=4;      char string[200];retry:     gpib_reset();     tsleep(0x80000100);     sendmessage(gpib_adr,"S1,1 X");     sleep(1);/*     sendmessage(gpib_adr,"E? X");     getmessage(gpib_adr, &string[0] );     printf("E? readback=%s\n",string);     sleep(1);     sendmessage(gpib_adr,"U0 X");     sleep(1); */     goto retry;}

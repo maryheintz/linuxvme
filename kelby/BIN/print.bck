@@ -1,0 +1,1 @@
+lpr -P 2ndfl $1

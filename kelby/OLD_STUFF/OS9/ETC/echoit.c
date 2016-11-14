@@ -1,0 +1,1 @@
+#include <stdio.h>main(){    char k;   loop:   k=getchar();   printf(" char=%x\n",k);   goto loop;}

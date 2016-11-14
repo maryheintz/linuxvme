@@ -1,0 +1,16 @@
+calling reset_can
+calling can_adc_init
+ sending adr=dffe6015  *adr= 0
+ sending adr=dffe6017  *adr= 22
+ sending adr=dffe6019  *adr= 1   data=1
+ sending adr=dffe601b  *adr= 65   data=65
+ sending adr=dffe601d  *adr= 0   data=0
+ sending adr=dffe601f  *adr= 0   data=0
+ sending adr=dffe6021  *adr= 0   data=0
+ sending adr=dffe6023  *adr= 0   data=0
+ sending adr=dffe6025  *adr= 0   data=0
+ sending adr=dffe6027  *adr= 0   data=0
+ trans id=7  dlc=8  rtr=0
+ trans data= 20 37 2 ffffffdf 44 7f 0 7c
+ status at adc_init exit 5c
+IRI2000 - VERSION 1

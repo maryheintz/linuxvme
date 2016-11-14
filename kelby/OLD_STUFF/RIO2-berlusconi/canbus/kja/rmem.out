@@ -1,0 +1,21 @@
+bash$ rmem
+calling can_adc_init ISP
+ trans id=1  dlc=8  rtr=0
+ trans data= 1 66 49 32 30 30 30 1
+ trans data=  f I 2 0 0 0 
+IRI2000 - VERSION 1
+ i=0  dat=90
+ i=1  dat=f0
+ i=2  dat=42
+ i=3  dat=e6
+ i=4  dat=f0
+ i=5  dat=a1
+ i=6  dat=76
+ i=7  dat=2a
+ i=8  dat=f0
+ i=9  dat=90
+ i=a  dat=f2
+ i=b  dat=83
+ i=c  dat=74
+ i=d  dat=65
+^C

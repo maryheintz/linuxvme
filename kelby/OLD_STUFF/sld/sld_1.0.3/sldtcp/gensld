@@ -1,0 +1,1 @@
+rsh polyeder ~n48/linux/slsrv/slsrv 0 ~n48/linux/slsrv/OUTTEST.ASC $*

@@ -1,0 +1,1 @@
+cc -k=2f -f=qvt qvt.c -l=camac.r -l=gpib.r -l=/h0/kja/kjaplot/dxy.r -l=/h0/kja/kjaplot/basic.r -l=/h0/kja/kjaplot/post.r -l=/h0/kja/kjaplot/axis.r

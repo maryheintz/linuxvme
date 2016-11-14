@@ -1,0 +1,150 @@
+#ifndef _AMCC_H_
+#define _AMCC_H_
+
+
+/*
+ * amcc.h: definitions for the AMCC s5933 ASIC
+ * Copyright (C) 2000 by J.E. van Grootheest
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+
+
+typedef struct
+{
+  /* Outgoing mailboxes */
+  int omb[ 4 ];
+
+  /* Incoming mailboxes */
+  int imb[ 4 ];
+
+  /* Fifo I/O */
+  int fifo;
+
+  /* Add-on to PCI DMA address and count */
+  int mwar;
+  int mwtc;
+
+  /* PCI to add-on DMA address and count */
+  int mrar;
+  int mrtc;
+
+  /* Mailbox empty/full */
+  union
+  {
+    struct
+    {
+      short imb;
+      short omb;
+    } separate;
+    int complete;
+  } mbef;
+
+  /* Interrupt control/status */
+  int intcsr;
+
+  /* Bus master control/status */
+  int mcsr;
+} amcc_operation_registers_t;
+
+
+/*
+ * Remember:
+ * DMA write is add-on to PCI, read is PCI to add-on
+ */
+
+/* INTCSR bitmasks */
+#define INTCSR_INT		0x00800000	/* Interrupt asserted */
+
+/* Errors */
+#define INTCSR_TG_ABORT		0x00200000	/* Target abort */
+#define INTCSR_M_ABORT		0x00100000	/* Master abort */
+#define INTCSR_ABORT_MASK	(INTCSR_TG_ABORT | INTCSR_M_ABORT)
+
+/* Notifications */
+#define INTCSR_RD_COMPLETE	0x00080000	/* Read transfer complete */
+#define INTCSR_WR_COMPLETE	0x00040000	/* Write transfer complete */
+#define INTCSR_IMB		0x00020000	/* Incoming mailbox */
+#define INTCSR_OMB		0x00010000	/* Outgoing mailbox */
+
+/* Enable masks */
+#define INTCSR_E_RD_COMPLETE	0x00008000	/* Interrupt when read transfer complete */
+#define INTCSR_E_WR_COMPLETE	0x00004000	/* Interrupt when write transfer complete */
+
+/* Enable incoming mailbox interrupt */
+#define INTCSR_E_IMB		0x00001000
+
+/* Incoming mailbox enable masks */
+#define INTCSR_E_IMB1		0x00000000	/* Interrupt from incoming mailbox 1 */
+#define INTCSR_E_IMB2		0x00000400	/* mailbox 2 */
+#define INTCSR_E_IMB3		0x00000800	/* ...3 */
+#define INTCSR_E_IMB4		0x00000C00	/* ...4 */
+
+/* Incoming mailbox byte selection */
+#define INTCSR_E_IMB_BYTE0	0x00000000	/* Interrupt on byte 0 */
+#define INTCSR_E_IMB_BYTE1	0x00000100	/* byte 1 */
+#define INTCSR_E_IMB_BYTE2	0x00000200	/* ...2 */
+#define INTCSR_E_IMB_BYTE3	0x00000300	/* ...3 */
+
+/* Enable outgoing mailbox interrupt */
+#define INTCSR_E_OMB		0x00000010
+
+/* Outgoing mailbox enable masks */
+#define INTCSR_E_OMB0		0x00000000	/* Interrupt from outgoing mailbox 1 */
+#define INTCSR_E_OMB1		0x00000004	/* mailbox 2 */
+#define INTCSR_E_OMB2		0x00000008	/* ...3 */
+#define INTCSR_E_OMB3		0x0000000C	/* ...4 */
+
+/* Outgoing mailbox byte selection */
+#define INTCSR_E_OMB_BYTE0	0x00000000	/* Interrupt on byte 0 */
+#define INTCSR_E_OMB_BYTE1	0x00000001	/* byte 1 */
+#define INTCSR_E_OMB_BYTE2	0x00000002	/* ...2 */
+#define INTCSR_E_OMB_BYTE3	0x00000003	/* ...3 */
+
+
+/* MCSR bitmasks */
+#define MCSR_FIFO_LOOPBACK	0x10000000
+
+/* Reset things; these do not need to be written back to 0 except the addon reset */
+#define MCSR_MBEF_RESET		0x08000000	/* Reset mailbox flags */
+#define MCSR_WR_FIFO_RESET	0x04000000
+#define MCSR_RD_FIFO_RESET	0x02000000
+#define MCSR_ADDON_RESET	0x01000000
+
+/* Read bus mastering things */
+#define MCSR_RD_MULT		0x00008000	/* Memory read multiple */
+#define MCSR_RD_ENA		0x00004000	/* Read transfer enable */
+#define MCSR_RD_MGMT_4		0x00002000	/* Only transfer if 4+ open locations */
+#define MCSR_RD_PRIO		0x00001000	/* Read has priority over write */
+
+/* Write busmastering items */
+#define MCSR_WR_ENA		0x00000400	/* Write transfer enable */
+#define MCSR_WR_MGMT_4		0x00000200	/* Only transfer if 4+ locations taken */
+#define MCSR_WR_PRIO		0x00000100	/* Write has priority over read */
+
+/* Status bits */
+#define MCSR_WR_CNT_0		0x00000080	/* Write count 0 */
+#define MCSR_RD_CNT_0		0x00000040	/* Read count 0 */
+
+#define MCSR_WR_FIFO_EMPTY	0x00000020	/* Write fifo empty */
+#define MCSR_WR_FIFO_4		0x00000010	/* Write fifo has 4+ locations valid */
+#define MCSR_WR_FIFO_FULL	0x00000008	/* Write fifo full */
+
+#define MCSR_RD_FIFO_EMPTY	0x00000004	/* Read fifo empty */
+#define MCSR_RD_FIFO_4		0x00000002	/* Read fifo has 4+ locations free */
+#define MCSR_RD_FIFO_FULL	0x00000001	/* Read fifo full */
+
+
+#endif /* _AMCC_H_ */

@@ -1,0 +1,1 @@
+cc -k=2 -f=rw16s rw16s.c -l=fpermit.r

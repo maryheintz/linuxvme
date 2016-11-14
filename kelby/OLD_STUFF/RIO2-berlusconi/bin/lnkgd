@@ -1,0 +1,1 @@
+gcc $1.c -l3in1 -lkja -lvme -lgd -lpng -ljpeg -lfreetype -lm -o /home/user/kelby/bin/$1 

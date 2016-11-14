@@ -1,0 +1,22 @@
+Soms geeft sldstat dqf errors soms ook niet!
+--------------------------------------------
+
+     time |     int |             data | control |       errors
+    (sec) |         |     bytes packet |         | dqf ma ta ov
+10.009759 | 0049647 | 099093416 024823 |  049647 | 829 00 00 00
+10.009758 | 0000000 | 000000000 000000 |  000000 | 1001 00 00 00
+10.009766 | 0018978 | 037880088 009489 |  018978 | 953 00 00 00
+10.009759 | 0101548 | 202689808 050774 |  101548 | 750 00 00 00
+10.009755 | 0029827 | 059536688 014914 |  029827 | 209 00 00 00
+10.009758 | 0000000 | 000000000 000000 |  000000 | 000 00 00 00
+10.009760 | 0020000 | 039920000 010000 |  020000 | 229 00 00 00
+10.009760 | 0000000 | 000000000 000000 |  000000 | 000 00 00 00
+10.009760 | 0020000 | 039920000 010000 |  020000 | 000 00 00 00
+
+Indien kabel eruit:
+ information: message=S-Link down.
+Echter na kabel er weer in:
+ niets!
+
+Daarna lijkt het aan de transmittende kant net of alles goed gaat echter aan de
+ontvangende kant komt helemaal niets.

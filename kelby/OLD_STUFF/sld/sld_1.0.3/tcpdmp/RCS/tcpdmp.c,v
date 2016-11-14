@@ -1,0 +1,96 @@
+head	1.1;
+access;
+symbols;
+locks
+	ruud:1.1; strict;
+comment	@ * @;
+
+
+1.1
+date	2000.09.04.14.01.04;	author ruud;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@#include <unistd.h>
+#include <limits.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <signal.h>
+#include <stdio.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <sys/time.h>
+#include <pwd.h>
+
+#include "ant.h"
+
+#define TCP_SIZE        (1024*8)
+#define TCP_PORT        0x3001
+
+static void  usage     (char *str);
+
+main (int argc, char *argv[], char *envp[])
+{
+    int  event = {0};
+    int  size, sock;
+    char buf [TCP_SIZE];
+    char pro [ANT_MAX_NAME];
+
+    switch (argc)
+    {
+      default:
+      {
+	usage ("Wrong number of argumets");
+	break;
+      }
+      case 2:
+      {
+	if (sscanf(*++argv, "%s", pro) != 1)
+	  usage ("No valid first argument");
+
+	break;
+      }
+    }
+
+    sock = TEC_setup_client (pro,  TCP_PORT, TEC_WAIT);
+
+    printf ("Tcpr made connection: %d\n", sock);
+
+    while (1)
+    {
+      size = TEC_raw_read (sock, buf, TCP_SIZE);
+      if (size != TCP_SIZE)
+      {
+	printf ("\nError return TEC_read %d (expected %d)\n", size, TCP_SIZE);
+	exit   (-1);
+      }
+      printf ("\rEvent %8d        ", ++event);
+      fflush (stdout);
+    }
+    printf ("\n");
+
+    while (1)
+      sleep (20);
+}
+
+    void
+usage (char *str)
+{
+    printf ("%s\n", str);
+    exit (-1);
+}
+
+
+@

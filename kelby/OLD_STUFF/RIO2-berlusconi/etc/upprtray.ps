@@ -1,0 +1,45 @@
+%!
+%
+% Copyright(c) Xerox Corporation. This program, or portions
+% thereof, is protected as an unpublished work under the copyright
+% laws of the United States.
+%
+ 
+% $Revision: 1.9 $
+
+%  Use this file to print on media from the printer's upper tray.
+%
+
+%  Wrap function with startjob to make the change persistent.
+true 0 startjob not {
+  /exitserver errordict/invalidaccess get exec quit
+} if
+
+/pt {
+  product exch anchorsearch {
+    pop pop true
+  }{
+    pop false
+  } ifelse
+} bind def
+
+<<
+  /ManualFeed false
+  /TraySwitch false
+  (Phaser 2) pt {
+    /InputAttributes <</Priority [0]>>
+  }{
+    (Phaser 4) pt { 
+      /MediaType (Upper Tray)
+      /MediaColor null
+    }{
+      /MediaPosition 0
+      languagelevel 2 le {/MediaType}{/MediaClass} ifelse null
+    } ifelse
+  } ifelse
+>> setpagedevice
+
+userdict /pt undef
+
+false 0 startjob pop
+

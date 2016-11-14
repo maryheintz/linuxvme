@@ -1,0 +1,69 @@
+// DigBoard.h - class to control digitizer board.  Can transfer signals
+// via the TTCvi to control the digitizer parameters, and can get data via
+// the S-Link.
+
+#ifndef _DIGBOARD_H
+#define _DIGBOARD_H
+
+#include <iostream.h>
+#include <sys/types.h>
+#include <ces/uiocmd.h>
+#include <atdaq_types.h>
+#include "s5933lib.h"
+#include "SLINK.h"
+#include "Signal.h"
+#include "TTCvi.h"
+
+enum DigMode { DIG_NORMAL = 0, DIG_TEST = 1, DIG_CALIB = 2 };
+enum GainState { highgain = 0, lowgain = 1 };
+
+class DigBoard;
+
+class EventBuffer {
+  friend class DigBoard;
+  friend ostream& operator<<(ostream& ost, const EventBuffer& event);
+public:
+  EventBuffer(int inSamples, DigMode inMode);
+  ~EventBuffer();
+  int GetBC_ID();
+  int GetSample(int channel, int sample, GainState gain = lowgain) const;
+  void FillSignal(Signal& sig, int channel, int numsamples,
+		  GainState gain = lowgain);
+private:
+  unsigned long *data;
+  int nSamples;
+  DigMode mode;
+};
+
+class DigBoard {
+public:
+  // Constructor initializes S-link connection.
+  DigBoard(TTCvi *inController, int numboards);
+  ~DigBoard();
+  // Accessors to set digitizer parameters
+  void SetSamples(unsigned char numSamples);
+  void SetDelay(unsigned char delay);
+  void SetTestWord(unsigned long testWord);
+  void SetMode(DigMode inMode);
+  // Actions to perform using digitizer
+  void ReadEvent(EventBuffer& event, int board);
+  int GetBC_ID();
+  void Dump(ostream& ost); // Hex dump
+  void ResetBunchCounter();
+  void SignalReset();
+private:
+  SLINK_device *dev;
+  SLINK_parameters slink_parameters;
+  uio_mem_t buf_desc;
+  TTCvi *controller;
+  int nBoards;
+  unsigned char nSamples;
+  DigMode mode;
+  void ReadPacket(unsigned long offset = 0);
+};
+
+// "Formatted Print" operator
+
+ostream& operator<<(ostream& ost, const EventBuffer& event);
+
+#endif // _DIGBOARD_H not defined

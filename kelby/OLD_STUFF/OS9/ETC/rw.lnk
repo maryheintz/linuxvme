@@ -1,0 +1,1 @@
+cc -k=2 -f=rw rw.c -l=fpermit.r

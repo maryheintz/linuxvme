@@ -1,0 +1,1 @@
+gcc $1.c -L /home/kelby/LIB -lkja -l3in1_13 -lvme -lm -o /home/kelby/BIN/$1

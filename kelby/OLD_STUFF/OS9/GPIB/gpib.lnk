@@ -1,0 +1,1 @@
+cc -k=2f -f=gpib_test gpib_test.c gpib.c

@@ -1,0 +1,1 @@
+cc -k=2f -f=band band.c -l=/h0/kja/kjaplot/kjalib.l

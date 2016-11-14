@@ -1,0 +1,1 @@
+#include <stdio.h>main(){    unsigned short *adr;   adr = (unsigned short *)0xf0dd0000;   *adr = 0;}

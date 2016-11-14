@@ -1,0 +1,40 @@
+# Makefile to create BeamROD & others
+#
+
+CC = gcc 
+ALIB = $(TDAQ_INST_PATH)
+ALIBS = -lvme_rcc -lcmem_rcc -lio_rcc -lrcc_error 
+CFLAGS = -g -O0 -I$(ALIB)/include 
+LDFLAGS = -L$(ALIB)/$(CMTCONFIG)/lib $(ALIBS)
+
+all: pio_test caen_one caen_fit caen_gauss
+
+pio_test: pio_test.o vme.h
+	$(CC) -o /home/kelby/BIN/pio_test pio_test.o -L/home/kelby/LIB -lkja $(LDFLAGS)
+
+caen_one: caen_one.o vme.h
+	$(CC) -o /home/kelby/BIN/caen_one caen_one.o -L/home/kelby/LIB -lkja $(LDFLAGS)
+
+caen_fit: caen_fit.o vme.h
+	$(CC) -g caen_fit.o -o /home/kelby/BIN/caen_fit -L/home/kelby/LIB -lkja $(LDFLAGS)
+
+caen_gauss: caen_gauss.o vme.h
+	$(CC) -g caen_gauss.o -o /home/kelby/BIN/caen_gauss -L/home/kelby/LIB -lkja $(LDFLAGS)
+
+
+
+
+
+
+
+
+
+        
+	
+
+
+
+
+
+
+

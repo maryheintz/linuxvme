@@ -1,0 +1,610 @@
+/* Integrator Readout Interface Library 	*/
+/* 18 March 1998		                */
+/* designed for: VIPC616 in A24			*/
+/*	   with: 2 TIP816-10 CAN Controllers	*/
+/* OS9                    			*/
+/* Georges Blanchot       			*/
+
+#include "i82527.h"
+#include <stdio.h>
+#include "libadc98.h"
+
+#define RATE      0
+#define N_PMT     1
+#define MAXSCAN   2
+#define CARDPOS   3
+#define CONVERT   4
+#define CARDSEL   5
+#define DACSET    6
+
+#define START     9
+#define STOP     10
+
+#define LOAD     11
+#define EXT_TRIG 12
+
+unsigned int off_page[] = { 0x0, 0x10, 0x20, 0x30, 0x40, 0x50, 0x60, 0x70,
+                            0x80, 0x90, 0xA0, 0xB0, 0xC0, 0xD0, 0xE0, 0xF0,
+                            0x100, 0x110, 0x120, 0x130, 0x140, 0x150, 0x160,
+                            0x170, 0x180, 0x190, 0x1A0, 0x1B0, 0x1C0, 0x1D0,
+                            0x1E0, 0x1F0 };
+
+unsigned long Msg[]={	0x00000000,	0x00000010,	0x00000020,	0x00000030,
+			0x00000040,	0x00000050, 	0x00000060,	0x00000070,
+			0x00000080,	0x00000090,	0x000000A0,	0x000000B0,
+			0x000000C0,	0x000000D0,	0x000000E0,	0x000000F0 };
+
+/***********************************************************************************/
+/* ADC LOW LEVEL COMMANDS */
+
+short ADC_Set(CAN_base, ADC_base, param, value1, value2, value3)
+unsigned long CAN_base;
+unsigned short ADC_base;
+unsigned char param;
+unsigned char value1, value2, value3;
+{
+  short status;
+  unsigned char dat[8];
+
+  ADC_CAN_Setbuf(CAN_base, 1, ADC_base | 0x0001, 4, 1);
+
+  dat[0] = param;
+  dat[1] = value1;
+  dat[2] = value2;
+  dat[3] = value3;
+
+  status = ADC_CAN_send(CAN_base, 1, dat);
+
+  return status;    
+}
+
+/*************/
+
+short ADC_Get(CAN_base, ADC_base, param, param2, value1, value2, value3)
+unsigned long CAN_base;
+unsigned short ADC_base;
+unsigned char param, param2;
+unsigned int *value1, *value2, *value3;
+{
+  short status;
+  unsigned char dat[8];
+  
+  ADC_CAN_Setbuf(CAN_base, 1, ADC_base | 0x0001, 4, 1);
+  ADC_CAN_Setbuf(CAN_base, 14, ADC_base | 0x000E, 4, 0);
+/*  printf("Load Back: buffers configured\n");*/
+  dat[0] = LOAD;
+  dat[1] = param;
+  dat[2] = param2;
+  ADC_CAN_RstRX(CAN_base);
+  /*printf("RX reset.\n");*/
+  status = ADC_CAN_send(CAN_base, 1, dat);
+ /* printf("message LOAD sent.\n");*/
+  do 
+   {status=ADC_CAN_GetRX(CAN_base);
+  /* printf("status = %d.\n", status);*/
+   } 
+  while( status == 0);
+  status = ADC_CAN_read(CAN_base, 14, dat);
+  /*printf("Data received back, status=%d.\n", status);*/
+  *value1 = (unsigned int)dat[1];
+  *value2 = (unsigned int)dat[2];
+  *value3 = (unsigned int)dat[3];
+
+  return status;
+}
+
+/***************************************************/
+
+short ADC_Cardpos(CAN_base, ADC_base, Pos, Card)
+unsigned long CAN_base;
+unsigned short ADC_base;
+unsigned char Pos;
+unsigned char Card;
+{
+  short status;
+  unsigned char dat[8];
+
+  ADC_CAN_Setbuf(CAN_base, 1, ADC_base | 0x0001, 3, 1);
+
+  dat[0] = CARDPOS;
+  dat[1] = Pos;
+  dat[2] = Card;
+
+  status = ADC_CAN_send( CAN_base, 1, dat);
+
+  return status;
+}
+
+/*****************************************************/
+
+short ADC_Cardsel(CAN_base, ADC_base, Pos)
+unsigned long CAN_base;
+unsigned short ADC_base;
+unsigned char Pos;
+{
+  short status;
+  unsigned char dat[8];
+
+  ADC_CAN_Setbuf(CAN_base, 1, ADC_base | 0x0001, 2, 1);
+ 
+  dat[0] = CARDSEL;
+  dat[1] = Pos;
+
+  status = ADC_CAN_send(CAN_base, 1, dat); 
+
+  return status;
+}
+
+/*******************************************************/
+
+short ADC_DACSet(CAN_base, ADC_base, dacvalue)
+unsigned long CAN_base;
+unsigned short ADC_base;
+unsigned char dacvalue;
+{
+  short status;
+  unsigned char dat[8];
+
+  ADC_CAN_Setbuf(CAN_base, 1, ADC_base | 0x0001, 2, 1);
+ 
+  dat[0] = DACSET;
+  dat[1] = dacvalue;
+
+  status = ADC_CAN_send(CAN_base, 1, dat); 
+
+  return status;
+}
+
+/*******************************************************/
+
+short ADC_TrigSet(CAN_base, ADC_base, preset)
+unsigned long CAN_base;
+unsigned short ADC_base;
+unsigned short preset;
+{
+  short status;
+  unsigned char dat[8];
+
+  ADC_CAN_Setbuf(CAN_base, 1, ADC_base | 0x0001, 3, 1);
+ 
+  dat[0] = RATE;
+  dat[1] = (unsigned char)( (preset >> 8) & 0x00FF) ;
+  dat[2] = (unsigned char)( preset & 0x00FF );
+
+  status = ADC_CAN_send(CAN_base, 1, dat); 
+
+  return status;
+}
+
+/*******************************************************/
+
+short ADC_npmt(CAN_base, ADC_base, npmt)
+unsigned long CAN_base;
+unsigned short ADC_base;
+unsigned char npmt;
+{
+  short status;
+  unsigned char dat[8];
+
+  ADC_CAN_Setbuf(CAN_base, 1, ADC_base | 0x0001, 2, 1);
+ 
+  dat[0] = N_PMT;
+  dat[1] = npmt;
+  
+  status = ADC_CAN_send(CAN_base, 1, dat); 
+
+
+/*  vme_send8(CAN_base + Msg[1] + 0x06, 0x28);
+  vme_send8(CAN_base + Msg[1] + 0x02, 0x08);
+  vme_send8(CAN_base + Msg[1] + 0x03, 0x20);
+  vme_send8(CAN_base + Msg[1] + 0x07, 0x01);
+  vme_send8(CAN_base + Msg[1] + 0x08, npmt);
+  vme_send8(CAN_base + Msg[1] + 0x00, 0x95);
+  vme_send8(CAN_base + Msg[1] + 0x01, 0x66);
+*/  
+  return status;
+}
+
+/*******************************************************/
+
+short ADC_Maxscan(CAN_base, ADC_base, maxscans)
+unsigned long CAN_base;
+unsigned short ADC_base;
+unsigned short maxscans;
+{
+  short status;
+  unsigned char dat[8];
+
+  ADC_CAN_Setbuf(CAN_base, 1, ADC_base | 0x0001, 3, 1);
+ 
+  dat[0] = MAXSCAN;
+  dat[1] = (unsigned char)( (maxscans >> 8) & 0x00FF) ;
+  dat[2] = (unsigned char)( maxscans & 0x00FF );
+
+  status = ADC_CAN_send(CAN_base, 1, dat); 
+
+  return status;
+}
+
+/**************************************************/
+
+short ADC_Start(CAN_base, ADC_base)
+unsigned long CAN_base;
+unsigned short ADC_base;
+{
+  short status;
+  unsigned char dat[8];
+
+  ADC_CAN_Setbuf(CAN_base, 1, ADC_base | 0x0001, 1, 1);
+ 
+  dat[0] = START;
+
+  status = ADC_CAN_send(CAN_base, 1, dat); 
+
+  return status;
+}/**************************************************/
+
+short Ext_Trigger(CAN_base, ADC_base)
+unsigned long CAN_base;
+unsigned short ADC_base;
+{
+  short status;
+  unsigned char dat[8];
+
+  ADC_CAN_Setbuf(CAN_base, 1, ADC_base | 0x0001, 1, 1);
+ 
+  dat[0] = EXT_TRIG;
+
+  status = ADC_CAN_send(CAN_base, 1, dat); 
+
+  return status;
+}
+
+/**************************************************/
+
+short ADC_Stop(CAN_base, ADC_base)
+unsigned long CAN_base;
+unsigned short ADC_base;
+{
+  short status;
+  unsigned char dat[8];
+
+  ADC_CAN_Setbuf(CAN_base, 1, ADC_base | 0x0001, 1, 1);
+ 
+  dat[0] = STOP;
+
+  status = ADC_CAN_send(CAN_base, 1, dat); 
+
+  return status;
+}
+
+/****************************************************/
+
+short ADC_Convert(CAN_base, ADC_base, card)
+unsigned long CAN_base;
+unsigned short ADC_base;
+unsigned char card;
+{
+  short status;
+  unsigned char convdat[8];
+  
+  ADC_CAN_Setbuf(CAN_base, 1, ADC_base | 0x0001, 2, 1);
+  ADC_CAN_Setbuf(CAN_base, 14, ADC_base | 0x000E, 4, 0);
+ 
+  convdat[0] = CONVERT;
+  convdat[1] = card;
+
+
+  status = ADC_CAN_send(CAN_base, 1, convdat);
+  
+    
+  return status;
+
+}
+
+/**********************************************************************************/
+/* CAN BUS SPECIFIC LOW LEVEL COMMANDS */
+
+short ADC_CAN_Init(CAN_base, rbtr0, rbtr1, rgm0, rgm1, rbcr)
+unsigned long CAN_base;
+unsigned char rbtr0;
+unsigned char rbtr1;
+unsigned char rgm0;
+unsigned char rgm1;
+unsigned char rbcr;
+{
+ 
+ vme_send8(CAN_base + CPU	, 0x01);	/* Configure the CPU interface	*/
+ vme_send8(CAN_base + CTRL	, 0x41);	/* Enable CCE and Init bits 	*/
+ vme_send8(CAN_base + BTR0	, rbtr0);	/* Set the bus timing 		*/
+ vme_send8(CAN_base + BTR1	, rbtr1);
+ vme_send8(CAN_base + GMstd	, rgm0);	/* Global mask setting 		*/
+ vme_send8(CAN_base + GMstd + 0x1, rgm1);	
+ vme_send8(CAN_base + BCR	, rbcr);	/* Bus Control Setup		*/
+ vme_send8(CAN_base + CTRL	, 0x00);	/* Ends Bus Initialization 	*/
+
+ return (0);
+
+}
+
+/*************************************************************************************/
+
+short ADC_CAN_Rstbuf(CAN_base)
+unsigned long CAN_base;
+{
+ int i;
+ for (i=1; i<16; i++)
+ {
+  vme_send8(CAN_base + Msg[i] + 0x00, 0x95);
+  vme_send8(CAN_base + Msg[i] + 0x01, 0x55);
+ }
+
+ return (0);
+}
+
+/*************************************************************************************/
+
+short ADC_CAN_Setbuf(CAN_base, index, id, dlc, dir)
+unsigned long CAN_base;
+int index;
+unsigned short id;
+unsigned short dlc;
+unsigned short dir;
+{
+ unsigned char arb0;
+ unsigned char arb1;
+ unsigned char conf;
+
+ arb0 = (unsigned char)((id >> 3) & 0x00FF);
+ arb1 = (unsigned char)(((id & 0x0007) << 5) & 0x00E0);
+ conf = (unsigned char)(((dlc & 0x000F) << 4) | ((dir & 0x0001) << 3));
+
+ /* printf("Conf:%x\tArb0:%x\tArb1:%x\n", conf, arb0, arb1); */
+
+ vme_send8(CAN_base + Msg[index] + 0x00, 0x55); /* MSG invalid */
+
+ vme_send8(CAN_base + Msg[index] + 0x02, arb0);
+ vme_send8(CAN_base + Msg[index] + 0x03, arb1);
+ vme_send8(CAN_base + Msg[index] + 0x06, conf);
+
+ vme_send8(CAN_base + Msg[index] + 0x00, 0x95); /* MSG valid */
+
+ return( 0 );
+}
+
+/***************************************************************************************/
+
+short ADC_CAN_send(CAN_base, index, data)
+unsigned long CAN_base;
+int index;
+unsigned char data[8];
+{
+ int i;
+ unsigned char status;
+ short retval;
+ 
+ vme_send8(CAN_base + STATUS, 0x00);			/* Reset the status bits */
+ vme_send8(CAN_base + Msg[index] + 0x01, 0x59); 		/* Set Upd and Reset NewDat */
+
+ for(i=0;i<8;i++)
+ {
+  vme_send8(CAN_base + Msg[index] + 0x07 + i, data[i]); /* Fills the data buffer */
+  /*printf("Data[%d] = %d\n", i, data[i]); */
+} 
+
+ vme_send8(CAN_base + Msg[index] + 0x01, 0x66);		/* Reset Upd Set NewDat Set TxRqst */
+
+ do
+ {
+  vme_read8(CAN_base + STATUS, &status);
+ /* printf("status=%x\n", status); */
+ }
+ while ( (status & 0x88)==0x00 );
+
+ if ( (status & 0x08) == 0x08 )				/* TXOK was set */
+ {
+  vme_send8(CAN_base + STATUS, 0x00);			/* Reset TXOK   */
+  vme_send8(CAN_base + Msg[index] + 0x01, 0x55);	/* Reset NewDat */
+  retval = 0;  
+ }
+
+ else if ( (status & 0x80) == 0x80 )				/* BOff was set */
+ {
+  vme_send8(CAN_base + Msg[index] + 0x01, 0x55);	/* Reset TxRqst (abort)  */
+  vme_send8(CAN_base, 0x00);				/* Reset Init to Recover from Boff */
+  retval = -1;
+ }
+
+ return retval; 
+}
+
+/**************************************************************************************/
+
+short ADC_CAN_read(CAN_base, index, data)
+unsigned long CAN_base;
+int index;
+unsigned char data[8];
+{
+ int i;
+ unsigned char status;
+ unsigned char control;
+ unsigned char ndat;
+ short retval;
+
+ vme_read8(CAN_base + STATUS, &status);			/* Look at the status reg */
+ 
+ if ( (status & 0x80) != 0x00)				/* BOff was set   */
+ {
+  vme_send8(CAN_base + Msg[index] + 0x01, 0x55);	/* Reset NewDat  */
+  vme_send8(CAN_base, 0x00);				/* Reset Init to Recover from Boff */
+  retval = -1;
+ }
+
+ else							/* Look for new message */
+ {
+   vme_read8(CAN_base + Msg[index] + 0x01, &control);	/* Read the Control1 Reg of this message */
+   if( (control & 0x03)  == 0x02 )			/* New Message arrived in this buffer */
+   {
+    vme_send8(CAN_base + Msg[index] + 0x01, 0x55);	/* reset NewDat */
+
+    for (i=0;i<8;i++)
+    {
+      vme_read8(CAN_base + Msg[index] + 0x07 + i, &data[i]);
+    /*  printf("Read data[%d] = %d\n", i, data[i]);*/
+    }
+
+    vme_read8(CAN_base + Msg[index] + 0x01, &ndat);	/* Check NewDat again */
+    if ( (ndat & 0x03) == 0x01 ) retval = 0;		/* No new data while reading */
+    else retval = -2;					/* New data while read: corrupt */
+   }
+  
+   else if ( (control & 0x03) == 0x01)			/* No message in this buffer... */
+   {
+     retval = -3;
+   } 
+
+ }
+
+ return retval;
+}
+
+/***************************************************************************************/
+
+short ADC_CAN_GetRX(CAN_base)
+unsigned long CAN_base;
+{
+ unsigned char status;
+ short retval;
+
+ vme_read8(CAN_base + 0x01, &status);
+
+ if ( (status & 0x10) == 0x00 ) retval = 0;
+ else if ( (status & 0x10) == 0x10) retval = 1;
+
+ return retval;
+}
+
+/***************************************************************************************/
+
+short ADC_CAN_RstRX(CAN_base)
+unsigned long CAN_base;
+{
+ unsigned char status;
+
+ vme_read8(CAN_base, &status);
+ vme_send8(CAN_base, status & 0xEF);
+
+ return 0;
+}
+
+
+/***************************************************************************************/
+
+short ADC_CAN_GetNewDat(CAN_base, index)
+unsigned long CAN_base;
+int index;
+{
+
+  int i;
+  unsigned char status;
+  unsigned char data;
+
+  vme_read8(CAN_base + Msg[index] + 0x01, &data);
+  if( (data & 0x02) == 0x02) status = 1;
+  else			     status = 0;
+
+  return status;
+}
+
+/***************************************************************************************/
+
+short vme_send8(adress, data)
+unsigned long adress;
+unsigned char data;
+{
+ unsigned char *adr;
+
+ adr = (unsigned char *)adress;
+ *adr = data;
+
+ return( 0 ); 
+}
+
+/***************************************************************************************/
+
+short vme_read8(adress, data)
+unsigned long adress;
+unsigned char *data;
+{
+ unsigned char *adr;
+
+ adr = (unsigned char *)adress;
+ *data = *adr; 
+
+ return( 0 );
+}
+
+
+
+
+
+
+
+
+
+
+/**********************************************************************/
+/********* VIC MAPPING ROUTINES ***************************************/
+
+
+/* VIC Branch Mapping routines */
+
+
+int Get_Free_Page(offpage)
+unsigned int *offpage;
+{
+  static unsigned int page = 0x0;
+
+  if(page >= MAX_PAG) return(VME_ERROR);
+  *offpage = (page  + 0xC0); 
+  page++;
+
+  return(VME_SUCCESS);
+}
+
+
+int Vme_Map( PhysAddress, base)
+unsigned int PhysAddress;
+unsigned int *base;
+{
+        unsigned int *B_register;
+	unsigned int *C_register;
+        unsigned int tmp;
+
+        if( (*base < 0xC0) || (*base > 0xCD) )
+        {
+         printf(" ERROR :: Your address is out of the VME MASTER A32, SINGLE ACCESS RANGE\n");
+         return(VME_ERROR);
+        }
+
+        /********* Memory Mapping, offset = Physical Address offset *********/
+
+        B_register = (unsigned int *)(MAP_VME_BASE + off_page[(*base - 0xC0)] + 0x4);
+ 
+        tmp = (unsigned int)(*base << 24);
+        *base = (tmp + PhysAddress);
+        /* printf("logical = %x %x\n", *base, tmp); */
+
+        *B_register = (unsigned int)(( PhysAddress >> 24 ) & 0xFF);
+	
+
+        /* printf("phys = %x *breg = %x \n", PhysAddress, *B_register); */
+      
+	C_register = (unsigned int *)(B_register + 0x4);
+	*C_register = 0x09;
+
+
+    return(VME_SUCCESS);
+ }
+ 
+

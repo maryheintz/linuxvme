@@ -1,0 +1,1 @@
+cc -k=2f test24.c -l=camac.r -f=test24

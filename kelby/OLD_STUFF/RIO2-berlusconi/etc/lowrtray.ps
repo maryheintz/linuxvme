@@ -1,0 +1,53 @@
+%!
+%
+% Copyright(c) Xerox Corporation. This program, or portions
+% thereof, is protected as an unpublished work under the copyright
+% laws of the United States.
+%
+ 
+% $Revision: 1.19 $
+
+%  Use this file to print on media from the printer's lowest tray.
+%
+
+%  Wrap function with startjob to make the change persistent.
+true 0 startjob not {
+  /exitserver errordict/invalidaccess get exec quit
+} if
+
+/pt {
+  product exch anchorsearch {
+    pop pop true
+  }{
+    pop false
+  } ifelse
+} bind def
+
+<<
+  /ManualFeed false
+  /TraySwitch false
+  (Phaser 2) pt {
+    /InputAttributes <</Priority [1]>>
+  }{
+    (Phaser 4) pt {
+      /MediaType (Lower Tray)
+      /MediaColor null
+    }{
+      /MediaPosition (Phaser 8) pt {
+        currentpagedevice /InputAttributes get dup 2 known {
+          pop 2
+        }{
+          1 known {1}{0} ifelse
+        } ifelse
+      }{
+        (Phaser 5) pt (Phaser 740) pt or (Phaser 750) pt or {2}{1} ifelse
+      } ifelse
+      languagelevel 2 le {/MediaType}{/MediaClass} ifelse null
+    } ifelse
+  } ifelse
+>> setpagedevice
+
+userdict /pt undef
+
+false 0 startjob pop
+

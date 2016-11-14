@@ -1,0 +1,2 @@
+export LD_LIBRARY_PATH=/opt/atlas/tdaq-common/tdaq-common-01-09-03/installed/i686-slc4-gcc34-opt/lib:/opt/atlas/tdaq/tdaq-01-09-01/installed/i686-slc4-gcc34-opt/lib:/opt/atlas/tdaq-common/tdaq-common-01-09-03/external/i686-slc4-gcc34-opt/lib:/kvaser/linuxcan_v4/canlib
+

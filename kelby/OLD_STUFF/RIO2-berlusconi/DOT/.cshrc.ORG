@@ -1,0 +1,39 @@
+# (C) Copyright 1987-1995
+# Lynx Real-Time Systems, Inc.
+# Los Gatos, CA
+# All rights reserved.
+
+# $Date: 1999/03/31 08:31:34 $
+# $Revision: 1.1 $
+
+# Continue only for interactive shells
+if ($?prompt == 0) then
+    exit 0
+endif
+
+# Basic path includes standard LynxOS executables and scripts
+set path=(. /bin/ces /bin /etc /net /usr/bin /usr/local/bin $path)  
+
+set history=100				# Remember last 100 commands
+set filec				# Use tcsh file completion
+set noclobber				# Don't nuke files
+set notify				# Yell when background process ends
+set host = `uname -n`			# What host name is this?
+
+if `whoami` == "root" then		# setup prompt, if root add a '#'
+  set prompt = "-$host-\!--# "
+else
+  set prompt = "-$host-\!--> "
+endif
+
+setenv SHELL /bin/csh			# Use csh for shell
+
+umask 022				# Default protection mask for files
+
+alias a  alias				# aliases
+alias h  history
+alias ls /bin/ls -FC
+alias j  jobs
+
+stty erase  kill  -tabs		# stty preferences
+

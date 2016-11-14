@@ -1,0 +1,2 @@
+gcc ben_test.c  A3in1Controller.o DigBoard.o  SwitchBox.o -lkja -lvme -o /home/kelby/bin/ben_test 
+  

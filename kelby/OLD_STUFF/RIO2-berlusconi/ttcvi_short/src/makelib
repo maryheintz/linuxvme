@@ -1,0 +1,2 @@
+# Options for the compiler
+CFLAGS = -c -g -ansi -D$(PLATFORM) -DDEBUG -DLynx -I. -I$(CES_INCLUDE)

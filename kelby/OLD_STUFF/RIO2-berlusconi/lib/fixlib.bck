@@ -1,0 +1,4 @@
+gcc -c kja488.c
+gcc -c esp488.c
+ar -r libkja.a kja488.o esp488.o
+ar -s libkja.a

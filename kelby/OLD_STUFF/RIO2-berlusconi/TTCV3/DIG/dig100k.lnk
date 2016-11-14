@@ -1,0 +1,3 @@
+gcc dig100k.c -l3in1v3f -lkja -lvme -ldrivers \
+-lSLINK -ls5933 -lpci -liomuio -llynx \
+ -o /home/user/kelby/bin/dig100k

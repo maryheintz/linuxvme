@@ -1,0 +1,39 @@
+#
+# Select default icon for X Term
+# Place icons on at lower right of screen
+#
+
+mwm*xterm.iconImage:	/usr/lib/X11/Lynx/lynxicon2.xbm
+#Mwm*xterm.iconImage:	/usr/include/X11/bitmaps/lynxterm
+mwm*xcalc.iconImage:	/usr/include/X11/bitmaps/calculator
+mwm*iconPlacement:	right top
+mwm*foreground:		midnightblue
+mwm*background:		lightsteelblue3
+mwm*activeForeground:	yellow
+Mwm*activeBackground:	firebrick
+Mwm*windowmenu.foreground:		midnightblue
+Mwm*windowMenu.background:		lightsteelblue3
+mwm*interactivePlacement:	false
+Mwm*keyboardFocusPolicy:	pointer
+Mwm*focusAutoRaise:		True
+Mwm*clientAutoPlace:		True
+Mwm*Panner*ClientPinned:	True
+xterm*scrollBar:	True
+#xterm*pointerShape:	gumby
+xterm*cursorColor:	magenta
+
+xman*bothShown:		True
+xman*directoryHeight:	150
+xman*helpCursor:	arrow
+xman*manpageCursor:	hand2
+xman*topCursor:		target
+xman*topBox:		False
+xman*foreground:	midnightblue
+xman*background:	lightsteelblue
+xman*manualFontBold:	6x13bold
+
+xcalc*foreground:	blue
+xcalc*background:	white
+
+bitmap*foreground:	khaki
+bitmap*background:	dodgerblue4

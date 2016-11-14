@@ -1,0 +1,8 @@
+gcc ckif.c \
+-lgd -lpng -ljpeg -lfreetype -lz -lm \
+-L /home/kelby/LIB -lkja -l3in1_v3 \
+-L /usr/local/lib -lcctvme \
+-L /opt/atlas/tdaq/tdaq-01-09-01/installed/i686-slc4-gcc34-opt/lib \
+-lio_rcc -lrcc_error -lDFDebug \
+-I /opt/atlas/tdaq/tdaq-01-09-01/installed/include \
+-o /home/kelby/BIN/ckif

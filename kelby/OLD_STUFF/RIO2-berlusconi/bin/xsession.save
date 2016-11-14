@@ -1,0 +1,1 @@
+xterm -ls -T "HANSEL" -j -sb -ls -sl 200 -g 80x36+350+30 -n "HANSEL" -e bash &

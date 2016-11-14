@@ -1,0 +1,1017 @@
+input 0=600pC  1=10pC
+  charge=599.785728  dacval=749.267578  dac=2ed(hex)  cap=100.000000
+slink opened
+ Setting up Digitizers
+ Setting up Digitizers
+ control word=51115110
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   46   51   4a   0  0    461444a
+lo data word=    0    1   47   51   4a   0  1    4471444a
+lo data word=    0    1   47   50   4b   0  2    4471404b
+lo data word=    0    1   47   51   4a   0  3    4471444a
+lo data word=    0    1   46   51   4b   0  4    4461444b
+lo data word=    0    1   47   51   4a   0  5    4471444a
+kk=0 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   51   52   4d   0  0    4511484d
+hi data word=    0    1   4f   51   4d   0  1    44f1444d
+hi data word=    0    1   51   52   4e   0  2    4511484e
+hi data word=    0    1   52   51   4d   0  3    4521444d
+hi data word=    0    0   4f   53   4e   0  4    4f14c4e
+hi data word=    0    1   52   4f   4e   0  5    45213c4e
+ crc=2774a949
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   4f   54   51   1  0    4f15051
+lo data word=    0    0   4f   54   51   1  1    4f15051
+lo data word=    0    0   4f   54   51   1  2    4f15051
+lo data word=    0    1   4f   54   50   1  3    44f15050
+lo data word=    0    0   4e   54   50   1  4    4e15050
+lo data word=    0    1   4e   54   52   1  5    44e15052
+kk=1 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   50   54   49   1  0    45015049
+hi data word=    0    1   50   55   48   1  1    45015448
+hi data word=    0    1   50   55   48   1  2    45015448
+hi data word=    0    1   4f   56   49   1  3    44f15849
+hi data word=    0    0   4f   54   49   1  4    4f15049
+hi data word=    0    0   53   53   49   1  5    5314c49
+ crc=52a97b91
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   40   4b   51   2  0    44012c51
+lo data word=    0    1   3f   4b   50   2  1    43f12c50
+lo data word=    0    0   3e   4c   52   2  2    3e13052
+lo data word=    0    0   3f   4b   51   2  3    3f12c51
+lo data word=    0    1   3f   4c   51   2  4    43f13051
+lo data word=    0    0   40   4c   52   2  5    4013052
+kk=2 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   46   41   3e   2  0    4461043e
+hi data word=    0    1   47   41   3f   2  1    4471043f
+hi data word=    0    0   44   40   3f   2  2    441003f
+hi data word=    0    1   45   40   3f   2  3    4451003f
+hi data word=    0    0   43   41   3f   2  4    431043f
+hi data word=    0    0   47   41   3e   2  5    471043e
+ crc=f5d0512
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   58   4e   59   3  0    5813859
+lo data word=    0    0   58   4d   59   3  1    5813459
+lo data word=    0    0   58   4e   59   3  2    5813859
+lo data word=    0    0   58   4e   5a   3  3    581385a
+lo data word=    0    1   58   4e   58   3  4    45813858
+lo data word=    0    0   58   4e   59   3  5    5813859
+kk=3 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   54   42    0   3  0    5410800
+hi data word=    0    0   53   45    0   3  1    5311400
+hi data word=    0    0   54   44    0   3  2    5411000
+hi data word=    0    1   57   45    0   3  3    45711400
+hi data word=    0    0   56   43    0   3  4    5610c00
+hi data word=    0    0   53   45    0   3  5    5311400
+ crc=b5731d2
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   4e   4b   55   4  0    44e12c55
+lo data word=    0    0   4e   4a   55   4  1    4e12855
+lo data word=    0    0   4c   4a   54   4  2    4c12854
+lo data word=    0    0   4c   4b   55   4  3    4c12c55
+lo data word=    0    1   4c   4c   55   4  4    44c13055
+lo data word=    0    1   4d   4b   55   4  5    44d12c55
+kk=4 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   4e   43   4c   4  0    44e10c4c
+hi data word=    0    0   4e   44   4c   4  1    4e1104c
+hi data word=    0    1   4f   43   4d   4  2    44f10c4d
+hi data word=    0    0   4e   44   49   4  3    4e11049
+hi data word=    0    1   4c   46   4d   4  4    44c1184d
+hi data word=    0    0   50   44   4c   4  5    501104c
+ crc=633359bd
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   4c   41   51   5  0    44c10451
+lo data word=    0    1   4c   41   51   5  1    44c10451
+lo data word=    0    0   4b   41   52   5  2    4b10452
+lo data word=    0    0   4d   41   51   5  3    4d10451
+lo data word=    0    0   4b   41   51   5  4    4b10451
+lo data word=    0    0   4d   41   51   5  5    4d10451
+kk=5 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   5e   51   52   5  0    5e14452
+hi data word=    0    1   5e   51   50   5  1    45e14450
+hi data word=    0    1   5d   53   4f   5  2    45d14c4f
+hi data word=    0    1   5e   53   51   5  3    45e14c51
+hi data word=    0    0   5f   51   50   5  4    5f14450
+hi data word=    0    0   5e   53   4e   5  5    5e14c4e
+ crc=371d1b6d
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   59   57   41   6  0    5915c41
+lo data word=    0    1   59   57   40   6  1    45915c40
+lo data word=    0    1   59   56   41   6  2    45915841
+lo data word=    0    0   5a   57   42   6  3    5a15c42
+lo data word=    0    0   5a   57   41   6  4    5a15c41
+lo data word=    0    0   59   57   41   6  5    5915c41
+kk=6 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   51   5c   4c   6  0    4511704c
+hi data word=    0    1   54   60   4c   6  1    4541804c
+hi data word=    0    1   54   5f   4c   6  2    45417c4c
+hi data word=    0    1   50   5d   4c   6  3    4501744c
+hi data word=    0    0   52   5d   4c   6  4    521744c
+hi data word=    0    1   50   5f   4b   6  5    45017c4b
+ crc=67c1bdb7
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   4b   46   5e   7  0    44b1185e
+lo data word=    0    1   4b   46   5e   7  1    44b1185e
+lo data word=    0    1   4b   46   5d   7  2    44b1185d
+lo data word=    0    0   4c   45   5d   7  3    4c1145d
+lo data word=    0    0   4a   46   5d   7  4    4a1185d
+lo data word=    0    1   4b   46   5d   7  5    44b1185d
+kk=7 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   5b   52   52   7  0    5b14852
+hi data word=    0    0   5c   55   52   7  1    5c15452
+hi data word=    0    1   5b   53   52   7  2    45b14c52
+hi data word=    0    0   5b   53   53   7  3    5b14c53
+hi data word=    0    1   5c   53   53   7  4    45c14c53
+hi data word=    0    0   5a   54   53   7  5    5a15053
+ crc=43811180
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   4a   45   59   8  0    44a11459
+lo data word=    0    1   4b   44   5a   8  1    44b1105a
+lo data word=    0    1   4a   45   59   8  2    44a11459
+lo data word=    0    0   4a   44   5a   8  3    4a1105a
+lo data word=    0    0   4b   45   59   8  4    4b11459
+lo data word=    0    0   4b   45   59   8  5    4b11459
+kk=8 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   50   5c   4f   8  0    501704f
+hi data word=    0    0   52   5c   4b   8  1    521704b
+hi data word=    0    1   4e   5d   4a   8  2    44e1744a
+hi data word=    0    1   52   5c   49   8  3    45217049
+hi data word=    0    1   50   5e   4a   8  4    4501784a
+hi data word=    0    1   50   5d   4c   8  5    4501744c
+ crc=148ca267
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   60   6b   57   9  0    4601ac57
+lo data word=    0    1   5f   6c   56   9  1    45f1b056
+lo data word=    0    0   5f   6c   57   9  2    5f1b057
+lo data word=    0    1   5f   6b   57   9  3    45f1ac57
+lo data word=    0    0   5e   6a   56   9  4    5e1a856
+lo data word=    0    1   5f   6b   57   9  5    45f1ac57
+kk=9 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   60   52   5a   9  0    601485a
+hi data word=    0    1   5f   53   59   9  1    45f14c59
+hi data word=    0    0   61   50   5c   9  2    611405c
+hi data word=    0    1   5d   53   58   9  3    45d14c58
+hi data word=    0    1   61   52   59   9  4    46114859
+hi data word=    0    1   60   51   5b   9  5    4601445b
+ crc=40a0e167
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   5d   45   47   10  0    45d11447
+lo data word=    0    0   5d   45   46   10  1    5d11446
+lo data word=    0    1   5f   46   46   10  2    45f11846
+lo data word=    0    1   5d   45   47   10  3    45d11447
+lo data word=    0    1   5d   46   47   10  4    45d11847
+lo data word=    0    0   5d   45   46   10  5    5d11446
+kk=10 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   4f   5b   61   10  0    4f16c61
+hi data word=    0    1   4d   5d   61   10  1    44d17461
+hi data word=    0    1   51   5b   63   10  2    45116c63
+hi data word=    0    1   4b   5c   63   10  3    44b17063
+hi data word=    0    0   4e   5d   63   10  4    4e17463
+hi data word=    0    1   4c   5b   63   10  5    44c16c63
+ crc=46926bd
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   44   54   62   11  0    44415062
+lo data word=    0    0   44   55   62   11  1    4415462
+lo data word=    0    0   44   55   62   11  2    4415462
+lo data word=    0    0   45   55   60   11  3    4515460
+lo data word=    0    1   45   55   62   11  4    44515462
+lo data word=    0    0   44   54   60   11  5    4415060
+kk=11 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   55   47   56   11  0    45511c56
+hi data word=    0    0   55   48   57   11  1    5512057
+hi data word=    0    0   53   47   58   11  2    5311c58
+hi data word=    0    0   53   48   54   11  3    5312054
+hi data word=    0    0   53   48   57   11  4    5312057
+hi data word=    0    0   55   46   53   11  5    5511853
+ crc=3560d5c3
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   53   58   4f   12  0    4531604f
+lo data word=    0    1   54   58   4e   12  1    4541604e
+lo data word=    0    1   54   57   4e   12  2    45415c4e
+lo data word=    0    0   54   57   4f   12  3    5415c4f
+lo data word=    0    0   53   57   4e   12  4    5315c4e
+lo data word=    0    1   54   57   4e   12  5    45415c4e
+kk=12 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   5b   63   4f   12  0    45b18c4f
+hi data word=    0    1   59   64   52   12  1    45919052
+hi data word=    0    0   5b   63   53   12  2    5b18c53
+hi data word=    0    0   5a   64   50   12  3    5a19050
+hi data word=    0    0   58   63   50   12  4    5818c50
+hi data word=    0    1   58   63   51   12  5    45818c51
+ crc=1e31020e
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   44   4e   4e   13  0    4441384e
+lo data word=    0    1   44   4e   4e   13  1    4441384e
+lo data word=    0    0   44   4d   4f   13  2    441344f
+lo data word=    0    0   44   4f   4e   13  3    4413c4e
+lo data word=    0    1   44   4f   4f   13  4    44413c4f
+lo data word=    0    0   44   4f   4e   13  5    4413c4e
+kk=13 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   4f   4a   4c   13  0    4f1284c
+hi data word=    0    0   4f   49   49   13  1    4f12449
+hi data word=    0    1   4e   4a   49   13  2    44e12849
+hi data word=    0    0   4c   4a   4a   13  3    4c1284a
+hi data word=    0    0   4e   47   4c   13  4    4e11c4c
+hi data word=    0    0   4f   4b   4d   13  5    4f12c4d
+ crc=53b6401c
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   58   48   51   14  0    45812051
+lo data word=    0    1   59   47   50   14  1    45911c50
+lo data word=    0    1   59   47   50   14  2    45911c50
+lo data word=    0    0   58   47   50   14  3    5811c50
+lo data word=    0    1   59   47   50   14  4    45911c50
+lo data word=    0    0   58   47   50   14  5    5811c50
+kk=14 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   54   51   59   14  0    45414459
+hi data word=    0    1   52   4f   59   14  1    45213c59
+hi data word=    0    0   55   51   59   14  2    5514459
+hi data word=    0    0   56   52   5a   14  3    561485a
+hi data word=    0    0   55   52   59   14  4    5514859
+hi data word=    0    1   53   4f   58   14  5    45313c58
+ crc=78435b77
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   5e   54   4d   15  0    45e1504d
+lo data word=    0    1   5d   54   4d   15  1    45d1504d
+lo data word=    0    0   5f   54   4d   15  2    5f1504d
+lo data word=    0    1   5e   54   4d   15  3    45e1504d
+lo data word=    0    0   5d   54   4c   15  4    5d1504c
+lo data word=    0    0   5e   55   4d   15  5    5e1544d
+kk=15 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   4c   3e   4f   15  0    4c0f84f
+hi data word=    0    1   4b   3f   4e   15  1    44b0fc4e
+hi data word=    0    0   4d   3c   4f   15  2    4d0f04f
+hi data word=    0    0   4c   3e   4f   15  3    4c0f84f
+hi data word=    0    0   4d   3e   4e   15  4    4d0f84e
+hi data word=    0    1   4c   3f   4f   15  5    44c0fc4f
+ crc=691890ef
+[?38h  ;1l"]    1l"]1l&O   1l"]    1l"]1u"]   1u"]1u#P   1u#P1u#P   1u#P1u$C   1u$C1u$C   1u$C1u$V   1u$V1u$V   1u$V1u%I   1u%I1u%I   1u%I1u%\   1u%\1u%\   1u%\1u&O   1u&O1l&O   1l#P    1l#P1e#P   1l"]    1l"]5e"]   1l"]    1l"]1l"S   3h"]    3h"]3h"S   5e"]    5e"]5e"S   5`!N    10245e#F    11l'H    1l'H1l*[   1l'H    1l'H1u'H   1u'H1u'[   1u'[1u'[   1u'[1u(N   1u(N1u(N   1u(N1u)A   1u)A1u)A   1u)A1u)U   1u)U1u)U   1u)U1u*H   1u*H1u*H   1u*H1u*[   1u*[1l*[   1l'[    1l'[1e'[   1l'H    1l'H5e'H   1l'H    1l'H1l&_   3h'H    3h'H3h&_   5e'H    5e'H5e&_   5`%Z    10245e'R    21l+T    1l+T1l/F   1l+T    1l+T1t+T   1t+T1t,G   1t,G1t,G   1t,G1t,Z   1t,Z1t,Z   1t,Z1t-M   1t-M1t-M   1t-M1t.@   1t.@1t.@   1t.@1t.S   1t.S1t.S   1t.S1t/F   1t/F1l/F   1l,G    1l,G1e,G   1l+T    1l+T5e+T   1l+T    1l+T1l+K   3h+T    3h+T3h+K   5e+T    5e+T5e+K   5`*E    10245e+]    31l0@    1l0@1l3R   1l0@    1l0@1u0@   1u0@1u0S   1u0S1u0S   1u0S1u1F   1u1F1u1F   1u1F1u1Y   1u1Y1u1Y   1u1Y1u2L   1u2L1u2L   1u2L1u2_   1u2_1v2_   1v2_1v3R   1v3R1l3R   1l0S    1l0S1e0S   1l0@    1l0@5e0@   1l0@    1l0@1l/V   3h0@    3h0@3h/V   5e0@    5e0@5e/V   5`.Q    10245e0I    41l4K    1l4K1l7^   1l4K    1l4K1v4K   1v4K1v4^   1v4^1v4^   1v4^1v5Q   1v5Q1v5Q   1v5Q1v6D   1v6D1v6D   1v6D1v6W   1v6W1v6W   1v6W1v7K   1v7K1v7K   1v7K1v7^   1v7^1l7^   1l4^    1l4^1e4^   1l4K    1l4K5e4K   1l4K    1l4K1l4B   3h4K    3h4K3h4B   5e4K    5e4K5e4B   5`2]    10245e4T    51l8W    1l8W1l<I   1l8W    1l8W1u8W   1u8W1u9J   1u9J1u9J   1u9J1u9]   1u9]1u9]   1u9]1u:P   1u:P1u:P   1u:P1u;C   1u;C1u;C   1u;C1u;V   1u;V1u;V   1u;V1u<I   1u<I1l<I   1l9J    1l9J1e9J   1l8W    1l8W5e8W   1l8W    1l8W1l8M   3h8W    3h8W3h8M   5e8W    5e8W5e8M   5`7H    10245e9@    6,c"]    ,c"],c&O   ,c"]    ,c"],l"]   ,l"],l#P   ,l#P,l#P   ,l#P,l$C   ,l$C,l$C   ,l$C,l$V   ,l$V,l$V   ,l$V,l%I   ,l%I,l%I   ,l%I,l%\   ,l%\,l%\   ,l%\,l&O   ,l&O,c&O   ,c#P    ,c#P+{#P   ,c"]    ,c"]/|"]   ,c"]    ,c"],c"S   -"]    -"]-"S   /|"]    /|"]/|"S   /w!N    1024/|#F    7,c'H    ,c'H,c*[   ,c'H    ,c'H,k'H   ,k'H,k'[   ,k'[,k'[   ,k'[,k(N   ,k(N,l(N   ,l(N,l)A   ,l)A,k)A   ,k)A,k)U   ,k)U,l)U   ,l)U,l*H   ,l*H,l*H   ,l*H,l*[   ,l*[,c*[   ,c'[    ,c'[+{'[   ,c'H    ,c'H/|'H   ,c'H    ,c'H,c&_   -'H    -'H-&_   /|'H    /|'H/|&_   /w%Z    1024/|'R    8,c+T    ,c+T,c/F   ,c+T    ,c+T,j+T   ,j+T,j,G   ,j,G,j,G   ,j,G,j,Z   ,j,Z,j,Z   ,j,Z,j-M   ,j-M,j-M   ,j-M,j.@   ,j.@,j.@   ,j.@,j.S   ,j.S,j.S   ,j.S,j/F   ,j/F,c/F   ,c,G    ,c,G+{,G   ,c+T    ,c+T/|+T   ,c+T    ,c+T,c+K   -+T    -+T-+K   /|+T    /|+T/|+K   /w*E    1024/|+]    9,c0@    ,c0@,c3R   ,c0@    ,c0@,m0@   ,m0@,m0S   ,m0S,m0S   ,m0S,m1F   ,m1F,m1F   ,m1F,m1Y   ,m1Y,m1Y   ,m1Y,m2L   ,m2L,m2L   ,m2L,m2_   ,m2_,m2_   ,m2_,m3R   ,m3R,c3R   ,c0S    ,c0S+{0S   ,c0@    ,c0@/|0@   ,c0@    ,c0@,c/V   -0@    -0@-/V   /|0@    /|0@/|/V   /w.Q    1024/|0I    10,c4K    ,c4K,c7^   ,c4K    ,c4K,l4K   ,l4K,l4^   ,l4^,l4^   ,l4^,l5Q   ,l5Q,l5Q   ,l5Q,l6D   ,l6D,l6D   ,l6D,l6W   ,l6W,l6W   ,l6W,l7K   ,l7K,l7K   ,l7K,l7^   ,l7^,c7^   ,c4^    ,c4^+{4^   ,c4K    ,c4K/|4K   ,c4K    ,c4K,c4B   -4K    -4K-4B   /|4K    /|4K/|4B   /w2]    1024/|4T    11,c8W    ,c8W,c<I   ,c8W    ,c8W,m8W   ,m8W,m9J   ,m9J,m9J   ,m9J,m9]   ,m9],m9]   ,m9],m:P   ,m:P,m:P   ,m:P,m;C   ,m;C,m;C   ,m;C,m;V   ,m;V,m;V   ,m;V,m<I   ,m<I,c<I   ,c9J    ,c9J+{9J   ,c8W    ,c8W/|8W   ,c8W    ,c8W,c8M   -8W    -8W-8M   /|8W    /|8W/|8M   /w7H    1024/|9@    12&y"]    &y"]&y&O   &y"]    &y"]'c"]   'c"]'c#P   'c#P'c#P   'c#P'c$C   'c$C'c$C   'c$C'c$V   'c$V'c$V   'c$V'c%I   'c%I'c%I   'c%I'c%\   'c%\'c%\   'c%\'c&O   'c&O&y&O   &y#P    &y#P&r#P   &y"]    &y"]*r"]   &y"]    &y"]&y"S   (v"]    (v"](v"S   *r"]    *r"]*r"S   *m!N    1024*r#F    13&y'H    &y'H&y*[   &y'H    &y'H'b'H   'b'H'b'[   'b'['b'[   'b'['b(N   'b(N'b(N   'b(N'b)A   'b)A'b)A   'b)A'b)U   'b)U'b)U   'b)U'b*H   'b*H'b*H   'b*H'b*[   'b*[&y*[   &y'[    &y'[&r'[   &y'H    &y'H*r'H   &y'H    &y'H&y&_   (v'H    (v'H(v&_   *r'H    *r'H*r&_   *m%Z    1024*r'R    14&y+T    &y+T&y/F   &y+T    &y+T'b+T   'b+T'b,G   'b,G'b,G   'b,G'b,Z   'b,Z'b,Z   'b,Z'b-M   'b-M'b-M   'b-M'b.@   'b.@'b.@   'b.@'b.S   'b.S'b.S   'b.S'b/F   'b/F&y/F   &y,G    &y,G&r,G   &y+T    &y+T*r+T   &y+T    &y+T&y+K   (v+T    (v+T(v+K   *r+T    *r+T*r+K   *m*E    1024*r+]    15&y0@    &y0@&y3R   &y0@    &y0@'c0@   'c0@'c0S   'c0S'c0S   'c0S'c1F   'c1F'c1F   'c1F'c1Y   'c1Y'c1Y   'c1Y'c2L   'c2L'c2L   'c2L'c2_   'c2_'c2_   'c2_'c3R   'c3R&y3R   &y0S    &y0S&r0S   &y0@    &y0@*r0@   &y0@    &y0@&y/V   (v0@    (v0@(v/V   *r0@    *r0@*r/V   *m.Q    1024*r0I    16&y4K    &y4K&y7^   &y4K    &y4K'a4K   'a4K'a4^   'a4^'a4^   'a4^'a5Q   'a5Q'a5Q   'a5Q'a6D   'a6D'a6D   'a6D'a6W   'a6W'a6W   'a6W'a7K   'a7K'a7K   'a7K'a7^   'a7^&y7^   &y4^    &y4^&r4^   &y4K    &y4K*r4K   &y4K    &y4K&y4B   (v4K    (v4K(v4B   *r4K    *r4K*r4B   *m2]    1024*r4T    17&y8W    &y8W&y<I   &y8W    &y8W'b8W   'b8W'b9J   'b9J'b9J   'b9J'b9]   'b9]'b9]   'b9]'b:P   'b:P'b:P   'b:P'b;C   'b;C'b;C   'b;C'b;V   'b;V'b;V   'b;V'b<I   'b<I&y<I   &y9J    &y9J&r9J   &y8W    &y8W*r8W   &y8W    &y8W&y8M   (v8W    (v8W(v8M   *r8W    *r8W*r8M   *m7H    1024*r9@    18!p"]    !p"]!p&O   !p"]    !p"]!w"]   !w"]!w#P   !w#P!w#P   !w#P!w$C   !w$C!w$C   !w$C!w$V   !w$V!x$V   !x$V!x%I   !x%I!w%I   !w%I!w%\   !w%\!w%\   !w%\!w&O   !w&O!p&O   !p#P    !p#P!i#P   !p"]    !p"]%i"]   !p"]    !p"]!p"S   #l"]    #l"]#l"S   %i"]    %i"]%i"S   %d!N    1024%i#F    19!p'H    !p'H!p*[   !p'H    !p'H!z'H   !z'H!z'[   !z'[!z'[   !z'[!z(N   !z(N!z(N   !z(N!z)A   !z)A!z)A   !z)A!z)U   !z)U!z)U   !z)U!z*H   !z*H!z*H   !z*H!z*[   !z*[!p*[   !p'[    !p'[!i'[   !p'H    !p'H%i'H   !p'H    !p'H!p&_   #l'H    #l'H#l&_   %i'H    %i'H%i&_   %d%Z    1024%i'R    20!p+T    !p+T!p/F   !p+T    !p+T!z+T   !z+T!z,G   !z,G!z,G   !z,G!z,Z   !z,Z!z,Z   !z,Z!z-M   !z-M!z-M   !z-M!z.@   !z.@!z.@   !z.@!z.S   !z.S!z.S   !z.S!z/F   !z/F!p/F   !p,G    !p,G!i,G   !p+T    !p+T%i+T   !p+T    !p+T!p+K   #l+T    #l+T#l+K   %i+T    %i+T%i+K   %d*E    1024%i+]    21!p0@    !p0@!p3R   !p0@    !p0@!{0@   !{0@!{0S   !{0S!{0S   !{0S!{1F   !{1F!{1F   !{1F!{1Y   !{1Y!{1Y   !{1Y!{2L   !{2L!{2L   !{2L!{2_   !{2_!{2_   !{2_!{3R   !{3R!p3R   !p0S    !p0S!i0S   !p0@    !p0@%i0@   !p0@    !p0@!p/V   #l0@    #l0@#l/V   %i0@    %i0@%i/V   %d.Q    1024%i0I    22!p4K    !p4K!p7^   !p4K    !p4K!x4K   !x4K!x4^   !x4^!x4^   !x4^!x5Q   !x5Q!x5Q   !x5Q!x6D   !x6D!x6D   !x6D!x6W   !x6W!x6W   !x6W!x7K   !x7K!x7K   !x7K!x7^   !x7^!p7^   !p4^    !p4^!i4^   !p4K    !p4K%i4K   !p4K    !p4K!p4B   #l4K    #l4K#l4B   %i4K    %i4K%i4B   %d2]    1024%i4T    23!p8W    !p8W!p<I   !p8W    !p8W!y8W   !y8W!y9J   !y9J!y9J   !y9J!y9]   !y9]!y9]   !y9]!y:P   !y:P!y:P   !y:P!y;C   !y;C!y;C   !y;C!y;V   !y;V!y;V   !y;V!y<I   !y<I!p<I   !p9J    !p9J!i9J   !p8W    !p8W%i8W   !p8W    !p8W!p8M   #l8W    #l8W#l8M   %i8W    %i8W%i8M   %d7H    1024%i9@    2486u"]    LOW GAIN TUBES 1-24 b D     <cr> for next plot2[?38h  ;1l"]    1l"]1l&O   1l"]    1l"]1u"]   1u"]1u#P   1u#P1u#P   1u#P1u$C   1u$C1u$C   1u$C1u$V   1u$V1u$V   1u$V1u%I   1u%I1u%I   1u%I1u%\   1u%\1u%\   1u%\1u&O   1u&O1l&O   1l#P    1l#P1e#P   1l"]    1l"]5e"]   1l"]    1l"]1l"S   3h"]    3h"]3h"S   5e"]    5e"]5e"S   5`!N    10245e#F    251l'H    1l'H1l*[   1l'H    1l'H1t'H   1t'H1t'[   1t'[1t'[   1t'[1t(N   1t(N1t(N   1t(N1t)A   1t)A1t)A   1t)A1t)U   1t)U1t)U   1t)U1t*H   1t*H1t*H   1t*H1t*[   1t*[1l*[   1l'[    1l'[1e'[   1l'H    1l'H5e'H   1l'H    1l'H1l&_   3h'H    3h'H3h&_   5e'H    5e'H5e&_   5`%Z    10245e'R    261l+T    1l+T1l/F   1l+T    1l+T1v+T   1v+T1v,G   1v,G1v,G   1v,G1v,Z   1v,Z1v,Z   1v,Z1v-M   1v-M1v-M   1v-M1v.@   1v.@1v.@   1v.@1v.S   1v.S1v.S   1v.S1v/F   1v/F1l/F   1l,G    1l,G1e,G   1l+T    1l+T5e+T   1l+T    1l+T1l+K   3h+T    3h+T3h+K   5e+T    5e+T5e+K   5`*E    10245e+]    271l0@    1l0@1l3R   1l0@    1l0@1w0@   1w0@1w0S   1w0S1w0S   1w0S1w1F   1w1F1w1F   1w1F1w1Y   1w1Y1w1Y   1w1Y1w2L   1w2L1w2L   1w2L1w2_   1w2_1w2_   1w2_1w3R   1w3R1l3R   1l0S    1l0S1e0S   1l0@    1l0@5e0@   1l0@    1l0@1l/V   3h0@    3h0@3h/V   5e0@    5e0@5e/V   5`.Q    10245e0I    281l4K    1l4K1l7^   1l4K    1l4K1y4K   1y4K1y4^   1y4^1y4^   1y4^1y5Q   1y5Q1y5Q   1y5Q1y6D   1y6D1y6D   1y6D1y6W   1y6W1x6W   1x6W1x7K   1x7K1y7K   1y7K1y7^   1y7^1l7^   1l4^    1l4^1e4^   1l4K    1l4K5e4K   1l4K    1l4K1l4B   3h4K    3h4K3h4B   5e4K    5e4K5e4B   5`2]    10245e4T    291l8W    1l8W1l<I   1l8W    1l8W1v8W   1v8W1v9J   1v9J1v9J   1v9J1v9]   1v9]1v9]   1v9]1v:P   1v:P1v:P   1v:P1v;C   1v;C1v;C   1v;C1v;V   1v;V1v;V   1v;V1v<I   1v<I1l<I   1l9J    1l9J1e9J   1l8W    1l8W5e8W   1l8W    1l8W1l8M   3h8W    3h8W3h8M   5e8W    5e8W5e8M   5`7H    10245e9@    30,c"]    ,c"],c&O   ,c"]    ,c"],m"]   ,m"],m#P   ,m#P,m#P   ,m#P,m$C   ,m$C,n$C   ,n$C,n$V   ,n$V,m$V   ,m$V,m%I   ,m%I,m%I   ,m%I,m%\   ,m%\,m%\   ,m%\,m&O   ,m&O,c&O   ,c#P    ,c#P+{#P   ,c"]    ,c"]/|"]   ,c"]    ,c"],c"S   -"]    -"]-"S   /|"]    /|"]/|"S   /w!N    1024/|#F    31,c'H    ,c'H,c*[   ,c'H    ,c'H,k'H   ,k'H,k'[   ,k'[,k'[   ,k'[,k(N   ,k(N,k(N   ,k(N,k)A   ,k)A,k)A   ,k)A,k)U   ,k)U,k)U   ,k)U,k*H   ,k*H,k*H   ,k*H,k*[   ,k*[,c*[   ,c'[    ,c'[+{'[   ,c'H    ,c'H/|'H   ,c'H    ,c'H,c&_   -'H    -'H-&_   /|'H    /|'H/|&_   /w%Z    1024/|'R    32,c+T    ,c+T,c/F   ,c+T    ,c+T,k+T   ,k+T,k,G   ,k,G,k,G   ,k,G,k,Z   ,k,Z,k,Z   ,k,Z,k-M   ,k-M,k-M   ,k-M,k.@   ,k.@,k.@   ,k.@,k.S   ,k.S,k.S   ,k.S,k/F   ,k/F,c/F   ,c,G    ,c,G+{,G   ,c+T    ,c+T/|+T   ,c+T    ,c+T,c+K   -+T    -+T-+K   /|+T    /|+T/|+K   /w*E    1024/|+]    33,c0@    ,c0@,c3R   ,c0@    ,c0@,k0@   ,k0@,k0S   ,k0S,k0S   ,k0S,k1F   ,k1F,k1F   ,k1F,k1Y   ,k1Y,k1Y   ,k1Y,k2L   ,k2L,k2L   ,k2L,k2_   ,k2_,k2_   ,k2_,k3R   ,k3R,c3R   ,c0S    ,c0S+{0S   ,c0@    ,c0@/|0@   ,c0@    ,c0@,c/V   -0@    -0@-/V   /|0@    /|0@/|/V   /w.Q    1024/|0I    34,c4K    ,c4K,c7^   ,c4K    ,c4K,m4K   ,m4K,m4^   ,m4^,m4^   ,m4^,m5Q   ,m5Q,m5Q   ,m5Q,m6D   ,m6D,m6D   ,m6D,m6W   ,m6W,m6W   ,m6W,m7K   ,m7K,m7K   ,m7K,m7^   ,m7^,c7^   ,c4^    ,c4^+{4^   ,c4K    ,c4K/|4K   ,c4K    ,c4K,c4B   -4K    -4K-4B   /|4K    /|4K/|4B   /w2]    1024/|4T    35,c8W    ,c8W,c<I   ,c8W    ,c8W,n8W   ,n8W,n9J   ,n9J,n9J   ,n9J,n9]   ,n9],n9]   ,n9],n:P   ,n:P,n:P   ,n:P,n;C   ,n;C,n;C   ,n;C,n;V   ,n;V,n;V   ,n;V,n<I   ,n<I,c<I   ,c9J    ,c9J+{9J   ,c8W    ,c8W/|8W   ,c8W    ,c8W,c8M   -8W    -8W-8M   /|8W    /|8W/|8M   /w7H    1024/|9@    36&y"]    &y"]&y&O   &y"]    &y"]'c"]   'c"]'c#P   'c#P'c#P   'c#P'c$C   'c$C'c$C   'c$C'c$V   'c$V'c$V   'c$V'c%I   'c%I'c%I   'c%I'c%\   'c%\'c%\   'c%\'c&O   'c&O&y&O   &y#P    &y#P&r#P   &y"]    &y"]*r"]   &y"]    &y"]&y"S   (v"]    (v"](v"S   *r"]    *r"]*r"S   *m!N    1024*r#F    37&y'H    &y'H&y*[   &y'H    &y'H'c'H   'c'H'c'[   'c'['c'[   'c'['c(N   'c(N'c(N   'c(N'c)A   'c)A'c)A   'c)A'c)U   'c)U'c)U   'c)U'c*H   'c*H'c*H   'c*H'c*[   'c*[&y*[   &y'[    &y'[&r'[   &y'H    &y'H*r'H   &y'H    &y'H&y&_   (v'H    (v'H(v&_   *r'H    *r'H*r&_   *m%Z    1024*r'R    38&y+T    &y+T&y/F   &y+T    &y+T'b+T   'b+T'b,G   'b,G'b,G   'b,G'b,Z   'b,Z'b,Z   'b,Z'b-M   'b-M'b-M   'b-M'b.@   'b.@'b.@   'b.@'b.S   'b.S'b.S   'b.S'b/F   'b/F&y/F   &y,G    &y,G&r,G   &y+T    &y+T*r+T   &y+T    &y+T&y+K   (v+T    (v+T(v+K   *r+T    *r+T*r+K   *m*E    1024*r+]    39&y0@    &y0@&y3R   &y0@    &y0@'a0@   'a0@'a0S   'a0S'a0S   'a0S'a1F   'a1F'a1F   'a1F'a1Y   'a1Y'a1Y   'a1Y'a2L   'a2L'a2L   'a2L'a2_   'a2_'a2_   'a2_'a3R   'a3R&y3R   &y0S    &y0S&r0S   &y0@    &y0@*r0@   &y0@    &y0@&y/V   (v0@    (v0@(v/V   *r0@    *r0@*r/V   *m.Q    1024*r0I    40&y4K    &y4K&y7^   &y4K    &y4K'b4K   'b4K'b4^   'b4^'b4^   'b4^'b5Q   'b5Q'b5Q   'b5Q'b6D   'b6D'b6D   'b6D'b6W   'b6W'b6W   'b6W'b7K   'b7K'b7K   'b7K'b7^   'b7^&y7^   &y4^    &y4^&r4^   &y4K    &y4K*r4K   &y4K    &y4K&y4B   (v4K    (v4K(v4B   *r4K    *r4K*r4B   *m2]    1024*r4T    41&y8W    &y8W&y<I   &y8W    &y8W'b8W   'b8W'b9J   'b9J'b9J   'b9J'b9]   'b9]'b9]   'b9]'b:P   'b:P'b:P   'b:P'b;C   'b;C'b;C   'b;C'b;V   'b;V'b;V   'b;V'b<I   'b<I&y<I   &y9J    &y9J&r9J   &y8W    &y8W*r8W   &y8W    &y8W&y8M   (v8W    (v8W(v8M   *r8W    *r8W*r8M   *m7H    1024*r9@    42!p"]    !p"]!p&O   !p"]    !p"]!z"]   !z"]!z#P   !z#P!z#P   !z#P!z$C   !z$C!z$C   !z$C!z$V   !z$V!z$V   !z$V!z%I   !z%I!z%I   !z%I!z%\   !z%\!z%\   !z%\!z&O   !z&O!p&O   !p#P    !p#P!i#P   !p"]    !p"]%i"]   !p"]    !p"]!p"S   #l"]    #l"]#l"S   %i"]    %i"]%i"S   %d!N    1024%i#F    43!p'H    !p'H!p*[   !p'H    !p'H!x'H   !x'H!x'[   !x'[!x'[   !x'[!x(N   !x(N!x(N   !x(N!x)A   !x)A!x)A   !x)A!x)U   !x)U!x)U   !x)U!x*H   !x*H!x*H   !x*H!x*[   !x*[!p*[   !p'[    !p'[!i'[   !p'H    !p'H%i'H   !p'H    !p'H!p&_   #l'H    #l'H#l&_   %i'H    %i'H%i&_   %d%Z    1024%i'R    44!p+T    !p+T!p/F   !p+T    !p+T!y+T   !y+T!y,G   !y,G!y,G   !y,G!y,Z   !y,Z!y,Z   !y,Z!y-M   !y-M!y-M   !y-M!y.@   !y.@!y.@   !y.@!y.S   !y.S!y.S   !y.S!y/F   !y/F!p/F   !p,G    !p,G!i,G   !p+T    !p+T%i+T   !p+T    !p+T!p+K   #l+T    #l+T#l+K   %i+T    %i+T%i+K   %d*E    1024%i+]    45!p0@    !p0@!p3R   !p0@    !p0@!{0@   !{0@!{0S   !{0S!{0S   !{0S!{1F   !{1F!{1F   !{1F!{1Y   !{1Y!{1Y   !{1Y!{2L   !{2L!{2L   !{2L!{2_   !{2_!{2_   !{2_!{3R   !{3R!p3R   !p0S    !p0S!i0S   !p0@    !p0@%i0@   !p0@    !p0@!p/V   #l0@    #l0@#l/V   %i0@    %i0@%i/V   %d.Q    1024%i0I    46!p4K    !p4K!p7^   !p4K    !p4K!z4K   !z4K!z4^   !z4^!z4^   !z4^!z5Q   !z5Q!z5Q   !z5Q!z6D   !z6D!z6D   !z6D!z6W   !z6W!z6W   !z6W!z7K   !z7K!z7K   !z7K!z7^   !z7^!p7^   !p4^    !p4^!i4^   !p4K    !p4K%i4K   !p4K    !p4K!p4B   #l4K    #l4K#l4B   %i4K    %i4K%i4B   %d2]    1024%i4T    47!p8W    !p8W!p<I   !p8W    !p8W!y8W   !y8W!y9J   !y9J!y9J   !y9J!y9]   !y9]!y9]   !y9]!y:P   !y:P!y:P   !y:P!y;C   !y;C!y;C   !y;C!y;V   !y;V!y;V   !y;V!y<I   !y<I!p<I   !p9J    !p9J!i9J   !p8W    !p8W%i8W   !p8W    !p8W!p8M   #l8W    #l8W#l8M   %i8W    %i8W%i8M   %d7H    1024%i9@    4886u"]    LOW GAIN TUBES 25-48 b D     <cr> for next plot2 control word=51115110
+header word 947c8000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=15
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   46   52   4a   0  0    461484a
+lo data word=    0    1   47   51   4a   0  1    4471444a
+lo data word=    0    1   47   51   4a   0  2    4471444a
+lo data word=    0    1   47   51   4a   0  3    4471444a
+lo data word=    0    0   47   51   4b   0  4    471444b
+lo data word=    0    0   47   51   4b   0  5    471444b
+kk=0 header word 9478f000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=14
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   4f   50   4c   0  0    44f1404c
+hi data word=    0    0   4e   51   4b   0  1    4e1444b
+hi data word=    0    0   51   52   4c   0  2    511484c
+hi data word=    0    1   50   52   4c   0  3    4501484c
+hi data word=    0    1   51   52   4e   0  4    4511484e
+hi data word=    0    1   50   51   4c   0  5    4501444c
+ crc=1eaa71dc
+header word 947c8000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=15
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   4f   53   50   1  0    4f14c50
+lo data word=    0    0   4f   53   50   1  1    4f14c50
+lo data word=    0    0   4e   54   50   1  2    4e15050
+lo data word=    0    0   50   54   50   1  3    5015050
+lo data word=    0    1   4e   54   51   1  4    44e15051
+lo data word=    0    1   4f   55   51   1  5    44f15451
+kk=1 header word 9478f000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=14
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   51   54   4a   1  0    511504a
+hi data word=    0    1   4f   56   49   1  1    44f15849
+hi data word=    0    0   51   54   49   1  2    5115049
+hi data word=    0    0   53   55   49   1  3    5315449
+hi data word=    0    1   51   57   48   1  4    45115c48
+hi data word=    0    0   51   55   47   1  5    5115447
+ crc=25674425
+header word 947c8000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=15
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   3f   4c   52   2  0    43f13052
+lo data word=    0    1   40   4b   51   2  1    44012c51
+lo data word=    0    1   40   4b   52   2  2    44012c52
+lo data word=    0    1   3f   4b   50   2  3    43f12c50
+lo data word=    0    0   40   4c   51   2  4    4013051
+lo data word=    0    1   3f   4c   52   2  5    43f13052
+kk=2 header word 9478f000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=14
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   44   40   3e   2  0    4441003e
+hi data word=    0    1   48   42   3f   2  1    4481083f
+hi data word=    0    1   45   41   3e   2  2    4451043e
+hi data word=    0    0   45   42   3f   2  3    451083f
+hi data word=    0    0   46   41   3f   2  4    461043f
+hi data word=    0    1   45   41   3e   2  5    4451043e
+ crc=3600f45b
+header word 947c8000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=15
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   58   4e   59   3  0    5813859
+lo data word=    0    1   58   4e   58   3  1    45813858
+lo data word=    0    0   59   4f   59   3  2    5913c59
+lo data word=    0    1   58   4f   59   3  3    45813c59
+lo data word=    0    1   58   4e   57   3  4    45813857
+lo data word=    0    0   59   4f   59   3  5    5913c59
+kk=3 header word 9478f000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=14
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   54   45    0   3  0    45411400
+hi data word=    0    1   52   45    0   3  1    45211400
+hi data word=    0    0   52   47    0   3  2    5211c00
+hi data word=    0    1   52   43    0   3  3    45210c00
+hi data word=    0    1   54   45    0   3  4    45411400
+hi data word=    0    0   51   44    0   3  5    5111000
+ crc=31394a0e
+header word 947c8000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=15
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   4c   4c   54   4  0    4c13054
+lo data word=    0    1   4d   4b   55   4  1    44d12c55
+lo data word=    0    1   4b   4b   55   4  2    44b12c55
+lo data word=    0    0   4c   4b   55   4  3    4c12c55
+lo data word=    0    1   4d   4a   54   4  4    44d12854
+lo data word=    0    1   4d   4b   55   4  5    44d12c55
+kk=4 header word 9478f000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=14
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   4c   46   4a   4  0    4c1184a
+hi data word=    0    0   4e   45   4b   4  1    4e1144b
+hi data word=    0    1   4c   45   4b   4  2    44c1144b
+hi data word=    0    1   50   44   4b   4  3    4501104b
+hi data word=    0    0   50   45   4d   4  4    501144d
+hi data word=    0    0   4d   47   4c   4  5    4d11c4c
+ crc=4b392436
+header word 947c8000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=15
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   4c   41   51   5  0    44c10451
+lo data word=    0    0   4b   41   51   5  1    4b10451
+lo data word=    0    0   4c   41   50   5  2    4c10450
+lo data word=    0    1   4c   41   51   5  3    44c10451
+lo data word=    0    0   4c   41   50   5  4    4c10450
+lo data word=    0    1   4c   42   51   5  5    44c10851
+kk=5 header word 9478f000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=14
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   5e   53   50   5  0    5e14c50
+hi data word=    0    0   5e   53   50   5  1    5e14c50
+hi data word=    0    1   5e   51   50   5  2    45e14450
+hi data word=    0    1   5d   52   50   5  3    45d14850
+hi data word=    0    0   5f   55   52   5  4    5f15452
+hi data word=    0    0   5e   51   52   5  5    5e14452
+ crc=42746dca
+header word 947c8000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=15
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   5a   56   40   6  0    5a15840
+lo data word=    0    0   59   56   40   6  1    5915840
+lo data word=    0    0   5a   56   40   6  2    5a15840
+lo data word=    0    0   5a   57   41   6  3    5a15c41
+lo data word=    0    1   59   56   41   6  4    45915841
+lo data word=    0    0   59   57   42   6  5    5915c42
+kk=6 header word 9478f000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=14
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   50   5f   4c   6  0    5017c4c
+hi data word=    0    1   53   5c   4b   6  1    4531704b
+hi data word=    0    1   50   5e   4c   6  2    4501784c
+hi data word=    0    1   50   5d   4c   6  3    4501744c
+hi data word=    0    1   51   60   4c   6  4    4511804c
+hi data word=    0    0   51   5f   4b   6  5    5117c4b
+ crc=24eb91d1
+header word 947c8000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=15
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   4b   46   5d   7  0    44b1185d
+lo data word=    0    1   4b   46   5d   7  1    44b1185d
+lo data word=    0    0   4b   46   5f   7  2    4b1185f
+lo data word=    0    1   4b   46   5e   7  3    44b1185e
+lo data word=    0    1   4b   46   5d   7  4    44b1185d
+lo data word=    0    1   4b   46   5d   7  5    44b1185d
+kk=7 header word 9478f000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=14
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   58   52   53   7  0    45814853
+hi data word=    0    1   5b   54   53   7  1    45b15053
+hi data word=    0    1   59   54   51   7  2    45915051
+hi data word=    0    0   5b   53   53   7  3    5b14c53
+hi data word=    0    0   5a   53   54   7  4    5a14c54
+hi data word=    0    1   5a   53   53   7  5    45a14c53
+ crc=58ce721c
+header word 947c8000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=15
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   4b   44   59   8  0    44b11059
+lo data word=    0    1   4a   46   59   8  1    44a11859
+lo data word=    0    1   4b   46   58   8  2    44b11858
+lo data word=    0    0   4a   44   59   8  3    4a11059
+lo data word=    0    1   4a   45   59   8  4    44a11459
+lo data word=    0    0   4b   46   59   8  5    4b11859
+kk=8 header word 9478f000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=14
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   52   5d   4a   8  0    521744a
+hi data word=    0    1   52   5c   4c   8  1    4521704c
+hi data word=    0    1   51   5d   4b   8  2    4511744b
+hi data word=    0    1   52   5d   48   8  3    45217448
+hi data word=    0    1   52   5c   4c   8  4    4521704c
+hi data word=    0    1   4f   5c   4a   8  5    44f1704a
+ crc=2949a269
+header word 947c8000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=15
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   60   6b   56   9  0    601ac56
+lo data word=    0    1   60   6b   57   9  1    4601ac57
+lo data word=    0    1   60   6c   56   9  2    4601b056
+lo data word=    0    0   5f   6b   56   9  3    5f1ac56
+lo data word=    0    0   5f   6b   56   9  4    5f1ac56
+lo data word=    0    1   5f   6b   57   9  5    45f1ac57
+kk=9 header word 9478f000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=14
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   5f   53   5b   9  0    5f14c5b
+hi data word=    0    0   60   51   5a   9  1    601445a
+hi data word=    0    0   60   52   5c   9  2    601485c
+hi data word=    0    0   5f   51   5a   9  3    5f1445a
+hi data word=    0    1   60   53   5a   9  4    46014c5a
+hi data word=    0    0   60   51   59   9  5    6014459
+ crc=32c670ce
+header word 947c8000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=15
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   5e   46   47   10  0    45e11847
+lo data word=    0    1   5f   45   46   10  1    45f11446
+lo data word=    0    1   5d   47   46   10  2    45d11c46
+lo data word=    0    1   5d   46   47   10  3    45d11847
+lo data word=    0    0   5e   46   45   10  4    5e11845
+lo data word=    0    1   5f   45   46   10  5    45f11446
+kk=10 header word 9478f000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=14
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   4f   59   63   10  0    4f16463
+hi data word=    0    1   4e   5b   61   10  1    44e16c61
+hi data word=    0    0   4e   5b   63   10  2    4e16c63
+hi data word=    0    0   4e   5c   61   10  3    4e17061
+hi data word=    0    1   4e   5b   61   10  4    44e16c61
+hi data word=    0    1   4c   5a   61   10  5    44c16861
+ crc=52622e45
+header word 947c8000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=15
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   45   55   62   11  0    44515462
+lo data word=    0    1   45   54   60   11  1    44515060
+lo data word=    0    1   44   55   60   11  2    44415460
+lo data word=    0    1   45   55   62   11  3    44515462
+lo data word=    0    0   45   54   62   11  4    4515062
+lo data word=    0    1   45   55   62   11  5    44515462
+kk=11 header word 9478f000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=14
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   53   48   57   11  0    5312057
+hi data word=    0    0   55   46   56   11  1    5511856
+hi data word=    0    1   55   47   56   11  2    45511c56
+hi data word=    0    1   53   48   56   11  3    45312056
+hi data word=    0    1   53   48   55   11  4    45312055
+hi data word=    0    0   53   48   57   11  5    5312057
+ crc=72750677
+header word 947c8000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=15
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   53   58   4e   12  0    531604e
+lo data word=    0    1   54   58   4e   12  1    4541604e
+lo data word=    0    0   54   57   4f   12  2    5415c4f
+lo data word=    0    0   55   57   4e   12  3    5515c4e
+lo data word=    0    0   53   58   4e   12  4    531604e
+lo data word=    0    0   54   58   4f   12  5    541604f
+kk=12 header word 9478f000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=14
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   59   63   51   12  0    5918c51
+hi data word=    0    0   59   63   51   12  1    5918c51
+hi data word=    0    1   58   65   52   12  2    45819452
+hi data word=    0    0   59   65   52   12  3    5919452
+hi data word=    0    1   59   63   53   12  4    45918c53
+hi data word=    0    0   5c   63   51   12  5    5c18c51
+ crc=2f188117
+header word 947c8000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=15
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   43   4d   4f   13  0    4431344f
+lo data word=    0    1   43   4e   4f   13  1    4431384f
+lo data word=    0    0   44   4f   50   13  2    4413c50
+lo data word=    0    0   44   4e   4f   13  3    441384f
+lo data word=    0    1   44   4e   4e   13  4    4441384e
+lo data word=    0    0   44   4e   4f   13  5    441384f
+kk=13 header word 9478f000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=14
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   4f   4a   4a   13  0    4f1284a
+hi data word=    0    1   4e   48   4b   13  1    44e1204b
+hi data word=    0    0   4e   48   4a   13  2    4e1204a
+hi data word=    0    0   4e   47   4c   13  3    4e11c4c
+hi data word=    0    1   4e   48   4b   13  4    44e1204b
+hi data word=    0    0   4d   47   4a   13  5    4d11c4a
+ crc=64f7054c
+header word 947c8000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=15
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   59   47   51   14  0    5911c51
+lo data word=    0    1   58   48   51   14  1    45812051
+lo data word=    0    1   59   47   50   14  2    45911c50
+lo data word=    0    0   58   46   4f   14  3    581184f
+lo data word=    0    1   59   47   50   14  4    45911c50
+lo data word=    0    1   58   46   50   14  5    45811850
+kk=14 header word 9478f000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=14
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   55   51   5a   14  0    551445a
+hi data word=    0    1   56   50   5a   14  1    4561405a
+hi data word=    0    1   53   52   58   14  2    45314858
+hi data word=    0    0   55   51   59   14  3    5514459
+hi data word=    0    0   56   52   59   14  4    5614859
+hi data word=    0    0   56   4f   59   14  5    5613c59
+ crc=feca80c
+header word 947c8000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=15
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   5e   55   4c   15  0    45e1544c
+lo data word=    0    1   5d   55   4c   15  1    45d1544c
+lo data word=    0    1   5e   55   4c   15  2    45e1544c
+lo data word=    0    0   5d   53   4d   15  3    5d14c4d
+lo data word=    0    1   5e   54   4d   15  4    45e1504d
+lo data word=    0    0   5d   55   4d   15  5    5d1544d
+kk=15 header word 9478f000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=14
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   4c   3e   4e   15  0    44c0f84e
+hi data word=    0    1   4c   3d   4e   15  1    44c0f44e
+hi data word=    0    0   4c   3e   4f   15  2    4c0f84f
+hi data word=    0    1   4c   40   4e   15  3    44c1004e
+hi data word=    0    1   4d   3f   4e   15  4    44d0fc4e
+hi data word=    0    0   4b   3f   4f   15  5    4b0fc4f
+ crc=67b8f8ce
+[?38h  ;1l"]    1l"]1l&O   1l"]    1l"]1u"]   1u"]1u#P   1u#P1u#P   1u#P1u$C   1u$C1u$C   1u$C1u$V   1u$V1u$V   1u$V1u%I   1u%I1u%I   1u%I1u%\   1u%\1u%\   1u%\1u&O   1u&O1l&O   1l#P    1l#P1e#P   1l"]    1l"]5e"]   1l"]    1l"]1l"S   3h"]    3h"]3h"S   5e"]    5e"]5e"S   5`!N    10245e#F    11l'H    1l'H1l*[   1l'H    1l'H1v'H   1v'H1v'[   1v'[1u'[   1u'[1u(N   1u(N1u(N   1u(N1u)A   1u)A1u)A   1u)A1u)U   1u)U1u)U   1u)U1u*H   1u*H1u*H   1u*H1u*[   1u*[1l*[   1l'[    1l'[1e'[   1l'H    1l'H5e'H   1l'H    1l'H1l&_   3h'H    3h'H3h&_   5e'H    5e'H5e&_   5`%Z    10245e'R    21l+T    1l+T1l/F   1l+T    1l+T1t+T   1t+T1t,G   1t,G1t,G   1t,G1t,Z   1t,Z1t,Z   1t,Z1t-M   1t-M1t-M   1t-M1t.@   1t.@1t.@   1t.@1t.S   1t.S1t.S   1t.S1t/F   1t/F1l/F   1l,G    1l,G1e,G   1l+T    1l+T5e+T   1l+T    1l+T1l+K   3h+T    3h+T3h+K   5e+T    5e+T5e+K   5`*E    10245e+]    31l0@    1l0@1l3R   1l0@    1l0@1u0@   1u0@1u0S   1u0S1u0S   1u0S1u1F   1u1F1u1F   1u1F1u1Y   1u1Y1u1Y   1u1Y1u2L   1u2L1u2L   1u2L1u2_   1u2_1u2_   1u2_1u3R   1u3R1l3R   1l0S    1l0S1e0S   1l0@    1l0@5e0@   1l0@    1l0@1l/V   3h0@    3h0@3h/V   5e0@    5e0@5e/V   5`.Q    10245e0I    41l4K    1l4K1l7^   1l4K    1l4K1v4K   1v4K1v4^   1v4^1v4^   1v4^1v5Q   1v5Q1v5Q   1v5Q1v6D   1v6D1v6D   1v6D1v6W   1v6W1v6W   1v6W1v7K   1v7K1v7K   1v7K1v7^   1v7^1l7^   1l4^    1l4^1e4^   1l4K    1l4K5e4K   1l4K    1l4K1l4B   3h4K    3h4K3h4B   5e4K    5e4K5e4B   5`2]    10245e4T    51l8W    1l8W1l<I   1l8W    1l8W1u8W   1u8W1u9J   1u9J1u9J   1u9J1u9]   1u9]1u9]   1u9]1u:P   1u:P1u:P   1u:P1u;C   1u;C1u;C   1u;C1u;V   1u;V1u;V   1u;V1u<I   1u<I1l<I   1l9J    1l9J1e9J   1l8W    1l8W5e8W   1l8W    1l8W1l8M   3h8W    3h8W3h8M   5e8W    5e8W5e8M   5`7H    10245e9@    6,c"]    ,c"],c&O   ,c"]    ,c"],l"]   ,l"],l#P   ,l#P,l#P   ,l#P,l$C   ,l$C,l$C   ,l$C,l$V   ,l$V,l$V   ,l$V,l%I   ,l%I,l%I   ,l%I,l%\   ,l%\,l%\   ,l%\,l&O   ,l&O,c&O   ,c#P    ,c#P+{#P   ,c"]    ,c"]/|"]   ,c"]    ,c"],c"S   -"]    -"]-"S   /|"]    /|"]/|"S   /w!N    1024/|#F    7,c'H    ,c'H,c*[   ,c'H    ,c'H,l'H   ,l'H,l'[   ,l'[,k'[   ,k'[,k(N   ,k(N,k(N   ,k(N,k)A   ,k)A,k)A   ,k)A,k)U   ,k)U,l)U   ,l)U,l*H   ,l*H,l*H   ,l*H,l*[   ,l*[,c*[   ,c'[    ,c'[+{'[   ,c'H    ,c'H/|'H   ,c'H    ,c'H,c&_   -'H    -'H-&_   /|'H    /|'H/|&_   /w%Z    1024/|'R    8,c+T    ,c+T,c/F   ,c+T    ,c+T,j+T   ,j+T,j,G   ,j,G,j,G   ,j,G,j,Z   ,j,Z,j,Z   ,j,Z,j-M   ,j-M,j-M   ,j-M,j.@   ,j.@,j.@   ,j.@,j.S   ,j.S,j.S   ,j.S,j/F   ,j/F,c/F   ,c,G    ,c,G+{,G   ,c+T    ,c+T/|+T   ,c+T    ,c+T,c+K   -+T    -+T-+K   /|+T    /|+T/|+K   /w*E    1024/|+]    9,c0@    ,c0@,c3R   ,c0@    ,c0@,m0@   ,m0@,m0S   ,m0S,m0S   ,m0S,m1F   ,m1F,m1F   ,m1F,m1Y   ,m1Y,m1Y   ,m1Y,m2L   ,m2L,m2L   ,m2L,m2_   ,m2_,m2_   ,m2_,m3R   ,m3R,c3R   ,c0S    ,c0S+{0S   ,c0@    ,c0@/|0@   ,c0@    ,c0@,c/V   -0@    -0@-/V   /|0@    /|0@/|/V   /w.Q    1024/|0I    10,c4K    ,c4K,c7^   ,c4K    ,c4K,l4K   ,l4K,l4^   ,l4^,l4^   ,l4^,l5Q   ,l5Q,l5Q   ,l5Q,l6D   ,l6D,l6D   ,l6D,l6W   ,l6W,l6W   ,l6W,l7K   ,l7K,l7K   ,l7K,l7^   ,l7^,c7^   ,c4^    ,c4^+{4^   ,c4K    ,c4K/|4K   ,c4K    ,c4K,c4B   -4K    -4K-4B   /|4K    /|4K/|4B   /w2]    1024/|4T    11,c8W    ,c8W,c<I   ,c8W    ,c8W,m8W   ,m8W,m9J   ,m9J,m9J   ,m9J,m9]   ,m9],m9]   ,m9],m:P   ,m:P,m:P   ,m:P,m;C   ,m;C,m;C   ,m;C,m;V   ,m;V,m;V   ,m;V,m<I   ,m<I,c<I   ,c9J    ,c9J+{9J   ,c8W    ,c8W/|8W   ,c8W    ,c8W,c8M   -8W    -8W-8M   /|8W    /|8W/|8M   /w7H    1024/|9@    12&y"]    &y"]&y&O   &y"]    &y"]'c"]   'c"]'c#P   'c#P'c#P   'c#P'c$C   'c$C'c$C   'c$C'c$V   'c$V'c$V   'c$V'c%I   'c%I'c%I   'c%I'c%\   'c%\'c%\   'c%\'c&O   'c&O&y&O   &y#P    &y#P&r#P   &y"]    &y"]*r"]   &y"]    &y"]&y"S   (v"]    (v"](v"S   *r"]    *r"]*r"S   *m!N    1024*r#F    13&y'H    &y'H&y*[   &y'H    &y'H'b'H   'b'H'b'[   'b'['b'[   'b'['b(N   'b(N'b(N   'b(N'b)A   'b)A'b)A   'b)A'b)U   'b)U'b)U   'b)U'b*H   'b*H'b*H   'b*H'b*[   'b*[&y*[   &y'[    &y'[&r'[   &y'H    &y'H*r'H   &y'H    &y'H&y&_   (v'H    (v'H(v&_   *r'H    *r'H*r&_   *m%Z    1024*r'R    14&y+T    &y+T&y/F   &y+T    &y+T'b+T   'b+T'b,G   'b,G'b,G   'b,G'b,Z   'b,Z'b,Z   'b,Z'b-M   'b-M'b-M   'b-M'b.@   'b.@'b.@   'b.@'b.S   'b.S'b.S   'b.S'b/F   'b/F&y/F   &y,G    &y,G&r,G   &y+T    &y+T*r+T   &y+T    &y+T&y+K   (v+T    (v+T(v+K   *r+T    *r+T*r+K   *m*E    1024*r+]    15&y0@    &y0@&y3R   &y0@    &y0@'c0@   'c0@'c0S   'c0S'c0S   'c0S'c1F   'c1F'c1F   'c1F'c1Y   'c1Y'c1Y   'c1Y'c2L   'c2L'c2L   'c2L'c2_   'c2_'c2_   'c2_'c3R   'c3R&y3R   &y0S    &y0S&r0S   &y0@    &y0@*r0@   &y0@    &y0@&y/V   (v0@    (v0@(v/V   *r0@    *r0@*r/V   *m.Q    1024*r0I    16&y4K    &y4K&y7^   &y4K    &y4K'a4K   'a4K'a4^   'a4^'a4^   'a4^'a5Q   'a5Q'a5Q   'a5Q'a6D   'a6D'a6D   'a6D'a6W   'a6W'a6W   'a6W'a7K   'a7K'a7K   'a7K'a7^   'a7^&y7^   &y4^    &y4^&r4^   &y4K    &y4K*r4K   &y4K    &y4K&y4B   (v4K    (v4K(v4B   *r4K    *r4K*r4B   *m2]    1024*r4T    17&y8W    &y8W&y<I   &y8W    &y8W'b8W   'b8W'b9J   'b9J'b9J   'b9J'b9]   'b9]'b9]   'b9]'b:P   'b:P'b:P   'b:P'b;C   'b;C'b;C   'b;C'b;V   'b;V'b;V   'b;V'b<I   'b<I&y<I   &y9J    &y9J&r9J   &y8W    &y8W*r8W   &y8W    &y8W&y8M   (v8W    (v8W(v8M   *r8W    *r8W*r8M   *m7H    1024*r9@    18!p"]    !p"]!p&O   !p"]    !p"]!w"]   !w"]!w#P   !w#P!w#P   !w#P!w$C   !w$C!w$C   !w$C!w$V   !w$V!w$V   !w$V!w%I   !w%I!w%I   !w%I!w%\   !w%\!x%\   !x%\!x&O   !x&O!p&O   !p#P    !p#P!i#P   !p"]    !p"]%i"]   !p"]    !p"]!p"S   #l"]    #l"]#l"S   %i"]    %i"]%i"S   %d!N    1024%i#F    19!p'H    !p'H!p*[   !p'H    !p'H!z'H   !z'H!z'[   !z'[!z'[   !z'[!z(N   !z(N!z(N   !z(N!z)A   !z)A!z)A   !z)A!z)U   !z)U!z)U   !z)U!z*H   !z*H!z*H   !z*H!z*[   !z*[!p*[   !p'[    !p'[!i'[   !p'H    !p'H%i'H   !p'H    !p'H!p&_   #l'H    #l'H#l&_   %i'H    %i'H%i&_   %d%Z    1024%i'R    20!p+T    !p+T!p/F   !p+T    !p+T!z+T   !z+T!z,G   !z,G!z,G   !z,G!z,Z   !z,Z!z,Z   !z,Z!z-M   !z-M!z-M   !z-M!z.@   !z.@!z.@   !z.@!z.S   !z.S!z.S   !z.S!z/F   !z/F!p/F   !p,G    !p,G!i,G   !p+T    !p+T%i+T   !p+T    !p+T!p+K   #l+T    #l+T#l+K   %i+T    %i+T%i+K   %d*E    1024%i+]    21!p0@    !p0@!p3R   !p0@    !p0@!{0@   !{0@!{0S   !{0S!{0S   !{0S!{1F   !{1F!{1F   !{1F!{1Y   !{1Y!{1Y   !{1Y!{2L   !{2L!{2L   !{2L!{2_   !{2_!{2_   !{2_!{3R   !{3R!p3R   !p0S    !p0S!i0S   !p0@    !p0@%i0@   !p0@    !p0@!p/V   #l0@    #l0@#l/V   %i0@    %i0@%i/V   %d.Q    1024%i0I    22!p4K    !p4K!p7^   !p4K    !p4K!x4K   !x4K!x4^   !x4^!x4^   !x4^!x5Q   !x5Q!x5Q   !x5Q!x6D   !x6D!x6D   !x6D!x6W   !x6W!x6W   !x6W!x7K   !x7K!x7K   !x7K!x7^   !x7^!p7^   !p4^    !p4^!i4^   !p4K    !p4K%i4K   !p4K    !p4K!p4B   #l4K    #l4K#l4B   %i4K    %i4K%i4B   %d2]    1024%i4T    23!p8W    !p8W!p<I   !p8W    !p8W!y8W   !y8W!y9J   !y9J!y9J   !y9J!y9]   !y9]!y9]   !y9]!y:P   !y:P!y:P   !y:P!y;C   !y;C!y;C   !y;C!y;V   !y;V!y;V   !y;V!y<I   !y<I!p<I   !p9J    !p9J!i9J   !p8W    !p8W%i8W   !p8W    !p8W!p8M   #l8W    #l8W#l8M   %i8W    %i8W%i8M   %d7H    1024%i9@    2486u"]    LOW GAIN TUBES 1-24 b D     <cr> for next plot2[?38h  ;1l"]    1l"]1l&O   1l"]    1l"]1u"]   1u"]1u#P   1u#P1u#P   1u#P1u$C   1u$C1u$C   1u$C1u$V   1u$V1u$V   1u$V1u%I   1u%I1u%I   1u%I1u%\   1u%\1u%\   1u%\1u&O   1u&O1l&O   1l#P    1l#P1e#P   1l"]    1l"]5e"]   1l"]    1l"]1l"S   3h"]    3h"]3h"S   5e"]    5e"]5e"S   5`!N    10245e#F    251l'H    1l'H1l*[   1l'H    1l'H1t'H   1t'H1t'[   1t'[1t'[   1t'[1t(N   1t(N1t(N   1t(N1t)A   1t)A1t)A   1t)A1t)U   1t)U1t)U   1t)U1t*H   1t*H1t*H   1t*H1t*[   1t*[1l*[   1l'[    1l'[1e'[   1l'H    1l'H5e'H   1l'H    1l'H1l&_   3h'H    3h'H3h&_   5e'H    5e'H5e&_   5`%Z    10245e'R    261l+T    1l+T1l/F   1l+T    1l+T1v+T   1v+T1v,G   1v,G1v,G   1v,G1v,Z   1v,Z1v,Z   1v,Z1v-M   1v-M1v-M   1v-M1v.@   1v.@1v.@   1v.@1v.S   1v.S1v.S   1v.S1v/F   1v/F1l/F   1l,G    1l,G1e,G   1l+T    1l+T5e+T   1l+T    1l+T1l+K   3h+T    3h+T3h+K   5e+T    5e+T5e+K   5`*E    10245e+]    271l0@    1l0@1l3R   1l0@    1l0@1w0@   1w0@1w0S   1w0S1w0S   1w0S1w1F   1w1F1w1F   1w1F1w1Y   1w1Y1w1Y   1w1Y1w2L   1w2L1w2L   1w2L1w2_   1w2_1w2_   1w2_1w3R   1w3R1l3R   1l0S    1l0S1e0S   1l0@    1l0@5e0@   1l0@    1l0@1l/V   3h0@    3h0@3h/V   5e0@    5e0@5e/V   5`.Q    10245e0I    281l4K    1l4K1l7^   1l4K    1l4K1y4K   1y4K1y4^   1y4^1y4^   1y4^1y5Q   1y5Q1y5Q   1y5Q1y6D   1y6D1y6D   1y6D1y6W   1y6W1y6W   1y6W1y7K   1y7K1y7K   1y7K1y7^   1y7^1l7^   1l4^    1l4^1e4^   1l4K    1l4K5e4K   1l4K    1l4K1l4B   3h4K    3h4K3h4B   5e4K    5e4K5e4B   5`2]    10245e4T    291l8W    1l8W1l<I   1l8W    1l8W1v8W   1v8W1v9J   1v9J1v9J   1v9J1v9]   1v9]1v9]   1v9]1v:P   1v:P1v:P   1v:P1v;C   1v;C1v;C   1v;C1v;V   1v;V1v;V   1v;V1v<I   1v<I1l<I   1l9J    1l9J1e9J   1l8W    1l8W5e8W   1l8W    1l8W1l8M   3h8W    3h8W3h8M   5e8W    5e8W5e8M   5`7H    10245e9@    30,c"]    ,c"],c&O   ,c"]    ,c"],m"]   ,m"],m#P   ,m#P,n#P   ,n#P,n$C   ,n$C,m$C   ,m$C,m$V   ,m$V,m$V   ,m$V,m%I   ,m%I,m%I   ,m%I,m%\   ,m%\,n%\   ,n%\,n&O   ,n&O,c&O   ,c#P    ,c#P+{#P   ,c"]    ,c"]/|"]   ,c"]    ,c"],c"S   -"]    -"]-"S   /|"]    /|"]/|"S   /w!N    1024/|#F    31,c'H    ,c'H,c*[   ,c'H    ,c'H,k'H   ,k'H,k'[   ,k'[,k'[   ,k'[,k(N   ,k(N,k(N   ,k(N,k)A   ,k)A,k)A   ,k)A,k)U   ,k)U,k)U   ,k)U,k*H   ,k*H,k*H   ,k*H,k*[   ,k*[,c*[   ,c'[    ,c'[+{'[   ,c'H    ,c'H/|'H   ,c'H    ,c'H,c&_   -'H    -'H-&_   /|'H    /|'H/|&_   /w%Z    1024/|'R    32,c+T    ,c+T,c/F   ,c+T    ,c+T,k+T   ,k+T,k,G   ,k,G,k,G   ,k,G,k,Z   ,k,Z,k,Z   ,k,Z,k-M   ,k-M,k-M   ,k-M,k.@   ,k.@,k.@   ,k.@,k.S   ,k.S,k.S   ,k.S,k/F   ,k/F,c/F   ,c,G    ,c,G+{,G   ,c+T    ,c+T/|+T   ,c+T    ,c+T,c+K   -+T    -+T-+K   /|+T    /|+T/|+K   /w*E    1024/|+]    33,c0@    ,c0@,c3R   ,c0@    ,c0@,k0@   ,k0@,k0S   ,k0S,k0S   ,k0S,k1F   ,k1F,k1F   ,k1F,k1Y   ,k1Y,k1Y   ,k1Y,k2L   ,k2L,k2L   ,k2L,k2_   ,k2_,k2_   ,k2_,k3R   ,k3R,c3R   ,c0S    ,c0S+{0S   ,c0@    ,c0@/|0@   ,c0@    ,c0@,c/V   -0@    -0@-/V   /|0@    /|0@/|/V   /w.Q    1024/|0I    34,c4K    ,c4K,c7^   ,c4K    ,c4K,m4K   ,m4K,m4^   ,m4^,m4^   ,m4^,m5Q   ,m5Q,m5Q   ,m5Q,m6D   ,m6D,m6D   ,m6D,m6W   ,m6W,m6W   ,m6W,m7K   ,m7K,m7K   ,m7K,m7^   ,m7^,c7^   ,c4^    ,c4^+{4^   ,c4K    ,c4K/|4K   ,c4K    ,c4K,c4B   -4K    -4K-4B   /|4K    /|4K/|4B   /w2]    1024/|4T    35,c8W    ,c8W,c<I   ,c8W    ,c8W,n8W   ,n8W,n9J   ,n9J,n9J   ,n9J,n9]   ,n9],n9]   ,n9],n:P   ,n:P,n:P   ,n:P,n;C   ,n;C,n;C   ,n;C,n;V   ,n;V,n;V   ,n;V,n<I   ,n<I,c<I   ,c9J    ,c9J+{9J   ,c8W    ,c8W/|8W   ,c8W    ,c8W,c8M   -8W    -8W-8M   /|8W    /|8W/|8M   /w7H    1024/|9@    36&y"]    &y"]&y&O   &y"]    &y"]'c"]   'c"]'c#P   'c#P'c#P   'c#P'c$C   'c$C'c$C   'c$C'c$V   'c$V'c$V   'c$V'c%I   'c%I'c%I   'c%I'c%\   'c%\'c%\   'c%\'c&O   'c&O&y&O   &y#P    &y#P&r#P   &y"]    &y"]*r"]   &y"]    &y"]&y"S   (v"]    (v"](v"S   *r"]    *r"]*r"S   *m!N    1024*r#F    37&y'H    &y'H&y*[   &y'H    &y'H'c'H   'c'H'c'[   'c'['c'[   'c'['c(N   'c(N'c(N   'c(N'c)A   'c)A'c)A   'c)A'c)U   'c)U'c)U   'c)U'c*H   'c*H'c*H   'c*H'c*[   'c*[&y*[   &y'[    &y'[&r'[   &y'H    &y'H*r'H   &y'H    &y'H&y&_   (v'H    (v'H(v&_   *r'H    *r'H*r&_   *m%Z    1024*r'R    38&y+T    &y+T&y/F   &y+T    &y+T'b+T   'b+T'b,G   'b,G'b,G   'b,G'b,Z   'b,Z'b,Z   'b,Z'b-M   'b-M'b-M   'b-M'b.@   'b.@'b.@   'b.@'b.S   'b.S'b.S   'b.S'b/F   'b/F&y/F   &y,G    &y,G&r,G   &y+T    &y+T*r+T   &y+T    &y+T&y+K   (v+T    (v+T(v+K   *r+T    *r+T*r+K   *m*E    1024*r+]    39&y0@    &y0@&y3R   &y0@    &y0@'a0@   'a0@'a0S   'a0S'a0S   'a0S'a1F   'a1F'a1F   'a1F'a1Y   'a1Y'a1Y   'a1Y'a2L   'a2L'a2L   'a2L'a2_   'a2_'a2_   'a2_'a3R   'a3R&y3R   &y0S    &y0S&r0S   &y0@    &y0@*r0@   &y0@    &y0@&y/V   (v0@    (v0@(v/V   *r0@    *r0@*r/V   *m.Q    1024*r0I    40&y4K    &y4K&y7^   &y4K    &y4K'b4K   'b4K'b4^   'b4^'b4^   'b4^'b5Q   'b5Q'b5Q   'b5Q'b6D   'b6D'b6D   'b6D'b6W   'b6W'b6W   'b6W'b7K   'b7K'b7K   'b7K'b7^   'b7^&y7^   &y4^    &y4^&r4^   &y4K    &y4K*r4K   &y4K    &y4K&y4B   (v4K    (v4K(v4B   *r4K    *r4K*r4B   *m2]    1024*r4T    41&y8W    &y8W&y<I   &y8W    &y8W'b8W   'b8W'b9J   'b9J'b9J   'b9J'b9]   'b9]'c9]   'c9]'c:P   'c:P'b:P   'b:P'b;C   'b;C'b;C   'b;C'b;V   'b;V'b;V   'b;V'b<I   'b<I&y<I   &y9J    &y9J&r9J   &y8W    &y8W*r8W   &y8W    &y8W&y8M   (v8W    (v8W(v8M   *r8W    *r8W*r8M   *m7H    1024*r9@    42!p"]    !p"]!p&O   !p"]    !p"]!z"]   !z"]!z#P   !z#P!z#P   !z#P!z$C   !z$C!z$C   !z$C!z$V   !z$V!z$V   !z$V!z%I   !z%I!z%I   !z%I!z%\   !z%\!z%\   !z%\!z&O   !z&O!p&O   !p#P    !p#P!i#P   !p"]    !p"]%i"]   !p"]    !p"]!p"S   #l"]    #l"]#l"S   %i"]    %i"]%i"S   %d!N    1024%i#F    43!p'H    !p'H!p*[   !p'H    !p'H!x'H   !x'H!x'[   !x'[!x'[   !x'[!x(N   !x(N!x(N   !x(N!x)A   !x)A!x)A   !x)A!x)U   !x)U!x)U   !x)U!x*H   !x*H!x*H   !x*H!x*[   !x*[!p*[   !p'[    !p'[!i'[   !p'H    !p'H%i'H   !p'H    !p'H!p&_   #l'H    #l'H#l&_   %i'H    %i'H%i&_   %d%Z    1024%i'R    44!p+T    !p+T!p/F   !p+T    !p+T!y+T   !y+T!y,G   !y,G!y,G   !y,G!y,Z   !y,Z!y,Z   !y,Z!y-M   !y-M!y-M   !y-M!y.@   !y.@!y.@   !y.@!y.S   !y.S!y.S   !y.S!y/F   !y/F!p/F   !p,G    !p,G!i,G   !p+T    !p+T%i+T   !p+T    !p+T!p+K   #l+T    #l+T#l+K   %i+T    %i+T%i+K   %d*E    1024%i+]    45!p0@    !p0@!p3R   !p0@    !p0@!{0@   !{0@!{0S   !{0S!{0S   !{0S!{1F   !{1F!{1F   !{1F!{1Y   !{1Y!{1Y   !{1Y!{2L   !{2L!{2L   !{2L!{2_   !{2_!{2_   !{2_!{3R   !{3R!p3R   !p0S    !p0S!i0S   !p0@    !p0@%i0@   !p0@    !p0@!p/V   #l0@    #l0@#l/V   %i0@    %i0@%i/V   %d.Q    1024%i0I    46!p4K    !p4K!p7^   !p4K    !p4K!z4K   !z4K!z4^   !z4^!z4^   !z4^!z5Q   !z5Q!z5Q   !z5Q!z6D   !z6D!z6D   !z6D!z6W   !z6W!z6W   !z6W!z7K   !z7K!z7K   !z7K!z7^   !z7^!p7^   !p4^    !p4^!i4^   !p4K    !p4K%i4K   !p4K    !p4K!p4B   #l4K    #l4K#l4B   %i4K    %i4K%i4B   %d2]    1024%i4T    47!p8W    !p8W!p<I   !p8W    !p8W!y8W   !y8W!y9J   !y9J!y9J   !y9J!y9]   !y9]!y9]   !y9]!y:P   !y:P!y:P   !y:P!y;C   !y;C!y;C   !y;C!y;V   !y;V!y;V   !y;V!y<I   !y<I!p<I   !p9J    !p9J!i9J   !p8W    !p8W%i8W   !p8W    !p8W!p8M   #l8W    #l8W#l8M   %i8W    %i8W%i8M   %d7H    1024%i9@    4886u"]    LOW GAIN TUBES 25-48 b D     <cr> for next plot2 control word=51115110
+header word 94688000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=10
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   47   51   4b   0  0    471444b
+lo data word=    0    1   46   51   4b   0  1    4461444b
+lo data word=    0    0   45   51   4a   0  2    451444a
+lo data word=    0    1   46   50   4a   0  3    4461404a
+lo data word=    0    0   47   51   4b   0  4    471444b
+lo data word=    0    0   47   51   4b   0  5    471444b
+kk=0 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   51   4f   4b   0  0    45113c4b
+hi data word=    0    1   50   52   4c   0  1    4501484c
+hi data word=    0    0   50   52   4e   0  2    501484e
+hi data word=    0    0   4d   53   4c   0  3    4d14c4c
+hi data word=    0    1   4f   50   4c   0  4    44f1404c
+hi data word=    0    0   4f   50   4b   0  5    4f1404b
+ crc=1d5b32d8
+header word 94688000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=10
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   4e   54   50   1  0    4e15050
+lo data word=    0    0   4e   54   50   1  1    4e15050
+lo data word=    0    0   4f   54   51   1  2    4f15051
+lo data word=    0    0   4f   55   50   1  3    4f15450
+lo data word=    0    1   4f   55   51   1  4    44f15451
+lo data word=    0    0   4f   55   50   1  5    4f15450
+kk=1 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   51   55   4b   1  0    511544b
+hi data word=    0    1   51   54   48   1  1    45115048
+hi data word=    0    0   51   56   4b   1  2    511584b
+hi data word=    0    1   52   53   4a   1  3    45214c4a
+hi data word=    0    0   51   54   49   1  4    5115049
+hi data word=    0    1   51   53   49   1  5    45114c49
+ crc=984007b
+header word 94688000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=10
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   3f   4b   52   2  0    3f12c52
+lo data word=    0    0   40   4c   51   2  1    4013051
+lo data word=    0    1   40   4c   50   2  2    44013050
+lo data word=    0    1   3f   4c   52   2  3    43f13052
+lo data word=    0    0   3f   4b   52   2  4    3f12c52
+lo data word=    0    1   40   4c   50   2  5    44013050
+kk=2 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   45   41   3e   2  0    4451043e
+hi data word=    0    1   47   41   3f   2  1    4471043f
+hi data word=    0    1   45   40   3f   2  2    4451003f
+hi data word=    0    0   45   41   3f   2  3    451043f
+hi data word=    0    1   45   3e   3f   2  4    4450f83f
+hi data word=    0    0   45   42   3f   2  5    451083f
+ crc=126533
+header word 94688000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=10
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   58   4e   59   3  0    5813859
+lo data word=    0    1   59   4e   59   3  1    45913859
+lo data word=    0    1   58   4f   59   3  2    45813c59
+lo data word=    0    1   58   4d   58   3  3    45813458
+lo data word=    0    1   58   4d   58   3  4    45813458
+lo data word=    0    1   59   4f   58   3  5    45913c58
+kk=3 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   54   45    0   3  0    45411400
+hi data word=    0    1   54   45    0   3  1    45411400
+hi data word=    0    1   51   45    0   3  2    45111400
+hi data word=    0    1   53   44    0   3  3    45311000
+hi data word=    0    1   52   45    0   3  4    45211400
+hi data word=    0    0   54   44    0   3  5    5411000
+ crc=367eb804
+header word 94688000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=10
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   4c   4b   55   4  0    4c12c55
+lo data word=    0    1   4d   4b   55   4  1    44d12c55
+lo data word=    0    0   4c   4b   53   4  2    4c12c53
+lo data word=    0    0   4e   4a   55   4  3    4e12855
+lo data word=    0    0   4e   4b   54   4  4    4e12c54
+lo data word=    0    1   4e   4a   54   4  5    44e12854
+kk=4 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   4f   46   4c   4  0    4f1184c
+hi data word=    0    0   4f   42   4b   4  1    4f1084b
+hi data word=    0    1   4e   44   4e   4  2    44e1104e
+hi data word=    0    0   4b   42   4c   4  3    4b1084c
+hi data word=    0    0   4d   43   4b   4  4    4d10c4b
+hi data word=    0    0   4e   43   4b   4  5    4e10c4b
+ crc=59f838b4
+header word 94688000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=10
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   4c   41   51   5  0    44c10451
+lo data word=    0    0   4c   40   51   5  1    4c10051
+lo data word=    0    1   4c   41   52   5  2    44c10452
+lo data word=    0    1   4d   40   51   5  3    44d10051
+lo data word=    0    0   4d   41   51   5  4    4d10451
+lo data word=    0    1   4c   41   51   5  5    44c10451
+kk=5 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   5e   52   4f   5  0    5e1484f
+hi data word=    0    1   5e   51   4e   5  1    45e1444e
+hi data word=    0    1   60   53   50   5  2    46014c50
+hi data word=    0    1   5e   53   4f   5  3    45e14c4f
+hi data word=    0    1   5f   52   4f   5  4    45f1484f
+hi data word=    0    1   5e   52   4e   5  5    45e1484e
+ crc=5fa121e4
+header word 94688000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=10
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   5a   57   41   6  0    5a15c41
+lo data word=    0    1   59   56   41   6  1    45915841
+lo data word=    0    1   5a   56   41   6  2    45a15841
+lo data word=    0    0   59   57   41   6  3    5915c41
+lo data word=    0    1   5a   56   42   6  4    45a15842
+lo data word=    0    0   5a   58   41   6  5    5a16041
+kk=6 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   53   5e   4f   6  0    4531784f
+hi data word=    0    1   52   5d   4d   6  1    4521744d
+hi data word=    0    0   51   5e   4a   6  2    511784a
+hi data word=    0    1   53   60   4d   6  3    4531804d
+hi data word=    0    1   51   5f   4c   6  4    45117c4c
+hi data word=    0    1   52   5f   4c   6  5    45217c4c
+ crc=32c39429
+header word 94688000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=10
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   4b   46   5e   7  0    44b1185e
+lo data word=    0    1   4b   46   5e   7  1    44b1185e
+lo data word=    0    1   4b   46   5d   7  2    44b1185d
+lo data word=    0    1   4b   46   5e   7  3    44b1185e
+lo data word=    0    1   4b   46   5e   7  4    44b1185e
+lo data word=    0    1   4b   46   5e   7  5    44b1185e
+kk=7 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   5a   54   51   7  0    45a15051
+hi data word=    0    1   5a   54   51   7  1    45a15051
+hi data word=    0    1   5b   54   53   7  2    45b15053
+hi data word=    0    1   5b   53   54   7  3    45b14c54
+hi data word=    0    1   59   53   53   7  4    45914c53
+hi data word=    0    1   59   53   53   7  5    45914c53
+ crc=5390ea1a
+header word 94688000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=10
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   4b   45   5a   8  0    4b1145a
+lo data word=    0    1   4a   45   59   8  1    44a11459
+lo data word=    0    1   4a   45   5a   8  2    44a1145a
+lo data word=    0    1   4c   45   5a   8  3    44c1145a
+lo data word=    0    0   4b   45   5a   8  4    4b1145a
+lo data word=    0    1   4a   45   59   8  5    44a11459
+kk=8 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   52   5c   4b   8  0    521704b
+hi data word=    0    1   50   5e   4a   8  1    4501784a
+hi data word=    0    0   50   5c   49   8  2    5017049
+hi data word=    0    1   52   5d   4b   8  3    4521744b
+hi data word=    0    1   50   5d   4a   8  4    4501744a
+hi data word=    0    1   52   5c   4a   8  5    4521704a
+ crc=9268d19
+header word 94688000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=10
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   5f   6b   57   9  0    45f1ac57
+lo data word=    0    0   5f   6b   56   9  1    5f1ac56
+lo data word=    0    1   5f   6b   57   9  2    45f1ac57
+lo data word=    0    0   5f   6d   56   9  3    5f1b456
+lo data word=    0    0   5f   6a   58   9  4    5f1a858
+lo data word=    0    0   60   6c   57   9  5    601b057
+kk=9 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   5f   4f   5b   9  0    45f13c5b
+hi data word=    0    0   62   52   5b   9  1    621485b
+hi data word=    0    0   5e   52   5b   9  2    5e1485b
+hi data word=    0    0   5f   53   5b   9  3    5f14c5b
+hi data word=    0    0   60   52   59   9  4    6014859
+hi data word=    0    1   60   54   58   9  5    46015058
+ crc=3606d986
+header word 94688000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=10
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   5e   45   46   10  0    5e11446
+lo data word=    0    0   5f   46   47   10  1    5f11847
+lo data word=    0    0   5f   46   47   10  2    5f11847
+lo data word=    0    0   5e   46   45   10  3    5e11845
+lo data word=    0    1   5f   46   46   10  4    45f11846
+lo data word=    0    1   5d   46   47   10  5    45d11847
+kk=10 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   4e   5c   63   10  0    44e17063
+hi data word=    0    1   4f   5c   61   10  1    44f17061
+hi data word=    0    1   4f   5c   61   10  2    44f17061
+hi data word=    0    0   4e   5b   63   10  3    4e16c63
+hi data word=    0    1   4b   59   63   10  4    44b16463
+hi data word=    0    0   4f   5d   61   10  5    4f17461
+ crc=45bfab20
+header word 94688000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=10
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   45   54   62   11  0    4515062
+lo data word=    0    1   45   55   62   11  1    44515462
+lo data word=    0    1   44   55   60   11  2    44415460
+lo data word=    0    0   45   56   60   11  3    4515860
+lo data word=    0    1   45   55   62   11  4    44515462
+lo data word=    0    0   45   55   60   11  5    4515460
+kk=11 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   53   47   56   11  0    45311c56
+hi data word=    0    1   55   47   56   11  1    45511c56
+hi data word=    0    1   53   48   55   11  2    45312055
+hi data word=    0    1   53   48   55   11  3    45312055
+hi data word=    0    1   53   47   56   11  4    45311c56
+hi data word=    0    0   55   48   57   11  5    5512057
+ crc=5f81dae8
+header word 94688000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=10
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   54   57   4e   12  0    45415c4e
+lo data word=    0    1   54   58   4e   12  1    4541604e
+lo data word=    0    1   54   58   4e   12  2    4541604e
+lo data word=    0    1   54   58   4e   12  3    4541604e
+lo data word=    0    0   54   57   4f   12  4    5415c4f
+lo data word=    0    1   54   57   4e   12  5    45415c4e
+kk=12 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   5a   63   52   12  0    5a18c52
+hi data word=    0    0   59   64   50   12  1    5919050
+hi data word=    0    1   59   62   52   12  2    45918852
+hi data word=    0    0   59   63   4f   12  3    5918c4f
+hi data word=    0    1   58   62   50   12  4    45818850
+hi data word=    0    0   57   62   52   12  5    5718852
+ crc=371c3bea
+header word 94688000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=10
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   43   4e   4e   13  0    431384e
+lo data word=    0    1   43   4e   4f   13  1    4431384f
+lo data word=    0    1   43   4e   4f   13  2    4431384f
+lo data word=    0    1   43   4e   4f   13  3    4431384f
+lo data word=    0    1   44   4e   4e   13  4    4441384e
+lo data word=    0    1   43   4e   4f   13  5    4431384f
+kk=13 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   4e   4a   4c   13  0    44e1284c
+hi data word=    0    1   4d   49   4a   13  1    44d1244a
+hi data word=    0    0   4c   4a   4a   13  2    4c1284a
+hi data word=    0    1   4f   48   4a   13  3    44f1204a
+hi data word=    0    0   4d   4c   4b   13  4    4d1304b
+hi data word=    0    0   4d   48   4a   13  5    4d1204a
+ crc=d8522
+header word 94688000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=10
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   59   47   50   14  0    45911c50
+lo data word=    0    0   58   47   50   14  1    5811c50
+lo data word=    0    1   59   47   50   14  2    45911c50
+lo data word=    0    1   59   47   50   14  3    45911c50
+lo data word=    0    0   58   47   50   14  4    5811c50
+lo data word=    0    1   58   48   51   14  5    45812051
+kk=14 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   55   52   5a   14  0    551485a
+hi data word=    0    1   55   52   58   14  1    45514858
+hi data word=    0    1   53   50   59   14  2    45314059
+hi data word=    0    1   54   52   59   14  3    45414859
+hi data word=    0    0   55   51   59   14  4    5514459
+hi data word=    0    0   57   50   59   14  5    5714059
+ crc=71bb6a7c
+header word 94688000   count 2
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=10
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   5e   55   4d   15  0    5e1544d
+lo data word=    0    1   5f   54   4c   15  1    45f1504c
+lo data word=    0    0   5f   54   4d   15  2    5f1504d
+lo data word=    0    1   5e   54   4d   15  3    45e1504d
+lo data word=    0    0   5e   54   4c   15  4    5e1504c
+lo data word=    0    1   5f   55   4d   15  5    45f1544d
+kk=15 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   4d   40   4e   15  0    4d1004e
+hi data word=    0    0   4d   3e   4e   15  1    4d0f84e
+hi data word=    0    0   4c   3e   4f   15  2    4c0f84f
+hi data word=    0    1   4c   40   4e   15  3    44c1004e
+hi data word=    0    0   4b   3f   4f   15  4    4b0fc4f
+hi data word=    0    1   4c   3e   4e   15  5    44c0f84e
+ crc=19c33942
+[?38h  ;1l"]    1l"]1l&O   1l"]    1l"]1u"]   1u"]1u#P   1u#P1u#P   1u#P1u$C   1u$C1u$C   1u$C1u$V   1u$V1u$V   1u$V1u%I   1u%I1u%I   1u%I1u%\   1u%\1u%\   1u%\1u&O   1u&O1l&O   1l#P    1l#P1e#P   1l"]    1l"]5e"]   1l"]    1l"]1l"S   3h"]    3h"]3h"S   5e"]    5e"]5e"S   5`!N    10245e#F    11l'H    1l'H1l*[   1l'H    1l'H1u'H   1u'H1u'[   1u'[1u'[   1u'[1u(N   1u(N1u(N   1u(N1u)A   1u)A1u)A   1u)A1u)U   1u)U1u)U   1u)U1u*H   1u*H1u*H   1u*H1u*[   1u*[1l*[   1l'[    1l'[1e'[   1l'H    1l'H5e'H   1l'H    1l'H1l&_   3h'H    3h'H3h&_   5e'H    5e'H5e&_   5`%Z    10245e'R    21l+T    1l+T1l/F   1l+T    1l+T1t+T   1t+T1t,G   1t,G1t,G   1t,G1t,Z   1t,Z1t,Z   1t,Z1t-M   1t-M1t-M   1t-M1t.@   1t.@1t.@   1t.@1t.S   1t.S1t.S   1t.S1t/F   1t/F1l/F   1l,G    1l,G1e,G   1l+T    1l+T5e+T   1l+T    1l+T1l+K   3h+T    3h+T3h+K   5e+T    5e+T5e+K   5`*E    10245e+]    31l0@    1l0@1l3R   1l0@    1l0@1u0@   1u0@1u0S   1u0S1u0S   1u0S1u1F   1u1F1u1F   1u1F1u1Y   1u1Y1u1Y   1u1Y1u2L   1u2L1u2L   1u2L1u2_   1u2_1u2_   1u2_1u3R   1u3R1l3R   1l0S    1l0S1e0S   1l0@    1l0@5e0@   1l0@    1l0@1l/V   3h0@    3h0@3h/V   5e0@    5e0@5e/V   5`.Q    10245e0I    41l4K    1l4K1l7^   1l4K    1l4K1v4K   1v4K1v4^   1v4^1v4^   1v4^1v5Q   1v5Q1v5Q   1v5Q1v6D   1v6D1v6D   1v6D1v6W   1v6W1v6W   1v6W1v7K   1v7K1v7K   1v7K1v7^   1v7^1l7^   1l4^    1l4^1e4^   1l4K    1l4K5e4K   1l4K    1l4K1l4B   3h4K    3h4K3h4B   5e4K    5e4K5e4B   5`2]    10245e4T    51l8W    1l8W1l<I   1l8W    1l8W1u8W   1u8W1u9J   1u9J1u9J   1u9J1u9]   1u9]1u9]   1u9]1u:P   1u:P1u:P   1u:P1u;C   1u;C1u;C   1u;C1u;V   1u;V1u;V   1u;V1u<I   1u<I1l<I   1l9J    1l9J1e9J   1l8W    1l8W5e8W   1l8W    1l8W1l8M   3h8W    3h8W3h8M   5e8W    5e8W5e8M   5`7H    10245e9@    6,c"]    ,c"],c&O   ,c"]    ,c"],l"]   ,l"],l#P   ,l#P,l#P   ,l#P,l$C   ,l$C,l$C   ,l$C,l$V   ,l$V,l$V   ,l$V,l%I   ,l%I,l%I   ,l%I,l%\   ,l%\,l%\   ,l%\,l&O   ,l&O,c&O   ,c#P    ,c#P+{#P   ,c"]    ,c"]/|"]   ,c"]    ,c"],c"S   -"]    -"]-"S   /|"]    /|"]/|"S   /w!N    1024/|#F    7,c'H    ,c'H,c*[   ,c'H    ,c'H,k'H   ,k'H,k'[   ,k'[,l'[   ,l'[,l(N   ,l(N,l(N   ,l(N,l)A   ,l)A,l)A   ,l)A,l)U   ,l)U,k)U   ,k)U,k*H   ,k*H,l*H   ,l*H,l*[   ,l*[,c*[   ,c'[    ,c'[+{'[   ,c'H    ,c'H/|'H   ,c'H    ,c'H,c&_   -'H    -'H-&_   /|'H    /|'H/|&_   /w%Z    1024/|'R    8,c+T    ,c+T,c/F   ,c+T    ,c+T,j+T   ,j+T,j,G   ,j,G,j,G   ,j,G,j,Z   ,j,Z,j,Z   ,j,Z,j-M   ,j-M,j-M   ,j-M,j.@   ,j.@,j.@   ,j.@,j.S   ,j.S,j.S   ,j.S,j/F   ,j/F,c/F   ,c,G    ,c,G+{,G   ,c+T    ,c+T/|+T   ,c+T    ,c+T,c+K   -+T    -+T-+K   /|+T    /|+T/|+K   /w*E    1024/|+]    9,c0@    ,c0@,c3R   ,c0@    ,c0@,m0@   ,m0@,m0S   ,m0S,m0S   ,m0S,m1F   ,m1F,m1F   ,m1F,m1Y   ,m1Y,m1Y   ,m1Y,m2L   ,m2L,m2L   ,m2L,m2_   ,m2_,m2_   ,m2_,m3R   ,m3R,c3R   ,c0S    ,c0S+{0S   ,c0@    ,c0@/|0@   ,c0@    ,c0@,c/V   -0@    -0@-/V   /|0@    /|0@/|/V   /w.Q    1024/|0I    10,c4K    ,c4K,c7^   ,c4K    ,c4K,l4K   ,l4K,l4^   ,l4^,l4^   ,l4^,l5Q   ,l5Q,l5Q   ,l5Q,l6D   ,l6D,l6D   ,l6D,l6W   ,l6W,l6W   ,l6W,l7K   ,l7K,l7K   ,l7K,l7^   ,l7^,c7^   ,c4^    ,c4^+{4^   ,c4K    ,c4K/|4K   ,c4K    ,c4K,c4B   -4K    -4K-4B   /|4K    /|4K/|4B   /w2]    1024/|4T    11,c8W    ,c8W,c<I   ,c8W    ,c8W,m8W   ,m8W,m9J   ,m9J,m9J   ,m9J,m9]   ,m9],m9]   ,m9],m:P   ,m:P,m:P   ,m:P,m;C   ,m;C,m;C   ,m;C,m;V   ,m;V,m;V   ,m;V,m<I   ,m<I,c<I   ,c9J    ,c9J+{9J   ,c8W    ,c8W/|8W   ,c8W    ,c8W,c8M   -8W    -8W-8M   /|8W    /|8W/|8M   /w7H    1024/|9@    12&y"]    &y"]&y&O   &y"]    &y"]'c"]   'c"]'c#P   'c#P'c#P   'c#P'c$C   'c$C'c$C   'c$C'c$V   'c$V'c$V   'c$V'c%I   'c%I'c%I   'c%I'c%\   'c%\'c%\   'c%\'c&O   'c&O&y&O   &y#P    &y#P&r#P   &y"]    &y"]*r"]   &y"]    &y"]&y"S   (v"]    (v"](v"S   *r"]    *r"]*r"S   *m!N    1024*r#F    13&y'H    &y'H&y*[   &y'H    &y'H'b'H   'b'H'b'[   'b'['b'[   'b'['b(N   'b(N'b(N   'b(N'b)A   'b)A'b)A   'b)A'b)U   'b)U'b)U   'b)U'b*H   'b*H'b*H   'b*H'b*[   'b*[&y*[   &y'[    &y'[&r'[   &y'H    &y'H*r'H   &y'H    &y'H&y&_   (v'H    (v'H(v&_   *r'H    *r'H*r&_   *m%Z    1024*r'R    14&y+T    &y+T&y/F   &y+T    &y+T'b+T   'b+T'b,G   'b,G'b,G   'b,G'b,Z   'b,Z'b,Z   'b,Z'b-M   'b-M'b-M   'b-M'b.@   'b.@'b.@   'b.@'b.S   'b.S'b.S   'b.S'b/F   'b/F&y/F   &y,G    &y,G&r,G   &y+T    &y+T*r+T   &y+T    &y+T&y+K   (v+T    (v+T(v+K   *r+T    *r+T*r+K   *m*E    1024*r+]    15&y0@    &y0@&y3R   &y0@    &y0@'c0@   'c0@'c0S   'c0S'c0S   'c0S'c1F   'c1F'c1F   'c1F'c1Y   'c1Y'c1Y   'c1Y'c2L   'c2L'c2L   'c2L'c2_   'c2_'c2_   'c2_'c3R   'c3R&y3R   &y0S    &y0S&r0S   &y0@    &y0@*r0@   &y0@    &y0@&y/V   (v0@    (v0@(v/V   *r0@    *r0@*r/V   *m.Q    1024*r0I    16&y4K    &y4K&y7^   &y4K    &y4K'a4K   'a4K'a4^   'a4^'a4^   'a4^'a5Q   'a5Q'a5Q   'a5Q'a6D   'a6D'a6D   'a6D'a6W   'a6W'a6W   'a6W'a7K   'a7K'a7K   'a7K'a7^   'a7^&y7^   &y4^    &y4^&r4^   &y4K    &y4K*r4K   &y4K    &y4K&y4B   (v4K    (v4K(v4B   *r4K    *r4K*r4B   *m2]    1024*r4T    17&y8W    &y8W&y<I   &y8W    &y8W'b8W   'b8W'b9J   'b9J'b9J   'b9J'b9]   'b9]'b9]   'b9]'b:P   'b:P'b:P   'b:P'b;C   'b;C'b;C   'b;C'b;V   'b;V'b;V   'b;V'b<I   'b<I&y<I   &y9J    &y9J&r9J   &y8W    &y8W*r8W   &y8W    &y8W&y8M   (v8W    (v8W(v8M   *r8W    *r8W*r8M   *m7H    1024*r9@    18!p"]    !p"]!p&O   !p"]    !p"]!w"]   !w"]!w#P   !w#P!w#P   !w#P!w$C   !w$C!w$C   !w$C!w$V   !w$V!w$V   !w$V!w%I   !w%I!x%I   !x%I!x%\   !x%\!w%\   !w%\!w&O   !w&O!p&O   !p#P    !p#P!i#P   !p"]    !p"]%i"]   !p"]    !p"]!p"S   #l"]    #l"]#l"S   %i"]    %i"]%i"S   %d!N    1024%i#F    19!p'H    !p'H!p*[   !p'H    !p'H!z'H   !z'H!z'[   !z'[!z'[   !z'[!z(N   !z(N!z(N   !z(N!z)A   !z)A!z)A   !z)A!z)U   !z)U!z)U   !z)U!z*H   !z*H!z*H   !z*H!z*[   !z*[!p*[   !p'[    !p'[!i'[   !p'H    !p'H%i'H   !p'H    !p'H!p&_   #l'H    #l'H#l&_   %i'H    %i'H%i&_   %d%Z    1024%i'R    20!p+T    !p+T!p/F   !p+T    !p+T!z+T   !z+T!z,G   !z,G!z,G   !z,G!z,Z   !z,Z!z,Z   !z,Z!z-M   !z-M!z-M   !z-M!z.@   !z.@!z.@   !z.@!z.S   !z.S!z.S   !z.S!z/F   !z/F!p/F   !p,G    !p,G!i,G   !p+T    !p+T%i+T   !p+T    !p+T!p+K   #l+T    #l+T#l+K   %i+T    %i+T%i+K   %d*E    1024%i+]    21!p0@    !p0@!p3R   !p0@    !p0@!{0@   !{0@!{0S   !{0S!{0S   !{0S!{1F   !{1F!{1F   !{1F!{1Y   !{1Y!{1Y   !{1Y!{2L   !{2L!{2L   !{2L!{2_   !{2_!{2_   !{2_!{3R   !{3R!p3R   !p0S    !p0S!i0S   !p0@    !p0@%i0@   !p0@    !p0@!p/V   #l0@    #l0@#l/V   %i0@    %i0@%i/V   %d.Q    1024%i0I    22!p4K    !p4K!p7^   !p4K    !p4K!x4K   !x4K!x4^   !x4^!x4^   !x4^!x5Q   !x5Q!x5Q   !x5Q!x6D   !x6D!x6D   !x6D!x6W   !x6W!x6W   !x6W!x7K   !x7K!x7K   !x7K!x7^   !x7^!p7^   !p4^    !p4^!i4^   !p4K    !p4K%i4K   !p4K    !p4K!p4B   #l4K    #l4K#l4B   %i4K    %i4K%i4B   %d2]    1024%i4T    23!p8W    !p8W!p<I   !p8W    !p8W!y8W   !y8W!y9J   !y9J!y9J   !y9J!y9]   !y9]!y9]   !y9]!y:P   !y:P!y:P   !y:P!y;C   !y;C!y;C   !y;C!y;V   !y;V!y;V   !y;V!y<I   !y<I!p<I   !p9J    !p9J!i9J   !p8W    !p8W%i8W   !p8W    !p8W!p8M   #l8W    #l8W#l8M   %i8W    %i8W%i8M   %d7H    1024%i9@    2486u"]    LOW GAIN TUBES 1-24 b D     <cr> for next plot2[?38h  ;1l"]    1l"]1l&O   1l"]    1l"]1u"]   1u"]1u#P   1u#P1u#P   1u#P1u$C   1u$C1u$C   1u$C1u$V   1u$V1u$V   1u$V1u%I   1u%I1u%I   1u%I1u%\   1u%\1u%\   1u%\1u&O   1u&O1l&O   1l#P    1l#P1e#P   1l"]    1l"]5e"]   1l"]    1l"]1l"S   3h"]    3h"]3h"S   5e"]    5e"]5e"S   5`!N    10245e#F    251l'H    1l'H1l*[   1l'H    1l'H1t'H   1t'H1t'[   1t'[1t'[   1t'[1t(N   1t(N1t(N   1t(N1t)A   1t)A1t)A   1t)A1t)U   1t)U1t)U   1t)U1t*H   1t*H1t*H   1t*H1t*[   1t*[1l*[   1l'[    1l'[1e'[   1l'H    1l'H5e'H   1l'H    1l'H1l&_   3h'H    3h'H3h&_   5e'H    5e'H5e&_   5`%Z    10245e'R    261l+T    1l+T1l/F   1l+T    1l+T1v+T   1v+T1v,G   1v,G1v,G   1v,G1v,Z   1v,Z1v,Z   1v,Z1v-M   1v-M1v-M   1v-M1v.@   1v.@1v.@   1v.@1v.S   1v.S1v.S   1v.S1v/F   1v/F1l/F   1l,G    1l,G1e,G   1l+T    1l+T5e+T   1l+T    1l+T1l+K   3h+T    3h+T3h+K   5e+T    5e+T5e+K   5`*E    10245e+]    271l0@    1l0@1l3R   1l0@    1l0@1w0@   1w0@1w0S   1w0S1w0S   1w0S1w1F   1w1F1w1F   1w1F1w1Y   1w1Y1w1Y   1w1Y1w2L   1w2L1w2L   1w2L1w2_   1w2_1w2_   1w2_1w3R   1w3R1l3R   1l0S    1l0S1e0S   1l0@    1l0@5e0@   1l0@    1l0@1l/V   3h0@    3h0@3h/V   5e0@    5e0@5e/V   5`.Q    10245e0I    281l4K    1l4K1l7^   1l4K    1l4K1y4K   1y4K1y4^   1y4^1y4^   1y4^1y5Q   1y5Q1y5Q   1y5Q1y6D   1y6D1y6D   1y6D1y6W   1y6W1x6W   1x6W1x7K   1x7K1y7K   1y7K1y7^   1y7^1l7^   1l4^    1l4^1e4^   1l4K    1l4K5e4K   1l4K    1l4K1l4B   3h4K    3h4K3h4B   5e4K    5e4K5e4B   5`2]    10245e4T    291l8W    1l8W1l<I   1l8W    1l8W1v8W   1v8W1v9J   1v9J1v9J   1v9J1v9]   1v9]1v9]   1v9]1v:P   1v:P1v:P   1v:P1v;C   1v;C1v;C   1v;C1v;V   1v;V1v;V   1v;V1v<I   1v<I1l<I   1l9J    1l9J1e9J   1l8W    1l8W5e8W   1l8W    1l8W1l8M   3h8W    3h8W3h8M   5e8W    5e8W5e8M   5`7H    10245e9@    30,c"]    ,c"],c&O   ,c"]    ,c"],m"]   ,m"],m#P   ,m#P,n#P   ,n#P,n$C   ,n$C,n$C   ,n$C,n$V   ,n$V,m$V   ,m$V,m%I   ,m%I,n%I   ,n%I,n%\   ,n%\,m%\   ,m%\,m&O   ,m&O,c&O   ,c#P    ,c#P+{#P   ,c"]    ,c"]/|"]   ,c"]    ,c"],c"S   -"]    -"]-"S   /|"]    /|"]/|"S   /w!N    1024/|#F    31,c'H    ,c'H,c*[   ,c'H    ,c'H,k'H   ,k'H,k'[   ,k'[,k'[   ,k'[,k(N   ,k(N,k(N   ,k(N,k)A   ,k)A,k)A   ,k)A,k)U   ,k)U,k)U   ,k)U,k*H   ,k*H,k*H   ,k*H,k*[   ,k*[,c*[   ,c'[    ,c'[+{'[   ,c'H    ,c'H/|'H   ,c'H    ,c'H,c&_   -'H    -'H-&_   /|'H    /|'H/|&_   /w%Z    1024/|'R    32,c+T    ,c+T,c/F   ,c+T    ,c+T,k+T   ,k+T,k,G   ,k,G,k,G   ,k,G,k,Z   ,k,Z,k,Z   ,k,Z,k-M   ,k-M,k-M   ,k-M,k.@   ,k.@,k.@   ,k.@,k.S   ,k.S,k.S   ,k.S,k/F   ,k/F,c/F   ,c,G    ,c,G+{,G   ,c+T    ,c+T/|+T   ,c+T    ,c+T,c+K   -+T    -+T-+K   /|+T    /|+T/|+K   /w*E    1024/|+]    33,c0@    ,c0@,c3R   ,c0@    ,c0@,k0@   ,k0@,k0S   ,k0S,k0S   ,k0S,k1F   ,k1F,k1F   ,k1F,k1Y   ,k1Y,k1Y   ,k1Y,k2L   ,k2L,k2L   ,k2L,k2_   ,k2_,k2_   ,k2_,k3R   ,k3R,c3R   ,c0S    ,c0S+{0S   ,c0@    ,c0@/|0@   ,c0@    ,c0@,c/V   -0@    -0@-/V   /|0@    /|0@/|/V   /w.Q    1024/|0I    34,c4K    ,c4K,c7^   ,c4K    ,c4K,m4K   ,m4K,m4^   ,m4^,m4^   ,m4^,m5Q   ,m5Q,m5Q   ,m5Q,m6D   ,m6D,m6D   ,m6D,m6W   ,m6W,m6W   ,m6W,m7K   ,m7K,m7K   ,m7K,m7^   ,m7^,c7^   ,c4^    ,c4^+{4^   ,c4K    ,c4K/|4K   ,c4K    ,c4K,c4B   -4K    -4K-4B   /|4K    /|4K/|4B   /w2]    1024/|4T    35,c8W    ,c8W,c<I   ,c8W    ,c8W,n8W   ,n8W,n9J   ,n9J,n9J   ,n9J,n9]   ,n9],n9]   ,n9],n:P   ,n:P,n:P   ,n:P,n;C   ,n;C,n;C   ,n;C,n;V   ,n;V,n;V   ,n;V,n<I   ,n<I,c<I   ,c9J    ,c9J+{9J   ,c8W    ,c8W/|8W   ,c8W    ,c8W,c8M   -8W    -8W-8M   /|8W    /|8W/|8M   /w7H    1024/|9@    36&y"]    &y"]&y&O   &y"]    &y"]'c"]   'c"]'c#P   'c#P'c#P   'c#P'c$C   'c$C'c$C   'c$C'c$V   'c$V'c$V   'c$V'c%I   'c%I'c%I   'c%I'c%\   'c%\'c%\   'c%\'c&O   'c&O&y&O   &y#P    &y#P&r#P   &y"]    &y"]*r"]   &y"]    &y"]&y"S   (v"]    (v"](v"S   *r"]    *r"]*r"S   *m!N    1024*r#F    37&y'H    &y'H&y*[   &y'H    &y'H'c'H   'c'H'c'[   'c'['c'[   'c'['c(N   'c(N'c(N   'c(N'c)A   'c)A'c)A   'c)A'c)U   'c)U'c)U   'c)U'c*H   'c*H'c*H   'c*H'c*[   'c*[&y*[   &y'[    &y'[&r'[   &y'H    &y'H*r'H   &y'H    &y'H&y&_   (v'H    (v'H(v&_   *r'H    *r'H*r&_   *m%Z    1024*r'R    38&y+T    &y+T&y/F   &y+T    &y+T'b+T   'b+T'b,G   'b,G'b,G   'b,G'b,Z   'b,Z'b,Z   'b,Z'b-M   'b-M'b-M   'b-M'b.@   'b.@'b.@   'b.@'b.S   'b.S'b.S   'b.S'b/F   'b/F&y/F   &y,G    &y,G&r,G   &y+T    &y+T*r+T   &y+T    &y+T&y+K   (v+T    (v+T(v+K   *r+T    *r+T*r+K   *m*E    1024*r+]    39&y0@    &y0@&y3R   &y0@    &y0@'a0@   'a0@'a0S   'a0S'a0S   'a0S'a1F   'a1F'a1F   'a1F'a1Y   'a1Y'a1Y   'a1Y'a2L   'a2L'a2L   'a2L'a2_   'a2_'a2_   'a2_'a3R   'a3R&y3R   &y0S    &y0S&r0S   &y0@    &y0@*r0@   &y0@    &y0@&y/V   (v0@    (v0@(v/V   *r0@    *r0@*r/V   *m.Q    1024*r0I    40&y4K    &y4K&y7^   &y4K    &y4K'b4K   'b4K'b4^   'b4^'b4^   'b4^'b5Q   'b5Q'b5Q   'b5Q'b6D   'b6D'b6D   'b6D'b6W   'b6W'b6W   'b6W'b7K   'b7K'b7K   'b7K'b7^   'b7^&y7^   &y4^    &y4^&r4^   &y4K    &y4K*r4K   &y4K    &y4K&y4B   (v4K    (v4K(v4B   *r4K    *r4K*r4B   *m2]    1024*r4T    41&y8W    &y8W&y<I   &y8W    &y8W'b8W   'b8W'b9J   'b9J'b9J   'b9J'b9]   'b9]'b9]   'b9]'b:P   'b:P'b:P   'b:P'b;C   'b;C'b;C   'b;C'b;V   'b;V'b;V   'b;V'b<I   'b<I&y<I   &y9J    &y9J&r9J   &y8W    &y8W*r8W   &y8W    &y8W&y8M   (v8W    (v8W(v8M   *r8W    *r8W*r8M   *m7H    1024*r9@    42!p"]    !p"]!p&O   !p"]    !p"]!z"]   !z"]!z#P   !z#P!z#P   !z#P!z$C   !z$C!z$C   !z$C!z$V   !z$V!z$V   !z$V!z%I   !z%I!z%I   !z%I!z%\   !z%\!z%\   !z%\!z&O   !z&O!p&O   !p#P    !p#P!i#P   !p"]    !p"]%i"]   !p"]    !p"]!p"S   #l"]    #l"]#l"S   %i"]    %i"]%i"S   %d!N    1024%i#F    43!p'H    !p'H!p*[   !p'H    !p'H!x'H   !x'H!x'[   !x'[!x'[   !x'[!x(N   !x(N!x(N   !x(N!x)A   !x)A!x)A   !x)A!x)U   !x)U!x)U   !x)U!x*H   !x*H!x*H   !x*H!x*[   !x*[!p*[   !p'[    !p'[!i'[   !p'H    !p'H%i'H   !p'H    !p'H!p&_   #l'H    #l'H#l&_   %i'H    %i'H%i&_   %d%Z    1024%i'R    44!p+T    !p+T!p/F   !p+T    !p+T!y+T   !y+T!y,G   !y,G!y,G   !y,G!y,Z   !y,Z!y,Z   !y,Z!y-M   !y-M!y-M   !y-M!y.@   !y.@!y.@   !y.@!y.S   !y.S!y.S   !y.S!y/F   !y/F!p/F   !p,G    !p,G!i,G   !p+T    !p+T%i+T   !p+T    !p+T!p+K   #l+T    #l+T#l+K   %i+T    %i+T%i+K   %d*E    1024%i+]    45!p0@    !p0@!p3R   !p0@    !p0@!{0@   !{0@!{0S   !{0S!{0S   !{0S!{1F   !{1F!{1F   !{1F!{1Y   !{1Y!{1Y   !{1Y!{2L   !{2L!{2L   !{2L!{2_   !{2_!{2_   !{2_!{3R   !{3R!p3R   !p0S    !p0S!i0S   !p0@    !p0@%i0@   !p0@    !p0@!p/V   #l0@    #l0@#l/V   %i0@    %i0@%i/V   %d.Q    1024%i0I    46!p4K    !p4K!p7^   !p4K    !p4K!z4K   !z4K!z4^   !z4^!z4^   !z4^!z5Q   !z5Q!z5Q   !z5Q!z6D   !z6D!z6D   !z6D!z6W   !z6W!z6W   !z6W!z7K   !z7K!z7K   !z7K!z7^   !z7^!p7^   !p4^    !p4^!i4^   !p4K    !p4K%i4K   !p4K    !p4K!p4B   #l4K    #l4K#l4B   %i4K    %i4K%i4B   %d2]    1024%i4T    47!p8W    !p8W!p<I   !p8W    !p8W!y8W   !y8W!y9J   !y9J!y9J   !y9J!y9]   !y9]!y9]   !y9]!y:P   !y:P!y:P   !y:P!y;C   !y;C!y;C   !y;C!y;V   !y;V!y;V   !y;V!y<I   !y<I!p<I   !p9J    !p9J!i9J   !p8W    !p8W%i8W   !p8W    !p8W!p8M   #l8W    #l8W#l8M   %i8W    %i8W%i8M   %d7H    1024%i9@    4886u"]    LOW GAIN TUBES 25-48 b D     <cr> for next plot

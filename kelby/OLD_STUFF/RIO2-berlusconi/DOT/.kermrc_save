@@ -1,0 +1,5 @@
+SET LINE /dev/tty0p0
+SET BAUD 9600
+SET CARRIER-WATCH OFF
+#######LOG SESSION kerm.log
+C

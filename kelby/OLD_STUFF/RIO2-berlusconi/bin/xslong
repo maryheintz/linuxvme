@@ -1,0 +1,1 @@
+xterm -ls -T "UCLYNX" -j -sb -ls -sl 20000 -g 80x36+350+30 -n "UCLYNX" -fn "-bitstream-terminal-medium-r-normal-*-18-140-100-100-c-110-iso8859-1" -e bash &

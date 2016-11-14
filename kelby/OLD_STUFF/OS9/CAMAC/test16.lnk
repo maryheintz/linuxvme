@@ -1,0 +1,1 @@
+cc -k=2f test16.c -l=camac.r -f=test16

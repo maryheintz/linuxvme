@@ -1,0 +1,602 @@
+
+/*
+ * bufkerne.c: kernel side buffer management
+ * Copyright (C) 2000 by J.E. van Grootheest
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+
+
+#include <linux/config.h>
+#if defined(CONFIG_MODVERSIONS) && !defined(MODVERSIONS)
+#define MODVERSIONS
+#endif
+#if defined(MODVERSIONS)
+#include <linux/modversions.h>
+#endif
+
+
+#include <linux/mm.h>
+#include <asm/io.h>
+
+#include "sldpriv.h"
+#include "bufintern.h"
+
+
+static const int debuglevel = 0;
+
+
+/*
+ * Function:	lockPages
+ * Function:	unlockPages
+ *
+ * Description:	(Un)Lock the pages in memory, so they won't be swapped out
+ */
+static void lockPages( void *ptr, unsigned int order )
+{
+  int number;
+  struct page *page;
+
+  /* get page information */
+  page = mem_map + MAP_NR((unsigned long) ptr);
+
+  /* walk the pages */
+  for ( number = (1 << order); number > 0; number--, page++ )
+    {
+      set_bit( PG_reserved, &page->flags );
+    }
+}
+static void unlockPages( void *ptr, unsigned int order )
+{
+  int number;
+  struct page *page;
+
+  /* get page information */
+  page = mem_map + MAP_NR((unsigned long) ptr);
+
+  /* walk the pages */
+  for ( number = (1 << order); number > 0; number--, page++ )
+    {
+      clear_bit( PG_reserved, &page->flags );
+    }
+}
+
+
+/*
+ * Function:	initSomeQueue
+ *
+ * Description:	Internal function in BUF to initialize the data and infoblock
+ *		queues. Since the functionality is so much the same, it's
+ *		handled here. The steps are simple, but the code is quite
+ *		lengthy:
+ *		1. calculate the memory that we need to allocate,
+ *		2. allocate it
+ *		3. initialize the queue
+ *		BTW, the difference between the databuffer and infoblock
+ *		queues is that the infoblock queue is an array of infoblocks
+ *		which can be mirrored in user space, so we need only one.
+ *		The databuffer queue is a queue of pointers, where
+ *		(obviously) the pointers differ between kernel and userspace,
+ *		so there must be different queues for kernel and user.
+ */
+static int initSomeQueue( queue_t *queuePtr,
+			  unsigned int nrOfThings,
+			  unsigned int sizeOfThings )
+{
+  unsigned int actualNrOfThings;
+  unsigned int orderOfPages;
+  void *kernelPtr;
+  int ret;
+
+  /* assumption: sizeOfThings is power of 2 */
+  if ( (sizeOfThings & ~(sizeOfThings - 1)) != sizeOfThings )
+    {
+      /* assumption not true... */
+      SLD_PRINT( "BUF (" __FUNCTION__ "): assumption is that sizeOfThings is power of 2.\n" );
+      return( -ENOMSG );
+    }
+
+  /* calculate what order of pages to allocate */
+  /*
+   * the `6' is a definition in the kernel that is not exported via an
+   * include file. Check mm/page_alloc.c, NR_MEM_LISTS.
+   */
+  orderOfPages = 0;
+  actualNrOfThings = (1 << orderOfPages) * PAGE_SIZE / sizeOfThings;
+  while( (actualNrOfThings < nrOfThings) && (orderOfPages < 6) )
+    {
+      orderOfPages++;
+      actualNrOfThings = (1 << orderOfPages) * PAGE_SIZE / sizeOfThings;
+    }
+  if ( actualNrOfThings < nrOfThings )
+    {
+      /* apparently too many buffers were requested */
+      return( -EINVAL );
+    }
+
+  /* since sizeOfThings is power of 2, we should have a power of 2 for number of things */
+  if ( (actualNrOfThings & ~(actualNrOfThings - 1)) != actualNrOfThings )
+    {
+      /* huh? this is weird */
+      return( -ENOMSG );
+    }
+
+  /* allocate, lock and clear the memory */
+  kernelPtr = (void *) __get_free_pages( GFP_KERNEL, orderOfPages );
+  if ( kernelPtr == NULL )
+    {
+      /* Oops!, no memory? */
+      return( -ENOMEM );
+    }
+  lockPages( kernelPtr, orderOfPages );
+  memset( kernelPtr, 0, (1 << orderOfPages) * PAGE_SIZE );
+
+  /* initialize the infoblock_t queue */
+  ret = queue_init( queuePtr, actualNrOfThings, NULL, kernelPtr, orderOfPages );
+  if ( ret == -1 )
+    {
+      /* This should *NEVER* happen */
+      SLD_PRINT( "BUF (" __FUNCTION__ "): programmer error!\n" );
+      return( -ENOMSG );
+    }
+  
+  return( 1 << orderOfPages );
+}
+
+
+
+static int allocBufferMemory( sldpriv_t *sldData,
+			      unsigned int nrOfBuffers,
+			      unsigned int sizeOfBuffers )
+{
+  unsigned int orderOfPages;
+  void *memPtr;
+  void *tmpPtr;
+  void *endPtr;
+  unsigned int dataMemIndex = 0;
+  unsigned int queueIndex = 0;
+  bufdatabuf_t *arrayPtr = sldData->buf.dataQueue.kernelData;	/* ugly use of queue internal data */
+
+  /*
+   * start allocating as much consecutive pages as possible;
+   * this is not the smartest allocator, see for yourself.
+   * Check kernel: mm/page_alloc.c, NR_MEM_LISTS == 6
+   */
+  orderOfPages = 5;
+  while ( ( dataMemIndex < MAX_DATAMEMORY_REGIONS ) &&
+          ( queueIndex < nrOfBuffers ) )
+    {
+      memPtr = (void *)__get_free_pages( GFP_KERNEL, orderOfPages );
+      if ( memPtr == 0 )
+	{
+	  if ( orderOfPages == 0 )
+	    {
+	      /* not possible to allocate the needed memory */
+	      return( -ENOMEM );
+	    }
+
+	  orderOfPages--;
+
+	  /* check that at least the number of pages is larger than the buffersize */
+	  if ( ((1 << orderOfPages) * PAGE_SIZE) < sizeOfBuffers )
+	    {
+	      /* not possible to allocate more memory of the needed size */
+	      return( -ENOMEM );
+	    }
+	} /* if memPtr == NULL */
+      lockPages( memPtr, orderOfPages );
+      SLD_PRINT( "data memory block allcoated at %p (physical %p),  %d pages\n",
+		 memPtr, (void *)virt_to_phys( memPtr ),
+		 1 << orderOfPages );
+
+      /* register the memory block in the private data */
+      sldData->buf.dataMem[ dataMemIndex ].kernelPtr = memPtr;
+      sldData->buf.dataMem[ dataMemIndex ].order = orderOfPages;
+      dataMemIndex++;
+
+      /* these pages must also be mmaped */
+      sldData->buf.mmapPages += (1 << orderOfPages);
+
+      /* carve it up into separate databuffers */
+      tmpPtr = memPtr;
+      endPtr = memPtr + ((1 << orderOfPages) * PAGE_SIZE);
+      do
+	{
+	  /* put the next databuffer in the array */
+	  arrayPtr[ queueIndex ].kernel = tmpPtr;
+	  arrayPtr[ queueIndex ].user = NULL;
+
+	  /* goto the next one */
+	  queueIndex++;
+	  tmpPtr += sizeOfBuffers;
+	}
+      while ( ( (tmpPtr + sizeOfBuffers) <= endPtr ) &&
+	      ( queueIndex < nrOfBuffers ) );
+    }
+  if ( dataMemIndex == MAX_DATAMEMORY_REGIONS )
+    {
+      /* Oops, too few places to remember datamemory */
+      SLD_PRINT( "BUF: too many memory regions needed.\n" );
+      return( -ENOMSG );
+    }
+
+  /* Hmm, we're finished ?! */
+  return( 0 );
+}
+
+
+
+int buf_open( sldpriv_t *sldData )
+{
+  int ret;
+
+  /* initialize private data */
+  memset( &sldData->buf, 0, sizeof( sldData->buf ) );
+
+  /*
+   * There have to be at least 3* more infoblock_t things to cater for both
+   * datawords and controlwords. Make it 3.5 to never run out of infoblocks.
+   */
+  ret = initSomeQueue( &sldData->buf.infoQueue, sld_nrOfBuffers * 3.5, sizeof( infoblock_t ) );
+  if ( ret < 0 )
+    {
+      buf_close( sldData );
+      return( ret );
+    }
+  sldData->buf.mmapPages += ret;
+
+  /* initialize the databuffer queue */
+  ret = initSomeQueue( &sldData->buf.dataQueue, sld_nrOfBuffers, sizeof( bufdatabuf_t ) );
+  if ( ret < 0 )
+    {
+      buf_close( sldData );
+      return( ret );
+    }
+  sldData->buf.mmapPages += ret;
+
+  /* allocate the databuffer memory stuff */
+  ret = allocBufferMemory( sldData, sld_nrOfBuffers, sld_bufferSize );
+  if ( ret < 0 )
+    {
+      buf_close( sldData );
+      return( ret );
+    }
+
+  SLD_PRINT( "BUF: Allocated %d infoblocks, %d pointers to databuffers.\n",
+	     sldData->buf.infoQueue.size,
+	     sldData->buf.dataQueue.size );
+
+  /* nothing else */
+  return( 0 );
+}
+
+
+int buf_close( sldpriv_t *sldData )
+{
+  memblock_t *dataMemPtr;
+
+  /* release databuffer memory */
+  for ( dataMemPtr = &sldData->buf.dataMem[ 0 ];
+	dataMemPtr->kernelPtr != NULL;
+	dataMemPtr++ )
+    {
+      unlockPages( dataMemPtr->kernelPtr, dataMemPtr->order );
+      free_pages( (unsigned long)dataMemPtr->kernelPtr, dataMemPtr->order );
+      dataMemPtr->kernelPtr = NULL;
+    }
+
+  /* release data queue memory */
+  if ( sldData->buf.dataQueue.kernelData != NULL )
+    {
+      unlockPages( sldData->buf.dataQueue.kernelData, sldData->buf.dataQueue.order );
+      free_pages( (unsigned long)sldData->buf.dataQueue.kernelData, sldData->buf.dataQueue.order );
+      sldData->buf.dataQueue.kernelData = NULL;
+      sldData->buf.dataQueue.userData = NULL;
+    }
+
+  /* release infoblock queue memory */
+  if ( sldData->buf.infoQueue.kernelData != NULL )
+    {
+      unlockPages( sldData->buf.infoQueue.kernelData, sldData->buf.infoQueue.order );
+      free_pages( (unsigned long)sldData->buf.infoQueue.kernelData, sldData->buf.infoQueue.order );
+      sldData->buf.infoQueue.kernelData = NULL;
+      sldData->buf.infoQueue.userData = NULL;
+    }
+
+  SLD_PRINT( "BUF: Deallocated things.\n" );
+
+  return( 0 );
+}
+
+
+
+int buf_mmap( sldpriv_t *sldData, struct vm_area_struct *vmap )
+{
+  unsigned long startNext;
+  unsigned long mapSize;
+  int ret;
+  int i, queueIndex;
+  bufdatabuf_t *arrayPtr;
+  void *tmpPtr;
+  void *endPtr;
+
+  /* start mmaping at the right place: skip the private data */
+  startNext = vmap->vm_start + PAGE_SIZE;
+
+  /* mmap the infoblock queue */
+  mapSize = (1 << sldData->buf.infoQueue.order) * PAGE_SIZE;
+  ret = remap_page_range( startNext,
+			  virt_to_phys( sldData->buf.infoQueue.kernelData ),
+			  mapSize,
+			  vmap->vm_page_prot );
+  if ( ret < 0 )
+    {
+      return( ret );
+    }
+  sldData->buf.infoQueue.userData = (void *)startNext;
+  startNext += mapSize;
+
+  /* mmap the databuffer queue */
+  mapSize = (1 << sldData->buf.dataQueue.order) * PAGE_SIZE;
+  ret = remap_page_range( startNext,
+			  virt_to_phys( sldData->buf.dataQueue.kernelData ),
+			  mapSize,
+			  vmap->vm_page_prot );
+  if ( ret < 0 )
+    {
+      return( ret );
+    }
+  sldData->buf.dataQueue.userData = (void *)startNext;
+  startNext += mapSize;
+
+  /* mmap the databuffer memory blocks */
+  for ( i = 0; i < MAX_DATAMEMORY_REGIONS; i++ )
+    {
+      if ( sldData->buf.dataMem[ i ].kernelPtr != NULL )
+	{	
+	  mapSize = (1 << sldData->buf.dataMem[ i ].order) * PAGE_SIZE;
+	  ret = remap_page_range( startNext,
+				  virt_to_phys( sldData->buf.dataMem[ i ].kernelPtr ),
+				  mapSize,
+				  vmap->vm_page_prot );
+	  if ( ret < 0 )
+	    {
+	      return( ret );
+	    }
+	  sldData->buf.dataMem[ i ].userPtr = (void *)startNext;
+	  startNext += mapSize;
+	}
+    }
+
+  /*
+   * finished mmaping; now calculate all the user space databuffer pointers;
+   * this code looks very much like a part of allocBufferMemory(), but without
+   * the allocation
+   */
+  queueIndex = 0;
+  arrayPtr = sldData->buf.dataQueue.kernelData;
+  i = 0;
+  while ( ( i < MAX_DATAMEMORY_REGIONS ) &&
+          ( queueIndex < sld_nrOfBuffers ) )
+    {
+      /* carve it up into separate databuffers */
+      tmpPtr = sldData->buf.dataMem[ i ].userPtr;
+      endPtr = tmpPtr + ((1 << sldData->buf.dataMem[ i ].order) * PAGE_SIZE);
+      SLD_DEBUG( 3, "next data memory block %d from %p to %p\n",
+		 i, tmpPtr, endPtr );
+      do
+	{
+	  /* put the next databuffer in the array */
+	  arrayPtr[ queueIndex ].user = tmpPtr;
+	  SLD_DEBUG( 3, "databuffer %d at %p (user %p)\n",
+		     queueIndex,
+		     arrayPtr[ queueIndex ].kernel,
+		     arrayPtr[ queueIndex ].user );
+
+	  /* goto the next one */
+	  queueIndex++;
+	  tmpPtr += sld_bufferSize;
+	}
+      while ( ( (tmpPtr + sld_bufferSize) <= endPtr ) &&
+	      ( queueIndex < sld_nrOfBuffers ) );
+
+      i++;
+    }
+
+  /* Done. */
+  return( 0 );
+}
+
+
+
+#define CHECK_FULL						\
+do								\
+{								\
+if ( queue_isFull( &sldData->buf.dataQueue ) )			\
+{								\
+  /* this is a different dataQueueFull from 3 lines down! */	\
+  sldData->stat.dataQueueFull++;				\
+								\
+  /* if we already queued error, then don't do that again. */	\
+  if ( sldData->buf.dataQueueFull++ == 0 )			\
+    {								\
+      infoblock_t errorBlock;					\
+								\
+      /* give message to user */				\
+      errorBlock.type = information;				\
+      errorBlock.message = NoFreeDataBuffer;			\
+      putInfo( sldData, &errorBlock );				\
+								\
+      /* return no datablock */					\
+      SLD_DEBUG( 2, "no databuffer available\n" );		\
+    }								\
+								\
+  return( NULL );						\
+}								\
+}								\
+while( 0 )
+
+
+void *getDataBuffer( sldpriv_t *sldData )
+{
+  bufdatabuf_t *nextBuffer;
+  int skipCount;
+
+  sldData->stat.dataQueueGet++;
+
+  CHECK_FULL;
+
+  /*
+   * it may happen that there are less buffers than pointers in the queue
+   * array! So we skip the empty pointers.
+   */
+  nextBuffer = &QUEUE_GETNEXTFREE_K( bufdatabuf_t, &sldData->buf.dataQueue );
+  skipCount = 0;
+  while ( nextBuffer->kernel == NULL )
+    {
+      queue_allocNextFree( &sldData->buf.dataQueue );
+
+      CHECK_FULL;
+      nextBuffer = &QUEUE_GETNEXTFREE_K( bufdatabuf_t, &sldData->buf.dataQueue );
+      skipCount++;
+    }
+  SLD_DEBUG( 3, "skipped %d NULL databuffer\n", skipCount );
+
+  SLD_DEBUG( 2, "next databuffer is %p (user=%p)\n", nextBuffer->kernel, nextBuffer->user );
+
+  sldData->buf.dataQueueFull = 0;
+  return( nextBuffer->kernel );
+}
+
+
+int putInfo( sldpriv_t *sldData, infoblock_t *infoBlock )
+{
+  infoblock_t *nextInfo;
+  bufdatabuf_t *nextBuffer;
+  int ret = 0;
+
+  sldData->stat.infoQueueGet++;
+
+  /* check if there's space available */
+  if ( queue_isFull( &sldData->buf.infoQueue ) )
+    {
+      /* this should simply NOT happen */
+      panic( "no infoblocks free" );
+    }
+  SLD_DEBUG( 4, "at least one infoblock is available\n" );
+
+  /* 
+   * Handle the data; there is an infoblock available.
+   * As this is kernel code, we don't have to worry about the user getting
+   * in between. So the next two lines ARE safe.
+   */
+  nextInfo = &QUEUE_ALLOCNEXTFREE_K( infoblock_t, &sldData->buf.infoQueue );
+  *nextInfo = *infoBlock;
+  ret++;
+  SLD_DEBUG( 3, "next infoblock is at %p\n", nextInfo );
+
+  if ( BUF_TYPE_WITH_BUFFER( infoBlock->type ) )
+    {
+      SLD_DEBUG( 4, "processing databuffer\n" );
+
+      /* allocate and check that we have the right databuffer */
+      nextBuffer = &QUEUE_ALLOCNEXTFREE_K( bufdatabuf_t, &sldData->buf.dataQueue );
+      if ( nextBuffer->kernel != nextInfo->u.buffer.ptr )
+	{
+	  /* trigger for PCI analyzer */
+	  /* sldData->hwd.amccRegs->omb[ 1 ].dword = 0xff; */
+
+	  /* something went terribly wrong! no possibility to continue */
+	  SLD_PRINT( "infoblock: %p, type=%s\n", nextInfo, getTypeStr( nextInfo->type ) );
+	  SLD_PRINT( "databuffer is %p, expected is %p\n",
+		     nextInfo->u.buffer.ptr, nextBuffer->kernel );
+	  SLD_PRINT( "queue: head=%d, tail=%d, size=%d\n",
+		     sldData->buf.dataQueue.head,
+		     sldData->buf.dataQueue.tail,
+		     sldData->buf.dataQueue.size );
+	  SLD_PRINT( "queue: kernel=%p, user=%p\n",
+		     sldData->buf.dataQueue.kernelData,
+		     sldData->buf.dataQueue.userData );
+	  panic( "S-Link databuffers not consistent!" );
+	}
+
+      SLD_DEBUG( 3, "databuffer queued kernel=%p, user=%p\n",
+		 nextBuffer->kernel, nextBuffer->user );
+    }
+
+  /* maintain statistics */
+  switch( nextInfo->type )
+    {
+    case unused:
+      /* oops?! */
+      break;
+    case slink_data:
+      sldData->stat.dataInput++;
+      sldData->stat.dataBytes += nextInfo->u.buffer.size;
+      break;
+    case slink_control:
+      sldData->stat.controlInput++;
+      break;
+    case information:
+      sldData->stat.infoInput++;
+      break;
+    case statistics:
+      /* we don't count these */
+      break;
+    }
+
+  /*
+   * For statistics we make sure beforehand that there is a infoblock
+   * available in the queue.
+   */
+  if ( sldData->buf.doStats &&
+       !queue_isFull( &sldData->buf.infoQueue ) &&
+       !queue_isFull( &sldData->buf.dataQueue ) )
+    {
+      infoblock_t *statBlockPtr;
+
+      sldData->buf.doStats = FALSE;
+
+      /* get databuffer */
+      nextBuffer = &QUEUE_ALLOCNEXTFREE_K( bufdatabuf_t, &sldData->buf.dataQueue );
+      while ( nextBuffer->kernel == NULL )
+	{
+	  nextBuffer = &QUEUE_ALLOCNEXTFREE_K( bufdatabuf_t, &sldData->buf.dataQueue );
+	}
+
+      /* get timestamp */
+      do_gettimeofday( &sldData->stat.stamp );
+
+      /* copy the statistics in */
+      *( (sldstat_t *) nextBuffer->kernel ) = sldData->stat;
+
+      /* fill the infoblock */
+      statBlockPtr = &QUEUE_ALLOCNEXTFREE_K( infoblock_t, &sldData->buf.infoQueue );
+      statBlockPtr->type = statistics;
+      statBlockPtr->message = NoMessage;
+      statBlockPtr->u.buffer.ptr = nextBuffer->kernel;
+      statBlockPtr->u.buffer.size = sizeof( sldData->stat );
+
+      /* count the extra infoblock */
+      ret++;
+
+      SLD_DEBUG( 3, "statistics queued; timestamp sec=%ld\n",
+		 sldData->stat.stamp.tv_sec );
+    }
+
+  SLD_DEBUG( 2, "queued %s block, this run %d infoblocks\n",
+	     getTypeStr( nextInfo->type ), ret );
+  return( ret );
+}

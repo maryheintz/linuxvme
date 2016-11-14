@@ -1,0 +1,16 @@
+#!/bin/sh
+device=sld
+
+/sbin/insmod ${device} sld_bufferSize=4096 sld_nrOfBuffers=100 || exit 1
+
+rm -f /dev/${device}[0-3]
+
+#major=`cat /proc/devices | awk "\\$2==\"$1\" {print \\$1}"`
+major=`cat /proc/devices | awk "\\$2==\"S-Link\" {print \\$1}"`
+
+echo "Assigned major number: " $major
+
+mknod /dev/${device}0 c $major 0
+
+chgrp   micro   /dev/${device}?
+chmod   664     /dev/${device}?

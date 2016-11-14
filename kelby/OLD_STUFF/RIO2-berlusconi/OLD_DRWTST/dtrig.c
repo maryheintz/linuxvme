@@ -1,0 +1,459 @@
+#include <stdio.h>
+#include <math.h>
+#include <time.h>
+#include <ces/vmelib.h>
+struct block
+       { unsigned short b0;        /* base+0 */
+         unsigned short b2;        /* base+2 */
+         unsigned short b4;        /* base+4 */
+         unsigned short b6;        /* base+6 */
+         unsigned short b8;        /* base+8 */
+         unsigned short ba;        /* base+a */
+         unsigned short bc;        /* base+c */
+         unsigned short be;        /* base+e */
+         unsigned short rd0;       /* base+10 */
+         unsigned short rd1;       /* base+12 */
+         unsigned short rd2;       /* base+14 */
+         unsigned short b16;       /* base+16 */
+         unsigned short all;       /* base+18 */
+         unsigned short b1a;       /* base+1a */
+         unsigned short b1c;       /* base+1c */
+         unsigned short delay;     /* base+1e */
+         unsigned short sample;    /* base+20 */
+         unsigned short status;    /* base+22 */
+         unsigned short reset;     /* base+24 */
+         unsigned short trig;      /* base+26 */
+       };
+struct block *adc;
+static struct pdparam_master param=
+      { 1,   /* VME Iack (must be 1 for all normal pages) */
+        0,   /* VME Read Prefetch Option */
+        0,   /* VME Write Posting Option */
+        1,   /* VME Swap Option */
+        0,   /* page number return */
+        0,   /* reserved */
+        0,   /* reserved */
+        0 };
+int fdata[3][256],ipk[3],pk[3];
+unsigned short *reg;
+unsigned short *reg0,*reg1,*reg2;
+unsigned int basef=0xb30000,base_fermi,base_last;
+unsigned char gpib_device=1;
+int adder[48]={ 4, 4, 4, 4, 4, 7,  /*  1 -  6 */
+                7, 7,10,10,10,10,  /*  7 - 12 */
+	       15,15,15,15,15,15,  /* 13 - 18 */
+               21,21,21,21,21,21,  /* 19 - 24 */
+	       28,28,28,28,28,28,  /* 25 - 30 */
+	       34,34,34,34,34,34,  /* 31 - 36 */
+               42,42,42,42,42,42,  /* 37 - 42 */
+	       45,45,45,45,45,45}; /* 43 - 48 */
+int finput[48]={0,0,0,0,0,1,
+                1,1,2,2,2,2,
+		0,0,0,0,0,0,
+                1,1,1,1,1,1,
+		2,2,2,2,2,2,
+		0,0,0,0,0,0,
+                1,1,1,1,1,1, 
+		2,2,2,2,2,2};
+int boff[48]={     0,     0,     0,     0,     0,     0,
+                   0,     0,     0,     0,     0,     0,
+              0x1000,0x1000,0x1000,0x1000,0x1000,0x1000,
+	      0x1000,0x1000,0x1000,0x1000,0x1000,0x1000,
+	      0x1000,0x1000,0x1000,0x1000,0x1000,0x1000,
+	      0x2000,0x2000,0x2000,0x2000,0x2000,0x2000,
+	      0x2000,0x2000,0x2000,0x2000,0x2000,0x2000,
+	      0x2000,0x2000,0x2000,0x2000,0x2000,0x2000};
+int image[50][150];
+int ttcadr,id;
+main(argc,argv,envs)
+int argc;
+char *argv[];
+char *envs[];
+  { FILE *fp;
+    int board,kk;
+    long stat;
+    double asum,axsum,axxsum,ped,dped,sig2,aval,yc;
+    double meanhp,meanhc,meanlp,meanlc;
+    double sum,xlsump,xxlsump,xlsumc,xxlsumc;
+    double siglp,siglc,pmaxl,cmaxl,tmaxl;
+    int nevnt,nevmax,nstrtev,l,nn,i,k,wait;
+    int card,okcd[48],nall,ngood,nbad,ntry;
+    unsigned int kl,lk,start,trouble;
+    unsigned short shrt;
+    int dac,time1,time2,time3,time4;
+    double fdac,charge,val,ratio;
+    int bigain,kpeak,klo,khi,icnt,dstep;
+    double s,sx,sy,sxy,sev,sxev,sxxev,el,er,ep;
+    double sig,sx2,volt,capacitor,a,b,del,x,y,dely;
+    double pedhi,dpedhi,pedlo,dpedlo;
+    char xstring[80],ystring[80],string[80],err[80];
+    unsigned short cadr,tc,tf;
+    int kpeakl,timfl,timf;
+    int tm1,tm2,tm3,tm4;
+    unsigned short sval,dval;
+    board = 1;
+    ttcadr = 0x3009;
+    id = (board<<6) | 1;
+   ttcvi_map(ttcadr);
+   reset_ctrl_can();
+   printf("calling can_init\n");
+   can_reset(ttcadr);  
+   can_init(board,"S10117");  
+    tm1=120;
+    tm2=64;
+    tm3=58;
+    tm4=20;
+    set_mb_time(ttcadr,1,tm1);
+    set_mb_time(ttcadr,1,tm1);
+    set_mb_time(ttcadr,2,tm2);
+    set_mb_time(ttcadr,2,tm2);
+    set_mb_time(ttcadr,3,tm3);
+    set_mb_time(ttcadr,3,tm3);
+    set_mb_time(ttcadr,4,tm4);
+    set_mb_time(ttcadr,4,tm4);
+/* ------------------ disable all cards ---------------*/
+   sidev(1);   /* force plot to screen without asking*/
+next:
+    base_fermi=basef;
+    base_last=basef;
+    fermi_setup();
+   for (kl=1;kl<49;kl++)
+     {set_tube(ttcadr,kl);
+      trig_disable(ttcadr);
+      small_cap_disable(ttcadr);
+      large_cap_disable(ttcadr);
+      set_dac(ttcadr,0);
+     }
+/* ------------------- start card loop --------------- */
+   for(kl=1;kl<49;kl++) 
+       { if(cardchk(kl) == 1) 
+         { card = kl;
+	   if(sw(5) == 1) printf("card %d  connect to adder=%d  fermi=%d input=%d\n",
+	      card,adder[card],(boff[card]<<12),finput[card]);
+	    
+           base_fermi = basef + boff[kl-1];
+           if(base_fermi != base_last)
+            { fermi_setup();
+              base_last = base_fermi;
+            }
+         kk = finput[card-1];
+         set_tube(ttcadr,card);
+         multi_low(ttcadr);
+         rxw_low(ttcadr);
+         intg_rd_low(ttcadr);
+         itr_low(ttcadr);
+         set_intg_gain(ttcadr,0);  /* s1=s2=s3=s4=0 */
+         mse_low(ttcadr);         /* mse=0 */
+         trig_enable(ttcadr);
+         capacitor = 100.0;
+         small_cap_disable(ttcadr);
+         large_cap_enable(ttcadr);
+         charge=150.0;
+         fdac = (1023.0*charge) / (2.0 * 4.096 * capacitor);
+         dac = (int)fdac;
+         charge = 2.0 * 4.096 * capacitor * (double)dac / 1023.0;
+         set_dac(ttcadr,dac);
+         usleep(2000);
+         inject();
+         fermi_read();
+         for(i=0;i<50;i++) 
+	   { image[card][i] = fdata[kk][i];
+	     if(sw(1) == 1) printf("card %d     kk %d   i %d     fdata %d\n",
+	        card,kk,i,fdata[kk][i]);
+           }
+         small_cap_disable(ttcadr);
+         large_cap_disable(ttcadr);
+         set_dac(ttcadr,0);
+   } /* end of if */
+ }  /* end of kl loop */
+  	    sprintf(string,"TRIG OUTPUT TUBES 1-24");
+  	    bigdisp(50,string,1);
+  	    sprintf(string,"TRIG OUTPUT TUBES 25-48");
+    	    bigdisp(50,string,25);
+    if(sw(8) == 0) goto next;
+}  /* end of main */
+bigdisp(nn,string,strt)
+ int nn,strt;
+ char *string;
+ { int jx[24] = {200,500,800,1100,1400,1700,
+                 200,500,800,1100,1400,1700,
+                 200,500,800,1100,1400,1700,
+                 200,500,800,1100,1400,1700};
+   int jy[24] = {2300,2300,2300,2300,2300,2300,
+                 1600,1600,1600,1600,1600,1600,
+		  900, 900, 900, 900, 900, 900,
+		  200, 200, 200, 200, 200, 200};	     
+ int mmax,idx,idy,ny,linx,ixbas,iybas,ix,iy,iylst,kx,ky,i,k,ii,iii;
+   int idel,kk,ik;
+   double dely,y,dy;
+   char str[5];
+   erasm();
+   putchar(27);
+   putchar(59);   /* set fontSmall */
+   ik=0;
+   for(kk=0;kk<24;kk++)
+    {
+   mmax=4000;
+  
+   idx = 250/nn;
+   linx = idx*nn;
+   ixbas = jx[ik];
+   dy = 500.0/(double)mmax;
+   iybas = jy[ik];
+   mova(ixbas,iybas);
+   drwr(linx,0);
+   mova(ixbas,iybas);
+   iylst = 0;
+   for(i=0;i<=nn;i++)
+    { ii = image[kk+strt][i];
+      y = (double)ii;
+      y = y*dy;
+      iy = (int)y;
+      idy = iy-iylst;
+      drwr(0,idy);
+      drwr(idx,0);
+      iylst=iy;
+    }
+      drwr(0,-iylst);
+
+/*  label horizontal axis */
+    idel=10;
+    if(nn>100) idel=25;
+    if(nn>200) idel=50;
+    for(i=1;i<nn+2;i=i+idel)
+     { ix=ixbas+idx*i;
+       mova(ix,iybas);
+       drwr(0,-30);
+/*       k=i/2;
+       if(k*2 == i)
+         { sprintf(str,"%3d",i);
+           kx = ix-45;
+           if(i<100) kx = ix-55;
+           if(i<10) kx=ix-75;
+           symb(kx,iybas-100,0.0,str); 
+         }  */
+     }
+/*  label vertical axis  */
+    ny =2;
+    y=(double)mmax*dy;
+    iy = (int)y;
+    mova(ixbas,iybas);
+    drwr(0,iy);
+    for(i=0;i<=ny;i++)
+     { ky = i*mmax/ny;
+       y = (double)ky * dy;
+       iy = (int)y + iybas;
+       mova(ixbas,iy);
+       drwr(-20,0);
+       sprintf(str,"%4d",ky);
+       kx = ixbas-100;
+     if(i == 2)  symb(kx,iy-20,0.0,str);  
+     }
+   ik=ik+1;
+   sprintf(str,"%d",kk+strt);
+   symb(ixbas+20,iybas+500,0.0,str);
+   }
+    /*  print label */
+   putchar(27);
+   putchar(56);   /* set large font */
+    symb(200,3000,0.0,string);
+    plotmx();
+ }
+     inject()
+       { static int entry=0;
+         int c1,c2,f1,f2,swtst,i,i1,i2,i0time,i3time;
+	 double a;
+         if(entry == 0)
+	   {/* setup inhibit1 to set tp high */
+	     SetBMode(1,0xa);
+	     SetInhibitDelay(1,10);
+	     SetInhibitDuration(1,10);
+	     BPutLong(1,ttcadr,1,0xc0,0x00);  /* load set tp_high into fifo1 */
+	     /* set inhibit2 to drop tp low (timed broadcast mode */
+	     SetBMode(2,0xa);
+	     SetInhibitDelay(2,2000);
+	     SetInhibitDuration(2,10);
+	  /*  BPutLong(2,ttcadr,1,0xc0,0x01); */  /* load set tp_low into fifo2 */
+	     BPutShort(2,0xc0);   /* set tp low bcast command  */
+	     /* set inhibit3 to set latch                     */
+	     /* use latch-bar and inhibit3 to start fermi     */
+             /* will use inhibit 3 to set l1a with digitizers */
+             i3time=2010;
+ 	 /*    printf("input i3time\n");
+             fscanf(stdin,"%d",&i3time);    */   
+	     SetInhibitDelay(3,i3time);
+	     SetInhibitDuration(3,10);
+	     SetInhibitDelay(0,1);
+	     SetInhibitDuration(3,10);
+	     /* setup the switch box timers */
+	     c1=1;
+             c2=1;
+             f1=5;
+             f2=5; 
+             setime(c1,f1,c2,f2);
+	     restim();
+             rlatch();  
+             a = sin(0.11);
+     	     entry = 1;
+	    }
+           fermi_reset();
+	 /*  a = sin(0.21);  */  
+loop:      stvme();  /* send pulses from the switch box to clear last event */
+      /*     a = sin(0.003);
+           a = sin(0.03);
+           a = sin(0.3);  */
+           swtst = latch();  /* wait for the latch bit to set */
+           if(swtst == 0) 
+             { a = sin(0.003); 
+               goto loop;
+             }
+           restim();  /* reset the timer for next trigger */
+           rlatch();    /* reset the latch bit */
+  }
+fermi_setup()
+  { unsigned long am,vmead,offset,size,len;
+    am=0x39;
+    vmead=base_fermi;
+/*    printf(" fermi setup  base=%x\n",base_fermi);  */
+    offset=0;
+    size=0;
+    len=400;
+    adc = (struct block *)( find_controller(vmead,len,am,offset,size,&param) );
+    if( adc == (struct block *)(-1) ) 
+      { printf("unable to map vme address\n");
+        exit(0);}
+/* issue fermi reset */
+   adc->reset=0;
+/* set to full 255 samples */
+   adc->sample=255;
+/* set delay */
+   adc->delay=2;
+ }
+fermi_reset()
+ { 
+/* issue reset */
+   adc->reset=0;
+ }
+fermi_read()
+ { int stat,data_ready,busy,lcnt,i,k0,k1,k2,kmax0,kmax1,kmax2;
+   int dd0,dd1,dd2;
+   unsigned short sd0,sd1,sd2;
+   double a;
+   /* wait for a trigger */
+   lcnt=0;
+loop:
+   lcnt++;
+   stat = adc->status;
+   data_ready = stat & 4;
+   busy = stat & 2;
+   if(lcnt > 1000 ) goto error;
+   if ( data_ready == 0 ) goto loop;
+   /* read the data and find peak channel */
+   a = sin(0.3);  /* little delay after ready */
+   k0=0;
+   kmax0=0;
+   k1=0;
+   kmax1=0;
+   k2=0;
+   kmax2=0;
+   for (i=0;i<50;i++)
+    { sd0 = adc->rd0;
+      dd0 = (int)sd0 & 0xfff;
+      fdata[0][i] = 0xfff - dd0;
+      if(fdata[0][i]>kmax0)
+       { kmax0=fdata[0][i];
+         k0=i;}
+      sd1 = adc->rd1;
+      dd1 = (int)sd1 & 0xfff;
+      fdata[1][i] = 0xfff - dd1;
+      if(fdata[1][i]>kmax1)
+       { kmax1=fdata[1][i];
+         k1=i;}
+      sd2 = adc->rd2;
+      dd2 = (int)sd2 & 0xfff;
+      fdata[2][i] = 0xfff - dd2;
+      if(fdata[2][i]>kmax2)
+       { kmax2=fdata[2][i];
+         k2=i;}
+      if(sw(4) == 1) printf("i=%d  dd0=%d  dd1=%d  dd2=$d\n",i,dd0,dd1,dd2);
+     }
+   ipk[0]=k0;
+   pk[0]=kmax0;
+   ipk[1]=k1;
+   pk[1]=kmax1;
+   ipk[2]=k2;
+   pk[2]=kmax2;
+   return(0);
+error:
+   ipk[0]=-1;
+   ipk[1]=-1;
+   ipk[2]=-1;
+}
+cardchk(k)
+int k;
+  {int i,status;
+   unsigned short shrt;
+   int trig,s1,s2,s3,s4,itr,ire,mse,tplo,tphi,ok;
+   ok=0;
+   status=0;
+   multi_low(ttcadr);
+   back_low(ttcadr);
+   set_tube(ttcadr,k);
+   set_intg_gain(ttcadr,5);   /* s1=s3=1 s2=s4=0 */
+   itr_high(ttcadr);           /* itr=1 */
+   intg_rd_low(ttcadr);        /* ire=0 */
+   mse_high(ttcadr);           /* mse=1 */
+   small_cap_disable(ttcadr);  /* tplo=0 */
+   large_cap_enable(ttcadr);   /* tphi=1 */
+   trig_disable(ttcadr);       /* trig=0 */
+   back_high(ttcadr);
+   back_low(ttcadr);
+   load_can(ttcadr);   /* fetch from 3in1 */
+   status=can_3in1get(id,&shrt);    /* and load can output reg */
+   i = (int)shrt;
+   trig = i & 1;
+   s1 = (i>>1) & 1;
+   s2 = (i>>2) & 1;
+   s3 = (i>>3) & 1;
+   s4 = (i>>4) & 1;
+   itr = (i>>5) & 1;
+   ire = (i>>6) & 1;
+   mse = (i>>7) & 1;
+   tplo = (i>>8) & 1;
+   tphi = (i>>9) & 1;
+   if((s1==1) && (s2==0)  && (s3==1) && (s4==0) && (itr==1) &&
+      (ire==0) && (mse==1) && (tplo==0) && (tphi==1) && 
+      (trig==0) ) ok++;
+   /* if(sw(2)==1) printf("k=%d s1..4=%d %d %d %d itr=%d ire=%d mse=%d tplo=%d tphi=%d trig=%d %x %d\n"
+           ,k,s1,s2,s3,s4,itr,ire,mse,tplo,tphi,trig,i,ok); */
+
+   set_intg_gain(ttcadr,0xa);   /* s1=s3=0 s2=s4=1 */
+   itr_low(ttcadr);           /* itr=0 */
+   intg_rd_high(ttcadr);        /* ire=1 */
+   mse_low(ttcadr);           /* mse=0 */
+   small_cap_enable(ttcadr);  /* tplo=1 */
+   large_cap_disable(ttcadr);   /* tphi=0 */
+   trig_enable(ttcadr);       /* trig=1 */
+   back_high(ttcadr);
+   back_low(ttcadr);
+   load_can(ttcadr);   /* fetch from 3in1 */
+   status=can_3in1get(id,&shrt);    /* and load can output reg */
+   i = (int)shrt;
+   trig = i & 1;
+   s1 = (i>>1) & 1;
+   s2 = (i>>2) & 1;
+   s3 = (i>>3) & 1;
+   s4 = (i>>4) & 1;
+   itr = (i>>5) & 1;
+   ire = (i>>6) & 1;
+   mse = (i>>7) & 1;
+   tplo = (i>>8) & 1;
+   tphi = (i>>9) & 1;
+   if((s1==0) && (s2==1)  && (s3==0) && (s4==1) && (itr==0) &&
+      (ire==1) && (mse==0) && (tplo==1) && (tphi==0) && 
+      (trig==1) ) ok++;
+   /* f(sw(2)==1) printf("k=%d s1..4=%d %d %d %d itr=%d ire=%d mse=%d tplo=%d tphi=%d trig=%d %x %d\n"
+           ,k,s1,s2,s3,s4,itr,ire,mse,tplo,tphi,trig,i,ok); */
+  if(ok == 2) status=1;
+   return(status);
+  }

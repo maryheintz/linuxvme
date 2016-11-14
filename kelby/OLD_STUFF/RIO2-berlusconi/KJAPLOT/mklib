@@ -1,0 +1,21 @@
+gcc -c axis.c
+gcc -c basic.c
+gcc -c disk.c
+gcc -c dot.c
+gcc -c dxy.c
+gcc -c hst.c
+gcc -c post.c
+gcc -c ranf.c
+
+ar -r libkja.a axis.o
+ar -r libkja.a basic.o
+ar -r libkja.a disk.o
+ar -r libkja.a dot.o
+ar -r libkja.a dxy.o
+ar -r libkja.a hst.o
+ar -r libkja.a post.o
+ar -r libkja.a ranf.o
+
+ar -s libkja.a
+cp -r libkja.a /home/user/kelby/lib
+

@@ -1,0 +1,795 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.1
+date	2000.07.14.14.16.10;	author ruud;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@
+/*
+ * hwd.c: HardWare Driver: AMCC s5933 control is here
+ * Copyright (C) 2000 by J.E. van Grootheest
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+
+
+#include <linux/config.h>
+#if defined(CONFIG_MODVERSIONS) && !defined(MODVERSIONS)
+#define MODVERSIONS
+#endif
+#if defined(MODVERSIONS)
+#include <linux/modversions.h>
+#endif
+
+#include <linux/delay.h>
+#include <linux/errno.h>
+#include <linux/poll.h>
+#include <linux/interrupt.h>
+#include <linux/string.h>
+#include <linux/sched.h>
+#include <asm/io.h>
+
+#include "bufintern.h"
+#include "hwddef.h"
+#include "sldpriv.h"
+#include "sld.h"
+
+/* hardware bit definitions */
+#include "amcc.h"	/* AMCC registers */
+#include "slink.h"	/* S-Link definitions for in/out mailboxes */
+
+
+static const int debuglevel = 1;
+
+
+static void setupDma( sldpriv_t *sldData )
+{
+  void *bufferPtr;
+
+  bufferPtr = getDataBuffer( sldData );
+  if ( bufferPtr == NULL )
+    {
+      /* no buffer, so no DMA */
+      if ( !sldData->hwd.waitingForBuffer )
+	SLD_DEBUG( 2, "Out of buffers!\n" );
+
+      /* notify task that it needs to setup DMA */
+      sldData->hwd.waitingForBuffer = TRUE;
+
+      return;
+    }
+
+  if ( sldData->hwd.waitingForBuffer )
+    SLD_DEBUG( 2, "restarting DMA to %p\n", bufferPtr );
+
+  /* configure DMA */
+  sldData->hwd.amccRegs->mwar = virt_to_phys( bufferPtr );
+  sldData->hwd.amccRegs->mwtc = sld_bufferSize;
+
+  /* enable DMA; the wmb() makes sure the write above are finished first */
+  wmb();
+  sldData->hwd.amccRegs->mcsr |= MCSR_WR_ENA;
+
+  sldData->hwd.dmaBusy = TRUE;
+  sldData->hwd.dmaPtr = bufferPtr;
+  sldData->hwd.waitingForBuffer = FALSE;
+
+  /* that's it. */
+  SLD_DEBUG( 2, "dma started to buffer %p\n", bufferPtr );
+}
+
+static int processDmaEnd( sldpriv_t *sldData, infomessage_t msg )
+{
+  infoblock_t infoBlock;
+  int countLeft;
+  int *bufferPtr;
+  int index;
+
+  /* stop the DMA, so it doesn't change from under us */
+  sldData->hwd.amccRegs->mcsr &= ~MCSR_WR_ENA;
+  wmb();
+  sldData->hwd.dmaBusy = FALSE;
+
+  /* take info from AMCC */
+  countLeft = sldData->hwd.amccRegs->mwtc;
+  index = sld_bufferSize - countLeft;
+  SLD_DEBUG( 3, "dma tranferred %d bytes\n", index );
+  bufferPtr = sldData->hwd.dmaPtr;
+
+  /*
+   * If it was a DMA triggered interrupt, no problem.
+   * But if it was triggered by a datatype change, it might be that
+   * there's data left in the AMCC queue.
+   * And it might happen (too!) that there was no data transfered, but
+   * that's a long story.
+   * First check the fifo, for the situation when there's just a little bit
+   * of data that didn't fit in the previous buffer.
+   */
+  if ( countLeft != 0 )
+    {
+      while ( ( (sldData->hwd.amccRegs->mcsr & MCSR_WR_FIFO_EMPTY) == 0 ) &&
+	      ( index < sld_bufferSize ) )
+	{
+	  /* Grmbl */
+	  SLD_DEBUG( 2, "emptying AMCC fifo\n" );
+	  bufferPtr[ index / 4 ] = sldData->hwd.amccRegs->fifo;
+	  index += 4;
+	  sldData->stat.fifoRead++;
+	}
+    }
+  if ( countLeft == sld_bufferSize )
+    {
+      /* no data, so we're done */
+      SLD_DEBUG( 2, "DMA finished, no data\n" );
+      return( 0 );
+    }
+
+  /* make infoblock */
+  infoBlock.type = slink_data;
+  infoBlock.message = msg;
+  infoBlock.u.buffer.ptr = bufferPtr;
+  infoBlock.u.buffer.size = index;
+
+  /* all done, queue the information */
+  SLD_DEBUG( 2, "DMA finished for buffer %p with %d bytes data\n", bufferPtr, index );
+  return( putInfo( sldData, &infoBlock ) );
+}
+
+static int handleDmaEnd( sldpriv_t *sldData )
+{
+  return( processDmaEnd( sldData, NoMessage ) );
+}
+
+static int handleDmaError( sldpriv_t *sldData, int intcsr )
+{
+  int ret = 0;
+
+  SLD_DEBUG( 2, "intcsr=%8.8x\n", intcsr );
+
+  /*
+   * A master or target abort happened on DMA transfer.
+   *
+   * Master abort, as I understand it, means that the target did not
+   * respond, meaning that the target address is incorrect. In this case,
+   * we stop the whole thing and its up to the user to decide what to do.
+   *
+   * Target abort obviously was not caused by the AMCC, but something
+   * did go wrong at the target and the DMA is done. In this case, handle
+   * the previous DMA transfer normally, but inform the user of the situation.
+   * After that, setup the next DMA transfer to collect the rest of the data.
+   */
+  if ( (intcsr & INTCSR_M_ABORT) != 0 )
+    {
+      sldData->stat.masterAbort++;
+
+      SLD_PRINT( "Master abort\n" );
+
+      /*
+      SLD_PRINT( "AMCC DMA setup: mwar=%8.8x, mwtc=%8.8x\n",
+		 sldData->hwd.amccRegs->mwar,
+		 sldData->hwd.amccRegs->mwtc );
+      SLD_PRINT( "AMCC misc registers: mcsr=%8.8x, intcsr=%8.8x\n",
+		 sldData->hwd.amccRegs->mcsr,
+		 sldData->hwd.amccRegs->intcsr );		 
+      SLD_PRINT( "HWD databuffer is %p (phys %p)\n",
+		 sldData->hwd.dmaPtr,
+		 (void *)virt_to_phys( sldData->hwd.dmaPtr ) );
+      */
+
+      /* reset the MABORT bit in the PCI status (write-one-clear) */
+      pci_write_config_word( sldData->device,
+			     PCI_STATUS,
+			     PCI_STATUS_REC_MASTER_ABORT );
+
+      /*
+       * Actually the S-Link should be restarted. But...
+       * It seems that there are master aborts generated that are NOT
+       * master aborts. So we'll try to continue.
+       */
+      ret += processDmaEnd( sldData, MasterAbort );
+    }
+  if ( (intcsr & INTCSR_TG_ABORT) != 0 )
+    {
+      sldData->stat.targetAbort++;
+
+      /* reset the received target abort bit in the PCI status (write-one-clear) */
+      pci_write_config_word( sldData->device,
+			     PCI_STATUS,
+			     PCI_STATUS_REC_TARGET_ABORT );
+
+      /* target abort */
+      ret += processDmaEnd( sldData, TargetAbort );
+      SLD_PRINT( "Target abort, trying to continue gracefully.\n" );
+    }
+
+  return( ret );
+}
+
+static int handleOverflow( sldpriv_t *sldData )
+{
+  int ret = 0;
+  int oldDmaBusy;
+
+  /* Overflow; this should only happen with simplex S-Link interfaces */
+  oldDmaBusy = sldData->hwd.dmaBusy;
+  if ( oldDmaBusy )
+    {
+      ret += processDmaEnd( sldData, S_LinkOverflow );
+    }
+
+  /* toggle the MCSR addon reset */
+  sldData->hwd.amccRegs->mcsr |= MCSR_ADDON_RESET;
+  wmb();
+  sldData->hwd.amccRegs->mcsr &= ~MCSR_ADDON_RESET;
+
+  /* get a decent restart of the S-Link */
+  hwd_stopDevice( sldData );
+
+  sldData->stat.overflow++;
+
+  return( ret );
+}
+
+static int handleLdownChange( sldpriv_t *sldData, int imb4 )
+{
+  int ret = 0;
+
+  /*
+   * if ldown, then we need to do ureset, which stopdevice will do
+   * if !ldown, we do startDevice, which takes care of it all
+   */
+  if ( (imb4 & SLINK_IMB_LDOWN) != 0 )
+    {
+      ret += hwd_startDevice( sldData );
+      SLD_DEBUG( 2, "S-Link started\n" );
+    }
+  else
+    {
+      ret += hwd_stopDevice( sldData );
+
+      /* turn on the necessary interrupts; we DO want LDOWN changes */
+      hwd_enableInterrupt( sldData );
+      SLD_DEBUG( 2, "S-Link stopped\n" );
+    }
+
+  return( ret );
+}
+
+static int handleControlData( sldpriv_t *sldData, int omb1 )
+{
+  infoblock_t infoBlock;
+  int mcsr;
+  int ret = 0;
+
+  /* take data if its there */
+  mcsr = sldData->hwd.amccRegs->mcsr;
+  while ( (mcsr & MCSR_WR_FIFO_EMPTY) == 0 )
+    {
+      infoBlock.type = slink_control;
+      infoBlock.u.data = sldData->hwd.amccRegs->fifo;
+
+      /* check if error */
+      infoBlock.message = ((omb1 & SLINK_OMB_LDERR) != 0) ? NoMessage : S_LinkError;
+
+      ret += putInfo( sldData, &infoBlock );
+
+      /* get new status */
+      mcsr = sldData->hwd.amccRegs->mcsr;
+    }
+
+  if ( ret != 0 )
+    SLD_DEBUG( 2, "queued %d infoblocks\n", ret );
+  return( ret );
+}
+
+
+
+int hwd_timerTask( sldpriv_t *sldData )
+{
+  int ret = 0;
+
+  if ( sldData->hwd.waitingForBuffer )
+    {
+      SLD_DEBUG( 2, "checking for buffers\n" );
+
+      setupDma( sldData );
+
+      /*
+       * Big, ugly workaround in the multi-dma case when there are just
+       * a few more words than the buffer can hold and there are no new
+       * databuffers available. In that case we just started a new DMA
+       * transfer and the previously announced interrupts must be handled
+       * now, since they will not be generated again!
+       */
+      if ( !sldData->hwd.waitingForBuffer && (sldData->hwd.intcsr != 0) )
+	{
+	  hwd_handleInterrupt( sldData );
+	}
+
+      hwd_enableInterrupt( sldData );
+    }
+
+  if ( sldData->hwd.waitingForControlword )
+    {
+      ret = handleControlData( sldData, sldData->hwd.amccRegs->omb[ 0 ] );
+      if ( ret != 0 )
+	SLD_DEBUG( 2, "queued %d blocks\n", ret );
+    }
+
+  if ( sldData->hwd.waitingForResetEnd )
+    {
+      SLD_DEBUG( 3, "waiting for reset: %d\n", sldData->hwd.resetTime );	  
+      if ( sldData->hwd.resetTime++ > (15 * HZ) + 1 )
+	{
+	  sldData->hwd.waitingForResetEnd = FALSE;
+	  sldData->hwd.amccRegs->omb[ 0 ] |= SLINK_OMB_URESET;
+	  SLD_DEBUG( 1, "Reset time exceeded, cleared reset\n" );	  
+	}
+    }
+
+  return( ret );
+}
+
+
+void hwd_powerUp( sldpriv_t *sldData )
+{
+  int omb1;
+  amcc_operation_registers_t volatile *amccRegs;
+
+  /* prepare the hwd private data */
+  memset( &sldData->hwd, 0, sizeof( sldData->hwd ) );
+  amccRegs = (amcc_operation_registers_t *)sldData->ddf.deviceMemAddress;
+  sldData->hwd.amccRegs = amccRegs;
+
+  /* take the register copies */
+  omb1 = amccRegs->omb[ 0 ];
+  sldData->hwd.imb4 = amccRegs->imb[ 3 ];
+  SLD_DEBUG( 2, "imb4 = %8.8xd\n", sldData->hwd.imb4 );
+  sldData->hwd.intcsr = amccRegs->intcsr;
+  SLD_DEBUG( 2, "intcsr = %8.8x\n", sldData->hwd.intcsr );
+
+  /* initialize the AMCC registers */
+  amccRegs->mcsr = 0;
+  amccRegs->intcsr = 0;
+  amccRegs->mrtc = 0;
+  amccRegs->mwtc = 0;
+
+  /* start S-Link defined reset sequence */
+  amccRegs->omb[ 0 ] = 0;
+  amccRegs->mcsr = MCSR_ADDON_RESET;
+  amccRegs->mcsr |= (MCSR_WR_FIFO_RESET | MCSR_RD_FIFO_RESET | MCSR_MBEF_RESET);
+  /* Leave the addon and freset on for now and configure things */
+
+  /* MCSR: set write priority for dma and start DMA when more than 4 in fifo */
+  amccRegs->mcsr |= MCSR_WR_PRIO | MCSR_WR_MGMT_4;
+  /* S-Link: 32 bit width, no test data, not error, ctrl, leave reset on for now */
+  amccRegs->omb[ 0 ] |= (SLINK_OMB_UTDO | SLINK_OMB_UDW_32 | SLINK_OMB_LDERR);
+
+  /* clear the reset flags */
+  amccRegs->mcsr &= ~MCSR_ADDON_RESET;
+  amccRegs->omb[ 0 ] |= SLINK_OMB_FRESET;
+
+  /*
+   * The addon should now be initializing and will write into the imb;
+   * this works on (approx.) a 1us clock, so we need to wait 2us as
+   * we're not in synch.
+   */
+  udelay( 2 );
+
+  /* clear the mbef status, so we don't get interrupts when they're turned on */
+  amccRegs->mcsr |= MCSR_MBEF_RESET;
+
+  /* take the register copies */
+  sldData->hwd.imb4 = amccRegs->imb[ 3 ];
+  sldData->hwd.intcsr = amccRegs->intcsr;
+  SLD_DEBUG( 2, "omb=%8.8x, imb=%8.8x, intcsr = %8.8x\n",
+	     amccRegs->omb[ 0 ],
+	     sldData->hwd.imb4,
+	     sldData->hwd.intcsr );
+
+  /* we exit with interrupts off and URESET on. */
+}
+
+void hwd_powerDown( sldpriv_t *sldData )
+{
+  amcc_operation_registers_t volatile *amccRegs;
+  int omb1;
+
+  /* save the amccRegs and then reset it in sldData, this will stop everything */
+  amccRegs = sldData->hwd.amccRegs;
+  sldData->hwd.amccRegs = NULL;
+
+  /* clear return lines */
+  omb1 = amccRegs->omb[ 0 ];
+  omb1 &= ~SLINK_OMB_URL_MASK;
+  SLD_DEBUG( 1, "set return lines to zero; omb=%8.8x\n", omb1 );
+  amccRegs->omb[ 0 ] = omb1;
+}
+
+
+int hwd_startDevice( sldpriv_t *sldData )
+{
+  int ret = 0;
+  infoblock_t infoBlock;
+  int linkUp;
+  int omb1;
+  int imb4;
+
+  if ( sldData->hwd.started )
+    {
+      SLD_DEBUG( 1, "device already started\n" );
+      return( 0 );
+    }
+
+  sldData->hwd.waitingForResetEnd = FALSE;
+
+  /* get the slink status */
+  sldData->hwd.imb4 = sldData->hwd.amccRegs->imb[ 3 ];
+  SLD_DEBUG( 2, "imb4 = %8.8x\n", sldData->hwd.imb4 );
+  linkUp = (sldData->hwd.imb4 & SLINK_IMB_LDOWN);
+
+  /* report link status */
+  infoBlock.type = information;
+  infoBlock.message = (linkUp != 0) ? S_LinkUp : S_LinkDown;
+  ret += putInfo( sldData, &infoBlock );
+
+  /* check if S-Link up */
+  if ( linkUp )
+    {
+      /* link is up, clear reset */
+      SLD_PRINT( "HWD: S-Link up.\n" );
+      sldData->hwd.amccRegs->omb[ 0 ] |= SLINK_OMB_URESET;
+      SLD_DEBUG( 3, "cleared reset omb=%8.8x, imb=%8.8x\n",
+		 sldData->hwd.amccRegs->omb[ 0 ],
+		 sldData->hwd.amccRegs->imb[ 3 ] );
+    }
+  else
+    {
+      sldData->hwd.waitingForResetEnd = TRUE;
+
+      /* no such luck, user should retry */
+      SLD_PRINT( "HWD: S-Link down.\n" );
+
+      /* leave interrupts on, so we will catch a LDOWN change */
+      hwd_enableInterrupt( sldData );
+      return( -ENETDOWN );
+    }
+
+  /* Link is up, now start receiving first data */
+  imb4 = sldData->hwd.amccRegs->imb[ 3 ];
+  omb1 = sldData->hwd.amccRegs->omb[ 0 ];
+  omb1 &= ~(SLINK_OMB_LCTRL | SLINK_OMB_LDERR);
+  omb1 |= (imb4 & (SLINK_OMB_LCTRL | SLINK_OMB_LDERR));
+  sldData->hwd.amccRegs->omb[ 0 ] = omb1;
+  SLD_DEBUG( 3, "prepared data type omb=%8.8x, imb=%8.8x\n",
+	     sldData->hwd.amccRegs->omb[ 0 ],
+	     sldData->hwd.amccRegs->imb[ 3 ] );
+
+  /* If data type is datawords, then also setup DMA */
+  if ( (omb1 & SLINK_OMB_LCTRL) != 0 )
+    {
+      setupDma( sldData );
+    }
+
+  sldData->hwd.started = TRUE;
+
+  /* turn on interrupts and we're off! */
+  hwd_enableInterrupt( sldData );
+  return( ret );
+}
+
+int hwd_stopDevice( sldpriv_t *sldData )
+{
+  int ret = 0;
+  infoblock_t infoBlock;
+
+  /* we do not check if we're started, because multiple stops do not hurt */
+  /* make sure device is not doing anything anymore */
+  sldData->hwd.waitingForBuffer = FALSE;
+  sldData->hwd.waitingForControlword = FALSE;
+  hwd_disableInterrupt( sldData );
+  sldData->hwd.amccRegs->mcsr &= ~(MCSR_RD_ENA | MCSR_WR_ENA );
+
+  /* reset LDC; we should get an LDOWN after this, which will inform the user */
+  sldData->hwd.amccRegs->omb[ 0 ] &= ~SLINK_OMB_URESET;
+  SLD_DEBUG( 3, "turned on reset omb=%8.8x, imb=%8.8x\n",
+	     sldData->hwd.amccRegs->omb[ 0 ],
+	     sldData->hwd.amccRegs->imb[ 3 ] );
+
+  /* if dma busy, then stop that */
+  if ( sldData->hwd.dmaBusy )
+    {
+      ret += handleDmaEnd( sldData );
+    }
+
+  if ( sldData->hwd.started )
+    {
+      /* notify user that link went down */
+      infoBlock.type = information;
+      infoBlock.message = S_LinkDown;
+      putInfo( sldData, &infoBlock );
+      ret++;
+    } 
+
+  sldData->hwd.waitingForResetEnd = TRUE;
+
+  sldData->hwd.intcsr = 0;
+  sldData->hwd.imb4 = 0;
+  sldData->hwd.started = FALSE;
+
+  return( ret );
+}
+
+
+int hwd_ioctl( sldpriv_t *sldData, unsigned int cmd, unsigned long arg )
+{
+  int retLines;
+  int down;
+  int omb1;
+  int imb4;
+
+  switch( cmd )
+    {
+    case SLD_IOCSRETL:
+      get_user_ret( retLines, (int *)arg, -EFAULT );
+      omb1 = sldData->hwd.amccRegs->omb[ 0 ];
+      omb1 &= ~SLINK_OMB_URL_MASK;
+      omb1 |= (retLines << SLINK_OMB_URL_SHIFT) & SLINK_OMB_URL_MASK;
+      SLD_DEBUG( 3, "set return lines %1.1x; omb=%8.8x\n", retLines, omb1 );
+      sldData->hwd.amccRegs->omb[ 0 ] = omb1;
+      break;
+
+    case SLD_IOCGRETL:
+      omb1 = sldData->hwd.amccRegs->omb[ 0 ];
+      retLines = (omb1 & SLINK_OMB_URL_MASK) >> SLINK_OMB_URL_SHIFT;
+      put_user_ret( retLines, (int *)arg, -EFAULT );
+      break;
+
+    case SLD_IOCGDOWN:
+      imb4 = sldData->hwd.amccRegs->imb[ 3 ];
+      down = (imb4 & SLINK_IMB_LDOWN) == 0;
+      put_user_ret( down, (int *)arg, -EFAULT );
+      break;
+
+    default:
+      return( -EINVAL );
+    }
+
+  return( 0 );
+}
+
+
+int hwd_isInterrupt( sldpriv_t *sldData )
+{
+  int intcsr;
+
+  /* get the interrupt information and check if it's ours */
+  intcsr = sldData->hwd.amccRegs->intcsr;
+  if ( (intcsr & INTCSR_INT) == 0 )
+    {
+      /* not ours, get out */
+      return( FALSE );
+    }
+
+  /* disable the interrupts and acknowledge events */
+  intcsr &= ~( INTCSR_E_RD_COMPLETE | INTCSR_E_WR_COMPLETE | INTCSR_E_IMB | INTCSR_E_OMB );
+  sldData->hwd.amccRegs->intcsr = intcsr;
+
+  /*
+   * remember the interrupts for later; all interrupts are
+   * or-ed so we don't lose any
+   */
+  sldData->hwd.intcsr |= intcsr;
+
+  SLD_DEBUG( 2, "saved intcsr=%8.8x\n",
+	     intcsr );
+  SLD_DEBUG( 3, "real intcsr=%8.8x\n",
+	     sldData->hwd.amccRegs->intcsr );
+
+  /* no longer waiting for the task to do something */
+  sldData->hwd.waitingForControlword = FALSE;
+  sldData->hwd.waitingForBuffer = FALSE;
+  sldData->hwd.waitingForResetEnd = FALSE;
+
+  /* return if we caused the interrupt and it must be handled */
+  return( TRUE );
+}
+
+
+void hwd_disableInterrupt( sldpriv_t *sldData )
+{
+  int intcsr;
+
+  intcsr = sldData->hwd.amccRegs->intcsr;
+  SLD_DEBUG( 3, "old intcsr %8.8x\n", intcsr );
+  intcsr &= ~( INTCSR_E_RD_COMPLETE | INTCSR_E_WR_COMPLETE | INTCSR_E_IMB | INTCSR_E_OMB );
+
+  /* this will also reset any events, as they are reset-on-write-1 */
+  sldData->hwd.amccRegs->intcsr = intcsr;
+  SLD_DEBUG( 2, "new intcsr %8.8x\n", intcsr );
+}
+
+
+void hwd_enableInterrupt( sldpriv_t *sldData )
+{
+  int intcsr;
+
+  /*
+   * if we're waiting for a DMA buffer, do no turn on interrupts;
+   * we're not capable of handling type changes at this moment
+   */
+  if ( sldData->hwd.waitingForBuffer )
+    return;
+
+  SLD_DEBUG( 3, "old intcsr %8.8x\n", sldData->hwd.amccRegs->intcsr );
+
+  /* this will not reset events, since we write zeros to them */
+  intcsr = (INTCSR_E_IMB | INTCSR_E_IMB4 | INTCSR_E_IMB_BYTE3);
+  if ( sldData->hwd.dmaBusy )
+    {
+      intcsr |= INTCSR_E_WR_COMPLETE;
+    }
+
+  sldData->hwd.amccRegs->intcsr = intcsr;
+  SLD_DEBUG( 2, "new intcsr %8.8x\n", sldData->hwd.amccRegs->intcsr );
+}
+
+
+
+/*
+ * Function:	hwd_handleInterrupt
+ *
+ * Description:	Handle any interrupt caused by the AMCC device.
+ *		Normally, first all things are evaluated and handled,
+ *		before changes are made in the S-Link setup. This must be
+ *		done to ensure that all data is out of the FIFO before we
+ *		switch data type.
+ *		There are actually four steps in the interrupt handling,
+ *		although you wouldn't recognize them easily:
+ *		1. handle errors that invalidate the other events.
+ *		2. finish the current transfer
+ *		3. check LDOWN
+ *		4. prepare S-Link for next transfer
+ *		5. setup next transfer
+ *
+ * Remark:	A DMA complete interrupt is handled via steps 2 and 5!
+ */
+int hwd_handleInterrupt( sldpriv_t *sldData )
+{
+  int intcsr;
+  int imb4, imb4delta;
+  int omb1;
+  int ret = 0;
+  int mcsr;
+  int handleMoreData;
+
+  omb1 = sldData->hwd.amccRegs->omb[ 0 ];
+  imb4 = sldData->hwd.amccRegs->imb[ 3 ];
+  imb4delta = (imb4 ^ sldData->hwd.imb4);
+  intcsr = sldData->hwd.intcsr;
+
+  SLD_DEBUG( 2, "intcsr=%8.8x, imb4=%8.8x, delta=%8.8x, omb=%8.8x\n",
+	     intcsr, imb4, imb4delta, omb1 );
+
+  /* step 1. DMA abort and overflow */
+  if ( (intcsr & INTCSR_ABORT_MASK) != 0 )
+    {
+      SLD_DEBUG( 2, "dma error\n" );
+      ret += handleDmaError( sldData, intcsr );
+    }
+
+  if ( (imb4 & SLINK_IMB_OVFLW) != 0 )
+    {
+      SLD_DEBUG( 2, "overflow\n" );
+      sldData->hwd.intcsr = 0;
+      return( handleOverflow( sldData ) );
+    }
+
+  /* step 2: finish current transfer */
+  if ( (omb1 & SLINK_OMB_LCTRL) == 0 )
+    {
+      ret += handleControlData( sldData, omb1 );
+    }
+  else
+    {
+      if ( sldData->hwd.dmaBusy )
+	{
+	  do
+	    {
+	      ret += handleDmaEnd( sldData );
+
+	      /*
+	       * In the case that there is more data than fits in one buffer,
+	       * we first need to continue the current data type and finish
+	       * that. That needs to be done before a typechange can be
+	       * handled.
+	       * But be careful. In the case that there are no more buffers
+	       * we cannot do the handleDmaEnd!
+	       */
+	      handleMoreData = FALSE;
+	      if ( imb4delta != 0 )
+		{
+		  SLD_DEBUG( 2, "setting up extra DMA transfer\n" );
+
+		  mcsr = sldData->hwd.amccRegs->mcsr;
+		  if ( (mcsr & MCSR_WR_FIFO_EMPTY) == 0 )
+		    {
+		      /* yep, there's more data */
+		      setupDma( sldData );
+		      if ( sldData->hwd.waitingForBuffer )
+			return( ret );
+
+		      handleMoreData = TRUE;
+		    }
+		}
+	    }
+	  while( handleMoreData );
+	}
+    }
+
+  /* step 3: LDOWN */
+  if ( (imb4delta & SLINK_IMB_LDOWN) != 0 )
+    {
+      SLD_DEBUG( 2, "LDOWN changed\n" );
+      sldData->hwd.intcsr = 0;
+      return( handleLdownChange( sldData, imb4 ) );
+    }
+
+  /* all interrupts were handled */
+  sldData->hwd.intcsr = 0;
+
+  /* step 4: prepare */
+  if ( (imb4delta & SLINK_IMB_LCTRL) != 0 )
+    omb1 ^= SLINK_OMB_LCTRL;
+  if ( (imb4delta & SLINK_IMB_LDERR) != 0 )
+    omb1 ^= SLINK_OMB_LDERR;
+  sldData->hwd.amccRegs->omb[ 0 ] = omb1;
+
+  /* imb4 was processed; remember for next time */
+  sldData->hwd.imb4 = imb4;
+
+  /* step 5: setup */
+  if ( (omb1 & SLINK_OMB_LCTRL) != 0 )
+    {
+      setupDma( sldData );
+    }
+  else
+    {
+      sldData->hwd.waitingForControlword = TRUE;
+    }
+
+  SLD_DEBUG( 3, "after switching omb=%8.8x\n", omb1 );
+  SLD_DEBUG( 2, "Handling interrupts finished\n" );
+
+  return( ret );
+}
+
+@

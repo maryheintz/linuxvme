@@ -1,0 +1,7 @@
+Gain 0  ped=0.2719  noise=0.0009  slope=0.0275   nonlin=0.0030   OK
+Gain 1  ped=0.2273  noise=0.0013  slope=0.2539   nonlin=0.0041   OK
+Gain 2  ped=0.2229  noise=0.0015  slope=0.2813   nonlin=0.0034   OK
+Gain 3  ped=0.3619  noise=0.0015  slope=0.5334   nonlin=0.0058   OK
+Gain 4  ped=0.4160  noise=0.0014  slope=0.7373   nonlin=0.0033   OK
+Gain 5  ped=0.5559  noise=0.0024  slope=0.9890   nonlin=0.0046   OK
+ Gate Open/Close : Good

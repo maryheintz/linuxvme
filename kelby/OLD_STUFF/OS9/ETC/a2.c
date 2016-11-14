@@ -1,0 +1,1 @@
+#include <stdio.h>main(){    putchar(27);   putchar(3);  /* for xterm */   putchar(27);   putchar(50); /* for mac */}

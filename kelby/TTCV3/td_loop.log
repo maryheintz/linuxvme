@@ -1,0 +1,16 @@
+0  S10117
+calling can_reset - this takes a few seconds
+calling can_reset - this takes a few seconds
+calling can_reset - this takes a few seconds
+calling can_reset - this takes a few seconds
+calling can_reset - this takes a few seconds
+ good=48    bad=0   total=48   err<crd=0 pls=0 int=0 tim=0>  pass=1
+chk_pulse
+ chk_pulse  48 cards   48 good   0 bad
+chk_intg
+chk_intg 1
+starting gain=0
+chk_intg 3
+starting gain=1
+chk_intg 3
+starting gain=2

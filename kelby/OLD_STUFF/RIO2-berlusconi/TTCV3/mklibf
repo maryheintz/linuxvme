@@ -1,0 +1,10 @@
+gcc -c lib3in1_canf.c
+gcc -c ttcvi.c
+ar -r lib3in1v3f.a lib3in1_canf.o
+ar -r lib3in1v3f.a ttcvi.o
+ar -s lib3in1v3f.a
+ranlib lib3in1v3f.a
+cp -r lib3in1v3f.a /home/user/kelby/lib
+cd ../lib
+fixlib
+ranlib libkja.a

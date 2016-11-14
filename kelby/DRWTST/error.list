@@ -1,0 +1,20 @@
+   if(slopeh<80.0) kFAIL=kFAIL|0x1;
+   if(slopeh>93.0) kFAIL=kFAIL|0x2;
+   if(dymaxh>3.0) kFAIL=kFAIL|0x4;
+   if(slopel<1.0) kFAIL=kFAIL|0x8;
+   if(slopel>1.5) kFAIL=kFAIL&0x10;
+   if(dymaxl>2.5) kFAIL=kFAIL|0x20;
+   if(ratio<58.0 || ratio>70.0) kFAIL=kFAIL|0x40;
+   if(noiseh>5.0) kFAIL=kFAIL|0x80;
+   if(noisel>2.5) kFAIL=kFAIL|0x100;
+   if(phaseh<80.0 || phaseh>140.0) kFAIL=kFAIL|0x200;
+   if(phasel<60.0 || phasel>120.0) kFAIL=kFAIL|0x200;
+
+   sw(1) - plots for each card
+   sw(2) - digital error bits
+   sw(3) - timer peaks
+   sw(4) - card final data
+   sw(5) - chk_fast data
+   sw(6) - timer details
+   sw(7) - bigdisp display each event
+   sw(8) - readout listing each event

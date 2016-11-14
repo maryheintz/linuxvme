@@ -1,0 +1,13 @@
+echo "executing bash_profile"
+PATH=${PATH}:.:/usr/lib/X11:/usr/local/bin:/usr/bin/X11:/usr/local/bin/X11:$HOME/bin:/usr/local/ssh/bin:/usr/local/ssh/libexec
+LPATH=${LPATH}:/lib:/usr/lib:.:/usr/local/lib:$HOME/lib:/lib/ces:/sys/lib
+MANPATH=${MANPATH}:/usr/local/ssh/man
+SHELL=/bin/bash
+ENV=$HOME/.bashrc
+export PATH LPATH MANPATH AHELL ENV
+
+# myterm is used for DISPLAY to determine WHICH term we're using
+#
+myterm=`tty | cut -f3 -d/`
+#typeset -x DISPLAY=`who | grep $myterm | tr -s " " | cut -f3 -d" " | cut -f1 -d.`:0.0
+

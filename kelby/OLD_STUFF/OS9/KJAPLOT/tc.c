@@ -1,0 +1,1 @@
+#include <stdio.h>#include <math.h>#include <strings.h>      FILE *fp;      main()      {        char *font1=" /Helvetica findfont 8 scalefont setfont\0 ";        fp=fopen("kja.ps","w");        printf("%40s\n",font1);        fprintf(fp,"%s\n",font1);        return(0);      }

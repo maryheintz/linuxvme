@@ -1,0 +1,1 @@
+lpr -Ptrans $1

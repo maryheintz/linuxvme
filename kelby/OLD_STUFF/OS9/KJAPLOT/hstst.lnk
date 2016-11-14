@@ -1,0 +1,1 @@
+cc -k=2f -f=hstst hstst.c -l=hst.r -l=basic.r -l=post.r -l=axis.r

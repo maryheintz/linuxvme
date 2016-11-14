@@ -1,0 +1,342 @@
+input 0=600pC  1=10pC
+  charge=599.785728  dacval=749.267578  dac=2ed(hex)  cap=100.000000
+slink opened
+ Setting up Digitizers
+ Setting up Digitizers
+ control word=51115110
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   46   51   4a   0  0    461444a
+lo data word=    0    1   47   51   4a   0  1    4471444a
+lo data word=    0    1   47   50   4b   0  2    4471404b
+lo data word=    0    1   47   51   4a   0  3    4471444a
+lo data word=    0    1   46   51   4b   0  4    4461444b
+lo data word=    0    1   47   51   4a   0  5    4471444a
+kk=0 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   51   52   4d   0  0    4511484d
+hi data word=    0    1   4f   51   4d   0  1    44f1444d
+hi data word=    0    1   51   52   4e   0  2    4511484e
+hi data word=    0    1   52   51   4d   0  3    4521444d
+hi data word=    0    0   4f   53   4e   0  4    4f14c4e
+hi data word=    0    1   52   4f   4e   0  5    45213c4e
+ crc=2774a949
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   4f   54   51   1  0    4f15051
+lo data word=    0    0   4f   54   51   1  1    4f15051
+lo data word=    0    0   4f   54   51   1  2    4f15051
+lo data word=    0    1   4f   54   50   1  3    44f15050
+lo data word=    0    0   4e   54   50   1  4    4e15050
+lo data word=    0    1   4e   54   52   1  5    44e15052
+kk=1 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   50   54   49   1  0    45015049
+hi data word=    0    1   50   55   48   1  1    45015448
+hi data word=    0    1   50   55   48   1  2    45015448
+hi data word=    0    1   4f   56   49   1  3    44f15849
+hi data word=    0    0   4f   54   49   1  4    4f15049
+hi data word=    0    0   53   53   49   1  5    5314c49
+ crc=52a97b91
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   40   4b   51   2  0    44012c51
+lo data word=    0    1   3f   4b   50   2  1    43f12c50
+lo data word=    0    0   3e   4c   52   2  2    3e13052
+lo data word=    0    0   3f   4b   51   2  3    3f12c51
+lo data word=    0    1   3f   4c   51   2  4    43f13051
+lo data word=    0    0   40   4c   52   2  5    4013052
+kk=2 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   46   41   3e   2  0    4461043e
+hi data word=    0    1   47   41   3f   2  1    4471043f
+hi data word=    0    0   44   40   3f   2  2    441003f
+hi data word=    0    1   45   40   3f   2  3    4451003f
+hi data word=    0    0   43   41   3f   2  4    431043f
+hi data word=    0    0   47   41   3e   2  5    471043e
+ crc=f5d0512
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   58   4e   59   3  0    5813859
+lo data word=    0    0   58   4d   59   3  1    5813459
+lo data word=    0    0   58   4e   59   3  2    5813859
+lo data word=    0    0   58   4e   5a   3  3    581385a
+lo data word=    0    1   58   4e   58   3  4    45813858
+lo data word=    0    0   58   4e   59   3  5    5813859
+kk=3 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   54   42    0   3  0    5410800
+hi data word=    0    0   53   45    0   3  1    5311400
+hi data word=    0    0   54   44    0   3  2    5411000
+hi data word=    0    1   57   45    0   3  3    45711400
+hi data word=    0    0   56   43    0   3  4    5610c00
+hi data word=    0    0   53   45    0   3  5    5311400
+ crc=b5731d2
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   4e   4b   55   4  0    44e12c55
+lo data word=    0    0   4e   4a   55   4  1    4e12855
+lo data word=    0    0   4c   4a   54   4  2    4c12854
+lo data word=    0    0   4c   4b   55   4  3    4c12c55
+lo data word=    0    1   4c   4c   55   4  4    44c13055
+lo data word=    0    1   4d   4b   55   4  5    44d12c55
+kk=4 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   4e   43   4c   4  0    44e10c4c
+hi data word=    0    0   4e   44   4c   4  1    4e1104c
+hi data word=    0    1   4f   43   4d   4  2    44f10c4d
+hi data word=    0    0   4e   44   49   4  3    4e11049
+hi data word=    0    1   4c   46   4d   4  4    44c1184d
+hi data word=    0    0   50   44   4c   4  5    501104c
+ crc=633359bd
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   4c   41   51   5  0    44c10451
+lo data word=    0    1   4c   41   51   5  1    44c10451
+lo data word=    0    0   4b   41   52   5  2    4b10452
+lo data word=    0    0   4d   41   51   5  3    4d10451
+lo data word=    0    0   4b   41   51   5  4    4b10451
+lo data word=    0    0   4d   41   51   5  5    4d10451
+kk=5 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   5e   51   52   5  0    5e14452
+hi data word=    0    1   5e   51   50   5  1    45e14450
+hi data word=    0    1   5d   53   4f   5  2    45d14c4f
+hi data word=    0    1   5e   53   51   5  3    45e14c51
+hi data word=    0    0   5f   51   50   5  4    5f14450
+hi data word=    0    0   5e   53   4e   5  5    5e14c4e
+ crc=371d1b6d
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    0   59   57   41   6  0    5915c41
+lo data word=    0    1   59   57   40   6  1    45915c40
+lo data word=    0    1   59   56   41   6  2    45915841
+lo data word=    0    0   5a   57   42   6  3    5a15c42
+lo data word=    0    0   5a   57   41   6  4    5a15c41
+lo data word=    0    0   59   57   41   6  5    5915c41
+kk=6 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   51   5c   4c   6  0    4511704c
+hi data word=    0    1   54   60   4c   6  1    4541804c
+hi data word=    0    1   54   5f   4c   6  2    45417c4c
+hi data word=    0    1   50   5d   4c   6  3    4501744c
+hi data word=    0    0   52   5d   4c   6  4    521744c
+hi data word=    0    1   50   5f   4b   6  5    45017c4b
+ crc=67c1bdb7
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   4b   46   5e   7  0    44b1185e
+lo data word=    0    1   4b   46   5e   7  1    44b1185e
+lo data word=    0    1   4b   46   5d   7  2    44b1185d
+lo data word=    0    0   4c   45   5d   7  3    4c1145d
+lo data word=    0    0   4a   46   5d   7  4    4a1185d
+lo data word=    0    1   4b   46   5d   7  5    44b1185d
+kk=7 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   5b   52   52   7  0    5b14852
+hi data word=    0    0   5c   55   52   7  1    5c15452
+hi data word=    0    1   5b   53   52   7  2    45b14c52
+hi data word=    0    0   5b   53   53   7  3    5b14c53
+hi data word=    0    1   5c   53   53   7  4    45c14c53
+hi data word=    0    0   5a   54   53   7  5    5a15053
+ crc=43811180
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   4a   45   59   8  0    44a11459
+lo data word=    0    1   4b   44   5a   8  1    44b1105a
+lo data word=    0    1   4a   45   59   8  2    44a11459
+lo data word=    0    0   4a   44   5a   8  3    4a1105a
+lo data word=    0    0   4b   45   59   8  4    4b11459
+lo data word=    0    0   4b   45   59   8  5    4b11459
+kk=8 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   50   5c   4f   8  0    501704f
+hi data word=    0    0   52   5c   4b   8  1    521704b
+hi data word=    0    1   4e   5d   4a   8  2    44e1744a
+hi data word=    0    1   52   5c   49   8  3    45217049
+hi data word=    0    1   50   5e   4a   8  4    4501784a
+hi data word=    0    1   50   5d   4c   8  5    4501744c
+ crc=148ca267
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   60   6b   57   9  0    4601ac57
+lo data word=    0    1   5f   6c   56   9  1    45f1b056
+lo data word=    0    0   5f   6c   57   9  2    5f1b057
+lo data word=    0    1   5f   6b   57   9  3    45f1ac57
+lo data word=    0    0   5e   6a   56   9  4    5e1a856
+lo data word=    0    1   5f   6b   57   9  5    45f1ac57
+kk=9 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   60   52   5a   9  0    601485a
+hi data word=    0    1   5f   53   59   9  1    45f14c59
+hi data word=    0    0   61   50   5c   9  2    611405c
+hi data word=    0    1   5d   53   58   9  3    45d14c58
+hi data word=    0    1   61   52   59   9  4    46114859
+hi data word=    0    1   60   51   5b   9  5    4601445b
+ crc=40a0e167
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   5d   45   47   10  0    45d11447
+lo data word=    0    0   5d   45   46   10  1    5d11446
+lo data word=    0    1   5f   46   46   10  2    45f11846
+lo data word=    0    1   5d   45   47   10  3    45d11447
+lo data word=    0    1   5d   46   47   10  4    45d11847
+lo data word=    0    0   5d   45   46   10  5    5d11446
+kk=10 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   4f   5b   61   10  0    4f16c61
+hi data word=    0    1   4d   5d   61   10  1    44d17461
+hi data word=    0    1   51   5b   63   10  2    45116c63
+hi data word=    0    1   4b   5c   63   10  3    44b17063
+hi data word=    0    0   4e   5d   63   10  4    4e17463
+hi data word=    0    1   4c   5b   63   10  5    44c16c63
+ crc=46926bd
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   44   54   62   11  0    44415062
+lo data word=    0    0   44   55   62   11  1    4415462
+lo data word=    0    0   44   55   62   11  2    4415462
+lo data word=    0    0   45   55   60   11  3    4515460
+lo data word=    0    1   45   55   62   11  4    44515462
+lo data word=    0    0   44   54   60   11  5    4415060
+kk=11 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   55   47   56   11  0    45511c56
+hi data word=    0    0   55   48   57   11  1    5512057
+hi data word=    0    0   53   47   58   11  2    5311c58
+hi data word=    0    0   53   48   54   11  3    5312054
+hi data word=    0    0   53   48   57   11  4    5312057
+hi data word=    0    0   55   46   53   11  5    5511853
+ crc=3560d5c3
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   53   58   4f   12  0    4531604f
+lo data word=    0    1   54   58   4e   12  1    4541604e
+lo data word=    0    1   54   57   4e   12  2    45415c4e
+lo data word=    0    0   54   57   4f   12  3    5415c4f
+lo data word=    0    0   53   57   4e   12  4    5315c4e
+lo data word=    0    1   54   57   4e   12  5    45415c4e
+kk=12 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   5b   63   4f   12  0    45b18c4f
+hi data word=    0    1   59   64   52   12  1    45919052
+hi data word=    0    0   5b   63   53   12  2    5b18c53
+hi data word=    0    0   5a   64   50   12  3    5a19050
+hi data word=    0    0   58   63   50   12  4    5818c50
+hi data word=    0    1   58   63   51   12  5    45818c51
+ crc=1e31020e
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   44   4e   4e   13  0    4441384e
+lo data word=    0    1   44   4e   4e   13  1    4441384e
+lo data word=    0    0   44   4d   4f   13  2    441344f
+lo data word=    0    0   44   4f   4e   13  3    4413c4e
+lo data word=    0    1   44   4f   4f   13  4    44413c4f
+lo data word=    0    0   44   4f   4e   13  5    4413c4e
+kk=13 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   4f   4a   4c   13  0    4f1284c
+hi data word=    0    0   4f   49   49   13  1    4f12449
+hi data word=    0    1   4e   4a   49   13  2    44e12849
+hi data word=    0    0   4c   4a   4a   13  3    4c1284a
+hi data word=    0    0   4e   47   4c   13  4    4e11c4c
+hi data word=    0    0   4f   4b   4d   13  5    4f12c4d
+ crc=53b6401c
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   58   48   51   14  0    45812051
+lo data word=    0    1   59   47   50   14  1    45911c50
+lo data word=    0    1   59   47   50   14  2    45911c50
+lo data word=    0    0   58   47   50   14  3    5811c50
+lo data word=    0    1   59   47   50   14  4    45911c50
+lo data word=    0    0   58   47   50   14  5    5811c50
+kk=14 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    1   54   51   59   14  0    45414459
+hi data word=    0    1   52   4f   59   14  1    45213c59
+hi data word=    0    0   55   51   59   14  2    5514459
+hi data word=    0    0   56   52   5a   14  3    561485a
+hi data word=    0    0   55   52   59   14  4    5514859
+hi data word=    0    1   53   4f   58   14  5    45313c58
+ crc=78435b77
+header word d46c8000   count 0
+ parity=1  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=0   bunch=0
+lo data word=    0    1   5e   54   4d   15  0    45e1504d
+lo data word=    0    1   5d   54   4d   15  1    45d1504d
+lo data word=    0    0   5f   54   4d   15  2    5f1504d
+lo data word=    0    1   5e   54   4d   15  3    45e1504d
+lo data word=    0    0   5d   54   4c   15  4    5d1504c
+lo data word=    0    0   5e   55   4d   15  5    5e1544d
+kk=15 header word 946cf000
+ parity=0  samples=5  error=0
+ SEstr=0   r_parity=1   v_parity=11
+ mode=1   gain=7   bunch=0
+hi data word=    0    0   4c   3e   4f   15  0    4c0f84f
+hi data word=    0    1   4b   3f   4e   15  1    44b0fc4e
+hi data word=    0    0   4d   3c   4f   15  2    4d0f04f
+hi data word=    0    0   4c   3e   4f   15  3    4c0f84f
+hi data word=    0    0   4d   3e   4e   15  4    4d0f84e
+hi data word=    0    1   4c   3f   4f   15  5    44c0fc4f
+ crc=691890ef

@@ -1,0 +1,589 @@
+#include <stdio.h>
+#include <math.h>
+#include <time.h>
+int sw1,sw2,sw3,sw4,sw5,sw6,sw7,sw8;
+int fdata[100],pk,ipk;
+unsigned short *reg0,*reg2,*reg4,*reg6,*reg8,*rega;
+unsigned int base;
+main()
+  { FILE *fp;
+    double asum,axsum,axxsum,ped,dped,sig2,aval;
+    int timc,timf,i,timer_set;
+    int zone,sector,card;
+    int dac;
+    int wait;
+    double charge,charge_true,capacitor,fdac;
+    char xstring[80],ystring[80],string[80],err[80];
+    unsigned short cadr,tc,tf;
+    double yl,yc,yh,meanp,meanc;
+    double sum,xsump,xxsump,xsumc,xxsumc;
+    double sigp,sigc,pmax,cmax,tmax;
+    double losvalue,loschannel;
+    double lolvalue,lolchannel;
+    double hisvalue,hischannel;
+    double hilvalue,hilchannel;
+    int lostime,loltime,histime,hiltime;
+    int nevnt,nevmax,nstrtev,l,nn,k;
+    nevmax=20;
+    fp = fopen("phase64.peaks","w");
+
+    dotset(0,250.0,0.0,500.0,300.0,0,0);
+    sprintf(xstring,"fine time setting");
+    sprintf(ystring,"logain Cl FERMI peak channel amplitude");
+    dotlbl(0,xstring,ystring);
+
+    dotset(1,250.0,0.0,35.0,15.0,0,0);
+    sprintf(xstring,"fine time setting");
+    sprintf(ystring,"logain Cl peak channel number");
+    dotlbl(1,xstring,ystring);
+
+    dotset(2,250.0,0.0,60.0,40.0,0,0);
+    sprintf(xstring,"fine time setting");
+    sprintf(ystring,"logain Cs FERMI peak channel amplitude");
+    dotlbl(2,xstring,ystring);
+
+    dotset(3,250.0,0.0,35.0,15.0,0,0);
+    sprintf(xstring,"fine time setting");
+    sprintf(ystring,"logain Cs peak channel number");
+    dotlbl(3,xstring,ystring);
+
+    dotset(4,250.0,0.0,1000.0,800.0,0,0);
+    sprintf(xstring,"fine time setting");
+    sprintf(ystring,"higain Cs FERMI peak channel amplitude");
+    dotlbl(2,xstring,ystring);
+
+    dotset(5,250.0,0.0,35.0,15.0,0,0);
+    sprintf(xstring,"fine time setting");
+    sprintf(ystring,"higain Cs peak channel number");
+    dotlbl(3,xstring,ystring);
+
+    dotset(6,250.0,0.0,1000.0,800.0,0,0);
+    sprintf(xstring,"fine time setting");
+    sprintf(ystring,"higain Cl FERMI peak channel amplitude");
+    dotlbl(2,xstring,ystring);
+
+    dotset(7,250.0,0.0,35.0,15.0,0,0);
+    sprintf(xstring,"fine time setting");
+    sprintf(ystring,"higain Cl peak channel number");
+    dotlbl(3,xstring,ystring);
+
+    zone = 0;
+    sector = 0;
+    card = 1;
+    i = (zone<<12) | (sector<<6) | card;
+    cadr = (unsigned short)i;
+    card_sel(cadr);
+    send12_3in1(2,0,0);   /* s1=s2=s3=s4=0 */
+    send4_3in1(1,0);   /* itr=0 */
+    send4_3in1(0,0);   /* ire=0 */
+    send4_3in1(3,0);   /* mse=0 */
+    timc=18;
+    timf=0;
+    tc = (unsigned short)timc;
+    tim1_set(tc);   /* coarse */
+    tf = (unsigned short)timf;
+    tim2_set(tf);   /* fine */
+/* ---------------- do logain 110pF -------------------------------- */
+   printf("plug logain into ADC1\n");
+   wait = getchar();
+    send4_3in1(4,0);   /* disable small capacitor */
+    send4_3in1(5,1);   /* enable large capacitor */
+    capacitor = 100.0;
+    charge = 400.0;
+    fdac = (charge * 1023.0 ) / (2.0*4.096 * capacitor);
+    dac = (int) fdac;
+    charge_true = 2.0*4.096 * capacitor * (double)dac / 1023.0;
+    set_dac(dac);
+    tsleep(0x80000010);
+    printf(" dac=%d charge_true=%f\n",dac,charge_true);
+    base = 0xf0ff0000;
+    flex_setup();
+    i=0;
+    lolvalue=0.0;
+    for (timer_set=0; timer_set<256; timer_set++)
+    { tf = (unsigned short)timer_set;
+      tim2_set(tf);
+looptest:
+      tsleep(0x80000005);
+      nstrtev=-1;
+      sum=0.0;
+      xsump=0.0;
+      xxsump=0.0;
+      xsumc=0.0;
+      xxsumc=0.0;
+      for(nevnt=0;nevnt<nevmax;nevnt++)
+       {flex_reset();
+        inject();
+        flex_read();
+/*     display ? */
+         sw1 = sw(1);
+         if(sw1 == 1) 
+          { asum = 0.0;
+            axsum = 0.0;
+            axxsum = 0.0;
+            for(i=10;i<21;i++)
+             { aval = (double)fdata[i];
+               asum = asum+1.0;
+               axsum = axsum + aval;
+               axxsum = axxsum + aval*aval;
+              }
+            ped = axsum / asum;
+            dped = 0.0;
+            sig2=axxsum/asum - ped*ped;
+            if(sig2>0.0) dped=sqrt(sig2);
+            sprintf(string,
+              "logain ipk=%d  pk=%d  ped=%f +/- %f",
+              ipk,pk,ped,dped);
+            evdisp(32,string);}
+sw8 = sw(8);
+if(sw8 == 1) goto looptest;
+/* now gets sums for mean calculation */
+      if(fdata[ipk]>1) 
+       { sum=sum+1.0;
+         yc=(double)fdata[ipk];
+         xsumc=xsumc+yc;
+         xxsumc=xxsumc+yc*yc;
+         yc=(double)ipk;
+         xsump=xsump+yc;
+         xxsump=xxsump+yc*yc;}
+     } /* end of nevnt loop */
+/*  now get mean  */
+     meanp=xsump/sum;
+     sigp=0.0;
+     sig2=xxsump/sum-meanp*meanp;
+     if(sig2>0.0) sigp=sqrt(sig2);
+
+     meanc=xsumc/sum;
+     sigc=0.0;
+     sig2=xxsumc/sum-meanc*meanc;
+     if(sig2>0.0) sigc=sqrt(sig2);
+     printf(" lo_Cl timer=%d  bin=%f  amplitude=%f\n",
+          timer_set,meanp,meanc);
+     dotacc(1,(double)timer_set,meanp);
+     dotacc(0,(double)timer_set,meanc);
+     if(meanc>lolvalue && timer_set<125 && timer_set>20)
+      { lolvalue = meanc;
+        loltime = timer_set;        
+        lolchannel = meanp;
+      }
+   }  /* end of timer loop */
+/* ---------------- do logain 5pF -------------------------------- */
+    send4_3in1(4,1);   /* enable small capacitor */
+    send4_3in1(5,0);   /* disable large capacitor */
+    capacitor = 5.0;
+    charge = 20.0;
+    fdac = (charge * 1023.0 ) / (2.0*4.096 * capacitor);
+    dac = (int) fdac;
+    charge_true = 2.0*4.096 * capacitor * (double)dac / 1023.0;
+    set_dac(dac);
+    printf(" dac=%d charge_true=%f\n",dac,charge_true);
+    set_dac(dac);
+    base = 0xf0ff0000;
+    flex_setup();
+    i=0;
+    losvalue=0.0;
+    for (timer_set=0; timer_set<256; timer_set++)
+    { tf = (unsigned short)timer_set;
+      tim2_set(tf);
+      tsleep(0x80000005);
+      nstrtev=-1;
+      sum=0.0;
+      xsump=0.0;
+      xxsump=0.0;
+      xsumc=0.0;
+      xxsumc=0.0;
+      for(nevnt=0;nevnt<nevmax;nevnt++)
+       {flex_reset();
+        inject();
+        flex_read();
+/*     display ? */
+         sw1 = sw(1);
+         if(sw1 == 1) 
+          { asum = 0.0;
+            axsum = 0.0;
+            axxsum = 0.0;
+            for(i=10;i<21;i++)
+             { aval = (double)fdata[i];
+               asum = asum+1.0;
+               axsum = axsum + aval;
+               axxsum = axxsum + aval*aval;
+              }
+            ped = axsum / asum;
+            dped = 0.0;
+            sig2=axxsum/asum - ped*ped;
+            if(sig2>0.0) dped=sqrt(sig2);
+            sprintf(string,
+              "logain ipk=%d  pk=%d  ped=%f +/- %f",
+              ipk,pk,ped,dped);
+            evdisp(32,string);}
+/* now gets sums for mean calculation */
+      if(fdata[ipk]>1) 
+       { sum=sum+1.0;
+         yc=(double)fdata[ipk];
+         xsumc=xsumc+yc;
+         xxsumc=xxsumc+yc*yc;
+         yc=(double)ipk;
+         xsump=xsump+yc;
+         xxsump=xxsump+yc*yc;}
+     } /* end of nevnt loop */
+/*  now get mean  */
+     meanp=xsump/sum;
+     sigp=0.0;
+     sig2=xxsump/sum-meanp*meanp;
+     if(sig2>0.0) sigp=sqrt(sig2);
+
+     meanc=xsumc/sum;
+     sigc=0.0;
+     sig2=xxsumc/sum-meanc*meanc;
+     if(sig2>0.0) sigc=sqrt(sig2);
+     printf("lo_Cs timer=%d  bin=%f  amplitude=%f\n",
+          timer_set,meanp,meanc);
+     dotacc(3,(double)timer_set,meanp);
+     dotacc(2,(double)timer_set,meanc);
+     if(meanc>losvalue && timer_set<125 && timer_set>20)
+      { losvalue = meanc;
+        lostime = timer_set;
+        loschannel = meanp;
+      }
+   }  /* end of timer loop */
+/* ---------------- do higain 5pF -------------------------------- */
+   printf("plug higain into ADC1\n");
+   wait = getchar();
+    send4_3in1(4,1);   /* enable small capacitor */
+    send4_3in1(5,0);   /* disable large capacitor */
+    capacitor =5.0;
+    charge = 17.0;
+    fdac = (charge * 1023.0 ) / (2.0*4.096 * capacitor);
+    dac = (int) fdac;
+    charge_true = 2.0*4.096 * capacitor * (double)dac / 1023.0;
+    set_dac(dac);
+    printf(" dac=%d charge_true=%f\n",dac,charge_true);
+    fdac = (charge * 1023.0) / (2.0*4.096 * capacitor);
+    base = 0xf0ff0000;
+    flex_setup();
+    i=0;
+    hisvalue = 0.0;
+    for (timer_set=0; timer_set<256; timer_set++)
+    { tf = (unsigned short)timer_set;
+      tim2_set(tf);
+      tsleep(0x80000005);
+      nstrtev=-1;
+      sum=0.0;
+      xsump=0.0;
+      xxsump=0.0;
+      xsumc=0.0;
+      xxsumc=0.0;
+      for(nevnt=0;nevnt<nevmax;nevnt++)
+       {flex_reset();
+        inject();
+        flex_read();
+/*     display ? */
+         sw2 = sw(2);
+         if(sw2 == 1) 
+          { asum = 0.0;
+            axsum = 0.0;
+            axxsum = 0.0;
+            for(i=10;i<21;i++)
+             { aval = (double)fdata[i];
+               asum = asum+1.0;
+               axsum = axsum + aval;
+               axxsum = axxsum + aval*aval;
+              }
+            ped = axsum / asum;
+            dped = 0.0;
+            sig2=axxsum/asum - ped*ped;
+            if(sig2>0.0) dped=sqrt(sig2);
+            sprintf(string,
+              " higain ipk=%d  pk=%d  ped=%f +/- %f",
+              ipk,pk,ped,dped);
+            evdisp(32,string);}
+/* now gets sums for mean calculation */
+      if(fdata[ipk]>1) 
+       { sum=sum+1.0;
+         yc=(double)fdata[ipk];
+         xsumc=xsumc+yc;
+         xxsumc=xxsumc+yc*yc;
+         yc=(double)ipk;
+         xsump=xsump+yc;
+         xxsump=xxsump+yc*yc;}
+     } /* end of nevnt loop */
+/*  now get mean  */
+     meanp=xsump/sum;
+     sigp=0.0;
+     sig2=xxsump/sum-meanp*meanp;
+     if(sig2>0.0) sigp=sqrt(sig2);
+
+     meanc=xsumc/sum;
+     sigc=0.0;
+     sig2=xxsumc/sum-meanc*meanc;
+     if(sig2>0.0) sigc=sqrt(sig2);
+     printf(" hi_Cs timer=%d  bin=%f  amplitude=%f\n",
+          timer_set,meanp,meanc);
+     dotacc(5,(double)timer_set,meanp);
+     dotacc(4,(double)timer_set,meanc);
+     if(meanc>hisvalue && timer_set<125 && timer_set>20)
+      { hisvalue = meanc;
+        histime = timer_set;
+        hischannel = meanp;
+      }
+   }  /* end of dac loop */
+/* ---------------- do higain 110pF -------------------------------- */
+    send4_3in1(4,0);   /* disable small capacitor */
+    send4_3in1(5,1);   /* enable large capacitor */
+    capacitor =110.0;
+    charge = 19.0;
+    fdac = (charge * 1023.0 ) / (2.0*4.096 * capacitor);
+    dac = (int) fdac;
+    charge_true = 2.0*4.096 * capacitor * (double)dac / 1023.0;
+    set_dac(dac);
+    printf(" dac=%d charge_true=%f\n",dac,charge_true);
+    base = 0xf0ff0000;
+    flex_setup();
+    i=0;
+    hilvalue = 0.0;
+    for (timer_set=0; timer_set<256; timer_set++)
+    { tf = (unsigned short)timer_set;
+      tim2_set(tf);
+      tsleep(0x80000005);
+      nstrtev=-1;
+      sum=0.0;
+      xsump=0.0;
+      xxsump=0.0;
+      xsumc=0.0;
+      xxsumc=0.0;
+      for(nevnt=0;nevnt<nevmax;nevnt++)
+       {flex_reset();
+        inject();
+        flex_read();
+/*     display ? */
+         sw2 = sw(2);
+         if(sw2 == 1) 
+          { asum = 0.0;
+            axsum = 0.0;
+            axxsum = 0.0;
+            for(i=10;i<21;i++)
+             { aval = (double)fdata[i];
+               asum = asum+1.0;
+               axsum = axsum + aval;
+               axxsum = axxsum + aval*aval;
+              }
+            ped = axsum / asum;
+            dped = 0.0;
+            sig2=axxsum/asum - ped*ped;
+            if(sig2>0.0) dped=sqrt(sig2);
+            sprintf(string,
+              " higain ipk=%d  pk=%d  ped=%f +/- %f",
+              ipk,pk,ped,dped);
+            evdisp(32,string);}
+/* now gets sums for mean calculation */
+      if(fdata[ipk]>1) 
+       { sum=sum+1.0;
+         yc=(double)fdata[ipk];
+         xsumc=xsumc+yc;
+         xxsumc=xxsumc+yc*yc;
+         yc=(double)ipk;
+         xsump=xsump+yc;
+         xxsump=xxsump+yc*yc;}
+     } /* end of nevnt loop */
+/*  now get mean  */
+     meanp=xsump/sum;
+     sigp=0.0;
+     sig2=xxsump/sum-meanp*meanp;
+     if(sig2>0.0) sigp=sqrt(sig2);
+
+     meanc=xsumc/sum;
+     sigc=0.0;
+     sig2=xxsumc/sum-meanc*meanc;
+     if(sig2>0.0) sigc=sqrt(sig2);
+     printf(" hi_Cl timer=%d  bin=%f  amplitude=%f\n",
+          timer_set,meanp,meanc);
+     dotacc(7,(double)timer_set,meanp);
+     dotacc(6,(double)timer_set,meanc);
+     if(meanc>hilvalue && timer_set<125 && timer_set>20)
+      { hilvalue = meanc;
+        hiltime = timer_set;
+        hilchannel = meanp;
+      }
+   }  /* end of dac loop */
+/*   show the plots */
+
+     printf(" lostime=%d  loschannel=%f  losvalue=%f\n",
+         lostime,loschannel,losvalue);
+     printf(" loltime=%d  lolchannel=%f  lolvalue=%f\n",
+         loltime,lolchannel,lolvalue);
+     printf(" histime=%d  hischannel=%f  hisvalue=%f\n",
+         histime,hischannel,hisvalue);
+     printf(" hiltime=%d  hilchannel=%f  hilvalue=%f\n",
+         hiltime,hilchannel,hilvalue);
+
+     fprintf(fp," lostime=%d  loschannel=%f  losvalue=%f\n",
+         lostime,loschannel,losvalue);
+     fprintf(fp," loltime=%d  lolchannel=%f  lolvalue=%f\n",
+         loltime,lolchannel,lolvalue);
+     fprintf(fp," histime=%d  hischannel=%f  hisvalue=%f\n",
+         histime,hischannel,hisvalue);
+     fprintf(fp," hiltime=%d  hilchannel=%f  hilvalue=%f\n",
+         hiltime,hilchannel,hilvalue);
+     sidev(1);
+     dotmwr(2,0,1);
+     dotmwr(2,2,3);
+     dotmwr(2,4,5);
+     dotmwr(2,6,7);
+     plot_reset(); 
+     sprintf(string,"phase64.ps");
+     sidev(0);
+     pfset(string);
+     printf("printing postscript files\n"); 
+     dotmwr(2,0,1);
+     dotmwr(2,2,3);
+     dotmwr(2,4,5);
+     dotmwr(2,6,7);
+     dotdone();
+}  /* end of main */
+sw(i)
+  int i;
+  {int *adr,k,l,shft;
+   adr=(int *)0x80cf0000;
+   k=*adr;
+   shft=23+i;
+   l=(k>>shft)&1; 
+   return(l);
+  }      
+flex_setup()
+  { reg0 = (unsigned short *)base;
+    reg2 = (unsigned short *)(base | 0x2);
+    reg4 = (unsigned short *)(base | 0x4);
+    reg6 = (unsigned short *)(base | 0x5);
+    reg8 = (unsigned short *)(base | 0x8);
+    rega = (unsigned short *)(base | 0xa);
+    *reg2 = 32;
+  }
+flex_reset()
+  { *reg0 = 0;
+    rtime();
+  }
+inject()
+  { tp_high();
+    tsleep(0x80000005); 
+    stime();
+    tsleep(0x80000005);
+/*    rtime(); */
+  }
+flex_read()
+  { int i,k,adr,adc_enable,read_done,adc_done,kk;
+    sw4 = sw(4);
+    pk = 0;
+    ipk = 0; 
+    for(i=0;i<32;i++)
+      { kk = *reg8;
+        tsleep(0x80000001);
+        *rega=0; /* clock the shift register */
+        adr = kk & 0xff;
+        adc_done = (kk & 0x2000)>>13;
+        adc_enable = (kk & 0x4000)>>14;
+        read_done = (kk & 0x8000)>>15; 
+        kk = *reg4;
+        k = kk & 0xfff;
+        k = (k>>2);  /* make it 10 bits */
+        fdata[i] = k;
+        if(k>pk)
+          { ipk = i;
+            pk = k;}
+        if(sw4 == 1) printf(" i=%d  adr = %x  data=%x  en=%d rd=%d  ad=%d\n",
+         i,adr,k,adc_enable,read_done,adc_done);
+      }
+}
+evdisp(nn,string)
+ int nn;
+ char *string;
+ { int max,mmax,idx,idy,ny,linx,ixbas,iybas,ix,iy,iylst,kx,ky,i,k,ii;
+   int idel;
+   double dely,y,dy;
+   char str[5];
+   erasm();
+   max = pk;
+   mmax=5000;
+   if(max<4000) mmax=4000;
+   if(max<3000) mmax=3000;
+   if(max<2000) mmax=2000;
+   if(max<1000) mmax=1000;
+   if(max<800) mmax=800;
+   if(max<600) mmax=600;
+   if(max<500) mmax=500;
+   if(max<400) mmax=400;
+   if(max<200) mmax=200;
+   if(max<100) mmax=100;
+   if(max<50) mmax=50;
+   idx = 1600/nn;
+   linx = idx*nn;
+   ixbas = 100+(2200-linx)/2;
+   dy = 2400.0/(double)mmax;
+   iybas = 400;
+   mova(ixbas,iybas);
+   drwr(linx,0);
+   mova(ixbas,iybas);
+   iylst = 0;
+   for(i=0;i<nn;i++)
+    { ii = fdata[i];
+      y = (double)ii;
+      y = y*dy;
+      iy = (int)y;
+      idy = iy-iylst;
+      drwr(0,idy);
+      drwr(idx,0);
+      iylst=iy;
+    }
+      drwr(0,-iylst);
+
+/*  label horizontal axis */
+    idel=10;
+    if(nn>100) idel=25;
+    if(nn>200) idel=50;
+    for(i=0;i<nn+1;i=i+idel)
+     { ix=ixbas+idx*i;
+       mova(ix,iybas);
+       drwr(0,-30);
+       k=i/2;
+       if(k*2 == i)
+         { sprintf(str,"%3d",i);
+           kx = ix-45;
+           if(i<100) kx = ix-55;
+           if(i<10) kx=ix-75;
+           symb(kx,iybas-100,0.0,str);
+         }
+     }
+/*  label vertical axis  */
+    ny=mmax/100;
+    if(ny>10) ny=10;
+    if(mmax == 200) ny=4;
+    if(mmax == 100) ny=4;
+    if(mmax == 50) ny=5;
+    y=(double)mmax*dy;
+    iy = (int)y;
+    mova(ixbas,iybas);
+    drwr(0,iy);
+    for(i=0;i<=ny;i++)
+     { ky = i*mmax/ny;
+       y = (double)ky * dy;
+       iy = (int)y + iybas;
+       mova(ixbas,iy);
+       drwr(-20,0);
+       sprintf(str,"%4d",ky);
+       kx = ixbas-150;
+       symb(kx,iy-20,0.0,str);
+     }
+    /*  print label */
+    symb(200,3000,0.0,string);
+    plotmx();
+ }
+set_dac(dac)
+int dac;
+ { int hi,lo;
+   lo = dac & 0xff;
+   send12_3in1(6,0,lo);   /* load low 8 bits */
+   hi = dac>>8;
+   send12_3in1(6,1,hi);   /* load high 2 bits */
+ }
+
+
+

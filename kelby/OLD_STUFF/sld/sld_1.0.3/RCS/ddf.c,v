@@ -1,0 +1,720 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.1
+date	2000.07.14.14.16.10;	author ruud;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@
+/*
+ * ddf.c: Device Driver Framework, or the interface to the linux kernel
+ * Copyright (C) 2000 by J.E. van Grootheest
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+
+
+#define EXPORT_SYMTAB	1
+
+#include <linux/config.h>
+#if defined(CONFIG_MODVERSIONS) && !defined(MODVERSIONS)
+#define MODVERSIONS
+#endif
+#if defined(MODVERSIONS)
+#include <linux/modversions.h>
+#endif
+
+
+/* Linux includes */
+#include <linux/module.h>
+#include <linux/errno.h>
+#include <linux/param.h>
+#include <linux/sched.h>
+#include <linux/poll.h>
+#include <linux/interrupt.h>
+#include <asm/io.h>
+
+/* SLD includes */
+#include "sld.h"
+#include "hwddef.h"
+#include "sldpriv.h"
+#include "bufintern.h"
+
+
+MODULE_AUTHOR( "Jan Evert van Grootheest" );
+MODULE_DESCRIPTION( "S-Link driver for INCAA interface" );
+
+unsigned int sld_bufferSize;
+MODULE_PARM( sld_bufferSize, "i" );
+MODULE_PARM_DESC( sld_bufferSize, "Defines the size of databuffers." );
+
+unsigned int sld_nrOfBuffers;
+MODULE_PARM( sld_nrOfBuffers, "i" );
+MODULE_PARM_DESC( sld_nrOfBuffers, "Defines the number of databuffers." );
+
+
+
+static const char sld_name[] = "S-Link";
+extern struct file_operations sld_fops;
+static int sld_major;
+static sldpriv_t *sld_privateData[ SLD_MAX_DEVICES ];
+
+
+static void sld_timer( unsigned long data );
+static void sld_bottomHalf( void *data );
+static void sld_interrupt( int irq, void *dev_id, struct pt_regs *ptrp );
+static void sld_timerTask( void *data );
+
+
+static const int debuglevel = 0;
+
+
+
+static void startTimer( sldpriv_t *sldData )
+{
+  int jifWait;
+
+  if ( sldData->ddf.statTime == 0 )
+    {
+      /* don't start a new timer */
+      SLD_DEBUG( 2, "Timer not started, time is zero\n" );
+      return;
+    }
+
+  /* calculate jiffies to wait; statTime is in 100msec units */
+  jifWait = sldData->ddf.statTime * HZ / 10;
+
+  /* make the timer tick */
+  init_timer( &sldData->ddf.statTimer );
+  sldData->ddf.statTimer.function = sld_timer;
+  sldData->ddf.statTimer.data = (unsigned long)sldData;
+  sldData->ddf.statTimer.expires = jiffies + jifWait;
+  add_timer( &sldData->ddf.statTimer );
+
+  SLD_DEBUG( 3, "timer started for %d x 100ms\n", sldData->ddf.statTime );
+}
+
+
+
+
+
+/* module init function */
+int init_module( void )
+{
+  int ret;
+  int x;
+
+  /* check assumption in the rest of code */
+  if ( sizeof( sldpriv_t ) > PAGE_SIZE )
+  {
+    SLD_PRINT( "DDF: sldpriv_t too large\n" );
+    return( -ENOMSG );
+  }
+
+  /* if there's no PCI, then no-go */
+  if ( !pcibios_present( ) )
+    {
+      /* definately no device present! */
+      return( -ENODEV );
+    }
+
+  /* do some sanity checking */
+  if ( sld_nrOfBuffers < 10 )
+    {
+      SLD_PRINT( "SLD: number of buffers should be larger than 10.\n" );
+      return( -EINVAL );
+    }
+  if ( sld_bufferSize < 128 ) /* 128 is arbitrary */
+    {
+      SLD_PRINT( "SLD: size of databuffers should be larger than 128.\n" );
+      return( -EINVAL );
+    }
+  if ( sld_bufferSize > PAGE_SIZE ) /* I *think* that get_free_page does not guarantee contiguous physical pages */
+    {
+      SLD_PRINT( "SLD: size of databuffers cannot be larger than PAGE_SIZE (%ld).\n",
+		 PAGE_SIZE );
+      return( -EINVAL );
+    }
+
+  SLD_PRINT( "Linux S-Link driver version %s.\n",
+	     SLD_VERSION );
+
+  /* get registered */
+  ret = register_chrdev( 0, sld_name, &sld_fops );
+  if ( ret < 0 )
+    {
+      SLD_PRINT( "SLD (" __FUNCTION__ "): Registering device failed.\n" );
+      return( -ENOMSG );
+    }
+  sld_major = ret;
+  SLD_PRINT( "SLD: Registered device char-major-%d.\n", sld_major );
+
+  /* allocate the private data pages */
+  for ( x = 0; x < SLD_MAX_DEVICES; x++ )
+    {
+      /* allocate and reserve private data memory page */
+      sld_privateData[ x ] = NULL;
+      sld_privateData[ x ] = (sldpriv_t *)get_free_page( GFP_KERNEL ); /* this is already 0 */
+      set_bit( PG_reserved, &(mem_map + MAP_NR( (unsigned long) sld_privateData[ x ] ) )->flags );
+      if ( sld_privateData[ x ] == NULL )
+	{
+	  /* cleanup and exit */
+	  goto nopages;
+	}
+
+      /* Signature for checking in userspace */
+      sld_privateData[ x ]->sig1 = SLD_SIGNATURE;
+      sld_privateData[ x ]->sig2 = SLD_SIGNATURE;
+
+      /* more initializing */
+      spin_lock_init( &sld_privateData[ x ]->ddf.lock );
+      sld_privateData[ x ]->ddf.bhTask.routine = sld_bottomHalf;
+      sld_privateData[ x ]->ddf.bhTask.data = sld_privateData[ x ];
+      sld_privateData[ x ]->ddf.timerTask.routine = sld_timerTask;
+      sld_privateData[ x ]->ddf.timerTask.data = sld_privateData[ x ];
+
+      /* see if there's a device... */
+      if ( x == 0 )
+	{
+	  /* find first device */
+	  sld_privateData[ x ]->device =
+	    pci_find_device( HWD_VENDOR, HWD_DEVICE, NULL );
+	}
+      else
+	{
+	  /* find next devices */
+	  if ( sld_privateData[ x - 1 ]->device != NULL )
+	    {
+	      sld_privateData[ x ]->device =
+		pci_find_device( HWD_VENDOR, HWD_DEVICE,
+				 sld_privateData[ x - 1 ]->device );
+	    }
+	}
+
+      /* report the devices found */
+      if ( sld_privateData[ x ]->device != NULL )
+	{
+	  SLD_PRINT( "SLD: device %d at 0x%08lx, irq %d.\n",
+		  x,
+	  	  sld_privateData[ x ]->device->base_address[ 0 ],
+		  sld_privateData[ x ]->device->irq );
+	}
+
+    }
+
+  /* this is the normal exit point */
+  return( 0 );
+
+ nopages:
+  for ( x = 0; x < SLD_MAX_DEVICES; x++ )
+    {
+      if ( sld_privateData[ x ] == NULL )
+      {
+	/* last handled page: stop */
+	break;
+      }
+      clear_bit( PG_reserved, &(mem_map + MAP_NR( (unsigned long) sld_privateData[ x ] ) )->flags );
+      free_page( (unsigned long)sld_privateData[ x ] );
+      sld_privateData[ x ] = NULL;
+    }
+
+  return( -ENOMEM );
+}
+
+void cleanup_module( void )
+{
+  int ret;
+  int x;
+
+  /* free memory */
+  for ( x = 0; x < SLD_MAX_DEVICES; x++ )
+    {
+      if ( sld_privateData[ x ] != NULL )
+      {
+	/* invalidate signature */
+	sld_privateData[ x ]->sig1 = 0 ;
+	sld_privateData[ x ]->sig2 = 0;
+
+	/* release page */
+	set_bit( PG_reserved, &(mem_map + MAP_NR( (unsigned long) sld_privateData[ x ] ) )->flags );
+	free_page( (unsigned long)sld_privateData[ x ] );
+	sld_privateData[ x ] = NULL;
+      }
+    }
+
+  /* get unregistered */
+  ret = unregister_chrdev( sld_major, sld_name );
+  if ( ret < 0 )
+    {
+      /* euh? */
+      SLD_PRINT( "SLD: Unregister failed!.\n" );
+    }
+}
+
+
+
+/* device open function */
+int sld_open( struct inode *inode, struct file *filp )
+{
+  int ret;
+  unsigned int sldMinor;
+  sldpriv_t *sldData;
+
+  /* some sanity checks */
+  sldMinor = MINOR( inode->i_rdev );
+  if ( sldMinor >= SLD_MAX_DEVICES )
+  {
+    /* too high minor number */
+    return( -ENODEV );
+  }
+  sldData = sld_privateData[ sldMinor ];
+  SLD_PRINT( "DDF: private data at %p (physical %p).\n",
+	     sldData, (void *)virt_to_phys( sldData ) );
+
+  if ( !SLD_VERIFY_SIG ) return( -ENOMSG );
+
+  /* If this is not the first open, skip most things */
+  if ( sldData->ddf.opened == 0 )
+    {
+      /* request the interrupt; we don't mind sharing it */
+      ret = request_irq( sldData->device->irq,
+			 sld_interrupt,
+			 SA_SHIRQ | SA_INTERRUPT,
+			 sld_name,
+			 (void *)sldData );
+      if ( ret < 0 )
+	{
+	  /* grmbl, I hate all those calls that can return errors */
+	  return( ret );
+	}
+
+      /* map the PCI registers in memory */
+      sldData->ddf.deviceMemAddress = ioremap( sldData->device->base_address[ 0 ],PAGE_SIZE );
+      if ( sldData->ddf.deviceMemAddress == NULL )
+	{
+	  ret = -ENOMEM;
+	  goto brokendevice;
+	}
+      else
+	{
+	  SLD_PRINT( "DDF: register window mapped to %p (physical %p).\n",
+		     sldData->ddf.deviceMemAddress,
+		     (void *)virt_to_phys( sldData->ddf.deviceMemAddress ) );
+	}
+
+      /* get the buffers to work */
+      ret = buf_open( sldData );
+      if ( ret < 0 )
+	goto brokendevice;
+
+      /* prepare the hardware */
+      hwd_powerUp( sldData );
+      ret = hwd_startDevice( sldData );
+      /* startDevice returns -ENETDOWN when the link is down, but that's no reason to fail */
+      if ( (ret < 0) && (ret != -ENETDOWN) )
+	goto brokendevice;
+
+      queue_task( &sldData->ddf.timerTask, &tq_timer );
+    }
+
+  /* we stay, so prevent the module being unloaded */
+  sldData->ddf.opened++;
+  MOD_INC_USE_COUNT;
+
+  /* store private data in the correct place */
+  filp->private_data = sldData;
+  return( 0 );
+
+
+ brokendevice:
+  /* do the best we can to shut-up device */
+  hwd_stopDevice( sldData );
+
+  buf_close( sldData );
+
+  /* release resources */
+  if ( sldData->ddf.deviceMemAddress != NULL )
+    {
+      iounmap( sldData->ddf.deviceMemAddress );
+      sldData->ddf.deviceMemAddress = NULL;
+    }
+  free_irq( sldData->device->irq, sldData );
+
+  return( ret );
+}
+
+
+int sld_release( struct inode *inode, struct file *filp )
+{
+  sldpriv_t *sldData;
+  unsigned long lockFlags;
+
+  sldData = filp->private_data;
+  if ( !SLD_VERIFY_SIG ) return( 0 );
+
+  MOD_DEC_USE_COUNT;
+  sldData->ddf.opened--;
+
+  /* only release at last close */
+  if ( sldData->ddf.opened == 0 )
+    {
+      spin_lock_irqsave( &sldData->ddf.lock, lockFlags );
+
+      /* stop the timer */
+      sldData->ddf.statTime = 0;
+      if ( timer_pending( &sldData->ddf.statTimer ) )
+	{
+	  del_timer( &sldData->ddf.statTimer );
+	}
+
+      /* stop HWD, then let BUF release all its memory */
+      hwd_stopDevice( sldData );
+      hwd_powerDown( sldData );
+      buf_close( sldData );
+
+      spin_unlock_irqrestore( &sldData->ddf.lock, lockFlags );
+
+      /* release resources */
+      if ( sldData->ddf.deviceMemAddress != NULL )
+	{
+	  iounmap( sldData->ddf.deviceMemAddress );
+	  sldData->ddf.deviceMemAddress = NULL;
+	}
+
+      free_irq( sldData->device->irq, sldData );
+    }
+
+  return( 0 );
+}
+
+
+int sld_mmap( struct file *filp,
+	      struct vm_area_struct *vmap )
+{
+  sldpriv_t *sldData = filp->private_data;
+  int ret;
+  unsigned long vmSize;
+
+  if ( !SLD_VERIFY_SIG ) return( -ENOMSG );
+
+  /* check the size: either private data, or everything */
+  vmSize = vmap->vm_end - vmap->vm_start;
+  if ( ( vmSize != PAGE_SIZE ) &&
+       ( vmSize != ((1 + sldData->buf.mmapPages) * PAGE_SIZE) ) )
+    {
+      SLD_DEBUG( 1, "user requested %lu bytes mmap, but that should be %lu or %lu\n",
+		 vmSize,
+		 PAGE_SIZE,
+		 (1 + sldData->buf.mmapPages) * PAGE_SIZE );
+      return( -EINVAL );
+    }
+    
+
+  /* mmap the private data */
+  ret = remap_page_range( vmap->vm_start, virt_to_phys( sldData ), PAGE_SIZE, vmap->vm_page_prot );
+  if ( ret < 0 )
+    {
+      return( ret );
+    }
+
+  /* let BUF do its mmap()ing if user requested it */
+  if ( vmSize != (2 * PAGE_SIZE) )
+    {
+      ret = buf_mmap( sldData, vmap );
+      if ( ret != 0 )
+	{
+	  return( ret );
+	}
+    }
+
+  return( 0 );
+}
+
+
+
+int sld_ioctl( struct inode *inode, struct file *filp, unsigned int cmd, unsigned long arg )
+{
+  sldpriv_t *sldData = filp->private_data;
+  int ret = 0;
+  unsigned long lockFlags;
+
+  if ( !SLD_VERIFY_SIG ) return( -ENOMSG );
+
+  switch ( cmd )
+    {
+    case SLD_IOCSSTAT:
+      {
+	unsigned int oldTime = sldData->ddf.statTime;
+
+	/*
+	 * set statistics timeout; if the timer is running, the change will
+	 * take effect at the next timeout.
+	 */
+	get_user_ret( sldData->ddf.statTime, (unsigned int *)arg, -EFAULT );
+
+	/* but if there's no timer running, we start it now */
+	if ( oldTime == 0 )
+	{
+	  startTimer( sldData );
+	}
+
+	SLD_PRINT( "set statistics time to %d x 100msec\n", sldData->ddf.statTime );
+	break;
+      }
+
+    case SLD_IOCGSTAT:
+      {
+	sldstat_t statCopy;
+
+	/* make sure the stats don't change from under us */
+	spin_lock_irqsave( &sldData->ddf.lock, lockFlags );
+
+	/* get the statistics in a private copy, this is the fastest */
+	do_gettimeofday( &sldData->stat.stamp );
+	statCopy = sldData->stat;
+
+	spin_unlock_irqrestore( &sldData->ddf.lock, lockFlags );
+
+	/* now we can take time to copy to user */
+	copy_to_user_ret( (sldstat_t *)arg, &statCopy, sizeof( statCopy ), -EFAULT );
+	break;
+      }
+
+    case SLD_IOCGMAPSIZE:
+      {
+	int pageCount;
+
+	/* calculate and return the size the user needs to mmap */
+	pageCount = 1; /* for sld private data */
+	pageCount += sldData->buf.mmapPages; /* BUF requires this much mmaped pages */
+
+	put_user_ret( pageCount * PAGE_SIZE, (int *)arg, -EFAULT );
+	break;
+      }
+
+    default:
+      /* the rest is handled by HWD */
+      spin_lock_irqsave( &sldData->ddf.lock, lockFlags );
+      ret = hwd_ioctl( sldData, cmd, arg );
+      spin_unlock_irqrestore( &sldData->ddf.lock, lockFlags );
+      break;
+    }
+
+  return( ret );
+}
+
+
+
+unsigned int sld_poll( struct file *filp, poll_table *ptp )
+{
+  sldpriv_t *sldData = filp->private_data;
+  unsigned int mask;
+
+  if ( !SLD_VERIFY_SIG ) return( 0 );
+
+  /* prepare return value before putting process in queue; this prevents race */
+  mask = 0;
+
+  /* ugly use of BUF fields */
+  if ( !queue_isEmpty( &sldData->buf.infoQueue ) )
+    {
+      mask |= POLLIN | POLLRDNORM;
+    }
+
+  /* put process in waitqueue */
+  poll_wait( filp, &sldData->ddf.waitQueue, ptp );
+
+  return( mask );
+}
+
+
+void sld_interrupt( int irq, void *dev_id, struct pt_regs *ptrp )
+{
+  sldpriv_t *sldData = dev_id;
+
+  /* asynch entrypoint, so I'm a bit paranoid */
+  if ( !SLD_VERIFY_SIG ) return;
+  if ( sldData->ddf.opened == 0 ) return;
+
+  SLD_DEBUG( 3, "start\n" );
+
+  /* lock first */
+  spin_lock( &sldData->ddf.lock );
+
+  /*
+   * Check if this interrupt is from our device (the interrupt can be
+   * shared!). This will also immediately acknowledge the events and
+   * remove them from the bus.
+   */
+  if ( !hwd_isInterrupt( sldData ) )
+    {
+      spin_unlock( &sldData->ddf.lock );
+      return;
+    }
+
+  sldData->stat.interrupt++;
+
+  /* if we use bottom halves, queue the task, else call it */
+#ifdef __SLD_USE_BH__
+
+  /* queue bottom half for handling it */
+  queue_task( &sldData->ddf.bhTask, &tq_immediate );
+  mark_bh( IMMEDIATE_BH );
+  SLD_DEBUG( 2, "bottom half queued\n" );
+
+#else /* __SLD_USE_BH__ */
+
+  sld_bottomHalf( sldData );
+
+#endif /* __SLD_USE_BH__ */
+
+  spin_unlock( &sldData->ddf.lock );
+
+  SLD_DEBUG( 1, "finished\n" );
+}
+
+
+
+void sld_bottomHalf( void *data )
+{
+  sldpriv_t *sldData = data;
+  int ret = 0;
+
+#ifdef __SLD_USE_BH__
+  unsigned long lockFlags;
+#endif
+
+  /* asynch entrypoint, so I'm a bit paranoid */
+  if ( !SLD_VERIFY_SIG ) return;
+  if ( sldData->ddf.opened == 0 ) return;
+
+#ifdef __SLD_USE_BH__
+  /* #ifdef needed otherwise deadlock */
+  spin_lock_irqsave( &sldData->ddf.lock, lockFlags );
+#endif
+
+  SLD_DEBUG( 3, "begin\n" );
+
+  /*
+   * Let HWD handle some events.
+   * It's no use to loop here and try to handle multiple interrupts,
+   * since 99.999% of all interrupts are type changes and the INCAA
+   * interface requires usually more than 1us to react to a OMB change.
+   */
+  ret += hwd_handleInterrupt( sldData );
+
+  /* allow more interrupts */
+  hwd_enableInterrupt( sldData );
+
+  if ( (ret > 0) && (sldData->ddf.waitQueue != NULL) )
+    {
+      /* data was queued, wake up waiting processes */
+      wake_up_interruptible( &sldData->ddf.waitQueue );
+    }
+
+  SLD_DEBUG( 1, "bh finished\n\n" );
+
+#ifdef __SLD_USE_BH__
+  spin_unlock_irqrestore( &sldData->ddf.lock, lockFlags );
+#endif
+}
+
+
+
+void sld_timer( unsigned long data )
+{
+  sldpriv_t *sldData = (sldpriv_t *)data;
+
+  /* asynch entrypoint, so I'm a bit paranoid */
+  if ( !SLD_VERIFY_SIG ) return;
+  if ( sldData->ddf.opened == 0 ) return;
+
+  /* no need to lock here, we only set one flag */
+
+  SLD_DEBUG( 4, "start\n" );
+
+  /* flag BUF to queue statistics */
+  sldData->buf.doStats = 1;
+
+  /* start next timer */
+  startTimer( sldData );
+
+  SLD_DEBUG( 4, "finish\n" );
+}
+
+
+void sld_timerTask( void *data )
+{
+  sldpriv_t *sldData = data;
+  int ret = 0;
+  unsigned long lockFlags;
+
+  /* asynch entrypoint, so I'm a bit paranoid */
+  if ( !SLD_VERIFY_SIG ) return;
+  if ( sldData->ddf.opened == 0 ) return;
+
+  spin_lock_irqsave( &sldData->ddf.lock, lockFlags );
+  SLD_DEBUG( 3, "begin\n" );
+
+  ret += hwd_timerTask( sldData );
+
+  if ( (ret > 0) && (sldData->ddf.waitQueue != NULL) )
+    {
+      /* data was queued, wake up waiting processes */
+      wake_up_interruptible( &sldData->ddf.waitQueue );
+    }
+
+  SLD_DEBUG( 2, "finished\n\n" );
+  spin_unlock_irqrestore( &sldData->ddf.lock, lockFlags );
+
+  /* queue ourselves again */
+  queue_task( &sldData->ddf.timerTask, &tq_timer );
+}
+
+
+static struct file_operations sld_fops =
+{
+  NULL,	/* lseek */
+  NULL,	/* read */
+  NULL,	/* write */
+  NULL,	/* readdir */
+  sld_poll,
+  sld_ioctl,
+  sld_mmap,
+  sld_open,
+  NULL,	/* flush */
+  sld_release,
+  NULL, /* fsync */
+  NULL,	/* fasync */
+  NULL, /* check_media_change */
+  NULL, /* revalidate */
+  NULL	/* lock */
+};
+@

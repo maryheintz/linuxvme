@@ -1,0 +1,11 @@
+gcc ckif.c \
+-lgd -lpng -ljpeg -lfreetype -lz -lm \
+-L /home/kelby/LIB -lkja -l3in1_v3 -L /usr/local/lib -lcctvme -lm \
+-I /opt/atlas/tdaq/tdaq-01-09-01/installed/include \
+-L /opt/atlas/tdaq-common/tdaq-common-01-09-03/installed/i686-slc4-gcc34-opt/lib \
+-lers \
+-L /opt/atlas/tdaq-common/tdaq-common-01-09-03/external/i686-slc4-gcc34-opt/lib \
+-lboost_thread-gcc34-mt -lboost_date_time-gcc34-mt \
+-L /opt/atlas/tdaq/tdaq-01-09-01/installed/i686-slc4-gcc34-opt/lib \
+-lio_rcc -lDFDebug -lrcc_error -lcmem_rcc -lttcpr -lROSslink -lslink \
+-o /home/kelby/BIN/ckif

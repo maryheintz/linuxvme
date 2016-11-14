@@ -1,0 +1,51 @@
+polymorf                                polyeder
+------------------------------------------------------------------------------
+processor       : 0                     processor       : 0
+vendor_id       : GenuineIntel          vendor_id       : GenuineIntel
+cpu family      : 6                     cpu family      : 6
+model           : 7                     model           : 7
+model name      : Pentium III (Katmai)  model name      : Pentium III (Katmai)
+stepping        : 3                     stepping        : 3
+cpu MHz         : 498.865               cpu MHz         : 598.631499
+cache size      : 512 KB                cache size      : 512 KB
+fdiv_bug        : no                    fdiv_bug        : no
+hlt_bug         : no                    hlt_bug         : no
+sep_bug         : no                    sep_bug         : no
+f00f_bug        : no                    f00f_bug        : no
+coma_bug        : no                    coma_bug        : no
+fpu             : yes                   fpu             : yes
+fpu_exception   : yes                   fpu_exception   : yes
+cpuid level     : 2                     cpuid level     : 2
+wp              : yes                   wp              : yes
+
+
+On size 4000 Kbytes
+-------------------
+CPU polyeder    34%             (tcpdmp)
+CPU polymorf    91%             (sldtcp)
+Transport       32Mb/sec
+
+After socket buffers 256Kb MTU 9000
+      socket buffers 256Kb MTU 9000
+
+		GIGA
+		8Kb     8Kb     4Kb     2Kb     1Kb
+----------------------------------------------------
+CPU polymorf    98%     69%     78%     47%     0,2%
+CPU polyeder    52%     29%     26%     18%     0.1%
+Transport       72Mb    34Mb    33Mb    17Mb    0.7Mb
+
+
+Het gigabit gedraagt zich bij sizes kleiner plus/minus 600 bytes ook
+zonder Slink-verkeer vreemd. Voorkeur voor veelvouden van 724.
+
+Het testen van antares daq zijn geschied met 1 Kb 4 Kb & 8 Kb zodat we dit
+gedrag niet gezien hebben.
+
+size <           400     450     550     1024
+---------------------------------------------
+Msg/sec          724    1448    2900    25000
+
+De knik in de curve (Msg/sec -against- size) van alleen gigabit ligt bij  600
+bytes,  terwijl  die voor de gigabit/Slink combinatie al rond de 1500 bytes
+begint te dalen.

@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <strings.h>
+#include <math.h>
+#include "dxy.h"
+      main()
+      { int i;
+        double dose[21]={0.297,0.509,1.005,1.503,2.000,2.510,3.007,3.504,
+	                 4.002,4.512,5.009,5.507,6.004,6.501,7.053,7.500,
+			 8.010,8.509,9.006,9.504,10.000};
+        double current[21]={32.94,32.94,32.92,33.01,32.91,32.92,33.15,
+	                    33.16,33.19,33.24,33.52,33.88,34.50,35.16,
+			    36.02,36.97,38.11,39.57,41.44,43.51,46.00};
+        char xstring[80],ystring[80];
+        char *text;
+        double x,y,dy; 
+        xyft.nplts[1]=0;
+        xyft.ivcts[1]=0;
+        sprintf(xstring,"Dose [KRad]");
+        sprintf(ystring,"Current [ma]");
+        dxyset(0,10.0,0.0,50.0,0.0,0,0);
+        dxylbl(0,xstring,ystring); 
+        for (i=0;i<21;i++)
+         { x=dose[i];
+           y=current[i];
+	   dy=0.0;
+          dxyacc(0,x,y,dy,1);
+        }
+        dxywrt(0); 
+      }
+      double dxyfit(l,k,x)
+      int l,k;
+      double x;
+      { double dxyf;
+        dxyf=45.0;
+        if(l==2) return(dxyf);
+        dxyf=90.0*sin(x);
+        return(dxyf);
+      }

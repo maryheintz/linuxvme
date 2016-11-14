@@ -1,0 +1,1 @@
+del *.lisr68020 -O=random.r -L random.a>random.lis

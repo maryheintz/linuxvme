@@ -1,0 +1,1 @@
+cc -k=2f -f=cia2 cia2.c -l=camac.r -l=gpib.r 

@@ -1,0 +1,223 @@
+// DigBoard.cpp - implementation of digitizer board behavior
+
+#include <iostream.h>
+#include <iomanip.h>
+#include <time.h>
+#include <sys/types.h>
+#include <ces/uiocmd.h>
+#include "atdaq_types.h"
+#include "s5933lib.h"
+#include "SLINK.h"
+#include "auxvme.h"
+#include "TTCvi.h"
+#include "DigBoard.h"
+
+// EventBuffer: Just holds data from S-Link.
+
+EventBuffer::EventBuffer(int inSamples, DigMode inMode) :
+  nSamples(inSamples),
+  mode(inMode) {
+  int size = 2 * (nSamples + 2);
+  if (mode == DIG_CALIB) size *= 2;
+  data = new unsigned long[size];
+}
+
+EventBuffer::~EventBuffer() {
+  delete[] data;
+}
+
+int EventBuffer::GetBC_ID() {
+  return data[0] & 0xfff;
+}
+
+int EventBuffer::GetSample(int channel, int sample, GainState gain = lowgain) 
+  const {
+  int set;
+  switch (mode) {
+  case DIG_NORMAL:
+    set = channel / 3;
+    break;
+  case DIG_CALIB:
+  case DIG_TEST:
+    set = 2 * (channel / 3) + gain;
+    break;
+  }
+  return (data[set * (nSamples + 2) + sample]
+	  >> 10 * ((2 - channel) % 3)) & 0x3ff;
+}
+
+void EventBuffer::FillSignal(Signal& sig, int channel, int numsamples,
+			  GainState gain = lowgain) {
+  sig.Clear();
+  int set;
+  switch (mode) {
+  case DIG_NORMAL:
+    set = channel / 3;
+    break;
+  case DIG_CALIB:
+  case DIG_TEST:
+    set = 2 * (channel / 3) + gain;
+    break;
+  }
+  unsigned long *buffer = &data[set * (nSamples + 2)];
+  for (int sample = 1; sample <= numsamples; ++sample) {
+    sig.AddSample((buffer[sample] >> 10 * ((2 - channel) % 3)) & 0x3ff);
+  }
+}
+
+
+// DigBoard functions.
+
+// Should set parameters to sensible defaults here.
+DigBoard::DigBoard(TTCvi *inController, int numboards) :
+  controller(inController),
+  nBoards(numboards) {
+  // First, send necessary commands to the TTCrx
+  controller->SendLongCommand(0, false, 3, 0xa3);
+  // Allocate memory
+  int status;
+  if (status = uio_open()) {
+    cout << "uio_open failed with status " << status << endl;
+    exit(0);
+  }
+  if (status = uio_calloc(&buf_desc, 9000 * sizeof(int))) {
+    cout << "uio_calloc failed with status " << status << endl;
+    exit(0);
+  }
+  // Open the S-Link connection
+  SLINK_InitParameters(&slink_parameters);
+  slink_parameters.start_word = 0x00000000;
+  slink_parameters.stop_word = 0xfffffff0;
+  slink_parameters.position = 0;
+  int code;
+  if (code = SSP_Open(&slink_parameters, &dev) != SLINK_OK) {
+    SLINK_PrintErrorMessage(code);
+    exit(0);
+  }
+}
+
+DigBoard::~DigBoard() {
+  uio_cfree(&buf_desc);
+  uio_close();
+  SSP_Close(dev); // Don't throw an exception in the destructor.
+}
+
+void DigBoard::SetSamples(unsigned char numSamples) {
+  nSamples = numSamples;
+  controller->SendLongCommand(0, true, 1, numSamples);
+}
+
+void DigBoard::SetDelay(unsigned char delay) {
+  // Have to reverse the bits...grrrrr....
+  unsigned char reversed = 0x0;
+  for (int i = 0; i < 8; ++i) {
+    reversed = reversed | (((delay >> i) & 0x1) << (7 - i));
+  }
+  controller->SendLongCommand(0, true, 2, reversed);
+}
+
+void DigBoard::SetTestWord(unsigned long word) {
+  controller->SendLongCommand(0, true, 3, (word >> 16) & 0xff);
+  controller->SendLongCommand(0, true, 4, (word >> 8) & 0xff);
+  controller->SendLongCommand(0, true, 5, word & 0xff);
+}
+
+void DigBoard::SetMode(DigMode inMode) {
+  mode = inMode;
+  controller->SendLongCommand(0, true, 7, mode & 0x3);
+}
+
+void DigBoard::ReadEvent(EventBuffer &event, int board) {
+  unsigned long *buffer = (unsigned long*)(buf_desc.uaddr);
+  int boardsize = 2 * (nSamples + 2);
+  int i; // Loop variable
+  switch (mode) {
+  case DIG_NORMAL:
+    // Copy the data...
+    ReadPacket();
+    for (i = 0; i < boardsize; ++i) {
+      event.data[i] = buffer[board * boardsize + i];
+    }
+    break;
+  case DIG_CALIB:
+    // Copy the data (twice, this time)...
+    ReadPacket();
+    for (i = 0; i < boardsize; ++i) {
+      event.data[i] = buffer[board * boardsize + i];
+    }
+    ReadPacket();
+    for (i = 0; i < boardsize; ++i) {
+      event.data[boardsize + i] = buffer[(nBoards + board) * boardsize + i];
+    }
+    break;
+  case DIG_TEST:
+    // ...
+    break;
+  }
+}
+
+void DigBoard::Dump(ostream& ost) {
+  unsigned long *buffer = (unsigned long*)(buf_desc.uaddr);
+  for (int set = 0; set < 2 * nBoards; ++set) {
+    for (int word = 0; word < nSamples + 2; ++word) {
+      if (word % 5 == 0) ost << endl;
+      ost << hex << setw(12) << buffer[set * (nSamples + 2) + word];
+    }
+    ost << endl;
+  }
+  ost << dec << endl;
+}
+
+void DigBoard::ResetBunchCounter() {
+  controller->BroadcastShortCommand(1);
+}
+
+void DigBoard::SignalReset() {
+  controller->BroadcastShortCommand(0x40);
+}
+
+void DigBoard::ReadPacket(unsigned long offset = 0) {
+  int code;
+  char *address = (char*)((buf_desc.paddr | 0x80000000) + offset);
+  if ((code = SSP_InitRead(dev, address, buf_desc.size, true, 0))
+      != SLINK_OK) {
+    SLINK_PrintErrorMessage(code);
+    exit(0);
+  }
+  // cout << "Waiting for L1A..." << flush; // Debugging
+  int status;
+  do {
+    if ((code = SSP_ControlAndStatus(dev, &status)) != SLINK_OK) {
+      SLINK_PrintErrorMessage(code);
+      exit(0);
+    }
+  } while (status != SLINK_FINISHED);
+  // cout << "Packet read" << endl;
+  dev->regs->mwtc = 0;
+}
+
+ostream& operator<<(ostream& ost, const EventBuffer& event) {
+  for (int channel = 0; channel < 6; ++channel) {
+    ost << "Channel " << channel << ":";
+    if (event.mode == DIG_NORMAL) {
+      for (int sample = 1; sample <= event.nSamples; ++sample) {
+	if (sample % 10 == 1) ost << endl << "  ";
+	// gain ignored here
+	ost << setw(6) << event.GetSample(channel, sample);
+      }
+      ost << endl;
+    } else {
+      // print out both gains
+      ost << endl << "  Low gain:";
+      for (int sample = 1; sample <= event.nSamples; ++sample) {
+	if (sample % 10 == 0) ost << endl << "    ";
+	ost << setw(6) << event.GetSample(channel, sample, lowgain);
+      }
+      ost << "  High gain:" << endl;
+      for (int sample = 1; sample <= event.nSamples; ++sample) {
+	if (sample % 10 == 0) ost << endl << "    ";
+	ost << setw(6) << event.GetSample(channel, sample, highgain);
+      }
+    }
+  }
+}

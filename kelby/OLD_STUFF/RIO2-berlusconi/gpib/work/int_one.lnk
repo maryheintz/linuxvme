@@ -1,0 +1,1 @@
+gcc int_one.c kja488.c esp488.c -l3in1 -lkja -lvme -o int_one

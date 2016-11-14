@@ -1,0 +1,468 @@
+#---------------------------------------------------------------------------
+# ENVIRONMENT FILE
+#
+# (C) Copyright 1987-1996
+# Lynx Real-Time Systems, Inc.
+# San Jose, CA
+# All rights reserved.
+#
+# $Date: 1999/04/01 12:52:41 $
+# $Revision: 1.3 $
+#
+#---------------------------------------------------------------------------
+# This ENVIRONMENT file is included by every Makefile in the LynxOS release.
+# Please do not remove this file - If the Makefiles cant find it you wont be
+# able to rebuild the kernel or any of the utilities located in /src.
+#
+# This file contains preprocessing for 386/486/Pentium (x86),
+# MicroSparc1 and MicroSparc2 (usparc), Motorola vme162,vme167,vme177
+# boards (68k), and PowerPC platforms (ppc).  The ENVIRONMENT file has been
+# properly pre-processed for your particular release.
+#---------------------------------------------------------------------------
+
+###------------------------------------------------------
+### Identifiers for this release (compiled into the kernel)
+###------------------------------------------------------
+LYNXOS_RELEASE=3.0.1
+LYNXOS_VERSION=110298-G
+# only 8 chars for LYNXOS_VERSION allowed  xxxxxx-x
+
+###------------------------------------------------------
+### VPATH support
+### 
+###------------------------------------------------------
+SRC1=$(ENV_PREFIX)/../common
+SUBTREE=$(subst $(ENV_PREFIX)/,,$(shell /bin/pwd))
+ 
+VPATH  = .:$(SRC1)/$(SUBTREE):$(ENV_PREFIX)/lib:$(SRC1)/lib
+ 
+VPATH_INCLUDE = .:$(SRC1)/$(SUBTREE):$(ENV_PREFIX)/usr/include:$(SRC1)/usr/include
+
+ifeq ($(HOST_OS),sunos)
+VPATH_INCLUDE_CROSS = .:$(SRC1)/$(SUBTREE):/usr/include:/usr/include/sys:$(ENV_PREFIX)/usr/include:$(SRC1)/usr/include:
+endif
+
+ifeq ($(HOST_OS),aix)
+VPATH_INCLUDE_CROSS = .:$(SRC1)/$(SUBTREE):/usr/include:/usr/include/sys:$(ENV_PREFIX)/usr/include:$(SRC1)/usr/include:
+endif
+
+ifeq ($(HOST_OS),win32)
+VPATH_INCLUDE_CROSS = .:$(SRC1)/$(SUBTREE):/usr/include:/usr/include/sys:/usr/i386-cygwin32/include:/usr/i386-cygwin32/include/sys:$(ENV_PREFIX)/usr/include:$(SRC1)/usr/include:
+endif
+
+ifeq ($(HOST_OS),hpux)
+VPATH_INCLUDE_CROSS = .:$(SRC1)/$(SUBTREE):/usr/products/compilers/cygnus/97r1/hppa-hpux/lib/gcc-lib/hppa1.1-hpux/2.7-97r1/include:/usr/include:/usr/include/sys:$(ENV_PREFIX)/usr/include:$(SRC1)/usr/include:
+endif
+
+VPATH_INC = $(patsubst %,-I%,$(subst :, ,$(VPATH_INCLUDE)))
+VPATH_INC_CROSS = $(patsubst %,-I%,$(subst :, ,$(VPATH_INCLUDE_CROSS)))
+
+
+###------------------------------------------------------
+### Processor and Platform specifics
+###------------------------------------------------------
+
+
+
+ PRODUCT=ppc
+ PLATFORM=ces
+ PROCESSOR=ppc
+ PLATFORM_GENERIC=ppc
+ ENABLE_GALAXY=no
+ ENABLE_SYS_DEBUG=yes
+
+
+#(mips) PRODUCT=mips
+#(mips) PLATFORM=mips
+#(mips) PROCESSOR=mips
+#(mips) PLATFORM_GENERIC=mips
+#(mips) ENABLE_GALAXY=no
+#(mips) ENABLE_SYS_DEBUG=yes
+
+###------------------------------------------------------
+### Variables that can be inherited from the environment
+### (See the script SETUP.bash)
+###------------------------------------------------------
+
+ifndef HOST_OS  # Assume we are on a Lynxos machine.  If we are on
+HOST_OS=lynxos  # sunos or aix, HOST_OS should be set in user env.
+endif
+
+ifndef REAL_KERN_INSTALL		# Customers: customer_kern_install.
+REAL_KERN_INSTALL=customer_kern_install # Src developers: lynx_kern_install.
+
+export PRODUCT
+export PLATFORM
+export PROCESSOR
+export PLATFORM_GENERIC
+endif
+
+###------------------------------------------------------
+### Common variables shared by all products
+###------------------------------------------------------
+RELEASE_FLAGS=
+# Add -Wall for debugging...
+COMMON_NEW_GCC_CFLAGS=-fwritable-strings -fcommon
+COMMON_CFLAGS=-I. $(RELEASE_FLAGS) -DLynx -D__Lynx__ 
+NO_INC=
+GNU_NO_INC=-nostdinc
+GNULIB=$(ENV_PREFIX)/lib/libgcc.a
+NO_LIB=-n
+GNU_NO_LIB=-nostdlib
+OPTIMIZE=-O
+LIBBSD=libbsd.a
+
+### Install directories
+INST_DIR=$(ENV_PREFIX)
+INSTALL_DIR=$(INST_DIR)
+INSTALL_DIR_EMACS=$(INST_DIR)
+LIBDESTDIR=$(INST_DIR)/lib
+LIB_PATH=$(LIBDESTDIR)
+HOST_INSTALL_DIR=$(INSTALL_DIR)/cdk/$(HOST_OS)-$(OBJSFORMAT)-$(PRODUCT)
+HOST_GCCLIB_DIR=$(ENV_PREFIX)
+
+### Include dirs
+INCDIR=$(INST_DIR)/usr/include
+INCS=-I. -I$(INCDIR)
+INCLUDES=$(INCS) $(NO_INC)
+INCDIR_SYS=$(INST_DIR)/usr/include/sys
+INCDIR_MACH=$(INST_DIR)/usr/include
+LIBS_ENV=$(LIB_PATH)/libc.a
+LIBS=$(LIB_PATH)/libc.a
+
+###------------------------------------------------------
+### Common variables shared by all products
+###------------------------------------------------------
+
+### Build tools
+HOSTER_TOOLS_DIR=/bin
+LOCAL_TOOLS_DIR=/bin
+AR=$(CYGNUS_AR)
+AR_FLAGS=-ruv
+BIN=/bin
+BISON_FLAGS=-y
+BISON=bison $(BISON_FLAGS)
+BOOT_PROG=/preboot
+CAT=cat
+CD=cd
+CHMOD=$(LOCAL_TOOLS_DIR)/chmod
+CHGRP=chgrp
+CHOWN=chown
+CO=co
+CONFIG=config
+CP=$(LOCAL_TOOLS_DIR)/cp
+CPP=cpp
+DLCP=$(CP)
+DLX=
+HOST=
+ECHO=echo
+FLEX=$(HOSTER_TOOLS_DIR)/flex
+INSTALL=$(HOSTER_TOOLS_DIR)/install
+LD=$(HOSTER_TOOLS_DIR)/ld
+LIBR=$(AR)
+LN=$(LOCAL_TOOLS_DIR)/ln
+MAKEFLAGS=
+MAKE_UTIL=$(HOSTER_TOOLS_DIR)/make
+MAKE=$(MAKE_UTIL) $(MAKEFLAGS)
+MAKEBOOT_FLAGS=
+MAKEBOOT=$(HOSTER_TOOLS_DIR)/makeboot $(MAKEBOOT_FLAGS)
+MKDIR_FLAGS=-fp
+MKDIR=mkdir $(MKDIR_FLAGS)
+MKNOD=$(HOSTER_TOOLS_DIR)/mknod
+MKSHLIB=$(HOSTER_TOOLS_DIR)/mkshlib
+MKSPEC=$(HOSTER_TOOLS_DIR)/mkspec
+MKTIMESTAMP=$(HOSTER_TOOLS_DIR)/mktimestamp
+MV=$(LOCAL_TOOLS_DIR)/mv
+NM_FLAGS=-ng
+NM=$(CYGNUS_NM) $(NM_FLAGS)
+PARSER=$(BISON)
+PREBOOT=preboot
+PWD_CMD=pwd
+RM_FLAGS=-f
+RM=/bin/rm $(RM_FLAGS)
+TAR=/bin/tar
+TOUCH=$(LOCAL_TOOLS_DIR)/touch
+RANLIB=$(CYGNUS_RANLIB)
+
+CYGNUS_PREFIX=$(ENV_PREFIX)/usr
+STRIP=$(CYGNUS_PREFIX)/bin/strip
+OBJCOPY=$(CYGNUS_PREFIX)/bin/objcopy
+
+HOST_CC=$(LOCAL_TOOLS_DIR)/gcc
+HOST_GCC=$(LOCAL_TOOLS_DIR)/gcc
+HOST_LD=$(LOCAL_TOOLS_DIR)/ld
+HOST_NO_INC=-nostdinc
+
+CC_CC=$(NEW_GCC)
+CC_LD=$(NEW_GCC_LD)
+CC_CFLAGS=$(NEW_GCC_CFLAGS)
+CC_LDFLAGS=$(NEW_GCC_LDFLAGS)
+CC_LDFLAGS_M=$(NEW_GCC_LDFLAGS_M)
+CC_LIBS=$(NEW_GCC_LIBS)
+CC_INCLUDES=$(NEW_GCC_INCLUDES)
+
+GCC_CFLAGS=$(NEW_GCC_CFLAGS)
+GCC_LDFLAGS=$(NEW_GCC_LDFLAGS)
+GCC_LDFLAGS_M=$(NEW_GCC_LDFLAGS_M)
+GCC_LIBS=$(NEW_GCC_LIBS)
+GCC_INCLUDES=$(NEW_GCC_INCLUDES)
+
+NEW_GCC_CC=$(CYGNUS_PREFIX)/bin/gcc
+NEW_GCC_LD=$(CYGNUS_PREFIX)/bin/ld
+NEW_GCC_CFLAGS=$(COMMON_CFLAGS) $(COMMON_NEW_GCC_CFLAGS) $(PROCESSOR_FLAGS)
+NEW_GCC_LDFLAGS=$(ENV_PREFIX)/lib/init1.o $(ENV_PREFIX)/lib/initn.o
+NEW_GCC_LDFLAGS_M=$(ENV_PREFIX)/lib/thread/init1.o $(ENV_PREFIX)/lib/thread/initn.o
+NEW_GCC_LIBS=$(ENV_PREFIX)/lib/libgcc.a $(ENV_PREFIX)/lib/libc.a
+NEW_GCC_INCLUDES=-I$(ENV_PREFIX)/usr/include -nostdinc
+
+CPLUS_CC=$(CYGNUS_PREFIX)/bin/g++
+CPLUS_LD=$(NEW_GCC_LD)
+CPLUS_CFLAGS=$(NEW_GCC_CFLAGS)
+CPLUS_LDFLAGS=$(NEW_GCC_LDFLAGS)
+CPLUS_LDFLAGS_M=$(NEW_GCC_LDFLAGS_M)
+CPLUS_LIBS=$(NEW_GCC_LIBS) -lg++
+CPLUS_INCLUDES=-I$(ENV_PREFIX)/usr/include -I$(CYGNUS_PREFIX)/lib/g++-include -nostdinc
+
+HOST_LIBS=$(HOST_LIBPATH)/libc.a -L$(ENV_PREFIX)/lib
+HOST_LIBPATH=/lib
+HOST_LIB_PATH=$(HOST_LIBPATH)
+HOST_INCLUDES=-I/usr/include
+HOST_CPPFLAGS=$(DEFINES) $(HOST_INCLUDES) $(INCS) $(HOST_NO_INC)
+HOST_INCS=-I. -I/usr/include -I/usr/include/sys $(INCS) $(HOST_NO_INC)
+HOST_LIBR=$(HOST_AR)
+HOST_AR=$(LOCAL_TOOLS_DIR)/ar
+HOST_RANLIB=$(LOCAL_TOOLS_DIR)/ranlib
+HOST_LDFLAGS=
+HOST_CFLAGS=$(PROCESSOR_FLAGS) $(COMMON_CFLAGS)
+
+CYGNUS_AR=$(CYGNUS_PREFIX)/bin/ar
+CYGNUS_RANLIB=$(CYGNUS_PREFIX)/bin/ranlib
+CYGNUS_NM=$(CYGNUS_PREFIX)/bin/nm
+
+KERN_LIBS=$(ENV_PREFIX)/sys/kernlibc.a
+KERN_LIBS_ENV=$(LIBS_ENV)
+KERN_CC=$(NEW_GCC)
+KERN_GCC=$(NEW_GCC)
+KERN_INCLUDES=-I. -I$(INCDIR)
+
+NEW_GCC=$(NEW_GCC_CC)
+CC=$(CC_CC)
+LD=$(CC_LD)
+GCC=$(NEW_GCC_CC)
+CPLUS=$(CPLUS_CC)
+LDFLAGS=$(CC_LDFLAGS)
+CFLAGS=$(CC_CFLAGS)
+
+COMMON_KERNEL_CFLAGS= -DLYNXOS -D__LYNXOS
+
+KERN_CFLAGS=$(CFLAGS) $(COMMON_KERNEL_CFLAGS) $(COMMON_NEW_GCC_CFLAGS)
+KERN_RANLIB=$(CYGNUS_RANLIB)
+KERN_LD=$(NEW_GCC_LD)
+KERN_AR=$(CYGNUS_AR)
+KERN_LIBR=$(CYGNUS_AR)
+
+
+
+
+  #########################################################
+  ### PowerPC Product
+  ###
+  #########################################################
+  
+  #-----------------------------------------------
+  # AIX CROSS DEVELOPMENT VARIABLES
+  #-----------------------------------------------
+ifeq ($(HOST_OS),aix)
+  CYGNUS_PREFIX=$(ENV_PREFIX)/cdk/aix-$(OBJSFORMAT)-ppc/usr
+  HOSTER_TOOLS_DIR=$(ENV_PREFIX)/cdk/aix-$(OBJSFORMAT)-ppc/bin
+endif
+
+  #-----------------------------------------------
+  # SUNOS CROSS DEVELOPMENT VARIABLES
+  #-----------------------------------------------
+ifeq ($(HOST_OS),sunos)
+  HOSTER_TOOLS_DIR=$(ENV_PREFIX)/cdk/sunos-$(OBJSFORMAT)-ppc/bin
+  CYGNUS_PREFIX=$(ENV_PREFIX)/cdk/sunos-$(OBJSFORMAT)-ppc/usr
+endif
+
+  #-----------------------------------------------
+  # Win32 CROSS DEVELOPMENT VARIABLES
+  #-----------------------------------------------
+ifeq ($(HOST_OS),win32)
+  HOSTER_TOOLS_DIR=$(ENV_PREFIX)/cdk/win32-$(OBJSFORMAT)-ppc/bin
+  CYGNUS_PREFIX=$(ENV_PREFIX)/cdk/win32-$(OBJSFORMAT)-ppc/usr
+endif
+
+  #-----------------------------------------------
+  # HPUX CROSS DEVELOPMENT VARIABLES
+  #-----------------------------------------------
+ifeq ($(HOST_OS),hpux)
+  HOSTER_TOOLS_DIR=$(ENV_PREFIX)/cdk/hpux-$(OBJSFORMAT)-ppc/bin
+  CYGNUS_PREFIX=$(ENV_PREFIX)/cdk/hpux-$(OBJSFORMAT)-ppc/usr
+endif
+
+  #-----------------------------------------------
+  # COMMON POWERPC
+  #-----------------------------------------------
+  
+  PROCESSOR_FLAGS=-D__powerpc__ 
+  LIBR=$(CYGNUS_AR)
+
+  LDF=-T0x10001000 -H0x1000 -D0x20000000
+  KERN_CFLAGS+= -fvolatile-global -fvolatile -finhibit-size-directive
+  NEW_GCC_LDFLAGS=$(LIBDESTDIR)/init.o $(LDF) -L$(LIBDESTDIR)
+  NEW_GCC_LDFLAGS_M=$(LIBDESTDIR)/thread/init.o $(LDF) -L$(LIBDESTDIR)/thread/
+  KERN_LDFLAGS=
+  KERN_LINK=$(KERN_LD) $(KERN_LINK_FLAGS)
+  KERN_LINK_FLAGS= -bnogc -Tppclynx.x -Ttext b0004000 -N -e .start 
+  KERN_AS=
+  OLD_KERN_LD=l-ld
+  NO_INC=$(GNU_NO_INC)
+  LIBS=$(NEW_GCC_LIBS)
+
+#(mips)  #########################################################
+#(mips)  ### Mips Product
+#(mips)  ###
+#(mips)  #########################################################
+#(mips)  
+#(mips)  #-----------------------------------------------
+#(mips)  # SUNOS CROSS DEVELOPMENT VARIABLES
+#(mips)  #-----------------------------------------------
+#(mips)ifeq ($(HOST_OS),sunos)
+#(mips)  HOSTER_TOOLS_DIR=$(ENV_PREFIX)/cdk/sunos-$(OBJSFORMAT)-mips/bin
+#(mips)  CYGNUS_PREFIX=$(ENV_PREFIX)/cdk/sunos-$(OBJSFORMAT)-mips/usr
+#(mips)endif
+#(mips)
+#(mips)  #-----------------------------------------------
+#(mips)  # Win32 CROSS DEVELOPMENT VARIABLES
+#(mips)  #-----------------------------------------------
+#(mips)ifeq ($(HOST_OS),win32)
+#(mips)  HOSTER_TOOLS_DIR=$(ENV_PREFIX)/cdk/win32-$(OBJSFORMAT)-mips/bin
+#(mips)  CYGNUS_PREFIX=$(ENV_PREFIX)/cdk/win32-$(OBJSFORMAT)-mips/usr
+#(mips)endif
+#(mips)
+#(mips)  #-----------------------------------------------
+#(mips)  # HPUX CROSS DEVELOPMENT VARIABLES
+#(mips)  #-----------------------------------------------
+#(mips)ifeq ($(HOST_OS),hpux)
+#(mips)  HOSTER_TOOLS_DIR=$(ENV_PREFIX)/cdk/hpux-$(OBJSFORMAT)-mips/bin
+#(mips)  CYGNUS_PREFIX=$(ENV_PREFIX)/cdk/hpux-$(OBJSFORMAT)-mips/usr
+#(mips)endif
+#(mips)
+#(mips)  #-----------------------------------------------
+#(mips)  # COMMON MIPS
+#(mips)  #-----------------------------------------------
+#(mips)  
+#(mips)  PROCESSOR_FLAGS=-D__mips__ 
+#(mips)  KERN_LINK=$(NEW_GCC_LD) $(KERN_LINK_FLAGS)
+#(mips)  KERN_LINK_FLAGS=
+#(mips)  
+
+#########################################################
+#
+# IF YOU ARE CROSS DEVELOPING FROM SUNOS ...
+#
+#########################################################
+ifeq ($(HOST_OS),sunos)
+  MKDIR_FLAGS=-p
+  HOST_NO_INC=
+
+ifeq ($(HOST_OS_TYPE),solaris)
+  HOST_CC=/usr/cygnus/progressive-96q4/H-sparc-sun-solaris2/bin/gcc
+  HOST_LD=/usr/cygnus/progressive-96q4/H-sparc-sun-solaris2/bin/ld
+  HOST_CPLUS_CC=/usr/cygnus/progressive-96q4/H-sparc-sun-solaris2/bin/g++
+  HOST_AR=/usr/cygnus/progressive-96q4/H-sparc-sun-solaris2/bin/ar
+else
+  HOST_CC=/usr/products/compilers/cygnus/96q3/sparc-sun-sunos4.1/bin/gcc
+  HOST_LD=/usr/products/compilers/cygnus/96q3/sparc-sun-sunos4.1/bin/ld
+  HOST_CPLUS_CC=/usr/products/compilers/cygnus/96q3/sparc-sun-sunos4.1/bin/g++
+  HOST_AR=/usr/5bin/ar 
+endif
+
+  HOST_GCC=$(HOST_CC)
+  HOST_LIBS=
+  HOST_INCLUDES=
+
+  HOST_GCC_CC=$(HOST_CC)
+  HOST_GCC_LD=$(HOST_LD)
+  HOST_GCC_CFLAGS=
+  HOST_GCC_LDFLAGS=
+  HOST_GCC_LIBS=
+  HOST_GCC_INCLUDES=
+  HOST_GCC_INCS=-I. -I/usr/include -I/usr/include/sys -I$(ENV_PREFIX)/usr/include -nostdinc
+
+  HOST_NEW_GCC_CC=$(HOST_CC)
+  HOST_NEW_GCC_LD=$(HOST_LD)
+  HOST_NEW_GCC_CFLAGS=
+  HOST_NEW_GCC_LDFLAGS=
+  HOST_NEW_GCC_LIBS=
+  HOST_NEW_GCC_INCLUDES=
+
+  HOST_CPLUS_LD=$(HOST_LD)
+  HOST_CPLUS_CFLAGS=
+  HOST_CPLUS_LDFLAGS=
+  HOST_CPLUS_LIBS=
+  HOST_CPLUS_INCLUDES=
+
+endif
+
+###------------------------------------------------------
+### AIX CROSS DEVELOPMENT
+###------------------------------------------------------
+ifeq ($(HOST_OS),aix)
+  MKDIR_FLAGS=-p
+  HOST_LIBS=
+  HOSTER_TOOLS_DIR=$(ENV_PREFIX)/cdk/aix-$(OBJSFORMAT)-ppc/bin
+
+  HOST_LD=/usr/cygnus/progressive-96q3/H-powerpc-ibm-aix4.1/bin/ld
+  HOST_LDFLAGS=-L/usr/cygnus/progressive-96q3/H-powerpc-ibm-aix4.1/lib -v
+  HOST_CC=/usr/cygnus/progressive-96q3/H-powerpc-ibm-aix4.1/bin/gcc
+  HOST_GCC=$(HOST_CC)
+  HOST_GCC_CFLAGS=
+  HOST_GCC_LDFLAGS=
+  HOST_GCC_LIBS=
+  HOST_GCC_INCLUDES=
+  HOST_GCC_INCS=-I. -I/usr/include -I/usr/include/sys -I$(ENV_PREFIX)/usr/include -nostdinc
+
+  HOST_CFLAGS=-Daix $(PROCESSOR_FLAGS)
+  HOST_INCS=-I. -I/usr/include -I/usr/include/sys $(INCS) $(HOST_NO_INC)
+  HOST_LIBS=-L$(HOST_LIBPATH) -lbsd -lc
+  HOST_LIBPATH=/lib
+  HOST_LIBR=/bin/ar
+  HOST_RANLIB=$(LOCAL_TOOLS_DIR)/ranlib
+  HOST_LIB_PATH=$(HOST_LIBPATH)
+endif
+
+###------------------------------------------------------
+### WIN32 CROSS DEVELOPMENT
+###------------------------------------------------------
+ifeq ($(HOST_OS),win32)
+  MKDIR_FLAGS=-p
+  HOST_LIBS=
+  HOST_GCC_INCS=-I. -I/usr/include -I/usr/include/sys -I/usr/i386-cygwin32/include -I/usr/i386-cygwin32/include/sys -I$(ENV_PREFIX)/usr/include -nostdinc
+  HOST_INCS=-I. -I/usr/include -I/usr/include/sys -I/usr/i386-cygwin32/include -I/usr/i386-cygwin32/include/sys $(INCS) $(HOST_NO_INC)
+  EXT=.exe
+endif
+
+###------------------------------------------------------
+### Redhat Linux 5.1
+###------------------------------------------------------
+ifeq ($(HOST_OS),linux)
+  HOST_GCC=/usr/bin/gcc
+  HOSTER_TOOLS_DIR=/usr/bin
+  LOCAL_TOOLS_DIR=/usr/bin
+endif
+
+###------------------------------------------------------
+### HPUX CROSS DEVELOPMENT
+###------------------------------------------------------
+ifeq ($(HOST_OS),hpux)
+  HOST_LD=/usr/bin/ld
+  HOST_LDFLAGS=
+  HOST_CC=/usr/products/compilers/cygnus/97r1/hppa-hpux/bin/gcc
+  MKDIR_FLAGS=-p
+  HOST_LIBS=
+  HOST_GCC_INCS=-I. -I/usr/products/compilers/cygnus/97r1/hppa-hpux/lib/gcc-lib/hppa1.1-hpux/2.7-97r1/include -I/usr/include -I/usr/include/sys -I$(ENV_PREFIX)/usr/include -nostdinc
+  HOST_INCS=-I. -I/usr/products/compilers/cygnus/97r1/hppa-hpux/lib/gcc-lib/hppa1.1-hpux/2.7-97r1/include -I/usr/include -I/usr/include/sys $(INCS) $(HOST_NO_INC)
+  EXT=
+endif

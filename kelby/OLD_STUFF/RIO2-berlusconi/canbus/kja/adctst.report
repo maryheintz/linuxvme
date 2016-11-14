@@ -1,0 +1,4 @@
+calling reset_can
+calling can_adc_init
+waiting for adc acknowledgement
+can_rx hung

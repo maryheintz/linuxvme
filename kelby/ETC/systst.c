@@ -1,0 +1,1 @@
+#include <stdio.h>#include <stdlib.h>char string[80];main(){ int i;  sprintf(string,"cat wow.txt");  i=system(string);}

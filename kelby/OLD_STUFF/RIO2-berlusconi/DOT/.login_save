@@ -1,0 +1,46 @@
+# $Header: /sources/ces/PRJ9902/.login,v 1.1 1999/03/31 08:31:35 martin Exp $
+##############################################################################
+# (C) Copyright 1987-1995
+# Lynx Real-Time Systems, Inc.
+# Los Gatos, CA
+# All rights reserved.
+#
+# $Date: 1999/03/31 08:31:35 $
+# $Revision: 1.1 $
+##############################################################################
+
+# Sample .login file for csh/tcsh shells
+
+# Basic path includes standard LynxOS executables and scripts
+set path=(. /bin/ces /bin /etc /net /usr/bin /usr/local/bin $path)  
+
+set history=100				# Remember last 100 commands
+set filec				# Use tcsh file completion
+set noclobber				# Don't nuke files
+#set host = `uname -n`			# What host name is this?
+#
+#if `whoami` == "root" then		# setup prompt, if root add a '#'
+#  set prompt = "-$host-\!--# "
+#else
+#  set prompt = "-$host-\!--> "
+#endif
+
+#if  "$TERM" == "" then
+#	setenv TERM vt100	        # try and setup the TERM variable
+#	tset				# then setup the terminal
+#endif
+stty intr "^C"
+
+
+
+setenv SHELL /bin/csh			# Use csh for shell
+
+umask 022				# Default protection mask for files
+
+alias a  alias				# aliases
+alias h  history
+alias ls /bin/ls -FC
+alias j  jobs
+
+stty erase  kill  -tabs		# stty preferences
+

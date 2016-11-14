@@ -1,0 +1,2164 @@
+event=50000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=100000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=150000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=200000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=250000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=300000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=350000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=400000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=450000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=500000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=550000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=600000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=650000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=700000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=750000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=800000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=850000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=900000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=950000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=1000000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=1050000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=1100000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=1150000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=1200000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=1250000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=1300000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=1350000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=1400000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=1450000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=1500000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=1550000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=1600000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=1650000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=1700000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=1750000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=1800000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=1850000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=1900000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=1950000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=2000000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=2050000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=2100000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=2150000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=2200000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=2250000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=2300000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=2350000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=2400000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=2450000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=2500000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=2550000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=2600000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=2650000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=2700000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=2750000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=2800000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=2850000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=2900000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=2950000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=3000000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=3050000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=3100000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=3150000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=3200000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=3250000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=3300000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=3350000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=3400000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=3450000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=3500000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=3550000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=3600000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=3650000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=3700000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=3750000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=3800000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=3850000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=3900000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=3950000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=4000000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=4050000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=4100000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=4150000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=4200000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=4250000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=4300000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=4350000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=4400000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=4450000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=4500000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=4550000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=4600000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=4650000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=4700000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=4750000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=4800000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=4850000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=4900000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=4950000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5000000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5050000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5100000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5150000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5200000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5250000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5300000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5350000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5400000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5450000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5500000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5550000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5600000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5650000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5700000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5750000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5800000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5850000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5900000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=5950000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=6000000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=6050000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=6100000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=6150000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=6200000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=6250000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=6300000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=6350000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=6400000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=6450000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=6500000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=6550000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=6600000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=6650000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=6700000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=6750000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=6800000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=6850000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=6900000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=6950000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=7000000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=7050000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=7100000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=7150000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=7200000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=7250000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=7300000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=7350000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=7400000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=7450000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=7500000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=7550000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=7600000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=7650000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=7700000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=7750000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+event=7800000  nerror=0  ndcrc=0  nbnch=0  nctrl=0  ngcrc=0  nsdmu=0  loop=0
+ event dump nraw=148
+ i=0  cntl=1  flag=0  data=51115110
+ i=1  cntl=0  flag=0  data=d80c7c03
+ i=2  cntl=0  flag=0  data=45414c4f
+ i=3  cntl=0  flag=0  data=45515850
+ i=4  cntl=0  flag=0  data=45414c4c
+ i=5  cntl=0  flag=0  data=5314c4f
+ i=6  cntl=0  flag=0  data=4531504c
+ i=7  cntl=0  flag=0  data=45314c4d
+ i=8  cntl=0  flag=0  data=45314c4e
+ i=9  cntl=0  flag=0  data=1fbd3619
+ i=10  cntl=0  flag=0  data=d80c7c03
+ i=11  cntl=0  flag=0  data=5315849
+ i=12  cntl=0  flag=0  data=4531504c
+ i=13  cntl=0  flag=0  data=551584a
+ i=14  cntl=0  flag=0  data=5315449
+ i=15  cntl=0  flag=0  data=561544a
+ i=16  cntl=0  flag=0  data=531584a
+ i=17  cntl=0  flag=0  data=5415c49
+ i=18  cntl=0  flag=0  data=58a1b95f
+ i=19  cntl=0  flag=0  data=d80c7c03
+ i=20  cntl=0  flag=0  data=4811043
+ i=21  cntl=0  flag=0  data=4b10c3f
+ i=22  cntl=0  flag=0  data=4b10c41
+ i=23  cntl=0  flag=0  data=44a11841
+ i=24  cntl=0  flag=0  data=44a11040
+ i=25  cntl=0  flag=0  data=4a10c40
+ i=26  cntl=0  flag=0  data=44b11840
+ i=27  cntl=0  flag=0  data=74b9e398
+ i=28  cntl=0  flag=0  data=d80c7c03
+ i=29  cntl=0  flag=0  data=45010c58
+ i=30  cntl=0  flag=0  data=5510c56
+ i=31  cntl=0  flag=0  data=5511456
+ i=32  cntl=0  flag=0  data=5410c57
+ i=33  cntl=0  flag=0  data=45410857
+ i=34  cntl=0  flag=0  data=5410856
+ i=35  cntl=0  flag=0  data=5410c58
+ i=36  cntl=0  flag=0  data=7c2c8c5
+ i=37  cntl=0  flag=0  data=d80c7c03
+ i=38  cntl=0  flag=0  data=4a1604f
+ i=39  cntl=0  flag=0  data=4c16450
+ i=40  cntl=0  flag=0  data=44a15c50
+ i=41  cntl=0  flag=0  data=4b16050
+ i=42  cntl=0  flag=0  data=4c16450
+ i=43  cntl=0  flag=0  data=4915c52
+ i=44  cntl=0  flag=0  data=44a15c50
+ i=45  cntl=0  flag=0  data=51744a8d
+ i=46  cntl=0  flag=0  data=d80c7c03
+ i=47  cntl=0  flag=0  data=44513854
+ i=48  cntl=0  flag=0  data=4213854
+ i=49  cntl=0  flag=0  data=44314054
+ i=50  cntl=0  flag=0  data=44413c52
+ i=51  cntl=0  flag=0  data=44313854
+ i=52  cntl=0  flag=0  data=44513452
+ i=53  cntl=0  flag=0  data=4213852
+ i=54  cntl=0  flag=0  data=2f39f05c
+ i=55  cntl=0  flag=0  data=d80c7c03
+ i=56  cntl=0  flag=0  data=7c20478
+ i=57  cntl=0  flag=0  data=4792047a
+ i=58  cntl=0  flag=0  data=47a20879
+ i=59  cntl=0  flag=0  data=7a1f878
+ i=60  cntl=0  flag=0  data=47b1fc79
+ i=61  cntl=0  flag=0  data=7a20878
+ i=62  cntl=0  flag=0  data=7a20079
+ i=63  cntl=0  flag=0  data=7ee39b35
+ i=64  cntl=0  flag=0  data=d80c7c03
+ i=65  cntl=0  flag=0  data=4861d478
+ i=66  cntl=0  flag=0  data=4841d875
+ i=67  cntl=0  flag=0  data=4831c475
+ i=68  cntl=0  flag=0  data=4831d477
+ i=69  cntl=0  flag=0  data=4831d474
+ i=70  cntl=0  flag=0  data=811d075
+ i=71  cntl=0  flag=0  data=851cc76
+ i=72  cntl=0  flag=0  data=774519bc
+ i=73  cntl=0  flag=0  data=d80c7c03
+ i=74  cntl=0  flag=0  data=4e17863
+ i=75  cntl=0  flag=0  data=4c17065
+ i=76  cntl=0  flag=0  data=5117065
+ i=77  cntl=0  flag=0  data=44f17865
+ i=78  cntl=0  flag=0  data=4d17465
+ i=79  cntl=0  flag=0  data=44d17c63
+ i=80  cntl=0  flag=0  data=4d17465
+ i=81  cntl=0  flag=0  data=3dc075f6
+ i=82  cntl=0  flag=0  data=d80c7c03
+ i=83  cntl=0  flag=0  data=551305a
+ i=84  cntl=0  flag=0  data=45913456
+ i=85  cntl=0  flag=0  data=45912c5a
+ i=86  cntl=0  flag=0  data=5713057
+ i=87  cntl=0  flag=0  data=4571285a
+ i=88  cntl=0  flag=0  data=5912c57
+ i=89  cntl=0  flag=0  data=45712c57
+ i=90  cntl=0  flag=0  data=c38a0b5
+ i=91  cntl=0  flag=0  data=d80c7c03
+ i=92  cntl=0  flag=0  data=5714851
+ i=93  cntl=0  flag=0  data=45a14851
+ i=94  cntl=0  flag=0  data=45914852
+ i=95  cntl=0  flag=0  data=45814c51
+ i=96  cntl=0  flag=0  data=5814c53
+ i=97  cntl=0  flag=0  data=5915050
+ i=98  cntl=0  flag=0  data=5914450
+ i=99  cntl=0  flag=0  data=1f0e8191
+ i=100  cntl=0  flag=0  data=d80c7c03
+ i=101  cntl=0  flag=0  data=5117449
+ i=102  cntl=0  flag=0  data=44d1704b
+ i=103  cntl=0  flag=0  data=44f17c4c
+ i=104  cntl=0  flag=0  data=45217c4a
+ i=105  cntl=0  flag=0  data=4e17c49
+ i=106  cntl=0  flag=0  data=511744c
+ i=107  cntl=0  flag=0  data=45017c4b
+ i=108  cntl=0  flag=0  data=41f56e59
+ i=109  cntl=0  flag=0  data=d80c7c03
+ i=110  cntl=0  flag=0  data=5a18850
+ i=111  cntl=0  flag=0  data=5b18c50
+ i=112  cntl=0  flag=0  data=5a18c52
+ i=113  cntl=0  flag=0  data=5919852
+ i=114  cntl=0  flag=0  data=45b19852
+ i=115  cntl=0  flag=0  data=5919452
+ i=116  cntl=0  flag=0  data=45a19051
+ i=117  cntl=0  flag=0  data=1e9ae222
+ i=118  cntl=0  flag=0  data=d80c7c03
+ i=119  cntl=0  flag=0  data=4501244c
+ i=120  cntl=0  flag=0  data=4e1284e
+ i=121  cntl=0  flag=0  data=4f12c4b
+ i=122  cntl=0  flag=0  data=4e1244e
+ i=123  cntl=0  flag=0  data=4f1244a
+ i=124  cntl=0  flag=0  data=44f11c4a
+ i=125  cntl=0  flag=0  data=44d1284a
+ i=126  cntl=0  flag=0  data=502c0701
+ i=127  cntl=0  flag=0  data=d80c7c03
+ i=128  cntl=0  flag=0  data=561485a
+ i=129  cntl=0  flag=0  data=571505d
+ i=130  cntl=0  flag=0  data=45713c5a
+ i=131  cntl=0  flag=0  data=5714c59
+ i=132  cntl=0  flag=0  data=45614458
+ i=133  cntl=0  flag=0  data=5714c59
+ i=134  cntl=0  flag=0  data=4561485b
+ i=135  cntl=0  flag=0  data=b20f592
+ i=136  cntl=0  flag=0  data=d80c7c03
+ i=137  cntl=0  flag=0  data=4c1004f
+ i=138  cntl=0  flag=0  data=4b0fc4f
+ i=139  cntl=0  flag=0  data=44d10051
+ i=140  cntl=0  flag=0  data=44c10451
+ i=141  cntl=0  flag=0  data=44f10451
+ i=142  cntl=0  flag=0  data=44c0fc51
+ i=143  cntl=0  flag=0  data=4c10051
+ i=144  cntl=0  flag=0  data=56fee4a7
+ i=145  cntl=0  flag=0  data=ffffffff
+ i=146  cntl=0  flag=1  data=bea8b549
+ i=147  cntl=1  flag=0  data=fffffff0
+event=7850000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=7900000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=7950000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=8000000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=8050000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=8100000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=8150000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=8200000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=8250000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=8300000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=8350000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=8400000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=8450000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=8500000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=8550000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=8600000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=8650000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=8700000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=8750000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=8800000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=8850000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=8900000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=8950000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=9000000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=9050000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=9100000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=9150000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=9200000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=9250000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=9300000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=9350000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=9400000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+event=9450000  nerror=2  ndcrc=0  nbnch=0  nctrl=0  ngcrc=2  nsdmu=0  loop=0
+ event dump nraw=148
+ i=0  cntl=1  flag=0  data=51115110
+ i=1  cntl=0  flag=0  data=d81c721d
+ i=2  cntl=0  flag=0  data=541484c
+ i=3  cntl=0  flag=0  data=4541504e
+ i=4  cntl=0  flag=0  data=5414c4d
+ i=5  cntl=0  flag=0  data=531504d
+ i=6  cntl=0  flag=0  data=4571484d
+ i=7  cntl=0  flag=0  data=5114c4d
+ i=8  cntl=0  flag=0  data=4541484d
+ i=9  cntl=0  flag=0  data=265a1c84
+ i=10  cntl=0  flag=0  data=d81c721d
+ i=11  cntl=0  flag=0  data=45215c4b
+ i=12  cntl=0  flag=0  data=4541584c
+ i=13  cntl=0  flag=0  data=511604a
+ i=14  cntl=0  flag=0  data=511584d
+ i=15  cntl=0  flag=0  data=4521584a
+ i=16  cntl=0  flag=0  data=45215449
+ i=17  cntl=0  flag=0  data=531584a
+ i=18  cntl=0  flag=0  data=1cc7281c
+ i=19  cntl=0  flag=0  data=d81c721d
+ i=20  cntl=0  flag=0  data=44d10841
+ i=21  cntl=0  flag=0  data=44c10840
+ i=22  cntl=0  flag=0  data=4c10841
+ i=23  cntl=0  flag=0  data=44b11440
+ i=24  cntl=0  flag=0  data=44a10c3f
+ i=25  cntl=0  flag=0  data=4a11041
+ i=26  cntl=0  flag=0  data=4810c41
+ i=27  cntl=0  flag=0  data=f7e7654
+ i=28  cntl=0  flag=0  data=d81c721d
+ i=29  cntl=0  flag=0  data=45310856
+ i=30  cntl=0  flag=0  data=45411057
+ i=31  cntl=0  flag=0  data=45410c56
+ i=32  cntl=0  flag=0  data=5511456
+ i=33  cntl=0  flag=0  data=5410c58
+ i=34  cntl=0  flag=0  data=45410c56
+ i=35  cntl=0  flag=0  data=45411456
+ i=36  cntl=0  flag=0  data=7e668bf0
+ i=37  cntl=0  flag=0  data=d81c721d
+ i=38  cntl=0  flag=0  data=4915c51
+ i=39  cntl=0  flag=0  data=4a15850
+ i=40  cntl=0  flag=0  data=4916052
+ i=41  cntl=0  flag=0  data=44b16051
+ i=42  cntl=0  flag=0  data=44815850
+ i=43  cntl=0  flag=0  data=4916052
+ i=44  cntl=0  flag=0  data=44b16051
+ i=45  cntl=0  flag=0  data=18a08518
+ i=46  cntl=0  flag=0  data=d81c721d
+ i=47  cntl=0  flag=0  data=4513052
+ i=48  cntl=0  flag=0  data=44313852
+ i=49  cntl=0  flag=0  data=44313c53
+ i=50  cntl=0  flag=0  data=44713054
+ i=51  cntl=0  flag=0  data=4413854
+ i=52  cntl=0  flag=0  data=44313854
+ i=53  cntl=0  flag=0  data=4413852
+ i=54  cntl=0  flag=0  data=5e141735
+ i=55  cntl=0  flag=0  data=d81c721d
+ i=56  cntl=0  flag=0  data=7a20079
+ i=57  cntl=0  flag=0  data=47b1fc79
+ i=58  cntl=0  flag=0  data=7a1fc79
+ i=59  cntl=0  flag=0  data=7a1f878
+ i=60  cntl=0  flag=0  data=7b20479
+ i=61  cntl=0  flag=0  data=7b20479
+ i=62  cntl=0  flag=0  data=47b1fc79
+ i=63  cntl=0  flag=0  data=4594b20f
+ i=64  cntl=0  flag=0  data=d81c721d
+ i=65  cntl=0  flag=0  data=831d875
+ i=66  cntl=0  flag=0  data=831d476
+ i=67  cntl=0  flag=0  data=841d477
+ i=68  cntl=0  flag=0  data=4811d473
+ i=69  cntl=0  flag=0  data=841d076
+ i=70  cntl=0  flag=0  data=4841d475
+ i=71  cntl=0  flag=0  data=4841dc77
+ i=72  cntl=0  flag=0  data=30ed8a46
+ i=73  cntl=0  flag=0  data=d81c721d
+ i=74  cntl=0  flag=0  data=44f18463
+ i=75  cntl=0  flag=0  data=4d17865
+ i=76  cntl=0  flag=0  data=4e17865
+ i=77  cntl=0  flag=0  data=44f17863
+ i=78  cntl=0  flag=0  data=4c17063
+ i=79  cntl=0  flag=0  data=44d17c63
+ i=80  cntl=0  flag=0  data=4c17c63
+ i=81  cntl=0  flag=0  data=13eb684c
+ i=82  cntl=0  flag=0  data=d81c721d
+ i=83  cntl=0  flag=0  data=5912c57
+ i=84  cntl=0  flag=0  data=571285b
+ i=85  cntl=0  flag=0  data=45713457
+ i=86  cntl=0  flag=0  data=5712056
+ i=87  cntl=0  flag=0  data=5912c5b
+ i=88  cntl=0  flag=0  data=45712c57
+ i=89  cntl=0  flag=0  data=571305b
+ i=90  cntl=0  flag=0  data=53d36810
+ i=91  cntl=0  flag=0  data=d81c721d
+ i=92  cntl=0  flag=0  data=45814c52
+ i=93  cntl=0  flag=0  data=45b14450
+ i=94  cntl=0  flag=0  data=45b14c52
+ i=95  cntl=0  flag=0  data=5b15051
+ i=96  cntl=0  flag=0  data=45a15054
+ i=97  cntl=0  flag=0  data=45b15050
+ i=98  cntl=0  flag=0  data=5a14c52
+ i=99  cntl=0  flag=0  data=50a2f9a7
+ i=100  cntl=0  flag=0  data=d81c721d
+ i=101  cntl=0  flag=0  data=4d17c4c
+ i=102  cntl=0  flag=0  data=4d1744b
+ i=103  cntl=0  flag=0  data=511704b
+ i=104  cntl=0  flag=0  data=44d17c4b
+ i=105  cntl=0  flag=0  data=4501744a
+ i=106  cntl=0  flag=0  data=521744c
+ i=107  cntl=0  flag=0  data=4f1784a
+ i=108  cntl=0  flag=0  data=12d44130
+ i=109  cntl=0  flag=0  data=d81c721d
+ i=110  cntl=0  flag=0  data=5b19052
+ i=111  cntl=0  flag=0  data=5a19053
+ i=112  cntl=0  flag=0  data=5919452
+ i=113  cntl=0  flag=0  data=45a19051
+ i=114  cntl=0  flag=0  data=45919453
+ i=115  cntl=0  flag=0  data=45b18c52
+ i=116  cntl=0  flag=0  data=5818c53
+ i=117  cntl=0  flag=0  data=737d7a0e
+ i=118  cntl=0  flag=0  data=d81c721d
+ i=119  cntl=0  flag=0  data=44e11c4d
+ i=120  cntl=0  flag=0  data=501244e
+ i=121  cntl=0  flag=0  data=4e1284e
+ i=122  cntl=0  flag=0  data=501284b
+ i=123  cntl=0  flag=0  data=4f1244a
+ i=124  cntl=0  flag=0  data=4d1204a
+ i=125  cntl=0  flag=0  data=4e1284b
+ i=126  cntl=0  flag=0  data=309ed73c
+ i=127  cntl=0  flag=0  data=d81c721d
+ i=128  cntl=0  flag=0  data=45714c58
+ i=129  cntl=0  flag=0  data=541485b
+ i=130  cntl=0  flag=0  data=571485d
+ i=131  cntl=0  flag=0  data=4571485a
+ i=132  cntl=0  flag=0  data=5714c59
+ i=133  cntl=0  flag=0  data=5715058
+ i=134  cntl=0  flag=0  data=561485a
+ i=135  cntl=0  flag=0  data=5209303a
+ i=136  cntl=0  flag=0  data=d81c721d
+ i=137  cntl=0  flag=0  data=44c1044f
+ i=138  cntl=0  flag=0  data=44f0f04f
+ i=139  cntl=0  flag=0  data=4d0fc51
+ i=140  cntl=0  flag=0  data=44d0fc53
+ i=141  cntl=0  flag=0  data=4c10051
+ i=142  cntl=0  flag=0  data=44e1004f
+ i=143  cntl=0  flag=0  data=4e1044f
+ i=144  cntl=0  flag=0  data=493ffddb
+ i=145  cntl=0  flag=0  data=ffffffff
+ i=146  cntl=0  flag=1  data=c1318e35
+ i=147  cntl=1  flag=0  data=fffffff0
+event=9500000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=9550000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=9600000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=9650000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=9700000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=9750000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=9800000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=9850000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=9900000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=9950000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=10000000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=10050000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=10100000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=10150000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=10200000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=10250000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=10300000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=10350000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=10400000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=10450000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=10500000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=10550000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=10600000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=10650000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=10700000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=10750000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=10800000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=10850000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=10900000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=10950000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=11000000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=11050000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=11100000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=11150000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=11200000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=11250000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=11300000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=11350000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=11400000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=11450000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=11500000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=11550000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=11600000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=11650000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=11700000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=11750000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=11800000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=11850000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+event=11900000  nerror=4  ndcrc=0  nbnch=0  nctrl=0  ngcrc=4  nsdmu=0  loop=0
+ event dump nraw=148
+ i=0  cntl=1  flag=0  data=51115110
+ i=1  cntl=0  flag=0  data=d8387f67
+ i=2  cntl=0  flag=0  data=45414c4f
+ i=3  cntl=0  flag=0  data=4531584e
+ i=4  cntl=0  flag=0  data=45414c4c
+ i=5  cntl=0  flag=0  data=4541504b
+ i=6  cntl=0  flag=0  data=45514c4e
+ i=7  cntl=0  flag=0  data=45414c4f
+ i=8  cntl=0  flag=0  data=551484d
+ i=9  cntl=0  flag=0  data=348b61e6
+ i=10  cntl=0  flag=0  data=d8387f67
+ i=11  cntl=0  flag=0  data=511584b
+ i=12  cntl=0  flag=0  data=45215849
+ i=13  cntl=0  flag=0  data=45215449
+ i=14  cntl=0  flag=0  data=551584c
+ i=15  cntl=0  flag=0  data=511584b
+ i=16  cntl=0  flag=0  data=4511544a
+ i=17  cntl=0  flag=0  data=511544b
+ i=18  cntl=0  flag=0  data=2d871952
+ i=19  cntl=0  flag=0  data=d8387f67
+ i=20  cntl=0  flag=0  data=44b11440
+ i=21  cntl=0  flag=0  data=44a11442
+ i=22  cntl=0  flag=0  data=4b1083e
+ i=23  cntl=0  flag=0  data=4b11441
+ i=24  cntl=0  flag=0  data=4811040
+ i=25  cntl=0  flag=0  data=4710840
+ i=26  cntl=0  flag=0  data=44b11041
+ i=27  cntl=0  flag=0  data=667189e7
+ i=28  cntl=0  flag=0  data=d8387f67
+ i=29  cntl=0  flag=0  data=5211857
+ i=30  cntl=0  flag=0  data=45210457
+ i=31  cntl=0  flag=0  data=5311c57
+ i=32  cntl=0  flag=0  data=45410c56
+ i=33  cntl=0  flag=0  data=5410057
+ i=34  cntl=0  flag=0  data=5510857
+ i=35  cntl=0  flag=0  data=5110c58
+ i=36  cntl=0  flag=0  data=347cadb6
+ i=37  cntl=0  flag=0  data=d8387f67
+ i=38  cntl=0  flag=0  data=4915c4f
+ i=39  cntl=0  flag=0  data=4a16051
+ i=40  cntl=0  flag=0  data=44c16451
+ i=41  cntl=0  flag=0  data=44a1604e
+ i=42  cntl=0  flag=0  data=4491644f
+ i=43  cntl=0  flag=0  data=4a15c52
+ i=44  cntl=0  flag=0  data=4815050
+ i=45  cntl=0  flag=0  data=61a150cf
+ i=46  cntl=0  flag=0  data=d8387f67
+ i=47  cntl=0  flag=0  data=44313451
+ i=48  cntl=0  flag=0  data=4613052
+ i=49  cntl=0  flag=0  data=44513854
+ i=50  cntl=0  flag=0  data=4513c54
+ i=51  cntl=0  flag=0  data=44513854
+ i=52  cntl=0  flag=0  data=4514056
+ i=53  cntl=0  flag=0  data=4413852
+ i=54  cntl=0  flag=0  data=67c242fa
+ i=55  cntl=0  flag=0  data=d8387f67
+ i=56  cntl=0  flag=0  data=7a20079
+ i=57  cntl=0  flag=0  data=4792087a
+ i=58  cntl=0  flag=0  data=47a1fc78
+ i=59  cntl=0  flag=0  data=47a1fc7b
+ i=60  cntl=0  flag=0  data=7820077
+ i=61  cntl=0  flag=0  data=47a1fc78
+ i=62  cntl=0  flag=0  data=47e20079
+ i=63  cntl=0  flag=0  data=56adc416
+ i=64  cntl=0  flag=0  data=d8387f67
+ i=65  cntl=0  flag=0  data=4851d075
+ i=66  cntl=0  flag=0  data=4831d076
+ i=67  cntl=0  flag=0  data=821d076
+ i=68  cntl=0  flag=0  data=851d475
+ i=69  cntl=0  flag=0  data=4841d876
+ i=70  cntl=0  flag=0  data=831d074
+ i=71  cntl=0  flag=0  data=831d475
+ i=72  cntl=0  flag=0  data=4482b18b
+ i=73  cntl=0  flag=0  data=d8387f67
+ i=74  cntl=0  flag=0  data=44d17c65
+ i=75  cntl=0  flag=0  data=44e17c63
+ i=76  cntl=0  flag=0  data=44f17865
+ i=77  cntl=0  flag=0  data=44d17c65
+ i=78  cntl=0  flag=0  data=4e16c63
+ i=79  cntl=0  flag=0  data=4e17865
+ i=80  cntl=0  flag=0  data=5017865
+ i=81  cntl=0  flag=0  data=6bcb3e51
+ i=82  cntl=0  flag=0  data=d8387f67
+ i=83  cntl=0  flag=0  data=5912c57
+ i=84  cntl=0  flag=0  data=45912c5a
+ i=85  cntl=0  flag=0  data=45912c5a
+ i=86  cntl=0  flag=0  data=5712c5a
+ i=87  cntl=0  flag=0  data=4571285a
+ i=88  cntl=0  flag=0  data=5912c5b
+ i=89  cntl=0  flag=0  data=5713456
+ i=90  cntl=0  flag=0  data=73cb0b50
+ i=91  cntl=0  flag=0  data=d8387f67
+ i=92  cntl=0  flag=0  data=5814851
+ i=93  cntl=0  flag=0  data=45914053
+ i=94  cntl=0  flag=0  data=5b14452
+ i=95  cntl=0  flag=0  data=5815052
+ i=96  cntl=0  flag=0  data=45914c53
+ i=97  cntl=0  flag=0  data=5914c52
+ i=98  cntl=0  flag=0  data=45914c53
+ i=99  cntl=0  flag=0  data=1cd208e8
+ i=100  cntl=0  flag=0  data=d8387f67
+ i=101  cntl=0  flag=0  data=4f17c4d
+ i=102  cntl=0  flag=0  data=521784a
+ i=103  cntl=0  flag=0  data=45017048
+ i=104  cntl=0  flag=0  data=44f1784e
+ i=105  cntl=0  flag=0  data=4d1704c
+ i=106  cntl=0  flag=0  data=501704a
+ i=107  cntl=0  flag=0  data=44d1784a
+ i=108  cntl=0  flag=0  data=a791ba6
+ i=109  cntl=0  flag=0  data=d8387f67
+ i=110  cntl=0  flag=0  data=4591944e
+ i=111  cntl=0  flag=0  data=5919452
+ i=112  cntl=0  flag=0  data=45a19051
+ i=113  cntl=0  flag=0  data=5918c52
+ i=114  cntl=0  flag=0  data=5819051
+ i=115  cntl=0  flag=0  data=5a18c51
+ i=116  cntl=0  flag=0  data=5919852
+ i=117  cntl=0  flag=0  data=4e1e3fcb
+ i=118  cntl=0  flag=0  data=d8387f67
+ i=119  cntl=0  flag=0  data=44f1204c
+ i=120  cntl=0  flag=0  data=44f1204c
+ i=121  cntl=0  flag=0  data=4e1204c
+ i=122  cntl=0  flag=0  data=4511244e
+ i=123  cntl=0  flag=0  data=4f12449
+ i=124  cntl=0  flag=0  data=4e1284d
+ i=125  cntl=0  flag=0  data=44c1204a
+ i=126  cntl=0  flag=0  data=2e03687d
+ i=127  cntl=0  flag=0  data=d8387f67
+ i=128  cntl=0  flag=0  data=581405a
+ i=129  cntl=0  flag=0  data=571485b
+ i=130  cntl=0  flag=0  data=571505b
+ i=131  cntl=0  flag=0  data=4551485b
+ i=132  cntl=0  flag=0  data=45714c58
+ i=133  cntl=0  flag=0  data=5614c5b
+ i=134  cntl=0  flag=0  data=45614c5a
+ i=135  cntl=0  flag=0  data=64bb96dc
+ i=136  cntl=0  flag=0  data=d8387f67
+ i=137  cntl=0  flag=0  data=44d10051
+ i=138  cntl=0  flag=0  data=4e10053
+ i=139  cntl=0  flag=0  data=44e0f851
+ i=140  cntl=0  flag=0  data=44b10051
+ i=141  cntl=0  flag=0  data=4d0fc51
+ i=142  cntl=0  flag=0  data=4d10053
+ i=143  cntl=0  flag=0  data=4c10051
+ i=144  cntl=0  flag=0  data=7b326f98
+ i=145  cntl=0  flag=0  data=ffffffff
+ i=146  cntl=0  flag=1  data=974e9e18
+ i=147  cntl=1  flag=0  data=fffffff0
+event=11950000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+event=12000000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+event=12050000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+event=12100000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+event=12150000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+event=12200000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+event=12250000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+event=12300000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+event=12350000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+event=12400000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+event=12450000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+event=12500000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+event=12550000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+event=12600000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+event=12650000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+event=12700000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+event=12750000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+event=12800000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+event=12850000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+event=12900000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+event=12950000  nerror=6  ndcrc=0  nbnch=0  nctrl=0  ngcrc=6  nsdmu=0  loop=0
+ event dump nraw=148
+ i=0  cntl=1  flag=0  data=51115110
+ i=1  cntl=0  flag=0  data=980c716a
+ i=2  cntl=0  flag=0  data=4531444c
+ i=3  cntl=0  flag=0  data=4511504e
+ i=4  cntl=0  flag=0  data=541584d
+ i=5  cntl=0  flag=0  data=4531484f
+ i=6  cntl=0  flag=0  data=4521504d
+ i=7  cntl=0  flag=0  data=5114c4e
+ i=8  cntl=0  flag=0  data=45314c4e
+ i=9  cntl=0  flag=0  data=1b493883
+ i=10  cntl=0  flag=0  data=980c716a
+ i=11  cntl=0  flag=0  data=521544b
+ i=12  cntl=0  flag=0  data=5115c4c
+ i=13  cntl=0  flag=0  data=521584b
+ i=14  cntl=0  flag=0  data=44f1584c
+ i=15  cntl=0  flag=0  data=5115049
+ i=16  cntl=0  flag=0  data=521504a
+ i=17  cntl=0  flag=0  data=4531584b
+ i=18  cntl=0  flag=0  data=7ad50f2d
+ i=19  cntl=0  flag=0  data=980c716a
+ i=20  cntl=0  flag=0  data=44a11040
+ i=21  cntl=0  flag=0  data=4b10041
+ i=22  cntl=0  flag=0  data=44a10840
+ i=23  cntl=0  flag=0  data=44a11441
+ i=24  cntl=0  flag=0  data=4c11042
+ i=25  cntl=0  flag=0  data=4c11042
+ i=26  cntl=0  flag=0  data=4810440
+ i=27  cntl=0  flag=0  data=3d1b61a5
+ i=28  cntl=0  flag=0  data=980c716a
+ i=29  cntl=0  flag=0  data=5310c56
+ i=30  cntl=0  flag=0  data=5110c57
+ i=31  cntl=0  flag=0  data=45211054
+ i=32  cntl=0  flag=0  data=45410457
+ i=33  cntl=0  flag=0  data=5411858
+ i=34  cntl=0  flag=0  data=5410c58
+ i=35  cntl=0  flag=0  data=5410c58
+ i=36  cntl=0  flag=0  data=642ea72c
+ i=37  cntl=0  flag=0  data=980c716a
+ i=38  cntl=0  flag=0  data=4916051
+ i=39  cntl=0  flag=0  data=44916452
+ i=40  cntl=0  flag=0  data=44a1584f
+ i=41  cntl=0  flag=0  data=44816051
+ i=42  cntl=0  flag=0  data=4915c4f
+ i=43  cntl=0  flag=0  data=44816051
+ i=44  cntl=0  flag=0  data=44b15850
+ i=45  cntl=0  flag=0  data=5513d9f4
+ i=46  cntl=0  flag=0  data=980c716a
+ i=47  cntl=0  flag=0  data=44313857
+ i=48  cntl=0  flag=0  data=4313054
+ i=49  cntl=0  flag=0  data=44313854
+ i=50  cntl=0  flag=0  data=44313854
+ i=51  cntl=0  flag=0  data=44213853
+ i=52  cntl=0  flag=0  data=44413453
+ i=53  cntl=0  flag=0  data=4414054
+ i=54  cntl=0  flag=0  data=60492d51
+ i=55  cntl=0  flag=0  data=980c716a
+ i=56  cntl=0  flag=0  data=7a2007a
+ i=57  cntl=0  flag=0  data=7a2047b
+ i=58  cntl=0  flag=0  data=7a1fc7a
+ i=59  cntl=0  flag=0  data=782087a
+ i=60  cntl=0  flag=0  data=7a1fc79
+ i=61  cntl=0  flag=0  data=47c20078
+ i=62  cntl=0  flag=0  data=7b1f879
+ i=63  cntl=0  flag=0  data=6978daea
+ i=64  cntl=0  flag=0  data=980c716a
+ i=65  cntl=0  flag=0  data=831d475
+ i=66  cntl=0  flag=0  data=831d475
+ i=67  cntl=0  flag=0  data=4851dc76
+ i=68  cntl=0  flag=0  data=821d076
+ i=69  cntl=0  flag=0  data=861d077
+ i=70  cntl=0  flag=0  data=4851d877
+ i=71  cntl=0  flag=0  data=851c478
+ i=72  cntl=0  flag=0  data=4751a71d
+ i=73  cntl=0  flag=0  data=980c716a
+ i=74  cntl=0  flag=0  data=44e17c63
+ i=75  cntl=0  flag=0  data=4d17465
+ i=76  cntl=0  flag=0  data=44e17467
+ i=77  cntl=0  flag=0  data=4d17863
+ i=78  cntl=0  flag=0  data=5017865
+ i=79  cntl=0  flag=0  data=44d17063
+ i=80  cntl=0  flag=0  data=4e17865
+ i=81  cntl=0  flag=0  data=19c9827d
+ i=82  cntl=0  flag=0  data=980c716a
+ i=83  cntl=0  flag=0  data=45912c56
+ i=84  cntl=0  flag=0  data=45912857
+ i=85  cntl=0  flag=0  data=5912856
+ i=86  cntl=0  flag=0  data=5713057
+ i=87  cntl=0  flag=0  data=5712056
+ i=88  cntl=0  flag=0  data=5b12457
+ i=89  cntl=0  flag=0  data=591285a
+ i=90  cntl=0  flag=0  data=225af374
+ i=91  cntl=0  flag=0  data=980c716a
+ i=92  cntl=0  flag=0  data=5814452
+ i=93  cntl=0  flag=0  data=5814852
+ i=94  cntl=0  flag=0  data=5b14454
+ i=95  cntl=0  flag=0  data=5815051
+ i=96  cntl=0  flag=0  data=5b14852
+ i=97  cntl=0  flag=0  data=5b14852
+ i=98  cntl=0  flag=0  data=45814853
+ i=99  cntl=0  flag=0  data=4e5d80ef
+ i=100  cntl=0  flag=0  data=980c716a
+ i=101  cntl=0  flag=0  data=44e1704b
+ i=102  cntl=0  flag=0  data=4f1784a
+ i=103  cntl=0  flag=0  data=4501744a
+ i=104  cntl=0  flag=0  data=44f17049
+ i=105  cntl=0  flag=0  data=4f1744a
+ i=106  cntl=0  flag=0  data=5117449
+ i=107  cntl=0  flag=0  data=501704a
+ i=108  cntl=0  flag=0  data=5dd29c15
+ i=109  cntl=0  flag=0  data=980c716a
+ i=110  cntl=0  flag=0  data=5918c52
+ i=111  cntl=0  flag=0  data=45919450
+ i=112  cntl=0  flag=0  data=5b18852
+ i=113  cntl=0  flag=0  data=45919450
+ i=114  cntl=0  flag=0  data=45c19052
+ i=115  cntl=0  flag=0  data=45918851
+ i=116  cntl=0  flag=0  data=45a19052
+ i=117  cntl=0  flag=0  data=48b89e34
+ i=118  cntl=0  flag=0  data=980c716a
+ i=119  cntl=0  flag=0  data=4f1204e
+ i=120  cntl=0  flag=0  data=44f1284b
+ i=121  cntl=0  flag=0  data=4e1284d
+ i=122  cntl=0  flag=0  data=44d1204b
+ i=123  cntl=0  flag=0  data=44e1284a
+ i=124  cntl=0  flag=0  data=44e1204b
+ i=125  cntl=0  flag=0  data=4f1204d
+ i=126  cntl=0  flag=0  data=35d7fe80
+ i=127  cntl=0  flag=0  data=980c716a
+ i=128  cntl=0  flag=0  data=45414c5b
+ i=129  cntl=0  flag=0  data=5714c5c
+ i=130  cntl=0  flag=0  data=5714c5a
+ i=131  cntl=0  flag=0  data=5714c5a
+ i=132  cntl=0  flag=0  data=45713c59
+ i=133  cntl=0  flag=0  data=45714c5b
+ i=134  cntl=0  flag=0  data=5714c59
+ i=135  cntl=0  flag=0  data=3e970e3b
+ i=136  cntl=0  flag=0  data=980c716a
+ i=137  cntl=0  flag=0  data=500fc51
+ i=138  cntl=0  flag=0  data=44e1004f
+ i=139  cntl=0  flag=0  data=4e0fc4f
+ i=140  cntl=0  flag=0  data=44d1004f
+ i=141  cntl=0  flag=0  data=44d10051
+ i=142  cntl=0  flag=0  data=44d10051
+ i=143  cntl=0  flag=0  data=4f10051
+ i=144  cntl=0  flag=0  data=dbfc1a2
+ i=145  cntl=0  flag=0  data=ffffffff
+ i=146  cntl=0  flag=1  data=f11e8c75
+ i=147  cntl=1  flag=0  data=fffffff0
+event=13000000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=13050000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=13100000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=13150000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=13200000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=13250000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=13300000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=13350000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=13400000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=13450000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=13500000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=13550000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=13600000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=13650000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=13700000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=13750000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=13800000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=13850000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=13900000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=13950000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=14000000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=14050000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=14100000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=14150000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=14200000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=14250000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=14300000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=14350000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=14400000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=14450000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=14500000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=14550000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=14600000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=14650000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=14700000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=14750000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=14800000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=14850000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=14900000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+event=14950000  nerror=8  ndcrc=0  nbnch=0  nctrl=0  ngcrc=8  nsdmu=0  loop=0
+ event dump nraw=250
+ i=0  cntl=1  flag=0  data=51115110
+ i=1  cntl=0  flag=0  data=d8087c8c
+ i=2  cntl=0  flag=0  data=5214c4e
+ i=3  cntl=0  flag=0  data=45314c4e
+ i=4  cntl=0  flag=0  data=4531484c
+ i=5  cntl=0  flag=0  data=45314c4d
+ i=6  cntl=0  flag=0  data=4521484e
+ i=7  cntl=0  flag=0  data=5714c4d
+ i=8  cntl=0  flag=0  data=4531544d
+ i=9  cntl=0  flag=0  data=47ac9b4f
+ i=10  cntl=0  flag=0  data=d8087c8c
+ i=11  cntl=0  flag=0  data=5315449
+ i=12  cntl=0  flag=0  data=4511584a
+ i=13  cntl=0  flag=0  data=4521584c
+ i=14  cntl=0  flag=0  data=4531584b
+ i=15  cntl=0  flag=0  data=45114c4a
+ i=16  cntl=0  flag=0  data=45015049
+ i=17  cntl=0  flag=0  data=45315049
+ i=18  cntl=0  flag=0  data=a84e977
+ i=19  cntl=0  flag=0  data=d8087c8c
+ i=20  cntl=0  flag=0  data=4b10c41
+ i=21  cntl=0  flag=0  data=44810c40
+ i=22  cntl=0  flag=0  data=44b10c40
+ i=23  cntl=0  flag=0  data=4810c42
+ i=24  cntl=0  flag=0  data=44a11841
+ i=25  cntl=0  flag=0  data=4b11841
+ i=26  cntl=0  flag=0  data=4811c40
+ i=27  cntl=0  flag=0  data=58f0b3fb
+ i=28  cntl=0  flag=0  data=d8087c8c
+ i=29  cntl=0  flag=0  data=5310858
+ i=30  cntl=0  flag=0  data=45311457
+ i=31  cntl=0  flag=0  data=45411c57
+ i=32  cntl=0  flag=0  data=5710c58
+ i=33  cntl=0  flag=0  data=45411057
+ i=34  cntl=0  flag=0  data=5311456
+ i=35  cntl=0  flag=0  data=45311458
+ i=36  cntl=0  flag=0  data=561ff942
+ i=37  cntl=0  flag=0  data=d8087c8c
+ i=38  cntl=0  flag=0  data=44d15453
+ i=39  cntl=0  flag=0  data=44b15450
+ i=40  cntl=0  flag=0  data=4a15850
+ i=41  cntl=0  flag=0  data=44a15c50
+ i=42  cntl=0  flag=0  data=4a15052
+ i=43  cntl=0  flag=0  data=4916450
+ i=44  cntl=0  flag=0  data=4815451
+ i=45  cntl=0  flag=0  data=10a04d92
+ i=46  cntl=0  flag=0  data=d8087c8c
+ i=47  cntl=0  flag=0  data=4413c53
+ i=48  cntl=0  flag=0  data=4313c54
+ i=49  cntl=0  flag=0  data=4413454
+ i=50  cntl=0  flag=0  data=44413c52
+ i=51  cntl=0  flag=0  data=44513854
+ i=52  cntl=0  flag=0  data=4514055
+ i=53  cntl=0  flag=0  data=44613854
+ i=54  cntl=0  flag=0  data=697e392d
+ i=55  cntl=0  flag=0  data=d8087c8c
+ i=56  cntl=0  flag=0  data=7a20079
+ i=57  cntl=0  flag=0  data=47a20479
+ i=58  cntl=0  flag=0  data=47920078
+ i=59  cntl=0  flag=0  data=7a20478
+ i=60  cntl=0  flag=0  data=47920479
+ i=61  cntl=0  flag=0  data=7b20479
+ i=62  cntl=0  flag=0  data=47a20479
+ i=63  cntl=0  flag=0  data=16be2176
+ i=64  cntl=0  flag=0  data=d8087c8c
+ i=65  cntl=0  flag=0  data=4851d075
+ i=66  cntl=0  flag=0  data=4841dc77
+ i=67  cntl=0  flag=0  data=4831d877
+ i=68  cntl=0  flag=0  data=4831dc76
+ i=69  cntl=0  flag=0  data=821d877
+ i=70  cntl=0  flag=0  data=831d476
+ i=71  cntl=0  flag=0  data=831d475
+ i=72  cntl=0  flag=0  data=71bf44e4
+ i=73  cntl=0  flag=0  data=d8087c8c
+ i=74  cntl=0  flag=0  data=44d17c65
+ i=75  cntl=0  flag=0  data=44c17463
+ i=76  cntl=0  flag=0  data=44d17063
+ i=77  cntl=0  flag=0  data=44c17863
+ i=78  cntl=0  flag=0  data=4e17863
+ i=79  cntl=0  flag=0  data=4e17465
+ i=80  cntl=0  flag=0  data=45017c65
+ i=81  cntl=0  flag=0  data=268130ba
+ i=82  cntl=0  flag=0  data=d8087c8c
+ i=83  cntl=0  flag=0  data=45912857
+ i=84  cntl=0  flag=0  data=45912857
+ i=85  cntl=0  flag=0  data=4591285b
+ i=86  cntl=0  flag=0  data=5913457
+ i=87  cntl=0  flag=0  data=571285b
+ i=88  cntl=0  flag=0  data=4571285a
+ i=89  cntl=0  flag=0  data=5912c57
+ i=90  cntl=0  flag=0  data=3ea8cf8f
+ i=91  cntl=0  flag=0  data=d8087c8c
+ i=92  cntl=0  flag=0  data=5b14451
+ i=93  cntl=0  flag=0  data=5715051
+ i=94  cntl=0  flag=0  data=45914451
+ i=95  cntl=0  flag=0  data=45914851
+ i=96  cntl=0  flag=0  data=45914852
+ i=97  cntl=0  flag=0  data=45814c51
+ i=98  cntl=0  flag=0  data=5814851
+ i=99  cntl=0  flag=0  data=2cd88866
+ i=100  cntl=0  flag=0  data=d8087c8c
+ i=101  cntl=0  flag=0  data=44f1704a
+ i=102  cntl=0  flag=0  data=5017c4a
+ i=103  cntl=0  flag=0  data=45217c4c
+ i=104  cntl=0  flag=0  data=44f1784b
+ i=105  cntl=0  flag=0  data=44f1784b
+ i=106  cntl=0  flag=0  data=5117849
+ i=107  cntl=0  flag=0  data=44f1744b
+ i=108  cntl=0  flag=0  data=5ef56ed5
+ i=109  cntl=0  flag=0  data=d8087c8c
+ i=110  cntl=0  flag=0  data=45b19451
+ i=111  cntl=0  flag=0  data=5919454
+ i=112  cntl=0  flag=0  data=5919852
+ i=113  cntl=0  flag=0  data=5a19050
+ i=114  cntl=0  flag=0  data=45919c52
+ i=115  cntl=0  flag=0  data=5818c50
+ i=116  cntl=0  flag=0  data=5a18c51
+ i=117  cntl=0  flag=0  data=3b53c72f
+ i=118  cntl=0  flag=0  data=d8087c8c
+ i=119  cntl=0  flag=0  data=4f1284c
+ i=120  cntl=0  flag=0  data=501284b
+ i=121  cntl=0  flag=0  data=4501284c
+ i=122  cntl=0  flag=0  data=4d1204c
+ i=123  cntl=0  flag=0  data=44f1204c
+ i=124  cntl=0  flag=0  data=4501284c
+ i=125  cntl=0  flag=0  data=501244b
+ i=126  cntl=0  flag=0  data=33bda757
+ i=127  cntl=0  flag=0  data=d8087c8c
+ i=128  cntl=0  flag=0  data=4551485b
+ i=129  cntl=0  flag=0  data=4551485b
+ i=130  cntl=0  flag=0  data=45814859
+ i=131  cntl=0  flag=0  data=5814c5c
+ i=132  cntl=0  flag=0  data=5714c5a
+ i=133  cntl=0  flag=0  data=561485a
+ i=134  cntl=0  flag=0  data=5715459
+ i=135  cntl=0  flag=0  data=35325a5d
+ i=136  cntl=0  flag=0  data=d8087c8c
+ i=137  cntl=0  flag=0  data=44e10051
+ i=138  cntl=0  flag=0  data=44d10051
+ i=139  cntl=0  flag=0  data=4f10051
+ i=140  cntl=0  flag=0  data=44d0f84f
+ i=141  cntl=0  flag=0  data=44e10051
+ i=142  cntl=0  flag=0  data=4500f451
+ i=143  cntl=0  flag=0  data=4c10051
+ i=144  cntl=0  flag=0  data=9c71000
+ i=145  cntl=0  flag=0  data=ffffffff
+ i=146  cntl=0  flag=1  data=44284428
+ i=147  cntl=0  flag=0  data=3fbf9fdc
+ i=148  cntl=0  flag=0  data=c03fe01f
+ i=149  cntl=0  flag=1  data=e00faed2
+ i=150  cntl=0  flag=1  data=aed2f88a
+ i=151  cntl=1  flag=1  data=f88a06fc
+ i=152  cntl=0  flag=1  data=f88af88a
+ i=153  cntl=0  flag=1  data=55e8d8d8
+ i=154  cntl=0  flag=1  data=cfb0bcbe
+ i=155  cntl=1  flag=1  data=bcbeafa5
+ i=156  cntl=0  flag=0  data=4d2bbd6
+ i=157  cntl=0  flag=1  data=21357439
+ i=158  cntl=0  flag=1  data=7439dcce
+ i=159  cntl=0  flag=0  data=74399038
+ i=160  cntl=0  flag=0  data=7c8d0511
+ i=161  cntl=0  flag=0  data=50490501
+ i=162  cntl=0  flag=0  data=584a0531
+ i=163  cntl=0  flag=0  data=5c4b4541
+ i=164  cntl=0  flag=0  data=544a0551
+ i=165  cntl=0  flag=0  data=544a4521
+ i=166  cntl=0  flag=0  data=4c494521
+ i=167  cntl=0  flag=0  data=544a725c
+ i=168  cntl=0  flag=0  data=c361981c
+ i=169  cntl=0  flag=0  data=7c8d0481
+ i=170  cntl=0  flag=0  data=c4144a1
+ i=171  cntl=0  flag=0  data=10404471
+ i=172  cntl=0  flag=0  data=104204c1
+ i=173  cntl=0  flag=0  data=84104c1
+ i=174  cntl=0  flag=0  data=84144b1
+ i=175  cntl=0  flag=0  data=104144c1
+ i=176  cntl=0  flag=0  data=1441494a
+ i=177  cntl=0  flag=0  data=42ed981c
+ i=178  cntl=0  flag=0  data=7c8d0541
+ i=179  cntl=0  flag=0  data=c584541
+ i=180  cntl=0  flag=0  data=8580541
+ i=181  cntl=0  flag=0  data=18540551
+ i=182  cntl=0  flag=0  data=c560551
+ i=183  cntl=0  flag=0  data=4580541
+ i=184  cntl=0  flag=0  data=8560551
+ i=185  cntl=0  flag=0  data=c560150
+ i=186  cntl=0  flag=0  data=e039981c
+ i=187  cntl=0  flag=0  data=7c8d04a1
+ i=188  cntl=0  flag=0  data=585044b1
+ i=189  cntl=0  flag=0  data=545044b1
+ i=190  cntl=0  flag=0  data=585004a1
+ i=191  cntl=0  flag=0  data=60520481
+ i=192  cntl=0  flag=0  data=5c5044a1
+ i=193  cntl=0  flag=0  data=585244b1
+ i=194  cntl=0  flag=0  data=545031e1
+ i=195  cntl=0  flag=0  data=4fe1981c
+ i=196  cntl=0  flag=0  data=7c8d0401
+ i=197  cntl=0  flag=0  data=30544451
+ i=198  cntl=0  flag=0  data=38510431
+ i=199  cntl=0  flag=0  data=30544451
+ i=200  cntl=0  flag=0  data=30550431
+ i=201  cntl=0  flag=0  data=38530451
+ i=202  cntl=0  flag=0  data=38554431
+ i=203  cntl=0  flag=0  data=3c553f07
+ i=204  cntl=0  flag=0  data=ed05981c
+ i=205  cntl=0  flag=0  data=7c8d47a2
+ i=206  cntl=0  flag=0  data=770782
+ i=207  cntl=0  flag=0  data=7807b2
+ i=208  cntl=0  flag=0  data=87a07a2
+ i=209  cntl=0  flag=0  data=47807b2
+ i=210  cntl=0  flag=0  data=7747a2
+ i=211  cntl=0  flag=0  data=47947b2
+ i=212  cntl=0  flag=0  data=791d41
+ i=213  cntl=0  flag=0  data=8083981c
+ i=214  cntl=0  flag=0  data=7c8d4831
+ i=215  cntl=0  flag=0  data=d0764831
+ i=216  cntl=0  flag=0  data=cc740841
+ i=217  cntl=0  flag=0  data=c4750831
+ i=218  cntl=0  flag=0  data=cc734851
+ i=219  cntl=0  flag=0  data=d0764841
+ i=220  cntl=0  flag=0  data=d4764831
+ i=221  cntl=0  flag=0  data=d0767555
+ i=222  cntl=0  flag=0  data=8f0981c
+ i=223  cntl=0  flag=0  data=7c8d04e1
+ i=224  cntl=0  flag=0  data=706704c1
+ i=225  cntl=0  flag=0  data=686504e1
+ i=226  cntl=0  flag=0  data=78650501
+ i=227  cntl=0  flag=0  data=6c6344c1
+ i=228  cntl=0  flag=0  data=746504e1
+ i=229  cntl=0  flag=0  data=786344e1
+ i=230  cntl=0  flag=0  data=6865560a
+ i=231  cntl=0  flag=0  data=92c6981c
+ i=232  cntl=0  flag=0  data=7c8d4591
+ i=233  cntl=0  flag=0  data=24570591
+ i=234  cntl=0  flag=0  data=28564571
+ i=235  cntl=0  flag=0  data=24564571
+ i=236  cntl=0  flag=0  data=285a0551
+ i=237  cntl=0  flag=0  data=2c5b0591
+ i=238  cntl=0  flag=0  data=285a0591
+ i=239  cntl=0  flag=0  data=28561131
+ i=240  cntl=0  flag=0  data=9acd981c
+ i=241  cntl=0  flag=0  data=7c8d4561
+ i=242  cntl=0  flag=0  data=4c504591
+ i=243  cntl=0  flag=0  data=48524571
+ i=244  cntl=0  flag=0  data=4c510581
+ i=245  cntl=0  flag=0  data=485205a1
+ i=246  cntl=0  flag=0  data=48504571
+ i=247  cntl=0  flag=0  data=4c520571
+ i=248  cntl=0  flag=0  data=48540cd6
+ i=249  cntl=0  flag=0  data=13f5981c
+event=15000000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=15050000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=15100000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=15150000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=15200000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=15250000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=15300000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=15350000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=15400000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=15450000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=15500000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=15550000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=15600000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=15650000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=15700000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=15750000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=15800000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=15850000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=15900000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=15950000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=16000000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=16050000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=16100000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=16150000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=16200000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=16250000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=16300000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=16350000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=16400000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=16450000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=16500000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+event=16550000  nerror=9  ndcrc=0  nbnch=0  nctrl=1  ngcrc=8  nsdmu=0  loop=0
+ event dump nraw=250
+ i=0  cntl=1  flag=0  data=51115110
+ i=1  cntl=0  flag=0  data=d80c74fe
+ i=2  cntl=0  flag=0  data=5414c4d
+ i=3  cntl=0  flag=0  data=531504e
+ i=4  cntl=0  flag=0  data=541544e
+ i=5  cntl=0  flag=0  data=5314c4c
+ i=6  cntl=0  flag=0  data=4531484f
+ i=7  cntl=0  flag=0  data=5515050
+ i=8  cntl=0  flag=0  data=4531504c
+ i=9  cntl=0  flag=0  data=4bcda5aa
+ i=10  cntl=0  flag=0  data=d80c74fe
+ i=11  cntl=0  flag=0  data=531584c
+ i=12  cntl=0  flag=0  data=531504b
+ i=13  cntl=0  flag=0  data=4521644a
+ i=14  cntl=0  flag=0  data=4521544a
+ i=15  cntl=0  flag=0  data=4511584c
+ i=16  cntl=0  flag=0  data=5215848
+ i=17  cntl=0  flag=0  data=521584b
+ i=18  cntl=0  flag=0  data=3149df97
+ i=19  cntl=0  flag=0  data=d80c74fe
+ i=20  cntl=0  flag=0  data=44910c41
+ i=21  cntl=0  flag=0  data=44b10441
+ i=22  cntl=0  flag=0  data=4c10841
+ i=23  cntl=0  flag=0  data=4a11042
+ i=24  cntl=0  flag=0  data=4a11440
+ i=25  cntl=0  flag=0  data=4a10841
+ i=26  cntl=0  flag=0  data=4a11440
+ i=27  cntl=0  flag=0  data=5d68e724
+ i=28  cntl=0  flag=0  data=d80c74fe
+ i=29  cntl=0  flag=0  data=45311458
+ i=30  cntl=0  flag=0  data=45311056
+ i=31  cntl=0  flag=0  data=45310856
+ i=32  cntl=0  flag=0  data=45310856
+ i=33  cntl=0  flag=0  data=45311458
+ i=34  cntl=0  flag=0  data=5310857
+ i=35  cntl=0  flag=0  data=5410856
+ i=36  cntl=0  flag=0  data=451f2f3c
+ i=37  cntl=0  flag=0  data=d80c74fe
+ i=38  cntl=0  flag=0  data=4a15c51
+ i=39  cntl=0  flag=0  data=4a15450
+ i=40  cntl=0  flag=0  data=4a15450
+ i=41  cntl=0  flag=0  data=4b1584f
+ i=42  cntl=0  flag=0  data=44a15451
+ i=43  cntl=0  flag=0  data=44a15c50
+ i=44  cntl=0  flag=0  data=4c15c51
+ i=45  cntl=0  flag=0  data=10448213
+ i=46  cntl=0  flag=0  data=d80c74fe
+ i=47  cntl=0  flag=0  data=44313c55
+ i=48  cntl=0  flag=0  data=4313853
+ i=49  cntl=0  flag=0  data=4513c57
+ i=50  cntl=0  flag=0  data=44413c54
+ i=51  cntl=0  flag=0  data=44513c55
+ i=52  cntl=0  flag=0  data=4413852
+ i=53  cntl=0  flag=0  data=44313852
+ i=54  cntl=0  flag=0  data=7c15c6d
+ i=55  cntl=0  flag=0  data=d80c74fe
+ i=56  cntl=0  flag=0  data=47a2007b
+ i=57  cntl=0  flag=0  data=47a1fc78
+ i=58  cntl=0  flag=0  data=7b1f879
+ i=59  cntl=0  flag=0  data=7a1fc79
+ i=60  cntl=0  flag=0  data=7c1f877
+ i=61  cntl=0  flag=0  data=791fc79
+ i=62  cntl=0  flag=0  data=47b2087b
+ i=63  cntl=0  flag=0  data=2d69755
+ i=64  cntl=0  flag=0  data=d80c74fe
+ i=65  cntl=0  flag=0  data=4831d076
+ i=66  cntl=0  flag=0  data=821c875
+ i=67  cntl=0  flag=0  data=4821d475
+ i=68  cntl=0  flag=0  data=831d875
+ i=69  cntl=0  flag=0  data=841dc73
+ i=70  cntl=0  flag=0  data=4861d076
+ i=71  cntl=0  flag=0  data=821c875
+ i=72  cntl=0  flag=0  data=6f2e69e
+ i=73  cntl=0  flag=0  data=d80c74fe
+ i=74  cntl=0  flag=0  data=4d17465
+ i=75  cntl=0  flag=0  data=4e17463
+ i=76  cntl=0  flag=0  data=4d17465
+ i=77  cntl=0  flag=0  data=44d17063
+ i=78  cntl=0  flag=0  data=44e17065
+ i=79  cntl=0  flag=0  data=44e17c65
+ i=80  cntl=0  flag=0  data=4d17865
+ i=81  cntl=0  flag=0  data=14babd36
+ i=82  cntl=0  flag=0  data=d80c74fe
+ i=83  cntl=0  flag=0  data=5712c5a
+ i=84  cntl=0  flag=0  data=5712857
+ i=85  cntl=0  flag=0  data=45913057
+ i=86  cntl=0  flag=0  data=4591345a
+ i=87  cntl=0  flag=0  data=45912c5a
+ i=88  cntl=0  flag=0  data=45912c5a
+ i=89  cntl=0  flag=0  data=4591305b
+ i=90  cntl=0  flag=0  data=396eb7ff
+ i=91  cntl=0  flag=0  data=d80c74fe
+ i=92  cntl=0  flag=0  data=5914850
+ i=93  cntl=0  flag=0  data=45a14852
+ i=94  cntl=0  flag=0  data=45a14852
+ i=95  cntl=0  flag=0  data=45814c52
+ i=96  cntl=0  flag=0  data=45814c52
+ i=97  cntl=0  flag=0  data=45814c52
+ i=98  cntl=0  flag=0  data=45c14854
+ i=99  cntl=0  flag=0  data=57870853
+ i=100  cntl=0  flag=0  data=d80c74fe
+ i=101  cntl=0  flag=0  data=511744c
+ i=102  cntl=0  flag=0  data=4501744a
+ i=103  cntl=0  flag=0  data=45016c4c
+ i=104  cntl=0  flag=0  data=45117c49
+ i=105  cntl=0  flag=0  data=5017c4c
+ i=106  cntl=0  flag=0  data=511704b
+ i=107  cntl=0  flag=0  data=4511784b
+ i=108  cntl=0  flag=0  data=7f5880ed
+ i=109  cntl=0  flag=0  data=d80c74fe
+ i=110  cntl=0  flag=0  data=45a19052
+ i=111  cntl=0  flag=0  data=5919452
+ i=112  cntl=0  flag=0  data=5819052
+ i=113  cntl=0  flag=0  data=5b18c53
+ i=114  cntl=0  flag=0  data=5b19450
+ i=115  cntl=0  flag=0  data=5919452
+ i=116  cntl=0  flag=0  data=45919051
+ i=117  cntl=0  flag=0  data=22fc7b1
+ i=118  cntl=0  flag=0  data=d80c74fe
+ i=119  cntl=0  flag=0  data=4511204c
+ i=120  cntl=0  flag=0  data=44f1204c
+ i=121  cntl=0  flag=0  data=44c1204c
+ i=122  cntl=0  flag=0  data=4f1204d
+ i=123  cntl=0  flag=0  data=5011c4a
+ i=124  cntl=0  flag=0  data=4e11c4c
+ i=125  cntl=0  flag=0  data=4d1284b
+ i=126  cntl=0  flag=0  data=66415d7d
+ i=127  cntl=0  flag=0  data=d80c74fe
+ i=128  cntl=0  flag=0  data=581485b
+ i=129  cntl=0  flag=0  data=45414459
+ i=130  cntl=0  flag=0  data=551485a
+ i=131  cntl=0  flag=0  data=45814859
+ i=132  cntl=0  flag=0  data=4571485c
+ i=133  cntl=0  flag=0  data=5614859
+ i=134  cntl=0  flag=0  data=4531485b
+ i=135  cntl=0  flag=0  data=1b53b3be
+ i=136  cntl=0  flag=0  data=d80c74fe
+ i=137  cntl=0  flag=0  data=44e10051
+ i=138  cntl=0  flag=0  data=4e0fc51
+ i=139  cntl=0  flag=0  data=4c10051
+ i=140  cntl=0  flag=0  data=44c10851
+ i=141  cntl=0  flag=0  data=44d10051
+ i=142  cntl=0  flag=0  data=44f0fc51
+ i=143  cntl=0  flag=0  data=4e10451
+ i=144  cntl=0  flag=0  data=77d60000
+ i=145  cntl=0  flag=0  data=ffffffff
+ i=146  cntl=0  flag=1  data=3f7c3f7c
+ i=147  cntl=0  flag=0  data=3fbf9fdc
+ i=148  cntl=0  flag=0  data=c03fe01f
+ i=149  cntl=0  flag=1  data=e00f3881
+ i=150  cntl=0  flag=1  data=38819b74
+ i=151  cntl=0  flag=1  data=f730b190
+ i=152  cntl=0  flag=1  data=9b749b74
+ i=153  cntl=0  flag=1  data=55e09393
+ i=154  cntl=1  flag=1  data=9393aba5
+ i=155  cntl=0  flag=0  data=b190b9c9
+ i=156  cntl=0  flag=0  data=3b24abe4
+ i=157  cntl=0  flag=0  data=7b1babeb
+ i=158  cntl=0  flag=1  data=8b55494a
+ i=159  cntl=0  flag=1  data=8e828b55
+ i=160  cntl=0  flag=0  data=69ff0521
+ i=161  cntl=0  flag=0  data=50490531
+ i=162  cntl=0  flag=0  data=54494511
+ i=163  cntl=0  flag=0  data=584a0501
+ i=164  cntl=0  flag=0  data=544a4541
+ i=165  cntl=0  flag=0  data=544c4501
+ i=166  cntl=0  flag=0  data=54480511
+ i=167  cntl=0  flag=0  data=504c3769
+ i=168  cntl=0  flag=0  data=e061980c
+ i=169  cntl=0  flag=0  data=74ff04b1
+ i=170  cntl=0  flag=0  data=c414491
+ i=171  cntl=0  flag=0  data=10400491
+ i=172  cntl=0  flag=0  data=10414491
+ i=173  cntl=0  flag=0  data=10400491
+ i=174  cntl=0  flag=0  data=c400491
+ i=175  cntl=0  flag=0  data=4410491
+ i=176  cntl=0  flag=0  data=4417654
+ i=177  cntl=0  flag=0  data=2329980c
+ i=178  cntl=0  flag=0  data=74ff4541
+ i=179  cntl=0  flag=0  data=8574541
+ i=180  cntl=0  flag=0  data=10574511
+ i=181  cntl=0  flag=0  data=c564531
+ i=182  cntl=0  flag=0  data=14574541
+ i=183  cntl=0  flag=0  data=14554541
+ i=184  cntl=0  flag=0  data=10580541
+ i=185  cntl=0  flag=0  data=c5712ed
+ i=186  cntl=0  flag=0  data=e22b980c
+ i=187  cntl=0  flag=0  data=74ff0491
+ i=188  cntl=0  flag=0  data=60524491
+ i=189  cntl=0  flag=0  data=5c5004b1
+ i=190  cntl=0  flag=0  data=5c5304a1
+ i=191  cntl=0  flag=0  data=64500491
+ i=192  cntl=0  flag=0  data=544e04a1
+ i=193  cntl=0  flag=0  data=605104a1
+ i=194  cntl=0  flag=0  data=585030a4
+ i=195  cntl=0  flag=0  data=c203980c
+ i=196  cntl=0  flag=0  data=74ff0441
+ i=197  cntl=0  flag=0  data=30560441
+ i=198  cntl=0  flag=0  data=3c554431
+ i=199  cntl=0  flag=0  data=3c530431
+ i=200  cntl=0  flag=0  data=38554431
+ i=201  cntl=0  flag=0  data=38544431
+ i=202  cntl=0  flag=0  data=38544431
+ i=203  cntl=0  flag=0  data=38546427
+ i=204  cntl=0  flag=0  data=5cb1980c
+ i=205  cntl=0  flag=0  data=74ff47b1
+ i=206  cntl=0  flag=0  data=fc7947a2
+ i=207  cntl=0  flag=0  data=7707a2
+ i=208  cntl=0  flag=0  data=47847a2
+ i=209  cntl=0  flag=0  data=47947b1
+ i=210  cntl=0  flag=0  data=fc790792
+ i=211  cntl=0  flag=0  data=7907b1
+ i=212  cntl=0  flag=0  data=f87a1e71
+ i=213  cntl=0  flag=0  data=998d980c
+ i=214  cntl=0  flag=0  data=74ff4871
+ i=215  cntl=0  flag=0  data=cc764851
+ i=216  cntl=0  flag=0  data=d0750831
+ i=217  cntl=0  flag=0  data=d4754851
+ i=218  cntl=0  flag=0  data=d0764841
+ i=219  cntl=0  flag=0  data=cc750841
+ i=220  cntl=0  flag=0  data=d4774831
+ i=221  cntl=0  flag=0  data=d07666c7
+ i=222  cntl=0  flag=0  data=3042980c
+ i=223  cntl=0  flag=0  data=74ff04e1
+ i=224  cntl=0  flag=0  data=786344e1
+ i=225  cntl=0  flag=0  data=706504e1
+ i=226  cntl=0  flag=0  data=746544c1
+ i=227  cntl=0  flag=0  data=786304d1
+ i=228  cntl=0  flag=0  data=6c6344e1
+ i=229  cntl=0  flag=0  data=7c6504f1
+ i=230  cntl=0  flag=0  data=706358b1
+ i=231  cntl=0  flag=0  data=8d0c980c
+ i=232  cntl=0  flag=0  data=74ff0571
+ i=233  cntl=0  flag=0  data=2c560571
+ i=234  cntl=0  flag=0  data=2c5a4591
+ i=235  cntl=0  flag=0  data=285b4591
+ i=236  cntl=0  flag=0  data=30570591
+ i=237  cntl=0  flag=0  data=245a4571
+ i=238  cntl=0  flag=0  data=28564571
+ i=239  cntl=0  flag=0  data=2856007e
+ i=240  cntl=0  flag=0  data=17bf980c
+ i=241  cntl=0  flag=0  data=74ff4591
+ i=242  cntl=0  flag=0  data=4c5005a1
+ i=243  cntl=0  flag=0  data=4c520591
+ i=244  cntl=0  flag=0  data=4c4f45a1
+ i=245  cntl=0  flag=0  data=44520581
+ i=246  cntl=0  flag=0  data=44540581
+ i=247  cntl=0  flag=0  data=48524571
+ i=248  cntl=0  flag=0  data=4c513538
+ i=249  cntl=0  flag=0  data=4335980c
+event=16600000  nerror=10  ndcrc=0  nbnch=0  nctrl=2  ngcrc=8  nsdmu=0  loop=0
+event=16650000  nerror=10  ndcrc=0  nbnch=0  nctrl=2  ngcrc=8  nsdmu=0  loop=0
+event=16700000  nerror=10  ndcrc=0  nbnch=0  nctrl=2  ngcrc=8  nsdmu=0  loop=0
+event=16750000  nerror=10  ndcrc=0  nbnch=0  nctrl=2  ngcrc=8  nsdmu=0  loop=0
+event=16800000  nerror=10  ndcrc=0  nbnch=0  nctrl=2  ngcrc=8  nsdmu=0  loop=0
+event=16850000  nerror=10  ndcrc=0  nbnch=0  nctrl=2  ngcrc=8  nsdmu=0  loop=0
+event=16900000  nerror=10  ndcrc=0  nbnch=0  nctrl=2  ngcrc=8  nsdmu=0  loop=0
+event=16950000  nerror=10  ndcrc=0  nbnch=0  nctrl=2  ngcrc=8  nsdmu=0  loop=0
+event=17000000  nerror=10  ndcrc=0  nbnch=0  nctrl=2  ngcrc=8  nsdmu=0  loop=0
+event=17050000  nerror=10  ndcrc=0  nbnch=0  nctrl=2  ngcrc=8  nsdmu=0  loop=0
+event=17100000  nerror=10  ndcrc=0  nbnch=0  nctrl=2  ngcrc=8  nsdmu=0  loop=0
+event=17150000  nerror=10  ndcrc=0  nbnch=0  nctrl=2  ngcrc=8  nsdmu=0  loop=0
+event=17200000  nerror=10  ndcrc=0  nbnch=0  nctrl=2  ngcrc=8  nsdmu=0  loop=0
+event=17250000  nerror=10  ndcrc=0  nbnch=0  nctrl=2  ngcrc=8  nsdmu=0  loop=0
+event=17300000  nerror=10  ndcrc=0  nbnch=0  nctrl=2  ngcrc=8  nsdmu=0  loop=0
+event=17350000  nerror=10  ndcrc=0  nbnch=0  nctrl=2  ngcrc=8  nsdmu=0  loop=0
+ event dump nraw=250
+ i=0  cntl=1  flag=0  data=51115110
+ i=1  cntl=0  flag=0  data=d80c7b02
+ i=2  cntl=0  flag=0  data=531484d
+ i=3  cntl=0  flag=0  data=5214c4e
+ i=4  cntl=0  flag=0  data=5315050
+ i=5  cntl=0  flag=0  data=5314c4c
+ i=6  cntl=0  flag=0  data=45314c4d
+ i=7  cntl=0  flag=0  data=4541504d
+ i=8  cntl=0  flag=0  data=4551504c
+ i=9  cntl=0  flag=0  data=288b9ede
+ i=10  cntl=0  flag=0  data=d80c7b02
+ i=11  cntl=0  flag=0  data=45115449
+ i=12  cntl=0  flag=0  data=45015c4a
+ i=13  cntl=0  flag=0  data=45315049
+ i=14  cntl=0  flag=0  data=4521584a
+ i=15  cntl=0  flag=0  data=4511584a
+ i=16  cntl=0  flag=0  data=4511584a
+ i=17  cntl=0  flag=0  data=45316049
+ i=18  cntl=0  flag=0  data=48a197e0
+ i=19  cntl=0  flag=0  data=d80c7b02
+ i=20  cntl=0  flag=0  data=4b10c42
+ i=21  cntl=0  flag=0  data=44c1143f
+ i=22  cntl=0  flag=0  data=4c10c40
+ i=23  cntl=0  flag=0  data=4c11440
+ i=24  cntl=0  flag=0  data=44910041
+ i=25  cntl=0  flag=0  data=4a11440
+ i=26  cntl=0  flag=0  data=44a11841
+ i=27  cntl=0  flag=0  data=64537f64
+ i=28  cntl=0  flag=0  data=d80c7b02
+ i=29  cntl=0  flag=0  data=5410c57
+ i=30  cntl=0  flag=0  data=45410c56
+ i=31  cntl=0  flag=0  data=45411058
+ i=32  cntl=0  flag=0  data=5410c57
+ i=33  cntl=0  flag=0  data=45411057
+ i=34  cntl=0  flag=0  data=45711456
+ i=35  cntl=0  flag=0  data=45610856
+ i=36  cntl=0  flag=0  data=b0f858c
+ i=37  cntl=0  flag=0  data=d80c7b02
+ i=38  cntl=0  flag=0  data=4915850
+ i=39  cntl=0  flag=0  data=44c15050
+ i=40  cntl=0  flag=0  data=4915850
+ i=41  cntl=0  flag=0  data=4815851
+ i=42  cntl=0  flag=0  data=491604f
+ i=43  cntl=0  flag=0  data=4a16453
+ i=44  cntl=0  flag=0  data=44a16c50
+ i=45  cntl=0  flag=0  data=790934fd
+ i=46  cntl=0  flag=0  data=d80c7b02
+ i=47  cntl=0  flag=0  data=44513852
+ i=48  cntl=0  flag=0  data=4313853
+ i=49  cntl=0  flag=0  data=44414454
+ i=50  cntl=0  flag=0  data=44413c52
+ i=51  cntl=0  flag=0  data=44414055
+ i=52  cntl=0  flag=0  data=44313854
+ i=53  cntl=0  flag=0  data=44313c53
+ i=54  cntl=0  flag=0  data=2fbb7e95
+ i=55  cntl=0  flag=0  data=d80c7b02
+ i=56  cntl=0  flag=0  data=7a20079
+ i=57  cntl=0  flag=0  data=47b20478
+ i=58  cntl=0  flag=0  data=7a2007a
+ i=59  cntl=0  flag=0  data=4791fc77
+ i=60  cntl=0  flag=0  data=47a1fc77
+ i=61  cntl=0  flag=0  data=7a2007a
+ i=62  cntl=0  flag=0  data=7b2047a
+ i=63  cntl=0  flag=0  data=53b9364f
+ i=64  cntl=0  flag=0  data=d80c7b02
+ i=65  cntl=0  flag=0  data=841e076
+ i=66  cntl=0  flag=0  data=821d877
+ i=67  cntl=0  flag=0  data=841d075
+ i=68  cntl=0  flag=0  data=831d476
+ i=69  cntl=0  flag=0  data=831c874
+ i=70  cntl=0  flag=0  data=851d077
+ i=71  cntl=0  flag=0  data=4831d076
+ i=72  cntl=0  flag=0  data=4f82b85a
+ i=73  cntl=0  flag=0  data=d80c7b02
+ i=74  cntl=0  flag=0  data=4d17865
+ i=75  cntl=0  flag=0  data=4d17863
+ i=76  cntl=0  flag=0  data=44e17063
+ i=77  cntl=0  flag=0  data=4e17465
+ i=78  cntl=0  flag=0  data=4e17463
+ i=79  cntl=0  flag=0  data=44f17863
+ i=80  cntl=0  flag=0  data=4d17863
+ i=81  cntl=0  flag=0  data=2f157ee3
+ i=82  cntl=0  flag=0  data=d80c7b02
+ i=83  cntl=0  flag=0  data=45712c57
+ i=84  cntl=0  flag=0  data=45712c57
+ i=85  cntl=0  flag=0  data=5712457
+ i=86  cntl=0  flag=0  data=5512c57
+ i=87  cntl=0  flag=0  data=45712c57
+ i=88  cntl=0  flag=0  data=5912856
+ i=89  cntl=0  flag=0  data=591245a
+ i=90  cntl=0  flag=0  data=4a7e8ce8
+ i=91  cntl=0  flag=0  data=d80c7b02
+ i=92  cntl=0  flag=0  data=5b15051
+ i=93  cntl=0  flag=0  data=45914c53
+ i=94  cntl=0  flag=0  data=45814453
+ i=95  cntl=0  flag=0  data=5815051
+ i=96  cntl=0  flag=0  data=45a14851
+ i=97  cntl=0  flag=0  data=5814451
+ i=98  cntl=0  flag=0  data=45c14452
+ i=99  cntl=0  flag=0  data=5a5815b7
+ i=100  cntl=0  flag=0  data=d80c7b02
+ i=101  cntl=0  flag=0  data=44f1704a
+ i=102  cntl=0  flag=0  data=4f1784c
+ i=103  cntl=0  flag=0  data=4e17049
+ i=104  cntl=0  flag=0  data=4501744a
+ i=105  cntl=0  flag=0  data=44f1704a
+ i=106  cntl=0  flag=0  data=4521744d
+ i=107  cntl=0  flag=0  data=4e1804a
+ i=108  cntl=0  flag=0  data=1a6cd208
+ i=109  cntl=0  flag=0  data=d80c7b02
+ i=110  cntl=0  flag=0  data=45919450
+ i=111  cntl=0  flag=0  data=5918c51
+ i=112  cntl=0  flag=0  data=45919052
+ i=113  cntl=0  flag=0  data=5918c4f
+ i=114  cntl=0  flag=0  data=5a19451
+ i=115  cntl=0  flag=0  data=5919852
+ i=116  cntl=0  flag=0  data=5a18c52
+ i=117  cntl=0  flag=0  data=4048eb71
+ i=118  cntl=0  flag=0  data=d80c7b02
+ i=119  cntl=0  flag=0  data=44d11c4d
+ i=120  cntl=0  flag=0  data=4e1284b
+ i=121  cntl=0  flag=0  data=4e1284d
+ i=122  cntl=0  flag=0  data=4f1204b
+ i=123  cntl=0  flag=0  data=4e12c4c
+ i=124  cntl=0  flag=0  data=44e1284a
+ i=125  cntl=0  flag=0  data=4d11c4c
+ i=126  cntl=0  flag=0  data=65e40701
+ i=127  cntl=0  flag=0  data=d80c7b02
+ i=128  cntl=0  flag=0  data=45715059
+ i=129  cntl=0  flag=0  data=571545a
+ i=130  cntl=0  flag=0  data=5614859
+ i=131  cntl=0  flag=0  data=4571485a
+ i=132  cntl=0  flag=0  data=45414859
+ i=133  cntl=0  flag=0  data=5614c5b
+ i=134  cntl=0  flag=0  data=4561485b
+ i=135  cntl=0  flag=0  data=4c63d867
+ i=136  cntl=0  flag=0  data=d80c7b02
+ i=137  cntl=0  flag=0  data=4c1004f
+ i=138  cntl=0  flag=0  data=4d10053
+ i=139  cntl=0  flag=0  data=44d0f851
+ i=140  cntl=0  flag=0  data=4c10051
+ i=141  cntl=0  flag=0  data=44e10051
+ i=142  cntl=0  flag=0  data=4f0f84f
+ i=143  cntl=0  flag=0  data=4f10051
+ i=144  cntl=0  flag=0  data=34f7000c
+ i=145  cntl=0  flag=0  data=ffffffff
+ i=146  cntl=1  flag=1  data=4fcdfe57
+ i=147  cntl=0  flag=1  data=3fbf4fcd
+ i=148  cntl=0  flag=0  data=c00fe007
+ i=149  cntl=0  flag=0  data=e003f001
+ i=150  cntl=0  flag=0  data=f803fc01
+ i=151  cntl=0  flag=0  data=4fcd00ff
+ i=152  cntl=0  flag=0  data=807f003f
+ i=153  cntl=0  flag=0  data=801fc00f
+ i=154  cntl=0  flag=0  data=f007f803
+ i=155  cntl=0  flag=1  data=fc014fcd
+ i=156  cntl=0  flag=1  data=4fcd4fcd
+ i=157  cntl=0  flag=1  data=4fcd4fcd
+ i=158  cntl=0  flag=1  data=4fcd4fcd
+ i=159  cntl=0  flag=1  data=4fcd4fcd
+ i=160  cntl=0  flag=1  data=4fcd4fcd
+ i=161  cntl=0  flag=1  data=4fcd4fcd
+ i=162  cntl=0  flag=1  data=4fcd4fcd
+ i=163  cntl=0  flag=1  data=4fcd4fcd
+ i=164  cntl=0  flag=1  data=4fcd4fcd
+ i=165  cntl=0  flag=1  data=4fcd4fcd
+ i=166  cntl=0  flag=1  data=4fcd4fcd
+ i=167  cntl=0  flag=1  data=4fcd4fcd
+ i=168  cntl=0  flag=1  data=4fcd4fcd
+ i=169  cntl=0  flag=1  data=4fcd4fcd
+ i=170  cntl=0  flag=1  data=4fcd4fcd
+ i=171  cntl=0  flag=1  data=4fcd4fcd
+ i=172  cntl=0  flag=1  data=4fcd4fcd
+ i=173  cntl=0  flag=1  data=4fcd4fcd
+ i=174  cntl=0  flag=1  data=4fcd4fcd
+ i=175  cntl=0  flag=1  data=4fcd4fcd
+ i=176  cntl=0  flag=1  data=4fcd4fcd
+ i=177  cntl=0  flag=1  data=4fcd4fcd
+ i=178  cntl=0  flag=1  data=4fcd4fcd
+ i=179  cntl=0  flag=1  data=4fcd4fcd
+ i=180  cntl=0  flag=1  data=4fcd4fcd
+ i=181  cntl=0  flag=1  data=4fcd4fcd
+ i=182  cntl=0  flag=1  data=4fcd4fcd
+ i=183  cntl=0  flag=1  data=4fcd4fcd
+ i=184  cntl=0  flag=1  data=4fcd4fcd
+ i=185  cntl=0  flag=1  data=4fcd4fcd
+ i=186  cntl=0  flag=1  data=4fcd4fcd
+ i=187  cntl=0  flag=1  data=4fcd4fcd
+ i=188  cntl=0  flag=1  data=4fcd4fcd
+ i=189  cntl=0  flag=1  data=4fcd4fcd
+ i=190  cntl=0  flag=1  data=4fcd4fcd
+ i=191  cntl=0  flag=1  data=4fcd4fcd
+ i=192  cntl=0  flag=1  data=4fcd4fcd
+ i=193  cntl=0  flag=1  data=4fcd4fcd
+ i=194  cntl=0  flag=1  data=4fcd4fcd
+ i=195  cntl=0  flag=1  data=4fcd4fcd
+ i=196  cntl=0  flag=1  data=4fcd4fcd
+ i=197  cntl=0  flag=1  data=4fcd4fcd
+ i=198  cntl=0  flag=1  data=4fcd4fcd
+ i=199  cntl=0  flag=1  data=4fcd4fcd
+ i=200  cntl=0  flag=1  data=4fcd4fcd
+ i=201  cntl=0  flag=1  data=4fcd4fcd
+ i=202  cntl=0  flag=1  data=4fcd4fcd
+ i=203  cntl=0  flag=1  data=4fcd4fcd
+ i=204  cntl=0  flag=1  data=4fcd4fcd
+ i=205  cntl=0  flag=1  data=4fcd4fcd
+ i=206  cntl=0  flag=1  data=4fcd4fcd
+ i=207  cntl=0  flag=1  data=4fcd4fcd
+ i=208  cntl=0  flag=1  data=4fcd4fcd
+ i=209  cntl=0  flag=1  data=4fcd4fcd
+ i=210  cntl=0  flag=1  data=4fcd4fcd
+ i=211  cntl=0  flag=1  data=4fcd4fcd
+ i=212  cntl=0  flag=1  data=4fcd4fcd
+ i=213  cntl=0  flag=1  data=4fcd4fcd
+ i=214  cntl=0  flag=1  data=4fcd4fcd
+ i=215  cntl=0  flag=1  data=4fcd4fcd
+ i=216  cntl=0  flag=1  data=4fcd4fcd
+ i=217  cntl=0  flag=1  data=4fcd4fcd
+ i=218  cntl=0  flag=1  data=4fcd4fcd
+ i=219  cntl=0  flag=1  data=4fcd4fcd
+ i=220  cntl=0  flag=1  data=4fcd4fcd
+ i=221  cntl=0  flag=1  data=4fcd4fcd
+ i=222  cntl=0  flag=1  data=4fcd4fcd
+ i=223  cntl=0  flag=1  data=4fcd4fcd
+ i=224  cntl=0  flag=1  data=4fcd4fcd
+ i=225  cntl=0  flag=1  data=4fcd4fcd
+ i=226  cntl=0  flag=1  data=4fcd4fcd
+ i=227  cntl=0  flag=1  data=4fcd4fcd
+ i=228  cntl=0  flag=1  data=4fcd4fcd
+ i=229  cntl=0  flag=1  data=4fcd4fcd
+ i=230  cntl=0  flag=1  data=4fcd4fcd
+ i=231  cntl=0  flag=1  data=4fcd4fcd
+ i=232  cntl=0  flag=1  data=4fcd4fcd
+ i=233  cntl=0  flag=1  data=4fcd4fcd
+ i=234  cntl=0  flag=1  data=4fcd4fcd
+ i=235  cntl=0  flag=1  data=4fcd4fcd
+ i=236  cntl=0  flag=1  data=4fcd4fcd
+ i=237  cntl=0  flag=1  data=4fcd4fcd
+ i=238  cntl=0  flag=1  data=4fcd4fcd
+ i=239  cntl=0  flag=1  data=4fcd4fcd
+ i=240  cntl=0  flag=1  data=4fcd4fcd
+ i=241  cntl=0  flag=1  data=4fcd4fcd
+ i=242  cntl=0  flag=1  data=4fcd4fcd
+ i=243  cntl=0  flag=1  data=4fcd4fcd
+ i=244  cntl=0  flag=1  data=4fcd4fcd
+ i=245  cntl=0  flag=1  data=4fcd4fcd
+ i=246  cntl=0  flag=1  data=4fcd4fcd
+ i=247  cntl=0  flag=1  data=4fcd4fcd
+ i=248  cntl=0  flag=1  data=4fcd4fcd
+ i=249  cntl=0  flag=1  data=4fcd4fcd
+ event dump nraw=0
+ event dump nraw=87
+ i=0  cntl=1  flag=0  data=51115110
+ i=1  cntl=0  flag=0  data=d82c7b03
+ i=2  cntl=0  flag=0  data=541484c
+ i=3  cntl=0  flag=0  data=45314c4d
+ i=4  cntl=0  flag=0  data=4551484f
+ i=5  cntl=0  flag=0  data=551484d
+ i=6  cntl=0  flag=0  data=4561484c
+ i=7  cntl=0  flag=0  data=5414c4e
+ i=8  cntl=0  flag=0  data=4531544e
+ i=9  cntl=0  flag=0  data=56c340ac
+ i=10  cntl=0  flag=0  data=d82c7b03
+ i=11  cntl=0  flag=0  data=4511544c
+ i=12  cntl=0  flag=0  data=4531504c
+ i=13  cntl=0  flag=0  data=45015c4a
+ i=14  cntl=0  flag=0  data=5115c4a
+ i=15  cntl=0  flag=0  data=541584b
+ i=16  cntl=0  flag=0  data=531584a
+ i=17  cntl=0  flag=0  data=4531584b
+ i=18  cntl=0  flag=0  data=1ce0d36d
+ i=19  cntl=0  flag=0  data=d82c7b03
+ i=20  cntl=0  flag=0  data=44a1143f
+ i=21  cntl=0  flag=0  data=44b11041
+ i=22  cntl=0  flag=0  data=44b11041
+ i=23  cntl=0  flag=0  data=4a11041
+ i=24  cntl=0  flag=0  data=4a11440
+ i=25  cntl=0  flag=0  data=44c11841
+ i=26  cntl=0  flag=0  data=4811441
+ i=27  cntl=0  flag=0  data=12181709
+ i=28  cntl=0  flag=0  data=d82c7b03
+ i=29  cntl=0  flag=0  data=45210454
+ i=30  cntl=0  flag=0  data=45210c56
+ i=31  cntl=0  flag=0  data=5411055
+ i=32  cntl=0  flag=0  data=5210057
+ i=33  cntl=0  flag=0  data=45410857
+ i=34  cntl=0  flag=0  data=45310c58
+ i=35  cntl=0  flag=0  data=45310c58
+ i=36  cntl=0  flag=0  data=4261ae85
+ i=37  cntl=0  flag=0  data=d82c7b03
+ i=38  cntl=0  flag=0  data=44b15850
+ i=39  cntl=0  flag=0  data=44916452
+ i=40  cntl=0  flag=0  data=44915451
+ i=41  cntl=0  flag=0  data=4915850
+ i=42  cntl=0  flag=0  data=4a15850
+ i=43  cntl=0  flag=0  data=44a15851
+ i=44  cntl=0  flag=0  data=44815c51
+ i=45  cntl=0  flag=0  data=5ede3040
+ i=46  cntl=0  flag=0  data=d82c7b03
+ i=47  cntl=0  flag=0  data=44413853
+ i=48  cntl=0  flag=0  data=44513852
+ i=49  cntl=0  flag=0  data=44513852
+ i=50  cntl=0  flag=0  data=4313853
+ i=51  cntl=0  flag=0  data=44313852
+ i=52  cntl=0  flag=0  data=4213452
+ i=53  cntl=0  flag=0  data=4313453
+ i=54  cntl=0  flag=0  data=68574936
+ i=55  cntl=0  flag=0  data=d82c7b03
+ i=56  cntl=0  flag=0  data=7a1fc7a
+ i=57  cntl=0  flag=0  data=47a1fc77
+ i=58  cntl=0  flag=0  data=4791f879
+ i=59  cntl=0  flag=0  data=4792007b
+ i=60  cntl=0  flag=0  data=47a1fc78
+ i=61  cntl=0  flag=0  data=47920479
+ i=62  cntl=0  flag=0  data=791f877
+ i=63  cntl=0  flag=0  data=15302c15
+ i=64  cntl=0  flag=0  data=d82c7b03
+ i=65  cntl=0  flag=0  data=4831d075
+ i=66  cntl=0  flag=0  data=841d474
+ i=67  cntl=0  flag=0  data=4841cc75
+ i=68  cntl=0  flag=0  data=821cc77
+ i=69  cntl=0  flag=0  data=831cc75
+ i=70  cntl=0  flag=0  data=4811cc73
+ i=71  cntl=0  flag=0  data=4831cc77
+ i=72  cntl=0  flag=0  data=196e7445
+ i=73  cntl=0  flag=0  data=d82c7b03
+ i=74  cntl=0  flag=0  data=4c17c63
+ i=75  cntl=0  flag=0  data=4e17465
+ i=76  cntl=0  flag=0  data=44e17063
+ i=77  cntl=0  flag=0  data=4e17865
+ i=78  cntl=0  flag=0  data=44e17065
+ i=79  cntl=0  flag=0  data=4d17465
+ i=80  cntl=0  flag=0  data=4d17463
+ i=81  cntl=0  flag=0  data=464342bd
+ i=82  cntl=0  flag=0  data=d82c7b03
+ i=83  cntl=0  flag=0  data=5912c57
+ i=84  cntl=0  flag=0  data=5913056
+ i=85  cntl=0  flag=0  data=5713057
+ i=86  cntl=0  flag=0  data=45913057
+event=17400000  nerror=13  ndcrc=0  nbnch=1  nctrl=4  ngcrc=8  nsdmu=0  loop=0
+event=17450000  nerror=13  ndcrc=0  nbnch=1  nctrl=4  ngcrc=8  nsdmu=0  loop=0
+event=17500000  nerror=13  ndcrc=0  nbnch=1  nctrl=4  ngcrc=8  nsdmu=0  loop=0
+event=17550000  nerror=13  ndcrc=0  nbnch=1  nctrl=4  ngcrc=8  nsdmu=0  loop=0
+ event dump nraw=148
+ i=0  cntl=1  flag=0  data=51115110
+ i=1  cntl=0  flag=0  data=982c7e73
+ i=2  cntl=0  flag=0  data=5414c4e
+ i=3  cntl=0  flag=0  data=541544e
+ i=4  cntl=0  flag=0  data=5414c4e
+ i=5  cntl=0  flag=0  data=4531504f
+ i=6  cntl=0  flag=0  data=4531484f
+ i=7  cntl=0  flag=0  data=5414c4e
+ i=8  cntl=0  flag=0  data=551504d
+ i=9  cntl=0  flag=0  data=6dd277b7
+ i=10  cntl=0  flag=0  data=982c7e73
+ i=11  cntl=0  flag=0  data=5214c4d
+ i=12  cntl=0  flag=0  data=511504c
+ i=13  cntl=0  flag=0  data=521584b
+ i=14  cntl=0  flag=0  data=4511544a
+ i=15  cntl=0  flag=0  data=531504b
+ i=16  cntl=0  flag=0  data=5315c4b
+ i=17  cntl=0  flag=0  data=45415449
+ i=18  cntl=0  flag=0  data=40973453
+ i=19  cntl=0  flag=0  data=982c7e73
+ i=20  cntl=0  flag=0  data=44b11041
+ i=21  cntl=0  flag=0  data=4a11440
+ i=22  cntl=0  flag=0  data=4b11040
+ i=23  cntl=0  flag=0  data=44a10c3f
+ i=24  cntl=0  flag=0  data=4b11441
+ i=25  cntl=0  flag=0  data=4b11441
+ i=26  cntl=0  flag=0  data=44810841
+ i=27  cntl=0  flag=0  data=381d3fd5
+ i=28  cntl=0  flag=0  data=982c7e73
+ i=29  cntl=0  flag=0  data=5310858
+ i=30  cntl=0  flag=0  data=45211057
+ i=31  cntl=0  flag=0  data=5410c58
+ i=32  cntl=0  flag=0  data=5310858
+ i=33  cntl=0  flag=0  data=5310c59
+ i=34  cntl=0  flag=0  data=45111058
+ i=35  cntl=0  flag=0  data=45311056
+ i=36  cntl=0  flag=0  data=55512909
+ i=37  cntl=0  flag=0  data=982c7e73
+ i=38  cntl=0  flag=0  data=4816050
+ i=39  cntl=0  flag=0  data=44915c50
+ i=40  cntl=0  flag=0  data=4916450
+ i=41  cntl=0  flag=0  data=4481604f
+ i=42  cntl=0  flag=0  data=4a16051
+ i=43  cntl=0  flag=0  data=4b16050
+ i=44  cntl=0  flag=0  data=4815451
+ i=45  cntl=0  flag=0  data=4dbaeaf7
+ i=46  cntl=0  flag=0  data=982c7e73
+ i=47  cntl=0  flag=0  data=4413854
+ i=48  cntl=0  flag=0  data=4414051
+ i=49  cntl=0  flag=0  data=4513455
+ i=50  cntl=0  flag=0  data=4313853
+ i=51  cntl=0  flag=0  data=4313853
+ i=52  cntl=0  flag=0  data=4513c54
+ i=53  cntl=0  flag=0  data=4513453
+ i=54  cntl=0  flag=0  data=161fef3d
+ i=55  cntl=0  flag=0  data=982c7e73
+ i=56  cntl=0  flag=0  data=7a1f478
+ i=57  cntl=0  flag=0  data=47a2007b
+ i=58  cntl=0  flag=0  data=47b1fc79
+ i=59  cntl=0  flag=0  data=7920079
+ i=60  cntl=0  flag=0  data=47820079
+ i=61  cntl=0  flag=0  data=47a20078
+ i=62  cntl=0  flag=0  data=47b1f87b
+ i=63  cntl=0  flag=0  data=656a0081
+ i=64  cntl=0  flag=0  data=982c7e73
+ i=65  cntl=0  flag=0  data=841cc77
+ i=66  cntl=0  flag=0  data=821d075
+ i=67  cntl=0  flag=0  data=831d475
+ i=68  cntl=0  flag=0  data=4841d476
+ i=69  cntl=0  flag=0  data=831d475
+ i=70  cntl=0  flag=0  data=841d073
+ i=71  cntl=0  flag=0  data=831d476
+ i=72  cntl=0  flag=0  data=53d2ee67
+ i=73  cntl=0  flag=0  data=982c7e73
+ i=74  cntl=0  flag=0  data=4e16c63
+ i=75  cntl=0  flag=0  data=4e17865
+ i=76  cntl=0  flag=0  data=4d17067
+ i=77  cntl=0  flag=0  data=4e17465
+ i=78  cntl=0  flag=0  data=44f17863
+ i=79  cntl=0  flag=0  data=4f17065
+ i=80  cntl=0  flag=0  data=4e17463
+ i=81  cntl=0  flag=0  data=1c9e9d74
+ i=82  cntl=0  flag=0  data=982c7e73
+ i=83  cntl=0  flag=0  data=5712457
+ i=84  cntl=0  flag=0  data=45712456
+ i=85  cntl=0  flag=0  data=45912c56
+ i=86  cntl=0  flag=0  data=5912856
+ i=87  cntl=0  flag=0  data=571205a
+ i=88  cntl=0  flag=0  data=45912457
+ i=89  cntl=0  flag=0  data=5912c57
+ i=90  cntl=0  flag=0  data=8c7fa03
+ i=91  cntl=0  flag=0  data=982c7e73
+ i=92  cntl=0  flag=0  data=45714850
+ i=93  cntl=0  flag=0  data=5a14850
+ i=94  cntl=0  flag=0  data=45814c51
+ i=95  cntl=0  flag=0  data=45a14451
+ i=96  cntl=0  flag=0  data=5814851
+ i=97  cntl=0  flag=0  data=5914c52
+ i=98  cntl=0  flag=0  data=45a15051
+ i=99  cntl=0  flag=0  data=2117696d
+ i=100  cntl=0  flag=0  data=982c7e73
+ i=101  cntl=0  flag=0  data=4501784c
+ i=102  cntl=0  flag=0  data=4501744c
+ i=103  cntl=0  flag=0  data=4521784b
+ i=104  cntl=0  flag=0  data=4511704a
+ i=105  cntl=0  flag=0  data=4e1784d
+ i=106  cntl=0  flag=0  data=45117c49
+ i=107  cntl=0  flag=0  data=4511804c
+ i=108  cntl=0  flag=0  data=5ae79d19
+ i=109  cntl=0  flag=0  data=982c7e73
+ i=110  cntl=0  flag=0  data=5919452
+ i=111  cntl=0  flag=0  data=5b19450
+ i=112  cntl=0  flag=0  data=45918c50
+ i=113  cntl=0  flag=0  data=45919052
+ i=114  cntl=0  flag=0  data=5b18c50
+ i=115  cntl=0  flag=0  data=5919451
+ i=116  cntl=0  flag=0  data=5918c4f
+ i=117  cntl=0  flag=0  data=4616d989
+ i=118  cntl=0  flag=0  data=982c7e73
+ i=119  cntl=0  flag=0  data=4e1284b
+ i=120  cntl=0  flag=0  data=4e1204c
+ i=121  cntl=0  flag=0  data=4f1244c
+ i=122  cntl=0  flag=0  data=44e1244a
+ i=123  cntl=0  flag=0  data=501204c
+ i=124  cntl=0  flag=0  data=4e1284b
+ i=125  cntl=0  flag=0  data=44d1284a
+ i=126  cntl=0  flag=0  data=5004cf45
+ i=127  cntl=0  flag=0  data=982c7e73
+ i=128  cntl=0  flag=0  data=5614859
+ i=129  cntl=0  flag=0  data=4561485b
+ i=130  cntl=0  flag=0  data=571505b
+ i=131  cntl=0  flag=0  data=5a14c5b
+ i=132  cntl=0  flag=0  data=5614c5b
+ i=133  cntl=0  flag=0  data=45514458
+ i=134  cntl=0  flag=0  data=4591505b
+ i=135  cntl=0  flag=0  data=5baf63fc
+ i=136  cntl=0  flag=0  data=982c7e73
+ i=137  cntl=0  flag=0  data=44e0f84f
+ i=138  cntl=0  flag=0  data=4e0fc51
+ i=139  cntl=0  flag=0  data=44d0f84f
+ i=140  cntl=0  flag=0  data=4c1004f
+ i=141  cntl=0  flag=0  data=44c10851
+ i=142  cntl=0  flag=0  data=4d0fc4f
+ i=143  cntl=0  flag=0  data=4c0f451
+ i=144  cntl=0  flag=0  data=c51ab87
+ i=145  cntl=0  flag=0  data=ffffffff
+ i=146  cntl=0  flag=1  data=91ca43b0
+ i=147  cntl=1  flag=0  data=fffffff0
+event=17600000  nerror=15  ndcrc=0  nbnch=1  nctrl=4  ngcrc=10  nsdmu=0  loop=0
+event=17650000  nerror=15  ndcrc=0  nbnch=1  nctrl=4  ngcrc=10  nsdmu=0  loop=0
+event=17700000  nerror=15  ndcrc=0  nbnch=1  nctrl=4  ngcrc=10  nsdmu=0  loop=0
+event=17750000  nerror=15  ndcrc=0  nbnch=1  nctrl=4  ngcrc=10  nsdmu=0  loop=0
+event=17800000  nerror=15  ndcrc=0  nbnch=1  nctrl=4  ngcrc=10  nsdmu=0  loop=0
+ event dump nraw=250
+ i=0  cntl=1  flag=0  data=51115110
+ i=1  cntl=0  flag=0  data=d82077fc
+ i=2  cntl=0  flag=0  data=541544d
+ i=3  cntl=0  flag=0  data=541504c
+ i=4  cntl=0  flag=0  data=45314c4d
+ i=5  cntl=0  flag=0  data=45314c50
+ i=6  cntl=0  flag=0  data=531504d
+ i=7  cntl=0  flag=0  data=5414c4e
+ i=8  cntl=0  flag=0  data=5314c4c
+ i=9  cntl=0  flag=0  data=3c368bda
+ i=10  cntl=0  flag=0  data=d82077fc
+ i=11  cntl=0  flag=0  data=45315c4c
+ i=12  cntl=0  flag=0  data=531584a
+ i=13  cntl=0  flag=0  data=5214c4b
+ i=14  cntl=0  flag=0  data=45415048
+ i=15  cntl=0  flag=0  data=511544b
+ i=16  cntl=0  flag=0  data=45315848
+ i=17  cntl=0  flag=0  data=551584a
+ i=18  cntl=0  flag=0  data=3bea0d13
+ i=19  cntl=0  flag=0  data=d82077fc
+ i=20  cntl=0  flag=0  data=4b11841
+ i=21  cntl=0  flag=0  data=44910c41
+ i=22  cntl=0  flag=0  data=4b10c42
+ i=23  cntl=0  flag=0  data=44910840
+ i=24  cntl=0  flag=0  data=44810844
+ i=25  cntl=0  flag=0  data=44911441
+ i=26  cntl=0  flag=0  data=44c10840
+ i=27  cntl=0  flag=0  data=87c6e43
+ i=28  cntl=0  flag=0  data=d82077fc
+ i=29  cntl=0  flag=0  data=45211058
+ i=30  cntl=0  flag=0  data=45410458
+ i=31  cntl=0  flag=0  data=5510854
+ i=32  cntl=0  flag=0  data=45310c54
+ i=33  cntl=0  flag=0  data=45410c56
+ i=34  cntl=0  flag=0  data=5210456
+ i=35  cntl=0  flag=0  data=45311457
+ i=36  cntl=0  flag=0  data=3ccd17f3
+ i=37  cntl=0  flag=0  data=d82077fc
+ i=38  cntl=0  flag=0  data=4915850
+ i=39  cntl=0  flag=0  data=44916050
+ i=40  cntl=0  flag=0  data=44d15c4f
+ i=41  cntl=0  flag=0  data=4a16051
+ i=42  cntl=0  flag=0  data=4a15c52
+ i=43  cntl=0  flag=0  data=44a16050
+ i=44  cntl=0  flag=0  data=44a15451
+ i=45  cntl=0  flag=0  data=73e929ec
+ i=46  cntl=0  flag=0  data=d82077fc
+ i=47  cntl=0  flag=0  data=4313853
+ i=48  cntl=0  flag=0  data=44513854
+ i=49  cntl=0  flag=0  data=44313854
+ i=50  cntl=0  flag=0  data=44313c55
+ i=51  cntl=0  flag=0  data=44313454
+ i=52  cntl=0  flag=0  data=4313853
+ i=53  cntl=0  flag=0  data=44413453
+ i=54  cntl=0  flag=0  data=6a2b88be
+ i=55  cntl=0  flag=0  data=d82077fc
+ i=56  cntl=0  flag=0  data=781f879
+ i=57  cntl=0  flag=0  data=7a1fc79
+ i=58  cntl=0  flag=0  data=7a20079
+ i=59  cntl=0  flag=0  data=4792047a
+ i=60  cntl=0  flag=0  data=47a1f879
+ i=61  cntl=0  flag=0  data=7a1f878
+ i=62  cntl=0  flag=0  data=7a20079
+ i=63  cntl=0  flag=0  data=743eae0c
+ i=64  cntl=0  flag=0  data=d82077fc
+ i=65  cntl=0  flag=0  data=821d478
+ i=66  cntl=0  flag=0  data=821cc78
+ i=67  cntl=0  flag=0  data=821c876
+ i=68  cntl=0  flag=0  data=841cc74
+ i=69  cntl=0  flag=0  data=4831d076
+ i=70  cntl=0  flag=0  data=4851d076
+ i=71  cntl=0  flag=0  data=4831d075
+ i=72  cntl=0  flag=0  data=679736b4
+ i=73  cntl=0  flag=0  data=d82077fc
+ i=74  cntl=0  flag=0  data=44c17465
+ i=75  cntl=0  flag=0  data=4d17465
+ i=76  cntl=0  flag=0  data=4e17465
+ i=77  cntl=0  flag=0  data=44f17465
+ i=78  cntl=0  flag=0  data=4f17065
+ i=79  cntl=0  flag=0  data=4e17067
+ i=80  cntl=0  flag=0  data=44c17865
+ i=81  cntl=0  flag=0  data=f6ec58c
+ i=82  cntl=0  flag=0  data=d82077fc
+ i=83  cntl=0  flag=0  data=5712857
+ i=84  cntl=0  flag=0  data=45912c5a
+ i=85  cntl=0  flag=0  data=591245a
+ i=86  cntl=0  flag=0  data=591285a
+ i=87  cntl=0  flag=0  data=45712057
+ i=88  cntl=0  flag=0  data=5712c56
+ i=89  cntl=0  flag=0  data=4591205a
+ i=90  cntl=0  flag=0  data=2e616878
+ i=91  cntl=0  flag=0  data=d82077fc
+ i=92  cntl=0  flag=0  data=5814852
+ i=93  cntl=0  flag=0  data=5914c52
+ i=94  cntl=0  flag=0  data=5814852
+ i=95  cntl=0  flag=0  data=5914c51
+ i=96  cntl=0  flag=0  data=45914851
+ i=97  cntl=0  flag=0  data=5914c52
+ i=98  cntl=0  flag=0  data=45815050
+ i=99  cntl=0  flag=0  data=2d9b251e
+ i=100  cntl=0  flag=0  data=d82077fc
+ i=101  cntl=0  flag=0  data=45017449
+ i=102  cntl=0  flag=0  data=4f16c4c
+ i=103  cntl=0  flag=0  data=4e1744b
+ i=104  cntl=0  flag=0  data=501744b
+ i=105  cntl=0  flag=0  data=44e1784c
+ i=106  cntl=0  flag=0  data=4f1784c
+ i=107  cntl=0  flag=0  data=4511744b
+ i=108  cntl=0  flag=0  data=5f88b002
+ i=109  cntl=0  flag=0  data=d82077fc
+ i=110  cntl=0  flag=0  data=5a19053
+ i=111  cntl=0  flag=0  data=5918c4f
+ i=112  cntl=0  flag=0  data=5a19050
+ i=113  cntl=0  flag=0  data=45919054
+ i=114  cntl=0  flag=0  data=45b19452
+ i=115  cntl=0  flag=0  data=5919050
+ i=116  cntl=0  flag=0  data=45b18c51
+ i=117  cntl=0  flag=0  data=4643429
+ i=118  cntl=0  flag=0  data=d82077fc
+ i=119  cntl=0  flag=0  data=501244b
+ i=120  cntl=0  flag=0  data=4f11c4b
+ i=121  cntl=0  flag=0  data=44b11c4d
+ i=122  cntl=0  flag=0  data=501284b
+ i=123  cntl=0  flag=0  data=4d1244b
+ i=124  cntl=0  flag=0  data=44e1204b
+ i=125  cntl=0  flag=0  data=4c11c4d
+ i=126  cntl=0  flag=0  data=25082ea0
+ i=127  cntl=0  flag=0  data=d82077fc
+ i=128  cntl=0  flag=0  data=5514859
+ i=129  cntl=0  flag=0  data=5714c59
+ i=130  cntl=0  flag=0  data=45714859
+ i=131  cntl=0  flag=0  data=45914c5c
+ i=132  cntl=0  flag=0  data=4551545c
+ i=133  cntl=0  flag=0  data=551505a
+ i=134  cntl=0  flag=0  data=5514c5b
+ i=135  cntl=0  flag=0  data=1130cb7d
+ i=136  cntl=0  flag=0  data=d82077fc
+ i=137  cntl=0  flag=0  data=4f1004f
+ i=138  cntl=0  flag=0  data=44c0f051
+ i=139  cntl=0  flag=0  data=4d1044f
+ i=140  cntl=0  flag=0  data=4c0f851
+ i=141  cntl=0  flag=0  data=44d0fc53
+ i=142  cntl=0  flag=0  data=4e10053
+ i=143  cntl=0  flag=0  data=4f10051
+ i=144  cntl=0  flag=0  data=27ff0000
+ i=145  cntl=0  flag=0  data=ffffffff
+ i=146  cntl=0  flag=1  data=2e4fa361
+ i=147  cntl=0  flag=0  data=3fbf9fdc
+ i=148  cntl=0  flag=0  data=c03fe007
+ i=149  cntl=0  flag=0  data=e003f001
+ i=150  cntl=0  flag=0  data=f800fc01
+ i=151  cntl=0  flag=0  data=2e4f00ff
+ i=152  cntl=0  flag=0  data=807fc03f
+ i=153  cntl=0  flag=0  data=801fc00f
+ i=154  cntl=0  flag=0  data=e007f803
+ i=155  cntl=0  flag=1  data=fc012e4f
+ i=156  cntl=0  flag=1  data=2e4f2e4f
+ i=157  cntl=0  flag=1  data=2e4f2e4f
+ i=158  cntl=0  flag=1  data=2e4f2e4f
+ i=159  cntl=0  flag=1  data=2e4f2e4f
+ i=160  cntl=0  flag=1  data=2e4f2e4f
+ i=161  cntl=0  flag=1  data=2e4f2e4f
+ i=162  cntl=0  flag=1  data=2e4f2e4f
+ i=163  cntl=0  flag=1  data=2e4f2e4f
+ i=164  cntl=0  flag=1  data=2e4f2e4f
+ i=165  cntl=0  flag=1  data=2e4f2e4f
+ i=166  cntl=0  flag=1  data=2e4f2e4f
+ i=167  cntl=0  flag=1  data=2e4f2e4f
+ i=168  cntl=0  flag=1  data=2e4f2e4f
+ i=169  cntl=0  flag=1  data=2e4f2e4f
+ i=170  cntl=0  flag=1  data=2e4f2e4f
+ i=171  cntl=0  flag=1  data=2e4f2e4f
+ i=172  cntl=0  flag=1  data=2e4f2e4f
+ i=173  cntl=0  flag=1  data=2e4f2e4f
+ i=174  cntl=0  flag=1  data=2e4f2e4f
+ i=175  cntl=0  flag=1  data=2e4f2e4f
+ i=176  cntl=0  flag=1  data=2e4f2e4f
+ i=177  cntl=0  flag=1  data=2e4f2e4f
+ i=178  cntl=0  flag=1  data=2e4f2e4f
+ i=179  cntl=0  flag=1  data=2e4f2e4f
+ i=180  cntl=0  flag=1  data=2e4f2e4f
+ i=181  cntl=0  flag=1  data=2e4f2e4f
+ i=182  cntl=0  flag=1  data=2e4f2e4f
+ i=183  cntl=0  flag=1  data=2e4f2e4f
+ i=184  cntl=0  flag=1  data=2e4f2e4f
+ i=185  cntl=0  flag=1  data=2e4f2e4f
+ i=186  cntl=0  flag=1  data=2e4f2e4f
+ i=187  cntl=0  flag=1  data=2e4f2e4f
+ i=188  cntl=0  flag=1  data=2e4f2e4f
+ i=189  cntl=0  flag=1  data=2e4f2e4f
+ i=190  cntl=0  flag=1  data=2e4f2e4f
+ i=191  cntl=0  flag=1  data=2e4f2e4f
+ i=192  cntl=0  flag=1  data=2e4f2e4f
+ i=193  cntl=0  flag=1  data=2e4f2e4f
+ i=194  cntl=0  flag=1  data=2e4f2e4f
+ i=195  cntl=0  flag=1  data=2e4f2e4f
+ i=196  cntl=0  flag=1  data=2e4f2e4f
+ i=197  cntl=0  flag=1  data=2e4f2e4f
+ i=198  cntl=0  flag=1  data=2e4f2e4f
+ i=199  cntl=0  flag=1  data=2e4f2e4f
+ i=200  cntl=0  flag=1  data=2e4f2e4f
+ i=201  cntl=0  flag=1  data=2e4f2e4f
+ i=202  cntl=0  flag=1  data=2e4f2e4f
+ i=203  cntl=0  flag=1  data=2e4f2e4f
+ i=204  cntl=0  flag=1  data=2e4f2e4f
+ i=205  cntl=0  flag=1  data=2e4f2e4f
+ i=206  cntl=0  flag=1  data=2e4f2e4f
+ i=207  cntl=0  flag=1  data=2e4f2e4f
+ i=208  cntl=0  flag=1  data=2e4f2e4f
+ i=209  cntl=0  flag=1  data=2e4f2e4f
+ i=210  cntl=0  flag=1  data=2e4f2e4f
+ i=211  cntl=0  flag=1  data=2e4f2e4f
+ i=212  cntl=0  flag=1  data=2e4f2e4f
+ i=213  cntl=0  flag=1  data=2e4f2e4f
+ i=214  cntl=0  flag=1  data=2e4f2e4f
+ i=215  cntl=0  flag=1  data=2e4f2e4f
+ i=216  cntl=0  flag=1  data=2e4f2e4f
+ i=217  cntl=0  flag=1  data=2e4f2e4f
+ i=218  cntl=0  flag=1  data=2e4f2e4f
+ i=219  cntl=0  flag=1  

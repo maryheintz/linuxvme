@@ -1,0 +1,3 @@
+#rm /home/kelby/BIN/$1
+gcc $1.c -L /home/kelby/LIB -lkja -l3in1_v3 -L /usr/local/lib \
+-lcctvme -lgd -lpng -ljpeg -lfreetype -lz -lm -o /home/kelby/BIN/$1

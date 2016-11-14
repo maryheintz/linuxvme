@@ -1,0 +1,53 @@
+The TODO list for the Linux S-Link Driver in reverse chronological order.
+
+4. Speed-up multi-dma
+Date: 2000-07-13, v1.0.2, JEG
+The project for which this driver was written does not intend to use
+multi-dma, so it's currently not in the driver. But multi-dma can be
+sped up quite a bit by making a short-cut in hwd_isInterrupt.
+If there's only one event causing the interrupt and that is a dma complete,
+then it's possible to immediately do handleDmaEnd() and setupDma() there.
+This will save the overhead of queueing the bottom half and all the if-
+statements in hwd_handleInterrupt. However, the interrupt routine will
+take a bit longer (but not too long, I expect).
+Anyway this should be a configurable item in the makefile, because if
+you usually do not have multi-dma then this will slow things down a bit.
+
+
+
+3. Add links in Makefile in sldtest directory for driver files
+Date: 2000-07-12, v1.0.2, JEG
+To be able to link sldtest, queue.[ch], sld.h and bufuser.h from
+the parent directory need to be linked in the sldtest directory.
+
+Fixed: 2000-07-13, v1.0.3, JEG
+
+
+
+2. Translate kernel pointers to user pointers
+Date: 2000-07-12, v1.0.2, J.E. van Grootheest
+This was found using a S-Link LDC that did not completely follow the
+S-Link standard. When sldtest is stopped, the LDC does not respond to
+URESET and keeps the link up (although UXOFF is on). Then, when sldtest
+is started, it opens the driver and the driver immediately starts receiving
+data from the S-Link (which is still up). HWD will use putInfo (from BUF)
+to queue infoblocks to the user and putInfo will translate the databuffer
+pointer from kernel space to userspace. However. Sldtest has not yet mmaped
+the driver at that point, so the userspace pointers are all NULL.
+The translation must be moved from putInfo to getFullInfoBlock.
+
+Fixed: 2000-07-13, v1.0.3, JEG
+The translation was moved from putInfo() to getFullInfoBlock(). This will
+slow things down a bit, since there's an extra if-statement in user space,
+but usually there's enough idle time in the system. In the kernel it saves
+(just) one line.
+
+
+
+1. Bigphysarea support
+Date: 2000-07-10, J.E. van Grootheest
+Adding compile-time support for the bigphysarea patch would make the
+driver usable for more project (I expect). Currently the largest
+buffersize is 4KB. Using the bigphysarea patch would allow much bigger
+buffers. However, it is currently outside the requirements for my
+project to add this.

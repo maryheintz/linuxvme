@@ -1,0 +1,1 @@
+#include <stdio.h>main(){    putchar(27);  /* esc */   putchar(91);  /* [ */   putchar(63);  /* ? */   putchar(51);  /* 3 */   putchar(56);  /* 8 */   putchar(104);  /* h */}

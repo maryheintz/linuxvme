@@ -1,0 +1,1 @@
+cc -k=2f -f=dxytst dxytst.c -l=dxy.r -l=basic.r -l=post.r -l=axis.r

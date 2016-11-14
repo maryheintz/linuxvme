@@ -1,0 +1,430 @@
+#include <types.h>
+#include <stdio.h>
+#include <ces/vmelib.h>
+struct block
+       {  unsigned short enable_high;        /* base+0 */
+          unsigned short enable_low;         /* base+2 */
+          unsigned short tp_high;            /* base+4 */
+          unsigned short tp_low;             /* base+6 */
+          unsigned short clock_high;         /* base+8 */
+          unsigned short clock_low;          /* base+a */
+          unsigned short rxw_high;           /* base+c */
+          unsigned short rxw_low;            /* base+e */
+          unsigned short unused1;            /* base+10 */
+          unsigned short unused2;            /* base+12 */
+          unsigned short multi_sel_high;     /* base+14 */
+          unsigned short multi_sel_low;      /* base+16 */
+          unsigned short back_load_high;     /* base+18 */
+          unsigned short back_load_low;      /* base+1a */
+          unsigned short ctrl_clock;         /* base+1c */
+          unsigned short enable_timer;       /* base+1e */
+          unsigned short reset_timer;        /* base+20 */
+          unsigned short shift12;            /* base+22 */
+          unsigned short address;            /* base+24 */
+          unsigned short set_timer1;         /* base+26 */
+          unsigned short set_timer2;         /* base+28 */
+          unsigned short latch_timer2;       /* base+2a */
+       };
+struct block *adr;
+static struct pdparam_master param=
+      { 1,   /* VME Iack (must be 1 for all normal pages) */
+        0,   /* VME Read Prefetch Option */
+        0,   /* VME Write Posting Option */
+        1,   /* VME Swap Option */
+        0,   /* page number return */
+        0,   /* reserved */
+        0,   /* reserved */
+        0 };
+/*---------------------------------------------*/
+/* set up the controller address mapping       */
+/*---------------------------------------------*/
+map_3in1()
+  { unsigned long am,vmead,offset,size,len;
+    am=0x39;
+    vmead=0xdf0000;
+    offset=0;
+    size=0;
+    len=400;
+    adr = (struct block *)( find_controller(vmead,len,am,offset,size,&param) );
+    if( adr == (struct block *)(-1) ) 
+      { printf("unable to map vme address\n");
+        exit(0);}
+  }
+     card_sel(cadr)
+/*---------------------------------------------*/
+/* set card_sel line on                        */
+/* the binary value of cadr is set on          */
+/*      card_sel0                              */
+/*      card_sel1                              */
+/*      card_sel2                              */
+/*      card_sel3                              */
+/*      card_sel4                              */
+/*      card_sel5                              */
+/*   the value is decoded at the drawer card   */
+/*   to trun on one of the 48 card_sel lines   */
+/*   the test card is wired so that card_sel0  */
+/*   drives its card_sel line                  */
+/*   (hence card_sel(1) is called)             */
+/*                                             */
+/* card_sel lines are used to address a        */
+/* single 3in1 card at a time                  */
+/* this is necessary for operations that       */
+/* drive the data_out line since only one      */
+/* card can drive the data_out line at         */
+/* a time                                      */
+/*---------------------------------------------*/
+     unsigned short cadr;
+     { adr->address = cadr;}
+     
+     shift_set(sval)
+/*-----------------------------------------------*/
+/* set controller internal shift register = sval */
+/*-----------------------------------------------*/
+     unsigned short sval;
+     { adr->shift12 = sval; }
+ 
+     shift_read(sval)
+/*-------------------------------------------*/
+/*   unsigned short sval;                    */
+/*   shift_read(&sval)                       */
+/*   read back the value currently in        */
+/*   the controller shift register           */
+/*-------------------------------------------*/
+     unsigned short *sval;
+     { *sval = adr->shift12; }
+
+     tim1_set(tval)
+/*-------------------------------------*/
+/* load timer 1 with tval (coarse)     */
+/*     8 bits value 0 to 255           */
+/*-------------------------------------*/
+     unsigned short tval;
+     { adr->set_timer1 = tval; }
+
+     tim2_set(tval)
+/*-------------------------------------*/
+/* load timer 2 with tval  (fine)      */
+/*     8 bits  0 to 255                */
+/* in new controller this just latches */
+/* the value into the controller       */
+/* tim2_latch then latches the value   */
+/* into the timer                      */
+/*-------------------------------------*/
+     unsigned short tval;
+     { adr->set_timer2 = tval;
+       adr->latch_timer2 = 0; }
+
+     tp_low()
+/*----------------------------------------------*/
+/*   sets the tp line to low - discharge state  */
+/*     normal operations state                  */
+/*   note: timer done also sets tp low          */
+/*----------------------------------------------*/
+     { adr->tp_low = 0; }
+
+     tp_high()
+/*----------------------------------------------------*/
+/*   sets the tp line to high - charge up start       */
+/*   this charges up the calibration capacitor C3     */
+/*   when tp drops back low - a pulse is injected     */
+/*   into the shaper                                  */
+/*   tp goes low on tp_low() above (computer control) */
+/*   or on timer2 done (phased with fermi clock)      */
+/*----------------------------------------------------*/
+     { adr->tp_high = 0; }
+
+      stime()
+/*---------------------------------------------*/
+/*   start timer 1                             */
+/*   this enables timer 1 to start on the next */
+/*   fermi clock cycle (front panel ecl input) */
+/*   at the timer start the front panel ttl    */
+/*   signal FS (fermi start) also goes high    */
+/*   this allows phasing the charge injection  */
+/*   with the fermi readout                    */
+/*---------------------------------------------*/
+     { adr->enable_timer = 0; }
+
+      rtime()
+/*---------------------------------------------*/
+/*   reset timer done lines                    */
+/*---------------------------------------------*/
+     { adr->reset_timer = 0; }
+
+     multi_high()
+/*-------------------------------------------------------*/
+/*   sets the multi_sel line to high                     */
+/*   this allows commands to be executed in parallel     */
+/*   on enabled 3in1 cards                               */
+/*   when multi_sel is high, all cards with their mse    */
+/*   (multi select enable) bit high will respond to      */
+/*   commands on the bus                                 */
+/*   commands that return data will not operate with     */
+/*   multi_sel since only one 3in1 card is allowed to    */
+/*   drive the data_out line at a time                   */
+/*-------------------------------------------------------*/
+     { adr->multi_sel_high = 0; }
+
+     multi_low()
+/*--------------------------------------------*/
+/*   sets the multi_sel line to low           */
+/*--------------------------------------------*/
+     { adr->multi_sel_low = 0; }
+
+     rxw_high()
+/*--------------------------------------*/
+/*   sets the rxw line to high          */
+/*   when rxw is high as the 3in1 shift */
+/*   register is clocked circularly     */
+/*   this allowes one to load the 3in1  */
+/*   shift register (with rxw low)      */
+/*   then read back the stored value    */
+/*   (with rxw high)  then execute the  */
+/*   function if the read back agrees   */
+/*   with the sent value                */
+/*--------------------------------------*/
+     { adr->rxw_high = 0; }
+
+     rxw_low()
+/*--------------------------------------------*/
+/*   sets the rxw line to low                 */
+/*   with rxw low, the data_in line value     */
+/*   is shifted in to the 3in1 shift register */
+/*   as the clock line goes high              */
+/*--------------------------------------------*/
+     { adr->rxw_low = 0; }
+
+     back_high()
+/*-----------------------------------------------*/
+/*   sets the back_load line to high             */
+/*   this loads the 3in1 shift register with     */
+/*   internal state bits (like reading a status) */
+/*-----------------------------------------------*/
+     { adr->back_load_high = 0; }
+
+     back_low()
+/*--------------------------------------------*/
+/*   sets the back_load line to low           */
+/*--------------------------------------------*/
+     { adr->back_load_low = 0; }
+
+     ena_high()
+/*---------------------------------------------*/
+/*   sets the enable line to high              */
+/*   this causes selected 3in1 cards to        */
+/*   execute the function code currently       */
+/*   in the 3in1 shift register                */
+/*   a 3in1 card is selected if its card_sel   */
+/*   is high or if multi_sel is high and       */
+/*   mse on the card is set high               */
+/*---------------------------------------------*/
+     { adr->enable_high = 0; }
+
+     ena_low()
+/*-----------------------------------------*/
+/*   sets the enable line to low           */
+/*-----------------------------------------*/
+     { adr->enable_low = 0; }
+
+     clk_high()
+/*------------------------------------------*/
+/*   sets the clock line to high            */
+/*   clk_high() followed by clk_low()       */
+/*   clocks the shift register of selected  */
+/*   3in1 cards by 1 bit                    */
+/*------------------------------------------*/
+     { adr->clock_high = 0; }
+
+     clk_low()
+/*----------------------------------------*/
+/*   sets the clock line to low           */
+/*----------------------------------------*/
+     { adr->clock_low = 0; }
+
+     clk_ctrl()
+/*-------------------------------------------*/
+/*   clock the controller shift register     */
+/*   by 1 bit                                */
+/*   one alternatly clocks the 3in1 clock    */
+/*   and the controller clock to move data   */
+/*   from the controller shift register to   */
+/*   the 3in1 shift register of visa versa   */   
+/*-----------------------------------------  */
+     { adr->ctrl_clock = 0; }
+
+     wrt_shift(n,sval)
+/*--------------------------------------------------*/
+/*   send n bits of sval to the 3in1 shift register */
+/*--------------------------------------------------*/
+     int n;
+     unsigned short sval;
+     { int i;
+       back_low();
+       rxw_low();
+       shift_set(sval);    /* put sval in the controller shift register */
+       for(i=0;i<n;i++)
+        { clk_high();  /* clock the 3in1 shift register once */
+          clk_low();
+          clk_ctrl();}  /* now clock the controller shift register once */
+       return(0);}
+
+     read_shift(sval)
+/*----------------------------------------*/
+/*    read back the 3in1 shift register   */
+/*     (full 12 bits)                     */
+/*----------------------------------------*/
+     unsigned short *sval;
+     { int i;
+       unsigned short rbck;
+       back_low();
+       rxw_high();
+       for(i=0;i<12;i++)
+        { clk_ctrl();  /* now clock the controller shift register once */
+          clk_high();  /* clock the 3in1 shift register once */
+          clk_low();}
+       shift_read(&rbck);
+       *sval=rbck;
+       return(0);}
+
+       reset_3in1()
+/*----------------------------------------*/
+/*    reset control lines and 3in1        */
+/*    to default data taking state        */
+/*    note: card_sel(n) must be called    */
+/*    to select the card being addressed  */
+/*----------------------------------------*/
+       { multi_high();
+         back_low();
+         ena_low();
+         send4_3in1(0,0);     /* send f0 abit=0 intg_rd --> 0 */
+         send4_3in1(1,0);     /* send f1 abit=0 itr --> 0 */
+         send4_3in1(4,0);     /* send f4 abit=0 tpe --> 0 */
+         send4_3in1(5,0);     /* send f5 abit=0 lcal_enable --> 0 */
+/* note: lcal_enable is not used on the prototype 3in1 cards */
+         send12_3in1(2,0,0);  /* send f2 abit=0 data=0 s1=s2=s3=s4 --> 0 */
+         send4_3in1(3,0);     /* send f3 abit=0 mse --> 0 */
+         send12_3in1(6,1,0);  /* send f6 abit=1 data=0 dac fine --> 0 */
+         send12_3in1(6,0,0);  /* send f6 abit=0 data=0 dac coarse --> 0 */
+         return(0);}
+
+         send4_3in1(fcn,abit)
+/*---------------------------------------------------------------*/
+/*    send and execute a single action bit function code         */
+/*     to the selected 3in1 card                                 */
+/*     f0 - set intg_rd                                          */
+/*     f1 - set itr                                              */
+/*     f3 - set mse                                              */
+/*     f4 - set tpe                                              */
+/*     f5 - set lcal_enable                                      */
+/*---------------------------------------------------------------*/
+         int fcn,abit;
+         { unsigned short sdata;
+           sdata = (unsigned short)( abit<<11 | fcn<<8 );
+           wrt_shift(4,sdata);
+           ena_high();
+           ena_low();
+           return(0);}  
+
+         send12_3in1(fcn,abit,data)
+/*---------------------------------------------------------------*/
+/*    send and execute a multi bit function code                 */
+/*     f2 - set s1 s2 s3 s4 = data                               */
+/*     f6 - set dac  voltage = data                              */
+/*         abit=0 coarse                                         */
+/*         abit=1 fine                                           */
+/*---------------------------------------------------------------*/
+         int fcn,abit,data;
+         { unsigned short sdata;
+           sdata = (unsigned short)( data<<4 | abit<<3 | fcn );
+           wrt_shift(12,sdata);
+           ena_high();
+           ena_low();
+           return(0);}  
+
+     clk_back(sval)
+/*------------------------------------------*/
+/*   clock the 3in1 register back into the  */
+/*    controller register and return value  */
+/*------------------------------------------*/
+     unsigned short *sval;
+     { int i;
+       unsigned short rbck;
+       rxw_high();
+       for(i=0;i<12;i++)
+        { clk_ctrl();  /* now clock the controller shift register once */
+          clk_high();  /* clock the 3in1 shift register once */
+          clk_low();
+         }
+       rxw_low();
+       shift_read(&rbck);
+       *sval=rbck;
+       return(0);}
+
+       read_status(sval)
+/*----------------------------------------*/
+/*    read back the 3in1 internal state   */
+/*       s1 = (sval>>3) & 1;              */
+/*       s2 = (sval>>4) & 1;              */
+/*       s3 = (sval>>5) & 1;              */
+/*       s4 = (sval>>6) & 1;              */
+/*       itr = (sval>>7) & 1;             */
+/*       ire = (sval>>8) & 1;             */
+/*       mse = (sval>>9) & 1;             */
+/*       tpe = (sval>>10) & 1;            */
+/*       lcal = (sval>>11) & 1;           */
+/*----------------------------------------*/
+     unsigned short *sval;
+     { int i;
+       unsigned short rbck;
+       back_high();
+       back_low();
+       rxw_high();
+       for(i=0;i<12;i++)
+        { clk_ctrl();  /* now clock the controller shift register once */
+          clk_high();  /* clock the 3in1 shift register once */
+          clk_low();}
+       shift_read(&rbck);
+       *sval=~rbck;  /* compliment since data_out inverted in 3in1 */
+       return(0);}      /* wiring mistake */
+
+       set_drawer_timer(zone,sector,section,time)
+       int zone,sector,section,time;
+         { unsigned short sdata,cadr;
+           int i,card;
+           rxw_low();
+           card=56;
+           if(section == 2) card = 58;
+           if(section == 3) card = 60;
+           if(section == 4) card = 63;
+           i = (zone<<12) | (sector<<6) | card;
+           cadr= (unsigned short) i;
+           card_sel(cadr);
+           sdata = (unsigned short) (time<<4);
+           wrt_shift(8,sdata);
+           ena_high();
+           ena_low();
+           i = (zone<<12) | (sector<<6) | (card+1);
+           cadr= (unsigned short) i;
+           card_sel(cadr);
+           ena_high();
+           ena_low();
+        }  
+set_dac(dac)
+int dac;
+ { int hi,lo;
+   lo = dac & 0xff;
+   send12_3in1(6,0,lo);   /* load low 8 bits */
+   hi = dac>>8;
+   send12_3in1(6,1,hi);   /* load high 2 bits */
+ }
+
+sw(i)
+int i;
+{ int k,l,shift;
+  unsigned short *adr;
+  (unsigned short *)adr = (unsigned short *)0xdeaa000c;
+  k = *adr;
+  shift = i-1;
+  l = (k>>shift) & 1;
+  return(l);
+}

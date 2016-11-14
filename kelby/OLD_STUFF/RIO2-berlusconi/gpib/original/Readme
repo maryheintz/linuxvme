@@ -1,0 +1,150 @@
+
+
+                         ESP-488 for the GPIB-1014
+
+                       National Instruments IEEE-488
+                    Engineering Software Package for the
+                    GPIB-1014/1014D VMEbus DMA interface
+
+                           Part Number 460070-13
+                              Revision C.1b1
+
+                      National Instruments Corporation
+                         6504 Bridge Point Parkway
+                           Austin, Texas  78730
+                              (512) 794-0100
+
+
+            (c) Copyright 1993 National Instruments Corporation.
+                           All rights reserved.
+
+
+        SOFTWARE DISTRIBUTION:
+
+            Readme            -  This file
+
+                                 Driver source files...
+            Makefile          -  Script file for UNIX MAKE utility
+            esp488.h          -  Low-level include file (for driver use)
+            esp488_master.c   -  System-independent source file template
+            sys488_master.c   -  System-dependent source file template
+            esp488.c          -  Pre-parsed version of esp488_master.c
+            sys488.c          -  Pre-parsed version of sys488_master.c
+
+            ugpib.h           -  High-level include file (for both user
+                                 application and driver use)
+
+            prog.c            -  Example ESP-488 application using
+                                 low-level driver functions
+
+
+        CONFIGURATION NOTES:
+
+        The esp488.h driver include file contains a number of parameters
+        that you can edit to modify permanently the runtime configuration
+        of the ESP-488 library.  Some of these parameters and their
+        default settings are as follows:
+
+                    GPIB Primary Address         0
+                    GPIB Secondary Address       0 (NONE)
+
+                    Board I/O Base Address       0x2000
+                    Interrupt Vector Number      0xF0
+                    Interrupt Request Line       2
+                    Bus Request/Grant Line       3
+
+        The esp488.h file also contains parameters that you can edit to
+        modify the operational characteristics of the driver, such as
+        whether the driver should use interrupts.
+
+        If you are installing more than one GPIB-1014 interface board,
+        or if any of the settings found in the esp488.h file are
+        inappropriate for your system, you should change the relevant
+        settings before using the MAKE utility to build the driver.
+
+        Also prior to running the MAKE utility, you should edit the
+        sys488_master.c file and make any changes needed to implement
+        the described OS support functions on your particular system.
+        The number of changes required, if any, will vary depending on
+        how address conversions are handled on your system, whether you
+        have enabled the use of interrupts and/or system timeouts, and
+        whether you can link the ESP-488 library directly to your
+        application program.
+
+        Refer to the esp488.h and sys488_master.c files for details.
+
+        +---------------------------------------------------------------+
+        | NOTE: If your system does not support the MAKE utility, you   |
+        |       should use the "pre-parsed" versions of the driver      |
+        |       files (esp488.c and sys488.c) for all of your editing   |
+        |       and compiling.  For example:                            |
+        |                                                               |
+        |       edit sys488.c                                           |
+        |       cc my_application.c esp488.c -o my_application          |
+        +---------------------------------------------------------------+
+
+
+        INSTALLATION NOTES:
+
+        The default esp488.o module produced by the MAKE utility contains
+        all of the function entry points and global variables as shown
+        in the pre-parsed esp488.c file.  The optional esp488_X.o modules
+        (where X = 1 to 4) provide the same functionality as the esp488.o
+        default module, but each contains a unique set of function and
+        variable names in the form ibX and dvX.  These modules are for
+        use with other GPIB-1014 interface boards installed in the same
+        system.
+
+        For example, to install and use two GPIB-1014 boards in the
+        system at the same time, you might choose to make and load the
+        esp488.o and esp488_2.o modules.  In your application program,
+        you should code all function calls directed to the first GPIB
+        board using the default "ib" and "dv" naming conventions.
+        You should code all function calls directed to the second GPIB
+        board to use the entry points in the esp488_2.o module, as
+        shown in the following conversion table:
+
+                DEFAULT NAME          NEW NAME FOR 2nd GPIB BOARD
+                ------------          ---------------------------
+                    dvclr    . . . . . . . . .   dv2clr
+                    dvrd     . . . . . . . . .   dv2rd
+                    dvrsp    . . . . . . . . .   dv2rsp
+                    dvtrg    . . . . . . . . .   dv2trg
+                    dvwrt    . . . . . . . . .   dv2wrt
+
+                    ibcac    . . . . . . . . .   ib2cac
+                    ibcmd    . . . . . . . . .   ib2cmd
+                    ibeos    . . . . . . . . .   ib2eos
+                    ibeot    . . . . . . . . .   ib2eot
+                    ibgts    . . . . . . . . .   ib2gts
+                    iblines  . . . . . . . . .   ib2lines
+                    ibonl    . . . . . . . . .   ib2onl
+                    ibpad    . . . . . . . . .   ib2pad
+                    ibpoke   . . . . . . . . .   ib2poke
+                    ibrd     . . . . . . . . .   ib2rd
+                    ibrpp    . . . . . . . . .   ib2rpp
+                    ibrsv    . . . . . . . . .   ib2rsv
+                    ibsad    . . . . . . . . .   ib2sad
+                    ibsic    . . . . . . . . .   ib2sic
+                    ibsre    . . . . . . . . .   ib2sre
+                    ibtmo    . . . . . . . . .   ib2tmo
+                    ibwait   . . . . . . . . .   ib2wait
+                    ibwrt    . . . . . . . . .   ib2wrt
+
+                    ibsta    . . . . . . . . .   ib2sta
+                    ibcnt    . . . . . . . . .   ib2cnt
+                    iberr    . . . . . . . . .   ib2err
+
+                    ib       . . . . . . . . .   ib2
+                    ibvec    . . . . . . . . .   ib2vec
+                    ibirq    . . . . . . . . .   ib2irq
+                    ibbrg    . . . . . . . . .   ib2brg
+
+
+        Similarly, to install four GPIB-1014 boards in the system,
+        you could make and load the esp488_1.o, esp488_2.o, esp488_3.o,
+        and esp488_4.o modules, and use function call and variable
+        references in the form ib1wrt(), ib2wrt(), ib3wrt(), and so on.
+
+                   ------------ END OF NOTES ------------
+

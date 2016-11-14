@@ -1,0 +1,1 @@
+* Makefile for hststCC = ccCFLAGS = -k=2f -qhstst: hstst.r hst.r basic.r   cc hstst.r -l=hst.r -l=basic.r -f=hststhstst.r: hstst.c hst.hhst.r: hst.c hst2.hbasic.r: basic.c

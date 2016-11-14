@@ -1,0 +1,180 @@
+control word= 51115110
+1 header word e06c0000
+ data word=    0    0   7d   7e   79
+ data word=    0    1   80   7e   7c
+ data word=    0    0   e8   e7   fe
+ data word=    0    1  371  378  38b
+ data word=    0    1  2b5  2c0  2a0
+ data word=    0    1   b2   bc   b3
+ data word=    0    0   7b   7c   71
+ data word=    0    0   75   74   6c
+ data word=    0    1   72   73   6d
+      tileDMU  crc 18f9eaf5
+2 header word e06c0000
+ data word=    0    0   6a   6d   6f
+ data word=    0    1   6f   6d   70
+ data word=    0    0   e6   e9   f1
+ data word=    0    1  37d  383  386
+ data word=    0    0  2a5  29a  296
+ data word=    0    1   aa   a0   9f
+ data word=    0    0   60   6d   6a
+ data word=    0    0   61   64   64
+ data word=    0    0   62   60   66
+      tileDMU  crc 8015b2c
+3 header word e06c0000
+ data word=    0    0   88   7d   7f
+ data word=    0    1   88   7d   7e
+ data word=    0    0   e8   df   db
+ data word=    0    0  36d  360  359
+ data word=    0    0  2ce  2c2  2cf
+ data word=    0    1   c9   bf   c4
+ data word=    0    1   83   72   7a
+ data word=    0    0   7f   71   74
+ data word=    0    0   7e   74   75
+      tileDMU  crc 604a3e41
+4 header word e06c0000
+ data word=    0    1   85   74   7c
+ data word=    0    0   84   75   7e
+ data word=    0    0   ed   d9   e7
+ data word=    0    0  38f  35b  375
+ data word=    0    1  2cf  2b2  2ab
+ data word=    0    1   bb   b1   b1
+ data word=    0    0   84   74   7c
+ data word=    0    1   7a   6c   70
+ data word=    0    1   7c   6b   74
+      tileDMU  crc 5a6bf8d4
+5 header word e06c0000
+ data word=    0    1   86   85   7e
+ data word=    0    1   86   85   7d
+ data word=    0    0   b1   b2   ab
+ data word=    0    0  2e7  2e3  2df
+ data word=    0    0  34a  349  34f
+ data word=    0    0  111  10c  111
+ data word=    0    1   81   80   79
+ data word=    0    0   7f   81   74
+ data word=    0    1   7b   7b   74
+      tileDMU  crc 4374fec0
+6 header word e06c0000
+ data word=    0    1   87   86   75
+ data word=    0    0   85   86   73
+ data word=    0    1   b2   bb   9c
+ data word=    0    0  2e9  307  2d3
+ data word=    0    1  33d  32d  35d
+ data word=    0    1  107   f8  10c
+ data word=    0    0   7a   7e   6f
+ data word=    0    1   7f   81   70
+ data word=    0    1   7c   7f   6a
+      tileDMU  crc 54b8ba06
+7 header word e06c0000
+ data word=    0    0   6f   76   82
+ data word=    0    0   71   79   84
+ data word=    0    0   94   90   9c
+ data word=    0    0  2b4  280  285
+ data word=    0    1  372  395  38e
+ data word=    0    1  122  148  143
+ data word=    0    1   6e   72   86
+ data word=    0    1   6c   73   7f
+ data word=    0    1   68   6e   72
+      tileDMU  crc 78e4c4d9
+8 header word e06c0000
+ data word=    0    1   76   7a   7e
+ data word=    0    1   77   7b   7e
+ data word=    0    1   89   8e   92
+ data word=    0    1  25f  261  25c
+ data word=    0    0  393  394  38e
+ data word=    0    0  148  156  160
+ data word=    0    0   7b   7b   80
+ data word=    0    1   75   72   76
+ data word=    0    1   69   6f   6f
+      tileDMU  crc 6120172e
+9 header word e06c0000
+ data word=    0    0   78   6d   71
+ data word=    0    0   7b   6d   72
+ data word=    0    0   78   6e   74
+ data word=    0    0  11c  107  103
+ data word=    0    0  390  39a  391
+ data word=    0    1  285  27b  284
+ data word=    0    1   a3   95   9f
+ data word=    0    1   74   66   6a
+ data word=    0    1   73   65   67
+      tileDMU  crc 1ba707ff
+10 header word e06c0000
+ data word=    0    1   6c   81   7e
+ data word=    0    1   6c   81   7e
+ data word=    0    1   6e   82   7f
+ data word=    0    0   e1  105   e7
+ data word=    0    0  381  389  371
+ data word=    0    0  2a1  294  2c3
+ data word=    0    0   9f   b0   b4
+ data word=    0    0   6c   7f   7b
+ data word=    0    0   62   78   7b
+      tileDMU  crc 3ba7eed4
+11 header word e06c0000
+ data word=    0    0   4c   57   5e
+ data word=    0    1   4d   58   5e
+ data word=    0    0   4e   59   5e
+ data word=    0    0  120  10e  114
+ data word=    0    1  38d  37f  389
+ data word=    0    1  208  22f  22c
+ data word=    0    0   5f   6f   76
+ data word=    0    0   46   54   5b
+ data word=    0    0   42   4d   52
+      tileDMU  crc 7b0deb28
+12 header word e06c0000
+ data word=    0    0   54   49   46
+ data word=    0    1   53   49   46
+ data word=    0    1   54   4a   48
+ data word=    0    1  102   e3  105
+ data word=    0    1  382  378  37d
+ data word=    0    1  235  242  21a
+ data word=    0    0   71   68   5a
+ data word=    0    1   53   4b   42
+ data word=    0    1   4a   3e   3f
+      tileDMU  crc 3ab1e6a9
+13 header word e06c0000
+ data word=    0    1   4b   51   43
+ data word=    0    1   4d   54   45
+ data word=    0    0   4d   53   45
+ data word=    0    0  114  125  11c
+ data word=    0    0  385  388  390
+ data word=    0    1  216  212  1ff
+ data word=    0    0   62   62   52
+ data word=    0    0   4b   49   42
+ data word=    0    0   3f   49   3a
+      tileDMU  crc 77a99e03
+14 header word e06c0000
+ data word=    0    1   44   52   49
+ data word=    0    1   46   53   4a
+ data word=    0    0   46   53   4b
+ data word=    0    1   ff  114  100
+ data word=    0    0  375  372  37e
+ data word=    0    1  21e  20d  222
+ data word=    0    0   5c   68   5f
+ data word=    0    0   43   50   4b
+ data word=    0    0   3f   47   3e
+      tileDMU  crc 51533c88
+15 header word e06c0000
+ data word=    0    0   4e   52   50
+ data word=    0    1   4b   50   4e
+ data word=    0    1   4e   54   51
+ data word=    0    0  15f  157  16b
+ data word=    0    1  392  38b  386
+ data word=    0    0  1da  1e5  1bb
+ data word=    0    0   52   5f   4e
+ data word=    0    0   4a   4e   48
+ data word=    0    0   42   47   46
+      tileDMU  crc 47a5ddc4
+16 header word e06c0000
+ data word=    0    1   54   48   4a
+ data word=    0    0   52   46   49
+ data word=    0    1   56   49   4c
+ data word=    0    0  179  14a  12d
+ data word=    0    1  38f  381  380
+ data word=    0    1  1bf  1c8  1f1
+ data word=    0    0   5c   4d   5b
+ data word=    0    1   4c   4a   4d
+ data word=    0    1   4a   3c   3d
+      tileDMU  crc 71102bd9
+ CRC_ERROR ffffffff
+ final CRC 49014901
+ 

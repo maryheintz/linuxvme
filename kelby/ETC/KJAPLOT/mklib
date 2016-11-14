@@ -1,0 +1,26 @@
+gcc -c axis.c
+gcc -c basic.c
+gcc -c disk.c
+gcc -c dot.c
+gcc -c dxy.c
+gcc -c hst.c
+gcc -c post.c
+gcc -c ranf.c
+gcc -c twist.c
+gcc -c vme_a24_base.c
+gcc -c vme_a16_base.c
+
+ar -r libkja.a axis.o
+ar -r libkja.a basic.o
+ar -r libkja.a disk.o
+ar -r libkja.a dot.o
+ar -r libkja.a dxy.o
+ar -r libkja.a hst.o
+ar -r libkja.a post.o
+ar -r libkja.a ranf.o
+ar -r libkja.a twist.o
+ar -r libkja.a vme_a24_base.o
+ar -r libkja.a vme_a16_base.o
+
+ar -s libkja.a
+cp -r libkja.a /home//kelby/LIB

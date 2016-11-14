@@ -1,0 +1,362 @@
+#include <sys/time.h>
+#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include "vme_base.h" 
+unsigned long swadr=0x570000;
+FILE *fdUSB,*fp;
+unsigned char c;
+double sn0,sn1;
+int debug;
+char buf[255];
+unsigned long status;
+main()
+  { unsigned long *wadr,*radr,*uadr,k,l,*adr,i1,i2,i3,i4,kk,k1,k2,k3,k4,k1234,cmd,ll;
+    unsigned long k_0,k_1,k_2,k_3,lefta,leftb,middlea,middleb,righta,rightb,I32,indx;
+    int i,nnn,ii,match,ntotal,n,kout,channel=-1;
+    double elapsed, remainder,hrs,mins,ft0,ftnow;
+    int ihrs,imins;
+    char buffer[30];
+    struct timeval tv;
+    time_t t1,t0;
+    status = vme_a24_base();
+    debug=0;
+    kout = 1;
+    printf("pio_test entered\n");
+    fdUSB = fopen("/dev/ttyUSB0","rb+");
+    
+    gettimeofday(&tv,NULL);
+    t0 = tv.tv_sec;
+    ft0 = (double)t0;
+    strftime(buffer,30,"%m-%d-%Y %T.",localtime(&t0));
+    printf("%s%ld\n",buffer,tv.tv_usec);
+    buffer[10]=95;
+    sprintf(buf,"snap%stxt",buffer);
+    printf(" fdUSB=%x\n",fdUSB);
+    fp = fopen(buf,"w");
+    fprintf(fp,"%s%ld\n",buffer,tv.tv_usec);
+    /* Print software serial number */
+     adr = (unsigned long *)(vme24base+swadr);
+     k = *adr;
+     printf(" ALTERA code serial number=%x\n",k);
+   for(i=0;i<6;i++) 
+     { k = fpsw(i);
+       printf(" fpsw(%d) = %d\n",i,k);
+     }
+    wadr = (unsigned long *)(vme24base + swadr + 0xc);
+    radr = (unsigned long *)(vme24base + swadr + 0x8);
+    uadr = (unsigned long *)(vme24base + swadr + 0x10);
+     
+    *wadr=0x12345678;
+    k = *radr;
+    printf("sent 12345678 read back %x\n",k);
+    
+    *wadr=0xaaaaaaaa;
+    k = *radr;
+    printf("sent aaaaaaaa read back %x\n",k);
+    
+    *wadr=0x55555555;
+    k = *radr;
+    printf("sent 55555555 read back %x\n",k);
+
+
+/* ---------------------- test send and readback 32 bit word ------------------- */  
+    ntotal = 0;
+     printf("\n USB register read write test\n");
+loopa:   ntotal++;
+        l = rand(); 
+
+        send_test(l);
+	get_test(&k1234);
+        
+        if(k1234 == l) printf("USB sent %8x read back %8x\n",l,k1234);
+        if(k1234 != l) printf("USB sent %8x read back %8x    ERROR\n",l,k1234);
+      
+     /*   if(k1234 != l) exit(0); */
+        if(ntotal < 5) goto loopa;
+       sleep(2);
+
+ loop1:
+ gettimeofday(&tv,NULL);
+ t1 = tv.tv_sec;
+ strftime(buffer,30,"%m-%d-%Y %T.",localtime(&t1));
+ printf("%s%ld\n",buffer,tv.tv_usec);
+ fprintf(fp,"%s%ld\n",buffer,tv.tv_usec);
+ ftnow = (double)t1;
+ elapsed = ftnow-ft0;
+ printf(" t1=%d  t0=%d\n",t1,t0);
+ printf(" ftnow=%f  ft0=%f  elapsed=%f\n",ftnow,ft0,elapsed);
+ ihrs = elapsed/3600.0;
+ hrs = ihrs;
+ remainder = elapsed - 36000.0*hrs;
+ imins = remainder/60.0;
+ mins = imins;
+ remainder = remainder - 60.0*mins;
+ printf(" elapsed time   hrs=%f   mins=%f   sec=%f  elapsed=%f\n",hrs,mins,remainder,elapsed);
+ fprintf(fp," elapsed time   hrs=%f   mins=%f   sec=%f  elapsed=%f\n",hrs,mins,remainder,elapsed);
+/* ================= set input word ================= */
+    if(fpsw(0)==1) kk = fputc(0xd9,fdUSB);  /* set kidle to 1    data mode */
+    if(fpsw(0)==0) kk = fputc(0xd8,fdUSB);  /* set kidle to 0    idle mode */ 
+    if(fpsw(2)==1) kk = fputc(0xda,fdUSB);  /* send generr pulse */ 
+    fflush(fdUSB);
+    printf("\n\n");
+
+
+/* ---------------------------- reset error count words -------------------------- */
+    if(fpsw(1) == 1) 
+      { kk = fputc(0xd2,fdUSB); /* reset counters */
+        fflush(fdUSB);
+        usleep(10000);
+        kk = fputc(0xd7,fdUSB); /*  pulse Reset_Continuous_Errer_Detection */
+        fflush(fdUSB);
+        usleep(10000);
+      }	   
+
+/* ---------------- Corrected Word(0 - 11)  -------------------------------- */
+ for(indx=0;indx<12;indx++)
+  {printf("\n");
+   for(n=0;n<5;n++)
+     { cmd = 0xe0 + indx;
+       kk = fputc(cmd,fdUSB);
+       fflush(fdUSB);
+       usleep(10000);
+
+       cmd = 0x10 + indx;
+       kk = fputc(cmd,fdUSB); 
+       fflush(fdUSB);
+       usleep(10000);
+	
+       cmd = 0xc3;
+       get_32(cmd,&I32);
+       k_0 = I32;    
+	
+       cmd = 0xc4;
+       get_32(cmd,&I32);
+       k_1 = I32;    
+	
+       cmd = 0xc5;
+       get_32(cmd,&I32);
+       k_2 = I32;    
+	
+       cmd = 0xc6;
+       get_32(cmd,&I32);
+       k_3 = I32;    
+       k_3 = k_3 & 0x00ffffff; 
+       
+	
+       printf("Corrected Word(%d)=%6x%8x%8x%8x\n",indx,k_3,k_2,k_1,k_0);
+       if(n==0) fprintf(fp,"Corrected Word(%d)=%6x%8x%8x%8x\n",indx,k_3,k_2,k_1,k_0);
+        
+     }	
+ }	
+
+/* -------------------------- single bit error count words ------------------------ */  
+
+   printf("\n");
+    for(i=0;i<12;i++)
+      { cmd = 0x90+i;
+        kk = fputc(cmd,fdUSB);
+        cmd = 0xca;
+        get_32(cmd,&k1234);
+    
+        printf(" channel=%x  single bit error count = %x \n",i,k1234);
+        fprintf(fp," channel=%x  single bit error count = %x \n",i,k1234);
+      }
+ 
+
+/* -------------------------- compare word match error count words ------------------------ */
+
+   printf("\n");
+    for(i=0;i<12;i++)
+      { cmd = 0xf0+i; 
+        kk = fputc(cmd,fdUSB);
+        cmd = 0xcb;
+        get_32(cmd,&k1234);
+        printf(" channel=%x  compare error count = %x \n",i,k1234);
+        fprintf(fp," channel=%x  compare error count = %x \n",i,k1234);
+      }
+ 
+ 
+	
+             
+
+/* ---------------------- test send and readback 32 bit word ------------------- */  
+    ntotal = 0;
+    printf("\n USB register read write test\n");
+loop:   ntotal++;
+
+        l = rand(); 
+        send_test(l);
+	get_test(&k1234);
+        if(k1234 == l) printf("USB sent %8x read back %8x\n",l,k1234);
+        if(k1234 != l) printf("USB sent %8x read back %8x  ERROR\n",l,k1234);
+        if(ntotal==0)
+          { if(k1234 == l) fprintf(fp,"USB sent %8x read back %8x\n",l,k1234);
+            if(k1234 != l) fprintf(fp,"USB sent %8x read back %8x  ERROR\n",l,k1234);
+	  }
+     /*   if(k1234 != l) exit(0); */
+        if(ntotal < 5) goto loop;
+	fflush(fp);
+       sleep(10);
+       goto loop1;
+  }
+fpsw(int i)
+  { int ent=0,l;
+    unsigned long *adr,kk;
+    adr = (unsigned long *)(vme24base+swadr+0x4);
+    kk = *adr;
+    l = (kk>>i) & 1;
+    return(l);
+  }
+
+      waitkja(knt)
+       int knt;
+       { int i;
+         sn0=0.1234;
+	 for(i=0;i<knt;i++)
+	   { sn1=sin(sn0);
+	     sn0=sin(sn1);
+	   }  
+       }
+
+
+/* ============================================================================================= */
+/* ============================================= send test word ================================ */  
+/* ============================================================================================= */
+
+send_test(unsigned long l)
+ { unsigned long kk,k1,k2,k3,k4;
+ 
+        if (debug==1) printf("entered send_test sending 0xd0\n");
+        kk = fputc(0xd0,fdUSB);
+        fflush(fdUSB);
+        usleep(10000);
+	   
+        k1 = (l>>24)& 0xff;
+        if (debug==1) printf(" sending %x\n",k1);
+        kk = fputc(k1,fdUSB);
+        fflush(fdUSB);
+        usleep(10000);
+
+        k2 = (l>>16)& 0xff;
+        if (debug==1) printf(" sending %x\n",k2);
+        kk = fputc(k2,fdUSB);
+        fflush(fdUSB);
+        usleep(10000);
+
+        k3 = (l>>8)& 0xff;
+        if (debug==1) printf(" sending %x\n",k3);
+        kk = fputc(k3,fdUSB);
+        fflush(fdUSB);
+        usleep(10000);
+
+        k4 = l & 0xff;
+        if (debug==1) printf(" sending %x\n",k4);
+        kk = fputc(k4,fdUSB);
+        fflush(fdUSB);
+        usleep(100000);
+        if (debug==1) printf("returning from send_test\n");
+  }
+
+/* ============================================================================================= */
+/* ============================================== get test word ================================ */  
+/* ============================================================================================= */
+
+get_test(unsigned long *k1234)
+  { unsigned long i1,i2,i3,i4,kk,k1,k2,k3,k4;
+  
+        if (debug==1) printf(" entering get_test sending 0xc1\n");
+        kk = fputc(0xc1,fdUSB);
+        fflush(fdUSB);
+        usleep(10000);
+	
+        if (debug==1) printf(" sending 1\n");
+    	kk = fputc(1,fdUSB);
+    	fflush(fdUSB);
+    	waitkja(10000);
+        if (debug==1) printf(" before fgetc\n");
+    	c=fgetc(fdUSB);
+    	k1 = c;
+        if (debug==1) printf(" char retrieved=%x\n",k1);
+    	waitkja(10000);
+    
+        if (debug==1) printf(" sending 2\n");
+    	kk = fputc(2,fdUSB);
+    	fflush(fdUSB);
+    	waitkja(10000);
+        if (debug==1) printf(" before fgetc\n");
+    	c=fgetc(fdUSB);
+    	k2 = c;
+    	waitkja(10000);
+    
+        if (debug==1) printf(" sending 2\n");
+    	kk = fputc(3,fdUSB);
+    	fflush(fdUSB);
+    	waitkja(10000);
+        if (debug==1) printf(" before fgetc\n");
+    	c=fgetc(fdUSB);
+    	k3 = c;
+    	waitkja(10000);
+    
+        if (debug==1) printf(" sending 2\n");
+    	kk = fputc(4,fdUSB);
+    	fflush(fdUSB);
+    	waitkja(10000);
+        if (debug==1) printf(" before fgetc\n");
+    	c=fgetc(fdUSB);
+    	k4 = c;
+    	waitkja(10000);
+    
+
+        i1 = k1<<24;
+        i2 = (k2<<16) & 0xff0000;
+        i3 = (k3<<8) & 0Xff00;
+        i4 = k4 & 0xff;
+        *k1234 = i1 | i2 | i3 | i4;
+        if (debug==1) printf(" returning from get_test\n");
+  }
+
+
+/* ============================================================================================= */
+/* ============================================ get 32 bit word ================================ */  
+/* ============================================================================================= */
+get_32(unsigned int cmd,unsigned long *k1234)
+  { unsigned long kk,k1,k2,k3,k4,i1,i2,i3,i4;
+    kk = fputc(cmd,fdUSB);
+    fflush(fdUSB);
+    waitkja(10000);
+   
+    kk = fputc(1,fdUSB);
+    fflush(fdUSB);
+    waitkja(10000);
+    c=fgetc(fdUSB);
+    k1 = c;
+    waitkja(10000);
+    
+    kk = fputc(2,fdUSB);
+    fflush(fdUSB);
+    waitkja(10000);
+    c=fgetc(fdUSB);
+    k2 = c;
+    waitkja(10000);
+    
+    kk = fputc(3,fdUSB);
+    fflush(fdUSB);
+    waitkja(10000);
+    c=fgetc(fdUSB);
+    k3 = c;
+    waitkja(10000);
+    
+    kk = fputc(4,fdUSB);
+    fflush(fdUSB);
+    waitkja(10000);
+    c=fgetc(fdUSB);
+    k4 = c;
+    waitkja(10000);
+    
+    i1 = k1<<24;
+    i2 = (k2<<16) & 0xff0000;
+    i3 = (k3<<8) & 0Xff00;
+    i4 = k4 & 0xff;
+    *k1234 = i1 | i2 | i3 | i4;    
+}

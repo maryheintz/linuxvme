@@ -1,0 +1,1 @@
+#include <stdio.h>main(argc,argv)    int argc;   char *argv[];{  FILE *fp;   int keof;   fp=fopen("/h0/kja/cmds/lpr_cmds","w");      fprintf(fp,"/h0/cmds/lpr -h=128.135.88.13 -p=lp %s\n",argv[1]);   keof=fclose(fp);   system("attr -a -prpwpe /h0/kja/cmds/lpr_cmds");   system("/h0/kja/cmds/lpr_cmds");   system("del /h0/kja/cmds/lpr_cmds");   return(0); }

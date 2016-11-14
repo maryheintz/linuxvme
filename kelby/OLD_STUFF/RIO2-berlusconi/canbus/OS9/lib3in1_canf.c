@@ -1,0 +1,190 @@
+#include <stdio.h>
+#include <math.h>
+#include <types.h>
+#include <time.h>
+time_t usec;
+unsigned int base = 0xf0ee0000;
+
+can_swln1(i)
+int i;
+  { can_set(0xac,i); }
+
+can_swln2(i)
+int i;
+  { can_set(0xb4,i); }
+
+can_tp_high()
+  { can_set(0x80,1); }
+
+can_tp_low()
+  { can_set(0x80,0); }
+
+can_zone(zone)
+int zone;
+  { can_set(0x84,zone); }
+
+can_sector(sector)
+int sector;
+  { can_set(0x88,sector); }
+
+can_tube(tube)
+int tube;
+  { can_set(0x8c,tube); }
+
+can_multi_high()
+  { can_set(0x90,0xff); }
+
+can_multi_low()
+  { can_set(0x90,0); }
+
+can_rxw_high()
+  { can_set(0x94,1); }
+
+can_rxw_low()
+  { can_set(0x94,0); }
+
+can_bkld_high()
+  { can_set(0x98,1); }
+
+can_bkld_low()
+  { can_set(0x98,0); }
+
+can_load_out()
+  { can_set(0x9c,0); }
+
+can_reset_state()
+  { can_set(0xa0,0); }
+
+can_reset()
+  { can_set(0xa4,0); }
+
+can_intg_rd_high()
+  { can_send_3in1(0,1); }
+
+can_intg_rd_low()
+  { can_send_3in1(0,0); }
+
+can_itr_high()
+  { can_send_3in1(1,1); }
+
+can_itr_low()
+  { can_send_3in1(1,0); }
+
+can_mse_high()
+  { can_send_3in1(3,1); }
+
+can_mse_low()
+  { can_send_3in1(3,0); }
+
+can_intg_gain(i)
+int i;
+   { can_send_3in1(2,i); }
+
+can_dac(i)
+int i;
+   { can_send_3in1(6,i); }
+
+can_small_cap_enable()
+   { can_send_3in1(4,1); }
+
+can_small_cap_disable()
+   { can_send_3in1(4,0); }
+
+can_large_cap_enable()
+   { can_send_3in1(5,1); }
+
+can_large_cap_disable()
+   { can_send_3in1(5,0); }
+
+can_trig_enable()
+   { can_send_3in1(7,1); }
+
+can_trig_disable()
+   { can_send_3in1(7,0); }
+
+can_send_3in1(code,data)
+int code,data;
+   { int i1,i2;
+     i1 = 0xe0 | (code <<2)  | (data>>8) & 3;
+     i2 = data & 0xff;
+     can_set(i1,i2);
+/*     if(sw(8) == 1) printf(" subadr=%x  data=%x\n",i1,i2);  */
+   }
+
+can_set(subadr,data)
+int subadr,data;
+  { unsigned short i16;
+    int i;
+    i16 = (subadr<<8) | data;
+/*    if(sw(8) == 1) printf(" can_set i16=%x\n",(int)i16);  */
+    can_shft_wr(i16);
+    for(i=0;i<16;i++)
+      { can_clkh();
+        can_clkl();
+        can_int_clk();
+      }
+    can_exh();
+    can_exl();
+  }   
+
+can_clkl()
+{ unsigned short *adr;
+  adr = (unsigned short *)( base);
+  *adr = 0;
+}
+
+can_clkh()
+{ unsigned short *adr;
+  adr = (unsigned short *)( base | 0x2);
+  *adr = 0;
+}
+
+can_exl()
+{ unsigned short *adr;
+  adr = (unsigned short *)( base | 0x4);
+  *adr = 0;
+}
+
+can_exh()
+{ unsigned short *adr;
+  adr = (unsigned short *)( base | 0x6);
+  *adr = 0;
+}
+
+can_int_clk()
+{ unsigned short *adr;
+  adr = (unsigned short *)( base | 0x8);
+  *adr = 0;
+}
+
+can_shft_wr(val)
+unsigned short val;
+  { unsigned short *adr;
+    adr = (unsigned short *)(base | 0xa);
+    *adr = ~val;
+  }
+
+can_shft_rd(val)
+unsigned short *val;
+  { unsigned short *adr;
+    int i;
+    usec = 1;
+    for(i=0;i<16;i++)
+      { can_int_clk();
+	can_clkh();
+	can_clkl();
+      }
+    adr = (unsigned short *)(base | 0xa);
+    *val = ~*adr;
+  }
+
+sw(i)
+int i;
+{ int k,l,shift;
+  unsigned short *adr;
+  (unsigned short *)adr = (unsigned short *)0xf0aa000c;
+  k = *adr;
+  shift = i-1;
+  l = (k>>shift) & 1;
+  return(l);
+}

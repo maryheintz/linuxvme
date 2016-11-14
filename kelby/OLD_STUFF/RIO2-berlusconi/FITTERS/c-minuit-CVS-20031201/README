@@ -1,0 +1,123 @@
+This is a framework for compiling C code against the MINUIT minimizer
+from CERNlib.
+
+This package is distributed under the GNU Public License (GPL). The
+third-party software used in this distribution (MINUIT from CERNlib
+and the file cfortran.h by Burkhard Burow) are also covered by open
+licences.
+
+See the file COPYING XXXXXX for licence and redistribution information.
+
+======================================================================
+
+The file m-test.c contains a simple optimization. Change the function
+fcn() to contain your particular function to be minimized. Variables:
+
+  npar is the number of parameters currently not fixed by minuit
+  (normally neglected by fcn(), use the actual number of parameters you
+  have given to minuit instead).
+
+  grad is a placeholder for the gradient, return gradient here if you
+  have told MINUIT to use the gradient (with a "SET GRADIENT" call)
+  whenever iflag=2 (see below).
+
+  fcnval stores the returned function value.
+
+  xval is the array of ALL parameters, both fixed and free
+  ones. xval[0] is the first parameter, which the fortran part calls
+  parameter "1".
+
+  iflag is a flag telling fcn() what to do. MINUIT uses iflag=4 for a
+  normal fcn() call and iflag=2 when requesting a gradient.
+
+  futil is to be ignored.
+
+Remember that all arrays are accessed as C arrays, thus the first
+element has index 0. MNPARM (see below) may be the only place in your
+program where fortran array numbering has to be respected.
+
+The prototype of fcn() is found in minuitfcn.h and must not be present
+in your program.
+
+======================================================================
+
+The MNINIT call is required and must not be changed. MNPARM
+establishes a variable within minuit:
+
+MNPARM (number: 1, 2, etc.,
+        name of variable: "x", "width", "energy", etc.,
+        starting value: 0., 3., etc.,
+        estimated variance: 1., 100., etc.,
+        lower boundary, needs to be double, not const,
+        upper boundary, needs to be double, not const,
+        dummy: always use like this);
+
+Parameter numbers (first argument to MNPARM) start with 1 and must be
+incremented by 1 each time, otherwise an error message is issued.
+
+MNCOMD makes a call to MINUIT, in this case asking to minimize fcn()
+using "MIGRAD". The only thing you might want to change here is the
+command "MIGRAD".
+
+======================================================================
+
+The maximum number of parameters that MINUIT can use can be changed by
+editing the MNE and MNI in the first PARAMETER line in
+minuit/minuit/d506cm.inc and recompiling. The two numbers are the
+maximum number of total parameters and the maximum number of
+parameters that are variable at a time.
+
+======================================================================
+
+Refer to MINUIT documentation from CERN for further details.
+
+======================================================================
+
+To compile this package, refer to the INSTALL file. If you downloaded
+this file from CVS, run ./autogen.sh instead of ./configure .
+
+IMPORTANT: If you fail to compile the package on your computer, let me
+know. The code should run on all sorts of UNIX-flavour machines, but
+the configure.in file might need some modification. I will try to add
+your architecture if you send me the details of your machine.
+
+Add a line like
+
+  bin_PROGRAMS = my_optimization1 my_optimization2 ...
+
+to Makefile.am to add a program (assuming your programs are called
+"my_optimization1" etc.). Your source files must then be
+"my_optimization1.c" etc.
+
+m-test will not be installed by default when you use "make install".
+
+======================================================================
+
+To redistribute the archive with your own programs in place, edit
+configure.in to create a new package name and/or version number, for
+instance replace
+
+  AM_INIT_AUTOMAKE(c-minuit, CVS)
+
+by
+
+  AM_INIT_AUTOMAKE(my-optimizer, 20000209)
+
+and then type
+
+  make dist
+
+to create an archive with the name my-optimizer-20000209.tar.gz, which
+can be copied to another machine. Remember to retain all copyright
+information when redistributing the modified package, and to label it properly.
+
+======================================================================
+
+Good luck, happy minimizing!
+
+======================================================================
+
+Author: András G. Major, andras@users.sourceforge.net
+Primary www site: http://c-minuit.sourceforge.net/
+
+======================================================================
