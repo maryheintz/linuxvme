@@ -4,11 +4,11 @@ These are drivers that are used on a specific vme setup in linux.  They are here
 
 ## Making a new version of the system.
 
-1.  Install SLC45 on a new disk.  Choose "Custom Install".  In the list of packages that comes up, you can uncheck "Text-based Internet, Office/Productivity, Sound & Video".  You should add "Development Tools" and in the Gnome Desktop Environment, also add the program "eog".
+###  Install SLC45 on a new disk.  Choose "Custom Install".  In the list of packages that comes up, you can uncheck "Text-based Internet, Office/Productivity, Sound & Video".  You should add "Development Tools" and in the Gnome Desktop Environment, also add the program "eog".
 
-2.  Once the system is installed, check if it's running a multiprocessor kernel.  Change /etc/grub.conf to use the single processor kernel.  Reboot so that we start using that kernel.
+###  Once the system is installed, check if it's running a multiprocessor kernel.  Change /etc/grub.conf to use the single processor kernel.  Reboot so that we start using that kernel.
 
-3.  There are a few other packages to install.  I didn't feel like searching for them during the installation process, so I did them by hand later.
+###  There are a few other packages to install.  I didn't feel like searching for them during the installation process, so I did them by hand later.
 
 ImageMagick
 libpng-devel
@@ -17,7 +17,7 @@ freetype-devel
 libtiff-devel
 zlib-devel
 
-4.  For some reason, all the links needed were not created in /usr/lib.  I had to add some of these by hand.
+###  For some reason, all the links needed were not created in /usr/lib.  I had to add some of these by hand.
 
 ```
 # cd /usr/lib
@@ -29,7 +29,7 @@ zlib-devel
 # ln -s libgd.so.2.0.0 libgd.so
 ```
 
-5.  Download the files in this repo.  The directories named linuxvme, linuxvme_examples and linuxvme_util should be placed in /usr/local.  The directory kvaser should be in the / directory.
+###  Download the files in this repo.  The directories named linuxvme, linuxvme_examples and linuxvme_util should be placed in /usr/local.  The directory kvaser should be in the / directory.
 
 ```
 # ll /
@@ -77,7 +77,7 @@ drwxr-xr-x  4 root root    4096 Nov 14 07:19 share
 drwxr-xr-x  2 root root    4096 Feb 17  2005 src
 ```
 
-6.  Recompile the files in these directories.
+###  Recompile the files in these directories.
 
 ```
 # pwd
@@ -308,7 +308,7 @@ gcc -Wall -D_REENTRANT   -c -o thread.o thread.c
 gcc -Wall -D_REENTRANT -I/usr/include main.o thread.o -o linuxvme -L . -L /usr/lib -lncurses -lpthread -lcctvme
 ```
 
-7.  Edit /etc/rc.d/rc.local to load the drivers at boot.
+###  Edit /etc/rc.d/rc.local to load the drivers at boot.
 ```
 # cat /etc/rc.d/rc.local
 #!/bin/sh
@@ -328,4 +328,4 @@ echo "Load usbcanII"
 modprobe usbcanII
 ```
 
-8.  Test things.  The system has to be running in a vme system for anything to work.  One test program is ~kelby/BIN/hstst, which should open a window.  
+###  Test things.  The system has to be running in a vme system for anything to work.  One test program is ~kelby/BIN/hstst, which should open a window.  
